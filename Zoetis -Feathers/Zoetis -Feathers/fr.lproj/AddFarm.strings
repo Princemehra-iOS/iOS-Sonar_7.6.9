@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "1"; ObjectID = "7T6-Et-gEQ"; */
+"7T6-Et-gEQ.text" = "1";
+
+/* Class = "UILabel"; text = "No of birds"; ObjectID = "BVQ-mm-ul4"; */
+"BVQ-mm-ul4.text" = "Nombre d'oiseaux";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "GBE-b6-Smj"; */
+"GBE-b6-Smj.normalTitle" = "Fait";
+
+/* Class = "UILabel"; text = "Age (days)*"; ObjectID = "P9z-wo-OPx"; */
+"P9z-wo-OPx.text" = "Age (jours)*";
+
+/* Class = "UILabel"; text = "House no."; ObjectID = "cvL-lJ-ZWW"; */
+"cvL-lJ-ZWW.text" = "Bâtiment n°";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "dEY-7n-0ji"; */
+"dEY-7n-0ji.text" = "5";
+
+/* Class = "UILabel"; text = "Sick"; ObjectID = "dYf-Al-8of"; */
+"dYf-Al-8of.text" = "Malade";
+
+/* Class = "UILabel"; text = "Farm name *"; ObjectID = "mdS-wQ-NhC"; */
+"mdS-wQ-NhC.text" = "Nom de la ferme *";
+
+/* Class = "UILabel"; text = "Flock Id"; ObjectID = "nRu-vx-16D"; */
+"nRu-vx-16D.text" = "Numéro de lot";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "paO-ed-XdK"; */
+"paO-ed-XdK.text" = "- Sélectionner -";
+
+/* Class = "UILabel"; text = "Add Farm"; ObjectID = "ttl-IJ-Gsl"; */
+"ttl-IJ-Gsl.text" = "Ajouter une ferme";
+
+/* Class = "UILabel"; text = "Feed program *"; ObjectID = "wh1-kk-PVd"; */
+"wh1-kk-PVd.text" = "Programme alimentaire *";

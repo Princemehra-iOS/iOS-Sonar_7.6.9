@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "start new necropsy."; ObjectID = "BCR-8O-IyU"; */
+"BCR-8O-IyU.text" = "comenzar nueva necropsia.";
+
+/* Class = "UILabel"; text = "No existing posting session!"; ObjectID = "a7c-gy-SvU"; */
+"a7c-gy-SvU.text" = "¡Sin sesión de publicación existente!";
+
+/* Class = "UIButton"; normalTitle = "Start Necropsy"; ObjectID = "b4k-ag-Kd5"; */
+"b4k-ag-Kd5.normalTitle" = "Comience la necropsia";

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PVE_DraftCell" rowHeight="97" id="1xE-j4-gC1" customClass="PVE_DraftCell" customModule="PVE" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1101" height="89"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1xE-j4-gC1" id="3eM-AV-e3v">
+                <rect key="frame" x="0.0" y="0.0" width="1101" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C-213219900102" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVu-x4-Pk0">
+                        <rect key="frame" x="25" y="21" width="149" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="SKY-yJ-PRK"/>
+                            <constraint firstAttribute="width" constant="149" id="iiO-dk-mot"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C-213219900102" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWB-QQ-mBh">
+                        <rect key="frame" x="272" y="21" width="149" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="149" id="4CC-g9-DY3"/>
+                            <constraint firstAttribute="height" constant="40" id="Qze-QT-iZg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C-213219900102" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhq-q9-3CG">
+                        <rect key="frame" x="476" y="21" width="149" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="css-4P-71H"/>
+                            <constraint firstAttribute="width" constant="149" id="p85-yx-hNS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C-213219900102" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZ0-Zg-fq4">
+                        <rect key="frame" x="680" y="21" width="241" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="Noh-GP-Lwp"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C-213219900102" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyN-gd-Osv">
+                        <rect key="frame" x="976" y="21" width="100" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="ObU-iv-jhN"/>
+                            <constraint firstAttribute="height" constant="40" id="aWb-C5-nNK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfM-0d-HBE">
+                        <rect key="frame" x="976" y="23.5" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="0t4-94-1nz"/>
+                            <constraint firstAttribute="height" constant="35" id="fHO-TH-nx8"/>
+                        </constraints>
+                        <state key="normal" image="PEeditIcon"/>
+                        <connections>
+                            <action selector="editClicked:" destination="1xE-j4-gC1" eventType="touchUpInside" id="if8-fI-Grd"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzR-F7-vID">
+                        <rect key="frame" x="1041" y="23.5" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="cgF-Eq-5uZ"/>
+                            <constraint firstAttribute="height" constant="35" id="yYm-8r-ZFA"/>
+                        </constraints>
+                        <state key="normal" image="PEdeleteIcon"/>
+                        <connections>
+                            <action selector="delClicked:" destination="1xE-j4-gC1" eventType="touchUpInside" id="Huw-hp-lY3"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Jhq-q9-3CG" firstAttribute="leading" secondItem="rWB-QQ-mBh" secondAttribute="trailing" constant="55" id="28Z-BK-drp"/>
+                    <constraint firstItem="pfM-0d-HBE" firstAttribute="centerY" secondItem="yyN-gd-Osv" secondAttribute="centerY" id="2h7-rB-WoK"/>
+                    <constraint firstItem="QVu-x4-Pk0" firstAttribute="leading" secondItem="3eM-AV-e3v" secondAttribute="leading" constant="25" id="9xr-oo-S1t"/>
+                    <constraint firstItem="JzR-F7-vID" firstAttribute="trailing" secondItem="yyN-gd-Osv" secondAttribute="trailing" id="EFP-ZO-7ar"/>
+                    <constraint firstItem="yyN-gd-Osv" firstAttribute="leading" secondItem="WZ0-Zg-fq4" secondAttribute="trailing" constant="55" id="FBO-oG-Wba"/>
+                    <constraint firstItem="WZ0-Zg-fq4" firstAttribute="top" secondItem="3eM-AV-e3v" secondAttribute="top" constant="21" id="FHh-ER-aOv"/>
+                    <constraint firstItem="Jhq-q9-3CG" firstAttribute="top" secondItem="3eM-AV-e3v" secondAttribute="top" constant="21" id="KF2-5G-lxu"/>
+                    <constraint firstItem="pfM-0d-HBE" firstAttribute="leading" secondItem="yyN-gd-Osv" secondAttribute="leading" id="ZmV-Bs-5XO"/>
+                    <constraint firstItem="yyN-gd-Osv" firstAttribute="top" secondItem="3eM-AV-e3v" secondAttribute="top" constant="21" id="aYN-xn-QNj"/>
+                    <constraint firstAttribute="trailing" secondItem="yyN-gd-Osv" secondAttribute="trailing" constant="25" id="co2-89-dKt"/>
+                    <constraint firstItem="JzR-F7-vID" firstAttribute="centerY" secondItem="yyN-gd-Osv" secondAttribute="centerY" id="gJF-Qh-3MA"/>
+                    <constraint firstItem="rWB-QQ-mBh" firstAttribute="top" secondItem="3eM-AV-e3v" secondAttribute="top" constant="21" id="iry-1c-OGz"/>
+                    <constraint firstItem="WZ0-Zg-fq4" firstAttribute="leading" secondItem="Jhq-q9-3CG" secondAttribute="trailing" constant="55" id="lQ3-wW-N9b"/>
+                    <constraint firstItem="QVu-x4-Pk0" firstAttribute="top" secondItem="3eM-AV-e3v" secondAttribute="top" constant="21" id="rGG-uo-twS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="Jhq-q9-3CG" firstAttribute="centerX" secondItem="xlp-oT-m11" secondAttribute="centerX" id="3ZL-pu-yT9"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="xlp-oT-m11"/>
+            <connections>
+                <outlet property="lblAction" destination="yyN-gd-Osv" id="zTH-0X-WMK"/>
+                <outlet property="lblAssessment" destination="QVu-x4-Pk0" id="AOs-Yt-uBs"/>
+                <outlet property="lblEvaluationDate" destination="rWB-QQ-mBh" id="DnT-zj-w38"/>
+                <outlet property="lblEvaluationType" destination="Jhq-q9-3CG" id="YnQ-R2-ftA"/>
+                <outlet property="lblEvaluator" destination="WZ0-Zg-fq4" id="t4u-bo-l0C"/>
+            </connections>
+            <point key="canvasLocation" x="410.86956521739131" y="94.754464285714278"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="PEdeleteIcon" width="42" height="42"/>
+        <image name="PEeditIcon" width="42" height="42"/>
+    </resources>
+</document>

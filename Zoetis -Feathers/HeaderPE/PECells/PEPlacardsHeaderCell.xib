@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="IJ2-4s-mCp" customClass="PEPlacardsHeaderCell" customModule="PV360_Dev" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="72"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OeR-Rh-Epl">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="72"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poppupHeader" translatesAutoresizingMaskIntoConstraints="NO" id="TWx-HD-Q88">
+                            <rect key="frame" x="0.0" y="10" width="1024" height="67"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="67" id="cFL-ht-GGh"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placard  Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huG-9d-BYy">
+                            <rect key="frame" x="25" y="21" width="180" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="180" id="Gjk-td-pIj"/>
+                                <constraint firstAttribute="height" constant="29" id="qoY-eb-aya"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnE-tR-NQn">
+                            <rect key="frame" x="225" y="21" width="654" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="29" id="vzy-WR-shq"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XoP-U3-1kU">
+                            <rect key="frame" x="899" y="21" width="100" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="29" id="eaS-gL-blf"/>
+                                <constraint firstAttribute="width" constant="100" id="xhM-hd-kpG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="TWx-HD-Q88" secondAttribute="trailing" id="4Ta-Ud-RSf"/>
+                        <constraint firstAttribute="trailing" secondItem="XoP-U3-1kU" secondAttribute="trailing" constant="25" id="62a-eT-bez"/>
+                        <constraint firstItem="MnE-tR-NQn" firstAttribute="leading" secondItem="huG-9d-BYy" secondAttribute="trailing" constant="20" id="EmB-mA-KgJ"/>
+                        <constraint firstItem="TWx-HD-Q88" firstAttribute="leading" secondItem="OeR-Rh-Epl" secondAttribute="leading" id="QvE-Z5-qv4"/>
+                        <constraint firstItem="huG-9d-BYy" firstAttribute="leading" secondItem="OeR-Rh-Epl" secondAttribute="leading" constant="25" id="Sb2-zL-AuT"/>
+                        <constraint firstItem="XoP-U3-1kU" firstAttribute="top" secondItem="OeR-Rh-Epl" secondAttribute="top" constant="21" id="YAd-kq-qya"/>
+                        <constraint firstItem="huG-9d-BYy" firstAttribute="top" secondItem="OeR-Rh-Epl" secondAttribute="top" constant="21" id="YvX-yQ-cGn"/>
+                        <constraint firstItem="MnE-tR-NQn" firstAttribute="centerY" secondItem="huG-9d-BYy" secondAttribute="centerY" id="cNt-Uc-dug"/>
+                        <constraint firstItem="TWx-HD-Q88" firstAttribute="top" secondItem="OeR-Rh-Epl" secondAttribute="top" constant="10" id="t6m-1M-2lp"/>
+                        <constraint firstItem="XoP-U3-1kU" firstAttribute="leading" secondItem="MnE-tR-NQn" secondAttribute="trailing" constant="20" id="vFk-oU-ESW"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="OeR-Rh-Epl" secondAttribute="bottom" id="fyN-l7-MPy"/>
+                <constraint firstItem="OeR-Rh-Epl" firstAttribute="trailing" secondItem="U7a-jH-fNk" secondAttribute="trailing" id="gfb-go-5yj"/>
+                <constraint firstItem="OeR-Rh-Epl" firstAttribute="leading" secondItem="U7a-jH-fNk" secondAttribute="leading" id="tkw-Rd-ipk"/>
+                <constraint firstItem="OeR-Rh-Epl" firstAttribute="top" secondItem="IJ2-4s-mCp" secondAttribute="top" id="zxG-0P-jOT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="U7a-jH-fNk"/>
+            <point key="canvasLocation" x="260.15625" y="93.75"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="poppupHeader" width="938" height="88"/>
+    </resources>
+</document>

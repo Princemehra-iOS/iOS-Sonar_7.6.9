@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad10_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PE_PlacardCell" rowHeight="97" id="KGk-i7-Jjw" customClass="PE_PlacardCell" customModule="PoultryView_360" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1101" height="89"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="1101" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C-213219900102" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A27-A6-kC7">
+                        <rect key="frame" x="25" y="21" width="196" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="BWv-T9-mpv"/>
+                            <constraint firstAttribute="width" constant="196" id="XJD-Pw-0QI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C-213219900102" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBc-AG-hCZ">
+                        <rect key="frame" x="225" y="21" width="765" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="ROp-9L-ruU"/>
+                            <constraint firstAttribute="height" constant="40" id="Waf-FO-juG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5U-I1-N2l">
+                        <rect key="frame" x="1026" y="23.5" width="35" height="35"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" button="YES" notEnabled="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="ck5-Kc-cf9"/>
+                            <constraint firstAttribute="height" constant="35" id="jmT-p1-jc4"/>
+                        </constraints>
+                        <state key="normal" image="pdfImg">
+                            <color key="titleShadowColor" systemColor="systemGray5Color"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="setCornerRadius">
+                                <real key="value" value="17.5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="h5U-I1-N2l" secondAttribute="trailing" constant="40" id="0WO-7u-zkS"/>
+                    <constraint firstItem="A27-A6-kC7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="A0g-q9-VJ2"/>
+                    <constraint firstItem="cBc-AG-hCZ" firstAttribute="leading" secondItem="A27-A6-kC7" secondAttribute="trailing" constant="4" id="PCV-c9-bSb"/>
+                    <constraint firstItem="A27-A6-kC7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="Xcv-2Z-3re"/>
+                    <constraint firstItem="h5U-I1-N2l" firstAttribute="leading" secondItem="cBc-AG-hCZ" secondAttribute="trailing" constant="36" id="ZBT-jw-ZQN"/>
+                    <constraint firstItem="cBc-AG-hCZ" firstAttribute="centerY" secondItem="A27-A6-kC7" secondAttribute="centerY" id="cQd-CC-AQw"/>
+                    <constraint firstItem="h5U-I1-N2l" firstAttribute="centerY" secondItem="cBc-AG-hCZ" secondAttribute="centerY" id="qGQ-RF-pfu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblAssessment" destination="A27-A6-kC7" id="oWp-Dj-KwI"/>
+                <outlet property="lblContent" destination="cBc-AG-hCZ" id="TwK-Xu-N7s"/>
+                <outlet property="pdfBtn" destination="h5U-I1-N2l" id="SgB-qW-CZB"/>
+            </connections>
+            <point key="canvasLocation" x="410.86956521739131" y="94.754464285714278"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="pdfImg" width="45" height="45"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

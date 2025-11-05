@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomViewController" customModule="Hatchery" customModuleProvider="target">
+            <connections>
+                <outlet property="upperViewOrange" destination="Fmi-ue-cyc" id="ZMi-q1-ykf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="943" height="255"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fmi-ue-cyc">
+                    <rect key="frame" x="0.0" y="0.0" width="943" height="37"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="Fml-n2-edc"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footerNavigat" translatesAutoresizingMaskIntoConstraints="NO" id="vcP-bA-5kI">
+                    <rect key="frame" x="0.0" y="-24" width="943" height="279"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Fmi-ue-cyc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GCi-8n-fND"/>
+                <constraint firstItem="Fmi-ue-cyc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Lj2-AR-yHs"/>
+                <constraint firstItem="Fmi-ue-cyc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Z8h-mI-r3a"/>
+                <constraint firstItem="vcP-bA-5kI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eD8-3r-Ryy"/>
+                <constraint firstItem="vcP-bA-5kI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-24" id="gFW-up-JNx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vcP-bA-5kI" secondAttribute="trailing" id="kqb-mE-W5Y"/>
+                <constraint firstAttribute="bottom" secondItem="vcP-bA-5kI" secondAttribute="bottom" id="wXx-fq-hry"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.57421875" y="173.828125"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="footerNavigat" width="1536" height="157.5"/>
+    </resources>
+</document>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TurkeyBarChartViewController" customModule="Zoetis__Feathers" customModuleProvider="target">
+            <connections>
+                <outlet property="barChartView" destination="JL6-HV-X8t" id="fBl-EM-ktf"/>
+                <outlet property="btnAirSac" destination="ef3-pf-kPL" id="cjL-x4-ZKJ"/>
+                <outlet property="btnAllObservations" destination="3Yh-AW-FRs" id="kca-i7-BsR"/>
+                <outlet property="btnHistorical" destination="53U-b0-O2o" id="y4m-qA-ZbA"/>
+                <outlet property="btnLastSession" destination="inB-jx-4OD" id="rTB-lu-VJl"/>
+                <outlet property="btnShare" destination="Mu0-TK-MZm" id="7sL-AS-HTI"/>
+                <outlet property="headerLable" destination="jkV-Yg-Y3n" id="aeP-2M-TBh"/>
+                <outlet property="incedenceText" destination="cFD-vr-D23" id="Eg9-Hx-Ih7"/>
+                <outlet property="userNameLabel" destination="g4g-YY-c9m" id="fjj-wu-Tcp"/>
+                <outlet property="view" destination="tN5-Pc-yaP" id="ECs-fD-cRe"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="tN5-Pc-yaP">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r7h-ld-sVM">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N63-aI-Jva">
+                            <rect key="frame" x="0.0" y="-2" width="97" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="back_Btn-1"/>
+                            <connections>
+                                <action selector="backAction:" destination="-1" eventType="touchUpInside" id="Vzd-FK-Glq"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpV-Yp-FGM">
+                            <rect key="frame" x="833" y="0.0" width="104" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="navigation_zoetis_logo" translatesAutoresizingMaskIntoConstraints="NO" id="XTZ-hv-Pf6">
+                            <rect key="frame" x="926" y="15" width="81" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkV-Yg-Y3n">
+                            <rect key="frame" x="255" y="14" width="515" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.044874582439999998" green="0.3453808129" blue="0.62774521110000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inB-jx-4OD">
+                    <rect key="frame" x="14" y="68" width="497" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <inset key="titleEdgeInsets" minX="0.0" minY="-10" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="Last session" backgroundImage="tab_unselect"/>
+                    <state key="selected" backgroundImage="tab_select"/>
+                    <connections>
+                        <action selector="btnLastSessionPressed:" destination="-1" eventType="touchUpInside" id="ju5-Vh-aFg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53U-b0-O2o">
+                    <rect key="frame" x="514" y="68" width="497" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <inset key="titleEdgeInsets" minX="0.0" minY="-10" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="Historical" backgroundImage="tab_unselect"/>
+                    <state key="selected" backgroundImage="tab_select"/>
+                    <connections>
+                        <action selector="btnHistoricalPressed:" destination="-1" eventType="touchUpInside" id="VoI-yO-xZY"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JL6-HV-X8t" customClass="BarChartView" customModule="Charts">
+                    <rect key="frame" x="70" y="126" width="884" height="569"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cFD-vr-D23">
+                    <rect key="frame" x="14" y="336" width="26" height="150"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gH9-VD-izw">
+                    <rect key="frame" x="832" y="13" width="96" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HMS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4g-YY-c9m">
+                    <rect key="frame" x="834" y="28" width="96" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mu0-TK-MZm">
+                    <rect key="frame" x="961" y="118" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="share"/>
+                    <connections>
+                        <action selector="btnSharePressed:" destination="-1" eventType="touchUpInside" id="d8t-Nm-aHN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ef3-pf-kPL">
+                    <rect key="frame" x="514" y="711" width="497" height="51"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <inset key="titleEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="Air Sac" backgroundImage="tab_unselect2"/>
+                    <state key="selected" backgroundImage="tab_select2"/>
+                    <connections>
+                        <action selector="airSacPressed:" destination="-1" eventType="touchUpInside" id="4wT-dH-Oua"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yh-AW-FRs">
+                    <rect key="frame" x="14" y="712" width="497" height="51"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <inset key="titleEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="All" backgroundImage="tab_unselect2"/>
+                    <state key="selected" backgroundImage="tab_select2"/>
+                    <connections>
+                        <action selector="allObservationsPressed:" destination="-1" eventType="touchUpInside" id="JTW-Tj-Nmm"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <viewLayoutGuide key="safeArea" id="81U-yM-jxL"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back_Btn-1" width="9" height="16"/>
+        <image name="navigation_zoetis_logo" width="81" height="29"/>
+        <image name="share" width="50" height="50"/>
+        <image name="tab_select" width="497" height="50.5"/>
+        <image name="tab_select2" width="497" height="50.5"/>
+        <image name="tab_unselect" width="497" height="50.5"/>
+        <image name="tab_unselect2" width="497" height="50.5"/>
+    </resources>
+</document>

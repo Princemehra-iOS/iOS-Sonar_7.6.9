@@ -1,0 +1,6 @@
+framework module GigyaAuth {
+  umbrella header "GigyaAuth-umbrella.h"
+
+  export *
+  module * { export * }
+}

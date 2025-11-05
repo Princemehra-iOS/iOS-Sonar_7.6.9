@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "NO"; ObjectID = "MN3-bs-8Z4"; */
+"MN3-bs-8Z4.normalTitle" = "Non";
+
+/* Class = "UILabel"; text = "Add another feed program ?"; ObjectID = "OiE-nS-DnT"; */
+"OiE-nS-DnT.text" = "Ajouter un autre programme alimentaire?";
+
+/* Class = "UIButton"; normalTitle = "YES"; ObjectID = "afb-bq-t1F"; */
+"afb-bq-t1F.normalTitle" = "Oui";

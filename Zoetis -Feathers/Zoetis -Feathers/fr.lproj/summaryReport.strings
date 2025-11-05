@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "Yes"; ObjectID = "V0k-Ct-SMH"; */
+"V0k-Ct-SMH.normalTitle" = "Oui";
+
+/* Class = "UILabel"; text = "View summary report ?"; ObjectID = "cku-cz-5dj"; */
+"cku-cz-5dj.text" = "Voir le rapport?";
+
+/* Class = "UILabel"; text = "Summary Report"; ObjectID = "kBC-p7-gOL"; */
+"kBC-p7-gOL.text" = "Rapport";
+
+/* Class = "UIButton"; normalTitle = "No"; ObjectID = "oQC-Y1-oVS"; */
+"oQC-Y1-oVS.normalTitle" = "Non";

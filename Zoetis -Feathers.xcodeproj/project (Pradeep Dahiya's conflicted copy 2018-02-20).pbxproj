@@ -1,0 +1,2010 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		140627201DD6D644005FE6AC /* summaryReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1406271F1DD6D644005FE6AC /* summaryReport.swift */; };
+		142BBC0A1DCAAF0200A769FE /* CustomerReprestative+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BBC081DCAAF0200A769FE /* CustomerReprestative+CoreDataProperties.swift */; };
+		142BBC0B1DCAAF0200A769FE /* CustomerReprestative+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BBC081DCAAF0200A769FE /* CustomerReprestative+CoreDataProperties.swift */; };
+		142BBC0C1DCAAF0200A769FE /* CustomerReprestative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BBC091DCAAF0200A769FE /* CustomerReprestative.swift */; };
+		142BBC0D1DCAAF0200A769FE /* CustomerReprestative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BBC091DCAAF0200A769FE /* CustomerReprestative.swift */; };
+		14436C791D6F212100A816F5 /* CaptureNecropsyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14436C781D6F212100A816F5 /* CaptureNecropsyCollectionViewCell.swift */; };
+		1468B6621DF9BCE90049AC56 /* startNecropsyXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1468B6601DF9BCE90049AC56 /* startNecropsyXib.swift */; };
+		148314BD1E5209840076D67B /* Terms&ConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148314BC1E5209840076D67B /* Terms&ConditionViewController.swift */; };
+		148314BF1E52098C0076D67B /* terms-of-use.html in Resources */ = {isa = PBXBuildFile; fileRef = 148314BE1E52098C0076D67B /* terms-of-use.html */; };
+		14A3E3FB1DBAE3EC00A60C9F /* captureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A3E3FA1DBAE3EC00A60C9F /* captureTableViewCell.swift */; };
+		14AB38171E534B07001F4690 /* HelpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AB38161E534B07001F4690 /* HelpScreenViewController.swift */; };
+		14B936B61DD1B2C10089E678 /* ExistingPostingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B936AF1DD1B2C10089E678 /* ExistingPostingTableViewCell.swift */; };
+		14B936B71DD1B2C10089E678 /* UnlinkedNecropsySessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B936B01DD1B2C10089E678 /* UnlinkedNecropsySessionViewController.swift */; };
+		14B936B81DD1B2C10089E678 /* unlinkedNecopsySessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B936B11DD1B2C10089E678 /* unlinkedNecopsySessionTableViewCell.swift */; };
+		14B936BA1DD1B2C10089E678 /* UnlinkNecrpoSecondTblViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B936B31DD1B2C10089E678 /* UnlinkNecrpoSecondTblViewCell.swift */; };
+		14D87AD11D6B19CD00AED5B2 /* PostingSessionDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D87AD01D6B19CD00AED5B2 /* PostingSessionDetailTableViewCell.swift */; };
+		14D8E1871DB33D6F00D99331 /* UserListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D8E1861DB33D6F00D99331 /* UserListView.xib */; };
+		27060BD21DB66E2700CF255C /* infoLink.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27060BCF1DB66E2700CF255C /* infoLink.xib */; };
+		270F90DC1D784D1E00D8D333 /* DataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270F90DB1D784D1E00D8D333 /* DataClass.swift */; };
+		2710EC851D9284D600732812 /* ReachabilitySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2710EC831D92847100732812 /* ReachabilitySwift.framework */; };
+		271527CA1FF6314100C7C62B /* AlternativeFeed+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527C81FF6314100C7C62B /* AlternativeFeed+CoreDataClass.swift */; };
+		271527CB1FF6314100C7C62B /* AlternativeFeed+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527C91FF6314100C7C62B /* AlternativeFeed+CoreDataProperties.swift */; };
+		271527CE1FF6319500C7C62B /* AntiboticFeed+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527CC1FF6319500C7C62B /* AntiboticFeed+CoreDataClass.swift */; };
+		271527CF1FF6319500C7C62B /* AntiboticFeed+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527CD1FF6319500C7C62B /* AntiboticFeed+CoreDataProperties.swift */; };
+		271527D21FF631EA00C7C62B /* BirdPhotoCapture+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527D01FF631EA00C7C62B /* BirdPhotoCapture+CoreDataClass.swift */; };
+		271527D31FF631EA00C7C62B /* BirdPhotoCapture+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527D11FF631EA00C7C62B /* BirdPhotoCapture+CoreDataProperties.swift */; };
+		271527D61FF6324800C7C62B /* CaptureNecropsyData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527D41FF6324800C7C62B /* CaptureNecropsyData+CoreDataClass.swift */; };
+		271527D71FF6324800C7C62B /* CaptureNecropsyData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527D51FF6324800C7C62B /* CaptureNecropsyData+CoreDataProperties.swift */; };
+		271527DE1FF632BF00C7C62B /* CoccidiosisControlFeed+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527DC1FF632BF00C7C62B /* CoccidiosisControlFeed+CoreDataClass.swift */; };
+		271527DF1FF632BF00C7C62B /* CoccidiosisControlFeed+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527DD1FF632BF00C7C62B /* CoccidiosisControlFeed+CoreDataProperties.swift */; };
+		271527E21FF6330800C7C62B /* FeedProgram+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527E01FF6330800C7C62B /* FeedProgram+CoreDataClass.swift */; };
+		271527E31FF6330800C7C62B /* FeedProgram+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527E11FF6330800C7C62B /* FeedProgram+CoreDataProperties.swift */; };
+		271527E61FF6333200C7C62B /* FieldVaccination+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527E41FF6333200C7C62B /* FieldVaccination+CoreDataClass.swift */; };
+		271527E71FF6333200C7C62B /* FieldVaccination+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527E51FF6333200C7C62B /* FieldVaccination+CoreDataProperties.swift */; };
+		271527EA1FF6336100C7C62B /* HatcheryVac+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527E81FF6336100C7C62B /* HatcheryVac+CoreDataClass.swift */; };
+		271527EB1FF6336100C7C62B /* HatcheryVac+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527E91FF6336100C7C62B /* HatcheryVac+CoreDataProperties.swift */; };
+		271527EE1FF6339000C7C62B /* MyCotoxinBindersFeed+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527EC1FF6339000C7C62B /* MyCotoxinBindersFeed+CoreDataClass.swift */; };
+		271527EF1FF6339000C7C62B /* MyCotoxinBindersFeed+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527ED1FF6339000C7C62B /* MyCotoxinBindersFeed+CoreDataProperties.swift */; };
+		271527F21FF633B500C7C62B /* NotesBird+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527F01FF633B500C7C62B /* NotesBird+CoreDataClass.swift */; };
+		271527F31FF633B500C7C62B /* NotesBird+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271527F11FF633B500C7C62B /* NotesBird+CoreDataProperties.swift */; };
+		271A56301F7EFACE0028D14D /* AllBirdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A562F1F7EFACE0028D14D /* AllBirdsViewController.swift */; };
+		271BFB5F1F3B2E8A00B15445 /* ApiSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BFB5E1F3B2E8A00B15445 /* ApiSync.swift */; };
+		27216A8C1D9BE1C900542976 /* ModelVacation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27216A8B1D9BE1C900542976 /* ModelVacation.swift */; };
+		272329BB1DF0926600CD47EB /* notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272329BA1DF0926600CD47EB /* notes.swift */; };
+		27276A791D5C867800C134BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A781D5C867800C134BA /* AppDelegate.swift */; };
+		27276A811D5C867800C134BA /* Zoetis__Feathers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27276A7F1D5C867800C134BA /* Zoetis__Feathers.xcdatamodeld */; };
+		27276A861D5C867800C134BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27276A841D5C867800C134BA /* LaunchScreen.storyboard */; };
+		27276A911D5C867900C134BA /* Zoetis__FeathersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A901D5C867900C134BA /* Zoetis__FeathersTests.swift */; };
+		27276A9C1D5C867900C134BA /* Zoetis__FeathersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A9B1D5C867900C134BA /* Zoetis__FeathersUITests.swift */; };
+		272CF6311EDECCDA0048E74D /* YouTubePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272CF62F1EDECCDA0048E74D /* YouTubePlayer.swift */; };
+		272CF6321EDECCDA0048E74D /* YTPlayer.html in Resources */ = {isa = PBXBuildFile; fileRef = 272CF6301EDECCDA0048E74D /* YTPlayer.html */; };
+		272CF6361EDF15650048E74D /*  Pdf1.png in Resources */ = {isa = PBXBuildFile; fileRef = 272CF6351EDF15650048E74D /*  Pdf1.png */; };
+		272E707B1D802C6200A4BD1C /* CustomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272E707A1D802C6200A4BD1C /* CustomeTableViewCell.swift */; };
+		272E707D1D80613200A4BD1C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 272E707C1D80613200A4BD1C /* Alamofire.framework */; };
+		273013AB1D6C6736002DA33D /* CommonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273013AA1D6C6735002DA33D /* CommonClass.swift */; };
+		273102261D954CC000FEBED4 /* background03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 273102251D954CBE00FEBED4 /* background03@2x.png */; };
+		274B0BD11DA4FA4000FBA3AD /* ServiceDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B0BD01DA4FA4000FBA3AD /* ServiceDataHolder.swift */; };
+		274B70B520188EC70039D7DC /* PostingSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B70B320188EC70039D7DC /* PostingSession+CoreDataClass.swift */; };
+		274B70B620188EC70039D7DC /* PostingSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B70B420188EC70039D7DC /* PostingSession+CoreDataProperties.swift */; };
+		274E47E520231ABB00AD8434 /* popUP.xib in Resources */ = {isa = PBXBuildFile; fileRef = 274E47E720231ABB00AD8434 /* popUP.xib */; };
+		2752721C1E1F8D57000EBD05 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2752721B1E1F8D57000EBD05 /* AVKit.framework */; };
+		275CC0CA1D6B0595000A8F29 /* SessionsHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275CC0C91D6B0595000A8F29 /* SessionsHistoryViewController.swift */; };
+		275CC0CC1D6B05C0000A8F29 /* SessionHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275CC0CB1D6B05C0000A8F29 /* SessionHistoryTableViewCell.swift */; };
+		275E65CC1D6DB30B007B9555 /* StartNecropsySessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E65CA1D6DB30B007B9555 /* StartNecropsySessionViewController.swift */; };
+		275E65CD1D6DB30B007B9555 /* StartNecropsyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E65CB1D6DB30B007B9555 /* StartNecropsyTableViewCell.swift */; };
+		2760420520037B5B000BAEEA /* Skelta_info+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760420320037B5B000BAEEA /* Skelta_info+CoreDataClass.swift */; };
+		2760420620037B5B000BAEEA /* Skelta_info+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760420420037B5B000BAEEA /* Skelta_info+CoreDataProperties.swift */; };
+		2760FEE91FA89B0B001CB55C /* AddVaccinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760FEE81FA8998E001CB55C /* AddVaccinationViewController.swift */; };
+		276238711E5F3916000BE899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276238701E5F3916000BE899 /* ViewController.swift */; };
+		2765A40F1E3268A100D9DA4E /* Zoetis_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2765A40E1E3268A100D9DA4E /* Zoetis_video.mp4 */; };
+		2773B7ED1DED832B007B66E7 /* MIBadgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2773B7EC1DED832B007B66E7 /* MIBadgeButton.swift */; };
+		27803B621DF97A5300D9FA21 /* NecropsyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27803B611DF97A5300D9FA21 /* NecropsyTableViewCell.swift */; };
+		278504341DEDB4FA00A3F6A6 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278504321DEDB4FA00A3F6A6 /* ImageViewController.swift */; };
+		278504351DEDB4FA00A3F6A6 /* imageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278504331DEDB4FA00A3F6A6 /* imageTableViewCell.swift */; };
+		2786DD551FE9216C0030FCEB /* captureNecropsyStep1Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2786DD541FE9216C0030FCEB /* captureNecropsyStep1Data.swift */; };
+		2786DD571FE921930030FCEB /* PostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2786DD561FE921930030FCEB /* PostingViewController.swift */; };
+		2786DD591FE92CCA0030FCEB /* UnlinkedNecropsiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2786DD581FE92CCA0030FCEB /* UnlinkedNecropsiesViewController.swift */; };
+		278E024F1E095BE90032E6F4 /* ExistingPostingSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278E024E1E095BE90032E6F4 /* ExistingPostingSessionViewController.swift */; };
+		278F49331DD1C5E100957325 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F49321DD1C5E100957325 /* LeftMenuViewController.swift */; };
+		27922F51200651A800A3D6B5 /* Id+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27922F4F200651A800A3D6B5 /* Id+CoreDataClass.swift */; };
+		27922F52200651A800A3D6B5 /* Id+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27922F50200651A800A3D6B5 /* Id+CoreDataProperties.swift */; };
+		279706EB1DF1D15200B55763 /* SimpleCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279706E91DF1D15200B55763 /* SimpleCustomView.xib */; };
+		279706EE1DF1D16700B55763 /* infocollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279706EC1DF1D16700B55763 /* infocollection.swift */; };
+		279706EF1DF1D16700B55763 /* infocollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279706ED1DF1D16700B55763 /* infocollection.xib */; };
+		27A741BF1F4EF3AC00A32882 /* AddFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A741BE1F4EF3AC00A32882 /* AddFarm.swift */; };
+		27AF596C1E13D5FE00C8194F /* DatepickerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF596B1E13D5FE00C8194F /* DatepickerClass.swift */; };
+		27B0EE911E1A6EC800D3F7D7 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27B0EE901E1A6EC800D3F7D7 /* MediaPlayer.framework */; };
+		27B38AD01DB90AE4008EEB1B /* infoLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B38ACF1DB90AE4008EEB1B /* infoLink.swift */; };
+		27B4E60D1EDD71A900704CBF /* ReportComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B4E60B1EDD71A900704CBF /* ReportComposer.swift */; };
+		27B4E60E1EDD71A900704CBF /* ReportComposerDaignostic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B4E60C1EDD71A900704CBF /* ReportComposerDaignostic.swift */; };
+		27BC7E392015DFAF00579C6D /* SimpleCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC7E382015DFAF00579C6D /* SimpleCustomView.swift */; };
+		27BC7E442015F11C00579C6D /* Coccidiosis+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC7E3A2015F11C00579C6D /* Coccidiosis+CoreDataClass.swift */; };
+		27BC7E452015F11C00579C6D /* Coccidiosis+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC7E3B2015F11C00579C6D /* Coccidiosis+CoreDataProperties.swift */; };
+		27BC7E462015F11C00579C6D /* Immune+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC7E3C2015F11C00579C6D /* Immune+CoreDataClass.swift */; };
+		27BC7E472015F11C00579C6D /* Immune+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC7E3D2015F11C00579C6D /* Immune+CoreDataProperties.swift */; };
+		27BC7E482015F11C00579C6D /* Skeleta+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC7E3E2015F11C00579C6D /* Skeleta+CoreDataClass.swift */; };
+		27BC7E492015F11C00579C6D /* Skeleta+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC7E3F2015F11C00579C6D /* Skeleta+CoreDataProperties.swift */; };
+		27BC7E4A2015F11C00579C6D /* GITract+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC7E402015F11C00579C6D /* GITract+CoreDataClass.swift */; };
+		27BC7E4B2015F11C00579C6D /* GITract+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC7E412015F11C00579C6D /* GITract+CoreDataProperties.swift */; };
+		27BC7E4C2015F11C00579C6D /* Respiratory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC7E422015F11C00579C6D /* Respiratory+CoreDataClass.swift */; };
+		27BC7E4D2015F11C00579C6D /* Respiratory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC7E432015F11C00579C6D /* Respiratory+CoreDataProperties.swift */; };
+		27BC7E502015F5A500579C6D /* CaptureNecropsyViewData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC7E4E2015F5A500579C6D /* CaptureNecropsyViewData+CoreDataClass.swift */; };
+		27BC7E512015F5A500579C6D /* CaptureNecropsyViewData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC7E4F2015F5A500579C6D /* CaptureNecropsyViewData+CoreDataProperties.swift */; };
+		27BC7E5220162F5B00579C6D /* AddFarm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27BC7E5420162F5B00579C6D /* AddFarm.xib */; };
+		27BC909D1E49DE1D00ACD3A7 /* CamraImage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC90601E49DE1D00ACD3A7 /* CamraImage+CoreDataProperties.swift */; };
+		27BC909E1E49DE1D00ACD3A7 /* CamraImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC90611E49DE1D00ACD3A7 /* CamraImage.swift */; };
+		27BC90A31E49DE1D00ACD3A7 /* ComplexPosting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC90661E49DE1D00ACD3A7 /* ComplexPosting+CoreDataProperties.swift */; };
+		27BC90A41E49DE1D00ACD3A7 /* ComplexPosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC90671E49DE1D00ACD3A7 /* ComplexPosting.swift */; };
+		27BC90A71E49DE1D00ACD3A7 /* Salesrep+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC906A1E49DE1D00ACD3A7 /* Salesrep+CoreDataProperties.swift */; };
+		27BC90A81E49DE1D00ACD3A7 /* Salesrep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC906B1E49DE1D00ACD3A7 /* Salesrep.swift */; };
+		27BC90A91E49DE1D00ACD3A7 /* BirdSizePosting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC906C1E49DE1D00ACD3A7 /* BirdSizePosting+CoreDataProperties.swift */; };
+		27BC90AA1E49DE1D00ACD3A7 /* BirdSizePosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC906D1E49DE1D00ACD3A7 /* BirdSizePosting.swift */; };
+		27BC90B91E49DE1D00ACD3A7 /* Necropsy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC907C1E49DE1D00ACD3A7 /* Necropsy+CoreDataProperties.swift */; };
+		27BC90BA1E49DE1D00ACD3A7 /* Necropsy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC907D1E49DE1D00ACD3A7 /* Necropsy.swift */; };
+		27BC90BB1E49DE1D00ACD3A7 /* CocciProgramPosting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC907E1E49DE1D00ACD3A7 /* CocciProgramPosting+CoreDataProperties.swift */; };
+		27BC90BC1E49DE1D00ACD3A7 /* CocciProgramPosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC907F1E49DE1D00ACD3A7 /* CocciProgramPosting.swift */; };
+		27BC90BF1E49DE1D00ACD3A7 /* Route+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC90821E49DE1D00ACD3A7 /* Route+CoreDataProperties.swift */; };
+		27BC90C01E49DE1D00ACD3A7 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC90831E49DE1D00ACD3A7 /* Route.swift */; };
+		27BC90C31E49DE1D00ACD3A7 /* Veteration+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC90861E49DE1D00ACD3A7 /* Veteration+CoreDataProperties.swift */; };
+		27BC90C41E49DE1D00ACD3A7 /* Veteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC90871E49DE1D00ACD3A7 /* Veteration.swift */; };
+		27BC90C51E49DE1D00ACD3A7 /* Custmer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC90881E49DE1D00ACD3A7 /* Custmer+CoreDataProperties.swift */; };
+		27BC90C61E49DE1D00ACD3A7 /* Custmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC90891E49DE1D00ACD3A7 /* Custmer.swift */; };
+		27BC90C91E49DE1D00ACD3A7 /* FarmsList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC908C1E49DE1D00ACD3A7 /* FarmsList+CoreDataProperties.swift */; };
+		27BC90CA1E49DE1D00ACD3A7 /* FarmsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC908D1E49DE1D00ACD3A7 /* FarmsList.swift */; };
+		27BC90CB1E49DE1D00ACD3A7 /* Login+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC908E1E49DE1D00ACD3A7 /* Login+CoreDataProperties.swift */; };
+		27BC90CC1E49DE1D00ACD3A7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC908F1E49DE1D00ACD3A7 /* Login.swift */; };
+		27BC90D31E49DE1D00ACD3A7 /* Sessiontype+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC90961E49DE1D00ACD3A7 /* Sessiontype+CoreDataProperties.swift */; };
+		27BC90D41E49DE1D00ACD3A7 /* Sessiontype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC90971E49DE1D00ACD3A7 /* Sessiontype.swift */; };
+		27BC90D61E49DE1D00ACD3A7 /* Breed+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC90991E49DE1D00ACD3A7 /* Breed+CoreDataProperties.swift */; };
+		27BC90D71E49DE1D00ACD3A7 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BC909A1E49DE1D00ACD3A7 /* Breed.swift */; };
+		27C8DCEF2021B91300C997DC /* startNecropsyXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27C8DCF12021B91300C997DC /* startNecropsyXib.xib */; };
+		27CA9A561DABA5AF00AE13E6 /* popUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CA9A551DABA5AF00AE13E6 /* popUP.swift */; };
+		27CB8B411D7EB249008B6CCD /* CommonTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CB8B401D7EB249008B6CCD /* CommonTableView.swift */; };
+		27D1E61F1E4CD25700E29776 /* BarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1E60F1E4CD25700E29776 /* BarChartViewController.swift */; };
+		27D1E6201E4CD25700E29776 /* CossiBarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1E6101E4CD25700E29776 /* CossiBarChartViewController.swift */; };
+		27D1E6211E4CD25800E29776 /* CropUtill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1E6111E4CD25700E29776 /* CropUtill.swift */; };
+		27D1E6221E4CD25800E29776 /* GI_Tract_Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1E6121E4CD25700E29776 /* GI_Tract_Modal.swift */; };
+		27D1E6231E4CD25800E29776 /* CustomPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1E6141E4CD25700E29776 /* CustomPrintPageRenderer.swift */; };
+		27D1E6251E4CD25800E29776 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D1E6161E4CD25700E29776 /* logo.png */; };
+		27D1E62A1E4CD25800E29776 /* ImmuneBarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1E61B1E4CD25700E29776 /* ImmuneBarChartViewController.swift */; };
+		27D1E62B1E4CD25800E29776 /* LastSessionDataModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1E61C1E4CD25700E29776 /* LastSessionDataModal.swift */; };
+		27D1E62C1E4CD25800E29776 /* Report_MainVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1E61D1E4CD25700E29776 /* Report_MainVCViewController.swift */; };
+		27D1E62D1E4CD25800E29776 /* SummaryReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1E61E1E4CD25700E29776 /* SummaryReportsViewController.swift */; };
+		27D4B2181DF1A56E00AFBA25 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D4B2171DF1A56D00AFBA25 /* InfoViewController.swift */; };
+		27D4B2201DF1C95900AFBA25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27D4B21F1DF1C95900AFBA25 /* Assets.xcassets */; };
+		27DEB62C1FBDD2540046BD13 /* SingleSyncData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEB62B1FBDD2540046BD13 /* SingleSyncData.swift */; };
+		27DEB62E1FBDD2870046BD13 /* PostingSessionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEB62D1FBDD2870046BD13 /* PostingSessionDetailController.swift */; };
+		27E1873A1E2E30BE00CF24C0 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E187391E2E30BE00CF24C0 /* HelpViewController.swift */; };
+		27F1CD4F1DF9A305002711F1 /* allBirdsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F1CD4B1DF9A305002711F1 /* allBirdsTableViewCell.swift */; };
+		27F1CD511DF9A305002711F1 /* obsFieldCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F1CD4D1DF9A305002711F1 /* obsFieldCollectionViewCell.swift */; };
+		27F1CD521DF9A305002711F1 /* ObsNameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F1CD4E1DF9A305002711F1 /* ObsNameCollectionViewCell.swift */; };
+		27F448281E1B9D780053CA65 /* splashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F448271E1B9D780053CA65 /* splashViewController.swift */; };
+		27F7B7191E0D11A10082E8B8 /* UnlinkedNecropsiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7B7171E0D11A10082E8B8 /* UnlinkedNecropsiesTableViewCell.swift */; };
+		27FA0DB61EDC393800444DD6 /* TrainingEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FA0DB01EDC393800444DD6 /* TrainingEducationViewController.swift */; };
+		27FA0DB71EDC393800444DD6 /* PdfReader1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FA0DB11EDC393800444DD6 /* PdfReader1ViewController.swift */; };
+		27FA0DB81EDC393800444DD6 /* PdfReader2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FA0DB21EDC393800444DD6 /* PdfReader2ViewController.swift */; };
+		27FA0DBA1EDC393800444DD6 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FA0DB41EDC393800444DD6 /* TutorialPageViewController.swift */; };
+		27FC68EA203C4F7500D40458 /* CaptureNecropsyDataViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FC68E9203C4F7400D40458 /* CaptureNecropsyDataViewController .swift */; };
+		3460F982C115C2865B6AAA81 /* Pods_Zoetis__Feathers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B652FA7250E16138D9488A /* Pods_Zoetis__Feathers.framework */; };
+		4507E3CE203710C100A5907C /* Notes.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4507E3D0203710C100A5907C /* Notes.xib */; };
+		4524578C1EE1C0FB00A13FF1 /* pdf_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4524578A1EE1C0FB00A13FF1 /* pdf_1@2x.png */; };
+		4524578D1EE1C0FB00A13FF1 /* pdf_1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4524578B1EE1C0FB00A13FF1 /* pdf_1@3x.png */; };
+		4550AB48200CB20C001B70F8 /* video-details_4.html in Resources */ = {isa = PBXBuildFile; fileRef = 4550AB47200CB20C001B70F8 /* video-details_4.html */; };
+		457217AE1FFB95770062471B /* LanguageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457217AC1FFB95770062471B /* LanguageUtility.swift */; };
+		457217AF1FFB95770062471B /* Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457217AD1FFB95770062471B /* Localizer.swift */; };
+		457217B11FFB99490062471B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 457217B31FFB99490062471B /* Main.storyboard */; };
+		457217B81FFBC3810062471B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 457217BA1FFBC3810062471B /* Localizable.strings */; };
+		45AD42AA1F0D31D800159686 /* RangeValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD42A91F0D31D800159686 /* RangeValueFormatter.swift */; };
+		45B09E2B200D04F900FE2E25 /* summaryReport.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B09E2D200D04F900FE2E25 /* summaryReport.xib */; };
+		45B436021E12AADE00170A66 /* secTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B436011E12AADE00170A66 /* secTableViewCell.swift */; };
+		45C6D68F201F2D2D0041EB07 /* KeyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C6D68E201F2D2D0041EB07 /* KeyConstants.swift */; };
+		45C6D7042023127B0041EB07 /* single_item_Dignostic-40.html in Resources */ = {isa = PBXBuildFile; fileRef = 45C6D7062023127B0041EB07 /* single_item_Dignostic-40.html */; };
+		45C6D708202487BB0041EB07 /* report.html in Resources */ = {isa = PBXBuildFile; fileRef = 45C6D70A202487BB0041EB07 /* report.html */; };
+		45C6D70C2024993E0041EB07 /* single_item.html in Resources */ = {isa = PBXBuildFile; fileRef = 45C6D70E2024993E0041EB07 /* single_item.html */; };
+		45C6D71020249AD10041EB07 /* last_item.html in Resources */ = {isa = PBXBuildFile; fileRef = 45C6D71220249AD10041EB07 /* last_item.html */; };
+		45C6D71420249AF30041EB07 /* last_item_daignostic-40.html in Resources */ = {isa = PBXBuildFile; fileRef = 45C6D71620249AF30041EB07 /* last_item_daignostic-40.html */; };
+		45C6D71820249B1E0041EB07 /* DiagnosticReport-40.html in Resources */ = {isa = PBXBuildFile; fileRef = 45C6D71A20249B1E0041EB07 /* DiagnosticReport-40.html */; };
+		45D02AED1F028E46007B9D26 /* UnlinkNecrpoSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D02AEB1F028E46007B9D26 /* UnlinkNecrpoSecondViewController.swift */; };
+		45D02AEE1F028E46007B9D26 /* WebClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D02AEC1F028E46007B9D26 /* WebClass.swift */; };
+		45F9F7D320330E30001F6084 /* DiagnosticReport-35.html in Resources */ = {isa = PBXBuildFile; fileRef = 45F9F7D520330E30001F6084 /* DiagnosticReport-35.html */; };
+		45F9F7D7203311D6001F6084 /* last_item_daignostic-35.html in Resources */ = {isa = PBXBuildFile; fileRef = 45F9F7D9203311D6001F6084 /* last_item_daignostic-35.html */; };
+		45F9F7DB20331209001F6084 /* single_item_Dignostic-35.html in Resources */ = {isa = PBXBuildFile; fileRef = 45F9F7DD20331209001F6084 /* single_item_Dignostic-35.html */; };
+		45F9F7E72035A782001F6084 /* ReportsCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F9F7E62035A782001F6084 /* ReportsCalculation.swift */; };
+		460A187F1D6EFE3400B9C11A /* Dropper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460A187C1D6EFE3400B9C11A /* Dropper.swift */; };
+		460A18801D6EFE3400B9C11A /* DropperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460A187D1D6EFE3400B9C11A /* DropperCell.swift */; };
+		460A18811D6EFE3400B9C11A /* DropperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460A187E1D6EFE3400B9C11A /* DropperExtensions.swift */; };
+		46C5C57B1D64677300499D8D /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C5C57A1D64677300499D8D /* Charts.framework */; };
+		46C5C57D1D64682100499D8D /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C5C57C1D64682100499D8D /* DataGenerator.swift */; };
+		46C5C5801D64723E00499D8D /* iOS_Slide_Menu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C5C57E1D64723E00499D8D /* iOS_Slide_Menu.framework */; };
+		46C5C5811D64723E00499D8D /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C5C57F1D64723E00499D8D /* MBProgressHUD.framework */; };
+		46C5C58D1D64A0B500499D8D /* MDRotatingPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C5C58C1D64A0B500499D8D /* MDRotatingPieChart.swift */; };
+		C3040EBB1DB78B54009A6943 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3040EBA1DB78B54009A6943 /* UserListView.swift */; };
+		DC22B1CF1EFBC7A700D51BF5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22B1CE1EFBC7A700D51BF5 /* SettingsViewController.swift */; };
+		DC48D9241EF912A60099FF33 /* FeedProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC48D9231EF912A60099FF33 /* FeedProgramViewController.swift */; };
+		DC8BEC3E1EF40FAD00118C54 /* HandlerCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8BEC3D1EF40FAD00118C54 /* HandlerCoreData.swift */; };
+		DCC54AEB1F025C2100B6228D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC54AEA1F025C2100B6228D /* SystemConfiguration.framework */; };
+		DE0D4D461EDF2F3D001840F6 /* video-details.html in Resources */ = {isa = PBXBuildFile; fileRef = DE0D4D441EDF2F3D001840F6 /* video-details.html */; };
+		DE0D4D501EDF3C2C001840F6 /* pdf_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0D4D4A1EDF3C2C001840F6 /* pdf_2@2x.png */; };
+		DE0D4D511EDF3C2C001840F6 /* pdf_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0D4D4B1EDF3C2C001840F6 /* pdf_2@3x.png */; };
+		DE0D4D521EDF3C2C001840F6 /* video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0D4D4C1EDF3C2C001840F6 /* video@2x.png */; };
+		DE0D4D531EDF3C2C001840F6 /* video@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0D4D4D1EDF3C2C001840F6 /* video@3x.png */; };
+		DE3D9D6B1E5B3F700012F078 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3D9D6A1E5B3F700012F078 /* Reach.swift */; };
+		DE40F44C1E60A3DB00EDCF34 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE40F44B1E60A3DB00EDCF34 /* Helper.swift */; };
+		DE6D7E6C1EE02E8400BA136C /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D7E6B1EE02E8400BA136C /* VideoViewController.swift */; };
+		DEA9DE011DF1FB0200574CC1 /* DashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9DE001DF1FB0200574CC1 /* DashViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27276A8D1D5C867900C134BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27276A6D1D5C867800C134BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27276A741D5C867800C134BA;
+			remoteInfo = "Zoetis -Feathers";
+		};
+		27276A981D5C867900C134BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27276A6D1D5C867800C134BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27276A741D5C867800C134BA;
+			remoteInfo = "Zoetis -Feathers";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1406271F1DD6D644005FE6AC /* summaryReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = summaryReport.swift; sourceTree = "<group>"; };
+		140FAEA6378519DDED0EECFD /* Pods-Zoetis -Feathers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoetis -Feathers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zoetis -Feathers/Pods-Zoetis -Feathers.release.xcconfig"; sourceTree = "<group>"; };
+		142BBC081DCAAF0200A769FE /* CustomerReprestative+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomerReprestative+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		142BBC091DCAAF0200A769FE /* CustomerReprestative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerReprestative.swift; sourceTree = "<group>"; };
+		14436C781D6F212100A816F5 /* CaptureNecropsyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureNecropsyCollectionViewCell.swift; sourceTree = "<group>"; };
+		1468B6601DF9BCE90049AC56 /* startNecropsyXib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = startNecropsyXib.swift; sourceTree = "<group>"; };
+		148314BC1E5209840076D67B /* Terms&ConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Terms&ConditionViewController.swift"; sourceTree = "<group>"; };
+		148314BE1E52098C0076D67B /* terms-of-use.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "terms-of-use.html"; sourceTree = "<group>"; };
+		14A3E3FA1DBAE3EC00A60C9F /* captureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = captureTableViewCell.swift; sourceTree = "<group>"; };
+		14AB38161E534B07001F4690 /* HelpScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpScreenViewController.swift; sourceTree = "<group>"; };
+		14B936AF1DD1B2C10089E678 /* ExistingPostingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingPostingTableViewCell.swift; sourceTree = "<group>"; };
+		14B936B01DD1B2C10089E678 /* UnlinkedNecropsySessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlinkedNecropsySessionViewController.swift; sourceTree = "<group>"; };
+		14B936B11DD1B2C10089E678 /* unlinkedNecopsySessionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = unlinkedNecopsySessionTableViewCell.swift; sourceTree = "<group>"; };
+		14B936B31DD1B2C10089E678 /* UnlinkNecrpoSecondTblViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlinkNecrpoSecondTblViewCell.swift; sourceTree = "<group>"; };
+		14D87AD01D6B19CD00AED5B2 /* PostingSessionDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostingSessionDetailTableViewCell.swift; sourceTree = "<group>"; };
+		14D8E1861DB33D6F00D99331 /* UserListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserListView.xib; sourceTree = "<group>"; };
+		27060BCF1DB66E2700CF255C /* infoLink.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = infoLink.xib; sourceTree = "<group>"; };
+		270F90DB1D784D1E00D8D333 /* DataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; };
+		2710EC831D92847100732812 /* ReachabilitySwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReachabilitySwift.framework; path = "../../Library/Developer/Xcode/DerivedData/Zoetis_-Feathers-hciltnkizjyghrbxxeagaaejwgni/Build/Products/Debug-iphonesimulator/ReachabilitySwift/ReachabilitySwift.framework"; sourceTree = "<group>"; };
+		271527C81FF6314100C7C62B /* AlternativeFeed+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlternativeFeed+CoreDataClass.swift"; sourceTree = "<group>"; };
+		271527C91FF6314100C7C62B /* AlternativeFeed+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlternativeFeed+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		271527CC1FF6319500C7C62B /* AntiboticFeed+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AntiboticFeed+CoreDataClass.swift"; sourceTree = "<group>"; };
+		271527CD1FF6319500C7C62B /* AntiboticFeed+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AntiboticFeed+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		271527D01FF631EA00C7C62B /* BirdPhotoCapture+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BirdPhotoCapture+CoreDataClass.swift"; sourceTree = "<group>"; };
+		271527D11FF631EA00C7C62B /* BirdPhotoCapture+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BirdPhotoCapture+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		271527D41FF6324800C7C62B /* CaptureNecropsyData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaptureNecropsyData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		271527D51FF6324800C7C62B /* CaptureNecropsyData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaptureNecropsyData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		271527DC1FF632BF00C7C62B /* CoccidiosisControlFeed+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoccidiosisControlFeed+CoreDataClass.swift"; sourceTree = "<group>"; };
+		271527DD1FF632BF00C7C62B /* CoccidiosisControlFeed+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoccidiosisControlFeed+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		271527E01FF6330800C7C62B /* FeedProgram+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedProgram+CoreDataClass.swift"; sourceTree = "<group>"; };
+		271527E11FF6330800C7C62B /* FeedProgram+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedProgram+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		271527E41FF6333200C7C62B /* FieldVaccination+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FieldVaccination+CoreDataClass.swift"; sourceTree = "<group>"; };
+		271527E51FF6333200C7C62B /* FieldVaccination+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FieldVaccination+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		271527E81FF6336100C7C62B /* HatcheryVac+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HatcheryVac+CoreDataClass.swift"; sourceTree = "<group>"; };
+		271527E91FF6336100C7C62B /* HatcheryVac+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HatcheryVac+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		271527EC1FF6339000C7C62B /* MyCotoxinBindersFeed+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyCotoxinBindersFeed+CoreDataClass.swift"; sourceTree = "<group>"; };
+		271527ED1FF6339000C7C62B /* MyCotoxinBindersFeed+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyCotoxinBindersFeed+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		271527F01FF633B500C7C62B /* NotesBird+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotesBird+CoreDataClass.swift"; sourceTree = "<group>"; };
+		271527F11FF633B500C7C62B /* NotesBird+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotesBird+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		271A562F1F7EFACE0028D14D /* AllBirdsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllBirdsViewController.swift; sourceTree = "<group>"; };
+		271BFB5E1F3B2E8A00B15445 /* ApiSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiSync.swift; path = "Report Screen/ApiSync.swift"; sourceTree = "<group>"; };
+		27216A8B1D9BE1C900542976 /* ModelVacation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelVacation.swift; sourceTree = "<group>"; };
+		272329BA1DF0926600CD47EB /* notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notes.swift; sourceTree = "<group>"; };
+		27276A751D5C867800C134BA /* Zoetis -Feathers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zoetis -Feathers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27276A781D5C867800C134BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		27276A801D5C867800C134BA /* Zoetis__Feathers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zoetis__Feathers.xcdatamodel; sourceTree = "<group>"; };
+		27276A851D5C867800C134BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		27276A871D5C867800C134BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27276A8C1D5C867900C134BA /* Zoetis -FeathersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Zoetis -FeathersTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27276A901D5C867900C134BA /* Zoetis__FeathersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zoetis__FeathersTests.swift; sourceTree = "<group>"; };
+		27276A921D5C867900C134BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27276A971D5C867900C134BA /* Zoetis -FeathersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Zoetis -FeathersUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27276A9B1D5C867900C134BA /* Zoetis__FeathersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zoetis__FeathersUITests.swift; sourceTree = "<group>"; };
+		27276A9D1D5C867900C134BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		272CF62F1EDECCDA0048E74D /* YouTubePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubePlayer.swift; sourceTree = "<group>"; };
+		272CF6301EDECCDA0048E74D /* YTPlayer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = YTPlayer.html; sourceTree = "<group>"; };
+		272CF6351EDF15650048E74D /*  Pdf1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = " Pdf1.png"; sourceTree = "<group>"; };
+		272E707A1D802C6200A4BD1C /* CustomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomeTableViewCell.swift; sourceTree = "<group>"; };
+		272E707C1D80613200A4BD1C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/Zoetis_-Feathers-fvixaeijtltnczdkamesuwsxogrr/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		273013AA1D6C6735002DA33D /* CommonClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonClass.swift; sourceTree = "<group>"; };
+		273102251D954CBE00FEBED4 /* background03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background03@2x.png"; sourceTree = "<group>"; };
+		274B0BD01DA4FA4000FBA3AD /* ServiceDataHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceDataHolder.swift; sourceTree = "<group>"; };
+		274B70B320188EC70039D7DC /* PostingSession+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostingSession+CoreDataClass.swift"; sourceTree = "<group>"; };
+		274B70B420188EC70039D7DC /* PostingSession+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostingSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		274E47E620231ABB00AD8434 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/popUP.xib; sourceTree = "<group>"; };
+		274E47E920231AC100AD8434 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/popUP.strings; sourceTree = "<group>"; };
+		2752721B1E1F8D57000EBD05 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		275CC0C91D6B0595000A8F29 /* SessionsHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsHistoryViewController.swift; sourceTree = "<group>"; };
+		275CC0CB1D6B05C0000A8F29 /* SessionHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		275E65CA1D6DB30B007B9555 /* StartNecropsySessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartNecropsySessionViewController.swift; sourceTree = "<group>"; };
+		275E65CB1D6DB30B007B9555 /* StartNecropsyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartNecropsyTableViewCell.swift; sourceTree = "<group>"; };
+		2760420320037B5B000BAEEA /* Skelta_info+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Skelta_info+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2760420420037B5B000BAEEA /* Skelta_info+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Skelta_info+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2760FEE81FA8998E001CB55C /* AddVaccinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVaccinationViewController.swift; sourceTree = "<group>"; };
+		276238701E5F3916000BE899 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2765A40E1E3268A100D9DA4E /* Zoetis_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zoetis_video.mp4; sourceTree = "<group>"; };
+		2773B7EC1DED832B007B66E7 /* MIBadgeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIBadgeButton.swift; sourceTree = "<group>"; };
+		27803B611DF97A5300D9FA21 /* NecropsyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NecropsyTableViewCell.swift; sourceTree = "<group>"; };
+		278504321DEDB4FA00A3F6A6 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		278504331DEDB4FA00A3F6A6 /* imageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageTableViewCell.swift; sourceTree = "<group>"; };
+		2786DD541FE9216C0030FCEB /* captureNecropsyStep1Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = captureNecropsyStep1Data.swift; sourceTree = "<group>"; };
+		2786DD561FE921930030FCEB /* PostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingViewController.swift; sourceTree = "<group>"; };
+		2786DD581FE92CCA0030FCEB /* UnlinkedNecropsiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlinkedNecropsiesViewController.swift; sourceTree = "<group>"; };
+		278E024E1E095BE90032E6F4 /* ExistingPostingSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingPostingSessionViewController.swift; sourceTree = "<group>"; };
+		278F49321DD1C5E100957325 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		27922F4F200651A800A3D6B5 /* Id+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Id+CoreDataClass.swift"; sourceTree = "<group>"; };
+		27922F50200651A800A3D6B5 /* Id+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Id+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		279706E91DF1D15200B55763 /* SimpleCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleCustomView.xib; sourceTree = "<group>"; };
+		279706EC1DF1D16700B55763 /* infocollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infocollection.swift; sourceTree = "<group>"; };
+		279706ED1DF1D16700B55763 /* infocollection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = infocollection.xib; sourceTree = "<group>"; };
+		27A741BE1F4EF3AC00A32882 /* AddFarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFarm.swift; sourceTree = "<group>"; };
+		27AF596B1E13D5FE00C8194F /* DatepickerClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatepickerClass.swift; sourceTree = "<group>"; };
+		27B0EE901E1A6EC800D3F7D7 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		27B38ACF1DB90AE4008EEB1B /* infoLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoLink.swift; sourceTree = "<group>"; };
+		27B4E60B1EDD71A900704CBF /* ReportComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportComposer.swift; sourceTree = "<group>"; };
+		27B4E60C1EDD71A900704CBF /* ReportComposerDaignostic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportComposerDaignostic.swift; sourceTree = "<group>"; };
+		27BC7E382015DFAF00579C6D /* SimpleCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCustomView.swift; sourceTree = "<group>"; };
+		27BC7E3A2015F11C00579C6D /* Coccidiosis+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coccidiosis+CoreDataClass.swift"; sourceTree = "<group>"; };
+		27BC7E3B2015F11C00579C6D /* Coccidiosis+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coccidiosis+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC7E3C2015F11C00579C6D /* Immune+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Immune+CoreDataClass.swift"; sourceTree = "<group>"; };
+		27BC7E3D2015F11C00579C6D /* Immune+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Immune+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC7E3E2015F11C00579C6D /* Skeleta+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Skeleta+CoreDataClass.swift"; sourceTree = "<group>"; };
+		27BC7E3F2015F11C00579C6D /* Skeleta+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Skeleta+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC7E402015F11C00579C6D /* GITract+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GITract+CoreDataClass.swift"; sourceTree = "<group>"; };
+		27BC7E412015F11C00579C6D /* GITract+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GITract+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC7E422015F11C00579C6D /* Respiratory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Respiratory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		27BC7E432015F11C00579C6D /* Respiratory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Respiratory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC7E4E2015F5A500579C6D /* CaptureNecropsyViewData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaptureNecropsyViewData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		27BC7E4F2015F5A500579C6D /* CaptureNecropsyViewData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaptureNecropsyViewData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC7E5320162F5B00579C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AddFarm.xib; sourceTree = "<group>"; };
+		27BC7E5620162FCC00579C6D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AddFarm.strings; sourceTree = "<group>"; };
+		27BC90601E49DE1D00ACD3A7 /* CamraImage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CamraImage+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC90611E49DE1D00ACD3A7 /* CamraImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CamraImage.swift; sourceTree = "<group>"; };
+		27BC90661E49DE1D00ACD3A7 /* ComplexPosting+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ComplexPosting+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC90671E49DE1D00ACD3A7 /* ComplexPosting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexPosting.swift; sourceTree = "<group>"; };
+		27BC906A1E49DE1D00ACD3A7 /* Salesrep+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Salesrep+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC906B1E49DE1D00ACD3A7 /* Salesrep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Salesrep.swift; sourceTree = "<group>"; };
+		27BC906C1E49DE1D00ACD3A7 /* BirdSizePosting+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BirdSizePosting+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC906D1E49DE1D00ACD3A7 /* BirdSizePosting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdSizePosting.swift; sourceTree = "<group>"; };
+		27BC907C1E49DE1D00ACD3A7 /* Necropsy+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Necropsy+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC907D1E49DE1D00ACD3A7 /* Necropsy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Necropsy.swift; sourceTree = "<group>"; };
+		27BC907E1E49DE1D00ACD3A7 /* CocciProgramPosting+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CocciProgramPosting+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC907F1E49DE1D00ACD3A7 /* CocciProgramPosting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocciProgramPosting.swift; sourceTree = "<group>"; };
+		27BC90821E49DE1D00ACD3A7 /* Route+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Route+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC90831E49DE1D00ACD3A7 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		27BC90861E49DE1D00ACD3A7 /* Veteration+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Veteration+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC90871E49DE1D00ACD3A7 /* Veteration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Veteration.swift; sourceTree = "<group>"; };
+		27BC90881E49DE1D00ACD3A7 /* Custmer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Custmer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC90891E49DE1D00ACD3A7 /* Custmer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custmer.swift; sourceTree = "<group>"; };
+		27BC908C1E49DE1D00ACD3A7 /* FarmsList+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FarmsList+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC908D1E49DE1D00ACD3A7 /* FarmsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FarmsList.swift; sourceTree = "<group>"; };
+		27BC908E1E49DE1D00ACD3A7 /* Login+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Login+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC908F1E49DE1D00ACD3A7 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		27BC90961E49DE1D00ACD3A7 /* Sessiontype+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sessiontype+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC90971E49DE1D00ACD3A7 /* Sessiontype.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sessiontype.swift; sourceTree = "<group>"; };
+		27BC90991E49DE1D00ACD3A7 /* Breed+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Breed+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27BC909A1E49DE1D00ACD3A7 /* Breed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
+		27C8DCF02021B91300C997DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/startNecropsyXib.xib; sourceTree = "<group>"; };
+		27C8DCF32021B92A00C997DC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/startNecropsyXib.strings; sourceTree = "<group>"; };
+		27CA9A551DABA5AF00AE13E6 /* popUP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = popUP.swift; sourceTree = "<group>"; };
+		27CB8B401D7EB249008B6CCD /* CommonTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonTableView.swift; sourceTree = "<group>"; };
+		27CDD5B41D927D4D0023AFF3 /* ReachabilitySwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReachabilitySwift.framework; path = "../../Library/Developer/Xcode/DerivedData/Zoetis_-Feathers-ghaemvkvnxxjdvgrogcwczxdthty/Build/Products/Debug-iphonesimulator/ReachabilitySwift/ReachabilitySwift.framework"; sourceTree = "<group>"; };
+		27D1E60F1E4CD25700E29776 /* BarChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartViewController.swift; sourceTree = "<group>"; };
+		27D1E6101E4CD25700E29776 /* CossiBarChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CossiBarChartViewController.swift; sourceTree = "<group>"; };
+		27D1E6111E4CD25700E29776 /* CropUtill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropUtill.swift; sourceTree = "<group>"; };
+		27D1E6121E4CD25700E29776 /* GI_Tract_Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GI_Tract_Modal.swift; sourceTree = "<group>"; };
+		27D1E6141E4CD25700E29776 /* CustomPrintPageRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPrintPageRenderer.swift; sourceTree = "<group>"; };
+		27D1E6161E4CD25700E29776 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		27D1E61B1E4CD25700E29776 /* ImmuneBarChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImmuneBarChartViewController.swift; sourceTree = "<group>"; };
+		27D1E61C1E4CD25700E29776 /* LastSessionDataModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastSessionDataModal.swift; sourceTree = "<group>"; };
+		27D1E61D1E4CD25700E29776 /* Report_MainVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report_MainVCViewController.swift; sourceTree = "<group>"; };
+		27D1E61E1E4CD25700E29776 /* SummaryReportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryReportsViewController.swift; sourceTree = "<group>"; };
+		27D4B2171DF1A56D00AFBA25 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		27D4B21F1DF1C95900AFBA25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27DEB62B1FBDD2540046BD13 /* SingleSyncData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSyncData.swift; sourceTree = "<group>"; };
+		27DEB62D1FBDD2870046BD13 /* PostingSessionDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingSessionDetailController.swift; sourceTree = "<group>"; };
+		27E187391E2E30BE00CF24C0 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		27F1CD4B1DF9A305002711F1 /* allBirdsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = allBirdsTableViewCell.swift; sourceTree = "<group>"; };
+		27F1CD4D1DF9A305002711F1 /* obsFieldCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = obsFieldCollectionViewCell.swift; sourceTree = "<group>"; };
+		27F1CD4E1DF9A305002711F1 /* ObsNameCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObsNameCollectionViewCell.swift; sourceTree = "<group>"; };
+		27F448271E1B9D780053CA65 /* splashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = splashViewController.swift; sourceTree = "<group>"; };
+		27F7B7171E0D11A10082E8B8 /* UnlinkedNecropsiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlinkedNecropsiesTableViewCell.swift; sourceTree = "<group>"; };
+		27FA0DB01EDC393800444DD6 /* TrainingEducationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrainingEducationViewController.swift; path = ../TrainingEducationViewController.swift; sourceTree = "<group>"; };
+		27FA0DB11EDC393800444DD6 /* PdfReader1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PdfReader1ViewController.swift; path = ../PdfReader1ViewController.swift; sourceTree = "<group>"; };
+		27FA0DB21EDC393800444DD6 /* PdfReader2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PdfReader2ViewController.swift; path = ../PdfReader2ViewController.swift; sourceTree = "<group>"; };
+		27FA0DB41EDC393800444DD6 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialPageViewController.swift; path = ../TutorialPageViewController.swift; sourceTree = "<group>"; };
+		27FC68E9203C4F7400D40458 /* CaptureNecropsyDataViewController .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaptureNecropsyDataViewController .swift"; sourceTree = "<group>"; };
+		38B652FA7250E16138D9488A /* Pods_Zoetis__Feathers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zoetis__Feathers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4507E3CF203710C100A5907C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Notes.xib; sourceTree = "<group>"; };
+		4507E3D2203710C400A5907C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Notes.strings; sourceTree = "<group>"; };
+		4524578A1EE1C0FB00A13FF1 /* pdf_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pdf_1@2x.png"; sourceTree = "<group>"; };
+		4524578B1EE1C0FB00A13FF1 /* pdf_1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pdf_1@3x.png"; sourceTree = "<group>"; };
+		4550AB47200CB20C001B70F8 /* video-details_4.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "video-details_4.html"; sourceTree = "<group>"; };
+		457217AC1FFB95770062471B /* LanguageUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageUtility.swift; sourceTree = "<group>"; };
+		457217AD1FFB95770062471B /* Localizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizer.swift; sourceTree = "<group>"; };
+		457217B01FFB987B0062471B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		457217B21FFB99490062471B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		457217BC1FFBC95E0062471B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		457217BD1FFCE36D0062471B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		45AD42A91F0D31D800159686 /* RangeValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeValueFormatter.swift; sourceTree = "<group>"; };
+		45B09E2C200D04F900FE2E25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/summaryReport.xib; sourceTree = "<group>"; };
+		45B09E2F200D04FC00FE2E25 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/summaryReport.strings; sourceTree = "<group>"; };
+		45B436011E12AADE00170A66 /* secTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secTableViewCell.swift; sourceTree = "<group>"; };
+		45C6D68E201F2D2D0041EB07 /* KeyConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyConstants.swift; sourceTree = "<group>"; };
+		45C6D7052023127B0041EB07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = "Base.lproj/single_item_Dignostic-40.html"; sourceTree = "<group>"; };
+		45C6D709202487BB0041EB07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/report.html; sourceTree = "<group>"; };
+		45C6D70B202487C40041EB07 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = es; path = es.lproj/report.html; sourceTree = "<group>"; };
+		45C6D70D2024993E0041EB07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/single_item.html; sourceTree = "<group>"; };
+		45C6D70F202499420041EB07 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = es; path = es.lproj/single_item.html; sourceTree = "<group>"; };
+		45C6D71120249AD10041EB07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/last_item.html; sourceTree = "<group>"; };
+		45C6D71320249AD30041EB07 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = es; path = es.lproj/last_item.html; sourceTree = "<group>"; };
+		45C6D71520249AF30041EB07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = "Base.lproj/last_item_daignostic-40.html"; sourceTree = "<group>"; };
+		45C6D71720249AF50041EB07 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = es; path = "es.lproj/last_item_daignostic-40.html"; sourceTree = "<group>"; };
+		45C6D71920249B1E0041EB07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = "Base.lproj/DiagnosticReport-40.html"; sourceTree = "<group>"; };
+		45C6D71B20249B200041EB07 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = es; path = "es.lproj/DiagnosticReport-40.html"; sourceTree = "<group>"; };
+		45C6D71C2024A2260041EB07 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = es; path = "es.lproj/single_item_Dignostic-40.html"; sourceTree = "<group>"; };
+		45D02AEB1F028E46007B9D26 /* UnlinkNecrpoSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlinkNecrpoSecondViewController.swift; sourceTree = "<group>"; };
+		45D02AEC1F028E46007B9D26 /* WebClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebClass.swift; path = ../WebClass.swift; sourceTree = "<group>"; };
+		45F9F7D420330E30001F6084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = "Base.lproj/DiagnosticReport-35.html"; sourceTree = "<group>"; };
+		45F9F7D620330E34001F6084 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = es; path = "es.lproj/DiagnosticReport-35.html"; sourceTree = "<group>"; };
+		45F9F7D8203311D6001F6084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = "Base.lproj/last_item_daignostic-35.html"; sourceTree = "<group>"; };
+		45F9F7DA203311D8001F6084 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = es; path = "es.lproj/last_item_daignostic-35.html"; sourceTree = "<group>"; };
+		45F9F7DC20331209001F6084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = "Base.lproj/single_item_Dignostic-35.html"; sourceTree = "<group>"; };
+		45F9F7DE2033120C001F6084 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = es; path = "es.lproj/single_item_Dignostic-35.html"; sourceTree = "<group>"; };
+		45F9F7E520333332001F6084 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		45F9F7E62035A782001F6084 /* ReportsCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsCalculation.swift; sourceTree = "<group>"; };
+		460A18771D6EFC1D00B9C11A /* Dropper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dropper.framework; path = "Pods/../build/Release-iphoneos/Dropper/Dropper.framework"; sourceTree = "<group>"; };
+		460A187C1D6EFE3400B9C11A /* Dropper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dropper.swift; sourceTree = "<group>"; };
+		460A187D1D6EFE3400B9C11A /* DropperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropperCell.swift; sourceTree = "<group>"; };
+		460A187E1D6EFE3400B9C11A /* DropperExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropperExtensions.swift; sourceTree = "<group>"; };
+		46C5C57A1D64677300499D8D /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "Pods/../build/Debug-iphoneos/Charts/Charts.framework"; sourceTree = "<group>"; };
+		46C5C57C1D64682100499D8D /* DataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGenerator.swift; sourceTree = "<group>"; };
+		46C5C57E1D64723E00499D8D /* iOS_Slide_Menu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iOS_Slide_Menu.framework; path = "Pods/../build/Debug-iphoneos/iOS-Slide-Menu/iOS_Slide_Menu.framework"; sourceTree = "<group>"; };
+		46C5C57F1D64723E00499D8D /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = "Pods/../build/Debug-iphoneos/MBProgressHUD/MBProgressHUD.framework"; sourceTree = "<group>"; };
+		46C5C5851D6474C200499D8D /* Zoetis-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Zoetis-Bridging-Header.h"; path = "../Zoetis-Bridging-Header.h"; sourceTree = "<group>"; };
+		46C5C58C1D64A0B500499D8D /* MDRotatingPieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDRotatingPieChart.swift; sourceTree = "<group>"; };
+		A7BAC15C68DDA47BF7D1A308 /* Pods-Zoetis -Feathers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoetis -Feathers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zoetis -Feathers/Pods-Zoetis -Feathers.debug.xcconfig"; sourceTree = "<group>"; };
+		C3040EBA1DB78B54009A6943 /* UserListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
+		DC22B1CE1EFBC7A700D51BF5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DC48D9231EF912A60099FF33 /* FeedProgramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedProgramViewController.swift; sourceTree = "<group>"; };
+		DC8BEC3D1EF40FAD00118C54 /* HandlerCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandlerCoreData.swift; sourceTree = "<group>"; };
+		DCC54AEA1F025C2100B6228D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DE0D4D441EDF2F3D001840F6 /* video-details.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "video-details.html"; sourceTree = "<group>"; };
+		DE0D4D4A1EDF3C2C001840F6 /* pdf_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pdf_2@2x.png"; sourceTree = "<group>"; };
+		DE0D4D4B1EDF3C2C001840F6 /* pdf_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pdf_2@3x.png"; sourceTree = "<group>"; };
+		DE0D4D4C1EDF3C2C001840F6 /* video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video@2x.png"; sourceTree = "<group>"; };
+		DE0D4D4D1EDF3C2C001840F6 /* video@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video@3x.png"; sourceTree = "<group>"; };
+		DE3D9D6A1E5B3F700012F078 /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
+		DE40F44B1E60A3DB00EDCF34 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		DE6D7E6B1EE02E8400BA136C /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		DEA9DE001DF1FB0200574CC1 /* DashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27276A721D5C867800C134BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCC54AEB1F025C2100B6228D /* SystemConfiguration.framework in Frameworks */,
+				2752721C1E1F8D57000EBD05 /* AVKit.framework in Frameworks */,
+				27B0EE911E1A6EC800D3F7D7 /* MediaPlayer.framework in Frameworks */,
+				2710EC851D9284D600732812 /* ReachabilitySwift.framework in Frameworks */,
+				272E707D1D80613200A4BD1C /* Alamofire.framework in Frameworks */,
+				46C5C5801D64723E00499D8D /* iOS_Slide_Menu.framework in Frameworks */,
+				46C5C5811D64723E00499D8D /* MBProgressHUD.framework in Frameworks */,
+				46C5C57B1D64677300499D8D /* Charts.framework in Frameworks */,
+				3460F982C115C2865B6AAA81 /* Pods_Zoetis__Feathers.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27276A891D5C867900C134BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27276A941D5C867900C134BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		148314BB1E52095D0076D67B /* TermsAndCondition */ = {
+			isa = PBXGroup;
+			children = (
+				27216A8B1D9BE1C900542976 /* ModelVacation.swift */,
+				148314BE1E52098C0076D67B /* terms-of-use.html */,
+				148314BC1E5209840076D67B /* Terms&ConditionViewController.swift */,
+			);
+			name = TermsAndCondition;
+			sourceTree = "<group>";
+		};
+		148802DA1E54B0D200349487 /* ApiSync */ = {
+			isa = PBXGroup;
+			children = (
+				271BFB5E1F3B2E8A00B15445 /* ApiSync.swift */,
+				27DEB62B1FBDD2540046BD13 /* SingleSyncData.swift */,
+				27DEB62D1FBDD2870046BD13 /* PostingSessionDetailController.swift */,
+			);
+			name = ApiSync;
+			sourceTree = "<group>";
+		};
+		14A3E3F71DBAE3BD00A60C9F /* captureNecropsyStep1 */ = {
+			isa = PBXGroup;
+			children = (
+				2786DD541FE9216C0030FCEB /* captureNecropsyStep1Data.swift */,
+				14A3E3FA1DBAE3EC00A60C9F /* captureTableViewCell.swift */,
+			);
+			name = captureNecropsyStep1;
+			sourceTree = "<group>";
+		};
+		14AB38131E534A98001F4690 /* Help Screen */ = {
+			isa = PBXGroup;
+			children = (
+				14AB38161E534B07001F4690 /* HelpScreenViewController.swift */,
+			);
+			name = "Help Screen";
+			sourceTree = "<group>";
+		};
+		20725049A98E65BA561836BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7BAC15C68DDA47BF7D1A308 /* Pods-Zoetis -Feathers.debug.xcconfig */,
+				140FAEA6378519DDED0EECFD /* Pods-Zoetis -Feathers.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		270B879C1D63321C00F3A122 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				278F49321DD1C5E100957325 /* LeftMenuViewController.swift */,
+			);
+			name = SideMenu;
+			sourceTree = "<group>";
+		};
+		270F90DD1D7851B100D8D333 /* NecrposyData */ = {
+			isa = PBXGroup;
+			children = (
+				27FC68E9203C4F7400D40458 /* CaptureNecropsyDataViewController .swift */,
+				27BC7E382015DFAF00579C6D /* SimpleCustomView.swift */,
+				27A741BE1F4EF3AC00A32882 /* AddFarm.swift */,
+				C3040EBA1DB78B54009A6943 /* UserListView.swift */,
+				27D4B2171DF1A56D00AFBA25 /* InfoViewController.swift */,
+				27CB8B401D7EB249008B6CCD /* CommonTableView.swift */,
+				270F90DB1D784D1E00D8D333 /* DataClass.swift */,
+				27F448271E1B9D780053CA65 /* splashViewController.swift */,
+				14436C781D6F212100A816F5 /* CaptureNecropsyCollectionViewCell.swift */,
+				272329BA1DF0926600CD47EB /* notes.swift */,
+				14D8E1861DB33D6F00D99331 /* UserListView.xib */,
+				273102251D954CBE00FEBED4 /* background03@2x.png */,
+			);
+			name = NecrposyData;
+			sourceTree = "<group>";
+		};
+		270F90DE1D78521900D8D333 /* SessionHistoryView */ = {
+			isa = PBXGroup;
+			children = (
+				275CC0C91D6B0595000A8F29 /* SessionsHistoryViewController.swift */,
+				275CC0CB1D6B05C0000A8F29 /* SessionHistoryTableViewCell.swift */,
+			);
+			name = SessionHistoryView;
+			sourceTree = "<group>";
+		};
+		270F90DF1D78523300D8D333 /* PostingSessionView */ = {
+			isa = PBXGroup;
+			children = (
+				279D32701E79A0D80059C79C /* NecView */,
+				2786DD561FE921930030FCEB /* PostingViewController.swift */,
+				14D87AD01D6B19CD00AED5B2 /* PostingSessionDetailTableViewCell.swift */,
+			);
+			name = PostingSessionView;
+			sourceTree = "<group>";
+		};
+		270F90E01D78525F00D8D333 /* UnLinkedNeropsy */ = {
+			isa = PBXGroup;
+			children = (
+				2786DD581FE92CCA0030FCEB /* UnlinkedNecropsiesViewController.swift */,
+				45D02AEB1F028E46007B9D26 /* UnlinkNecrpoSecondViewController.swift */,
+				27F7B7171E0D11A10082E8B8 /* UnlinkedNecropsiesTableViewCell.swift */,
+				27803B611DF97A5300D9FA21 /* NecropsyTableViewCell.swift */,
+				27AF596B1E13D5FE00C8194F /* DatepickerClass.swift */,
+			);
+			name = UnLinkedNeropsy;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		27276A6C1D5C867800C134BA = {
+			isa = PBXGroup;
+			children = (
+				27276A771D5C867800C134BA /* Zoetis -Feathers */,
+				27276A8F1D5C867900C134BA /* Zoetis -FeathersTests */,
+				27276A9A1D5C867900C134BA /* Zoetis -FeathersUITests */,
+				27276A761D5C867800C134BA /* Products */,
+				20725049A98E65BA561836BD /* Pods */,
+				BA4EA03E9C466C5F6244CF9B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		27276A761D5C867800C134BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27276A751D5C867800C134BA /* Zoetis -Feathers.app */,
+				27276A8C1D5C867900C134BA /* Zoetis -FeathersTests.xctest */,
+				27276A971D5C867900C134BA /* Zoetis -FeathersUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27276A771D5C867800C134BA /* Zoetis -Feathers */ = {
+			isa = PBXGroup;
+			children = (
+				457217AB1FFB95770062471B /* Localization */,
+				DC22B1CD1EFBC79200D51BF5 /* Settings */,
+				148802DA1E54B0D200349487 /* ApiSync */,
+				27D1E60E1E4CD25700E29776 /* Report Screen */,
+				270F90DE1D78521900D8D333 /* SessionHistoryView */,
+				460A187B1D6EFE3400B9C11A /* Dropper */,
+				14A3E3F71DBAE3BD00A60C9F /* captureNecropsyStep1 */,
+				27850EFA1D5CAC1500412A9B /* View Controller */,
+				27619A621DA6470100D87AE9 /* AddVacination */,
+				46824D6E1D895A4F00BD693C /* DataMobdel */,
+				27CB8B421D7EFD5A008B6CCD /* SettingView */,
+				270F90E01D78525F00D8D333 /* UnLinkedNeropsy */,
+				270F90DF1D78523300D8D333 /* PostingSessionView */,
+				270F90DD1D7851B100D8D333 /* NecrposyData */,
+				270B879C1D63321C00F3A122 /* SideMenu */,
+				27850EFE1D5CAF3C00412A9B /* WebAPI */,
+				27850EF91D5CAC0100412A9B /* AppDelegate */,
+				27850EFD1D5CAD5900412A9B /* DashBoardViewController */,
+				27619A631DA64A5000D87AE9 /* AllBirdViewController  */,
+				278928CE1D670ED4003B1E27 /* Bar Graph */,
+				277026A41DAB86B200298D4A /* FeedProgramView */,
+				279D32711E79A1030059C79C /* MainStoryBoard */,
+				279D32721E79A1300059C79C /* Report */,
+				14AB38131E534A98001F4690 /* Help Screen */,
+				279D326F1E79A0B80059C79C /* CoreDataModelXcd */,
+				279D326E1E79A0A20059C79C /* ImageViewController */,
+				279D326C1E79A0550059C79C /* ExistingPostingSession */,
+				279D326D1E79A0870059C79C /* UnlinkedNec */,
+				148314BB1E52095D0076D67B /* TermsAndCondition */,
+				27E187351E2E2EE100CF24C0 /* Training&Education */,
+				27E187381E2E30A400CF24C0 /* Help  */,
+				27D4B21F1DF1C95900AFBA25 /* Assets.xcassets */,
+				27276A871D5C867800C134BA /* Info.plist */,
+			);
+			path = "Zoetis -Feathers";
+			sourceTree = "<group>";
+		};
+		27276A8F1D5C867900C134BA /* Zoetis -FeathersTests */ = {
+			isa = PBXGroup;
+			children = (
+				27276A901D5C867900C134BA /* Zoetis__FeathersTests.swift */,
+				27276A921D5C867900C134BA /* Info.plist */,
+			);
+			path = "Zoetis -FeathersTests";
+			sourceTree = "<group>";
+		};
+		27276A9A1D5C867900C134BA /* Zoetis -FeathersUITests */ = {
+			isa = PBXGroup;
+			children = (
+				27276A9B1D5C867900C134BA /* Zoetis__FeathersUITests.swift */,
+				27276A9D1D5C867900C134BA /* Info.plist */,
+			);
+			path = "Zoetis -FeathersUITests";
+			sourceTree = "<group>";
+		};
+		272CF62E1EDECCC30048E74D /* YouTubePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				272CF62F1EDECCDA0048E74D /* YouTubePlayer.swift */,
+				272CF6301EDECCDA0048E74D /* YTPlayer.html */,
+			);
+			name = YouTubePlayer;
+			sourceTree = "<group>";
+		};
+		27619A621DA6470100D87AE9 /* AddVacination */ = {
+			isa = PBXGroup;
+			children = (
+				2760FEE81FA8998E001CB55C /* AddVaccinationViewController.swift */,
+			);
+			name = AddVacination;
+			sourceTree = "<group>";
+		};
+		27619A631DA64A5000D87AE9 /* AllBirdViewController  */ = {
+			isa = PBXGroup;
+			children = (
+				271A562F1F7EFACE0028D14D /* AllBirdsViewController.swift */,
+				27F1CD4B1DF9A305002711F1 /* allBirdsTableViewCell.swift */,
+				27F1CD4D1DF9A305002711F1 /* obsFieldCollectionViewCell.swift */,
+				27F1CD4E1DF9A305002711F1 /* ObsNameCollectionViewCell.swift */,
+				2773B7EC1DED832B007B66E7 /* MIBadgeButton.swift */,
+			);
+			name = "AllBirdViewController ";
+			sourceTree = "<group>";
+		};
+		277026A41DAB86B200298D4A /* FeedProgramView */ = {
+			isa = PBXGroup;
+			children = (
+				278928CF1D670EFD003B1E27 /* Posting Session View */,
+				45B436011E12AADE00170A66 /* secTableViewCell.swift */,
+				274E47E720231ABB00AD8434 /* popUP.xib */,
+				27CA9A551DABA5AF00AE13E6 /* popUP.swift */,
+			);
+			name = FeedProgramView;
+			sourceTree = "<group>";
+		};
+		27850EF91D5CAC0100412A9B /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				27276A781D5C867800C134BA /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		27850EFA1D5CAC1500412A9B /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				276238701E5F3916000BE899 /* ViewController.swift */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		27850EFD1D5CAD5900412A9B /* DashBoardViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DEA9DE001DF1FB0200574CC1 /* DashViewController.swift */,
+			);
+			name = DashBoardViewController;
+			sourceTree = "<group>";
+		};
+		27850EFE1D5CAF3C00412A9B /* WebAPI */ = {
+			isa = PBXGroup;
+			children = (
+				45D02AEC1F028E46007B9D26 /* WebClass.swift */,
+			);
+			name = WebAPI;
+			sourceTree = "<group>";
+		};
+		278928CE1D670ED4003B1E27 /* Bar Graph */ = {
+			isa = PBXGroup;
+			children = (
+				46C5C5851D6474C200499D8D /* Zoetis-Bridging-Header.h */,
+				46C5C58C1D64A0B500499D8D /* MDRotatingPieChart.swift */,
+				46C5C57C1D64682100499D8D /* DataGenerator.swift */,
+			);
+			name = "Bar Graph";
+			sourceTree = "<group>";
+		};
+		278928CF1D670EFD003B1E27 /* Posting Session View */ = {
+			isa = PBXGroup;
+			children = (
+				DC48D9231EF912A60099FF33 /* FeedProgramViewController.swift */,
+				27BC7E5420162F5B00579C6D /* AddFarm.xib */,
+				273013AA1D6C6735002DA33D /* CommonClass.swift */,
+				27C8DCF12021B91300C997DC /* startNecropsyXib.xib */,
+				1468B6601DF9BCE90049AC56 /* startNecropsyXib.swift */,
+				275E65CA1D6DB30B007B9555 /* StartNecropsySessionViewController.swift */,
+				275E65CB1D6DB30B007B9555 /* StartNecropsyTableViewCell.swift */,
+			);
+			name = "Posting Session View";
+			sourceTree = "<group>";
+		};
+		279D326C1E79A0550059C79C /* ExistingPostingSession */ = {
+			isa = PBXGroup;
+			children = (
+				278E024E1E095BE90032E6F4 /* ExistingPostingSessionViewController.swift */,
+				14B936AF1DD1B2C10089E678 /* ExistingPostingTableViewCell.swift */,
+			);
+			name = ExistingPostingSession;
+			sourceTree = "<group>";
+		};
+		279D326D1E79A0870059C79C /* UnlinkedNec */ = {
+			isa = PBXGroup;
+			children = (
+				14B936B01DD1B2C10089E678 /* UnlinkedNecropsySessionViewController.swift */,
+				14B936B11DD1B2C10089E678 /* unlinkedNecopsySessionTableViewCell.swift */,
+				14B936B31DD1B2C10089E678 /* UnlinkNecrpoSecondTblViewCell.swift */,
+			);
+			name = UnlinkedNec;
+			sourceTree = "<group>";
+		};
+		279D326E1E79A0A20059C79C /* ImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				278504321DEDB4FA00A3F6A6 /* ImageViewController.swift */,
+				278504331DEDB4FA00A3F6A6 /* imageTableViewCell.swift */,
+			);
+			name = ImageViewController;
+			sourceTree = "<group>";
+		};
+		279D326F1E79A0B80059C79C /* CoreDataModelXcd */ = {
+			isa = PBXGroup;
+			children = (
+				27276A7F1D5C867800C134BA /* Zoetis__Feathers.xcdatamodeld */,
+			);
+			name = CoreDataModelXcd;
+			sourceTree = "<group>";
+		};
+		279D32701E79A0D80059C79C /* NecView */ = {
+			isa = PBXGroup;
+			children = (
+				2765A40E1E3268A100D9DA4E /* Zoetis_video.mp4 */,
+			);
+			name = NecView;
+			sourceTree = "<group>";
+		};
+		279D32711E79A1030059C79C /* MainStoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				272CF6351EDF15650048E74D /*  Pdf1.png */,
+				4524578A1EE1C0FB00A13FF1 /* pdf_1@2x.png */,
+				4524578B1EE1C0FB00A13FF1 /* pdf_1@3x.png */,
+				DE0D4D4A1EDF3C2C001840F6 /* pdf_2@2x.png */,
+				DE0D4D4B1EDF3C2C001840F6 /* pdf_2@3x.png */,
+				DE0D4D4C1EDF3C2C001840F6 /* video@2x.png */,
+				DE0D4D4D1EDF3C2C001840F6 /* video@3x.png */,
+				457217B31FFB99490062471B /* Main.storyboard */,
+				4507E3D0203710C100A5907C /* Notes.xib */,
+				27276A841D5C867800C134BA /* LaunchScreen.storyboard */,
+			);
+			name = MainStoryBoard;
+			sourceTree = "<group>";
+		};
+		279D32721E79A1300059C79C /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				45B09E2D200D04F900FE2E25 /* summaryReport.xib */,
+				1406271F1DD6D644005FE6AC /* summaryReport.swift */,
+			);
+			name = Report;
+			sourceTree = "<group>";
+		};
+		27CB8B421D7EFD5A008B6CCD /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				27B38ACF1DB90AE4008EEB1B /* infoLink.swift */,
+				27060BCF1DB66E2700CF255C /* infoLink.xib */,
+				274B0BD01DA4FA4000FBA3AD /* ServiceDataHolder.swift */,
+				272E707A1D802C6200A4BD1C /* CustomeTableViewCell.swift */,
+				279706EC1DF1D16700B55763 /* infocollection.swift */,
+				279706ED1DF1D16700B55763 /* infocollection.xib */,
+				279706E91DF1D15200B55763 /* SimpleCustomView.xib */,
+			);
+			name = SettingView;
+			sourceTree = "<group>";
+		};
+		27D1E60E1E4CD25700E29776 /* Report Screen */ = {
+			isa = PBXGroup;
+			children = (
+				27D1E60F1E4CD25700E29776 /* BarChartViewController.swift */,
+				45AD42A91F0D31D800159686 /* RangeValueFormatter.swift */,
+				27D1E6101E4CD25700E29776 /* CossiBarChartViewController.swift */,
+				27D1E6111E4CD25700E29776 /* CropUtill.swift */,
+				27D1E6121E4CD25700E29776 /* GI_Tract_Modal.swift */,
+				27D1E6131E4CD25700E29776 /* HTML Templates */,
+				27D1E61B1E4CD25700E29776 /* ImmuneBarChartViewController.swift */,
+				27D1E61C1E4CD25700E29776 /* LastSessionDataModal.swift */,
+				27D1E61D1E4CD25700E29776 /* Report_MainVCViewController.swift */,
+				27D1E61E1E4CD25700E29776 /* SummaryReportsViewController.swift */,
+				45C6D68E201F2D2D0041EB07 /* KeyConstants.swift */,
+				45F9F7E62035A782001F6084 /* ReportsCalculation.swift */,
+			);
+			path = "Report Screen";
+			sourceTree = "<group>";
+		};
+		27D1E6131E4CD25700E29776 /* HTML Templates */ = {
+			isa = PBXGroup;
+			children = (
+				45372FBB202B05F9008F2094 /* Brazile HTML */,
+				27B4E60B1EDD71A900704CBF /* ReportComposer.swift */,
+				27B4E60C1EDD71A900704CBF /* ReportComposerDaignostic.swift */,
+				45C6D7062023127B0041EB07 /* single_item_Dignostic-40.html */,
+				45C6D71A20249B1E0041EB07 /* DiagnosticReport-40.html */,
+				45C6D71620249AF30041EB07 /* last_item_daignostic-40.html */,
+				27D1E6141E4CD25700E29776 /* CustomPrintPageRenderer.swift */,
+				45C6D71220249AD10041EB07 /* last_item.html */,
+				27D1E6161E4CD25700E29776 /* logo.png */,
+				45C6D70A202487BB0041EB07 /* report.html */,
+				45C6D70E2024993E0041EB07 /* single_item.html */,
+			);
+			path = "HTML Templates";
+			sourceTree = "<group>";
+		};
+		27E187351E2E2EE100CF24C0 /* Training&Education */ = {
+			isa = PBXGroup;
+			children = (
+				272CF62E1EDECCC30048E74D /* YouTubePlayer */,
+				27FA0DB01EDC393800444DD6 /* TrainingEducationViewController.swift */,
+				27FA0DB41EDC393800444DD6 /* TutorialPageViewController.swift */,
+				27FA0DB11EDC393800444DD6 /* PdfReader1ViewController.swift */,
+				27FA0DB21EDC393800444DD6 /* PdfReader2ViewController.swift */,
+				DE6D7E6B1EE02E8400BA136C /* VideoViewController.swift */,
+				DE0D4D441EDF2F3D001840F6 /* video-details.html */,
+				4550AB47200CB20C001B70F8 /* video-details_4.html */,
+			);
+			name = "Training&Education";
+			sourceTree = "<group>";
+		};
+		27E187381E2E30A400CF24C0 /* Help  */ = {
+			isa = PBXGroup;
+			children = (
+				27E187391E2E30BE00CF24C0 /* HelpViewController.swift */,
+			);
+			name = "Help ";
+			sourceTree = "<group>";
+		};
+		45372FBB202B05F9008F2094 /* Brazile HTML */ = {
+			isa = PBXGroup;
+			children = (
+				45F9F7D520330E30001F6084 /* DiagnosticReport-35.html */,
+				45F9F7D9203311D6001F6084 /* last_item_daignostic-35.html */,
+				45F9F7DD20331209001F6084 /* single_item_Dignostic-35.html */,
+			);
+			path = "Brazile HTML";
+			sourceTree = "<group>";
+		};
+		457217AB1FFB95770062471B /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				457217AC1FFB95770062471B /* LanguageUtility.swift */,
+				457217AD1FFB95770062471B /* Localizer.swift */,
+				457217BA1FFBC3810062471B /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		460A187B1D6EFE3400B9C11A /* Dropper */ = {
+			isa = PBXGroup;
+			children = (
+				460A187C1D6EFE3400B9C11A /* Dropper.swift */,
+				142BBC081DCAAF0200A769FE /* CustomerReprestative+CoreDataProperties.swift */,
+				142BBC091DCAAF0200A769FE /* CustomerReprestative.swift */,
+				460A187D1D6EFE3400B9C11A /* DropperCell.swift */,
+				460A187E1D6EFE3400B9C11A /* DropperExtensions.swift */,
+			);
+			path = Dropper;
+			sourceTree = "<group>";
+		};
+		46824D6E1D895A4F00BD693C /* DataMobdel */ = {
+			isa = PBXGroup;
+			children = (
+				274B70B320188EC70039D7DC /* PostingSession+CoreDataClass.swift */,
+				274B70B420188EC70039D7DC /* PostingSession+CoreDataProperties.swift */,
+				27BC7E4E2015F5A500579C6D /* CaptureNecropsyViewData+CoreDataClass.swift */,
+				27BC7E4F2015F5A500579C6D /* CaptureNecropsyViewData+CoreDataProperties.swift */,
+				27BC7E3A2015F11C00579C6D /* Coccidiosis+CoreDataClass.swift */,
+				27BC7E3B2015F11C00579C6D /* Coccidiosis+CoreDataProperties.swift */,
+				27BC7E3C2015F11C00579C6D /* Immune+CoreDataClass.swift */,
+				27BC7E3D2015F11C00579C6D /* Immune+CoreDataProperties.swift */,
+				27BC7E3E2015F11C00579C6D /* Skeleta+CoreDataClass.swift */,
+				27BC7E3F2015F11C00579C6D /* Skeleta+CoreDataProperties.swift */,
+				27BC7E402015F11C00579C6D /* GITract+CoreDataClass.swift */,
+				27BC7E412015F11C00579C6D /* GITract+CoreDataProperties.swift */,
+				27BC7E422015F11C00579C6D /* Respiratory+CoreDataClass.swift */,
+				27BC7E432015F11C00579C6D /* Respiratory+CoreDataProperties.swift */,
+				27922F4F200651A800A3D6B5 /* Id+CoreDataClass.swift */,
+				27922F50200651A800A3D6B5 /* Id+CoreDataProperties.swift */,
+				2760420320037B5B000BAEEA /* Skelta_info+CoreDataClass.swift */,
+				2760420420037B5B000BAEEA /* Skelta_info+CoreDataProperties.swift */,
+				271527F01FF633B500C7C62B /* NotesBird+CoreDataClass.swift */,
+				271527F11FF633B500C7C62B /* NotesBird+CoreDataProperties.swift */,
+				271527EC1FF6339000C7C62B /* MyCotoxinBindersFeed+CoreDataClass.swift */,
+				271527ED1FF6339000C7C62B /* MyCotoxinBindersFeed+CoreDataProperties.swift */,
+				271527E81FF6336100C7C62B /* HatcheryVac+CoreDataClass.swift */,
+				271527E91FF6336100C7C62B /* HatcheryVac+CoreDataProperties.swift */,
+				271527E41FF6333200C7C62B /* FieldVaccination+CoreDataClass.swift */,
+				271527E51FF6333200C7C62B /* FieldVaccination+CoreDataProperties.swift */,
+				271527E01FF6330800C7C62B /* FeedProgram+CoreDataClass.swift */,
+				271527E11FF6330800C7C62B /* FeedProgram+CoreDataProperties.swift */,
+				271527DC1FF632BF00C7C62B /* CoccidiosisControlFeed+CoreDataClass.swift */,
+				271527DD1FF632BF00C7C62B /* CoccidiosisControlFeed+CoreDataProperties.swift */,
+				271527D41FF6324800C7C62B /* CaptureNecropsyData+CoreDataClass.swift */,
+				271527D51FF6324800C7C62B /* CaptureNecropsyData+CoreDataProperties.swift */,
+				271527D01FF631EA00C7C62B /* BirdPhotoCapture+CoreDataClass.swift */,
+				271527D11FF631EA00C7C62B /* BirdPhotoCapture+CoreDataProperties.swift */,
+				271527CC1FF6319500C7C62B /* AntiboticFeed+CoreDataClass.swift */,
+				271527CD1FF6319500C7C62B /* AntiboticFeed+CoreDataProperties.swift */,
+				271527C81FF6314100C7C62B /* AlternativeFeed+CoreDataClass.swift */,
+				271527C91FF6314100C7C62B /* AlternativeFeed+CoreDataProperties.swift */,
+				27BC90601E49DE1D00ACD3A7 /* CamraImage+CoreDataProperties.swift */,
+				27BC90611E49DE1D00ACD3A7 /* CamraImage.swift */,
+				27BC90661E49DE1D00ACD3A7 /* ComplexPosting+CoreDataProperties.swift */,
+				27BC90671E49DE1D00ACD3A7 /* ComplexPosting.swift */,
+				27BC906A1E49DE1D00ACD3A7 /* Salesrep+CoreDataProperties.swift */,
+				27BC906B1E49DE1D00ACD3A7 /* Salesrep.swift */,
+				27BC906C1E49DE1D00ACD3A7 /* BirdSizePosting+CoreDataProperties.swift */,
+				27BC906D1E49DE1D00ACD3A7 /* BirdSizePosting.swift */,
+				27BC907D1E49DE1D00ACD3A7 /* Necropsy.swift */,
+				27BC907C1E49DE1D00ACD3A7 /* Necropsy+CoreDataProperties.swift */,
+				27BC907E1E49DE1D00ACD3A7 /* CocciProgramPosting+CoreDataProperties.swift */,
+				27BC907F1E49DE1D00ACD3A7 /* CocciProgramPosting.swift */,
+				27BC90821E49DE1D00ACD3A7 /* Route+CoreDataProperties.swift */,
+				27BC90831E49DE1D00ACD3A7 /* Route.swift */,
+				27BC90861E49DE1D00ACD3A7 /* Veteration+CoreDataProperties.swift */,
+				27BC90871E49DE1D00ACD3A7 /* Veteration.swift */,
+				27BC90881E49DE1D00ACD3A7 /* Custmer+CoreDataProperties.swift */,
+				27BC90891E49DE1D00ACD3A7 /* Custmer.swift */,
+				27BC908C1E49DE1D00ACD3A7 /* FarmsList+CoreDataProperties.swift */,
+				27BC908D1E49DE1D00ACD3A7 /* FarmsList.swift */,
+				27BC908E1E49DE1D00ACD3A7 /* Login+CoreDataProperties.swift */,
+				27BC908F1E49DE1D00ACD3A7 /* Login.swift */,
+				27BC90961E49DE1D00ACD3A7 /* Sessiontype+CoreDataProperties.swift */,
+				27BC90971E49DE1D00ACD3A7 /* Sessiontype.swift */,
+				27BC90991E49DE1D00ACD3A7 /* Breed+CoreDataProperties.swift */,
+				27BC909A1E49DE1D00ACD3A7 /* Breed.swift */,
+			);
+			name = DataMobdel;
+			sourceTree = "<group>";
+		};
+		BA4EA03E9C466C5F6244CF9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCC54AEA1F025C2100B6228D /* SystemConfiguration.framework */,
+				2752721B1E1F8D57000EBD05 /* AVKit.framework */,
+				27B0EE901E1A6EC800D3F7D7 /* MediaPlayer.framework */,
+				2710EC831D92847100732812 /* ReachabilitySwift.framework */,
+				27CDD5B41D927D4D0023AFF3 /* ReachabilitySwift.framework */,
+				272E707C1D80613200A4BD1C /* Alamofire.framework */,
+				460A18771D6EFC1D00B9C11A /* Dropper.framework */,
+				46C5C57E1D64723E00499D8D /* iOS_Slide_Menu.framework */,
+				46C5C57F1D64723E00499D8D /* MBProgressHUD.framework */,
+				46C5C57A1D64677300499D8D /* Charts.framework */,
+				38B652FA7250E16138D9488A /* Pods_Zoetis__Feathers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC22B1CD1EFBC79200D51BF5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DE3D9D5F1E5B3B280012F078 /* NetConnection */,
+				DC22B1CE1EFBC7A700D51BF5 /* SettingsViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		DE3D9D5F1E5B3B280012F078 /* NetConnection */ = {
+			isa = PBXGroup;
+			children = (
+				DE40F44A1E60A3A700EDCF34 /* Helper Class */,
+				DE3D9D6A1E5B3F700012F078 /* Reach.swift */,
+			);
+			name = NetConnection;
+			sourceTree = "<group>";
+		};
+		DE40F44A1E60A3A700EDCF34 /* Helper Class */ = {
+			isa = PBXGroup;
+			children = (
+				DC8BEC3D1EF40FAD00118C54 /* HandlerCoreData.swift */,
+				DE40F44B1E60A3DB00EDCF34 /* Helper.swift */,
+			);
+			name = "Helper Class";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27276A741D5C867800C134BA /* Zoetis -Feathers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27276AA01D5C867900C134BA /* Build configuration list for PBXNativeTarget "Zoetis -Feathers" */;
+			buildPhases = (
+				3F5143F0B505A3024C8D5B17 /* [CP] Check Pods Manifest.lock */,
+				8388C75A7F6734CFB0F34DE1 /* [CP] Check Pods Manifest.lock */,
+				27276A711D5C867800C134BA /* Sources */,
+				27276A721D5C867800C134BA /* Frameworks */,
+				27276A731D5C867800C134BA /* Resources */,
+				8377A4BDC10016A464E0E464 /* [CP] Embed Pods Frameworks */,
+				16C834D848DBBB6CAD52F4D5 /* [CP] Copy Pods Resources */,
+				0783F24191FDF92842F2C0BC /* 📦 Embed Pods Frameworks */,
+				D28C9D07D0342FF68299831A /* 📦 Copy Pods Resources */,
+				27D5B8E71F839A6B0009EE6C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Zoetis -Feathers";
+			productName = "Zoetis -Feathers";
+			productReference = 27276A751D5C867800C134BA /* Zoetis -Feathers.app */;
+			productType = "com.apple.product-type.application";
+		};
+		27276A8B1D5C867900C134BA /* Zoetis -FeathersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27276AA31D5C867900C134BA /* Build configuration list for PBXNativeTarget "Zoetis -FeathersTests" */;
+			buildPhases = (
+				27276A881D5C867900C134BA /* Sources */,
+				27276A891D5C867900C134BA /* Frameworks */,
+				27276A8A1D5C867900C134BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27276A8E1D5C867900C134BA /* PBXTargetDependency */,
+			);
+			name = "Zoetis -FeathersTests";
+			productName = "Zoetis -FeathersTests";
+			productReference = 27276A8C1D5C867900C134BA /* Zoetis -FeathersTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		27276A961D5C867900C134BA /* Zoetis -FeathersUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27276AA61D5C867900C134BA /* Build configuration list for PBXNativeTarget "Zoetis -FeathersUITests" */;
+			buildPhases = (
+				27276A931D5C867900C134BA /* Sources */,
+				27276A941D5C867900C134BA /* Frameworks */,
+				27276A951D5C867900C134BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27276A991D5C867900C134BA /* PBXTargetDependency */,
+			);
+			name = "Zoetis -FeathersUITests";
+			productName = "Zoetis -FeathersUITests";
+			productReference = 27276A971D5C867900C134BA /* Zoetis -FeathersUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27276A6D1D5C867800C134BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Alok Yadav";
+				TargetAttributes = {
+					27276A741D5C867800C134BA = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 2KAL3NND99;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Manual;
+					};
+					27276A8B1D5C867900C134BA = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Manual;
+						TestTargetID = 27276A741D5C867800C134BA;
+					};
+					27276A961D5C867900C134BA = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 2KAL3NND99;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Manual;
+						TestTargetID = 27276A741D5C867800C134BA;
+					};
+				};
+			};
+			buildConfigurationList = 27276A701D5C867800C134BA /* Build configuration list for PBXProject "Zoetis -Feathers" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				es,
+			);
+			mainGroup = 27276A6C1D5C867800C134BA;
+			productRefGroup = 27276A761D5C867800C134BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27276A741D5C867800C134BA /* Zoetis -Feathers */,
+				27276A8B1D5C867900C134BA /* Zoetis -FeathersTests */,
+				27276A961D5C867900C134BA /* Zoetis -FeathersUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27276A731D5C867800C134BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE0D4D511EDF3C2C001840F6 /* pdf_2@3x.png in Resources */,
+				4550AB48200CB20C001B70F8 /* video-details_4.html in Resources */,
+				4524578C1EE1C0FB00A13FF1 /* pdf_1@2x.png in Resources */,
+				279706EF1DF1D16700B55763 /* infocollection.xib in Resources */,
+				27276A861D5C867800C134BA /* LaunchScreen.storyboard in Resources */,
+				45C6D7042023127B0041EB07 /* single_item_Dignostic-40.html in Resources */,
+				279706EB1DF1D15200B55763 /* SimpleCustomView.xib in Resources */,
+				45C6D71020249AD10041EB07 /* last_item.html in Resources */,
+				DE0D4D521EDF3C2C001840F6 /* video@2x.png in Resources */,
+				457217B11FFB99490062471B /* Main.storyboard in Resources */,
+				27BC7E5220162F5B00579C6D /* AddFarm.xib in Resources */,
+				272CF6321EDECCDA0048E74D /* YTPlayer.html in Resources */,
+				45F9F7DB20331209001F6084 /* single_item_Dignostic-35.html in Resources */,
+				27D1E6251E4CD25800E29776 /* logo.png in Resources */,
+				4507E3CE203710C100A5907C /* Notes.xib in Resources */,
+				45F9F7D7203311D6001F6084 /* last_item_daignostic-35.html in Resources */,
+				457217B81FFBC3810062471B /* Localizable.strings in Resources */,
+				45C6D71420249AF30041EB07 /* last_item_daignostic-40.html in Resources */,
+				DE0D4D531EDF3C2C001840F6 /* video@3x.png in Resources */,
+				148314BF1E52098C0076D67B /* terms-of-use.html in Resources */,
+				274E47E520231ABB00AD8434 /* popUP.xib in Resources */,
+				2765A40F1E3268A100D9DA4E /* Zoetis_video.mp4 in Resources */,
+				DE0D4D501EDF3C2C001840F6 /* pdf_2@2x.png in Resources */,
+				DE0D4D461EDF2F3D001840F6 /* video-details.html in Resources */,
+				27060BD21DB66E2700CF255C /* infoLink.xib in Resources */,
+				273102261D954CC000FEBED4 /* background03@2x.png in Resources */,
+				4524578D1EE1C0FB00A13FF1 /* pdf_1@3x.png in Resources */,
+				45B09E2B200D04F900FE2E25 /* summaryReport.xib in Resources */,
+				45C6D71820249B1E0041EB07 /* DiagnosticReport-40.html in Resources */,
+				45F9F7D320330E30001F6084 /* DiagnosticReport-35.html in Resources */,
+				27D4B2201DF1C95900AFBA25 /* Assets.xcassets in Resources */,
+				45C6D70C2024993E0041EB07 /* single_item.html in Resources */,
+				14D8E1871DB33D6F00D99331 /* UserListView.xib in Resources */,
+				45C6D708202487BB0041EB07 /* report.html in Resources */,
+				272CF6361EDF15650048E74D /*  Pdf1.png in Resources */,
+				27C8DCEF2021B91300C997DC /* startNecropsyXib.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27276A8A1D5C867900C134BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27276A951D5C867900C134BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0783F24191FDF92842F2C0BC /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zoetis -Feathers/Pods-Zoetis -Feathers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		16C834D848DBBB6CAD52F4D5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zoetis -Feathers/Pods-Zoetis -Feathers-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		27D5B8E71F839A6B0009EE6C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" ddd3e39cfec013e780ef07a1fac96e494553e0b7 54576118976ea8fa65c4e36d701a8644a077caba3e0045a3c13fec8165189f6c";
+		};
+		3F5143F0B505A3024C8D5B17 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8377A4BDC10016A464E0E464 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zoetis -Feathers/Pods-Zoetis -Feathers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8388C75A7F6734CFB0F34DE1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D28C9D07D0342FF68299831A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zoetis -Feathers/Pods-Zoetis -Feathers-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27276A711D5C867800C134BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2760420520037B5B000BAEEA /* Skelta_info+CoreDataClass.swift in Sources */,
+				27CB8B411D7EB249008B6CCD /* CommonTableView.swift in Sources */,
+				27922F51200651A800A3D6B5 /* Id+CoreDataClass.swift in Sources */,
+				27BC90BC1E49DE1D00ACD3A7 /* CocciProgramPosting.swift in Sources */,
+				27BC7E462015F11C00579C6D /* Immune+CoreDataClass.swift in Sources */,
+				278504351DEDB4FA00A3F6A6 /* imageTableViewCell.swift in Sources */,
+				27D1E6201E4CD25700E29776 /* CossiBarChartViewController.swift in Sources */,
+				27D1E62B1E4CD25800E29776 /* LastSessionDataModal.swift in Sources */,
+				27BC7E4B2015F11C00579C6D /* GITract+CoreDataProperties.swift in Sources */,
+				27D1E6211E4CD25800E29776 /* CropUtill.swift in Sources */,
+				271527EE1FF6339000C7C62B /* MyCotoxinBindersFeed+CoreDataClass.swift in Sources */,
+				DEA9DE011DF1FB0200574CC1 /* DashViewController.swift in Sources */,
+				27BC90A41E49DE1D00ACD3A7 /* ComplexPosting.swift in Sources */,
+				271527D31FF631EA00C7C62B /* BirdPhotoCapture+CoreDataProperties.swift in Sources */,
+				27BC90CC1E49DE1D00ACD3A7 /* Login.swift in Sources */,
+				27BC7E4A2015F11C00579C6D /* GITract+CoreDataClass.swift in Sources */,
+				460A187F1D6EFE3400B9C11A /* Dropper.swift in Sources */,
+				27D1E62C1E4CD25800E29776 /* Report_MainVCViewController.swift in Sources */,
+				27B4E60E1EDD71A900704CBF /* ReportComposerDaignostic.swift in Sources */,
+				27D1E62D1E4CD25800E29776 /* SummaryReportsViewController.swift in Sources */,
+				27BC90C31E49DE1D00ACD3A7 /* Veteration+CoreDataProperties.swift in Sources */,
+				27BC7E472015F11C00579C6D /* Immune+CoreDataProperties.swift in Sources */,
+				27922F52200651A800A3D6B5 /* Id+CoreDataProperties.swift in Sources */,
+				275CC0CC1D6B05C0000A8F29 /* SessionHistoryTableViewCell.swift in Sources */,
+				271527D61FF6324800C7C62B /* CaptureNecropsyData+CoreDataClass.swift in Sources */,
+				271527D71FF6324800C7C62B /* CaptureNecropsyData+CoreDataProperties.swift in Sources */,
+				27A741BF1F4EF3AC00A32882 /* AddFarm.swift in Sources */,
+				1468B6621DF9BCE90049AC56 /* startNecropsyXib.swift in Sources */,
+				27FA0DB71EDC393800444DD6 /* PdfReader1ViewController.swift in Sources */,
+				457217AE1FFB95770062471B /* LanguageUtility.swift in Sources */,
+				271BFB5F1F3B2E8A00B15445 /* ApiSync.swift in Sources */,
+				27DEB62E1FBDD2870046BD13 /* PostingSessionDetailController.swift in Sources */,
+				275CC0CA1D6B0595000A8F29 /* SessionsHistoryViewController.swift in Sources */,
+				27D1E6221E4CD25800E29776 /* GI_Tract_Modal.swift in Sources */,
+				27BC90BB1E49DE1D00ACD3A7 /* CocciProgramPosting+CoreDataProperties.swift in Sources */,
+				27276A791D5C867800C134BA /* AppDelegate.swift in Sources */,
+				271527F31FF633B500C7C62B /* NotesBird+CoreDataProperties.swift in Sources */,
+				DC48D9241EF912A60099FF33 /* FeedProgramViewController.swift in Sources */,
+				27F7B7191E0D11A10082E8B8 /* UnlinkedNecropsiesTableViewCell.swift in Sources */,
+				2786DD571FE921930030FCEB /* PostingViewController.swift in Sources */,
+				27B4E60D1EDD71A900704CBF /* ReportComposer.swift in Sources */,
+				27BC90C61E49DE1D00ACD3A7 /* Custmer.swift in Sources */,
+				271527D21FF631EA00C7C62B /* BirdPhotoCapture+CoreDataClass.swift in Sources */,
+				46C5C58D1D64A0B500499D8D /* MDRotatingPieChart.swift in Sources */,
+				27FA0DB61EDC393800444DD6 /* TrainingEducationViewController.swift in Sources */,
+				14B936B81DD1B2C10089E678 /* unlinkedNecopsySessionTableViewCell.swift in Sources */,
+				270F90DC1D784D1E00D8D333 /* DataClass.swift in Sources */,
+				271A56301F7EFACE0028D14D /* AllBirdsViewController.swift in Sources */,
+				45D02AEE1F028E46007B9D26 /* WebClass.swift in Sources */,
+				27AF596C1E13D5FE00C8194F /* DatepickerClass.swift in Sources */,
+				27276A811D5C867800C134BA /* Zoetis__Feathers.xcdatamodeld in Sources */,
+				140627201DD6D644005FE6AC /* summaryReport.swift in Sources */,
+				14D87AD11D6B19CD00AED5B2 /* PostingSessionDetailTableViewCell.swift in Sources */,
+				27B38AD01DB90AE4008EEB1B /* infoLink.swift in Sources */,
+				27BC90AA1E49DE1D00ACD3A7 /* BirdSizePosting.swift in Sources */,
+				274B0BD11DA4FA4000FBA3AD /* ServiceDataHolder.swift in Sources */,
+				27BC90B91E49DE1D00ACD3A7 /* Necropsy+CoreDataProperties.swift in Sources */,
+				27BC90A31E49DE1D00ACD3A7 /* ComplexPosting+CoreDataProperties.swift in Sources */,
+				27F448281E1B9D780053CA65 /* splashViewController.swift in Sources */,
+				27CA9A561DABA5AF00AE13E6 /* popUP.swift in Sources */,
+				27BC90C91E49DE1D00ACD3A7 /* FarmsList+CoreDataProperties.swift in Sources */,
+				271527E21FF6330800C7C62B /* FeedProgram+CoreDataClass.swift in Sources */,
+				45B436021E12AADE00170A66 /* secTableViewCell.swift in Sources */,
+				27BC90C41E49DE1D00ACD3A7 /* Veteration.swift in Sources */,
+				46C5C57D1D64682100499D8D /* DataGenerator.swift in Sources */,
+				27BC7E482015F11C00579C6D /* Skeleta+CoreDataClass.swift in Sources */,
+				271527CF1FF6319500C7C62B /* AntiboticFeed+CoreDataProperties.swift in Sources */,
+				27BC909D1E49DE1D00ACD3A7 /* CamraImage+CoreDataProperties.swift in Sources */,
+				27F1CD511DF9A305002711F1 /* obsFieldCollectionViewCell.swift in Sources */,
+				148314BD1E5209840076D67B /* Terms&ConditionViewController.swift in Sources */,
+				C3040EBB1DB78B54009A6943 /* UserListView.swift in Sources */,
+				271527F21FF633B500C7C62B /* NotesBird+CoreDataClass.swift in Sources */,
+				2760FEE91FA89B0B001CB55C /* AddVaccinationViewController.swift in Sources */,
+				27BC7E452015F11C00579C6D /* Coccidiosis+CoreDataProperties.swift in Sources */,
+				27FA0DBA1EDC393800444DD6 /* TutorialPageViewController.swift in Sources */,
+				271527E61FF6333200C7C62B /* FieldVaccination+CoreDataClass.swift in Sources */,
+				142BBC0C1DCAAF0200A769FE /* CustomerReprestative.swift in Sources */,
+				142BBC0A1DCAAF0200A769FE /* CustomerReprestative+CoreDataProperties.swift in Sources */,
+				27BC7E502015F5A500579C6D /* CaptureNecropsyViewData+CoreDataClass.swift in Sources */,
+				DC8BEC3E1EF40FAD00118C54 /* HandlerCoreData.swift in Sources */,
+				271527E31FF6330800C7C62B /* FeedProgram+CoreDataProperties.swift in Sources */,
+				2773B7ED1DED832B007B66E7 /* MIBadgeButton.swift in Sources */,
+				27BC90CA1E49DE1D00ACD3A7 /* FarmsList.swift in Sources */,
+				14436C791D6F212100A816F5 /* CaptureNecropsyCollectionViewCell.swift in Sources */,
+				271527EF1FF6339000C7C62B /* MyCotoxinBindersFeed+CoreDataProperties.swift in Sources */,
+				27BC909E1E49DE1D00ACD3A7 /* CamraImage.swift in Sources */,
+				276238711E5F3916000BE899 /* ViewController.swift in Sources */,
+				27FC68EA203C4F7500D40458 /* CaptureNecropsyDataViewController .swift in Sources */,
+				27BC90D61E49DE1D00ACD3A7 /* Breed+CoreDataProperties.swift in Sources */,
+				27803B621DF97A5300D9FA21 /* NecropsyTableViewCell.swift in Sources */,
+				27BC7E4C2015F11C00579C6D /* Respiratory+CoreDataClass.swift in Sources */,
+				278E024F1E095BE90032E6F4 /* ExistingPostingSessionViewController.swift in Sources */,
+				27BC90D71E49DE1D00ACD3A7 /* Breed.swift in Sources */,
+				27BC7E492015F11C00579C6D /* Skeleta+CoreDataProperties.swift in Sources */,
+				27F1CD521DF9A305002711F1 /* ObsNameCollectionViewCell.swift in Sources */,
+				27D1E62A1E4CD25800E29776 /* ImmuneBarChartViewController.swift in Sources */,
+				27BC90A71E49DE1D00ACD3A7 /* Salesrep+CoreDataProperties.swift in Sources */,
+				45AD42AA1F0D31D800159686 /* RangeValueFormatter.swift in Sources */,
+				271527E71FF6333200C7C62B /* FieldVaccination+CoreDataProperties.swift in Sources */,
+				271527DF1FF632BF00C7C62B /* CoccidiosisControlFeed+CoreDataProperties.swift in Sources */,
+				DE6D7E6C1EE02E8400BA136C /* VideoViewController.swift in Sources */,
+				27216A8C1D9BE1C900542976 /* ModelVacation.swift in Sources */,
+				271527CA1FF6314100C7C62B /* AlternativeFeed+CoreDataClass.swift in Sources */,
+				274B70B620188EC70039D7DC /* PostingSession+CoreDataProperties.swift in Sources */,
+				271527CB1FF6314100C7C62B /* AlternativeFeed+CoreDataProperties.swift in Sources */,
+				278504341DEDB4FA00A3F6A6 /* ImageViewController.swift in Sources */,
+				14B936B61DD1B2C10089E678 /* ExistingPostingTableViewCell.swift in Sources */,
+				45D02AED1F028E46007B9D26 /* UnlinkNecrpoSecondViewController.swift in Sources */,
+				27BC7E442015F11C00579C6D /* Coccidiosis+CoreDataClass.swift in Sources */,
+				275E65CD1D6DB30B007B9555 /* StartNecropsyTableViewCell.swift in Sources */,
+				27BC90BA1E49DE1D00ACD3A7 /* Necropsy.swift in Sources */,
+				27BC7E512015F5A500579C6D /* CaptureNecropsyViewData+CoreDataProperties.swift in Sources */,
+				14B936BA1DD1B2C10089E678 /* UnlinkNecrpoSecondTblViewCell.swift in Sources */,
+				272CF6311EDECCDA0048E74D /* YouTubePlayer.swift in Sources */,
+				460A18811D6EFE3400B9C11A /* DropperExtensions.swift in Sources */,
+				274B70B520188EC70039D7DC /* PostingSession+CoreDataClass.swift in Sources */,
+				27DEB62C1FBDD2540046BD13 /* SingleSyncData.swift in Sources */,
+				27BC90A91E49DE1D00ACD3A7 /* BirdSizePosting+CoreDataProperties.swift in Sources */,
+				27BC90D31E49DE1D00ACD3A7 /* Sessiontype+CoreDataProperties.swift in Sources */,
+				27BC90D41E49DE1D00ACD3A7 /* Sessiontype.swift in Sources */,
+				27D1E61F1E4CD25700E29776 /* BarChartViewController.swift in Sources */,
+				27BC90BF1E49DE1D00ACD3A7 /* Route+CoreDataProperties.swift in Sources */,
+				457217AF1FFB95770062471B /* Localizer.swift in Sources */,
+				271527EB1FF6336100C7C62B /* HatcheryVac+CoreDataProperties.swift in Sources */,
+				271527EA1FF6336100C7C62B /* HatcheryVac+CoreDataClass.swift in Sources */,
+				27BC90C51E49DE1D00ACD3A7 /* Custmer+CoreDataProperties.swift in Sources */,
+				45C6D68F201F2D2D0041EB07 /* KeyConstants.swift in Sources */,
+				14A3E3FB1DBAE3EC00A60C9F /* captureTableViewCell.swift in Sources */,
+				27BC7E4D2015F11C00579C6D /* Respiratory+CoreDataProperties.swift in Sources */,
+				275E65CC1D6DB30B007B9555 /* StartNecropsySessionViewController.swift in Sources */,
+				271527DE1FF632BF00C7C62B /* CoccidiosisControlFeed+CoreDataClass.swift in Sources */,
+				279706EE1DF1D16700B55763 /* infocollection.swift in Sources */,
+				278F49331DD1C5E100957325 /* LeftMenuViewController.swift in Sources */,
+				272329BB1DF0926600CD47EB /* notes.swift in Sources */,
+				272E707B1D802C6200A4BD1C /* CustomeTableViewCell.swift in Sources */,
+				2786DD551FE9216C0030FCEB /* captureNecropsyStep1Data.swift in Sources */,
+				14B936B71DD1B2C10089E678 /* UnlinkedNecropsySessionViewController.swift in Sources */,
+				2786DD591FE92CCA0030FCEB /* UnlinkedNecropsiesViewController.swift in Sources */,
+				DC22B1CF1EFBC7A700D51BF5 /* SettingsViewController.swift in Sources */,
+				27BC90A81E49DE1D00ACD3A7 /* Salesrep.swift in Sources */,
+				460A18801D6EFE3400B9C11A /* DropperCell.swift in Sources */,
+				45F9F7E72035A782001F6084 /* ReportsCalculation.swift in Sources */,
+				27BC90C01E49DE1D00ACD3A7 /* Route.swift in Sources */,
+				27BC90CB1E49DE1D00ACD3A7 /* Login+CoreDataProperties.swift in Sources */,
+				2760420620037B5B000BAEEA /* Skelta_info+CoreDataProperties.swift in Sources */,
+				27E1873A1E2E30BE00CF24C0 /* HelpViewController.swift in Sources */,
+				273013AB1D6C6736002DA33D /* CommonClass.swift in Sources */,
+				271527CE1FF6319500C7C62B /* AntiboticFeed+CoreDataClass.swift in Sources */,
+				14AB38171E534B07001F4690 /* HelpScreenViewController.swift in Sources */,
+				27BC7E392015DFAF00579C6D /* SimpleCustomView.swift in Sources */,
+				27F1CD4F1DF9A305002711F1 /* allBirdsTableViewCell.swift in Sources */,
+				27FA0DB81EDC393800444DD6 /* PdfReader2ViewController.swift in Sources */,
+				27D4B2181DF1A56E00AFBA25 /* InfoViewController.swift in Sources */,
+				27D1E6231E4CD25800E29776 /* CustomPrintPageRenderer.swift in Sources */,
+				DE3D9D6B1E5B3F700012F078 /* Reach.swift in Sources */,
+				DE40F44C1E60A3DB00EDCF34 /* Helper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27276A881D5C867900C134BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27276A911D5C867900C134BA /* Zoetis__FeathersTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27276A931D5C867900C134BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27276A9C1D5C867900C134BA /* Zoetis__FeathersUITests.swift in Sources */,
+				142BBC0D1DCAAF0200A769FE /* CustomerReprestative.swift in Sources */,
+				142BBC0B1DCAAF0200A769FE /* CustomerReprestative+CoreDataProperties.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27276A8E1D5C867900C134BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27276A741D5C867800C134BA /* Zoetis -Feathers */;
+			targetProxy = 27276A8D1D5C867900C134BA /* PBXContainerItemProxy */;
+		};
+		27276A991D5C867900C134BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27276A741D5C867800C134BA /* Zoetis -Feathers */;
+			targetProxy = 27276A981D5C867900C134BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		27276A841D5C867800C134BA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27276A851D5C867800C134BA /* Base */,
+				457217B01FFB987B0062471B /* es */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		274E47E720231ABB00AD8434 /* popUP.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				274E47E620231ABB00AD8434 /* Base */,
+				274E47E920231AC100AD8434 /* es */,
+			);
+			name = popUP.xib;
+			sourceTree = "<group>";
+		};
+		27BC7E5420162F5B00579C6D /* AddFarm.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27BC7E5320162F5B00579C6D /* Base */,
+				27BC7E5620162FCC00579C6D /* es */,
+			);
+			name = AddFarm.xib;
+			sourceTree = "<group>";
+		};
+		27C8DCF12021B91300C997DC /* startNecropsyXib.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27C8DCF02021B91300C997DC /* Base */,
+				27C8DCF32021B92A00C997DC /* es */,
+			);
+			name = startNecropsyXib.xib;
+			sourceTree = "<group>";
+		};
+		4507E3D0203710C100A5907C /* Notes.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4507E3CF203710C100A5907C /* Base */,
+				4507E3D2203710C400A5907C /* es */,
+			);
+			name = Notes.xib;
+			sourceTree = "<group>";
+		};
+		457217B31FFB99490062471B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				457217B21FFB99490062471B /* Base */,
+				45F9F7E520333332001F6084 /* es */,
+			);
+			name = Main.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		457217BA1FFBC3810062471B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				457217BC1FFBC95E0062471B /* Base */,
+				457217BD1FFCE36D0062471B /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		45B09E2D200D04F900FE2E25 /* summaryReport.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45B09E2C200D04F900FE2E25 /* Base */,
+				45B09E2F200D04FC00FE2E25 /* es */,
+			);
+			name = summaryReport.xib;
+			sourceTree = "<group>";
+		};
+		45C6D7062023127B0041EB07 /* single_item_Dignostic-40.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45C6D7052023127B0041EB07 /* Base */,
+				45C6D71C2024A2260041EB07 /* es */,
+			);
+			name = "single_item_Dignostic-40.html";
+			sourceTree = "<group>";
+		};
+		45C6D70A202487BB0041EB07 /* report.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45C6D709202487BB0041EB07 /* Base */,
+				45C6D70B202487C40041EB07 /* es */,
+			);
+			name = report.html;
+			sourceTree = "<group>";
+		};
+		45C6D70E2024993E0041EB07 /* single_item.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45C6D70D2024993E0041EB07 /* Base */,
+				45C6D70F202499420041EB07 /* es */,
+			);
+			name = single_item.html;
+			sourceTree = "<group>";
+		};
+		45C6D71220249AD10041EB07 /* last_item.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45C6D71120249AD10041EB07 /* Base */,
+				45C6D71320249AD30041EB07 /* es */,
+			);
+			name = last_item.html;
+			sourceTree = "<group>";
+		};
+		45C6D71620249AF30041EB07 /* last_item_daignostic-40.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45C6D71520249AF30041EB07 /* Base */,
+				45C6D71720249AF50041EB07 /* es */,
+			);
+			name = "last_item_daignostic-40.html";
+			sourceTree = "<group>";
+		};
+		45C6D71A20249B1E0041EB07 /* DiagnosticReport-40.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45C6D71920249B1E0041EB07 /* Base */,
+				45C6D71B20249B200041EB07 /* es */,
+			);
+			name = "DiagnosticReport-40.html";
+			sourceTree = "<group>";
+		};
+		45F9F7D520330E30001F6084 /* DiagnosticReport-35.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45F9F7D420330E30001F6084 /* Base */,
+				45F9F7D620330E34001F6084 /* es */,
+			);
+			name = "DiagnosticReport-35.html";
+			sourceTree = "<group>";
+		};
+		45F9F7D9203311D6001F6084 /* last_item_daignostic-35.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45F9F7D8203311D6001F6084 /* Base */,
+				45F9F7DA203311D8001F6084 /* es */,
+			);
+			name = "last_item_daignostic-35.html";
+			sourceTree = "<group>";
+		};
+		45F9F7DD20331209001F6084 /* single_item_Dignostic-35.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45F9F7DC20331209001F6084 /* Base */,
+				45F9F7DE2033120C001F6084 /* es */,
+			);
+			name = "single_item_Dignostic-35.html";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		27276A9E1D5C867900C134BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: NIR GOLAN (7HDWALBG9X)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: NIR GOLAN (7HDWALBG9X)";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 2KAL3NND99;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "e71522c1-6486-4583-83b4-7852a46497e8";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		27276A9F1D5C867900C134BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: NIR GOLAN (7HDWALBG9X)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: NIR GOLAN (7HDWALBG9X)";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 2KAL3NND99;
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "e71522c1-6486-4583-83b4-7852a46497e8";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27276AA11D5C867900C134BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7BAC15C68DDA47BF7D1A308 /* Pods-Zoetis -Feathers.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: A-1 Technology Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: A-1 Technology Inc";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = 2KAL3NND99;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Charts",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/iOS-Slide-Menu",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/MBProgressHUD",
+					"$(PROJECT_DIR)/build/Release-iphoneos/Dropper",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Zoetis -Feathers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.distribution.pv360;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4dc1d608-932b-45df-b935-16afec365358";
+				PROVISIONING_PROFILE_SPECIFIER = "Distribution OLD Identifier Profile";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Zoetis-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		27276AA21D5C867900C134BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 140FAEA6378519DDED0EECFD /* Pods-Zoetis -Feathers.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: A-1 Technology Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: A-1 Technology Inc";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = 2KAL3NND99;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Charts",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/iOS-Slide-Menu",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/MBProgressHUD",
+					"$(PROJECT_DIR)/build/Release-iphoneos/Dropper",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Zoetis -Feathers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.distribution.pv360;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4dc1d608-932b-45df-b935-16afec365358";
+				PROVISIONING_PROFILE_SPECIFIER = "Distribution OLD Identifier Profile";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Zoetis-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		27276AA41D5C867900C134BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: A-1 Technology Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: A-1 Technology Inc";
+				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "Zoetis -FeathersTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app.Zoetis--FeathersTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "dbec7f06-63c8-4616-86c8-d38e7b864284";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zoetis -Feathers.app/Zoetis -Feathers";
+			};
+			name = Debug;
+		};
+		27276AA51D5C867900C134BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: A-1 Technology Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: A-1 Technology Inc";
+				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "Zoetis -FeathersTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app.Zoetis--FeathersTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "dbec7f06-63c8-4616-86c8-d38e7b864284";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zoetis -Feathers.app/Zoetis -Feathers";
+			};
+			name = Release;
+		};
+		27276AA71D5C867900C134BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: A-1 Technology Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: A-1 Technology Inc";
+				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = 2KAL3NND99;
+				INFOPLIST_FILE = "Zoetis -FeathersUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.a1distribute.Zoetis--FeathersUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "884aed42-c189-4e37-8786-d83c6ce99737";
+				PROVISIONING_PROFILE_SPECIFIER = Distribute_Enterprise;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Zoetis -Feathers";
+			};
+			name = Debug;
+		};
+		27276AA81D5C867900C134BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: A-1 Technology Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: A-1 Technology Inc";
+				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = 2KAL3NND99;
+				INFOPLIST_FILE = "Zoetis -FeathersUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.a1distribute.Zoetis--FeathersUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "884aed42-c189-4e37-8786-d83c6ce99737";
+				PROVISIONING_PROFILE_SPECIFIER = Distribute_Enterprise;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Zoetis -Feathers";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27276A701D5C867800C134BA /* Build configuration list for PBXProject "Zoetis -Feathers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27276A9E1D5C867900C134BA /* Debug */,
+				27276A9F1D5C867900C134BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27276AA01D5C867900C134BA /* Build configuration list for PBXNativeTarget "Zoetis -Feathers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27276AA11D5C867900C134BA /* Debug */,
+				27276AA21D5C867900C134BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27276AA31D5C867900C134BA /* Build configuration list for PBXNativeTarget "Zoetis -FeathersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27276AA41D5C867900C134BA /* Debug */,
+				27276AA51D5C867900C134BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27276AA61D5C867900C134BA /* Build configuration list for PBXNativeTarget "Zoetis -FeathersUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27276AA71D5C867900C134BA /* Debug */,
+				27276AA81D5C867900C134BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		27276A7F1D5C867800C134BA /* Zoetis__Feathers.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				27276A801D5C867800C134BA /* Zoetis__Feathers.xcdatamodel */,
+			);
+			currentVersion = 27276A801D5C867800C134BA /* Zoetis__Feathers.xcdatamodel */;
+			path = Zoetis__Feathers.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 27276A6D1D5C867800C134BA /* Project object */;
+}

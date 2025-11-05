@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FrezerFooterViewCell" rowHeight="185" id="KGk-i7-Jjw" customClass="FrezerFooterViewCell" customModule="PoultryView_360" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="853" height="185"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="853" height="185"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note other additives/contet in refrigator and freezer:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3iF-b5-Wfy">
+                        <rect key="frame" x="20" y="22" width="308" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="AyP-Rj-lX2"/>
+                            <constraint firstAttribute="width" constant="308" id="Yrf-iU-48L"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f3s-GD-ZbQ" customClass="PEFormTextfield" customModule="PoultryView_360" customModuleProvider="target">
+                        <rect key="frame" x="369" y="29" width="454" height="111"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="f3s-GD-ZbQ" secondAttribute="trailing" constant="30" id="1Wh-jI-jwd"/>
+                    <constraint firstItem="f3s-GD-ZbQ" firstAttribute="leading" secondItem="3iF-b5-Wfy" secondAttribute="trailing" constant="41" id="CHK-od-tpA"/>
+                    <constraint firstItem="f3s-GD-ZbQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="29" id="ZTx-iJ-GNW"/>
+                    <constraint firstAttribute="bottom" secondItem="f3s-GD-ZbQ" secondAttribute="bottom" constant="45" id="fAU-pm-lT2"/>
+                    <constraint firstItem="3iF-b5-Wfy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="fpk-Eq-gvG"/>
+                    <constraint firstItem="3iF-b5-Wfy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="zQq-v9-RcA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="textFieldView" destination="f3s-GD-ZbQ" id="nro-Qu-hj7"/>
+            </connections>
+            <point key="canvasLocation" x="126.81159420289856" y="-25.111607142857142"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="f3s-GD-ZbQ">
+            <size key="intrinsicContentSize" width="4" height="18.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

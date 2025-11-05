@@ -1,0 +1,24 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "941c42af-1613-be43-877b-88045527ffd8++2388" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "941c42af-1613-be43-877b-88045527ffd8++2388" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "635DA9C2-F573-45E8-90E6-524AE72F6E36",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "941c42af-1613-be43-877b-88045527ffd8++2388" : "HMS%20Latest%2021%20nov%20%202%202\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Zoetis -Feathers",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Zoetis -Feathers.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/repo.a1technology.in\/svn\/ZoetisFeathers",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "941c42af-1613-be43-877b-88045527ffd8++2388"
+    }
+  ]
+}

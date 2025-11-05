@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "1"; ObjectID = "7T6-Et-gEQ"; */
+"7T6-Et-gEQ.text" = "1";
+
+/* Class = "UILabel"; text = "No of birds"; ObjectID = "BVQ-mm-ul4"; */
+"BVQ-mm-ul4.text" = "No de pájaros";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "GBE-b6-Smj"; */
+"GBE-b6-Smj.normalTitle" = "Hecho";
+
+/* Class = "UILabel"; text = "Age (days)*"; ObjectID = "P9z-wo-OPx"; */
+"P9z-wo-OPx.text" = "Edad (días) *";
+
+/* Class = "UILabel"; text = "House no."; ObjectID = "cvL-lJ-ZWW"; */
+"cvL-lJ-ZWW.text" = "Casa no.";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "dEY-7n-0ji"; */
+"dEY-7n-0ji.text" = "5";
+
+/* Class = "UILabel"; text = "Sick"; ObjectID = "dYf-Al-8of"; */
+"dYf-Al-8of.text" = "Enfermos";
+
+/* Class = "UILabel"; text = "Farm name *"; ObjectID = "mdS-wQ-NhC"; */
+"mdS-wQ-NhC.text" = "Nombre de la granja *";
+
+/* Class = "UILabel"; text = "Flock Id"; ObjectID = "nRu-vx-16D"; */
+"nRu-vx-16D.text" = "Flock Id";
+
+/* Class = "UILabel"; text = NSLocalizedString("- Select -", comment: ""); ObjectID = "paO-ed-XdK"; */
+"paO-ed-XdK.text" = "- Seleccionar -";
+
+/* Class = "UILabel"; text = "Add Farm"; ObjectID = "ttl-IJ-Gsl"; */
+"ttl-IJ-Gsl.text" = "Añadir granja";
+
+/* Class = "UILabel"; text = "Feed program *"; ObjectID = "wh1-kk-PVd"; */
+"wh1-kk-PVd.text" = "Programa de alimentación *";

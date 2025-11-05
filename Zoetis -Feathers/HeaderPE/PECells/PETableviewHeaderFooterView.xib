@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="IJ2-4s-mCp" customClass="PETableviewHeaderFooterView" customModule="PV360Hatchery" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="251"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OeR-Rh-Epl">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="251"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabSelect" translatesAutoresizingMaskIntoConstraints="NO" id="LK0-9n-EcC">
+                    <rect key="frame" x="8" y="151" width="319" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="8LH-Vu-Ahv"/>
+                        <constraint firstAttribute="width" constant="319" id="LTY-07-M65"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="setCornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="hlB-JE-g1g">
+                    <rect key="frame" x="32" y="160" width="274" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="8Fa-zu-X4W"/>
+                        <constraint firstAttribute="width" constant="274" id="q8D-2w-tzQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DxX-kL-JkC">
+                    <rect key="frame" x="0.0" y="201" width="1024" height="60"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poppupHeader" translatesAutoresizingMaskIntoConstraints="NO" id="vVn-Cd-MD0">
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="67"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="67" id="LjF-5z-J4y"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No of vaccinators" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wi-sb-53Q">
+                            <rect key="frame" x="34" y="1" width="328" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="DaH-67-o6A"/>
+                                <constraint firstAttribute="width" constant="328" id="fOZ-nV-15X"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPS-Cr-1tb">
+                            <rect key="frame" x="898" y="6" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="8gF-Ac-Tvg"/>
+                                <constraint firstAttribute="height" constant="35" id="hXi-qJ-d6v"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="addIconPE"/>
+                            <connections>
+                                <action selector="addTapped:" destination="IJ2-4s-mCp" eventType="touchUpInside" id="4FO-Rx-JJa"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6x-fs-SU7">
+                            <rect key="frame" x="961" y="6" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="Rou-fx-ygj"/>
+                                <constraint firstAttribute="width" constant="35" id="Y7P-Z2-LSj"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="removeIconPE"/>
+                            <connections>
+                                <action selector="minusTapped:" destination="IJ2-4s-mCp" eventType="touchUpInside" id="yND-R4-j2p"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="vVn-Cd-MD0" firstAttribute="leading" secondItem="DxX-kL-JkC" secondAttribute="leading" id="14i-dK-3Fq"/>
+                        <constraint firstAttribute="bottom" secondItem="vVn-Cd-MD0" secondAttribute="bottom" constant="-7" id="4wD-O8-HsC"/>
+                        <constraint firstAttribute="trailing" secondItem="T6x-fs-SU7" secondAttribute="trailing" constant="28" id="R2H-h5-cOq"/>
+                        <constraint firstItem="T6x-fs-SU7" firstAttribute="top" secondItem="DxX-kL-JkC" secondAttribute="top" constant="6" id="Y66-NG-VgK"/>
+                        <constraint firstItem="HPS-Cr-1tb" firstAttribute="top" secondItem="DxX-kL-JkC" secondAttribute="top" constant="6" id="bWX-4Z-ndn"/>
+                        <constraint firstAttribute="trailing" secondItem="vVn-Cd-MD0" secondAttribute="trailing" id="iPG-z1-kIK"/>
+                        <constraint firstItem="7Wi-sb-53Q" firstAttribute="leading" secondItem="DxX-kL-JkC" secondAttribute="leading" constant="34" id="qK6-5t-UIg"/>
+                        <constraint firstAttribute="height" constant="60" id="sui-ai-pGy"/>
+                        <constraint firstItem="T6x-fs-SU7" firstAttribute="leading" secondItem="HPS-Cr-1tb" secondAttribute="trailing" constant="28" id="tC1-W4-EuG"/>
+                        <constraint firstItem="7Wi-sb-53Q" firstAttribute="top" secondItem="DxX-kL-JkC" secondAttribute="top" constant="1" id="uiv-OQ-efe"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.81551679870000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="LK0-9n-EcC" firstAttribute="leading" secondItem="U7a-jH-fNk" secondAttribute="leading" constant="8" id="H7V-hQ-7WB"/>
+                <constraint firstItem="hlB-JE-g1g" firstAttribute="leading" secondItem="U7a-jH-fNk" secondAttribute="leading" constant="32" id="KSu-PO-HVh"/>
+                <constraint firstItem="DxX-kL-JkC" firstAttribute="leading" secondItem="U7a-jH-fNk" secondAttribute="leading" id="NbB-XY-eqh"/>
+                <constraint firstItem="LK0-9n-EcC" firstAttribute="top" secondItem="hlB-JE-g1g" secondAttribute="bottom" constant="-49" id="YFL-ez-qAX"/>
+                <constraint firstAttribute="bottom" secondItem="DxX-kL-JkC" secondAttribute="bottom" constant="-10" id="af3-mP-zfh"/>
+                <constraint firstItem="DxX-kL-JkC" firstAttribute="trailing" secondItem="U7a-jH-fNk" secondAttribute="trailing" id="bFH-jL-KnZ"/>
+                <constraint firstAttribute="bottom" secondItem="OeR-Rh-Epl" secondAttribute="bottom" id="fyN-l7-MPy"/>
+                <constraint firstItem="OeR-Rh-Epl" firstAttribute="trailing" secondItem="U7a-jH-fNk" secondAttribute="trailing" id="gfb-go-5yj"/>
+                <constraint firstItem="DxX-kL-JkC" firstAttribute="top" secondItem="LK0-9n-EcC" secondAttribute="bottom" constant="-20" id="pwY-qg-bpZ"/>
+                <constraint firstItem="OeR-Rh-Epl" firstAttribute="leading" secondItem="U7a-jH-fNk" secondAttribute="leading" id="tkw-Rd-ipk"/>
+                <constraint firstItem="OeR-Rh-Epl" firstAttribute="top" secondItem="IJ2-4s-mCp" secondAttribute="top" id="zxG-0P-jOT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="U7a-jH-fNk"/>
+            <connections>
+                <outlet property="lblSubTitle" destination="7Wi-sb-53Q" id="j4o-ha-fMA"/>
+                <outlet property="lblTitle" destination="hlB-JE-g1g" id="cxi-Ec-8ym"/>
+            </connections>
+            <point key="canvasLocation" x="260.86956521739131" y="152.34375"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="addIconPE" width="42.5" height="42.5"/>
+        <image name="poppupHeader" width="938" height="88"/>
+        <image name="removeIconPE" width="42.5" height="42.5"/>
+        <image name="tabSelect" width="231" height="66"/>
+    </resources>
+</document>

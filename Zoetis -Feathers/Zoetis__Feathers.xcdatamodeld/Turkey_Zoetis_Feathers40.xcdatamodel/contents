@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="18G103" minimumToolsVersion="Xcode 7.3" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AlternativeFeed" representedClassName=".AlternativeFeed" syncable="YES">
+        <attribute name="coccidiosisVaccineId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dosage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="feedProgram" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fromDays" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="loginSessionId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="molecule" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="moleculeId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="toDays" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="AlternativeFeedTurkey" representedClassName=".AlternativeFeedTurkey" syncable="YES">
+        <attribute name="coccidiosisVaccineId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dosage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="feedProgram" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fromDays" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="loginSessionId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="molecule" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="moleculeId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="toDays" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="AntiboticFeed" representedClassName=".AntiboticFeed" syncable="YES">
+        <attribute name="coccidiosisVaccineId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dosage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="feedProgram" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fromDays" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="loginSessionId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="molecule" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="moleculeId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="toDays" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="AntiboticFeedTurkey" representedClassName=".AntiboticFeedTurkey" syncable="YES">
+        <attribute name="coccidiosisVaccineId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dosage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="feedProgram" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fromDays" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="loginSessionId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="molecule" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="moleculeId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="toDays" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="BirdPhotoCapture" representedClassName=".BirdPhotoCapture" syncable="YES">
+        <attribute name="birdNum" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="catName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="farmName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="necropsyId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="obsId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="obsName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="BirdPhotoCaptureTurkey" representedClassName=".BirdPhotoCaptureTurkey" syncable="YES">
+        <attribute name="birdNum" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="catName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="farmName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="necropsyId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="obsId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="obsName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Integer 64" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="BirdSizePosting" representedClassName=".BirdSizePosting" syncable="YES">
+        <attribute name="birdSize" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birdSizeId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="scaleType" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="BirdSizePostingTurkey" representedClassName=".BirdSizePostingTurkey" syncable="YES">
+        <attribute name="birdSize" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birdSizeId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="scaleType" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Breed" representedClassName=".Breed" syncable="YES">
+        <attribute name="breedId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="breedName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="breedType" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="BreedTurkey" representedClassName=".BreedTurkey" syncable="YES">
+        <attribute name="breedId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="breedName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="breedType" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CamraImage" representedClassName=".CamraImage" syncable="YES">
+        <attribute name="localimage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="necropsy" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Necropsy" syncable="YES"/>
+    </entity>
+    <entity name="CamraImageTurkey" representedClassName=".CamraImageTurkey" syncable="YES">
+        <attribute name="localimage" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <entity name="CaptureNecropsyData" representedClassName=".CaptureNecropsyData" syncable="YES" codeGenerationType="class">
+        <attribute name="actualTimeStamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="complexDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="complexId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="complexName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="custmerId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="farmId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="farmName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="feedProgram" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flockId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="houseNo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isChecked" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="necropsyId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="noOfBirds" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sick" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="timeStamp" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CaptureNecropsyDataTurkey" representedClassName=".CaptureNecropsyDataTurkey" syncable="YES" codeGenerationType="class">
+        <attribute name="abf" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="actualTimeStamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="breed" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="complexDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="complexId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="complexName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="custmerId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="farmId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="farmName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="farmWeight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="feedProgram" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flockId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="houseNo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isChecked" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="necropsyId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="noOfBirds" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sick" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="timeStamp" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CaptureNecropsyViewData" representedClassName="CaptureNecropsyViewData" syncable="YES">
+        <attribute name="actualText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birdNo" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="cameraImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="catName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="measure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="necropsyId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objsVisibilty" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="obsID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="obsImageDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="obsName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="obsPoint" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="quickLink" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="refId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="CaptureNecropsyViewDataTurkey" representedClassName=".CaptureNecropsyViewDataTurkey" syncable="YES">
+        <attribute name="abf" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="actualText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birdNo" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="breed" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cameraImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="catName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="farmWeight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="measure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="necropsyId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objsVisibilty" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="obsID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="obsImageDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="obsName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="obsPoint" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="quickLink" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="refId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Coccidiosis" representedClassName=".Coccidiosis" syncable="YES">
+        <attribute name="information" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="measure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationField" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="quicklinks" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="refId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="visibilityCheck" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="necropsy" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Necropsy" syncable="YES"/>
+    </entity>
+    <entity name="CoccidiosisControlFeed" representedClassName=".CoccidiosisControlFeed" syncable="YES">
+        <attribute name="coccidiosisVaccine" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coccidiosisVaccineId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dosage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="feedProgram" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fromDays" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="loginSessionId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="molecule" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="moleculeId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="targetWeight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="toDays" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CoccidiosisControlFeedTurkey" representedClassName=".CoccidiosisControlFeedTurkey" syncable="YES">
+        <attribute name="coccidiosisVaccine" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coccidiosisVaccineId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dosage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="feedProgram" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fromDays" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="loginSessionId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="molecule" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="moleculeId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="targetWeight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="toDays" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CoccidiosisTurkey" representedClassName=".CoccidiosisTurkey" syncable="YES">
+        <attribute name="information" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="measure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationField" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="quicklinks" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="refId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="visibilityCheck" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="CocciProgramPosting" representedClassName=".CocciProgramPosting" syncable="YES">
+        <attribute name="cocciProgramId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="cocciProgramName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="CocciProgramPostingTurkey" representedClassName=".CocciProgramPostingTurkey" syncable="YES">
+        <attribute name="cocciProgramId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="cocciProgramName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="CocoiVaccine" syncable="YES">
+        <attribute name="cocoiiVacname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cocvaccId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="CocoiVaccineTurkey" representedClassName=".CocoiVaccineTurkey" syncable="YES">
+        <attribute name="cocoiiVacname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cocvaccId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="ComplexPosting" representedClassName=".ComplexPosting" syncable="YES">
+        <attribute name="complexId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="complexName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customerId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="ComplexPostingTurkey" representedClassName=".ComplexPostingTurkey" syncable="YES">
+        <attribute name="complexId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="complexName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customerId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="Custmer" representedClassName=".Custmer" syncable="YES">
+        <attribute name="complexId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="custId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="custName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="loginSessionId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="CustmerTurkey" representedClassName=".CustmerTurkey" syncable="YES">
+        <attribute name="complexId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="custId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="custName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="loginSessionId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="CustomerReprestative" representedClassName=".CustomerReprestative" syncable="YES">
+        <attribute name="customername" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userid" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="CustomerReprestativeTurkey" representedClassName=".CustomerReprestativeTurkey" syncable="YES">
+        <attribute name="customername" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userid" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="FarmsList" representedClassName=".FarmsList" syncable="YES">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="countryId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="countryName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="farmId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="farmName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stateId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stateName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FarmsListTurkey" representedClassName=".FarmsListTurkey" syncable="YES">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="countryId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="countryName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="farmId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="farmName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stateId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stateName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FeedProgram" representedClassName=".FeedProgram" syncable="YES">
+        <attribute name="feddProgramNam" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="formName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="loginSessionId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="FeedProgramTurkey" representedClassName=".FeedProgramTurkey" syncable="YES">
+        <attribute name="feddProgramNam" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="formName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="loginSessionId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="FieldVaccination" representedClassName=".FieldVaccination" syncable="YES">
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="loginSessionId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="route" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="strain" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vaciNationProgram" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FieldVaccinationTurkey" representedClassName=".FieldVaccinationTurkey" syncable="YES">
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="loginSessionId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="route" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="strain" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vaciNationProgram" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="GITract" representedClassName=".GITract" syncable="YES">
+        <attribute name="information" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="measure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationField" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="quicklinks" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="refId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="visibilityCheck" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="necropsy" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Necropsy" syncable="YES"/>
+    </entity>
+    <entity name="GITractTurkey" representedClassName=".GITractTurkey" syncable="YES">
+        <attribute name="information" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="measure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationField" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="quicklinks" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="refId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="visibilityCheck" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="HatcheryVac" representedClassName=".HatcheryVac" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="loginSessionId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="route" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="strain" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vaciNationProgram" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="HatcheryVacTurkey" representedClassName=".HatcheryVacTurkey" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="loginSessionId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="route" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="strain" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vaciNationProgram" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Id" representedClassName=".Id" syncable="YES">
+        <attribute name="autoId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="IdTurkey" representedClassName=".IdTurkey" syncable="YES">
+        <attribute name="autoId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="Immune" representedClassName=".Immune" syncable="YES">
+        <attribute name="information" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="measure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationField" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="quicklinks" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="refId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="visibilityCheck" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="necropsy" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Necropsy" syncable="YES"/>
+    </entity>
+    <entity name="ImmuneTurkey" representedClassName=".ImmuneTurkey" syncable="YES">
+        <attribute name="information" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="measure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationField" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="quicklinks" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="refId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="visibilityCheck" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="Login" representedClassName=".Login" syncable="YES">
+        <attribute name="loginId" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="signal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userTypeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="LoginTurkey" representedClassName=".LoginTurkey" syncable="YES">
+        <attribute name="loginId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="signal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userTypeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="MoleCuleFeed" representedClassName=".MoleCuleFeed" syncable="YES">
+        <attribute name="catId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="moleculeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="MoleculeFeeedTurkey" representedClassName=".MoleculeFeeedTurkey" syncable="YES">
+        <attribute name="catId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="moleculeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="MyCotoxinBindersFeed" representedClassName=".MyCotoxinBindersFeed" syncable="YES">
+        <attribute name="coccidiosisVaccineId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dosage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="feedProgram" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fromDays" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="loginSessionId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="molecule" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="moleculeId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="toDays" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="MyCotoxinBindersFeedTurkey" representedClassName=".MyCotoxinBindersFeedTurkey" syncable="YES">
+        <attribute name="coccidiosisVaccineId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dosage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="feedProgram" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feedType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fromDays" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="loginSessionId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="molecule" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="moleculeId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="toDays" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Necropsy" representedClassName=".Necropsy" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="switchcheck" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="camraimage" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="CamraImage" syncable="YES"/>
+        <relationship name="coccidiosis" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Coccidiosis" syncable="YES"/>
+        <relationship name="gitract" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="GITract" syncable="YES"/>
+        <relationship name="immune" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Immune" syncable="YES"/>
+        <relationship name="respiratory" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Respiratory" syncable="YES"/>
+        <relationship name="skeleta" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Skeleta" syncable="YES"/>
+    </entity>
+    <entity name="NecropsyTurkey" representedClassName=".NecropsyTurkey" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="switchcheck" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="NotesBird" representedClassName=".NotesBird" syncable="YES">
+        <attribute name="catName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="necropsyId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="noofBirds" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="NotesBirdTurkey" representedClassName=".NotesBirdTurkey" syncable="YES">
+        <attribute name="catName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="necropsyId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="noofBirds" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="PostingSession" representedClassName=".PostingSession" syncable="YES">
+        <attribute name="actualTimeStamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="antiboitic" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birdBreedId" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="birdBreedName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birdBreedType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birdSize" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birdSizeId" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="catptureNec" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="cocciProgramId" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="cociiProgramName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="complexId" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="complexName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="convential" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customerId" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="customerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customerRepId" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="customerRepName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="female" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="finalizeExit" optional="YES" attributeType="Integer 32" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="imperial" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isfarmSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="loginSessionId" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="mail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="metric" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="salesRepId" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="salesRepName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sessiondate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sessionTypeId" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sessionTypeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeStamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vetanatrionName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="veterinarianId" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="PostingSessionTurkey" representedClassName=".PostingSessionTurkey" syncable="YES" codeGenerationType="class">
+        <attribute name="actualTimeStamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="antiboitic" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birdBreedId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="birdBreedName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birdBreedType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birdSize" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birdSizeId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="catptureNec" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="cocciProgramId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="cociiProgramName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="complexId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="complexName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="convential" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customerId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="customerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customerRepId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="customerRepName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="female" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="finalizeExit" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="imperial" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isfarmSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="loginSessionId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="mail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="metric" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postingId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="salesRepId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="salesRepName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sessiondate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sessionTypeId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sessionTypeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeStamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vetanatrionName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="veterinarianId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="Respiratory" representedClassName=".Respiratory" syncable="YES">
+        <attribute name="information" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="measure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationField" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="quicklinks" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="refId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="visibilityCheck" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="necropsy" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Necropsy" syncable="YES"/>
+    </entity>
+    <entity name="RespiratoryTurkey" representedClassName=".RespiratoryTurkey" syncable="YES">
+        <attribute name="information" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="measure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationField" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="quicklinks" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="refId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="visibilityCheck" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="Route" representedClassName=".Route" syncable="YES">
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="routeId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="routeName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="RouteTurkey" representedClassName=".RouteTurkey" syncable="YES">
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="routeId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="routeName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Salesrep" representedClassName=".Salesrep" syncable="YES">
+        <attribute name="salesRepName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="salesReptId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="SalesrepTurkey" representedClassName=".SalesrepTurkey" syncable="YES">
+        <attribute name="salesRepName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="salesReptId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="Sessiontype" representedClassName=".Sessiontype" syncable="YES">
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sesionId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sesionType" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="SessiontypeTurkey" representedClassName=".SessiontypeTurkey" syncable="YES">
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sesionId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sesionType" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Skeleta" representedClassName=".Skeleta" syncable="YES">
+        <attribute name="information" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="measure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationField" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="quicklinks" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="refId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="visibilityCheck" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="necropsy" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Necropsy" syncable="YES"/>
+    </entity>
+    <entity name="SkeletaTurkey" representedClassName=".SkeletaTurkey" syncable="YES">
+        <attribute name="information" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSync" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lngId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="measure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationField" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observationId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="quicklinks" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="refId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="visibilityCheck" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="Skelta_info" representedClassName=".Skelta_info" syncable="YES">
+        <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="infoText_chinese" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="infoText_english" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="infoText_purtugise" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="infoText_spanish" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="necId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="obsId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="obsName_chinese" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="obsName_english" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="obsName_purutugise" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="obsName_spanish" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Skelta_infoTurkey" representedClassName=".Skelta_infoTurkey" syncable="YES">
+        <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="infoText_chinese" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="infoText_english" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="infoText_purtugise" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="infoText_spanish" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="necId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="obsId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="obsName_chinese" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="obsName_english" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="obsName_purutugise" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="obsName_spanish" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Veteration" representedClassName=".Veteration" syncable="YES">
+        <attribute name="complexId" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="vetarId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="vtName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="VeterationTurkey" representedClassName=".VeterationTurkey" syncable="YES">
+        <attribute name="complexId" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="vetarId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="vtName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AlternativeFeed" positionX="-54" positionY="-9" width="128" height="255"/>
+        <element name="AlternativeFeedTurkey" positionX="-9" positionY="135" width="128" height="255"/>
+        <element name="AntiboticFeed" positionX="9" positionY="54" width="128" height="255"/>
+        <element name="AntiboticFeedTurkey" positionX="0" positionY="144" width="128" height="255"/>
+        <element name="BirdPhotoCapture" positionX="0" positionY="45" width="128" height="195"/>
+        <element name="BirdPhotoCaptureTurkey" positionX="9" positionY="153" width="128" height="195"/>
+        <element name="BirdSizePosting" positionX="18" positionY="63" width="128" height="90"/>
+        <element name="BirdSizePostingTurkey" positionX="18" positionY="162" width="128" height="90"/>
+        <element name="Breed" positionX="0" positionY="45" width="128" height="90"/>
+        <element name="BreedTurkey" positionX="27" positionY="171" width="128" height="90"/>
+        <element name="CamraImage" positionX="45" positionY="90" width="128" height="75"/>
+        <element name="CamraImageTurkey" positionX="36" positionY="180" width="128" height="60"/>
+        <element name="CaptureNecropsyData" positionX="27" positionY="72" width="128" height="360"/>
+        <element name="CaptureNecropsyDataTurkey" positionX="45" positionY="189" width="128" height="420"/>
+        <element name="CaptureNecropsyViewData" positionX="-9" positionY="36" width="128" height="315"/>
+        <element name="CaptureNecropsyViewDataTurkey" positionX="-9" positionY="135" width="128" height="375"/>
+        <element name="Coccidiosis" positionX="9" positionY="54" width="128" height="195"/>
+        <element name="CoccidiosisControlFeed" positionX="9" positionY="54" width="128" height="285"/>
+        <element name="CoccidiosisControlFeedTurkey" positionX="9" positionY="153" width="128" height="285"/>
+        <element name="CoccidiosisTurkey" positionX="0" positionY="144" width="128" height="180"/>
+        <element name="CocciProgramPosting" positionX="0" positionY="45" width="128" height="90"/>
+        <element name="CocciProgramPostingTurkey" positionX="18" positionY="162" width="128" height="90"/>
+        <element name="CocoiVaccine" positionX="0" positionY="144" width="128" height="90"/>
+        <element name="CocoiVaccineTurkey" positionX="0" positionY="144" width="128" height="90"/>
+        <element name="ComplexPosting" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="ComplexPostingTurkey" positionX="27" positionY="171" width="128" height="90"/>
+        <element name="Custmer" positionX="36" positionY="81" width="128" height="120"/>
+        <element name="CustmerTurkey" positionX="36" positionY="180" width="128" height="120"/>
+        <element name="CustomerReprestative" positionX="45" positionY="90" width="128" height="75"/>
+        <element name="CustomerReprestativeTurkey" positionX="45" positionY="189" width="128" height="75"/>
+        <element name="FarmsList" positionX="-36" positionY="9" width="128" height="150"/>
+        <element name="FarmsListTurkey" positionX="-9" positionY="135" width="128" height="150"/>
+        <element name="FeedProgram" positionX="36" positionY="81" width="128" height="150"/>
+        <element name="FeedProgramTurkey" positionX="0" positionY="144" width="128" height="150"/>
+        <element name="FieldVaccination" positionX="-9" positionY="36" width="128" height="165"/>
+        <element name="FieldVaccinationTurkey" positionX="9" positionY="153" width="128" height="165"/>
+        <element name="GITract" positionX="9" positionY="54" width="128" height="195"/>
+        <element name="GITractTurkey" positionX="18" positionY="162" width="128" height="180"/>
+        <element name="HatcheryVac" positionX="-9" positionY="36" width="128" height="180"/>
+        <element name="HatcheryVacTurkey" positionX="27" positionY="171" width="128" height="180"/>
+        <element name="Id" positionX="-9" positionY="135" width="128" height="60"/>
+        <element name="IdTurkey" positionX="36" positionY="180" width="128" height="60"/>
+        <element name="Immune" positionX="0" positionY="45" width="128" height="195"/>
+        <element name="ImmuneTurkey" positionX="45" positionY="189" width="128" height="180"/>
+        <element name="Login" positionX="18" positionY="63" width="128" height="135"/>
+        <element name="LoginTurkey" positionX="-9" positionY="135" width="128" height="135"/>
+        <element name="MoleCuleFeed" positionX="-9" positionY="135" width="128" height="105"/>
+        <element name="MoleculeFeeedTurkey" positionX="-9" positionY="135" width="128" height="105"/>
+        <element name="MyCotoxinBindersFeed" positionX="27" positionY="72" width="128" height="255"/>
+        <element name="MyCotoxinBindersFeedTurkey" positionX="18" positionY="162" width="128" height="255"/>
+        <element name="Necropsy" positionX="-9" positionY="36" width="128" height="165"/>
+        <element name="NecropsyTurkey" positionX="27" positionY="171" width="128" height="75"/>
+        <element name="NotesBird" positionX="36" positionY="81" width="128" height="165"/>
+        <element name="NotesBirdTurkey" positionX="36" positionY="180" width="128" height="165"/>
+        <element name="PostingSession" positionX="0" positionY="45" width="128" height="585"/>
+        <element name="PostingSessionTurkey" positionX="27" positionY="171" width="128" height="583"/>
+        <element name="Respiratory" positionX="-18" positionY="27" width="128" height="195"/>
+        <element name="RespiratoryTurkey" positionX="45" positionY="189" width="128" height="180"/>
+        <element name="Route" positionX="36" positionY="81" width="128" height="90"/>
+        <element name="RouteTurkey" positionX="-9" positionY="135" width="128" height="90"/>
+        <element name="Salesrep" positionX="18" positionY="63" width="128" height="75"/>
+        <element name="SalesrepTurkey" positionX="0" positionY="144" width="128" height="75"/>
+        <element name="Sessiontype" positionX="18" positionY="63" width="128" height="90"/>
+        <element name="SessiontypeTurkey" positionX="9" positionY="153" width="128" height="90"/>
+        <element name="Skeleta" positionX="27" positionY="72" width="128" height="195"/>
+        <element name="SkeletaTurkey" positionX="18" positionY="162" width="128" height="180"/>
+        <element name="Skelta_info" positionX="-9" positionY="135" width="128" height="210"/>
+        <element name="Skelta_infoTurkey" positionX="9" positionY="153" width="128" height="210"/>
+        <element name="Veteration" positionX="45" positionY="90" width="128" height="90"/>
+        <element name="VeterationTurkey" positionX="0" positionY="144" width="128" height="90"/>
+    </elements>
+</model>

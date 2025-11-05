@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hatchery Landing View Controller-->
+        <scene sceneID="keF-oU-beV">
+            <objects>
+                <viewController storyboardIdentifier="HatcheryLandingViewController" id="t6d-wl-cc7" customClass="HatcheryLandingViewController" customModule="Zoetis__Feathers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="keZ-qk-EEq">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjt-gy-dE7">
+                                <rect key="frame" x="214" y="50" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="H4Q-dU-343"/>
+                                    <constraint firstAttribute="height" constant="160" id="d89-mj-uXX"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="hatchery_icon_select"/>
+                                <connections>
+                                    <action selector="clickedHatchery:" destination="t6d-wl-cc7" eventType="touchUpInside" id="bvH-95-NXr"/>
+                                    <action selector="clickedHatchery:" destination="pa9-HM-lJJ" eventType="touchUpInside" id="v1I-oy-Oe6"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ZoetisBanner01" translatesAutoresizingMaskIntoConstraints="NO" id="7Dg-jb-pXZ">
+                                <rect key="frame" x="0.0" y="684" width="1024" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="a84-PF-l9v"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="aPc-tD-T4h"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMt-Tu-BiZ">
+                                <rect key="frame" x="435" y="50" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="8Bg-bY-I9c"/>
+                                    <constraint firstAttribute="height" constant="160" id="ohe-wT-NYz"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="breeder_icon_unselect"/>
+                                <connections>
+                                    <action selector="clickedBreeder:" destination="t6d-wl-cc7" eventType="touchUpInside" id="rke-Pb-byd"/>
+                                    <action selector="clickedHatchery:" destination="pa9-HM-lJJ" eventType="touchUpInside" id="EiC-ba-OCl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dab-1u-QaI">
+                                <rect key="frame" x="656" y="50" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="BkG-41-geV"/>
+                                    <constraint firstAttribute="width" constant="160" id="OAV-z0-Ex6"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="growout_icon_unselect"/>
+                                <connections>
+                                    <action selector="clickedGrowout:" destination="t6d-wl-cc7" eventType="touchUpInside" id="ke3-6C-bhr"/>
+                                    <action selector="clickedHatchery:" destination="pa9-HM-lJJ" eventType="touchUpInside" id="KGt-Ry-3Cg"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_bg_hatchery" translatesAutoresizingMaskIntoConstraints="NO" id="OyX-rY-i9B">
+                                <rect key="frame" x="14.5" y="276.5" width="995" height="395"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="395" id="dv3-eH-R7n"/>
+                                    <constraint firstAttribute="width" constant="995" id="veu-iM-Es1"/>
+                                </constraints>
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBx-Zu-P5I">
+                                <rect key="frame" x="52" y="354" width="920" height="240"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRn-Ii-JDn">
+                                        <rect key="frame" x="10" y="10" width="220" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="process_evaluation_icon"/>
+                                        <connections>
+                                            <action selector="clickedHatchery:" destination="pa9-HM-lJJ" eventType="touchUpInside" id="aJW-Ls-lBa"/>
+                                            <action selector="clickedProcessEvaluation:" destination="t6d-wl-cc7" eventType="touchUpInside" id="HWS-sr-n1x"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWM-uW-SVt">
+                                        <rect key="frame" x="240" y="10" width="220" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="microbial_icon"/>
+                                        <connections>
+                                            <action selector="clickedHatchery:" destination="pa9-HM-lJJ" eventType="touchUpInside" id="fgT-i6-8C3"/>
+                                            <action selector="clickedMicrobial:" destination="t6d-wl-cc7" eventType="touchUpInside" id="lj2-eC-TwU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npT-Sc-GCp">
+                                        <rect key="frame" x="470" y="10" width="220" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="chick_quality_icon"/>
+                                        <connections>
+                                            <action selector="clickedChickQuality:" destination="t6d-wl-cc7" eventType="touchUpInside" id="AZD-wR-JVU"/>
+                                            <action selector="clickedHatchery:" destination="pa9-HM-lJJ" eventType="touchUpInside" id="Sfn-jh-dJv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wK1-ff-T0o">
+                                        <rect key="frame" x="700" y="10" width="220" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="breakout_analysis_icon"/>
+                                        <connections>
+                                            <action selector="clickedBreakoutAnalysis:" destination="t6d-wl-cc7" eventType="touchUpInside" id="73k-sj-kTb"/>
+                                            <action selector="clickedHatchery:" destination="pa9-HM-lJJ" eventType="touchUpInside" id="cpi-lh-mbJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="isL-P6-6LM"/>
+                                    <constraint firstAttribute="width" constant="920" id="jhm-dg-Pwy"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OS1-a0-7xh">
+                                <rect key="frame" x="52" y="354" width="920" height="240"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZh-VW-l4x">
+                                        <rect key="frame" x="10" y="10" width="220" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="process_evaluation_icon"/>
+                                        <connections>
+                                            <action selector="clickedHatchery:" destination="pa9-HM-lJJ" eventType="touchUpInside" id="Ha4-9V-NGD"/>
+                                            <action selector="clickedPulletVaccineEvaluation:" destination="t6d-wl-cc7" eventType="touchUpInside" id="MXc-3u-kbm"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GC2-pU-mSh">
+                                        <rect key="frame" x="240" y="10" width="220" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="microbial_icon"/>
+                                        <connections>
+                                            <action selector="clickedHatchery:" destination="pa9-HM-lJJ" eventType="touchUpInside" id="Mlu-9g-j0f"/>
+                                            <action selector="clickedMicrobial:" destination="t6d-wl-cc7" eventType="touchUpInside" id="Haz-AA-l3T"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyY-RJ-kCf">
+                                        <rect key="frame" x="470" y="10" width="220" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="chick_quality_icon"/>
+                                        <connections>
+                                            <action selector="clickedChickQuality:" destination="t6d-wl-cc7" eventType="touchUpInside" id="KFf-wm-xbS"/>
+                                            <action selector="clickedHatchery:" destination="pa9-HM-lJJ" eventType="touchUpInside" id="DfQ-4J-Tee"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xei-Wg-9Vq">
+                                        <rect key="frame" x="700" y="10" width="220" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="breakout_analysis_icon"/>
+                                        <connections>
+                                            <action selector="clickedBreakoutAnalysis:" destination="t6d-wl-cc7" eventType="touchUpInside" id="2Bv-Ho-utf"/>
+                                            <action selector="clickedHatchery:" destination="pa9-HM-lJJ" eventType="touchUpInside" id="hYV-NW-W8x"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="920" id="07u-3E-f3B"/>
+                                    <constraint firstAttribute="height" constant="240" id="guK-st-DPe"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x68-1f-bqv">
+                                <rect key="frame" x="52" y="354" width="920" height="240"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vK8-Lb-HxT">
+                                        <rect key="frame" x="10" y="10" width="220" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="process_evaluation_icon"/>
+                                        <connections>
+                                            <action selector="clickedHatchery:" destination="t6d-wl-cc7" eventType="touchUpInside" id="can-Id-dKt"/>
+                                            <action selector="clickedHatchery:" destination="pa9-HM-lJJ" eventType="touchUpInside" id="mu2-2d-4s6"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scT-um-va9">
+                                        <rect key="frame" x="240" y="10" width="220" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="microbial_icon"/>
+                                        <connections>
+                                            <action selector="clickedHatchery:" destination="pa9-HM-lJJ" eventType="touchUpInside" id="qN6-V5-mmY"/>
+                                            <action selector="clickedMicrobial:" destination="t6d-wl-cc7" eventType="touchUpInside" id="dfx-QB-npf"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b01-DS-tm3">
+                                        <rect key="frame" x="470" y="10" width="220" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="chick_quality_icon"/>
+                                        <connections>
+                                            <action selector="clickedChickQuality:" destination="t6d-wl-cc7" eventType="touchUpInside" id="J90-td-JdQ"/>
+                                            <action selector="clickedHatchery:" destination="pa9-HM-lJJ" eventType="touchUpInside" id="5jf-As-goI"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9K-hc-NAO">
+                                        <rect key="frame" x="700" y="10" width="220" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="breakout_analysis_icon"/>
+                                        <connections>
+                                            <action selector="clickedBreakoutAnalysis:" destination="t6d-wl-cc7" eventType="touchUpInside" id="Oqw-LS-ank"/>
+                                            <action selector="clickedHatchery:" destination="pa9-HM-lJJ" eventType="touchUpInside" id="dTs-PR-nel"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="YjG-ck-GBT"/>
+                                    <constraint firstAttribute="width" constant="920" id="ukG-Kw-epo"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hatchery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gr8-OD-t4j">
+                                <rect key="frame" x="253.5" y="220" width="81" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="Bek-f8-jVv"/>
+                                    <constraint firstAttribute="width" constant="81" id="VXo-S6-kAE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breeder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZH-AZ-cKN">
+                                <rect key="frame" x="480" y="220" width="70" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="LDk-Vw-f66"/>
+                                    <constraint firstAttribute="height" constant="22" id="pIU-lm-oPK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Growout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qy4-Yf-fE3">
+                                <rect key="frame" x="693" y="220" width="86" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="ASW-Wt-7cb"/>
+                                    <constraint firstAttribute="width" constant="86" id="JyP-QH-AMl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dab-1u-QaI" firstAttribute="top" secondItem="BMt-Tu-BiZ" secondAttribute="top" id="2jg-7W-tr7"/>
+                            <constraint firstItem="Gr8-OD-t4j" firstAttribute="centerX" secondItem="Gjt-gy-dE7" secondAttribute="centerX" id="5Jt-3j-G2V"/>
+                            <constraint firstAttribute="bottom" secondItem="7Dg-jb-pXZ" secondAttribute="bottom" id="5wW-AX-xGQ"/>
+                            <constraint firstItem="Gr8-OD-t4j" firstAttribute="top" secondItem="Gjt-gy-dE7" secondAttribute="bottom" constant="10" id="6He-zH-TvZ"/>
+                            <constraint firstItem="qy4-Yf-fE3" firstAttribute="top" secondItem="dab-1u-QaI" secondAttribute="bottom" constant="10" id="6rv-SG-InA"/>
+                            <constraint firstItem="5ZH-AZ-cKN" firstAttribute="top" secondItem="BMt-Tu-BiZ" secondAttribute="bottom" constant="10" id="8av-1T-6sC"/>
+                            <constraint firstItem="OyX-rY-i9B" firstAttribute="centerY" secondItem="OBx-Zu-P5I" secondAttribute="centerY" id="CJv-Ee-6q4"/>
+                            <constraint firstItem="BMt-Tu-BiZ" firstAttribute="leading" secondItem="Gjt-gy-dE7" secondAttribute="trailing" constant="61" id="El3-ZP-9Oq"/>
+                            <constraint firstItem="OyX-rY-i9B" firstAttribute="centerX" secondItem="TrJ-mC-j8h" secondAttribute="centerX" id="FMt-TG-dyg"/>
+                            <constraint firstItem="OBx-Zu-P5I" firstAttribute="centerX" secondItem="TrJ-mC-j8h" secondAttribute="centerX" id="LHz-qF-x03"/>
+                            <constraint firstItem="Gjt-gy-dE7" firstAttribute="top" secondItem="BMt-Tu-BiZ" secondAttribute="top" id="MFA-MI-ci5"/>
+                            <constraint firstItem="dab-1u-QaI" firstAttribute="leading" secondItem="BMt-Tu-BiZ" secondAttribute="trailing" constant="61" id="XdA-da-MDo"/>
+                            <constraint firstItem="7Dg-jb-pXZ" firstAttribute="leading" secondItem="keZ-qk-EEq" secondAttribute="leading" id="Xir-pL-mL1"/>
+                            <constraint firstAttribute="trailing" secondItem="7Dg-jb-pXZ" secondAttribute="trailing" id="ZWm-w5-TJ1"/>
+                            <constraint firstItem="OS1-a0-7xh" firstAttribute="top" secondItem="OBx-Zu-P5I" secondAttribute="top" id="bTt-M4-gFr"/>
+                            <constraint firstItem="x68-1f-bqv" firstAttribute="leading" secondItem="OBx-Zu-P5I" secondAttribute="leading" id="duh-t2-gHY"/>
+                            <constraint firstItem="qy4-Yf-fE3" firstAttribute="centerX" secondItem="dab-1u-QaI" secondAttribute="centerX" id="gub-jf-PZa"/>
+                            <constraint firstItem="5ZH-AZ-cKN" firstAttribute="centerX" secondItem="BMt-Tu-BiZ" secondAttribute="centerX" id="m6N-4i-ugb"/>
+                            <constraint firstItem="OS1-a0-7xh" firstAttribute="leading" secondItem="OBx-Zu-P5I" secondAttribute="leading" id="sxz-nc-iUJ"/>
+                            <constraint firstItem="BMt-Tu-BiZ" firstAttribute="top" secondItem="TrJ-mC-j8h" secondAttribute="top" constant="50" id="szM-fs-tte"/>
+                            <constraint firstItem="7Dg-jb-pXZ" firstAttribute="top" secondItem="OBx-Zu-P5I" secondAttribute="bottom" constant="90" id="tqD-rM-3zC"/>
+                            <constraint firstItem="x68-1f-bqv" firstAttribute="top" secondItem="OBx-Zu-P5I" secondAttribute="top" id="uRE-Z3-TXe"/>
+                            <constraint firstItem="BMt-Tu-BiZ" firstAttribute="centerX" secondItem="TrJ-mC-j8h" secondAttribute="centerX" constant="3" id="z79-d4-J3e"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TrJ-mC-j8h"/>
+                    </view>
+                    <connections>
+                        <outlet property="breederView" destination="OS1-a0-7xh" id="JeE-bQ-f42"/>
+                        <outlet property="growoutView" destination="x68-1f-bqv" id="n2a-br-iql"/>
+                        <outlet property="hatcheryView" destination="OBx-Zu-P5I" id="4h0-3k-6YZ"/>
+                        <outlet property="popUpBgImgView" destination="OyX-rY-i9B" id="LDA-Hw-yKD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ejD-iB-U3U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22105211630" y="-695"/>
+        </scene>
+        <!--Module Selection View Controller-->
+        <scene sceneID="j7b-ZU-pJa">
+            <objects>
+                <viewController storyboardIdentifier="ModuleSelectionViewController" id="pa9-HM-lJJ" customClass="ModuleSelectionViewController" customModule="Zoetis__Feathers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KRL-LT-EpT"/>
+                        <viewControllerLayoutGuide type="bottom" id="34G-RZ-Zvo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Ws-52-9xP">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owh-Rr-ltg">
+                                <rect key="frame" x="83" y="256" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="U6v-lk-rRK"/>
+                                    <constraint firstAttribute="height" constant="256" id="cDj-xx-iDp"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="hatchery_landing_icon"/>
+                                <connections>
+                                    <action selector="clickedHatchery:" destination="pa9-HM-lJJ" eventType="touchUpInside" id="Q3l-WX-Bdc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LF6-H0-CM6">
+                                <rect key="frame" x="384" y="256" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="S56-uy-Ixg"/>
+                                    <constraint firstAttribute="height" constant="256" id="u6k-gL-UKp"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="breeder_landing_icon"/>
+                                <connections>
+                                    <action selector="clickedBreeder:" destination="pa9-HM-lJJ" eventType="touchUpInside" id="7HT-hI-8pP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnY-r1-Viq">
+                                <rect key="frame" x="685" y="256" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="M10-J9-rfk"/>
+                                    <constraint firstAttribute="height" constant="256" id="jpx-tb-sny"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" backgroundImage="growout_landing_icon"/>
+                                <connections>
+                                    <action selector="clickedGrowout:" destination="pa9-HM-lJJ" eventType="touchUpInside" id="8ML-sQ-1Lt"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ZoetisBanner01" translatesAutoresizingMaskIntoConstraints="NO" id="9S8-aE-0KW">
+                                <rect key="frame" x="0.0" y="684" width="1024" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="ooE-hO-kTA"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WnY-r1-Viq" firstAttribute="leading" secondItem="LF6-H0-CM6" secondAttribute="trailing" constant="45" id="0Bs-hk-yPk"/>
+                            <constraint firstItem="LF6-H0-CM6" firstAttribute="centerY" secondItem="Wu1-9h-ZLr" secondAttribute="centerY" id="3oQ-Pb-S36"/>
+                            <constraint firstItem="LF6-H0-CM6" firstAttribute="top" secondItem="owh-Rr-ltg" secondAttribute="top" id="4Vm-K7-3QX"/>
+                            <constraint firstItem="34G-RZ-Zvo" firstAttribute="top" secondItem="9S8-aE-0KW" secondAttribute="bottom" id="YmC-Qx-9Wm"/>
+                            <constraint firstItem="LF6-H0-CM6" firstAttribute="leading" secondItem="owh-Rr-ltg" secondAttribute="trailing" constant="45" id="eBa-hL-EWI"/>
+                            <constraint firstItem="LF6-H0-CM6" firstAttribute="top" secondItem="WnY-r1-Viq" secondAttribute="top" id="ey2-Lw-Wu7"/>
+                            <constraint firstItem="LF6-H0-CM6" firstAttribute="centerX" secondItem="Wu1-9h-ZLr" secondAttribute="centerX" id="kdS-Qq-8rs"/>
+                            <constraint firstItem="9S8-aE-0KW" firstAttribute="leading" secondItem="Wu1-9h-ZLr" secondAttribute="leading" id="pSF-1K-HII"/>
+                            <constraint firstItem="9S8-aE-0KW" firstAttribute="trailing" secondItem="Wu1-9h-ZLr" secondAttribute="trailing" id="y18-li-vtL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wu1-9h-ZLr"/>
+                    </view>
+                    <size key="freeformSize" width="1024" height="768"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LDo-yf-0YC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22105212299" y="-695"/>
+        </scene>
+        <!--Date Picker Popup View Controller-->
+        <scene sceneID="iaC-wr-oaJ">
+            <objects>
+                <viewController storyboardIdentifier="DatePickerPopupViewController" id="Rd9-FA-yrp" customClass="DatePickerPopupViewController" customModule="Zoetis__Feathers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="56C-H1-VOX">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="YYP-JC-q80"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JdR-hm-16e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22105212942" y="-695"/>
+        </scene>
+        <!--Notes Popup View Controller-->
+        <scene sceneID="Jtr-c1-cIl">
+            <objects>
+                <viewController storyboardIdentifier="NotesPopupViewController" id="bqc-kL-ybY" customClass="NotesPopupViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k7U-Rg-VHi">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="rRl-PW-F7b"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U6x-e3-0Sw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22105212942" y="-695"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ZoetisBanner01" width="1024" height="82.5"/>
+        <image name="breakout_analysis_icon" width="109" height="109"/>
+        <image name="breeder_icon_unselect" width="66" height="66"/>
+        <image name="breeder_landing_icon" width="128" height="128"/>
+        <image name="chick_quality_icon" width="108.5" height="108.5"/>
+        <image name="growout_icon_unselect" width="66" height="66"/>
+        <image name="growout_landing_icon" width="128" height="128"/>
+        <image name="hatchery_icon_select" width="66" height="66"/>
+        <image name="hatchery_landing_icon" width="128" height="128"/>
+        <image name="microbial_icon" width="108.5" height="108.5"/>
+        <image name="popup_bg_hatchery" width="497.5" height="192.5"/>
+        <image name="process_evaluation_icon" width="108.5" height="108.5"/>
+    </resources>
+</document>

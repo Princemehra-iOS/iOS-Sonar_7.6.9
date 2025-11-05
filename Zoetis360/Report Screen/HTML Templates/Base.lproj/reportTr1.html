@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+            <title> Zoetis Reports </title>
+            <style>
+                .report-box{
+                    max-width:980px;
+                    min-width:980px;
+                    margin:auto;
+                    padding:2px;
+                    font-size:14px;
+                    line-height:30px;
+                    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+                    color:#000;
+                    font-weight:500;
+                }
+            .no-margin{
+                margin: 0px;
+            }
+            .report-text-right{
+                text-align: right;
+            }
+            .push-left{
+                float: left;
+                width: 49%;
+            }
+            .push-right{
+                float: right;
+                width: 49%;
+            }
+            .font-bold{
+                font-weight: 600;
+            }
+            
+            .font-size-16{
+                font-size: 16px;
+            }
+            
+            .font-size-12{
+                font-size: 12px;
+            }
+            table.table-container{
+                border: 1px solid #ccc;
+            }
+            table.table-container > tbody > tr:nth-child(odd){
+                background-color: #f5f5f5;
+            }
+            table.table-container > tbody > tr:last-child{
+                background-color: #ccc;
+            }
+            table.table-container > tbody > tr{
+                padding: 10px 0px;
+                height: 30px;
+                clear: both;
+            }
+            
+            .report-box table{
+                width:100%;
+                line-height:inherit;
+                text-align:left;
+                
+            }
+            
+            .report-box table td{
+                padding:3px;
+                vertical-align:middle;
+            }
+            .report-box table tr.top td{
+                padding:3px;
+                vertical-align:bottom;
+            }
+            tr.top{
+                background-color: #e8e8e8 !important;
+            }
+            .table-container > tbody > tr > td{
+                border-right: 1px solid #ccc;
+                border-top: 1px solid #ccc;
+                text-align: center;
+            }
+            .child-table tbody > tr > td{
+                width: 50px;
+                text-align: center;
+            }
+            .child-table tbody > tr > td:nth-child(2){
+                width: 100px;
+                font-weight: 600;
+            }
+            @media print {
+                table.table-container > tbody > tr:nth-child(odd){
+                    background-color: #f5f5f5;
+                }
+                table.table-container > tbody > tr:last-child{
+                    background-color: #ccc;
+                }
+            }
+            table, tbody, tr, td { page-break-inside: auto | avoid !important;}
+            </style>
+            </head>
+    <body>
+        <div class="report-box">
+            <table class="table-container">
+                <thead><tr style="display:none;"><th scope="col"></th></tr></thead>
+                <tbody>
+                    <tr class="top">
+                        <td colspan="3" style="vertical-align:top;">
+                            <table>
+                                <thead><tr style="display:none;"><th scope="col"></th></tr></thead>
+                                <tbody>
+                                    <tr height="48px" >
+                                        <td style="vertical-align:top;padding-bottom: 31px;"> <h3 class="no-margin" style="margin-top:-10px;"> #reportTitle# </h3> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> <span class="font-bold"> Customer Name - </span> #CustomerName#  </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="font-bold"> Complex Name - </span>  #complexName#  </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td colspan="2" style="padding-top:60px;vertical-align:top;">
+                            <table>
+                                <thead><tr style="display:none;"><th scope="col"></th></tr></thead>
+                                <tbody>
+                                   
+                                   
+                                    <tr>
+                                        <td> <span class="font-bold">  Veterinarian - </span> #vetanatrionName# </td>
+                                    </tr>
+                                    <tr>
+                                        <td> <span class="font-bold">  Zoetis Account Manager - </span>  #salesRepName# </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </td>
+                        <td colspan="3" style="padding-top:20px;vertical-align:top;">
+                            <table>
+                                <thead><tr style="display:none;"><th scope="col"></th></tr></thead>
+                                <tbody>
+                                    <tr rowspan="2">
+                                        <td class="report-text-right"> <img width="100px" src="#LOGO_IMAGE#"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-top: 4px;"> <span class="font-bold">  Session Date/Type - </span> #typeDate# </td>
+                                    </tr>
+                                    <tr>
+                                        <td> <span class="font-bold">  Account Contact - </span> <span style="word-break:break-all;display: inline-flex;width: 230px;">#customerRepName#</span> </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr class="">
+                        <td colspan="4"> </td>
+                        <td colspan="4">  Average score of Birds with Lesions / % of Birds on Farm Affected </td>
+                    </tr>
+                    
+                    <tr class="font-bold">
+                        <td colspan="3" >
+                            <table class="child-table">
+                                <thead><tr style="display:none;"><th scope="col"></th></tr></thead>
+                                <tbody>
+                                    <tr >
+                                        <td style="display:none;">  Sick <br/> Flock? </td>
+                                        <td colspan=""> #Farm# </td>
+                                        <td> # of <br/> Birds </td>
+                                        <td> Mean <br/> Age </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td colspan=""> Coccidia </td>
+                        <td colspan=""> Cochlosoma </td>
+                        <td colspan=""> Trichomonas </td>
+                        <td colspan=""> Peptostreptococcus </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" > </td>
+                        <td colspan="">  <span class="push-left"> Mean </span>  <span class="push-right"> % </span>  </td>
+                        <td colspan="">  <span class="push-left"> Mean </span>  <span class="push-right"> % </span>  </td>
+                        <td colspan="">  <span class="push-left"> Mean </span>  <span class="push-right"> % </span>  </td>
+                        <td colspan="">  <span class="push-left"> Mean </span>  <span class="push-right"> % </span>  </td>
+                        
+                    </tr>
+                    #ITEMS#
+                </tbody>
+            </table>
+        </div>
+        
+    </body>
+</html>

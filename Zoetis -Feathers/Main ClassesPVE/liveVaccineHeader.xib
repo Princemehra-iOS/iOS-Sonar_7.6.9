@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="pwe-gA-h9V" customClass="liveVaccineHeader" customModule="PoultryView_360" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="43"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="A7C-Vg-lfl">
+                    <rect key="frame" x="310" y="7" width="51" height="31"/>
+                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </switch>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3i-xx-nmN">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="3"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="3" id="81a-wU-9kv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S12-Kj-OO3">
+                    <rect key="frame" x="0.0" y="3" width="200" height="30"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="9QO-YK-v0g"/>
+                        <constraint firstAttribute="width" constant="200" id="cGi-Do-V07"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="setCornerRadius">
+                            <real key="value" value="45"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXx-2L-Rye">
+                    <rect key="frame" x="20" y="3" width="200" height="30"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="o0E-0R-KYN"/>
+                        <constraint firstAttribute="width" constant="200" id="wik-d6-ttH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="setCornerRadius">
+                            <real key="value" value="45"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="lev-a5-jfF"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="rXx-2L-Rye" firstAttribute="top" secondItem="E3i-xx-nmN" secondAttribute="bottom" id="5Xo-KO-7Vj"/>
+                <constraint firstAttribute="trailing" secondItem="E3i-xx-nmN" secondAttribute="trailing" id="MDj-tY-OCo"/>
+                <constraint firstItem="E3i-xx-nmN" firstAttribute="leading" secondItem="pwe-gA-h9V" secondAttribute="leading" id="Qa7-fm-jvU"/>
+                <constraint firstItem="A7C-Vg-lfl" firstAttribute="leading" secondItem="rXx-2L-Rye" secondAttribute="trailing" constant="90" id="TEM-PM-JLx"/>
+                <constraint firstItem="S12-Kj-OO3" firstAttribute="top" secondItem="E3i-xx-nmN" secondAttribute="bottom" id="av0-Ag-Rhx"/>
+                <constraint firstItem="rXx-2L-Rye" firstAttribute="leading" secondItem="pwe-gA-h9V" secondAttribute="leading" constant="20" id="k0b-YG-TMX"/>
+                <constraint firstItem="A7C-Vg-lfl" firstAttribute="top" secondItem="E3i-xx-nmN" secondAttribute="bottom" constant="4" id="kVv-5x-eFI"/>
+                <constraint firstItem="S12-Kj-OO3" firstAttribute="leading" secondItem="pwe-gA-h9V" secondAttribute="leading" id="umr-gg-HGe"/>
+                <constraint firstItem="E3i-xx-nmN" firstAttribute="top" secondItem="pwe-gA-h9V" secondAttribute="top" id="x8i-C0-SNY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="vaccineNameLbl" destination="rXx-2L-Rye" id="5I4-W2-Zyz"/>
+                <outlet property="vacineSwitch" destination="A7C-Vg-lfl" id="PKM-aS-ao9"/>
+            </connections>
+            <point key="canvasLocation" x="-895.6521739130435" y="35.15625"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

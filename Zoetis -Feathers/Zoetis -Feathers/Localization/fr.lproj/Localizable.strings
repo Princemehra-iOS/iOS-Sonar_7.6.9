@@ -1,0 +1,206 @@
+/* 
+  Localizable.strings
+  Zoetis -Feathers
+
+  Created by   on 02/01/18.
+  Copyright © 2018   . All rights reserved.
+*/
+"Antibiotic" = "Antibiotique";
+"Alternative" = "Alternatif";
+"Mycotoxin Binders" = "Chélateurs de mycotoxine";
+"Please enter farm name." = "Veuillez entrer le nom de la ferme.";
+"Farm Name * :" = "Nom de la ferme * :";
+"Farm Name * : " = "Nom de la ferme * :";
+"Age * :" = "Age * :";
+"Please select a feed program." = "Veuillez sélectionner un programme d'alimentation.";
+
+"Feed Program * :" = "Programme alimentaire * :";
+"Please enter the credentials." = "Entrer les identifiants.";
+"Please select a complex first." = "Sélectionner d'abord un groupe.";
+//"Data syncing..." = "Synchronisation des données...";
+"There are problem in data syncing please try again(NA))" = "Problème de synchronisation des données, veuillez réessayer à nouveau.";
+"Alert" = "Alerte";
+"No internet connection Please try again!" = "Pas de connection internet, Essayez encore!";
+"Please enter the email." = "Entrer l'email.";
+"Please enter the password." = "Entrer le mot de passe.";
+"Logging in..." = "Se connecter...";
+"Deleting Bird..." = "Supprimer un oiseau...";
+"Please enter strain" = "Entrer la souche.";
+"Please enter feed program Entering feed program is mandatory to save data" = "Entrer le programme alimentaire Le programme alimentaire est obligatoire pour sauver les données.";
+"Please enter complex"  =  "Entrer le groupe.";
+"Please enter feed program"  =  "Entrer le programme alimentaire.";
+"Please add farm & bird details."  = "Ajouter les infos ferme & oiseaux.";
+"Please enter valid mail"  =   "Entrer un mail valide.";
+"Please enter valid password" =   "Entrer un mot de passe valide.";
+"Please enter the vaccination program." =  "Entrer le programme de vaccination.";
+"Please select coplex & date"   =  "Sélectionner groupe & date.";
+"Please select a customer first."  =  "Sélectionner d'abord le client.";
+"Please go online and sync data before logging out."  =  "Connectez-vous à internet et synchronisez les données avant de se déconnecter.";
+"Ok" = "OK";
+"Yes" = "Oui";
+"YES" = "Oui";
+"No" = "Non";
+"Retry" =  "Recommencez";
+"Cancel" = " Annuler";
+"Loading..." = " Chargement...";
+"Enter your password"  =  "Entrer votre mot de passe.";
+"Enter your email"  = "Entrer votre email.";
+"SIGN IN " = "SE CONNECTER";
+"Remember me" = "Se souvenir de moi";
+"Feed Program *" =  "Programme alimentaire*";
+"View summary report ?"  = "Voir le rapport?";
+"Summary Report"  =  "Rapport";
+"Data available for sync Do you want to sync now?" = "Données disponibles pour la synchronisation voulez-vous synchroniser maintenant?";
+"Data not available for syncing"  =  "Aucune données disponible pour la synchronisation.";
+"Update Farm" =   " Mettre à jour la ferme";
+"Farm Name :" = "Nom de la ferme :";
+"Age :" = "Age :";
+"Feed Program :" = "Programme alimentaire :";
+"Update" =  "Mettre à jour";
+"No chart data available."  = "Pas de graphique disponible.";
+"Skeletal/Muscular/Integumentary" = "Squelettique/Musculaire/Tégumentaire";
+"GI Tract" = "Tractus GI";
+"Respiratory" = " Respiratoire";
+"Respiratory Tract" =  "Tractus respiratoire";
+"Immune/Others" = "Immunité/Autres";
+"Poultry Health Monitoring" = "Surveillance de la santé des volailles";
+"Help" = "Aide";
+"Open Existing Session" = "Ouvrir une session existante";
+"Reports" = "Rapports";
+"Settings" = "Réglages";
+"Start New Session" = "Commencer une nouvelle session";
+"Training & Education" = "Formation";
+"Immune by Bursa Size" = "Immunité par la taille des bourses de fabricius";
+"Others Last Session" = " Autres dernières session";
+"Others Historical" = "Autres historiques";
+"Bursa Size" = "Taille Bursa";
+"Data sync has been completed." = "Synchronisation des données effectuée.";
+"Fields marked as (*) are mandatory Please fill all the fields " = "Les champs marqués (*) sont obligatoires. Veuillez remplir tous les champs.";
+"Add Vaccination"  = "Ajouter une vaccination";
+//"Edit Vaccination"  = "Modifier une vaccination";
+"Feed Program"  = " Programme alimentaire";
+"Coccidiosis" = "Coccidiose";
+"Coccidiosis Summary Last Session"  =  "Rapport de coccidiose de la dernière session";
+"Coccidiosis by week"  = "Coccidiose par semaine";
+"Coccidiosis by farm"  =  "Coccidiose par ferme";
+"Coccidiosis - E. acervulina gross"  =   "Coccidiose - E. acervulina macro";
+"Coccidiosis - E. maxima gross"  =       "Coccidiose -  E. maxima macro";
+"Coccidiosis - E. maxima micro"  =       "Coccidiose - E. maxima micro";
+"Coccidiosis - E. tenella gross" =       "Coccidiose - E. tenella macro";
+"Mycotoxin Binders "   = "Chélateur de mycotoxine";
+//"Alternative"  =   "Alternative";
+"Antibiotic" =  "Antibiotique";
+"Coccidiosis Control"  =   "Contrôle de la coccidiose";
+"farm(s) are not connected. Please navigate to Feed Program and connect the farms with the Feed Program." =  "Ferme(s) non connectée(s). Allez dans Programme Alimentaire et connectez les fermes avec un Programme Alimentaire.";
+"- Select -" =  " - Sélectionner -";
+"Male" =  "Mâle";
+"Female" =  "Femelle";
+"Are you sure You want to delete farm ?. You have a data for this farm." = "Êtes-vous sûr de vouloir supprimer la batterie?. Vous avez des données pour cette batterie.";
+"Are you sure you want to delete this farm?" = "Êtes-vous sûr de vouloir supprimer cette ferme?";
+//"You have unlinked farm(s) to your feed in posting session. Visit '' Open Existing Session '' to link farm(s) to feed program." =  "Vous avez dissocié la/les ferme(s) de votre aliment en affichant la Visite "Ouvrir la séance existante" pour associer la ferme(s) au programme alimentaire";
+"Data will not be saved until you enter feed program. Click Yes to complete the session."  =  "Les données ne pourront pas être sauvegardées tant que le programme alimentaire n'est pas complété cliquez sur oui pour finir la session.";
+"Coccidiosis Summary Report"   = "Rapport coccidiose";
+"Coccidiosis Historical Report" =  "Historique coccidiose";
+"Necropsy Summary Report" = "Rapport d'autopsie";
+"Necropsy Historical Report" = "Historique d'autopsie";
+"Session for this date & complex already exist. Please select another date or complex."  =  "Session pour cette date & groupe déjà existant. Sélectionner une autre date ou groupe.";
+"Session Date: " = "Date de session :";
+"Respiratory Tract Last Session" = "Dernière session tractus respiratoire";
+"Respiratory Tract Historical" = "Historique tractus respiratoire";
+"You are currently offline. Please go online to sync data."  = "Vou êtes actuellement hors ligne. Connectez-vous pour synchroniser les données.";
+"Summary"  = "Résumé";
+"Coccidiosis Summary Historical" = "Historique coccidiose";
+"Skeletal/Muscular/Integumentary Last Session" = "Squelettique/Musculaire/Tégumentaire Dernière Session";
+"Skeletal/Muscular/Integumentary Historical" = "Squelettique/Musculaire/Tégumentaire Historique";
+"GI Tract Last Session"  = " Dernière Session Tractus GI";
+"GI Tract Historical" =  " Historique Tractus GI";
+"Version : 30"  =  " Version : 30";
+"Log Out"  = "Déconnexion";
+"Necropsy Manual"  =   "Manuel d'Autopsie";
+"Diagnosing Coccidiosis And Enteritis" = "Diagostic de Coccidiose et d'Entérite";
+"Tutorial Videos"  = "Vidéos Tutorielles";
+"This session has been created in English language Please logout and select English as a language to edit /proceed this session"  =  "Cette session a été créée en langue anglaise déconnectez-vous et sélectionnez anglais pour modifier.";
+"Warning" = "Attention";
+"Please connect farm(s) with feed program" =  " Associez la/les ferme(s) avec un programme alimentaire.";
+"Data available for sync. Do you want to sync now? \n\n\n *Note - Please don't minimize App while syncing." = "Données disponibles pour la synchronisation. Voulez-vous synchroniser maintenant? \n\n\n *Note - Ne pas réduire l'application durant la synchronisation.";
+
+//"You can not delete all farms. One farm is mandatory for this session" =
+
+"Zoetis a/c mgr:" = "Contact zoetis :";
+"Please connect to Internet, switching species is only allowed when device is connected to Internet." = "Connectez-vous à internet, le changement d'espèce est seulement possible lorsque l'appareil est connecté à internet.";
+"Error downloading PDF" = "Problème lors du téléchargement du PDF.";
+"Please select a veterinarian first" = "Sélectionner le vétérinaire d'abord";
+"Foot Pad Lesions" = "Pododermatite";
+"No of birds" = "Nombre d'oiseaux";
+"NO" = "Non";
+"- Select Date -" = "Sélectionner une date";
+"Copious mucus and/or moderate hyperemia." = "Mucus abondant et/ou hyperhémie modérée.";
+"Slight mucus and/or slight hyperemia." = "Léger mucus et/ou légère hyperhémie.";
+"Edit vaccination" = "Modifier la vaccination";
+"Deny" = "Refuser";
+"Fields marked as (*) are mandatory. Please fill all the fields." = "Les champs marqués (*) sont obligatoires. Veuillez remplir tous les champs.";
+"Species" = "Espèce";
+"Please enter the valid credentials." = "Veuillez entrer les informations d'identification valides.";
+"Enter credentials to share data" = "Entrez les informations d'identification pour partager des données.";
+"Please enter complex." = "Entrer le groupe.";
+"Data syncing..." = "Synchronisation des données...";
+"Adding Bird..." = "Ajouter un oiseau...";
+"Deleting Bird..." = "Supprimer un oiseau...";
+"Please enter strain" = "Entrer la souche.";
+"Please enter feed program." = "Entrer le programme alimentaire.";
+"No sessions found." = "Aucune session trouvée.";
+"Are you sure you want to delete this farm?" = "Êtes-vous sûr de vouloir supprimer cette ferme?";
+"To date must be greater than from date." = "À ce jour doit être supérieur à la date.";
+"At least one bird is required under a Farm." = "Au moins un oiseau est requis dans une ferme.";
+"Please connect farm(s) with feed program." = "S'il vous plaît connecter ferme (s) avec programme d'alimentation.";
+"Please connect \(farms.count) farm(s) with feed program. Do you want not do it now?" = "Connectez-vous s'il vous plaît ferme (s) avec programme d'alimentation. Voulez-vous ne pas le faire maintenant?";
+"Are you sure you want to delete this farm? You have observation recorded for this farm." = "Êtes-vous sûr de vouloir supprimer cette ferme? Vous avez des observations enregistrées pour cette ferme.";
+"Fetching data from server..." = "Récupération des données du serveur ...";
+"42 days or older" = "42 jours ou plus";
+"Days" = "jours";
+"Week" = "La semaine";
+"No historical data." = "Pas de données historiques.";
+"The most updated information related to this posting session will be downloaded from web to your device. Are you sure you want to perform this action?" = "Les informations les plus récentes relatives à cette session de publication seront téléchargées à partir du Web sur votre appareil. Êtes-vous sûr de vouloir effectuer cette action?";
+//Training & Education
+"Data not available for syncing." = "Aucune données disponible pour la synchronisation.";
+
+"Unsynced data available for this posting session. Please sync and then try again else your local data will be lost. Do you want to continue with the request?" = "Données non synchronisées disponibles pour cette session de publication. Veuillez synchroniser et réessayer sinon vos données locales seront perdues. Voulez-vous continuer avec la demande?";
+
+"By clicking this button, your session data on the web will be downloaded to your device and override any session data captured on your device. Are you sure you want to perform this action?" = "En cliquant sur ce bouton, vos données de session sur le Web seront téléchargées sur votre appareil et remplaceront les données de session capturées sur votre appareil. Êtes-vous sûr de vouloir effectuer cette action?";
+
+"The most updated information related to this posting session will be downloaded from web to your device. Are you sure you want to perform this action?" = "Les informations les plus récentes relatives à cette session de publication seront téléchargées à partir du Web sur votre appareil. Êtes-vous sûr de vouloir effectuer cette action?";
+
+"You can not delete all farms. One farm is mandatory for this session." = "Vous ne pouvez pas supprimer toutes les fermes. Une ferme est obligatoire pour cette session.
+";
+"Farm" = "Ferme";
+"Date" = "Date";
+"Done" = "Fait";
+"From date must be smaller than to date." = "La date de début doit être plus petite que celle à ce jour.";
+
+"Eimeria acervulina gross" = "Eimeria acervulina macro";
+"Eimeria maxima gross" = "Eimeria maxima macro";
+"Eimeria maxima micro" = "Eimeria maxima micro";
+"Eimeria tenella gross" = "Eimeria tenella macro";
+
+"E. maxima gross 0" = "E. maxima macro 0";
+"E. maxima gross 1" = "E. maxima macro 1";
+"E. maxima gross 2" = "E. maxima macro 2";
+"E. maxima gross 3" = "E. maxima macro 3";
+"E. maxima gross 4" = "E. maxima macro 4";
+
+"E. acervulina gross 0" = "E. acervulina macro 0";
+"E. acervulina gross 1" = "E. acervulina macro 1";
+"E. acervulina gross 2" = "E. acervulina macro 2";
+"E. acervulina gross 3" = "E. acervulina macro 3";
+"E. acervulina gross 4" = "E. acervulina macro 4";
+
+"E. tenella gross 0" = "E. tenella macro 0";
+"E. tenella gross 1" = "E. tenella macro 1";
+"E. tenella gross 2" = "E. tenella macro 2";
+"E. tenella gross 3" = "E. tenella macro 3";
+"E. tenella gross 4" = "E. tenella macro 4";
+"Total Farms:" = "Total des fermes:";
+"Are you sure you want to delete this bird?, by deleting you will lose the bird data completely." = "Êtes-vous sûr de vouloir supprimer cet oiseau ?, en le supprimant, vous perdrez complètement les données de cet oiseau.";
+"There is no update available on the server." = "Il n'y a pas de mise à jour disponible sur le serveur.";
+"Are you sure you want to delete this bird? You will lose the data by deleting this bird." = "Êtes-vous sûr de vouloir supprimer cet oiseau? Vous allez perdre les données en supprimant cet oiseau.";
+"Sync to device" = "Synchroniser avec l'appareil";

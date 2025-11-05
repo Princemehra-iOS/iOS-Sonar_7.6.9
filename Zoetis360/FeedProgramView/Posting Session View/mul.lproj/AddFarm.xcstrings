@@ -1,0 +1,138 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "4rQ-k4-QI1.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"House no. *\"; ObjectID = \"4rQ-k4-QI1\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "House no. *"
+          }
+        }
+      }
+    },
+    "bt7-M2-dvP.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Age (days)*\"; ObjectID = \"bt7-M2-dvP\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Age (days)*"
+          }
+        }
+      }
+    },
+    "Ec1-1h-dJc.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Add Farm\"; ObjectID = \"Ec1-1h-dJc\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add Farm"
+          }
+        }
+      }
+    },
+    "fZ7-bk-HgN.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"- Select -\"; ObjectID = \"fZ7-bk-HgN\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "- Select -"
+          }
+        }
+      }
+    },
+    "hbd-cC-RFJ.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Flock Id\"; ObjectID = \"hbd-cC-RFJ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Flock Id"
+          }
+        }
+      }
+    },
+    "ifI-N8-kgC.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"No of birds\"; ObjectID = \"ifI-N8-kgC\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No of birds"
+          }
+        }
+      }
+    },
+    "l0j-sW-333.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Sick\"; ObjectID = \"l0j-sW-333\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sick"
+          }
+        }
+      }
+    },
+    "R1O-iK-MEu.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Farm Name * \"; ObjectID = \"R1O-iK-MEu\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Farm Name * "
+          }
+        }
+      }
+    },
+    "svp-bp-aXk.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"Done\"; ObjectID = \"svp-bp-aXk\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Done"
+          }
+        }
+      }
+    },
+    "Tqf-SZ-bKr.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"5\"; ObjectID = \"Tqf-SZ-bKr\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "5"
+          }
+        }
+      }
+    },
+    "ZDr-AV-HXN.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Feed Program * :\"; ObjectID = \"ZDr-AV-HXN\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Feed Program * :"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

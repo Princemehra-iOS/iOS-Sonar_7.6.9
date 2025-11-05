@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "A86547FA-975F-4ED5-9A64-AF8681DE7444"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "907B2348-3D76-41E3-94BE-3C183BE33F11"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoetis -Feathers/CoreDataModelsAndHandler/CoreDataHandlerPE.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "5374"
+            endingLineNumber = "5374"
+            landmarkName = "saveDraftPEInDB(newAssessmentArray:draftNumber:isfromDraft:isfromRejected:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

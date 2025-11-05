@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FeatherpulpSampleInfoTestCollectionViewCell" customModule="DEV_PV360" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="156" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="156" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNo-dA-EYY">
+                        <rect key="frame" x="0.0" y="0.0" width="156" height="50"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3J-Ny-Z9G">
+                                <rect key="frame" x="0.0" y="10" width="141" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title=" MDV" image="checkIcon">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="testCheckBoxBtnAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="wMf-9Z-7VY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="S3J-Ny-Z9G" firstAttribute="top" secondItem="qNo-dA-EYY" secondAttribute="top" constant="10" id="fKb-bh-pZl"/>
+                            <constraint firstAttribute="trailing" secondItem="S3J-Ny-Z9G" secondAttribute="trailing" constant="15" id="nbI-Qi-kJW"/>
+                            <constraint firstAttribute="bottom" secondItem="S3J-Ny-Z9G" secondAttribute="bottom" constant="10" id="noS-tG-kBI"/>
+                            <constraint firstItem="S3J-Ny-Z9G" firstAttribute="leading" secondItem="qNo-dA-EYY" secondAttribute="leading" id="t13-v6-Lal"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="qNo-dA-EYY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DMu-Xi-wi9"/>
+                <constraint firstAttribute="bottom" secondItem="qNo-dA-EYY" secondAttribute="bottom" id="Jr4-fn-smV"/>
+                <constraint firstAttribute="trailing" secondItem="qNo-dA-EYY" secondAttribute="trailing" id="VKV-Nh-nAl"/>
+                <constraint firstItem="qNo-dA-EYY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pXi-mW-sGd"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="156" height="50"/>
+            <connections>
+                <outlet property="checkboxButton" destination="S3J-Ny-Z9G" id="S6I-8K-mQh"/>
+            </connections>
+            <point key="canvasLocation" x="208.69565217391306" y="103.79464285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="checkIcon" width="27.5" height="27.5"/>
+    </resources>
+</document>

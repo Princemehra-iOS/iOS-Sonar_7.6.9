@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad10_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="View" customModule="PoultryView_360" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6n3-Z9-BTW">
+                    <rect key="frame" x="0.0" y="24" width="820" height="1136"/>
+                    <subviews>
+                        <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kt5-Z0-QQB">
+                            <rect key="frame" x="0.0" y="0.0" width="820" height="1136"/>
+                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <wkWebViewConfiguration key="configuration">
+                                <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                <wkPreferences key="preferences"/>
+                            </wkWebViewConfiguration>
+                        </wkWebView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="kt5-Z0-QQB" firstAttribute="top" secondItem="6n3-Z9-BTW" secondAttribute="top" id="AOs-fX-RfI"/>
+                        <constraint firstItem="kt5-Z0-QQB" firstAttribute="leading" secondItem="6n3-Z9-BTW" secondAttribute="leading" id="McV-1E-ri0"/>
+                        <constraint firstAttribute="bottom" secondItem="kt5-Z0-QQB" secondAttribute="bottom" id="oxw-WU-j2n"/>
+                        <constraint firstAttribute="trailing" secondItem="kt5-Z0-QQB" secondAttribute="trailing" id="tm3-tP-WVT"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="6n3-Z9-BTW" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="7xj-Bo-Paf"/>
+                <constraint firstItem="6n3-Z9-BTW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="BIz-1D-Tpr"/>
+                <constraint firstItem="6n3-Z9-BTW" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="rl2-3N-HtJ"/>
+                <constraint firstItem="6n3-Z9-BTW" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="znt-zM-SL2"/>
+            </constraints>
+            <connections>
+                <outlet property="view" destination="6n3-Z9-BTW" id="BZO-Ze-9PB"/>
+                <outlet property="viewForWeb" destination="kt5-Z0-QQB" id="qTd-sg-nee"/>
+                <outlet property="viewWeb" destination="kt5-Z0-QQB" id="0fq-aO-2HT"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="70"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

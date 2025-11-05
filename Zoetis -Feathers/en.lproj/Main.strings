@@ -1,0 +1,3339 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "006-mq-f97"; */
+"006-mq-f97.text" = "Label";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "01v-9u-JBG"; */
+"01v-9u-JBG.text" = "Route";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "02F-t4-hJQ"; */
+"02F-t4-hJQ.text" = " - Select -";
+
+/* Class = "UILabel"; text = "A/c contact:"; ObjectID = "087-Uo-vhY"; */
+"087-Uo-vhY.text" = "A/c contact:";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "0Jc-i5-oGB"; */
+"0Jc-i5-oGB.text" = "- Select -";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "0Pq-1A-nl4"; */
+"0Pq-1A-nl4.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0TC-Sl-Hp3"; */
+"0TC-Sl-Hp3.text" = "Label";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "0Tf-ie-V9M"; */
+"0Tf-ie-V9M.text" = "0";
+
+/* Class = "UILabel"; text = "Necropcy Manual"; ObjectID = "0UH-XU-k15"; */
+"0UH-XU-k15.text" = "Necropcy Manual";
+
+/* Class = "UILabel"; text = "09/09/2016"; ObjectID = "0Z4-QU-Ura"; */
+"0Z4-QU-Ura.text" = "09/09/2016";
+
+/* Class = "UILabel"; text = ","; ObjectID = "0b8-p4-FOA"; */
+"0b8-p4-FOA.text" = ",";
+
+/* Class = "UILabel"; text = "Capture Necropsy Data (Turkey)"; ObjectID = "0fE-kA-Zsm"; */
+"0fE-kA-Zsm.text" = "Capture Necropsy Data (Turkey)";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "0jr-ej-cRC"; */
+"0jr-ej-cRC.text" = "Strain";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "0p1-kI-ZPE"; */
+"0p1-kI-ZPE.text" = "to";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "0rZ-n9-ERF"; */
+"0rZ-n9-ERF.text" = "to";
+
+/* Class = "UILabel"; text = "Cocci Program"; ObjectID = "0xE-gJ-v5i"; */
+"0xE-gJ-v5i.text" = "Cocci Program";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "0yG-e6-0Np"; */
+"0yG-e6-0Np.text" = "Route";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "0zb-DS-Xsu"; */
+"0zb-DS-Xsu.text" = " - Select -";
+
+/* Class = "UILabel"; text = "HNo."; ObjectID = "10Y-Tk-fA6"; */
+"10Y-Tk-fA6.text" = "HNo.";
+
+/* Class = "UILabel"; text = "Session Date"; ObjectID = "11E-Og-iRE"; */
+"11E-Og-iRE.text" = "Session Date";
+
+/* Class = "UILabel"; text = "let"; ObjectID = "14r-m9-zFM"; */
+"14r-m9-zFM.text" = "let";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "16R-GX-SjZ"; */
+"16R-GX-SjZ.text" = "Label";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "19j-Fh-yOK"; */
+"19j-Fh-yOK.text" = "HMS";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "19m-2E-Zbd"; */
+"19m-2E-Zbd.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Yes"; ObjectID = "1E6-2o-YMv"; */
+"1E6-2o-YMv.text" = "Yes";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "1Gp-PJ-vau"; */
+"1Gp-PJ-vau.text" = " - Select -";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "1KC-iI-MbU"; */
+"1KC-iI-MbU.text" = " - Select -";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "1Lx-nB-eUH"; */
+"1Lx-nB-eUH.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Sex"; ObjectID = "1P7-JX-dh9"; */
+"1P7-JX-dh9.text" = "Sex";
+
+/* Class = "UILabel"; text = "Dosage (g/ton)"; ObjectID = "1Td-rZ-bOG"; */
+"1Td-rZ-bOG.text" = "Dosage (g/ton)";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "1Vr-bO-vhU"; */
+"1Vr-bO-vhU.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Complex"; ObjectID = "1Xv-ZP-ydp"; */
+"1Xv-ZP-ydp.text" = "Complex";
+
+/* Class = "UILabel"; text = "POX"; ObjectID = "1dX-9G-qZ5"; */
+"1dX-9G-qZ5.text" = "POX";
+
+/* Class = "UILabel"; text = "Routine visit "; ObjectID = "1eG-Hz-9Gd"; */
+"1eG-Hz-9Gd.text" = "Routine visit ";
+
+/* Class = "UILabel"; text = "Feed Program"; ObjectID = "1r8-b6-FQQ"; */
+"1r8-b6-FQQ.text" = "Feed Program";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "1sT-mg-Le4"; */
+"1sT-mg-Le4.text" = "Strain";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "1uI-Mf-VHu"; */
+"1uI-Mf-VHu.text" = "to";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "1v5-su-EvS"; */
+"1v5-su-EvS.text" = "10";
+
+/* Class = "UILabel"; text = "lbl"; ObjectID = "22Z-re-jH9"; */
+"22Z-re-jH9.text" = "lbl";
+
+/* Class = "UILabel"; text = "Veterinarian"; ObjectID = "25v-rC-XEF"; */
+"25v-rC-XEF.text" = "Veterinarian";
+
+/* Class = "UILabel"; text = "E.coli"; ObjectID = "26M-uE-eut"; */
+"26M-uE-eut.text" = "E.coli";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "28x-Hs-FUc"; */
+"28x-Hs-FUc.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "2Bh-j6-BeC"; */
+"2Bh-j6-BeC.text" = "0";
+
+/* Class = "UILabel"; text = "3"; ObjectID = "2G0-th-qA6"; */
+"2G0-th-qA6.text" = "3";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "2K4-ub-LIa"; */
+"2K4-ub-LIa.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "2LA-FG-YhC"; */
+"2LA-FG-YhC.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Summary"; ObjectID = "2P0-PQ-xf8"; */
+"2P0-PQ-xf8.text" = "Summary";
+
+/* Class = "UILabel"; text = "Sick"; ObjectID = "2Qi-qd-IeF"; */
+"2Qi-qd-IeF.text" = "Sick";
+
+/* Class = "UILabel"; text = "IBDV"; ObjectID = "2Sz-IX-wy2"; */
+"2Sz-IX-wy2.text" = "IBDV";
+
+/* Class = "UIButton"; normalTitle = "Antibiotic"; ObjectID = "2UG-at-eff"; */
+"2UG-at-eff.normalTitle" = "Antibiotic";
+
+/* Class = "UILabel"; text = "Health Evaluation (Turkey)"; ObjectID = "2Vb-2I-Hpi"; */
+"2Vb-2I-Hpi.text" = "Health Evaluation (Turkey)";
+
+/* Class = "UILabel"; text = "Feed type 1"; ObjectID = "2WB-Ab-U6M"; */
+"2WB-Ab-U6M.text" = "Feed type 1";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "2Xs-Yi-Hiv"; */
+"2Xs-Yi-Hiv.text" = "- Select -";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "2Ym-sU-rcT"; */
+"2Ym-sU-rcT.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2Zz-nf-WTW"; */
+"2Zz-nf-WTW.text" = "Label";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "2aj-E4-LwH"; */
+"2aj-E4-LwH.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2bc-hT-reX"; */
+"2bc-hT-reX.text" = "Label";
+
+/* Class = "UILabel"; text = "- Select Date -"; ObjectID = "2gb-1t-qOe"; */
+"2gb-1t-qOe.text" = "- Select Date -";
+
+/* Class = "UILabel"; text = "07/09/2016"; ObjectID = "2jz-R1-1pM"; */
+"2jz-R1-1pM.text" = "07/09/2016";
+
+/* Class = "UILabel"; text = "Flock Id"; ObjectID = "2nY-lB-rPF"; */
+"2nY-lB-rPF.text" = "Flock Id";
+
+/* Class = "UIButton"; normalTitle = "Last session"; ObjectID = "33t-hP-2hn"; */
+"33t-hP-2hn.normalTitle" = "Last session";
+
+/* Class = "UILabel"; text = "Add Vaccination (Turkey)"; ObjectID = "3AL-gl-ySx"; */
+"3AL-gl-ySx.text" = "Add Vaccination (Turkey)";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "3AQ-gn-mz7"; */
+"3AQ-gn-mz7.text" = "HMS";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "3BS-xQ-Ol3"; */
+"3BS-xQ-Ol3.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Display"; ObjectID = "3JZ-cJ-hsB"; */
+"3JZ-cJ-hsB.text" = "Display";
+
+/* Class = "UILabel"; text = "Davis,Timothy"; ObjectID = "3KL-wn-UGe"; */
+"3KL-wn-UGe.text" = "Davis,Timothy";
+
+/* Class = "UILabel"; text = "Training & Education"; ObjectID = "3Ka-jD-nC6"; */
+"3Ka-jD-nC6.text" = "Training & Education";
+
+/* Class = "UILabel"; text = "Flock Id"; ObjectID = "3Yl-gM-lZb"; */
+"3Yl-gM-lZb.text" = "Flock Id";
+
+/* Class = "UILabel"; text = "Veterinarian *"; ObjectID = "3de-5r-fDr"; */
+"3de-5r-fDr.text" = "Veterinarian *";
+
+/* Class = "UILabel"; text = "Session Type"; ObjectID = "3fg-5d-RG3"; */
+"3fg-5d-RG3.text" = "Session Type";
+
+/* Class = "UILabel"; text = "Select Date"; ObjectID = "3jW-0K-pDo"; */
+"3jW-0K-pDo.text" = "Select Date";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "3uC-oL-dIp"; */
+"3uC-oL-dIp.text" = "Route";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "3uK-bG-ZuT"; */
+"3uK-bG-ZuT.text" = "Strain";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "41i-RT-Jfw"; */
+"41i-RT-Jfw.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "fr"; ObjectID = "48b-Yy-2FT"; */
+"48b-Yy-2FT.text" = "fr";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "4G5-eN-vyU"; */
+"4G5-eN-vyU.text" = "Route";
+
+/* Class = "UILabel"; text = "Feed program:"; ObjectID = "4IY-Ae-dST"; */
+"4IY-Ae-dST.text" = "Feed program:";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "4M2-Gq-8L7"; */
+"4M2-Gq-8L7.text" = "Welcome";
+
+/* Class = "UILabel"; text = "Zoetis Account Manager"; ObjectID = "4Ou-P0-nju"; */
+"4Ou-P0-nju.text" = "Zoetis Account Manager";
+
+/* Class = "UILabel"; text = "Metric"; ObjectID = "4V8-1d-h6M"; */
+"4V8-1d-h6M.text" = "Metric";
+
+/* Class = "UILabel"; text = "Veterinarian"; ObjectID = "4W2-9I-Bzs"; */
+"4W2-9I-Bzs.text" = "Veterinarian";
+
+/* Class = "UIButton"; normalTitle = "E. maxima micro"; ObjectID = "4f5-MG-Mau"; */
+"4f5-MG-Mau.normalTitle" = "E. maxima micro";
+
+/* Class = "UILabel"; text = "Breed"; ObjectID = "4gA-rs-syN"; */
+"4gA-rs-syN.text" = "Breed";
+
+/* Class = "UILabel"; text = "FarmName"; ObjectID = "4nQ-gW-mmx"; */
+"4nQ-gW-mmx.text" = "FarmName";
+
+/* Class = "UIButton"; normalTitle = "Air Sac"; ObjectID = "4s0-h2-SRc"; */
+"4s0-h2-SRc.normalTitle" = "Air Sac";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "56q-oV-ek2"; */
+"56q-oV-ek2.text" = "Welcome";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "57D-KX-Jbd"; */
+"57D-KX-Jbd.text" = "Welcome";
+
+/* Class = "UILabel"; text = "BirdData "; ObjectID = "5DD-81-qXJ"; */
+"5DD-81-qXJ.text" = "BirdData ";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "5Hb-Cq-4db"; */
+"5Hb-Cq-4db.text" = "- Select -";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "5KN-iq-YD8"; */
+"5KN-iq-YD8.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Date de Séance:"; ObjectID = "5Le-mJ-NuX"; */
+"5Le-mJ-NuX.text" = "Date de Séance:";
+
+/* Class = "UILabel"; text = "TRT"; ObjectID = "5Uh-s0-mHi"; */
+"5Uh-s0-mHi.text" = "TRT";
+
+/* Class = "UILabel"; text = "Feed type 4"; ObjectID = "5Wm-b9-svL"; */
+"5Wm-b9-svL.text" = "Feed type 4";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "5YL-zl-wWt"; */
+"5YL-zl-wWt.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Session Data"; ObjectID = "5aU-4v-u7s"; */
+"5aU-4v-u7s.text" = "Session Data";
+
+/* Class = "UIButton"; normalTitle = "-"; ObjectID = "5bZ-7v-hOm"; */
+"5bZ-7v-hOm.normalTitle" = "-";
+
+/* Class = "UILabel"; text = "Dosage (g/ton)"; ObjectID = "5ea-NT-jRn"; */
+"5ea-NT-jRn.text" = "Dosage (g/ton)";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "5hq-Ia-yM6"; */
+"5hq-Ia-yM6.text" = "Label";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "5um-FJ-3UD"; */
+"5um-FJ-3UD.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Flock id"; ObjectID = "5vh-Yu-URq"; */
+"5vh-Yu-URq.text" = "Flock id";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "5x3-Dp-OYV"; */
+"5x3-Dp-OYV.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "61Y-OW-u8s"; */
+"61Y-OW-u8s.text" = "Welcome";
+
+/* Class = "UILabel"; text = "birds"; ObjectID = "68D-Ob-bTp"; */
+"68D-Ob-bTp.text" = "birds";
+
+/* Class = "UILabel"; text = "Farm Name *"; ObjectID = "6El-Ro-Gei"; */
+"6El-Ro-Gei.text" = "Farm Name *";
+
+/* Class = "UILabel"; text = ","; ObjectID = "6Gr-cN-al7"; */
+"6Gr-cN-al7.text" = ",";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6Nc-UE-Jhq"; */
+"6Nc-UE-Jhq.text" = "Label";
+
+/* Class = "UILabel"; text = "Microscopy"; ObjectID = "6P5-Al-8lC"; */
+"6P5-Al-8lC.text" = "Microscopy";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "6Ra-Sq-ffm"; */
+"6Ra-Sq-ffm.text" = " - Select -";
+
+/* Class = "UIButton"; normalTitle = "SIGN IN"; ObjectID = "6Rs-7q-Dr5"; */
+"6Rs-7q-Dr5.normalTitle" = "SIGN IN";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "6WN-fk-c3P"; */
+"6WN-fk-c3P.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6WX-ca-wBx"; */
+"6WX-ca-wBx.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Search"; ObjectID = "6an-a9-2h2"; */
+"6an-a9-2h2.placeholder" = "Search";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "6dL-md-FhQ"; */
+"6dL-md-FhQ.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "6ez-vq-tm2"; */
+"6ez-vq-tm2.text" = "Strain";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "6mZ-UV-yHY"; */
+"6mZ-UV-yHY.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Alternative"; ObjectID = "6xN-rg-FrF"; */
+"6xN-rg-FrF.text" = "Alternative";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "6yb-zf-XwJ"; */
+"6yb-zf-XwJ.text" = " - Select -";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "6zc-Ns-zy4"; */
+"6zc-Ns-zy4.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6zf-mG-9GT"; */
+"6zf-mG-9GT.text" = "Label";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "71R-BU-NNB"; */
+"71R-BU-NNB.text" = "0";
+
+/* Class = "UILabel"; text = "House No."; ObjectID = "720-bW-Ol0"; */
+"720-bW-Ol0.text" = "House No.";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "75f-Wf-XyA"; */
+"75f-Wf-XyA.text" = "- Select -";
+
+/* Class = "UILabel"; text = ","; ObjectID = "7EV-8a-Ra7"; */
+"7EV-8a-Ra7.text" = ",";
+
+/* Class = "UILabel"; text = "Food Pad Lession"; ObjectID = "7Hu-qj-oHj"; */
+"7Hu-qj-oHj.text" = "Food Pad Lession";
+
+/* Class = "UILabel"; text = "Female"; ObjectID = "7JE-pC-fm3"; */
+"7JE-pC-fm3.text" = "Female";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "7QE-Oa-XWA"; */
+"7QE-Oa-XWA.text" = "to";
+
+/* Class = "UILabel"; text = "Coccidiosis"; ObjectID = "7U8-iN-qR1"; */
+"7U8-iN-qR1.text" = "Coccidiosis";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "7Vk-LE-TWX"; */
+"7Vk-LE-TWX.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Feed type 4"; ObjectID = "7XU-Xn-WLh"; */
+"7XU-Xn-WLh.text" = "Feed type 4";
+
+/* Class = "UILabel"; text = "Session Type * "; ObjectID = "7d1-AR-P1q"; */
+"7d1-AR-P1q.text" = "Session Type * ";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "7da-2N-FKW"; */
+"7da-2N-FKW.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "7eM-t4-bt8"; */
+"7eM-t4-bt8.text" = "Strain";
+
+/* Class = "UILabel"; text = "Farm Weight "; ObjectID = "7gw-yf-ssU"; */
+"7gw-yf-ssU.text" = "Farm Weight ";
+
+/* Class = "UIButton"; normalTitle = "Historical"; ObjectID = "7sC-9g-zIZ"; */
+"7sC-9g-zIZ.normalTitle" = "Historical";
+
+/* Class = "UILabel"; text = "Farm Name"; ObjectID = "7tQ-EE-Jzj"; */
+"7tQ-EE-Jzj.text" = "Farm Name";
+
+/* Class = "UILabel"; text = "Feed type 6"; ObjectID = "7xP-be-XiM"; */
+"7xP-be-XiM.text" = "Feed type 6";
+
+/* Class = "UILabel"; text = "Add"; ObjectID = "81a-wd-9FE"; */
+"81a-wd-9FE.text" = "Add";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "89v-LI-CP6"; */
+"89v-LI-CP6.text" = "- Select -";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "8Ag-aA-4Ga"; */
+"8Ag-aA-4Ga.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Training Complex2"; ObjectID = "8T4-jQ-t5n"; */
+"8T4-jQ-t5n.text" = "Training Complex2";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "8VG-28-qQ5"; */
+"8VG-28-qQ5.text" = "HMS";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "8XS-y7-SIU"; */
+"8XS-y7-SIU.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "8Xn-mp-4uj"; */
+"8Xn-mp-4uj.text" = "Welcome";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "8a8-YQ-HY9"; */
+"8a8-YQ-HY9.text" = "0";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "8bi-a2-YDf"; */
+"8bi-a2-YDf.text" = "- Select -";
+
+/* Class = "UIButton"; normalTitle = "By farm"; ObjectID = "8m8-bg-dPc"; */
+"8m8-bg-dPc.normalTitle" = "By farm";
+
+/* Class = "UILabel"; text = "Light hens"; ObjectID = "8rq-uP-2Gd"; */
+"8rq-uP-2Gd.text" = "Light hens";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "8wY-3k-qFa"; */
+"8wY-3k-qFa.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Complex |"; ObjectID = "8xJ-i0-aEi"; */
+"8xJ-i0-aEi.text" = "Complex |";
+
+/* Class = "UILabel"; text = "Feed type 1"; ObjectID = "97P-In-wsy"; */
+"97P-In-wsy.text" = "Feed type 1";
+
+/* Class = "UIButton"; normalTitle = "Historical"; ObjectID = "99x-o4-yB9"; */
+"99x-o4-yB9.normalTitle" = "Historical";
+
+/* Class = "UILabel"; text = "Feed Program"; ObjectID = "9P2-dn-3t3"; */
+"9P2-dn-3t3.text" = "Feed Program";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "9UN-Ij-Y9I"; */
+"9UN-Ij-Y9I.text" = "Date";
+
+/* Class = "UILabel"; text = "TRT"; ObjectID = "9VF-QN-vhH"; */
+"9VF-QN-vhH.text" = "TRT";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "9W0-MO-tk1"; */
+"9W0-MO-tk1.text" = "- Select -";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "9Yw-sq-W6x"; */
+"9Yw-sq-W6x.text" = "0";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "9aJ-Rn-bg0"; */
+"9aJ-Rn-bg0.text" = "Welcome";
+
+/* Class = "UILabel"; text = "TRT"; ObjectID = "9aX-fD-M6L"; */
+"9aX-fD-M6L.text" = "TRT";
+
+/* Class = "UILabel"; text = "Session Date"; ObjectID = "9av-Kw-wHt"; */
+"9av-Kw-wHt.text" = "Session Date";
+
+/* Class = "UILabel"; text = "Session date:"; ObjectID = "9dO-LX-cOE"; */
+"9dO-LX-cOE.text" = "Session date:";
+
+/* Class = "UILabel"; text = "NDV"; ObjectID = "9fe-PI-xQH"; */
+"9fe-PI-xQH.text" = "NDV";
+
+/* Class = "UIButton"; normalTitle = "E. acervulina"; ObjectID = "9ix-zf-0AV"; */
+"9ix-zf-0AV.normalTitle" = "E. acervulina";
+
+/* Class = "UILabel"; text = "E.coli"; ObjectID = "9je-Jb-bJ3"; */
+"9je-Jb-bJ3.text" = "E.coli";
+
+/* Class = "UILabel"; text = "Company |"; ObjectID = "9jh-5B-lFt"; */
+"9jh-5B-lFt.text" = "Company |";
+
+/* Class = "UILabel"; text = "Session (Turkey)"; ObjectID = "9jw-za-HfU"; */
+"9jw-za-HfU.text" = "Session (Turkey)";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "9lY-so-phG"; */
+"9lY-so-phG.text" = "Strain";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "9ri-Vo-gVB"; */
+"9ri-Vo-gVB.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Age(days) *"; ObjectID = "9tx-6p-dYZ"; */
+"9tx-6p-dYZ.text" = "Age(days) *";
+
+/* Class = "UILabel"; text = "label"; ObjectID = "9ux-GH-YVz"; */
+"9ux-GH-YVz.text" = "label";
+
+/* Class = "UILabel"; text = "Feed type 5"; ObjectID = "9x1-qJ-r8o"; */
+"9x1-qJ-r8o.text" = "Feed type 5";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "A0c-3s-XVY"; */
+"A0c-3s-XVY.text" = "Welcome";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "A3i-QX-WDA"; */
+"A3i-QX-WDA.text" = "HMS";
+
+/* Class = "UILabel"; text = "To"; ObjectID = "A6D-gZ-uuI"; */
+"A6D-gZ-uuI.text" = "To";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "ABV-Mm-yVt"; */
+"ABV-Mm-yVt.text" = "- Select -";
+
+/* Class = "UILabel"; text = "E.coli"; ObjectID = "ADp-U1-0ih"; */
+"ADp-U1-0ih.text" = "E.coli";
+
+/* Class = "UILabel"; text = "Others"; ObjectID = "AE6-Fd-WbD"; */
+"AE6-Fd-WbD.text" = "Others";
+
+/* Class = "UIButton"; normalTitle = "Add Feed"; ObjectID = "AFM-oL-2hw"; */
+"AFM-oL-2hw.normalTitle" = "Add Feed";
+
+/* Class = "UILabel"; text = "Account Contact"; ObjectID = "AGh-1m-DHw"; */
+"AGh-1m-DHw.text" = "Account Contact";
+
+/* Class = "UILabel"; text = "Dosage (g/ton)"; ObjectID = "ALE-o0-tmo"; */
+"ALE-o0-tmo.text" = "Dosage (g/ton)";
+
+/* Class = "UILabel"; text = "Session Type"; ObjectID = "AMn-NX-mCM"; */
+"AMn-NX-mCM.text" = "Session Type";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "ASB-Ws-UJt"; */
+"ASB-Ws-UJt.text" = "- Select -";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "AUb-PO-CNO"; */
+"AUb-PO-CNO.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Feed type 5"; ObjectID = "AXz-5N-K5x"; */
+"AXz-5N-K5x.text" = "Feed type 5";
+
+/* Class = "UILabel"; text = "YES"; ObjectID = "AaZ-K0-ewc"; */
+"AaZ-K0-ewc.text" = "YES";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "Aay-In-dF8"; */
+"Aay-In-dF8.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Turkey"; ObjectID = "Ab9-MK-NUR"; */
+"Ab9-MK-NUR.text" = "Turkey";
+
+/* Class = "UILabel"; text = "07/09/2016"; ObjectID = "Aj8-po-mX7"; */
+"Aj8-po-mX7.text" = "07/09/2016";
+
+/* Class = "UILabel"; text = "All Birds (Turkey)"; ObjectID = "B3P-J1-wqe"; */
+"B3P-J1-wqe.text" = "All Birds (Turkey)";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "B3x-oJ-HFK"; */
+"B3x-oJ-HFK.text" = "Welcome";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "B89-OT-pwX"; */
+"B89-OT-pwX.text" = "- Select -";
+
+/* Class = "UILabel"; text = "09/09/2016"; ObjectID = "BBA-hi-3Vl"; */
+"BBA-hi-3Vl.text" = "09/09/2016";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "BDg-Xu-yNV"; */
+"BDg-Xu-yNV.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "H no."; ObjectID = "BI5-NU-Yld"; */
+"BI5-NU-Yld.text" = "H no.";
+
+/* Class = "UILabel"; text = "Veterinarian"; ObjectID = "BJn-px-DST"; */
+"BJn-px-DST.text" = "Veterinarian";
+
+/* Class = "UILabel"; text = "Field Visit"; ObjectID = "BK9-o2-gBD"; */
+"BK9-o2-gBD.text" = "Field Visit";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "BN9-zO-GFr"; */
+"BN9-zO-GFr.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Farm Wgt"; ObjectID = "BU3-Zh-sUR"; */
+"BU3-Zh-sUR.text" = "Farm Wgt";
+
+/* Class = "UILabel"; text = "Poultry Health Monitoring"; ObjectID = "BUT-1Y-8ib"; */
+"BUT-1Y-8ib.text" = "Poultry Health Monitoring";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "BY7-JK-cji"; */
+"BY7-JK-cji.text" = "Strain";
+
+/* Class = "UILabel"; text = "PoultryView 360"; ObjectID = "BZ7-N6-qVQ"; */
+"BZ7-N6-qVQ.text" = "PoultryView 360";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "BZY-ye-KvV"; */
+"BZY-ye-KvV.text" = "5";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "Bgo-To-M8J"; */
+"Bgo-To-M8J.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Session type:"; ObjectID = "Bw4-yJ-nPG"; */
+"Bw4-yJ-nPG.text" = "Session type:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Bz8-7h-MYK"; */
+"Bz8-7h-MYK.text" = "Label";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "BzV-op-mVt"; */
+"BzV-op-mVt.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "C8o-TY-FgC"; */
+"C8o-TY-FgC.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Complex"; ObjectID = "C9G-Lm-FJA"; */
+"C9G-Lm-FJA.text" = "Complex";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "C9m-sA-SOI"; */
+"C9m-sA-SOI.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Observation name:"; ObjectID = "CAP-EA-mA6"; */
+"CAP-EA-mA6.text" = "Observation name:";
+
+/* Class = "UILabel"; text = "Age (days) *"; ObjectID = "CDG-Ea-1FK"; */
+"CDG-Ea-1FK.text" = "Age (days) *";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "CFi-oz-6h4"; */
+"CFi-oz-6h4.text" = "Label";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "CQ0-fa-jRz"; */
+"CQ0-fa-jRz.text" = "to";
+
+/* Class = "UILabel"; text = "Cocci program:"; ObjectID = "CVM-zE-rhL"; */
+"CVM-zE-rhL.text" = "Cocci program:";
+
+/* Class = "UILabel"; text = "Select Date"; ObjectID = "CbJ-Gs-LFK"; */
+"CbJ-Gs-LFK.text" = "Select Date";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "Cbd-YF-2xM"; */
+"Cbd-YF-2xM.text" = "HMS";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "CcK-96-r0A"; */
+"CcK-96-r0A.normalTitle" = "+";
+
+/* Class = "UILabel"; text = "Complex Name"; ObjectID = "CfP-ue-3BV"; */
+"CfP-ue-3BV.text" = "Complex Name";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "Cgz-xS-Rqi"; */
+"Cgz-xS-Rqi.text" = "Route";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Ch9-nd-6Sv"; */
+"Ch9-nd-6Sv.text" = "Label";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "CiY-Zc-vms"; */
+"CiY-Zc-vms.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Vaccination Program"; ObjectID = "Cnb-xw-4Jb"; */
+"Cnb-xw-4Jb.text" = "Vaccination Program";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "D6i-hL-Has"; */
+"D6i-hL-Has.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Posting session without necropsy"; ObjectID = "D6s-La-8Fg"; */
+"D6s-La-8Fg.text" = "Posting session without necropsy";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "D99-Sg-dWi"; */
+"D99-Sg-dWi.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "D9G-Z2-tk9"; */
+"D9G-Z2-tk9.text" = "Welcome";
+
+/* Class = "UILabel"; text = "Observation name:"; ObjectID = "DBi-e4-OEH"; */
+"DBi-e4-OEH.text" = "Observation name:";
+
+/* Class = "UILabel"; text = "1. Townsend Farms"; ObjectID = "DOK-pa-GG3"; */
+"DOK-pa-GG3.text" = "1. Townsend Farms";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "DPB-kM-luB"; */
+"DPB-kM-luB.text" = "Strain";
+
+/* Class = "UILabel"; text = "Posting session without necropsy"; ObjectID = "DXE-ar-5b1"; */
+"DXE-ar-5b1.text" = "Posting session without necropsy";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "DcO-63-oDB"; */
+"DcO-63-oDB.text" = "Strain";
+
+/* Class = "UILabel"; text = "Category name:"; ObjectID = "Dgr-7t-z3E"; */
+"Dgr-7t-z3E.text" = "Category name:";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "Dl9-mJ-03j"; */
+"Dl9-mJ-03j.text" = "to";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "DqH-rP-Ju5"; */
+"DqH-rP-Ju5.text" = "Label";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "DtB-9g-5Rz"; */
+"DtB-9g-5Rz.text" = "- Select -";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "DyL-ue-K9p"; */
+"DyL-ue-K9p.text" = "to";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "E3f-FM-KEL"; */
+"E3f-FM-KEL.text" = "- Select -";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "EHf-Yp-CzA"; */
+"EHf-Yp-CzA.text" = "to";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "EIj-kT-MBr"; */
+"EIj-kT-MBr.text" = "0";
+
+/* Class = "UILabel"; text = "Duration of Program(days)"; ObjectID = "EOI-4R-Yk7"; */
+"EOI-4R-Yk7.text" = "Duration of Program(days)";
+
+/* Class = "UILabel"; text = "Feed type 1"; ObjectID = "Ecm-9v-kVj"; */
+"Ecm-9v-kVj.text" = "Feed type 1";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "EeH-s1-K2Z"; */
+"EeH-s1-K2Z.text" = "Language";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "Efb-tr-cs1"; */
+"Efb-tr-cs1.text" = "HMS";
+
+/* Class = "UITextField"; placeholder = "Search"; ObjectID = "ElY-Eq-gKf"; */
+"ElY-Eq-gKf.placeholder" = "Search";
+
+/* Class = "UILabel"; text = "Dosage (g/ton)"; ObjectID = "Elg-Oz-gjf"; */
+"Elg-Oz-gjf.text" = "Dosage (g/ton)";
+
+/* Class = "UILabel"; text = "Unlinked Session"; ObjectID = "Ewb-uz-eB9"; */
+"Ewb-uz-eB9.text" = "Unlinked Session";
+
+/* Class = "UIButton"; normalTitle = "Historical"; ObjectID = "ExK-OF-XGd"; */
+"ExK-OF-XGd.normalTitle" = "Historical";
+
+/* Class = "UILabel"; text = "GI Tract"; ObjectID = "EyB-jQ-t9G"; */
+"EyB-jQ-t9G.text" = "GI Tract";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "Eyd-io-aap"; */
+"Eyd-io-aap.text" = "5";
+
+/* Class = "UILabel"; text = "En"; ObjectID = "F5v-gG-Ak4"; */
+"F5v-gG-Ak4.text" = "En";
+
+/* Class = "UILabel"; text = "Farm name:"; ObjectID = "F8c-ef-lYe"; */
+"F8c-ef-lYe.text" = "Farm name:";
+
+/* Class = "UIButton"; normalTitle = "GI Tract"; ObjectID = "FDE-Co-Hnf"; */
+"FDE-Co-Hnf.normalTitle" = "GI Tract";
+
+/* Class = "UILabel"; text = "ST"; ObjectID = "FDI-M4-WPp"; */
+"FDI-M4-WPp.text" = "ST";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "FEq-dE-cUw"; */
+"FEq-dE-cUw.text" = "HMS";
+
+/* Class = "UILabel"; text = "chicken"; ObjectID = "FIK-AV-fvP"; */
+"FIK-AV-fvP.text" = "chicken";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "FJV-XA-s3w"; */
+"FJV-XA-s3w.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "FM1-uV-iqY"; */
+"FM1-uV-iqY.text" = "to";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "FhR-WR-thG"; */
+"FhR-WR-thG.text" = "0";
+
+/* Class = "UILabel"; text = "09/09/2016"; ObjectID = "FkJ-eb-j85"; */
+"FkJ-eb-j85.text" = "09/09/2016";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "FoG-26-mK7"; */
+"FoG-26-mK7.text" = "0";
+
+/* Class = "UILabel"; text = "IBDV"; ObjectID = "FoH-HF-ddE"; */
+"FoH-HF-ddE.text" = "IBDV";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "Fq0-xo-kzf"; */
+"Fq0-xo-kzf.text" = "to";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "FvQ-a3-K7y"; */
+"FvQ-a3-K7y.normalTitle" = "+";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "G0e-Ft-MIG"; */
+"G0e-Ft-MIG.text" = "0";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "G1Y-eq-MbO"; */
+"G1Y-eq-MbO.text" = "to";
+
+/* Class = "UIButton"; normalTitle = "Historical"; ObjectID = "G25-ks-wax"; */
+"G25-ks-wax.normalTitle" = "Historical";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "G5G-Xk-iRx"; */
+"G5G-Xk-iRx.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "G6V-FQ-Isn"; */
+"G6V-FQ-Isn.text" = "Route";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "GCP-Ar-D8K"; */
+"GCP-Ar-D8K.text" = "HMS";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "GHm-51-PxH"; */
+"GHm-51-PxH.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Production Type:"; ObjectID = "GLY-pg-KHl"; */
+"GLY-pg-KHl.text" = "Production Type:";
+
+/* Class = "UILabel"; text = ","; ObjectID = "GME-kx-GM8"; */
+"GME-kx-GM8.text" = ",";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "GRV-cT-rfE"; */
+"GRV-cT-rfE.text" = "- Select -";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "GS4-4X-4LL"; */
+"GS4-4X-4LL.text" = "- Select -";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "GSg-hd-R9j"; */
+"GSg-hd-R9j.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "No. of birds"; ObjectID = "Gaw-NJ-23k"; */
+"Gaw-NJ-23k.text" = "No. of birds";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "Gbl-BB-So8"; */
+"Gbl-BB-So8.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Start Date"; ObjectID = "Gcp-Tu-8Tp"; */
+"Gcp-Tu-8Tp.text" = "Start Date";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "Ggg-w3-P3a"; */
+"Ggg-w3-P3a.text" = " - Select -";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "Ggq-La-7Dw"; */
+"Ggq-La-7Dw.text" = "to";
+
+/* Class = "UILabel"; text = "Complex"; ObjectID = "Gra-i3-suG"; */
+"Gra-i3-suG.text" = "Complex";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "Grs-wM-D04"; */
+"Grs-wM-D04.normalTitle" = "Done";
+
+/* Class = "UIButton"; normalTitle = "By week"; ObjectID = "Gwk-W0-31j"; */
+"Gwk-W0-31j.normalTitle" = "By week";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "GxY-LH-4UY"; */
+"GxY-LH-4UY.text" = "Label";
+
+/* Class = "UILabel"; text = "To"; ObjectID = "H1F-xs-gvz"; */
+"H1F-xs-gvz.text" = "To";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "HMQ-2c-gdf"; */
+"HMQ-2c-gdf.text" = "to";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "HQY-gu-OBJ"; */
+"HQY-gu-OBJ.text" = " - Select -";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "HRh-Ax-8Jy"; */
+"HRh-Ax-8Jy.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Feed type 1"; ObjectID = "HSd-dT-E8U"; */
+"HSd-dT-E8U.text" = "Feed type 1";
+
+/* Class = "UILabel"; text = "Session Type"; ObjectID = "HYi-WS-YfL"; */
+"HYi-WS-YfL.text" = "Session Type";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "HaS-tO-fJs"; */
+"HaS-tO-fJs.text" = "HMS";
+
+/* Class = "UILabel"; text = "001"; ObjectID = "HcQ-Pr-oVa"; */
+"HcQ-Pr-oVa.text" = "001";
+
+/* Class = "UILabel"; text = "Sick"; ObjectID = "HdG-NU-8sn"; */
+"HdG-NU-8sn.text" = "Sick";
+
+/* Class = "UILabel"; text = "Start Date"; ObjectID = "Hhp-HK-BKg"; */
+"Hhp-HK-BKg.text" = "Start Date";
+
+/* Class = "UILabel"; text = "Select Date"; ObjectID = "HmM-1L-LiT"; */
+"HmM-1L-LiT.text" = "Select Date";
+
+/* Class = "UILabel"; text = "Session Date |"; ObjectID = "HmO-LI-CQB"; */
+"HmO-LI-CQB.text" = "Session Date |";
+
+/* Class = "UILabel"; text = "07/09/2016"; ObjectID = "HpZ-oR-2Ya"; */
+"HpZ-oR-2Ya.text" = "07/09/2016";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "HrN-0H-QGQ"; */
+"HrN-0H-QGQ.text" = "Welcome";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "HtB-K5-apK"; */
+"HtB-K5-apK.text" = "Route";
+
+/* Class = "UILabel"; text = "Feed type 3"; ObjectID = "IBX-XC-mJN"; */
+"IBX-XC-mJN.text" = "Feed type 3";
+
+/* Class = "UIButton"; normalTitle = "Sync to web"; ObjectID = "IG7-64-fmI"; */
+"IG7-64-fmI.normalTitle" = "Sync to web";
+
+/* Class = "UILabel"; text = "Microscopy"; ObjectID = "IK5-iE-GnT"; */
+"IK5-iE-GnT.text" = "Microscopy";
+
+/* Class = "UILabel"; text = "Company |"; ObjectID = "IOZ-F4-Tm4"; */
+"IOZ-F4-Tm4.text" = "Company |";
+
+/* Class = "UILabel"; text = "Immune/Others"; ObjectID = "IVb-Pn-1P0"; */
+"IVb-Pn-1P0.text" = "Immune/Others";
+
+/* Class = "UILabel"; text = ","; ObjectID = "IWM-Is-PFJ"; */
+"IWM-Is-PFJ.text" = ",";
+
+/* Class = "UILabel"; text = "Customer *"; ObjectID = "IWb-Iw-wKf"; */
+"IWb-Iw-wKf.text" = "Customer *";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "IY1-GU-4xP"; */
+"IY1-GU-4xP.text" = "- Select -";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "Ibi-KY-29k"; */
+"Ibi-KY-29k.text" = "- Select -";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "Iej-Zp-l0O"; */
+"Iej-Zp-l0O.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Coccidiosis"; ObjectID = "IfL-go-fwd"; */
+"IfL-go-fwd.text" = "Coccidiosis";
+
+/* Class = "UILabel"; text = "Feed type 5"; ObjectID = "Ijv-CI-ggw"; */
+"Ijv-CI-ggw.text" = "Feed type 5";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "Iri-Dy-pVw"; */
+"Iri-Dy-pVw.text" = "Language";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Ivc-lX-uVw"; */
+"Ivc-lX-uVw.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "IzX-fc-gwH"; */
+"IzX-fc-gwH.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Session Date"; ObjectID = "Izs-mj-1dF"; */
+"Izs-mj-1dF.text" = "Session Date";
+
+/* Class = "UILabel"; text = "Janssen Farms Hatcheries"; ObjectID = "J3Q-dU-pIc"; */
+"J3Q-dU-pIc.text" = "Janssen Farms Hatcheries";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "J4Q-LD-7Fx"; */
+"J4Q-LD-7Fx.text" = "Route";
+
+/* Class = "UIButton"; normalTitle = "Coccidiosis Control"; ObjectID = "J5K-tf-KRk"; */
+"J5K-tf-KRk.normalTitle" = "Coccidiosis Control";
+
+/* Class = "UILabel"; text = "Training Complex 2"; ObjectID = "J6G-Vu-gJO"; */
+"J6G-Vu-gJO.text" = "Training Complex 2";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "J6b-0L-32p"; */
+"J6b-0L-32p.text" = "- Select -";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "J7y-qa-w3y"; */
+"J7y-qa-w3y.text" = "- Select -";
+
+/* Class = "UILabel"; text = "- Select Date -"; ObjectID = "J7y-vl-7BT"; */
+"J7y-vl-7BT.text" = "- Select Date -";
+
+/* Class = "UILabel"; text = "Training & Education"; ObjectID = "J9f-7E-NFK"; */
+"J9f-7E-NFK.text" = "Training & Education";
+
+/* Class = "UILabel"; text = "ABF"; ObjectID = "JIG-4m-3LL"; */
+"JIG-4m-3LL.text" = "ABF";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "JJ9-8H-1Qd"; */
+"JJ9-8H-1Qd.text" = "- Select -";
+
+/* Class = "UILabel"; text = "09/09/2016"; ObjectID = "JMo-MA-SVj"; */
+"JMo-MA-SVj.text" = "09/09/2016";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "JOh-nf-zah"; */
+"JOh-nf-zah.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Weight System"; ObjectID = "JPX-QI-oA4"; */
+"JPX-QI-oA4.text" = "Weight System";
+
+/* Class = "UILabel"; text = "- Select Date -"; ObjectID = "JRC-qp-qcH"; */
+"JRC-qp-qcH.text" = "- Select Date -";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "JVA-Pp-v8L"; */
+"JVA-Pp-v8L.text" = "Strain";
+
+/* Class = "UILabel"; text = "Feed type 6"; ObjectID = "Jci-lE-6p0"; */
+"Jci-lE-6p0.text" = "Feed type 6";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "Jho-y6-pjn"; */
+"Jho-y6-pjn.text" = "Route";
+
+/* Class = "UILabel"; text = "Vaccination:"; ObjectID = "Jiz-aH-nVa"; */
+"Jiz-aH-nVa.text" = "Vaccination:";
+
+/* Class = "UITextField"; text = " "; ObjectID = "Jme-PQ-fQq"; */
+"Jme-PQ-fQq.text" = " ";
+
+/* Class = "UILabel"; text = "Feed Program"; ObjectID = "JrC-AI-4Ol"; */
+"JrC-AI-4Ol.text" = "Feed Program";
+
+/* Class = "UILabel"; text = "Feed type 4"; ObjectID = "JrU-E4-YGS"; */
+"JrU-E4-YGS.text" = "Feed type 4";
+
+/* Class = "UILabel"; text = "Version : 5.0"; ObjectID = "K3z-YH-z8p"; */
+"K3z-YH-z8p.text" = "Version : 5.0";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "K6z-gd-Pnn"; */
+"K6z-gd-Pnn.text" = "5";
+
+/* Class = "UILabel"; text = "Feed type 4"; ObjectID = "K7B-gV-OtP"; */
+"K7B-gV-OtP.text" = "Feed type 4";
+
+/* Class = "UILabel"; text = "Start Session"; ObjectID = "K9k-9w-ZfE"; */
+"K9k-9w-ZfE.text" = "Start Session";
+
+/* Class = "UILabel"; text = "TRT"; ObjectID = "KCR-s5-l6L"; */
+"KCR-s5-l6L.text" = "TRT";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "KEP-kw-Krs"; */
+"KEP-kw-Krs.text" = " - Select -";
+
+/* Class = "UIButton"; normalTitle = "Summary"; ObjectID = "KG9-1i-vBy"; */
+"KG9-1i-vBy.normalTitle" = "Summary";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "KJd-Ip-Boa"; */
+"KJd-Ip-Boa.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "KJd-su-Rgr"; */
+"KJd-su-Rgr.text" = "Route";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "KLR-Wg-dpX"; */
+"KLR-Wg-dpX.text" = "- Select -";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "KLU-Da-n7k"; */
+"KLU-Da-n7k.text" = " - Select -";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "KSg-B2-V22"; */
+"KSg-B2-V22.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "KUG-3P-Mtq"; */
+"KUG-3P-Mtq.text" = "Welcome";
+
+/* Class = "UILabel"; text = "IBV"; ObjectID = "KVH-bC-ZEH"; */
+"KVH-bC-ZEH.text" = "IBV";
+
+/* Class = "UILabel"; text = "Respiratory Tract"; ObjectID = "KY7-8B-56G"; */
+"KY7-8B-56G.text" = "Respiratory Tract";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "KcA-xZ-ia4"; */
+"KcA-xZ-ia4.text" = " - Select -";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "Kdh-Pw-HLY"; */
+"Kdh-Pw-HLY.text" = "to";
+
+/* Class = "UILabel"; text = "Respiratory Tract"; ObjectID = "Kg7-7e-8T7"; */
+"Kg7-7e-8T7.text" = "Respiratory Tract";
+
+/* Class = "UILabel"; text = "Feed Program *"; ObjectID = "Khz-sJ-4eI"; */
+"Khz-sJ-4eI.text" = "Feed Program *";
+
+/* Class = "UILabel"; text = "Customer:"; ObjectID = "KpC-sx-TkB"; */
+"KpC-sx-TkB.text" = "Customer:";
+
+/* Class = "UILabel"; text = "Heavy hens"; ObjectID = "KrM-BR-jxq"; */
+"KrM-BR-jxq.text" = "Heavy hens";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "Kyr-YX-dst"; */
+"Kyr-YX-dst.text" = "Welcome";
+
+/* Class = "UILabel"; text = "Skeletal/Muscular/Integumentary"; ObjectID = "L0d-K8-TDw"; */
+"L0d-K8-TDw.text" = "Skeletal/Muscular/Integumentary";
+
+/* Class = "UILabel"; text = "Metric"; ObjectID = "L3G-9E-Yc4"; */
+"L3G-9E-Yc4.text" = "Metric";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "L3J-Pt-I0P"; */
+"L3J-Pt-I0P.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "L4b-Jy-Gtw"; */
+"L4b-Jy-Gtw.text" = "Label";
+
+/* Class = "UILabel"; text = "Complex (New jersey)"; ObjectID = "L6t-dM-N4j"; */
+"L6t-dM-N4j.text" = "Complex (New jersey)";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "L7D-Ne-50N"; */
+"L7D-Ne-50N.normalTitle" = "Skip";
+
+/* Class = "UILabel"; text = "Molecule"; ObjectID = "LAW-QV-GnI"; */
+"LAW-QV-GnI.text" = "Molecule";
+
+/* Class = "UILabel"; text = "Farm "; ObjectID = "LDc-Pj-v1t"; */
+"LDc-Pj-v1t.text" = "Farm ";
+
+/* Class = "UILabel"; text = "Complex"; ObjectID = "LFr-fc-t8R"; */
+"LFr-fc-t8R.text" = "Complex";
+
+/* Class = "UIButton"; normalTitle = "Immune"; ObjectID = "LIt-4T-RTy"; */
+"LIt-4T-RTy.normalTitle" = "Immune";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "LLC-7k-pZV"; */
+"LLC-7k-pZV.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "ads"; ObjectID = "LM2-9A-aHG"; */
+"LM2-9A-aHG.text" = "ads";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "LTl-P9-sfZ"; */
+"LTl-P9-sfZ.text" = "HMS";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "LTv-yc-IGD"; */
+"LTv-yc-IGD.text" = "Language";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "LWt-Xc-5qW"; */
+"LWt-Xc-5qW.text" = "HMS";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "Lcs-zp-edf"; */
+"Lcs-zp-edf.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Complex *"; ObjectID = "Ldj-n8-JyR"; */
+"Ldj-n8-JyR.text" = "Complex *";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "Liu-Ci-Me1"; */
+"Liu-Ci-Me1.text" = "to";
+
+/* Class = "UILabel"; text = "Feed type 3"; ObjectID = "LlL-bL-kKP"; */
+"LlL-bL-kKP.text" = "Feed type 3";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "Lle-DM-rPT"; */
+"Lle-DM-rPT.text" = "HMS";
+
+/* Class = "UILabel"; text = "Category name:"; ObjectID = "Lmc-Rj-PGK"; */
+"Lmc-Rj-PGK.text" = "Category name:";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "LuF-ib-zBX"; */
+"LuF-ib-zBX.text" = " - Select -";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "MBw-q3-lLT"; */
+"MBw-q3-lLT.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Add Vaccination"; ObjectID = "MID-ZS-hXc"; */
+"MID-ZS-hXc.text" = "Add Vaccination";
+
+/* Class = "UILabel"; text = "No. of birds"; ObjectID = "MJZ-2Q-jiB"; */
+"MJZ-2Q-jiB.text" = "No. of birds";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "MLE-kF-btx"; */
+"MLE-kF-btx.text" = "HMS";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "MPB-Hi-lJu"; */
+"MPB-Hi-lJu.text" = "to";
+
+/* Class = "UILabel"; text = "Veterinarian *"; ObjectID = "MQo-Sz-R6X"; */
+"MQo-Sz-R6X.text" = "Veterinarian *";
+
+/* Class = "UILabel"; text = "Feed type 4"; ObjectID = "MQy-vs-6yQ"; */
+"MQy-vs-6yQ.text" = "Feed type 4";
+
+/* Class = "UILabel"; text = "Zoetis Account Manager"; ObjectID = "MRv-QI-JYx"; */
+"MRv-QI-JYx.text" = "Zoetis Account Manager";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "MS6-x2-qWa"; */
+"MS6-x2-qWa.text" = "HMS";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "MSH-rw-NPl"; */
+"MSH-rw-NPl.text" = "0";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "MZ6-3s-DSg"; */
+"MZ6-3s-DSg.text" = "Route";
+
+/* Class = "UILabel"; text = "Feed type 1"; ObjectID = "Md8-HB-h28"; */
+"Md8-HB-h28.text" = "Feed type 1";
+
+/* Class = "UILabel"; text = "Feed type 6"; ObjectID = "Mid-j6-ztd"; */
+"Mid-j6-ztd.text" = "Feed type 6";
+
+/* Class = "UILabel"; text = "Select Farms"; ObjectID = "MpZ-Xm-fdB"; */
+"MpZ-Xm-fdB.text" = "Select Farms";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Myy-cn-KOP"; */
+"Myy-cn-KOP.text" = "Label";
+
+/* Class = "UILabel"; text = "Feed type 3"; ObjectID = "N16-Ei-KoC"; */
+"N16-Ei-KoC.text" = "Feed type 3";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "N1H-8H-BDs"; */
+"N1H-8H-BDs.text" = "- Select -";
+
+/* Class = "UILabel"; text = "IBDV"; ObjectID = "N2s-80-bMM"; */
+"N2s-80-bMM.text" = "IBDV";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "NBE-xz-HJr"; */
+"NBE-xz-HJr.text" = "- Select -";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "NBa-Ne-6pj"; */
+"NBa-Ne-6pj.text" = "HMS";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "NBn-5z-wRO"; */
+"NBn-5z-wRO.text" = "Strain";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "NCV-V2-cz5"; */
+"NCV-V2-cz5.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "Feed Program "; ObjectID = "NLU-yE-Pxw"; */
+"NLU-yE-Pxw.text" = "Feed Program ";
+
+/* Class = "UILabel"; text = "Immune/Others"; ObjectID = "NNk-XJ-Cfp"; */
+"NNk-XJ-Cfp.text" = "Immune/Others";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "NRb-j3-ovk"; */
+"NRb-j3-ovk.text" = "to";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "NW9-fh-P7p"; */
+"NW9-fh-P7p.text" = "Route";
+
+/* Class = "UILabel"; text = "Reo"; ObjectID = "NbB-xv-GYG"; */
+"NbB-xv-GYG.text" = "Reo";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Nfi-4A-Ebs"; */
+"Nfi-4A-Ebs.text" = "0";
+
+/* Class = "UILabel"; text = "12345678901234"; ObjectID = "Nnv-up-01Q"; */
+"Nnv-up-01Q.text" = "12345678901234";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "NsN-Vt-Nxd"; */
+"NsN-Vt-Nxd.text" = "to";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "NtL-7x-8qz"; */
+"NtL-7x-8qz.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NtS-yr-22S"; */
+"NtS-yr-22S.text" = "Label";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "O4K-SY-age"; */
+"O4K-SY-age.text" = "Welcome";
+
+/* Class = "UILabel"; text = "Feed Program"; ObjectID = "O4R-qb-ivY"; */
+"O4R-qb-ivY.text" = "Feed Program";
+
+/* Class = "UILabel"; text = "Molecule"; ObjectID = "OBT-Vo-Iiw"; */
+"OBT-Vo-Iiw.text" = "Molecule";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "ODT-qu-Jvq"; */
+"ODT-qu-Jvq.text" = "to";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "OJp-9A-aZZ"; */
+"OJp-9A-aZZ.text" = "to";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "ORz-jZ-ZL6"; */
+"ORz-jZ-ZL6.text" = "Welcome";
+
+/* Class = "UILabel"; text = "David Rives"; ObjectID = "OTy-fx-c4s"; */
+"OTy-fx-c4s.text" = "David Rives";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "OVT-p5-42e"; */
+"OVT-p5-42e.text" = " - Select -";
+
+/* Class = "UIButton"; normalTitle = "-"; ObjectID = "OVx-nL-NNx"; */
+"OVx-nL-NNx.normalTitle" = "-";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "OWl-VW-eH0"; */
+"OWl-VW-eH0.text" = "0";
+
+/* Class = "UILabel"; text = "NDV"; ObjectID = "OYF-9d-MHH"; */
+"OYF-9d-MHH.text" = "NDV";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "OYh-PH-bgw"; */
+"OYh-PH-bgw.text" = " - Select -";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "OZA-sr-Gzl"; */
+"OZA-sr-Gzl.text" = "HMS";
+
+/* Class = "UILabel"; text = "NDV"; ObjectID = "Obt-aV-e3r"; */
+"Obt-aV-e3r.text" = "NDV";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "Obt-r9-OBM"; */
+"Obt-r9-OBM.text" = "to";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "Oel-kJ-E55"; */
+"Oel-kJ-E55.text" = "Route";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "OjD-qT-Tlv"; */
+"OjD-qT-Tlv.text" = "Label";
+
+/* Class = "UILabel"; text = "Routine visit "; ObjectID = "OkJ-xt-3cY"; */
+"OkJ-xt-3cY.text" = "Routine visit ";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "OpB-6n-gQv"; */
+"OpB-6n-gQv.text" = "Language";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "Ots-Re-mnO"; */
+"Ots-Re-mnO.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "Owd-wk-jTS"; */
+"Owd-wk-jTS.text" = "Welcome";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "Oyh-MS-Bhf"; */
+"Oyh-MS-Bhf.text" = " - Select -";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "P1C-fZ-GOV"; */
+"P1C-fZ-GOV.text" = "0";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "P1w-d8-AUE"; */
+"P1w-d8-AUE.text" = "Route";
+
+/* Class = "UILabel"; text = "Molecule"; ObjectID = "P2T-SV-4In"; */
+"P2T-SV-4In.text" = "Molecule";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "P6Y-uc-mBt"; */
+"P6Y-uc-mBt.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "P7G-F6-5rg"; */
+"P7G-F6-5rg.text" = "Route";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "P7n-n0-EQ6"; */
+"P7n-n0-EQ6.text" = "- Select -";
+
+/* Class = "UIButton"; normalTitle = "By week"; ObjectID = "PEF-uK-anx"; */
+"PEF-uK-anx.normalTitle" = "By week";
+
+/* Class = "UILabel"; text = "GI Tract"; ObjectID = "PJk-3s-87x"; */
+"PJk-3s-87x.text" = "GI Tract";
+
+/* Class = "UILabel"; text = "Antibiotic free"; ObjectID = "PNa-rh-f7B"; */
+"PNa-rh-f7B.text" = "Antibiotic free";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "PSG-ar-zAk"; */
+"PSG-ar-zAk.text" = "to";
+
+/* Class = "UILabel"; text = "Session Date *"; ObjectID = "PX8-3b-a27"; */
+"PX8-3b-a27.text" = "Session Date *";
+
+/* Class = "UILabel"; text = "Molecule"; ObjectID = "PXP-9b-QAG"; */
+"PXP-9b-QAG.text" = "Molecule";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "PYw-97-Zf1"; */
+"PYw-97-Zf1.text" = "Strain";
+
+/* Class = "UILabel"; text = "Existing Posting Session (Turkey)"; ObjectID = "PgB-ib-hg8"; */
+"PgB-ib-hg8.text" = "Existing Posting Session (Turkey)";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "Pk8-tI-tKT"; */
+"Pk8-tI-tKT.text" = "- Select -";
+
+/* Class = "UILabel"; text = "1234567"; ObjectID = "Pmi-Tf-Brs"; */
+"Pmi-Tf-Brs.text" = "1234567";
+
+/* Class = "UIButton"; normalTitle = "E. tenella gross"; ObjectID = "Puu-gb-7hI"; */
+"Puu-gb-7hI.normalTitle" = "E. tenella gross";
+
+/* Class = "UILabel"; text = "Session Date"; ObjectID = "PvU-kv-q7o"; */
+"PvU-kv-q7o.text" = "Session Date";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "Py5-7R-OAe"; */
+"Py5-7R-OAe.text" = "Welcome";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "PzP-5P-8yW"; */
+"PzP-5P-8yW.text" = "to";
+
+/* Class = "UILabel"; text = "Feed type 3"; ObjectID = "Q16-jK-rjM"; */
+"Q16-jK-rjM.text" = "Feed type 3";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "Q3i-JZ-cRy"; */
+"Q3i-JZ-cRy.text" = "- Select -";
+
+/* Class = "UILabel"; text = "House no."; ObjectID = "QBh-Hy-2w8"; */
+"QBh-Hy-2w8.text" = "House no.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QE2-Bl-xNf"; */
+"QE2-Bl-xNf.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Sync to device"; ObjectID = "QFS-Vq-cnq"; */
+"QFS-Vq-cnq.normalTitle" = "Sync to device";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "QGV-pH-tep"; */
+"QGV-pH-tep.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "QGh-0W-432"; */
+"QGh-0W-432.text" = "Strain";
+
+/* Class = "UILabel"; text = "1234567890123"; ObjectID = "QH2-l8-wwe"; */
+"QH2-l8-wwe.text" = "1234567890123";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "QRa-rK-uhW"; */
+"QRa-rK-uhW.text" = "0";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "QSb-2u-FMd"; */
+"QSb-2u-FMd.text" = "- Select -";
+
+/* Class = "UIButton"; normalTitle = "Complete Session"; ObjectID = "QWf-et-mfl"; */
+"QWf-et-mfl.normalTitle" = "Complete Session";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "QWt-OO-2iB"; */
+"QWt-OO-2iB.text" = "to";
+
+/* Class = "UILabel"; text = "ObservationName"; ObjectID = "Qb7-MY-27Z"; */
+"Qb7-MY-27Z.text" = "ObservationName";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "QbQ-3O-W5e"; */
+"QbQ-3O-W5e.text" = " - Select -";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Qfe-AL-xRX"; */
+"Qfe-AL-xRX.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Others"; ObjectID = "QkT-MJ-rfC"; */
+"QkT-MJ-rfC.text" = "Others";
+
+/* Class = "UILabel"; text = "Feed type 2"; ObjectID = "Qsk-BZ-skD"; */
+"Qsk-BZ-skD.text" = "Feed type 2";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "R5f-XK-Ya3"; */
+"R5f-XK-Ya3.text" = "Label";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "RBJ-ep-wR9"; */
+"RBJ-ep-wR9.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Coccidiosis Control"; ObjectID = "RBw-l1-1r1"; */
+"RBw-l1-1r1.normalTitle" = "Coccidiosis Control";
+
+/* Class = "UILabel"; text = "Farm Wgt"; ObjectID = "RDM-dg-flo"; */
+"RDM-dg-flo.text" = "Farm Wgt";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "RGh-49-LRE"; */
+"RGh-49-LRE.text" = "to";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "RJP-rr-GxE"; */
+"RJP-rr-GxE.text" = "Label";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "RMc-Sv-RfJ"; */
+"RMc-Sv-RfJ.text" = "Date";
+
+/* Class = "UILabel"; text = "Complex Name"; ObjectID = "RVv-Q1-8CN"; */
+"RVv-Q1-8CN.text" = "Complex Name";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "RcD-CI-AbA"; */
+"RcD-CI-AbA.text" = "Strain";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "RiG-5k-9eT"; */
+"RiG-5k-9eT.text" = "Label";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "Rm3-AI-IjB"; */
+"Rm3-AI-IjB.text" = "- Select -";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "RwK-N1-cUw"; */
+"RwK-N1-cUw.text" = "0";
+
+/* Class = "UILabel"; text = "Duration of Program(days)"; ObjectID = "S0e-pt-ZGf"; */
+"S0e-pt-ZGf.text" = "Duration of Program(days)";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "S8V-mo-Uw3"; */
+"S8V-mo-Uw3.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Dashboard (Turkey)"; ObjectID = "SNZ-xq-8kZ"; */
+"SNZ-xq-8kZ.text" = "Dashboard (Turkey)";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "SPz-xA-2vh"; */
+"SPz-xA-2vh.text" = "0";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "SUq-JQ-awC"; */
+"SUq-JQ-awC.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Hatchery"; ObjectID = "SVO-Jp-pfP"; */
+"SVO-Jp-pfP.text" = "Hatchery";
+
+/* Class = "UILabel"; text = "Sex"; ObjectID = "Sfx-hs-TWy"; */
+"Sfx-hs-TWy.text" = "Sex";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "SiC-0Y-gwc"; */
+"SiC-0Y-gwc.text" = "Strain";
+
+/* Class = "UIButton"; normalTitle = "Finalize"; ObjectID = "Skk-LT-RY5"; */
+"Skk-LT-RY5.normalTitle" = "Finalize";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "SlK-5Y-MfP"; */
+"SlK-5Y-MfP.text" = "Strain";
+
+/* Class = "UILabel"; text = "Molecule"; ObjectID = "Sst-TL-N6k"; */
+"Sst-TL-N6k.text" = "Molecule";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "Suk-xH-qfy"; */
+"Suk-xH-qfy.text" = "- Select -";
+
+/* Class = "UILabel"; text = "E.coli"; ObjectID = "Swx-3u-R52"; */
+"Swx-3u-R52.text" = "E.coli";
+
+/* Class = "UILabel"; text = "Coccidiosis Reports"; ObjectID = "T6p-ZK-lz0"; */
+"T6p-ZK-lz0.text" = "Coccidiosis Reports";
+
+/* Class = "UILabel"; text = "Davis,Timothy"; ObjectID = "T7b-9l-vky"; */
+"T7b-9l-vky.text" = "Davis,Timothy";
+
+/* Class = "UILabel"; text = "Dosage (g/ton)"; ObjectID = "TAe-vO-uKK"; */
+"TAe-vO-uKK.text" = "Dosage (g/ton)";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "TJ1-bU-co6"; */
+"TJ1-bU-co6.text" = "Strain";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "TMV-aJ-21w"; */
+"TMV-aJ-21w.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Dosage (g/ton)"; ObjectID = "TmI-d3-qgL"; */
+"TmI-d3-qgL.text" = "Dosage (g/ton)";
+
+/* Class = "UILabel"; text = "All Birds"; ObjectID = "Tqi-ja-HTa"; */
+"Tqi-ja-HTa.text" = "All Birds";
+
+/* Class = "UIButton"; normalTitle = "Others"; ObjectID = "Tsd-fV-tHd"; */
+"Tsd-fV-tHd.normalTitle" = "Others";
+
+/* Class = "UILabel"; text = "IBV"; ObjectID = "TwV-pG-6MR"; */
+"TwV-pG-6MR.text" = "IBV";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "U1c-Xf-FdU"; */
+"U1c-Xf-FdU.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Veterinarian"; ObjectID = "U7d-y1-QYY"; */
+"U7d-y1-QYY.text" = "Veterinarian";
+
+/* Class = "UILabel"; text = "Session Date"; ObjectID = "UB8-c5-UFh"; */
+"UB8-c5-UFh.text" = "Session Date";
+
+/* Class = "UILabel"; text = "Toms"; ObjectID = "UEY-Nx-1ve"; */
+"UEY-Nx-1ve.text" = "Toms";
+
+/* Class = "UILabel"; text = "IBDV"; ObjectID = "UFx-Q0-b3f"; */
+"UFx-Q0-b3f.text" = "IBDV";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "UMS-3d-jrr"; */
+"UMS-3d-jrr.text" = " - Select -";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "URo-yo-3Uf"; */
+"URo-yo-3Uf.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "USG-ng-72V"; */
+"USG-ng-72V.text" = "Route";
+
+/* Class = "UILabel"; text = "Field Vaccination"; ObjectID = "UTy-q9-NMV"; */
+"UTy-q9-NMV.text" = "Field Vaccination";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "UZM-lb-cdl"; */
+"UZM-lb-cdl.text" = " - Select -";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "Ub9-q4-uns"; */
+"Ub9-q4-uns.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "UrM-Q6-D9A"; */
+"UrM-Q6-D9A.text" = "Settings";
+
+/* Class = "UILabel"; text = "Imperial"; ObjectID = "UsZ-uN-ZkU"; */
+"UsZ-uN-ZkU.text" = "Imperial";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "Utq-Ai-DDb"; */
+"Utq-Ai-DDb.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Notes"; ObjectID = "Uwf-r2-qFR"; */
+"Uwf-r2-qFR.text" = "Notes";
+
+/* Class = "UILabel"; text = "Captured Images"; ObjectID = "Uwo-ow-yVE"; */
+"Uwo-ow-yVE.text" = "Captured Images";
+
+/* Class = "UILabel"; text = "Feed type 5"; ObjectID = "UxR-Az-A1A"; */
+"UxR-Az-A1A.text" = "Feed type 5";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "V1u-RF-aRb"; */
+"V1u-RF-aRb.normalTitle" = "Next";
+
+/* Class = "UIButton"; normalTitle = "Alternative"; ObjectID = "V2B-hS-HCU"; */
+"V2B-hS-HCU.normalTitle" = "Alternative";
+
+/* Class = "UILabel"; text = "Session"; ObjectID = "V4R-pp-laN"; */
+"V4R-pp-laN.text" = "Session";
+
+/* Class = "UILabel"; text = "To"; ObjectID = "V4t-cR-sjn"; */
+"V4t-cR-sjn.text" = "To";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "V7i-mL-fLO"; */
+"V7i-mL-fLO.text" = "Language";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "VAL-ht-qSF"; */
+"VAL-ht-qSF.text" = "0";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "VAa-14-s5P"; */
+"VAa-14-s5P.text" = "- Select -";
+
+/* Class = "UIButton"; normalTitle = "Sync to web"; ObjectID = "VBu-d4-hxt"; */
+"VBu-d4-hxt.normalTitle" = "Sync to web";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "VDE-iU-9H7"; */
+"VDE-iU-9H7.text" = "to";
+
+/* Class = "UILabel"; text = "lbl"; ObjectID = "VR1-yP-vyf"; */
+"VR1-yP-vyf.text" = "lbl";
+
+/* Class = "UILabel"; text = "Feed Program"; ObjectID = "VVt-fD-GDk"; */
+"VVt-fD-GDk.text" = "Feed Program";
+
+/* Class = "UILabel"; text = "Complex"; ObjectID = "VWY-gg-pWO"; */
+"VWY-gg-pWO.text" = "Complex";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "VY2-gB-blB"; */
+"VY2-gB-blB.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Complex |"; ObjectID = "Vad-N6-XLO"; */
+"Vad-N6-XLO.text" = "Complex |";
+
+/* Class = "UILabel"; text = "Veterinarian:"; ObjectID = "VcL-uF-3T8"; */
+"VcL-uF-3T8.text" = "Veterinarian:";
+
+/* Class = "UILabel"; text = "Complex |"; ObjectID = "Vgs-QD-4Fj"; */
+"Vgs-QD-4Fj.text" = "Complex |";
+
+/* Class = "UILabel"; text = "Settings (Turkey)"; ObjectID = "VhU-Og-hzo"; */
+"VhU-Og-hzo.text" = "Settings (Turkey)";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Vi1-8p-9Lc"; */
+"Vi1-8p-9Lc.text" = "Label";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "VpB-34-uhZ"; */
+"VpB-34-uhZ.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Breed"; ObjectID = "Vs7-W6-Ri0"; */
+"Vs7-W6-Ri0.text" = "Breed";
+
+/* Class = "UILabel"; text = "Session Date |"; ObjectID = "Vsf-UM-P1Q"; */
+"Vsf-UM-P1Q.text" = "Session Date |";
+
+/* Class = "UILabel"; text = "BirdData "; ObjectID = "Vtg-vT-une"; */
+"Vtg-vT-une.text" = "BirdData ";
+
+/* Class = "UILabel"; text = "Sick"; ObjectID = "Vxw-vw-udk"; */
+"Vxw-vw-udk.text" = "Sick";
+
+/* Class = "UIButton"; normalTitle = "E. maxima gross"; ObjectID = "VyO-PV-Vhe"; */
+"VyO-PV-Vhe.normalTitle" = "E. maxima gross";
+
+/* Class = "UILabel"; text = "Session Type"; ObjectID = "W3J-7u-E8v"; */
+"W3J-7u-E8v.text" = "Session Type";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "W4u-4I-Oq3"; */
+"W4u-4I-Oq3.text" = "to";
+
+/* Class = "UILabel"; text = "Notes:"; ObjectID = "W7w-pt-uYJ"; */
+"W7w-pt-uYJ.text" = "Notes:";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "WHW-EI-DB0"; */
+"WHW-EI-DB0.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Select Date"; ObjectID = "WHk-Ws-AwL"; */
+"WHk-Ws-AwL.text" = "Select Date";
+
+/* Class = "UILabel"; text = "IBV"; ObjectID = "WLA-23-kTk"; */
+"WLA-23-kTk.text" = "IBV";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "WMI-b5-9cQ"; */
+"WMI-b5-9cQ.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "FarmName"; ObjectID = "WMm-I3-cun"; */
+"WMm-I3-cun.text" = "FarmName";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "WUG-la-Qps"; */
+"WUG-la-Qps.text" = "- Select -";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "WW1-yr-L05"; */
+"WW1-yr-L05.text" = "5";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "WYc-ar-ZOW"; */
+"WYc-ar-ZOW.text" = "- Select -";
+
+/* Class = "UILabel"; text = "NDV"; ObjectID = "WZQ-1N-v0B"; */
+"WZQ-1N-v0B.text" = "NDV";
+
+/* Class = "UILabel"; text = "Feed type 6"; ObjectID = "WZl-x6-THw"; */
+"WZl-x6-THw.text" = "Feed type 6";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "WbI-dr-ixG"; */
+"WbI-dr-ixG.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Feed type 6"; ObjectID = "Wc4-My-EGP"; */
+"Wc4-My-EGP.text" = "Feed type 6";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "WcZ-s9-hFR"; */
+"WcZ-s9-hFR.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Wq1-6I-R14"; */
+"Wq1-6I-R14.text" = "Label";
+
+/* Class = "UILabel"; text = "Customer:"; ObjectID = "Wth-2l-s6o"; */
+"Wth-2l-s6o.text" = "Customer:";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "XCR-rv-X43"; */
+"XCR-rv-X43.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Session Date *"; ObjectID = "XFb-hb-sUY"; */
+"XFb-hb-sUY.text" = "Session Date *";
+
+/* Class = "UILabel"; text = "fr"; ObjectID = "XFl-Tx-rqk"; */
+"XFl-Tx-rqk.text" = "fr";
+
+/* Class = "UILabel"; text = "Milisboro"; ObjectID = "XIa-dX-Shp"; */
+"XIa-dX-Shp.text" = "Milisboro";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "XNL-3A-xwS"; */
+"XNL-3A-xwS.text" = "Strain";
+
+/* Class = "UILabel"; text = "N"; ObjectID = "XPU-i6-VKj"; */
+"XPU-i6-VKj.text" = "N";
+
+/* Class = "UIButton"; normalTitle = "Select Language"; ObjectID = "XQt-0s-JLi"; */
+"XQt-0s-JLi.normalTitle" = "Select Language";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "XRP-Me-PHJ"; */
+"XRP-Me-PHJ.text" = "Language";
+
+/* Class = "UILabel"; text = "To"; ObjectID = "XVm-Ng-bT6"; */
+"XVm-Ng-bT6.text" = "To";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "XWA-EH-MT8"; */
+"XWA-EH-MT8.text" = "Welcome";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "Xaq-pN-d0F"; */
+"Xaq-pN-d0F.text" = "Route";
+
+/* Class = "UILabel"; text = "ObservationName"; ObjectID = "Xhe-bO-9Ui"; */
+"Xhe-bO-9Ui.text" = "ObservationName";
+
+/* Class = "UILabel"; text = "Duration of Program(days)"; ObjectID = "XiM-ak-rBU"; */
+"XiM-ak-rBU.text" = "Duration of Program(days)";
+
+/* Class = "UILabel"; text = "Skeletal/Muscular/Integumentary"; ObjectID = "Xsc-xe-2mu"; */
+"Xsc-xe-2mu.text" = "Skeletal/Muscular/Integumentary";
+
+/* Class = "UILabel"; text = "Summary"; ObjectID = "Xxy-S1-SgD"; */
+"Xxy-S1-SgD.text" = "Summary";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "Xyf-U0-cpG"; */
+"Xyf-U0-cpG.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Mixed"; ObjectID = "Xyk-Sg-iPB"; */
+"Xyk-Sg-iPB.text" = "Mixed";
+
+/* Class = "UILabel"; text = "Sick"; ObjectID = "Y3L-Uf-roR"; */
+"Y3L-Uf-roR.text" = "Sick";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "YCb-wt-zN2"; */
+"YCb-wt-zN2.text" = "Route";
+
+/* Class = "UILabel"; text = "No. of birds"; ObjectID = "YGU-EQ-7TS"; */
+"YGU-EQ-7TS.text" = "No. of birds";
+
+/* Class = "UILabel"; text = "Feed Program"; ObjectID = "YH7-If-LJZ"; */
+"YH7-If-LJZ.text" = "Feed Program";
+
+/* Class = "UILabel"; text = "H no."; ObjectID = "YXz-Rj-D6d"; */
+"YXz-Rj-D6d.text" = "H no.";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "Yc1-Z5-Fsb"; */
+"Yc1-Z5-Fsb.text" = "- Select -";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "Ycd-HT-tIU"; */
+"Ycd-HT-tIU.text" = "- Select -";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "Yda-Wt-xYf"; */
+"Yda-Wt-xYf.text" = "to";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "Ydx-hd-ozM"; */
+"Ydx-hd-ozM.text" = "HMS";
+
+/* Class = "UILabel"; text = "Feed program:"; ObjectID = "Yea-ev-QNj"; */
+"Yea-ev-QNj.text" = "Feed program:";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "You-b5-p1T"; */
+"You-b5-p1T.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Vaccination Program"; ObjectID = "Yql-Om-jwh"; */
+"Yql-Om-jwh.text" = "Vaccination Program";
+
+/* Class = "UILabel"; text = "09/09/2016"; ObjectID = "YsF-3i-Zdk"; */
+"YsF-3i-Zdk.text" = "09/09/2016";
+
+/* Class = "UILabel"; text = "51"; ObjectID = "Yuk-HW-D8p"; */
+"Yuk-HW-D8p.text" = "51";
+
+/* Class = "UILabel"; text = "Reports"; ObjectID = "Yx5-w4-7vj"; */
+"Yx5-w4-7vj.text" = "Reports";
+
+/* Class = "UILabel"; text = "Select Farms"; ObjectID = "Z1n-a2-Nsj"; */
+"Z1n-a2-Nsj.text" = "Select Farms";
+
+/* Class = "UILabel"; text = "Routine Visit"; ObjectID = "Z5L-2u-0Uw"; */
+"Z5L-2u-0Uw.text" = "Routine Visit";
+
+/* Class = "UILabel"; text = "Male"; ObjectID = "Z5z-Fn-Gsq"; */
+"Z5z-Fn-Gsq.text" = "Male";
+
+/* Class = "UILabel"; text = "David Rives"; ObjectID = "Z8c-mF-7gq"; */
+"Z8c-mF-7gq.text" = "David Rives";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ZCk-Ap-r7J"; */
+"ZCk-Ap-r7J.text" = "Label";
+
+/* Class = "UILabel"; text = "ObservationName"; ObjectID = "ZFG-GX-Q3V"; */
+"ZFG-GX-Q3V.text" = "ObservationName";
+
+/* Class = "UILabel"; text = "No. of birds"; ObjectID = "ZUx-jS-gNi"; */
+"ZUx-jS-gNi.text" = "No. of birds";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "ZV6-hb-qr6"; */
+"ZV6-hb-qr6.text" = "Welcome";
+
+/* Class = "UIButton"; normalTitle = "Finalize"; ObjectID = "ZYt-7h-E4P"; */
+"ZYt-7h-E4P.normalTitle" = "Finalize";
+
+/* Class = "UIButton"; normalTitle = "By farm"; ObjectID = "ZZO-3k-fYo"; */
+"ZZO-3k-fYo.normalTitle" = "By farm";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "Zby-6g-w6R"; */
+"Zby-6g-w6R.text" = "Strain";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "ZgY-i7-lBt"; */
+"ZgY-i7-lBt.text" = "HMS";
+
+/* Class = "UILabel"; text = "8"; ObjectID = "ZiG-jr-Boj"; */
+"ZiG-jr-Boj.text" = "8";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "Zjg-xr-8uD"; */
+"Zjg-xr-8uD.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "ZoM-cd-8wc"; */
+"ZoM-cd-8wc.text" = "Route";
+
+/* Class = "UILabel"; text = "Other"; ObjectID = "ZyG-GV-J0C"; */
+"ZyG-GV-J0C.text" = "Other";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "Zz5-cS-U1P"; */
+"Zz5-cS-U1P.text" = " - Select -";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "a83-cN-Vk2"; */
+"a83-cN-Vk2.text" = "to";
+
+/* Class = "UILabel"; text = "Summary"; ObjectID = "a9N-po-7uz"; */
+"a9N-po-7uz.text" = "Summary";
+
+/* Class = "UILabel"; text = "Chemical-ionovre"; ObjectID = "a9f-np-m7U"; */
+"a9f-np-m7U.text" = "Chemical-ionovre";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "aCk-lX-TJP"; */
+"aCk-lX-TJP.text" = "Strain";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "aGO-gc-UKk"; */
+"aGO-gc-UKk.text" = "Label";
+
+/* Class = "UILabel"; text = "0 %"; ObjectID = "aGT-cR-0GX"; */
+"aGT-cR-0GX.text" = "0 %";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "aHH-gR-49Z"; */
+"aHH-gR-49Z.text" = "Strain";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "aHr-Yv-iF0"; */
+"aHr-Yv-iF0.text" = "0";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "aJe-Or-V8g"; */
+"aJe-Or-V8g.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "aLZ-xy-PFa"; */
+"aLZ-xy-PFa.text" = "0";
+
+/* Class = "UILabel"; text = "0 %"; ObjectID = "aNK-KM-p7g"; */
+"aNK-KM-p7g.text" = "0 %";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "aQy-hD-NdR"; */
+"aQy-hD-NdR.text" = "to";
+
+/* Class = "UILabel"; text = "Start Session"; ObjectID = "adX-m3-ATb"; */
+"adX-m3-ATb.text" = "Start Session";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "aoE-r3-6gx"; */
+"aoE-r3-6gx.text" = "- Select -";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "ap0-zI-u3K"; */
+"ap0-zI-u3K.text" = "0";
+
+/* Class = "UILabel"; text = "Existing Posting Session"; ObjectID = "avw-29-nsg"; */
+"avw-29-nsg.text" = "Existing Posting Session";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "b1Y-Db-0rA"; */
+"b1Y-Db-0rA.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Posting Session Detail"; ObjectID = "b3Y-fH-rj4"; */
+"b3Y-fH-rj4.text" = "Posting Session Detail";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "b5F-hh-NIZ"; */
+"b5F-hh-NIZ.text" = "Route";
+
+/* Class = "UILabel"; text = "Feed type 2"; ObjectID = "b7a-lx-jOt"; */
+"b7a-lx-jOt.text" = "Feed type 2";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "b8S-wO-hun"; */
+"b8S-wO-hun.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Target Weight at "; ObjectID = "b94-WL-bnM"; */
+"b94-WL-bnM.text" = "Target Weight at ";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "bBl-vU-Tc1"; */
+"bBl-vU-Tc1.text" = "Route";
+
+/* Class = "UILabel"; text = "Account Contact"; ObjectID = "bC2-Zj-NdC"; */
+"bC2-Zj-NdC.text" = "Account Contact";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "bCO-JS-OLX"; */
+"bCO-JS-OLX.normalTitle" = "Skip";
+
+/* Class = "UILabel"; text = "Zoetis a/c mgr:"; ObjectID = "bIk-8b-4nQ"; */
+"bIk-8b-4nQ.text" = "Zoetis a/c mgr:";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "bJI-Oc-TVW"; */
+"bJI-Oc-TVW.text" = " - Select -";
+
+/* Class = "UILabel"; text = ","; ObjectID = "bLF-g8-DdH"; */
+"bLF-g8-DdH.text" = ",";
+
+/* Class = "UILabel"; text = "Smith,John"; ObjectID = "bMc-We-VUI"; */
+"bMc-We-VUI.text" = "Smith,John";
+
+/* Class = "UILabel"; text = ","; ObjectID = "bUq-B5-Kgp"; */
+"bUq-B5-Kgp.text" = ",";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "bYv-FW-pbx"; */
+"bYv-FW-pbx.text" = "HMS";
+
+/* Class = "UILabel"; text = "Feed type 2"; ObjectID = "bYv-Lm-iLS"; */
+"bYv-Lm-iLS.text" = "Feed type 2";
+
+/* Class = "UILabel"; text = "Feed program"; ObjectID = "bd2-lf-QNs"; */
+"bd2-lf-QNs.text" = "Feed program";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "bfE-2b-Vu8"; */
+"bfE-2b-Vu8.text" = "Strain";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "bfI-rl-hB7"; */
+"bfI-rl-hB7.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "Complex Name"; ObjectID = "bjI-Tr-faa"; */
+"bjI-Tr-faa.text" = "Complex Name";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "bjo-Ur-1h0"; */
+"bjo-Ur-1h0.text" = "Route";
+
+/* Class = "UILabel"; text = "Reports"; ObjectID = "bkT-QK-UVp"; */
+"bkT-QK-UVp.text" = "Reports";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "bmP-1q-L1h"; */
+"bmP-1q-L1h.text" = "- Select -";
+
+/* Class = "UILabel"; text = "HNo."; ObjectID = "bo9-1S-V2O"; */
+"bo9-1S-V2O.text" = "HNo.";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "boO-QP-4jZ"; */
+"boO-QP-4jZ.text" = "Strain";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "bow-DD-cRT"; */
+"bow-DD-cRT.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "btz-tJ-avu"; */
+"btz-tJ-avu.text" = "Age (days)";
+
+/* Class = "UIButton"; normalTitle = "Alternative"; ObjectID = "c0f-nb-eVy"; */
+"c0f-nb-eVy.normalTitle" = "Alternative";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "c2D-1E-Lpm"; */
+"c2D-1E-Lpm.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "c5i-ka-61l"; */
+"c5i-ka-61l.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cAH-vJ-ddM"; */
+"cAH-vJ-ddM.text" = "Label";
+
+/* Class = "UILabel"; text = "Cocci Program"; ObjectID = "cAa-C7-Qyv"; */
+"cAa-C7-Qyv.text" = "Cocci Program";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "cIL-GP-Vdl"; */
+"cIL-GP-Vdl.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "No. of birds"; ObjectID = "cJ0-1d-u5s"; */
+"cJ0-1d-u5s.text" = "No. of birds";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "cOf-An-9Nt"; */
+"cOf-An-9Nt.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Marek"; ObjectID = "cST-wo-QMV"; */
+"cST-wo-QMV.text" = "Marek";
+
+/* Class = "UILabel"; text = "N"; ObjectID = "cTu-Qq-NYV"; */
+"cTu-Qq-NYV.text" = "N";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "cW9-ry-qtY"; */
+"cW9-ry-qtY.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Immune/Others"; ObjectID = "cWE-XF-aam"; */
+"cWE-XF-aam.text" = "Immune/Others";
+
+/* Class = "UILabel"; text = "IBV"; ObjectID = "cXo-GE-ayG"; */
+"cXo-GE-ayG.text" = "IBV";
+
+/* Class = "UILabel"; text = "Flock id"; ObjectID = "cY3-Vu-G7t"; */
+"cY3-Vu-G7t.text" = "Flock id";
+
+/* Class = "UILabel"; text = "Unlinked Sessions (Turkey)"; ObjectID = "cat-oT-gqc"; */
+"cat-oT-gqc.text" = "Unlinked Sessions (Turkey)";
+
+/* Class = "UILabel"; text = "Feed type 4"; ObjectID = "cc7-uy-Zy6"; */
+"cc7-uy-Zy6.text" = "Feed type 4";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "ccZ-QH-GfS"; */
+"ccZ-QH-GfS.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Training & Education"; ObjectID = "cdz-8p-FrU"; */
+"cdz-8p-FrU.text" = "Training & Education";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "ciK-uV-uQT"; */
+"ciK-uV-uQT.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "co6-j0-7D5"; */
+"co6-j0-7D5.text" = "Strain";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "crO-SK-LGH"; */
+"crO-SK-LGH.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "csb-vC-rbz"; */
+"csb-vC-rbz.normalTitle" = "+";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "ct8-0o-d2w"; */
+"ct8-0o-d2w.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "d29-O7-Iw0"; */
+"d29-O7-Iw0.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "d29-Or-XHZ"; */
+"d29-Or-XHZ.text" = "0";
+
+/* Class = "UILabel"; text = "Feed type 3"; ObjectID = "d35-wC-6Y5"; */
+"d35-wC-6Y5.text" = "Feed type 3";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "d4Z-gW-sha"; */
+"d4Z-gW-sha.text" = "Route";
+
+/* Class = "UILabel"; text = "Feed type 3"; ObjectID = "d6y-k5-PdL"; */
+"d6y-k5-PdL.text" = "Feed type 3";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "dAO-A4-oHO"; */
+"dAO-A4-oHO.text" = "Welcome";
+
+/* Class = "UILabel"; text = "Feed type 3"; ObjectID = "dCf-NT-G3u"; */
+"dCf-NT-G3u.text" = "Feed type 3";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "dE7-4V-3kZ"; */
+"dE7-4V-3kZ.text" = "0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dF9-Kx-h5a"; */
+"dF9-Kx-h5a.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Mycotoxin Binders"; ObjectID = "dM0-oF-AJb"; */
+"dM0-oF-AJb.normalTitle" = "Mycotoxin Binders";
+
+/* Class = "UIButton"; selectedTitle = "Mycotoxin binders"; ObjectID = "dM0-oF-AJb"; */
+"dM0-oF-AJb.selectedTitle" = "Mycotoxin binders";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "dM6-fO-djS"; */
+"dM6-fO-djS.text" = "Welcome";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "dUx-8R-ZbG"; */
+"dUx-8R-ZbG.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "dVs-EZ-Eb9"; */
+"dVs-EZ-Eb9.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "dXU-PK-e3p"; */
+"dXU-PK-e3p.text" = "Route";
+
+/* Class = "UILabel"; text = "Select  Species"; ObjectID = "dXu-Hf-DsQ"; */
+"dXu-Hf-DsQ.text" = "Select  Species";
+
+/* Class = "UIButton"; normalTitle = "Last session"; ObjectID = "dY8-My-HYZ"; */
+"dY8-My-HYZ.normalTitle" = "Last session";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "dc1-e6-d6t"; */
+"dc1-e6-d6t.text" = "to";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "dfB-Bw-Bcl"; */
+"dfB-Bw-Bcl.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Dosage (g/ton)"; ObjectID = "dfF-1d-ejD"; */
+"dfF-1d-ejD.text" = "Dosage (g/ton)";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "dfk-Dc-juB"; */
+"dfk-Dc-juB.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Field Visit"; ObjectID = "dfn-cg-AeL"; */
+"dfn-cg-AeL.text" = "Field Visit";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "dgm-ZD-gxA"; */
+"dgm-ZD-gxA.text" = "- Select -";
+
+/* Class = "UILabel"; text = "NDV"; ObjectID = "dho-FM-8fg"; */
+"dho-FM-8fg.text" = "NDV";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "doE-g6-Bfe"; */
+"doE-g6-Bfe.text" = "Strain";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "dv4-cZ-Ig2"; */
+"dv4-cZ-Ig2.text" = " - Select -";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "dzX-c1-Prq"; */
+"dzX-c1-Prq.text" = "HMS";
+
+/* Class = "UILabel"; text = "Captured Images (Turkey)"; ObjectID = "e9D-7B-OOP"; */
+"e9D-7B-OOP.text" = "Captured Images (Turkey)";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "eBQ-jt-UgL"; */
+"eBQ-jt-UgL.text" = "HMS";
+
+/* Class = "UILabel"; text = "Session type:"; ObjectID = "eHK-Iy-r3I"; */
+"eHK-Iy-r3I.text" = "Session type:";
+
+/* Class = "UILabel"; text = "Add"; ObjectID = "eI0-AO-CEn"; */
+"eI0-AO-CEn.text" = "Add";
+
+/* Class = "UILabel"; text = "Unlinked Session"; ObjectID = "eRa-xR-t4G"; */
+"eRa-xR-t4G.text" = "Unlinked Session";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "eUj-eu-vIR"; */
+"eUj-eu-vIR.text" = "Strain";
+
+/* Class = "UILabel"; text = "Feed type 4"; ObjectID = "eVO-34-YC2"; */
+"eVO-34-YC2.text" = "Feed type 4";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "eW1-p3-XMF"; */
+"eW1-p3-XMF.text" = "Age (days)";
+
+/* Class = "UIButton"; normalTitle = "  "; ObjectID = "eYK-Km-QbY"; */
+"eYK-Km-QbY.normalTitle" = "  ";
+
+/* Class = "UIButton"; normalTitle = "Mycotoxin Binders"; ObjectID = "eYY-TF-OAw"; */
+"eYY-TF-OAw.normalTitle" = "Mycotoxin Binders";
+
+/* Class = "UIButton"; selectedTitle = "Mycotoxin binders"; ObjectID = "eYY-TF-OAw"; */
+"eYY-TF-OAw.selectedTitle" = "Mycotoxin binders";
+
+/* Class = "UILabel"; text = "Feed type 6"; ObjectID = "eZg-Ae-15K"; */
+"eZg-Ae-15K.text" = "Feed type 6";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "ehZ-Mu-edR"; */
+"ehZ-Mu-edR.text" = " - Select -";
+
+/* Class = "UILabel"; text = "09/09/2016"; ObjectID = "eiU-0H-K9o"; */
+"eiU-0H-K9o.text" = "09/09/2016";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eia-y3-yFn"; */
+"eia-y3-yFn.text" = "Label";
+
+/* Class = "UILabel"; text = "Feed type 6"; ObjectID = "emB-fs-Ruo"; */
+"emB-fs-Ruo.text" = "Feed type 6";
+
+/* Class = "UILabel"; text = "NDV"; ObjectID = "eqJ-mD-z9d"; */
+"eqJ-mD-z9d.text" = "NDV";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "esd-3J-81d"; */
+"esd-3J-81d.text" = "Route";
+
+/* Class = "UILabel"; text = "Session Date |"; ObjectID = "euc-5B-mxm"; */
+"euc-5B-mxm.text" = "Session Date |";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "exY-aS-yKC"; */
+"exY-aS-yKC.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Complex *"; ObjectID = "f0I-fw-q1G"; */
+"f0I-fw-q1G.text" = "Complex *";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "f13-by-GX8"; */
+"f13-by-GX8.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Complex:"; ObjectID = "f4c-QI-r2q"; */
+"f4c-QI-r2q.text" = "Complex:";
+
+/* Class = "UILabel"; text = "IBV"; ObjectID = "fBw-Pg-SeS"; */
+"fBw-Pg-SeS.text" = "IBV";
+
+/* Class = "UILabel"; text = "Session date:"; ObjectID = "fDP-cM-v2O"; */
+"fDP-cM-v2O.text" = "Session date:";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "fE6-fw-acc"; */
+"fE6-fw-acc.text" = "Welcome";
+
+/* Class = "UILabel"; text = "Other"; ObjectID = "fGA-gQ-WCo"; */
+"fGA-gQ-WCo.text" = "Other";
+
+/* Class = "UILabel"; text = "Complex"; ObjectID = "fGj-pl-s6T"; */
+"fGj-pl-s6T.text" = "Complex";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "fII-Ne-aEQ"; */
+"fII-Ne-aEQ.text" = "Language";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fIs-HT-VGG"; */
+"fIs-HT-VGG.text" = "Label";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "fJZ-XQ-Pnz"; */
+"fJZ-XQ-Pnz.text" = "- Select -";
+
+/* Class = "UILabel"; text = "welcome"; ObjectID = "fQV-eY-sxz"; */
+"fQV-eY-sxz.text" = "welcome";
+
+/* Class = "UILabel"; text = "Reo"; ObjectID = "fQX-e0-krI"; */
+"fQX-e0-krI.text" = "Reo";
+
+/* Class = "UILabel"; text = "Health Evaluation"; ObjectID = "fXs-7K-kxj"; */
+"fXs-7K-kxj.text" = "Health Evaluation";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "fbx-rd-3Yl"; */
+"fbx-rd-3Yl.text" = "Strain";
+
+/* Class = "UILabel"; text = "12345678901234"; ObjectID = "fc6-Fi-psC"; */
+"fc6-Fi-psC.text" = "12345678901234";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "fc9-wl-9nE"; */
+"fc9-wl-9nE.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "feA-95-gOk"; */
+"feA-95-gOk.text" = "Date";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "fh3-bu-hvW"; */
+"fh3-bu-hvW.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Feed type 3"; ObjectID = "foC-rB-wwb"; */
+"foC-rB-wwb.text" = "Feed type 3";
+
+/* Class = "UILabel"; text = "Training & Education"; ObjectID = "g0t-oL-SXw"; */
+"g0t-oL-SXw.text" = "Training & Education";
+
+/* Class = "UILabel"; text = "09/09/2016"; ObjectID = "g4C-J3-3Rx"; */
+"g4C-J3-3Rx.text" = "09/09/2016";
+
+/* Class = "UILabel"; text = "Feed Program"; ObjectID = "gBy-KL-vgx"; */
+"gBy-KL-vgx.text" = "Feed Program";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "gD4-vc-9IG"; */
+"gD4-vc-9IG.text" = "Welcome";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "gEP-yv-DkQ"; */
+"gEP-yv-DkQ.text" = "Route";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "gGW-kU-rLV"; */
+"gGW-kU-rLV.text" = "Strain";
+
+/* Class = "UILabel"; text = "Necropsy without posting session "; ObjectID = "gMg-i0-6rQ"; */
+"gMg-i0-6rQ.text" = "Necropsy without posting session ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gNk-RY-VZH"; */
+"gNk-RY-VZH.text" = "Label";
+
+/* Class = "UILabel"; text = "Complex"; ObjectID = "gQb-9q-VYz"; */
+"gQb-9q-VYz.text" = "Complex";
+
+/* Class = "UILabel"; text = "qq"; ObjectID = "gVY-mo-mzb"; */
+"gVY-mo-mzb.text" = "qq";
+
+/* Class = "UILabel"; text = "Feed Program"; ObjectID = "gWD-EP-d3p"; */
+"gWD-EP-d3p.text" = "Feed Program";
+
+/* Class = "UILabel"; text = "fr"; ObjectID = "gZK-Qh-fTn"; */
+"gZK-Qh-fTn.text" = "fr";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "gf6-qv-Qam"; */
+"gf6-qv-Qam.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "gjH-bs-Ten"; */
+"gjH-bs-Ten.text" = "Route";
+
+/* Class = "UILabel"; text = "Farm "; ObjectID = "glM-CU-nEd"; */
+"glM-CU-nEd.text" = "Farm ";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "glf-zI-NtW"; */
+"glf-zI-NtW.text" = "Language";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "gm3-x0-Jct"; */
+"gm3-x0-Jct.text" = "5";
+
+/* Class = "UIButton"; normalTitle = "-"; ObjectID = "gse-f3-AHF"; */
+"gse-f3-AHF.normalTitle" = "-";
+
+/* Class = "UILabel"; text = "Session date:"; ObjectID = "gy9-is-n5f"; */
+"gy9-is-n5f.text" = "Session date:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gzI-kz-i2X"; */
+"gzI-kz-i2X.text" = "Label";
+
+/* Class = "UILabel"; text = "PDF available online."; ObjectID = "h6m-qU-W5x"; */
+"h6m-qU-W5x.text" = "PDF available online.";
+
+/* Class = "UILabel"; text = "TRT"; ObjectID = "h97-Vm-Qt7"; */
+"h97-Vm-Qt7.text" = "TRT";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "h9r-HX-cpd"; */
+"h9r-HX-cpd.text" = "Route";
+
+/* Class = "UILabel"; text = "Session Data (Turkey)"; ObjectID = "hBq-x8-dkO"; */
+"hBq-x8-dkO.text" = "Session Data (Turkey)";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "hEs-aj-XIQ"; */
+"hEs-aj-XIQ.text" = "Welcome";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hIw-vg-395"; */
+"hIw-vg-395.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Complete Session"; ObjectID = "hPp-zY-qvy"; */
+"hPp-zY-qvy.normalTitle" = "Complete Session";
+
+/* Class = "UILabel"; text = "Observation Field"; ObjectID = "hRc-Ik-BMu"; */
+"hRc-Ik-BMu.text" = "Observation Field";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "hSY-X3-VSe"; */
+"hSY-X3-VSe.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Bird Number"; ObjectID = "hTu-Gm-cAN"; */
+"hTu-Gm-cAN.text" = "Bird Number";
+
+/* Class = "UILabel"; text = "Duration of Program(days)"; ObjectID = "hY3-al-ge7"; */
+"hY3-al-ge7.text" = "Duration of Program(days)";
+
+/* Class = "UILabel"; text = "Feed type 6"; ObjectID = "hY8-QH-SMo"; */
+"hY8-QH-SMo.text" = "Feed type 6";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "hcy-kD-nTz"; */
+"hcy-kD-nTz.text" = "Welcome";
+
+/* Class = "UILabel"; text = "Posting Session Detail (Turkey)"; ObjectID = "hdI-Mg-Yem"; */
+"hdI-Mg-Yem.text" = "Posting Session Detail (Turkey)";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "hdu-wy-tcf"; */
+"hdu-wy-tcf.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "Breed"; ObjectID = "hie-bb-Dfp"; */
+"hie-bb-Dfp.text" = "Breed";
+
+/* Class = "UILabel"; text = "Notes:"; ObjectID = "hwP-Rt-JIh"; */
+"hwP-Rt-JIh.text" = "Notes:";
+
+/* Class = "UILabel"; text = "ST"; ObjectID = "hxe-pG-vgi"; */
+"hxe-pG-vgi.text" = "ST";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "hzJ-W6-5Oq"; */
+"hzJ-W6-5Oq.text" = "Strain";
+
+/* Class = "UILabel"; text = "Chemical-ionovre"; ObjectID = "hzO-K9-M6v"; */
+"hzO-K9-M6v.text" = "Chemical-ionovre";
+
+/* Class = "UILabel"; text = "Complex *"; ObjectID = "i0m-Va-cDX"; */
+"i0m-Va-cDX.text" = "Complex *";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "i2g-S3-tQ7"; */
+"i2g-S3-tQ7.text" = "Strain";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "i9K-zq-5Si"; */
+"i9K-zq-5Si.text" = " - Select -";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "i9S-12-OId"; */
+"i9S-12-OId.text" = "to";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "iF8-Co-wHG"; */
+"iF8-Co-wHG.text" = "Strain";
+
+/* Class = "UILabel"; text = "Sessions in progress"; ObjectID = "iFH-Gr-RVe"; */
+"iFH-Gr-RVe.text" = "Sessions in progress";
+
+/* Class = "UILabel"; text = "Observation Field"; ObjectID = "iIj-m9-5Wb"; */
+"iIj-m9-5Wb.text" = "Observation Field";
+
+/* Class = "UILabel"; text = "Feed type 5"; ObjectID = "iOP-9N-KIQ"; */
+"iOP-9N-KIQ.text" = "Feed type 5";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "iTS-tk-fJF"; */
+"iTS-tk-fJF.text" = "- Select -";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "iaI-jN-eNG"; */
+"iaI-jN-eNG.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "iab-1T-o28"; */
+"iab-1T-o28.text" = "Route";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "ijF-n5-81W"; */
+"ijF-n5-81W.text" = "Route";
+
+/* Class = "UILabel"; text = "Duration of Program(days)"; ObjectID = "imC-PP-Dyb"; */
+"imC-PP-Dyb.text" = "Duration of Program(days)";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "imf-BT-Xdz"; */
+"imf-BT-Xdz.text" = " - Select -";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "inR-a5-hKP"; */
+"inR-a5-hKP.text" = "HMS";
+
+/* Class = "UILabel"; text = "Respiratory"; ObjectID = "ity-Ts-KPE"; */
+"ity-Ts-KPE.text" = "Respiratory";
+
+/* Class = "UILabel"; text = "Feed type 1"; ObjectID = "iw4-Q1-hg7"; */
+"iw4-Q1-hg7.text" = "Feed type 1";
+
+/* Class = "UILabel"; text = "Add Farm & Bird Details"; ObjectID = "j6D-cU-yY4"; */
+"j6D-cU-yY4.text" = "Add Farm & Bird Details";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "j89-Na-B9B"; */
+"j89-Na-B9B.text" = "Label";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "jI9-ny-2Qn"; */
+"jI9-ny-2Qn.text" = "Welcome";
+
+/* Class = "UIButton"; normalTitle = "Sync to device"; ObjectID = "jRj-HF-Kav"; */
+"jRj-HF-Kav.normalTitle" = "Sync to device";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "jSk-hc-Adw"; */
+"jSk-hc-Adw.text" = "Strain";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "jSs-sy-MJF"; */
+"jSs-sy-MJF.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Unlinked Necropsy Session"; ObjectID = "jUQ-bq-9kJ"; */
+"jUQ-bq-9kJ.text" = "Unlinked Necropsy Session";
+
+/* Class = "UILabel"; text = "Molecule"; ObjectID = "jab-tt-Rys"; */
+"jab-tt-Rys.text" = "Molecule";
+
+/* Class = "UILabel"; text = "IBV"; ObjectID = "jbu-Gv-vf4"; */
+"jbu-Gv-vf4.text" = "IBV";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "jma-vJ-ocU"; */
+"jma-vJ-ocU.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "jtO-Rh-iVW"; */
+"jtO-Rh-iVW.text" = "Strain";
+
+/* Class = "UILabel"; text = "N"; ObjectID = "jul-Lb-xzZ"; */
+"jul-Lb-xzZ.text" = "N";
+
+/* Class = "UITextField"; placeholder = "Enter your password"; ObjectID = "k5D-E4-tqP"; */
+"k5D-E4-tqP.placeholder" = "Enter your password";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "kBJ-kA-Ay2"; */
+"kBJ-kA-Ay2.text" = "Strain";
+
+/* Class = "UILabel"; text = "No. of birds"; ObjectID = "kDf-xC-X6d"; */
+"kDf-xC-X6d.text" = "No. of birds";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kGm-N1-dPs"; */
+"kGm-N1-dPs.text" = "Label";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "kJa-08-sSn"; */
+"kJa-08-sSn.text" = "HMS";
+
+/* Class = "UILabel"; text = "Bird Number"; ObjectID = "kKR-xN-haX"; */
+"kKR-xN-haX.text" = "Bird Number";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "kOG-Rd-IUu"; */
+"kOG-Rd-IUu.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "kQW-VC-6nR"; */
+"kQW-VC-6nR.text" = "Strain";
+
+/* Class = "UILabel"; text = "Enter Flock Information"; ObjectID = "kTd-Rd-ysB"; */
+"kTd-Rd-ysB.text" = "Enter Flock Information";
+
+/* Class = "UILabel"; text = "Production Type"; ObjectID = "kWo-Dg-rbw"; */
+"kWo-Dg-rbw.text" = "Production Type";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "kam-aW-qaE"; */
+"kam-aW-qaE.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "keX-Ek-0SV"; */
+"keX-Ek-0SV.text" = "Welcome";
+
+/* Class = "UILabel"; text = "A/c contact:"; ObjectID = "kgt-f3-aTN"; */
+"kgt-f3-aTN.text" = "A/c contact:";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "khG-Ou-mmG"; */
+"khG-Ou-mmG.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "- Select Language -"; ObjectID = "khi-p7-iuq"; */
+"khi-p7-iuq.text" = "- Select Language -";
+
+/* Class = "UILabel"; text = "Immune/Others"; ObjectID = "ki2-C0-YA3"; */
+"ki2-C0-YA3.text" = "Immune/Others";
+
+/* Class = "UILabel"; text = "Microscopy Reports"; ObjectID = "kml-Lc-sEn"; */
+"kml-Lc-sEn.text" = "Microscopy Reports";
+
+/* Class = "UILabel"; text = "To"; ObjectID = "knh-bN-ehI"; */
+"knh-bN-ehI.text" = "To";
+
+/* Class = "UILabel"; text = "Feed type 2"; ObjectID = "kvJ-bR-sFR"; */
+"kvJ-bR-sFR.text" = "Feed type 2";
+
+/* Class = "UILabel"; text = "50"; ObjectID = "ky2-FD-t4f"; */
+"ky2-FD-t4f.text" = "50";
+
+/* Class = "UILabel"; text = "Poultry Health Monitoring"; ObjectID = "l03-H0-qdb"; */
+"l03-H0-qdb.text" = "Poultry Health Monitoring";
+
+/* Class = "UILabel"; text = "Hatchery"; ObjectID = "l1b-wW-Q8C"; */
+"l1b-wW-Q8C.text" = "Hatchery";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "l5g-Rg-hcS"; */
+"l5g-Rg-hcS.text" = "0";
+
+/* Class = "UILabel"; text = "Session Date"; ObjectID = "l8a-c5-NSe"; */
+"l8a-c5-NSe.text" = "Session Date";
+
+/* Class = "UIButton"; normalTitle = "  "; ObjectID = "lCG-oi-rV0"; */
+"lCG-oi-rV0.normalTitle" = "  ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "lJW-hR-4lD"; */
+"lJW-hR-4lD.text" = "Label";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "lKl-y9-vsF"; */
+"lKl-y9-vsF.text" = "Route";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "lUS-Ov-CIj"; */
+"lUS-Ov-CIj.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Add Vaccination"; ObjectID = "lYY-v4-uYv"; */
+"lYY-v4-uYv.text" = "Add Vaccination";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "lYk-vx-Wba"; */
+"lYk-vx-Wba.text" = "to";
+
+/* Class = "UILabel"; text = "Bird no:"; ObjectID = "lbu-qd-b3z"; */
+"lbu-qd-b3z.text" = "Bird no:";
+
+/* Class = "UILabel"; text = "Townsend Farms"; ObjectID = "lcZ-Qb-x0z"; */
+"lcZ-Qb-x0z.text" = "Townsend Farms";
+
+/* Class = "UILabel"; text = "(Kgs)"; ObjectID = "llt-8R-H8m"; */
+"llt-8R-H8m.text" = "(Kgs)";
+
+/* Class = "UILabel"; text = "Complex:"; ObjectID = "lmF-1N-4gK"; */
+"lmF-1N-4gK.text" = "Complex:";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "loS-tj-mih"; */
+"loS-tj-mih.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Session Date |"; ObjectID = "lpE-l0-Ehz"; */
+"lpE-l0-Ehz.text" = "Session Date |";
+
+/* Class = "UILabel"; text = "Conventional"; ObjectID = "lv0-C0-3Jg"; */
+"lv0-C0-3Jg.text" = "Conventional";
+
+/* Class = "UILabel"; text = "Turkey"; ObjectID = "m2T-Ut-TGS"; */
+"m2T-Ut-TGS.text" = "Turkey";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "m3V-Mx-9Yb"; */
+"m3V-Mx-9Yb.text" = " - Select -";
+
+/* Class = "UIViewController"; title = "Left View Controller"; ObjectID = "m5M-dP-fIB"; */
+"m5M-dP-fIB.title" = "Left View Controller";
+
+/* Class = "UILabel"; text = "Complex"; ObjectID = "m8B-gf-yWQ"; */
+"m8B-gf-yWQ.text" = "Complex";
+
+/* Class = "UILabel"; text = "Smith,John"; ObjectID = "mBg-RU-06J"; */
+"mBg-RU-06J.text" = "Smith,John";
+
+/* Class = "UILabel"; text = "Field Visit"; ObjectID = "mFD-wK-eQu"; */
+"mFD-wK-eQu.text" = "Field Visit";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "mHz-4A-lCv"; */
+"mHz-4A-lCv.text" = "0";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "mMm-cA-VrG"; */
+"mMm-cA-VrG.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Notes"; ObjectID = "mPK-Co-26l"; */
+"mPK-Co-26l.text" = "Notes";
+
+/* Class = "UITextField"; placeholder = "Search"; ObjectID = "md4-Hu-1sB"; */
+"md4-Hu-1sB.placeholder" = "Search";
+
+/* Class = "UILabel"; text = "Select Date"; ObjectID = "mej-ZJ-oms"; */
+"mej-ZJ-oms.text" = "Select Date";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "mho-p7-tTP"; */
+"mho-p7-tTP.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "mhr-iW-e1a"; */
+"mhr-iW-e1a.text" = "Route";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "mjX-Ey-xBf"; */
+"mjX-Ey-xBf.text" = "- Select -";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "mkl-Yt-9ec"; */
+"mkl-Yt-9ec.text" = "to";
+
+/* Class = "UILabel"; text = "Session Type * "; ObjectID = "mnz-Ej-jeE"; */
+"mnz-Ej-jeE.text" = "Session Type * ";
+
+/* Class = "UILabel"; text = "Farm Name"; ObjectID = "mpG-3H-4O5"; */
+"mpG-3H-4O5.text" = "Farm Name";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "n7Y-h8-UuI"; */
+"n7Y-h8-UuI.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "nEE-hb-cIp"; */
+"nEE-hb-cIp.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "Company |"; ObjectID = "nFL-D7-F7n"; */
+"nFL-D7-F7n.text" = "Company |";
+
+/* Class = "UILabel"; text = "Feed type 1"; ObjectID = "nHk-2d-Fv1"; */
+"nHk-2d-Fv1.text" = "Feed type 1";
+
+/* Class = "UITextField"; placeholder = "Search"; ObjectID = "nIr-u8-BuR"; */
+"nIr-u8-BuR.placeholder" = "Search";
+
+/* Class = "UIButton"; normalTitle = "-"; ObjectID = "nOo-41-xgk"; */
+"nOo-41-xgk.normalTitle" = "-";
+
+/* Class = "UILabel"; text = "Feed Program"; ObjectID = "nQC-x0-P5d"; */
+"nQC-x0-P5d.text" = "Feed Program";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "nQk-KG-9l9"; */
+"nQk-KG-9l9.text" = "Strain";
+
+/* Class = "UILabel"; text = "Diagnosing Coccidiosis And Entertis"; ObjectID = "nRX-Ae-RmW"; */
+"nRX-Ae-RmW.text" = "Diagnosing Coccidiosis And Entertis";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "nZd-NE-nIL"; */
+"nZd-NE-nIL.text" = "Welcome";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "nen-SS-ayM"; */
+"nen-SS-ayM.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Farm Name *"; ObjectID = "nhh-SP-QdJ"; */
+"nhh-SP-QdJ.text" = "Farm Name *";
+
+/* Class = "UILabel"; text = "Unlinked Sessions"; ObjectID = "nrE-tp-nhq"; */
+"nrE-tp-nhq.text" = "Unlinked Sessions";
+
+/* Class = "UILabel"; text = "Feed type 2"; ObjectID = "ns7-nE-bpp"; */
+"ns7-nE-bpp.text" = "Feed type 2";
+
+/* Class = "UILabel"; text = "IBDV"; ObjectID = "nsE-Ur-OSK"; */
+"nsE-Ur-OSK.text" = "IBDV";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "ntc-bb-Alx"; */
+"ntc-bb-Alx.text" = "- Select -";
+
+/* Class = "UILabel"; text = "PDF available online."; ObjectID = "nw7-CY-VaF"; */
+"nw7-CY-VaF.text" = "PDF available online.";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "nwJ-Nd-S1e"; */
+"nwJ-Nd-S1e.text" = "to";
+
+/* Class = "UILabel"; text = "Session Date"; ObjectID = "o30-Zb-vNf"; */
+"o30-Zb-vNf.text" = "Session Date";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "o6b-vi-Vz9"; */
+"o6b-vi-Vz9.text" = "Route";
+
+/* Class = "UILabel"; text = "09/09/2016"; ObjectID = "oBr-H6-9Lz"; */
+"oBr-H6-9Lz.text" = "09/09/2016";
+
+/* Class = "UILabel"; text = "Molecule"; ObjectID = "oDp-0Q-ujV"; */
+"oDp-0Q-ujV.text" = "Molecule";
+
+/* Class = "UIButton"; normalTitle = "Summary"; ObjectID = "oHU-x3-Jhk"; */
+"oHU-x3-Jhk.normalTitle" = "Summary";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "oJM-cW-cxm"; */
+"oJM-cW-cxm.text" = "Strain";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "oJf-qk-OO7"; */
+"oJf-qk-OO7.text" = "- Select -";
+
+/* Class = "UILabel"; text = "ST"; ObjectID = "oOA-Cx-f0O"; */
+"oOA-Cx-f0O.text" = "ST";
+
+/* Class = "UILabel"; text = "Training Complex1"; ObjectID = "oOh-YS-mA5"; */
+"oOh-YS-mA5.text" = "Training Complex1";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "oPb-TP-ULC"; */
+"oPb-TP-ULC.text" = "2";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "oXR-Jo-TQP"; */
+"oXR-Jo-TQP.text" = "Strain";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "oac-5p-CKJ"; */
+"oac-5p-CKJ.text" = "to";
+
+/* Class = "UILabel"; text = "Complex"; ObjectID = "odT-JZ-EjC"; */
+"odT-JZ-EjC.text" = "Complex";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "oe8-Yd-1Kq"; */
+"oe8-Yd-1Kq.text" = "Strain";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "ogn-JM-Kor"; */
+"ogn-JM-Kor.text" = "0";
+
+/* Class = "UILabel"; text = "Feed type 1"; ObjectID = "olL-ab-Kns"; */
+"olL-ab-Kns.text" = "Feed type 1";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "onq-Rc-arx"; */
+"onq-Rc-arx.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "orr-BR-o4e"; */
+"orr-BR-o4e.text" = "- Select -";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "p13-8k-fDV"; */
+"p13-8k-fDV.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Chicken"; ObjectID = "p3f-bC-4vd"; */
+"p3f-bC-4vd.text" = "Chicken";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "p6B-Hv-S6b"; */
+"p6B-Hv-S6b.text" = "to";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "pAS-sS-VuS"; */
+"pAS-sS-VuS.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Respiratory"; ObjectID = "pAi-Yl-BFt"; */
+"pAi-Yl-BFt.text" = "Respiratory";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "pF8-du-H6c"; */
+"pF8-du-H6c.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Feed type 5"; ObjectID = "pKI-kt-xSm"; */
+"pKI-kt-xSm.text" = "Feed type 5";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "pNP-Hm-yVY"; */
+"pNP-Hm-yVY.text" = "0";
+
+/* Class = "UILabel"; text = "Terms and Condition"; ObjectID = "pSO-FG-M5q"; */
+"pSO-FG-M5q.text" = "Terms and Condition";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "pSj-HD-t35"; */
+"pSj-HD-t35.text" = "0";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "pc6-oI-VRz"; */
+"pc6-oI-VRz.text" = "Welcome";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "pcs-KS-pia"; */
+"pcs-KS-pia.text" = "0";
+
+/* Class = "UILabel"; text = "Complex"; ObjectID = "pfg-fH-1bi"; */
+"pfg-fH-1bi.text" = "Complex";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "pjD-rc-vey"; */
+"pjD-rc-vey.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "pk1-ts-EKO"; */
+"pk1-ts-EKO.text" = "Route";
+
+/* Class = "UILabel"; text = "Feed type 2"; ObjectID = "pla-bY-vJi"; */
+"pla-bY-vJi.text" = "Feed type 2";
+
+/* Class = "UIButton"; normalTitle = "Antibiotic"; ObjectID = "poR-Qp-unb"; */
+"poR-Qp-unb.normalTitle" = "Antibiotic";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "pot-Gx-UEh"; */
+"pot-Gx-UEh.text" = "to";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "ppT-cL-DWt"; */
+"ppT-cL-DWt.text" = "- Select -";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "pxB-hT-3tZ"; */
+"pxB-hT-3tZ.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "En"; ObjectID = "q0F-D6-9RZ"; */
+"q0F-D6-9RZ.text" = "En";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "q1Y-WM-850"; */
+"q1Y-WM-850.text" = "- Select -";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "q5N-Gw-pO7"; */
+"q5N-Gw-pO7.text" = " - Select -";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "qGZ-jo-Fkg"; */
+"qGZ-jo-Fkg.text" = "- Select -";
+
+/* Class = "UILabel"; text = "yes"; ObjectID = "qH9-rs-spg"; */
+"qH9-rs-spg.text" = "yes";
+
+/* Class = "UILabel"; text = "40"; ObjectID = "qKo-s4-Xe6"; */
+"qKo-s4-Xe6.text" = "40";
+
+/* Class = "UILabel"; text = "Duration of Program(days)"; ObjectID = "qLZ-LZ-gXb"; */
+"qLZ-LZ-gXb.text" = "Duration of Program(days)";
+
+/* Class = "UILabel"; text = "Quick Link"; ObjectID = "qQV-m4-xp4"; */
+"qQV-m4-xp4.text" = "Quick Link";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "qZY-kD-2H1"; */
+"qZY-kD-2H1.text" = "- Select -";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "qcD-Iw-SjD"; */
+"qcD-Iw-SjD.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qeF-KV-hbQ"; */
+"qeF-KV-hbQ.text" = "Label";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "qed-fB-RqA"; */
+"qed-fB-RqA.text" = "Route";
+
+/* Class = "UILabel"; text = "Dosage (g/ton)"; ObjectID = "qfe-OJ-Yur"; */
+"qfe-OJ-Yur.text" = "Dosage (g/ton)";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "qfp-RZ-AWQ"; */
+"qfp-RZ-AWQ.text" = "Route";
+
+/* Class = "UILabel"; text = "Davis,Timothy"; ObjectID = "qhX-Lx-VK8"; */
+"qhX-Lx-VK8.text" = "Davis,Timothy";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qi5-FY-tde"; */
+"qi5-FY-tde.text" = "Label";
+
+/* Class = "UILabel"; text = "Add Farm & Bird Details"; ObjectID = "qkf-61-XGd"; */
+"qkf-61-XGd.text" = "Add Farm & Bird Details";
+
+/* Class = "UILabel"; text = "Cocci program:"; ObjectID = "qrd-3m-5hH"; */
+"qrd-3m-5hH.text" = "Cocci program:";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "qt5-8a-Otb"; */
+"qt5-8a-Otb.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Feed type 5"; ObjectID = "qxO-1g-sui"; */
+"qxO-1g-sui.text" = "Feed type 5";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "qy2-EO-bf6"; */
+"qy2-EO-bf6.text" = "- Select -";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "qyV-rr-YWZ"; */
+"qyV-rr-YWZ.text" = "to";
+
+/* Class = "UILabel"; text = "GI Tract"; ObjectID = "qzy-XS-xFI"; */
+"qzy-XS-xFI.text" = "GI Tract";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "r5j-HM-svY"; */
+"r5j-HM-svY.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Smith,John"; ObjectID = "rFO-71-6PC"; */
+"rFO-71-6PC.text" = "Smith,John";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "rHs-kj-Nub"; */
+"rHs-kj-Nub.text" = "Label";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "rLt-Mj-lfa"; */
+"rLt-Mj-lfa.text" = "5";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "rVx-iO-8xa"; */
+"rVx-iO-8xa.text" = "Strain";
+
+/* Class = "UILabel"; text = "House no."; ObjectID = "rWe-fU-OQF"; */
+"rWe-fU-OQF.text" = "House no.";
+
+/* Class = "UILabel"; text = "Complex"; ObjectID = "rda-Er-jre"; */
+"rda-Er-jre.text" = "Complex";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "rge-b8-XLz"; */
+"rge-b8-XLz.text" = "Strain";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "riW-dh-sGW"; */
+"riW-dh-sGW.text" = "to";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "rpO-w8-2QZ"; */
+"rpO-w8-2QZ.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "rpd-Y2-nr4"; */
+"rpd-Y2-nr4.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "Bird no:"; ObjectID = "ruJ-Cy-A7J"; */
+"ruJ-Cy-A7J.text" = "Bird no:";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "s6S-5r-t5O"; */
+"s6S-5r-t5O.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Veterinarian"; ObjectID = "sA3-od-a4L"; */
+"sA3-od-a4L.text" = "Veterinarian";
+
+/* Class = "UILabel"; text = "Feed type 5"; ObjectID = "sC9-gV-D02"; */
+"sC9-gV-D02.text" = "Feed type 5";
+
+/* Class = "UILabel"; text = "Veterinarian:"; ObjectID = "sGP-AN-BXH"; */
+"sGP-AN-BXH.text" = "Veterinarian:";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "sGq-cp-LRO"; */
+"sGq-cp-LRO.text" = "HMS";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "sJW-Zs-ETp"; */
+"sJW-Zs-ETp.text" = "1";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "sK8-ct-A2g"; */
+"sK8-ct-A2g.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Sex"; ObjectID = "sSz-de-HsH"; */
+"sSz-de-HsH.text" = "Sex";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "sTJ-O3-n9F"; */
+"sTJ-O3-n9F.text" = "Route";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "sXo-Pd-1Dm"; */
+"sXo-Pd-1Dm.text" = "HMS";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "shT-jT-RFn"; */
+"shT-jT-RFn.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "09/09/2016"; ObjectID = "sif-Zo-SIF"; */
+"sif-Zo-SIF.text" = "09/09/2016";
+
+/* Class = "UIButton"; normalTitle = "Summary"; ObjectID = "skI-uu-EU2"; */
+"skI-uu-EU2.normalTitle" = "Summary";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "soW-sb-pZu"; */
+"soW-sb-pZu.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Milisboro"; ObjectID = "sul-zV-Ri3"; */
+"sul-zV-Ri3.text" = "Milisboro";
+
+/* Class = "UILabel"; text = "Strain"; ObjectID = "svr-D6-0sn"; */
+"svr-D6-0sn.text" = "Strain";
+
+/* Class = "UILabel"; text = "ObservationName"; ObjectID = "szV-N7-t1c"; */
+"szV-N7-t1c.text" = "ObservationName";
+
+/* Class = "UILabel"; text = "Customer |"; ObjectID = "szh-hf-E6q"; */
+"szh-hf-E6q.text" = "Customer |";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "t5C-ll-ZPn"; */
+"t5C-ll-ZPn.text" = "Label";
+
+/* Class = "UILabel"; text = "Field Vaccination"; ObjectID = "t9z-jE-QNu"; */
+"t9z-jE-QNu.text" = "Field Vaccination";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "tLT-cz-j9S"; */
+"tLT-cz-j9S.text" = "- Select -";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "tO4-Sy-RbP"; */
+"tO4-Sy-RbP.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Feed type 4"; ObjectID = "tP7-kt-Nga"; */
+"tP7-kt-Nga.text" = "Feed type 4";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "tQt-Pe-xo1"; */
+"tQt-Pe-xo1.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Processing"; ObjectID = "tSe-iG-U4g"; */
+"tSe-iG-U4g.text" = "Processing";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "tT6-pJ-Dd7"; */
+"tT6-pJ-Dd7.normalTitle" = "+";
+
+/* Class = "UILabel"; text = "Imperial"; ObjectID = "tXY-yD-n7i"; */
+"tXY-yD-n7i.text" = "Imperial";
+
+/* Class = "UILabel"; text = "Hybrid"; ObjectID = "tZX-tK-oQE"; */
+"tZX-tK-oQE.text" = "Hybrid";
+
+/* Class = "UILabel"; text = "Session Type"; ObjectID = "tcU-lU-Jcf"; */
+"tcU-lU-Jcf.text" = "Session Type";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "teR-sA-26U"; */
+"teR-sA-26U.text" = "Welcome";
+
+/* Class = "UILabel"; text = "Complex Name"; ObjectID = "tg7-YV-lMX"; */
+"tg7-YV-lMX.text" = "Complex Name";
+
+/* Class = "UILabel"; text = "POX"; ObjectID = "thB-e0-fsY"; */
+"thB-e0-fsY.text" = "POX";
+
+/* Class = "UILabel"; text = "Sick"; ObjectID = "tpV-je-iaq"; */
+"tpV-je-iaq.text" = "Sick";
+
+/* Class = "UILabel"; text = "Summary"; ObjectID = "tpn-T6-MQj"; */
+"tpn-T6-MQj.text" = "Summary";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "tx1-P7-COT"; */
+"tx1-P7-COT.text" = "HMS";
+
+/* Class = "UILabel"; text = "Marek"; ObjectID = "tz9-mP-GhV"; */
+"tz9-mP-GhV.text" = "Marek";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "tzT-vK-JL9"; */
+"tzT-vK-JL9.text" = "Welcome";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "u1k-f6-Qas"; */
+"u1k-f6-Qas.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Skeletal/Muscular/Integumentary"; ObjectID = "u3X-NQ-Lho"; */
+"u3X-NQ-Lho.text" = "Skeletal/Muscular/Integumentary";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "u4J-cB-aJs"; */
+"u4J-cB-aJs.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Start New Session"; ObjectID = "u7Q-7D-Scj"; */
+"u7Q-7D-Scj.text" = "Start New Session";
+
+/* Class = "UILabel"; text = "Data available for sync in Turkey"; ObjectID = "u8v-BX-sZ2"; */
+"u8v-BX-sZ2.text" = "Data available for sync in Turkey";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uGr-bo-raG"; */
+"uGr-bo-raG.text" = "Label";
+
+/* Class = "UILabel"; text = "09/09/2016"; ObjectID = "uPW-hl-NZw"; */
+"uPW-hl-NZw.text" = "09/09/2016";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "uTf-LS-aXu"; */
+"uTf-LS-aXu.text" = "to";
+
+/* Class = "UILabel"; text = "Veterinarian"; ObjectID = "uUd-2o-CVc"; */
+"uUd-2o-CVc.text" = "Veterinarian";
+
+/* Class = "UILabel"; text = "1234567890123"; ObjectID = "uWb-uF-AJk"; */
+"uWb-uF-AJk.text" = "1234567890123";
+
+/* Class = "UILabel"; text = "Open Existing Session"; ObjectID = "uXB-PN-i7O"; */
+"uXB-PN-i7O.text" = "Open Existing Session";
+
+/* Class = "UILabel"; text = "Duration of Program(days)"; ObjectID = "uja-Gm-4e7"; */
+"uja-Gm-4e7.text" = "Duration of Program(days)";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "ujk-gI-4gy"; */
+"ujk-gI-4gy.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Complex |"; ObjectID = "unM-QL-tA6"; */
+"unM-QL-tA6.text" = "Complex |";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "unj-ND-Dj5"; */
+"unj-ND-Dj5.text" = "to";
+
+/* Class = "UILabel"; text = "06/12/2018"; ObjectID = "uo5-ND-5aL"; */
+"uo5-ND-5aL.text" = "06/12/2018";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uyE-eF-b5F"; */
+"uyE-eF-b5F.text" = "Label";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "v3N-ES-Pts"; */
+"v3N-ES-Pts.text" = "5";
+
+/* Class = "UILabel"; text = "Sessions in progress"; ObjectID = "v3e-LN-h0e"; */
+"v3e-LN-h0e.text" = "Sessions in progress";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "v5J-uz-yqA"; */
+"v5J-uz-yqA.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "Display"; ObjectID = "vG2-x3-dO7"; */
+"vG2-x3-dO7.text" = "Display";
+
+/* Class = "UILabel"; text = "IBDV"; ObjectID = "vHI-Cq-Ewn"; */
+"vHI-Cq-Ewn.text" = "IBDV";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "vJd-x3-Iyj"; */
+"vJd-x3-Iyj.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Tutorial Videos"; ObjectID = "vKi-NU-1hU"; */
+"vKi-NU-1hU.text" = "Tutorial Videos";
+
+/* Class = "UILabel"; text = "Feed type 2"; ObjectID = "vNC-3e-u2l"; */
+"vNC-3e-u2l.text" = "Feed type 2";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "vNs-cT-iwR"; */
+"vNs-cT-iwR.text" = "Welcome";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "vPA-bq-ScR"; */
+"vPA-bq-ScR.text" = "to";
+
+/* Class = "UILabel"; text = "1. Townsend Farms"; ObjectID = "vV1-9T-0b6"; */
+"vV1-9T-0b6.text" = "1. Townsend Farms";
+
+/* Class = "UILabel"; text = "Skeletal/Muscular/Integumentary"; ObjectID = "vV8-WT-SQD"; */
+"vV8-WT-SQD.text" = "Skeletal/Muscular/Integumentary";
+
+/* Class = "UITextField"; placeholder = "Enter your email"; ObjectID = "vV8-pP-4sc"; */
+"vV8-pP-4sc.placeholder" = "Enter your email";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "vVI-Bg-DRa"; */
+"vVI-Bg-DRa.text" = "HMS";
+
+/* Class = "UILabel"; text = "Farm name:"; ObjectID = "vYG-hi-6es"; */
+"vYG-hi-6es.text" = "Farm name:";
+
+/* Class = "UILabel"; text = "Complex *"; ObjectID = "vYc-aR-9B8"; */
+"vYc-aR-9B8.text" = "Complex *";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "vfT-CZ-5Yd"; */
+"vfT-CZ-5Yd.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Breed"; ObjectID = "vgu-59-QGc"; */
+"vgu-59-QGc.text" = "Breed";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "vgw-Lb-9eP"; */
+"vgw-Lb-9eP.text" = "Welcome";
+
+/* Class = "UIButton"; normalTitle = "Add Feed"; ObjectID = "vhS-PE-ETQ"; */
+"vhS-PE-ETQ.normalTitle" = "Add Feed";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "vmg-9Q-KZF"; */
+"vmg-9Q-KZF.text" = "- Select -";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "vmp-8t-8kc"; */
+"vmp-8t-8kc.text" = "to";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "vnA-TL-1D1"; */
+"vnA-TL-1D1.text" = "0";
+
+/* Class = "UILabel"; text = "Molecule"; ObjectID = "voL-YV-HRd"; */
+"voL-YV-HRd.text" = "Molecule";
+
+/* Class = "UILabel"; text = "Immune/Others"; ObjectID = "von-dH-5tb"; */
+"von-dH-5tb.text" = "Immune/Others";
+
+/* Class = "UILabel"; text = "Zoetis a/c mgr:"; ObjectID = "vvm-Mt-bwR"; */
+"vvm-Mt-bwR.text" = "Zoetis a/c mgr:";
+
+/* Class = "UILabel"; text = "Vaccination:"; ObjectID = "vyN-vm-I97"; */
+"vyN-vm-I97.text" = "Vaccination:";
+
+/* Class = "UILabel"; text = "Duration of Program(days)"; ObjectID = "vyh-yK-Kv7"; */
+"vyh-yK-Kv7.text" = "Duration of Program(days)";
+
+/* Class = "UILabel"; text = "Reports Dashboard"; ObjectID = "w7F-ko-hcM"; */
+"w7F-ko-hcM.text" = "Reports Dashboard";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "w96-xL-gKe"; */
+"w96-xL-gKe.text" = "- Select -";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "w9w-cH-bEY"; */
+"w9w-cH-bEY.text" = "- Select -";
+
+/* Class = "UILabel"; text = "Nicholas"; ObjectID = "wAA-4w-Kjf"; */
+"wAA-4w-Kjf.text" = "Nicholas";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "wEN-8w-EOB"; */
+"wEN-8w-EOB.text" = "to";
+
+/* Class = "UILabel"; text = "Quick Link"; ObjectID = "wRM-A4-C9Y"; */
+"wRM-A4-C9Y.text" = "Quick Link";
+
+/* Class = "UILabel"; text = "ABF"; ObjectID = "wc6-yN-NX1"; */
+"wc6-yN-NX1.text" = "ABF";
+
+/* Class = "UILabel"; text = "L"; ObjectID = "wdW-Up-3bR"; */
+"wdW-Up-3bR.text" = "L";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "wlQ-sy-Aqy"; */
+"wlQ-sy-Aqy.text" = "Date";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "wmu-gU-qJ9"; */
+"wmu-gU-qJ9.text" = "HMS";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "wpZ-j1-QlU"; */
+"wpZ-j1-QlU.text" = "0";
+
+/* Class = "UILabel"; text = "ST"; ObjectID = "wu3-Dx-ppg"; */
+"wu3-Dx-ppg.text" = "ST";
+
+/* Class = "UILabel"; text = "Townsend Farms"; ObjectID = "wv4-H9-IBM"; */
+"wv4-H9-IBM.text" = "Townsend Farms";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "x5E-fc-3og"; */
+"x5E-fc-3og.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "x7Z-Pi-kFj"; */
+"x7Z-Pi-kFj.text" = "Label";
+
+/* Class = "UILabel"; text = "09/09/2016"; ObjectID = "xDF-o0-TLZ"; */
+"xDF-o0-TLZ.text" = "09/09/2016";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "xFT-p6-jiD"; */
+"xFT-p6-jiD.text" = "Route";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "xN2-Ul-k6V"; */
+"xN2-Ul-k6V.text" = "Label";
+
+/* Class = "UILabel"; text = "label"; ObjectID = "xSG-5H-ug4"; */
+"xSG-5H-ug4.text" = "label";
+
+/* Class = "UILabel"; text = "Session Type"; ObjectID = "xV8-XQ-7vr"; */
+"xV8-XQ-7vr.text" = "Session Type";
+
+/* Class = "UILabel"; text = "- Select -"; ObjectID = "xVT-GG-hga"; */
+"xVT-GG-hga.text" = "- Select -";
+
+/* Class = "UILabel"; text = "TRT"; ObjectID = "xWe-8a-e6a"; */
+"xWe-8a-e6a.text" = "TRT";
+
+/* Class = "UITextField"; text = " "; ObjectID = "xWe-DL-wg0"; */
+"xWe-DL-wg0.text" = " ";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "xXN-4F-dNx"; */
+"xXN-4F-dNx.text" = "Route";
+
+/* Class = "UILabel"; text = "Donald Waldrip"; ObjectID = "xYK-gh-Vow"; */
+"xYK-gh-Vow.text" = "Donald Waldrip";
+
+/* Class = "UILabel"; text = " Choose Your Prefered Language"; ObjectID = "xZ9-sj-vvt"; */
+"xZ9-sj-vvt.text" = " Choose Your Prefered Language";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "xZg-pM-my6"; */
+"xZg-pM-my6.text" = "Route";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "xhO-Wl-NLB"; */
+"xhO-Wl-NLB.text" = "to";
+
+/* Class = "UILabel"; text = "- Select Date -"; ObjectID = "xlq-pT-2B8"; */
+"xlq-pT-2B8.text" = "- Select Date -";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "xo0-9N-Bq2"; */
+"xo0-9N-Bq2.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Coccidiosis Vaccine"; ObjectID = "xro-Fi-Vxl"; */
+"xro-Fi-Vxl.text" = "Coccidiosis Vaccine";
+
+/* Class = "UILabel"; text = "Age (days)"; ObjectID = "xte-1W-YDg"; */
+"xte-1W-YDg.text" = "Age (days)";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "y3P-BP-d01"; */
+"y3P-BP-d01.text" = "Welcome";
+
+/* Class = "UILabel"; text = "Start New Session"; ObjectID = "y4P-6R-HDX"; */
+"y4P-6R-HDX.text" = "Start New Session";
+
+/* Class = "UILabel"; text = " "; ObjectID = "y63-K4-W2X"; */
+"y63-K4-W2X.text" = " ";
+
+/* Class = "UILabel"; text = "Feed program"; ObjectID = "y84-th-g6H"; */
+"y84-th-g6H.text" = "Feed program";
+
+/* Class = "UILabel"; text = "GI Tract"; ObjectID = "y9F-Bv-2wG"; */
+"y9F-Bv-2wG.text" = "GI Tract";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "yC8-vz-h8p"; */
+"yC8-vz-h8p.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "Feed type 2"; ObjectID = "yGS-Ob-ALL"; */
+"yGS-Ob-ALL.text" = "Feed type 2";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "yGb-s9-iwh"; */
+"yGb-s9-iwh.text" = "Label";
+
+/* Class = "UILabel"; text = "09/09/2016"; ObjectID = "yJV-23-tt4"; */
+"yJV-23-tt4.text" = "09/09/2016";
+
+/* Class = "UILabel"; text = "House no."; ObjectID = "yNv-0T-k2j"; */
+"yNv-0T-k2j.text" = "House no.";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "yPI-nd-InI"; */
+"yPI-nd-InI.text" = "to";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "yQl-4c-oig"; */
+"yQl-4c-oig.text" = "Route";
+
+/* Class = "UILabel"; text = "Feed Program (Turkey)"; ObjectID = "yRZ-9w-xSJ"; */
+"yRZ-9w-xSJ.text" = "Feed Program (Turkey)";
+
+/* Class = "UILabel"; text = "ABF "; ObjectID = "yVc-8e-rGQ"; */
+"yVc-8e-rGQ.text" = "ABF ";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "yVc-EA-DM8"; */
+"yVc-EA-DM8.text" = "0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "yVf-wH-yRM"; */
+"yVf-wH-yRM.text" = "Label";
+
+/* Class = "UILabel"; text = "Data available for sync in Chicken"; ObjectID = "yWi-5T-3Ja"; */
+"yWi-5T-3Ja.text" = "Data available for sync in Chicken";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "yeY-MT-X38"; */
+"yeY-MT-X38.text" = "to";
+
+/* Class = "UILabel"; text = "Route"; ObjectID = "yfH-OP-fG4"; */
+"yfH-OP-fG4.text" = "Route";
+
+/* Class = "UILabel"; text = "Reports Dashboard (Turkey)"; ObjectID = "ymK-VQ-UkB"; */
+"ymK-VQ-UkB.text" = "Reports Dashboard (Turkey)";
+
+/* Class = "UIButton"; normalTitle = "Last session"; ObjectID = "ynw-jq-t1T"; */
+"ynw-jq-t1T.normalTitle" = "Last session";
+
+/* Class = "UIButton"; normalTitle = "Accept"; ObjectID = "yqw-uG-Cxh"; */
+"yqw-uG-Cxh.normalTitle" = "Accept";
+
+/* Class = "UILabel"; text = "Coccidiosis Vaccine"; ObjectID = "yso-8N-ahW"; */
+"yso-8N-ahW.text" = "Coccidiosis Vaccine";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "z0i-h0-jM2"; */
+"z0i-h0-jM2.text" = "HMS";
+
+/* Class = "UILabel"; text = "HMS"; ObjectID = "z3q-Yx-zPt"; */
+"z3q-Yx-zPt.text" = "HMS";
+
+/* Class = "UILabel"; text = "09/09/2016"; ObjectID = "z61-sm-zDV"; */
+"z61-sm-zDV.text" = "09/09/2016";
+
+/* Class = "UILabel"; text = ","; ObjectID = "z66-d3-4ZX"; */
+"z66-d3-4ZX.text" = ",";
+
+/* Class = "UIButton"; normalTitle = "Last session"; ObjectID = "z7i-BV-M8r"; */
+"z7i-BV-M8r.normalTitle" = "Last session";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "zBR-NG-RKr"; */
+"zBR-NG-RKr.normalTitle" = "Skip";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "zCs-P6-76o"; */
+"zCs-P6-76o.text" = "0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zEg-ti-XtO"; */
+"zEg-ti-XtO.text" = "Label";
+
+/* Class = "UILabel"; text = "Add Vaccination"; ObjectID = "zSf-yZ-wk8"; */
+"zSf-yZ-wk8.text" = "Add Vaccination";
+
+/* Class = "UILabel"; text = "123456"; ObjectID = "zWW-Bc-j8C"; */
+"zWW-Bc-j8C.text" = "123456";
+
+/* Class = "UILabel"; text = "Customer *"; ObjectID = "za9-Xm-jku"; */
+"za9-Xm-jku.text" = "Customer *";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "zaJ-ex-dxZ"; */
+"zaJ-ex-dxZ.text" = "Welcome";
+
+/* Class = "UILabel"; text = "Flock Id"; ObjectID = "zdA-Se-UNJ"; */
+"zdA-Se-UNJ.text" = "Flock Id";
+
+/* Class = "UILabel"; text = " - Select -"; ObjectID = "zeI-Yk-7bm"; */
+"zeI-Yk-7bm.text" = " - Select -";
+
+/* Class = "UILabel"; text = "Necropsy without posting session "; ObjectID = "zlz-dI-b6b"; */
+"zlz-dI-b6b.text" = "Necropsy without posting session ";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "znO-W3-8nT"; */
+"znO-W3-8nT.text" = "Welcome";
+
+/* Class = "UILabel"; text = "Open Existing Session"; ObjectID = "zz2-9k-Mo6"; */
+"zz2-9k-Mo6.text" = "Open Existing Session";

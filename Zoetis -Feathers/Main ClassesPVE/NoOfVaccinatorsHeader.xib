@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="IJ2-4s-mCp" customClass="NoOfVaccinatorsHeader" customModule="DEV_PV360" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="73"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DxX-kL-JkC">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="73"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footerNavigationRounded" translatesAutoresizingMaskIntoConstraints="NO" id="vVn-Cd-MD0">
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="67"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RG4-ou-oAf">
+                            <rect key="frame" x="0.0" y="10" width="1024" height="45"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No. of vaccinators" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wi-sb-53Q">
+                                    <rect key="frame" x="35" y="0.0" width="154" height="45"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPS-Cr-1tb">
+                                    <rect key="frame" x="904" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                    <state key="normal" backgroundImage="add_icon"/>
+                                    <connections>
+                                        <action selector="vaccinatorPlusBtnTappedWithSender:" destination="IJ2-4s-mCp" eventType="touchUpInside" id="Yw2-KB-ebo"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9O-gq-pFE">
+                                    <rect key="frame" x="954" y="0.0" width="51" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                    <state key="normal" backgroundImage="delete_icon"/>
+                                    <connections>
+                                        <action selector="vaccinatorMinusBtnTappedWithSender:" destination="IJ2-4s-mCp" eventType="touchUpInside" id="q7l-yt-93x"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZE-iA-ASt" customClass="customButton" customModule="DEV_PV360" customModuleProvider="target">
+                                    <rect key="frame" x="220" y="0.0" width="185" height="45"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="30"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="setCornerRadius">
+                                            <real key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="0.058823529409999999" green="0.45882352939999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="17o-jh-RXC">
+                                    <rect key="frame" x="240" y="0.0" width="145" height="45"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="IJ2-4s-mCp" id="aG0-n5-6Pb"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="vVn-Cd-MD0" firstAttribute="top" secondItem="DxX-kL-JkC" secondAttribute="top" id="2Bl-cc-K0c"/>
+                        <constraint firstAttribute="width" constant="1024" id="4rH-4M-U7r"/>
+                        <constraint firstItem="vVn-Cd-MD0" firstAttribute="leading" secondItem="DxX-kL-JkC" secondAttribute="leading" id="69j-04-Yv4"/>
+                        <constraint firstItem="vVn-Cd-MD0" firstAttribute="leading" secondItem="RG4-ou-oAf" secondAttribute="leading" id="8vT-1r-hXh"/>
+                        <constraint firstItem="RG4-ou-oAf" firstAttribute="top" secondItem="DxX-kL-JkC" secondAttribute="top" constant="10" id="E1m-Xi-VnJ"/>
+                        <constraint firstAttribute="trailing" secondItem="vVn-Cd-MD0" secondAttribute="trailing" id="Lxi-3M-mr3"/>
+                        <constraint firstAttribute="bottom" secondItem="RG4-ou-oAf" secondAttribute="bottom" constant="18" id="UJO-Db-0CT"/>
+                        <constraint firstItem="vVn-Cd-MD0" firstAttribute="centerX" secondItem="DxX-kL-JkC" secondAttribute="centerX" id="pxL-W0-hId"/>
+                        <constraint firstItem="vVn-Cd-MD0" firstAttribute="trailing" secondItem="RG4-ou-oAf" secondAttribute="trailing" id="rqm-5F-sal"/>
+                        <constraint firstAttribute="height" constant="73" id="sAw-8r-ZS1"/>
+                        <constraint firstItem="vVn-Cd-MD0" firstAttribute="centerY" secondItem="RG4-ou-oAf" secondAttribute="centerY" constant="1" id="tst-wT-7jt"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.81551679870000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="DxX-kL-JkC" firstAttribute="leading" secondItem="U7a-jH-fNk" secondAttribute="leading" id="MVo-c0-9zn"/>
+                <constraint firstItem="DxX-kL-JkC" firstAttribute="trailing" secondItem="U7a-jH-fNk" secondAttribute="trailing" id="QMf-cp-P4j"/>
+                <constraint firstAttribute="bottom" secondItem="DxX-kL-JkC" secondAttribute="bottom" id="Vzk-B1-Y1o"/>
+                <constraint firstItem="DxX-kL-JkC" firstAttribute="trailing" secondItem="U7a-jH-fNk" secondAttribute="trailing" id="lNV-IO-PHc"/>
+                <constraint firstItem="DxX-kL-JkC" firstAttribute="leading" secondItem="U7a-jH-fNk" secondAttribute="leading" id="mm1-IR-ldS"/>
+                <constraint firstItem="DxX-kL-JkC" firstAttribute="top" secondItem="IJ2-4s-mCp" secondAttribute="top" id="n7r-C2-Mn9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="U7a-jH-fNk"/>
+            <connections>
+                <outlet property="bgBtn" destination="zZE-iA-ASt" id="Yfr-qC-bYq"/>
+                <outlet property="headerImg" destination="vVn-Cd-MD0" id="aR5-wI-EIx"/>
+                <outlet property="txtFeild" destination="17o-jh-RXC" id="I7d-AG-2Le"/>
+            </connections>
+            <point key="canvasLocation" x="834.78260869565224" y="85.379464285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="add_icon" width="24.5" height="24.5"/>
+        <image name="delete_icon" width="24.5" height="24.5"/>
+        <image name="footerNavigationRounded" width="1024" height="67.5"/>
+    </resources>
+</document>
