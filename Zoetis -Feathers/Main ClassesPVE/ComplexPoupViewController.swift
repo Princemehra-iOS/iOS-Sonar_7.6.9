@@ -67,14 +67,6 @@ class ComplexPoupViewController: BaseViewController {
         btn_updateCustomerDetails.setAttributedTitle(attributeString, for: .normal)
     }
     
-    private func getValueFromDB(key:String) -> String{
-        let valuee = CoreDataHandlerPVE().fetchDetailsFor(entityName: "PVE_LoginRespone")
-        //   print("fetchedLoginResultFromDB valuee----\(valuee)")
-        let valueArr = valuee.value(forKey: key) as! NSArray
-        return valueArr[0]  as! String
-    }
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         
         
@@ -91,19 +83,15 @@ class ComplexPoupViewController: BaseViewController {
         if getCustomerArr.count > 0{
             let Id =  UserDefaults.standard.value(forKey: "Id") as? Int
             CoreDataHandlerPVE().saveUserInfoInDB(userId: Id!)
-            
             CoreDataHandlerPVE().saveSessionDetailsInDB()
-            let pVE_Session =  CoreDataHandlerPVE().fetchCurrentSessionInDB()
             fetchMasterDataIfCountZero()
-            
             return
-        }else{
-            
+        }
+        else{
             fetchCustomerList()
             let Id =  UserDefaults.standard.value(forKey: "Id") as? Int
             CoreDataHandlerPVE().saveUserInfoInDB(userId: Id!)
             CoreDataHandlerPVE().saveSessionDetailsInDB()
-            let pVE_Session =  CoreDataHandlerPVE().fetchCurrentSessionInDB()
         }
         
     }
@@ -148,7 +136,7 @@ class ComplexPoupViewController: BaseViewController {
     
     private func setBorderBlackFiels(forBtn:UIButton) {
         
-        let superviewCurrent =  forBtn.superview
+    
         customerView.layer.borderColor = UIColor.getTextViewBorderColorStartAssessment().cgColor
         customerView.layer.borderWidth = 2.0
         
@@ -157,8 +145,8 @@ class ComplexPoupViewController: BaseViewController {
     }
     
     private func checkValidation() -> Bool{
-        var isAllValidationOk = Bool()
-        isAllValidationOk = true
+      
+        var isAllValidationOk = true
         if selectCompanyText.text?.count == 0{
             customerView.layer.borderColor = UIColor.red.cgColor
             customerView.layer.borderWidth = 2.0
@@ -180,7 +168,6 @@ class ComplexPoupViewController: BaseViewController {
             self.dismiss(animated: true, completion: nil)
             CoreDataHandlerPVE().saveCustomerComplexDetailsPoupInDB(self.selectCompanyText.text!, customerId: self.customerId, complexName: self.selectComplexText.text!, complexId: self.siteId)
             CoreDataHandlerPVE().updateSessionDetails(1, text: "", forAttribute: "")
-            let dataSavedInDB =  CoreDataHandlerPVE().fetchCurrentSessionInDB()
             refreshDashboardPVE()
             updateEvaluatorIfExist()
             
@@ -198,8 +185,8 @@ class ComplexPoupViewController: BaseViewController {
         
         let evalArr = CoreDataHandlerPVE().fetchDetailsForEntity(entityName: "PVE_Evaluator", id: currentUserId , keyStr: "id")
         if evalArr.count > 0 {
-            var evaluatorNameStr = String()
-            evaluatorNameStr = (UserDefaults.standard.string(forKey: "FirstName") ?? "") + " " + (UserDefaults.standard.string(forKey: "LastName") ?? "")
+           
+           var evaluatorNameStr = (UserDefaults.standard.string(forKey: "FirstName") ?? "") + " " + (UserDefaults.standard.string(forKey: "LastName") ?? "")
             
             CoreDataHandlerPVE().updateSessionDetails(1, text: evaluatorNameStr, forAttribute: "evaluator")
             CoreDataHandlerPVE().updateSessionDetails(1, text: currentUserId, forAttribute: "evaluatorId")
@@ -237,10 +224,9 @@ class ComplexPoupViewController: BaseViewController {
     
     
     @IBAction func customerBtnAction(_ sender: UIButton) {
-        var customerNamesArray = NSArray()
-        var customerDetailsArray = NSArray()
-        customerDetailsArray = CoreDataHandlerPVE().fetchDetailsFor(entityName: "Customer_PVE")
-        customerNamesArray = customerDetailsArray.value(forKey: "customerName") as? NSArray ?? NSArray()
+     
+        var customerDetailsArray = CoreDataHandlerPVE().fetchDetailsFor(entityName: "Customer_PVE")
+        var customerNamesArray = customerDetailsArray.value(forKey: "customerName") as? NSArray ?? NSArray()
         
         if  customerNamesArray.count > 0 {
             self.dropDownVIewNew(arrayData: customerNamesArray as! [String], kWidth: sender.frame.width, kAnchor: sender, yheight: sender.bounds.height) { [unowned self] selectedVal, index  in
@@ -252,10 +238,7 @@ class ComplexPoupViewController: BaseViewController {
                 
                 CoreDataHandlerPVE().updateUserInfoSavedInDB(selectedVal, forAttribute: "customer")
                 CoreDataHandlerPVE().updateUserInfoSavedInDB(self.customerId, forAttribute: "customerId")
-                
                 CoreDataHandlerPVE().updateSessionDetails(1, text: "", forAttribute: "")
-                let dataSavedInDB =  CoreDataHandlerPVE().fetchCurrentSessionInDB()
-                
                 self.customerView.layer.borderColor = UIColor.getTextViewBorderColorStartAssessment().cgColor
                 self.customerView.layer.borderWidth = 2.0
                 
@@ -275,11 +258,8 @@ class ComplexPoupViewController: BaseViewController {
             return
         }
         
-        var siteNameArr = NSArray()
-        var siteDetailsArray = NSArray()
-        siteDetailsArray = CoreDataHandlerPVE().fetchCustomerWithCustId( customerId as NSNumber)
-        
-        siteNameArr = siteDetailsArray.value(forKey: "complexName") as? NSArray ?? NSArray()
+        var siteDetailsArray = CoreDataHandlerPVE().fetchCustomerWithCustId( customerId as NSNumber)
+        var siteNameArr = siteDetailsArray.value(forKey: "complexName") as? NSArray ?? NSArray()
         if  siteNameArr.count > 0 {
             
             self.dropDownVIewNew(arrayData: siteNameArr as! [String], kWidth: sender.frame.width, kAnchor: sender, yheight: sender.bounds.height) { [unowned self] selectedVal, index in
@@ -294,7 +274,6 @@ class ComplexPoupViewController: BaseViewController {
                 CoreDataHandlerPVE().updateUserInfoSavedInDB(self.siteId, forAttribute: "complexId")
                 
                 CoreDataHandlerPVE().updateSessionDetails(1, text: "", forAttribute: "")
-                let dataSavedInDB =  CoreDataHandlerPVE().fetchCurrentSessionInDB()
                 
                 self.siteView.layer.borderColor = UIColor.getTextViewBorderColorStartAssessment().cgColor
                 self.siteView.layer.borderWidth = 2.0
@@ -326,12 +305,10 @@ extension ComplexPoupViewController {
         
         self.showGlobalProgressHUDWithTitle(self.view, title: "Loading...Please wait")
         
-        let Id =  UserDefaults.standard.value(forKey: "Id") as? Int
-        
         let countryId = UserDefaults.standard.integer(forKey: "nonUScountryId")
         ZoetisWebServices.shared.getCustomerListForPVE(controller: self, countryID: String(countryId), parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlefetchCustomerResponse(json)
+            guard let strongSelf = self, error == nil else { return }
+            strongSelf.handlefetchCustomerResponse(json)
         })
     }
     
@@ -350,8 +327,8 @@ extension ComplexPoupViewController {
         
         let countryId = UserDefaults.standard.integer(forKey: "nonUScountryId")
         ZoetisWebServices.shared.getComplexListForPVE(controller: self, countryID: String(countryId), parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlefetchAllComplexesResponseForPVE(json)
+            guard let strongSelf = self, error == nil else { return }
+            strongSelf.handlefetchAllComplexesResponseForPVE(json)
         })
     }
     
@@ -374,8 +351,8 @@ extension ComplexPoupViewController{
     private func fetchEvaluationTypeList(){
         CoreDataHandler().deleteAllData("PVE_EvaluationType")
         ZoetisWebServices.shared.getEvaluationTypeForPVE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleEvaluationTypeResponse(json)
+            guard let strongSelf = self, error == nil else { return }
+            strongSelf.handleEvaluationTypeResponse(json)
         })
     }
     
@@ -392,8 +369,8 @@ extension ComplexPoupViewController{
     private func fetchEvaluationForList(){
         CoreDataHandler().deleteAllData("PVE_EvaluationFor")
         ZoetisWebServices.shared.getEvaluationForForPVE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleEvaluationForResponse(json)
+            guard let strongSelf  = self, error == nil else { return }
+            strongSelf.handleEvaluationForResponse(json)
         })
     }
     
@@ -411,8 +388,8 @@ extension ComplexPoupViewController{
         
         CoreDataHandler().deleteAllData("PVE_SiteIDName")
         ZoetisWebServices.shared.getSiteIdNameForPVE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleSiteIdNameResponse(json)
+            guard let strongSelf = self, error == nil else { return }
+            strongSelf.handleSiteIdNameResponse(json)
         })
     }
     
@@ -421,7 +398,6 @@ extension ComplexPoupViewController{
         let jsonObject = PVEGetSiteIdNameResponse(json)
         sharedManager.sharedSiteIdNameResArrPVE = jsonObject.getSiteIdNameResponse(dataArray: jsonObject.siteIdNameArr ?? [])
         sharedManager.sharedSiteIdNameResPVE =  jsonObject.siteIdNameArr ?? []
-        // //   print("PVE_SiteIDName---\(CoreDataHandlerPVE().fetchDetailsFor(entityName: "PVE_SiteIDName"))")
         fetchtAgeOfBirdsResponse()
     }
     
@@ -430,8 +406,8 @@ extension ComplexPoupViewController{
     private func fetchtAgeOfBirdsResponse(){
         CoreDataHandler().deleteAllData("PVE_AgeOfBirds")
         ZoetisWebServices.shared.getAgeOfBirdsForPVE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleAgeOfBirdsResponse(json)
+            guard let strongSelf = self, error == nil else { return }
+            strongSelf.handleAgeOfBirdsResponse(json)
         })
     }
     
@@ -440,7 +416,6 @@ extension ComplexPoupViewController{
         let jsonObject = PVEGetAgeOfBirdsResponse(json)
         sharedManager.sharedAgeOfBirdsResArrPVE = jsonObject.getAgeOfBirdsResponse(dataArray: jsonObject.ageOfBirdsArr ?? [])
         sharedManager.sharedAgeOfBirdsResPVE =  jsonObject.ageOfBirdsArr ?? []
-        // //   print("PVE_AgeOfBirds---\(CoreDataHandlerPVE().fetchDetailsFor(entityName: "PVE_AgeOfBirds"))")
         fetchtBreedOfBirdsResponse()
     }
     
@@ -449,8 +424,8 @@ extension ComplexPoupViewController{
     private func fetchtBreedOfBirdsResponse(){
         CoreDataHandler().deleteAllData("PVE_BreedOfBirds")
         ZoetisWebServices.shared.getBreedOfBirdsForPVE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleBreedOfBirdsResponse(json)
+            guard let strongSelf = self, error == nil else { return }
+            strongSelf.handleBreedOfBirdsResponse(json)
         })
     }
     
@@ -469,8 +444,8 @@ extension ComplexPoupViewController{
         
         CoreDataHandler().deleteAllData("PVE_Housing")
         ZoetisWebServices.shared.getHousingDetailsForPVE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleHousingDetailsResponse(json)
+            guard let strongSelf = self, error == nil else { return }
+            strongSelf.handleHousingDetailsResponse(json)
         })
     }
     
@@ -489,8 +464,8 @@ extension ComplexPoupViewController{
         
         CoreDataHandler().deleteAllData("PVE_AssignUserDetails")
         ZoetisWebServices.shared.getAssignUserDetailForPVE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleAssignUserDetailResponse(json)
+            guard let strongSelf  = self, error == nil else { return }
+            strongSelf.handleAssignUserDetailResponse(json)
         })
     }
     
@@ -509,8 +484,8 @@ extension ComplexPoupViewController{
         
         CoreDataHandler().deleteAllData("PVE_Evaluator")
         ZoetisWebServices.shared.getEvaluatorDetailForPVE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleEvaluatorDetailsResponse(json)
+            guard let strongSelf = self, error == nil else { return }
+            strongSelf.handleEvaluatorDetailsResponse(json)
         })
     }
     
@@ -532,8 +507,8 @@ extension ComplexPoupViewController{
         CoreDataHandler().deleteAllData("PVE_AssessmentQuestion")
         
         ZoetisWebServices.shared.getAssessmentCategoriesDetailsPVE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleAssessmentCategoriesResponse(json)
+            guard let strongSelf = self, error == nil else { return }
+            strongSelf.handleAssessmentCategoriesResponse(json)
         })
     }
     
@@ -543,7 +518,7 @@ extension ComplexPoupViewController{
         sharedManager.sharedAssCategoriesDetailsResArrPVE = jsonObject.getCategoriesDetailsResponse(dataArray: jsonObject.categoriesDetailsArr ?? [])
         sharedManager.sharedAssCategoriesDetailsResPVE =  jsonObject.categoriesDetailsArr ?? []
         let currntAA = CoreDataHandlerPVE().fetchDetailsFor(entityName: "PVE_AssessmentCategoriesDetails")
-        let assessmentQuestionArray = currntAA.value(forKey: "assessmentQuestion") as! NSObject
+        debugPrint(currntAA)
         fetchtSerotypeDetailsResponse()
         
     }
@@ -555,14 +530,15 @@ extension ComplexPoupViewController{
         CoreDataHandler().deleteAllData("PVE_SerotypeDetails")
         
         ZoetisWebServices.shared.getSerotypeDetailsPVE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleSerotypeDetailsResponse(json)
+            guard let strongSelf = self, error == nil else { return }
+            strongSelf.handleSerotypeDetailsResponse(json)
         })
     }
     
     private func handleSerotypeDetailsResponse(_ json: JSON) {
         //
         let jsonObject = PVESerotypeDetailsResponse(json)
+        debugPrint(jsonObject)
         getSurveyTypeDetailsPVE()
     }
     
@@ -574,15 +550,15 @@ extension ComplexPoupViewController{
         CoreDataHandler().deleteAllData("PVE_SurveyTypeDetails")
         
         ZoetisWebServices.shared.getSurveyTypeDetailsPVE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleSurveyTypeDetailsResponse(json)
+            guard let strongSelf = self, error == nil else { return }
+            strongSelf.handleSurveyTypeDetailsResponse(json)
         })
     }
     
     private func handleSurveyTypeDetailsResponse(_ json: JSON) {
         //
         let jsonObject = PVESurveyTypeDetailsResponse(json)
-        
+        debugPrint(jsonObject)
         fetchtVaccineManDetailsPVE()
         
     }
@@ -595,15 +571,15 @@ extension ComplexPoupViewController{
         CoreDataHandler().deleteAllData("PVE_VaccineManDetails")
         
         ZoetisWebServices.shared.getVaccineManDetailsPVE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleVaccineManDetailsResponse(json)
+            guard let strongSelf = self, error == nil else { return }
+            strongSelf.handleVaccineManDetailsResponse(json)
         })
     }
     
     private func handleVaccineManDetailsResponse(_ json: JSON) {
         //
         let jsonObject = PVEVaccineManDetailsResponse(json)
-        
+        debugPrint(jsonObject)
         getVaccineNamesDetailsPVE()
     }
     
@@ -614,15 +590,15 @@ extension ComplexPoupViewController{
         CoreDataHandler().deleteAllData("PVE_VaccineNamesDetails")
         
         ZoetisWebServices.shared.getVaccineNamesDetailsPVE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlegetVaccineNamesDetailsResponse(json)
+            guard let strongSelf = self, error == nil else { return }
+            strongSelf.handlegetVaccineNamesDetailsResponse(json)
         })
     }
     
     private func handlegetVaccineNamesDetailsResponse(_ json: JSON) {
         //
         let jsonObject = PVEVaccineNameDetailsResponse(json)
-        
+        debugPrint(jsonObject)
         getSiteInjctsDetailssPVE()
         
     }
@@ -633,15 +609,15 @@ extension ComplexPoupViewController{
         
         CoreDataHandler().deleteAllData("PVE_SiteInjctsDetails")
         ZoetisWebServices.shared.getSiteInjctsDetailssPVE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleSiteInjctsDetailsResponse(json)
+            guard let strongSelf = self, error == nil else { return }
+            strongSelf.handleSiteInjctsDetailsResponse(json)
         })
     }
     
     private func handleSiteInjctsDetailsResponse(_ json: JSON) {
         //
         let jsonObject = PVESiteInjctsDetailsResponse(json)
-        
+        debugPrint(jsonObject)
         dismissGlobalHUD(self.view)
         UserDefaults.standard.set(false, forKey: "getApiCalled")
         if !isUpdateCustomer {
@@ -689,7 +665,7 @@ extension ComplexPoupViewController{
     private func handleblankPdfResponse(_ json: JSON) {
         
         let jsonObject = PVEBlankPdfResponse(json)
-        
+        debugPrint(jsonObject)
     }
     
     private func getOtherPDFDetailsPVE(){
@@ -708,9 +684,9 @@ extension ComplexPoupViewController{
             }
             
             ZoetisWebServices.shared.getblankPDFPVE(controller: self, parameters: jsonDict, completion: { [weak self] (json, error) in
-                guard let `self` = self, error == nil else { return }
+                guard let strongSelf = self, error == nil else { return }
                 print("res json -- \(json)")
-                self.handleOtherPdfResponse(json)
+                strongSelf.handleOtherPdfResponse(json)
                 
             })
             
@@ -724,7 +700,7 @@ extension ComplexPoupViewController{
     private func handleOtherPdfResponse(_ json: JSON) {
         
         let jsonObject = PVEOtherPdfResponse(json)
-        
+        debugPrint(jsonObject)
     }
     
     @objc func stopLoader(notification: NSNotification){

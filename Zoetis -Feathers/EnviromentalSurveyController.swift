@@ -1701,38 +1701,15 @@ extension EnviromentalSurveyController: EnviromentalLocationHeaderViewDelegates 
     }
     
     func collapsableButtonPressed(_ view: EnviromentalLocationHeaderView) {
-        //self.currentRequisition.actualCreatedHeaders[view.tag].isHeaderIsCollapsed = !self.currentRequisition.actualCreatedHeaders[view.tag].isHeaderIsCollapsed
+
         if requisitionSavedSessionType == .SHOW_SUBMITTED_REQUISITION_FOR_READ_ONLY {
             self.microbialSelectedPlatesData[view.tag].isHeaderIsCollapsed =  !self.microbialSelectedPlatesData[view.tag].isHeaderIsCollapsed
         } else {
             self.currentRequisition.actualCreatedHeaders[view.tag].isHeaderIsCollapsed = !self.currentRequisition.actualCreatedHeaders[view.tag].isHeaderIsCollapsed
         }
-       
         
         self.reloadTableView()
-        self.tableView.scrollToRow(at: IndexPath(row: NSNotFound, section: view.tag + 1), at: .top, animated: true)
-        
-        
-        
-        //        if self.currentRequisition.actualCreatedHeaders[view.tag].isHeaderIsCollapsed {
-        //            let noOfPlates = self.currentRequisition.actualCreatedHeaders[view.tag].noOfPlates
-        //            for i in 0..<noOfPlates {
-        //                let plateCell = LocationTypeCellModel()
-        //                plateCell.row = i
-        //                plateCell.section = view.tag
-        //                plateCell.selectedLocationTypeId = self.currentRequisition.actualCreatedHeaders[view.tag].selectedLocationTypeId
-        //                self.currentRequisition.actualCreatedHeaders[view.tag].numberOfPlateIDCreated.append(plateCell)
-        //                self.reloadTableView()
-        //
-        //
-        //            }
-        //        } else {
-        //            self.currentRequisition.actualCreatedHeaders[view.tag].numberOfPlateIDCreated.removeAll()
-        //            self.reloadTableView()
-        //            self.tableView.scrollToRow(at: IndexPath(row: NSNotFound, section: view.tag + 1), at: .top, animated: true)
-        //        }
-        
-        
+        self.tableView.scrollToRow(at: IndexPath(row: NSNotFound, section: view.tag + 1), at: .top, animated: true)        
     }
     
     func reloadTableView() {

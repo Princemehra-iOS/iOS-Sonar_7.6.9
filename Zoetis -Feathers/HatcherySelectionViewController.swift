@@ -131,18 +131,8 @@ class HatcherySelectionViewController: BaseViewController {
           
           let arr = ModuleIdsArray?.components(separatedBy: "~")
           if (arr?.contains("18") ?? false) {
-               
                self.showGlobalProgressHUDWithTitle(self.view, title: "")
-               let userID =  UserDefaults.standard.value(forKey:"Id") as? Int ?? 0
-//               let keychainHelper = AccessTokenHelper()
-//               let FCMToken = keychainHelper.getFromKeychain(keyed: "Token")
-//               let udid = UserDefaults.standard.value(forKey: "ApplicationIdentifier") as? String ?? ""
-//               let param = ["UserId":userID,"ModuleId":18,"FCMToken":FCMToken,"DeviceId":udid] as JSONDictionary
-//               ZoetisWebServices.shared.sendFCMTokenDataToServer(controller: self, parameters: param, completion: {(json, error) in
-//                    guard error == nil else {
-//                         return
-//                    }
-//               })
+
                self.dismissGlobalHUD(self.view)
                Constants.baseUrl = Constants.Api.tcBaseUrl
                self.navigateToVaccinationAndCertification()

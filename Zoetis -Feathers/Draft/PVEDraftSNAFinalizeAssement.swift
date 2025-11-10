@@ -267,8 +267,6 @@ class PVEDraftSNAFinalizeAssement: BaseViewController {
                 CoreDataHandlerPVE().updateSyncAssCatDetailsFor(currentTimeStamp, text: "sync", forAttribute: "type")
                 CoreDataHandlerPVE().updateSyncAssQuestionsFor(currentTimeStamp, text: "sync", forAttribute: "type")
                 
-                let valuee = CoreDataHandlerPVE().fetchDetailsFor(entityName: "PVE_Sync")
-                
                 break
             }
             
@@ -331,7 +329,6 @@ class PVEDraftSNAFinalizeAssement: BaseViewController {
         
         let selectedBirdTypeId = getDraftValueForKey(key: "selectedBirdTypeId") as? Int
         assessmentArr = CoreDataHandlerPVE().getSyncdAssementsArr(selectedBirdTypeId: selectedBirdTypeId!, type: "draft", syncId: currentTimeStamp)
-      //  assessmentArr = CoreDataHandlerPVE().fetchDraftAssementArr(selectedBirdTypeId: selectedBirdTypeId!, type: "draft", syncId: currentTimeStamp)
         
         let selectedItem = IndexPath(row: Int(truncating: NSNumber(value: currentSel_CategoryIndex)), section: 0)
         collectionView.selectItem(at: selectedItem, animated: true, scrollPosition: .centeredVertically)
@@ -401,8 +398,8 @@ class PVEDraftSNAFinalizeAssement: BaseViewController {
         var image_NameArr = questionsArr.value(forKey: "image_Name") as? [String]
         var image_Name = image_NameArr![indexPath!.row]
         
-        var assessmentArr = questionsArr.value(forKey: "assessment") as? [String]
-        var assessment = assessmentArr![indexPath!.row]
+        var localAssessmentArr = questionsArr.value(forKey: "assessment") as? [String]
+        var assessment = localAssessmentArr![indexPath!.row]
         
         var idArr = questionsArr.value(forKey: "id") as? [Int]
         var qId = idArr![indexPath!.row]
@@ -430,8 +427,8 @@ class PVEDraftSNAFinalizeAssement: BaseViewController {
                 image_NameArr = liveQuesArr.value(forKey: "image_Name") as? [String]
                 image_Name = image_NameArr![indexPath!.row]
                 
-                assessmentArr = liveQuesArr.value(forKey: "assessment") as? [String]
-                assessment = assessmentArr![indexPath!.row]
+                localAssessmentArr = liveQuesArr.value(forKey: "assessment") as? [String]
+                assessment = localAssessmentArr![indexPath!.row]
                 
             }
             else  if selectedIndex == 5{
@@ -448,8 +445,8 @@ class PVEDraftSNAFinalizeAssement: BaseViewController {
                 image_NameArr = inactiveQuessArr.value(forKey: "image_Name") as? [String]
                 image_Name = image_NameArr![indexPath!.row]
                 
-                assessmentArr = inactiveQuessArr.value(forKey: "assessment") as? [String]
-                assessment = assessmentArr![indexPath!.row]
+                localAssessmentArr = inactiveQuessArr.value(forKey: "assessment") as? [String]
+                assessment = localAssessmentArr![indexPath!.row]
             }
             else{
                 max_ScoreArr = otherQuessArr.value(forKey: "max_Score") as? [Int]
@@ -464,8 +461,8 @@ class PVEDraftSNAFinalizeAssement: BaseViewController {
                 image_NameArr = otherQuessArr.value(forKey: "image_Name") as? [String]
                 image_Name = image_NameArr![indexPath!.row]
                 
-                assessmentArr = otherQuessArr.value(forKey: "assessment") as? [String]
-                assessment = assessmentArr![indexPath!.row]
+                localAssessmentArr = otherQuessArr.value(forKey: "assessment") as? [String]
+                assessment = localAssessmentArr![indexPath!.row]
             }
         }
         else{
@@ -481,8 +478,8 @@ class PVEDraftSNAFinalizeAssement: BaseViewController {
             image_NameArr = questionsArr.value(forKey: "image_Name") as? [String]
             image_Name = image_NameArr![indexPath!.row]
             
-            assessmentArr = questionsArr.value(forKey: "assessment") as? [String]
-            assessment = assessmentArr![indexPath!.row]
+            localAssessmentArr = questionsArr.value(forKey: "assessment") as? [String]
+            assessment = localAssessmentArr![indexPath!.row]
             
             idArr = questionsArr.value(forKey: "id") as? [Int]
             qId = idArr![indexPath!.row]
@@ -2818,8 +2815,7 @@ extension PVEDraftSNAFinalizeAssement: UICollectionViewDelegate, UICollectionVie
         
         if  let cell = self.tblView.cellForRow(at: indexPath!) as? PVEVaccineInfoTypeCell
         {
-            var isFreeSerology = Bool()
-            isFreeSerology = getDraftValueForKey(key: "isFreeSerology") as! Bool
+            var isFreeSerology = getDraftValueForKey(key: "isFreeSerology") as! Bool
             if isFreeSerology == true{
                 cell.serologySelUnSelectImg.image =  UIImage(named: "uncheckIconPE")
                 CoreDataHandlerPVE().updateDraftSNAFor(currentTimeStamp, syncedStatus: false, text: false, forAttribute: "isFreeSerology")

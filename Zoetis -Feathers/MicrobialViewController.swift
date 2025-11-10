@@ -60,7 +60,7 @@ class MicrobialViewController: BaseViewController {
         self.navigationItem.setHidesBackButton(true, animated: true)
         let FirstName = UserDefaults.standard.value(forKey: "FirstName") as! String
         if let isLaunched = UserDefaults.standard.value(forKey: "isFreshLaunched"){
-            
+            debugPrint(isLaunched)
         }else{
             UserDefaults.standard.set(true, forKey: "isFreshLaunched")
             UserDefaults.standard.synchronize()
@@ -73,18 +73,16 @@ class MicrobialViewController: BaseViewController {
         self.microbialPopUpBackgroundView.isHidden = true
         self.callApiOfMasterData()
         NotificationCenter.default.addObserver(self, selector: #selector(self.syncBtnLogoutTappedNoti(notification:)), name: Notification.Name("microbialSyncDataNoti"), object: nil)
-//        self.enableDisableBtnAccordingToRoleId()
     }
     
     private func callApiOfMasterData(){
         if CodeHelper.sharedInstance.reachability!.connection == .unavailable {
-    //            Helper.showAlertMessage(self, titleStr: "Alert", messageStr: "No Internet connection available.")
                 return
         }
-        var customerDetailsArray = NSArray()
-        customerDetailsArray = CoreDataHandlerMicro().fetchDetailsFor(entityName: "Micro_Customer") //empty
+       
+        var customerDetailsArray = CoreDataHandlerMicro().fetchDetailsFor(entityName: "Micro_Customer") //empty
         if (UserDefaults.standard.value(forKey: "isFreshLaunched") as? Bool) ?? true {
-            fetchCustomerList() //gets called every time
+            fetchCustomerList()
         }else{
         //            fetchGetAllSyncedDataForRequisition()
         }
@@ -195,19 +193,8 @@ class MicrobialViewController: BaseViewController {
 
     }
     
-    @IBAction func viewRequisitionBtnClicked(_ sender: UIButton) {//DraftViewController      ViewRequisitionViewController
+    @IBAction func viewRequisitionBtnClicked(_ sender: UIButton) {
         if let viewController = UIStoryboard(name: "ViewRequisition", bundle: nil).instantiateViewController(withIdentifier: "ViewRequisitionViewController") as? ViewRequisitionViewController {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            
-//            appDelegate.viewRequisitionFlag = true
-//
-//            //   print("ViewRequisition Flag \(appDelegate.viewRequisitionFlag)")
-            
-//            CoreDataHandlerMicro().deleteAllData("Microbial_EnviromentalSessionInProgress")
-//
-//            CoreDataHandlerMicro().deleteAllData("ProgressSessionMicrobial")
-//
-//            CoreDataHandlerMicro().deleteAllData("Microbial_FeatherPulpCurrentSession")
             
             if let navigator = navigationController {
                 navigator.pushViewController(viewController, animated: true)

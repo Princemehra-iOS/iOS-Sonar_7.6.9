@@ -272,15 +272,7 @@ class BaseViewController: UIViewController , SlideMenuDelegate{
         do {
             let jsonData = try JSONSerialization.data(withJSONObject:dict, options:[])
             let jsonDataString = String(data: jsonData, encoding: String.Encoding.utf8)!
-//            if apiName == "add score"{
-//                let scoreArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "ScoreData")
-//                CoreDataHandlerPE().saveScoreDataInDB(jsonDataString, NSNumber(value: scoreArray.count + 1))
-//            }
-//            else if  apiName == "add assessment" {
-//                 print("Post Request Params of Add Assessment.  : \(jsonDataString)")
-//            } else if  apiName == "Test" {
-//                 print("Post Request Params of Images.  : \(jsonDataString)")
-//            }
+
              if apiName == "Extended" {
                 print("Post Request Params of Extended.  : \(jsonDataString)")
 

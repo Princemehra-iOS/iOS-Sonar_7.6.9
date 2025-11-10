@@ -3356,8 +3356,7 @@ class CoreDataHandlerPVE: NSObject {
             fetchRequest.predicate = NSPredicate(format: predicateStr1, argumentArray: predicateArr)
                 let tempObj = try? managedContext.fetch(fetchRequest) as? [NSManagedObject]
                 if tempObj!.count > 0 { // Atleast one was returned
-                    let dataArray = tempObj! as NSArray
-
+                   
                     tempObj![0].setValue(text, forKey: forAttribute)
                 }
                 

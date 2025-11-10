@@ -177,7 +177,6 @@ class PVEStartNewAssFinalizeAssement: BaseViewController  , UISearchBarDelegate 
             if controller.isKind(of: PVEDashboardViewController.self) {
                 self.navigationController!.popToViewController(controller, animated: true)
                 
-                let seq_NumberArr = assessmentArr.value(forKey: "seq_Number")  as? NSArray ?? NSArray()
                 let catArray = assessmentArr.value(forKey: "category_Name") as? NSArray ?? NSArray()
                 
                 let timeStampStr = sharedManager.generateCurrentTimeStamp()
@@ -187,7 +186,6 @@ class PVEStartNewAssFinalizeAssement: BaseViewController  , UISearchBarDelegate 
                 CoreDataHandlerPVE().saveSyncAssQuestions(type: "draft", syncId: timeStampStr)
                 
                 CoreDataHandlerPVE().saveSyncImageDetailsInDB(syncId: timeStampStr)
-                let PVE_ImageEntitySyncArr = CoreDataHandlerPVE().fetchDetailsFor(entityName: "PVE_ImageEntitySync")
                 
                 CoreDataHandler().deleteAllData("PVE_Session")
                 CoreDataHandler().deleteAllData("PVE_ImageEntity")
@@ -222,14 +220,12 @@ class PVEStartNewAssFinalizeAssement: BaseViewController  , UISearchBarDelegate 
                 self.navigationController!.popToViewController(controller, animated: true)
                 
                 let seq_NumberArr = assessmentArr.value(forKey: "seq_Number")  as? NSArray ?? NSArray()
-                
-                var scoreArr = [Any]()
-                scoreArr = CoreDataHandlerPVE().fetchScoredArr(seq_NumberArr).scoreArr as! [Any]
+         
+                var scoreArr = CoreDataHandlerPVE().fetchScoredArr(seq_NumberArr).scoreArr as! [Any]
                 scoreArr.removeLast()
                 scoreArr.append(sharedManager.vaccineEvaluationScoreTotal)
                 
-                var max_MarksArr = [Int]()
-                max_MarksArr = CoreDataHandlerPVE().fetchScoredArr(seq_NumberArr).max_MarksArr as! [Int]
+                var max_MarksArr = CoreDataHandlerPVE().fetchScoredArr(seq_NumberArr).max_MarksArr as! [Int]
                 
                 if currentSel_seq_Number == 6 {
                     let seq_NumberArr = assessmentArr.value(forKey: "max_Mark")  as? NSArray ?? NSArray()
@@ -248,7 +244,6 @@ class PVEStartNewAssFinalizeAssement: BaseViewController  , UISearchBarDelegate 
                 CoreDataHandlerPVE().saveSyncAssQuestions(type: "sync", syncId: timeStampStr)
                 
                 CoreDataHandlerPVE().saveSyncImageDetailsInDB(syncId: timeStampStr)
-                let PVE_ImageEntitySyncArr = CoreDataHandlerPVE().fetchDetailsFor(entityName: "PVE_ImageEntitySync")
                 
                 CoreDataHandler().deleteAllData("PVE_Session")
                 CoreDataHandler().deleteAllData("PVE_ImageEntity")
@@ -296,12 +291,6 @@ class PVEStartNewAssFinalizeAssement: BaseViewController  , UISearchBarDelegate 
         
     }
     
-    private func getEvaluationDateFromDB(key:String) -> Date{
-        let valuee = CoreDataHandlerPVE().fetchDetailsFor(entityName: "PVE_Session")
-        let valueArr = valuee.value(forKey: key) as! NSArray
-        return valueArr[0] as! Date
-    }
-    
     func setInitialValues() {
         
         let valuee = CoreDataHandlerPVE().fetchDetailsFor(entityName: "PVE_Session")
@@ -341,8 +330,7 @@ class PVEStartNewAssFinalizeAssement: BaseViewController  , UISearchBarDelegate 
         assessmentArr = CoreDataHandlerPVE().fetchDetailsForAssessmentCategoriesDetails()
         resetBoderderCatcherVac()
         tblView.reloadData()
-        
-        let allCategorySelected = checkAllCategorySeledtedOneQuestion()
+
         setMarksLabel()
     }
     
@@ -1213,7 +1201,7 @@ extension PVEStartNewAssFinalizeAssement: VaccinatorInfoDetailPlusBtnTapped,Vacc
             
             if  let cell = self.tblView.cellForRow(at: indexPath ) as? PVEVaccineInfoDetailsCell
             {
-                if cell.vacManTxtFld.text! == "" || cell.vacNameTxtFld.text! == "" || cell.serotypeTxtFld.text! == "" {/*|| cell.serialTxtFld.text! == "" || cell.expiryTxtFld.text! == "" || cell.siteOfInjTxtFld.text! == ""{*/
+                if cell.vacManTxtFld.text! == "" || cell.vacNameTxtFld.text! == "" || cell.serotypeTxtFld.text! == "" {
                     
                     if cell.vacManTxtFld.text! == "" {
                         self.sharedManager.setBorderRedForMandatoryFiels(forBtn: cell.vacManBtn)
@@ -1231,7 +1219,7 @@ extension PVEStartNewAssFinalizeAssement: VaccinatorInfoDetailPlusBtnTapped,Vacc
         
         for (indx, _) in vaccinInfoDetailArr.enumerated() {
             
-            if  vaccinInfoDetailArr[indx]["man"] as? String == "" || vaccinInfoDetailArr[indx]["name"] as? String == "" || vaccinInfoDetailArr[indx]["serotype"] as? String == "" /* vaccinInfoDetailArr[indx]["serial"] as? String == "" || vaccinInfoDetailArr[indx]["expDate"] as? String == "" || vaccinInfoDetailArr[indx]["siteOfInj"] as? String == "" */{
+            if  vaccinInfoDetailArr[indx]["man"] as? String == "" || vaccinInfoDetailArr[indx]["name"] as? String == "" || vaccinInfoDetailArr[indx]["serotype"] as? String == "" {
                 showAlert(title: "Alert", message: "Please fill the mandatory fields.", owner: self)
                 
                 return
@@ -1471,61 +1459,19 @@ extension PVEStartNewAssFinalizeAssement: UITableViewDelegate, UITableViewDataSo
                 
                 cell.refreshFreeSerologyBtnState()
                 cell.refreshRadioButton()
-                
-//                let housingStr = sharedManager.getSessionValueForKeyFromDB(key: "housing") as! String
-//                if housingStr == "Floor" {
-//                    cell.serologyViewForFreeHousing.isHidden = false
-//                }else{
-//                    cell.serologyViewForFreeHousing.isHidden = true
-//                }
-                
+
                 cell.crewLeaderTxtField.text = sharedManager.getSessionValueForKeyFromDB(key: "cat_crewLeaderName") as? String
                 cell.crewLeaderEmailTxtField.text = sharedManager.getSessionValueForKeyFromDB(key: "cat_crewLeaderEmail") as? String
                 let catcherCount = sharedManager.getSessionValueForKeyFromDB(key: "cat_NoOfCatchersDetailsArr") as? String
                 cell.numberOfCatcherTextField.text = catcherCount
                 
                 cell.companyRepNameTxtField.text = sharedManager.getSessionValueForKeyFromDB(key: "cat_companyRepName") as? String
-     //           cell.companyRepEmailTxtField.text = sharedManager.getSessionValueForKeyFromDB(key: "cat_companyRepEmail") as? String
                 let noOfVaccinatorsArr = sharedManager.getSessionValueForKeyFromDB(key: "cat_NoOfVaccinatorsDetailsArr") as? String
                 cell.numberOfVacconatorsTextField.text = noOfVaccinatorsArr
                 
                 return cell
             }
-//            else if indexPath.section == 1 {
-//                let cell = tableView.dequeueReusableCell(withIdentifier: "PVETeamMemberCatchersCell", for: indexPath) as! PVETeamMemberCatchersCell
-//                cell.currentIndPath = indexPath as NSIndexPath
-//                cell.delegate = self
-//                if noOfCatcherArr.count > indexPath.row{
-//                    
-//                    if noOfCatcherArr[indexPath.row].keys.contains("name"){
-//                        cell.nameTxtField.text = noOfCatcherArr[indexPath.row]["name"] ?? ""
-//                    }else{
-//                        cell.nameTxtField.text = ""
-//                    }
-//                    if noOfCatcherArr[indexPath.row].keys.contains("email"){
-//                        cell.emailTxtField.text = noOfCatcherArr[indexPath.row]["email"] ?? ""
-//                    }else{
-//                        cell.emailTxtField.text = ""
-//                    }
-//                    if noOfCatcherArr[indexPath.row].keys.contains("mobile"){
-//                        cell.mobileTxtField.text = noOfCatcherArr[indexPath.row]["mobile"] ?? ""
-//                    }else{
-//                        cell.mobileTxtField.text = ""
-//                    }
-//                }else{
-//                    cell.nameTxtField.text = ""
-//                    cell.mobileTxtField.text = ""
-//                    cell.emailTxtField.text = ""
-//                }
-//                
-//                if cell.currentIndPath.row == 0 {
-//                    cell.teamMemberTitleLbl.isHidden = false
-//                }else{
-//                    cell.teamMemberTitleLbl.isHidden = true
-//                }
-//                
-//                return cell
-//            }
+
             else if indexPath.section == 2 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "PVETeamMemeberVaccinatorsCell", for: indexPath) as! PVETeamMemeberVaccinatorsCell
                 cell.currentIndPath = indexPath as NSIndexPath
@@ -1569,12 +1515,6 @@ extension PVEStartNewAssFinalizeAssement: UITableViewDelegate, UITableViewDataSo
                 }
                 cell.serologyView.isHidden = true
 
-//                let housingStr = sharedManager.getSessionValueForKeyFromDB(key: "housing") as! String
-//                if housingStr == "Floor" {
-//                    cell.serologyView.isHidden = true
-//                }else{
-//                    cell.serologyView.isHidden = false
-//                }
                 return cell
             }
             else if indexPath.section == 3 {
@@ -1613,7 +1553,6 @@ extension PVEStartNewAssFinalizeAssement: UITableViewDelegate, UITableViewDataSo
                         cell.cameraBtn.alpha = 0.2
                     }
                     
-                    //cell.saveDelegate = self
                     if(indexPath.row % 2 == 0) {
                         cell.contentView.backgroundColor =  #colorLiteral(red: 0.9998950362, green: 1, blue: 0.9998714328, alpha: 1)
                     } else {
@@ -1631,8 +1570,6 @@ extension PVEStartNewAssFinalizeAssement: UITableViewDelegate, UITableViewDataSo
                     cell.type = "sync"
                     cell.QuesIdArr = liveQuesArr
                     cell.SwitchState = isLiveVaccineOn
-                    
-                    //  cell.notetxtView.text = Constants.liveComment
                     cell.notetxtView.text = liveComment
                     return cell
                 }
@@ -1657,7 +1594,6 @@ extension PVEStartNewAssFinalizeAssement: UITableViewDelegate, UITableViewDataSo
                         cell.contentView.backgroundColor = #colorLiteral(red: 0.9098039216, green: 0.937254902, blue: 0.9764705882, alpha: 1)
                     }
                     return cell
-                    
                 }
                 
             }
@@ -1858,12 +1794,13 @@ extension PVEStartNewAssFinalizeAssement: UITableViewDelegate, UITableViewDataSo
                 }
                 
                 if vaccinInfoDetailArr[indexPath.row]["serial"] as? String == ""{
-                    // self.sharedManager.setBorderRedForMandatoryFiels(forBtn: cell.serialBtn)
+                    debugPrint(vaccinInfoDetailArr[indexPath.row]["serial"] as? String)
                 }else{
                     self.sharedManager.setBorderBlue(btn: cell.serialBtn)
                 }
                 
                 if vaccinInfoDetailArr[indexPath.row]["expDate"] as? String == ""{
+                    debugPrint(vaccinInfoDetailArr[indexPath.row]["expDate"] as? String)
                 }else{
                     self.sharedManager.setBorderBlue(btn: cell.expiryBtn)
                 }

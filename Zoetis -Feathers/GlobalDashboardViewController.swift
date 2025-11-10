@@ -80,35 +80,13 @@ class GlobalDashboardViewController: BaseViewController {
             }
             
         }
-        
-        
-        
-//        TimeManager.shared.onTick = { [weak self] timeString in
-//            self?.sessionLabel.text = timeString
-//        }
-//        
-//        TimeManager.shared.onSessionExpired = { [weak self] in
-//            self?.performAutoLogout()
-//        }
-//        
-//        TimeManager.shared.startTimer()
-//        
-//        // Optional: Check at load
-//        if TimeManager.shared.isSessionExpired() {
-//            performAutoLogout()
-//        }
+
         
     }
     
     func performAutoLogout() {
          TimeManager.shared.clearSession()
-        
-        
-         // Navigate to login screen
-//         let loginVC = LoginViewController() // Replace with your actual login view controller
-//         let nav = UINavigationController(rootViewController: loginVC)
-//         UIApplication.shared.windows.first?.rootViewController = nav
-//         UIApplication.shared.windows.first?.makeKeyAndVisible()
+  
      }
     
     func getRemainingTimeForAutoLogout() -> TimeInterval? {

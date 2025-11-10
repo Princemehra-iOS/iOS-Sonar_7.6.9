@@ -60,7 +60,6 @@ class ExportLogsViewController: UIViewController, UITableViewDataSource, UITable
         titleBackgroundImageView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(titleBackgroundImageView)
         self.view.addSubview(titleLabel)
-        //setupCloseButton()
         layoutViews()
         // Update constraints
         NSLayoutConstraint.activate([
@@ -107,15 +106,6 @@ class ExportLogsViewController: UIViewController, UITableViewDataSource, UITable
         
     }
 
-    private func setupCloseButton() {
-        closeButton.setTitle("✕", for: .normal)
-        closeButton.setTitleColor(.systemRed, for: .normal)
-        closeButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
-        closeButton.addTarget(self, action: #selector(dismissSelf), for: .touchUpInside)
-        view.addSubview(closeButton)
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
-    }
-
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -127,9 +117,6 @@ class ExportLogsViewController: UIViewController, UITableViewDataSource, UITable
 
     private func layoutViews() {
         NSLayoutConstraint.activate([
-//            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 4),
-//            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-
             tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -332,8 +319,7 @@ class ExportLogsViewController: UIViewController, UITableViewDataSource, UITable
                     Vaccine_Other = ""
                     Vaccine_Id = val["name_id"] as! Int
                 }
-                
-                let noteeeee = val["note"] ?? ""
+               
                 let serotype = val["serotype"] as? [String] ?? [""]
                 let serotype_id = val["serotype_id"] as? [String] ?? [""]
                 let antigenOther = val["otherAntigen"] ?? ""
@@ -624,7 +610,6 @@ class ExportLogsViewController: UIViewController, UITableViewDataSource, UITable
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat="MM/dd/YYYY HH:mm:ss Z"
-        let date = dateFormatter.string(from: objEvaluationDate) as String
         
         let evaluationDate = (dict).value(forKey: "evaluationDate")  as? String
         

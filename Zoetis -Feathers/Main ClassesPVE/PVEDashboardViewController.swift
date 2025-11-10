@@ -113,44 +113,13 @@ class PVEDashboardViewController: BaseViewController, URLSessionDelegate {
         TimeManager.shared.onTick = { timeString in
             self.sessionLabel.text = timeString
         }
-        
-        // Handle session expiration
-        let syncArr = CoreDataHandlerPVE().fetchSyncDataDetailsForTypeOfData(type: "sync")
+
         TimeManager.shared.onSessionExpired = {
             self.timerView.isHidden = true
             self.crossBtn.isHidden = true
             self.showSessionExpiredAlert(showLogoutButton: true) // change of plan in the functionality we want to show data sync available popup when user clik on logout button.
-            
-            
         }
-        /*
-        // Optional: handle 2-day warning alert
-        TimeManager.shared.onTwoDayWarning = {
-            self.timerView.isHidden = false
-            self.crossBtn.isHidden = false
-            if syncArr.count != 0
-            {
-                self.okBtn.isUserInteractionEnabled = true
-                self.okBtn.isHidden = false
-                self.logoutBtn.isUserInteractionEnabled = false
-                self.logoutBtn.isHidden = true
-                self.timerHeightConstraint.constant = 232
-                self.msgLblHeightConstraint.constant = 100
-                self.msgLabel.text =  "You currently have an active session.\nPlease ensure all data is synced to avoid any potential data loss.\nYour session will expire in."
-            }
-            else
-            {
-              
-                self.timerHeightConstraint.constant = 220
-                self.msgLblHeightConstraint.constant = 80
-                self.okBtn.isUserInteractionEnabled = false
-                self.okBtn.isHidden = true
-                self.logoutBtn.isUserInteractionEnabled = true
-                self.logoutBtn.isHidden = false
-                self.msgLabel.text =  "No active session is available for posting.\nPlease log out.\nYour session will expire in."
-            }
-        }
-        */
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -693,17 +662,6 @@ extension PVEDashboardViewController: ChartViewDelegate, IAxisValueFormatter {
                 dataPoints.append(data)
             }
         }
-
- /*
-        if categoriesArray.count > 0 {
-            for (ind, obj) in categoriesArray.enumerated() {
-                let name = obj
-                var data = changeStringToArrayLevel3(name:name)
-                data = data + "(" + "\(maxScoreArray[ind])" + ")"
-                dataPoints.append(data)
-            }
-        }
-   */
         setChart(values: scoreArray, dataPoints:dataPoints, barChart: barChartRight)
         
     }
@@ -799,8 +757,6 @@ extension PVEDashboardViewController: SyncBtnDelegate,UnsyncedDelegate {
             let dict = val as AnyObject
             let json = createSyncRequest(dict: dict)
             let currentAssessmentQuestJson = getQuestionsDetails(dict: val as AnyObject)
-            let forImgArrJson = getImageDetails(dict: val as AnyObject)
-            
             let syncId = json["syncId"] as! String
             
             let tempArr = [json]
@@ -820,11 +776,7 @@ extension PVEDashboardViewController: SyncBtnDelegate,UnsyncedDelegate {
         }
     }
     
-    private func addWebKitView(_ fileUrl:URL) {
-        let webVC = WebViewController()
-        webVC.fileUrl = fileUrl
-        present(webVC, animated: true, completion: nil)
-    }
+  
     
     
     func checkDataForSync(isNotification:Bool) {
@@ -1320,51 +1272,35 @@ extension PVEDashboardViewController: SyncBtnDelegate,UnsyncedDelegate {
         let Module_cat_id = 2
         let Assessment_Detail_Id = 0
         
-       // let cat_NoOfCatchersDetailsArr = (dict).value(forKey: "cat_NoOfCatchersDetailsArr")  as? [[String : String]] ?? []
         let cat_NoOfCatchersDetailsArr = (dict).value(forKey: "cat_NoOfCatchersDetailsArr")  as? String
 
         var catchersViewModelArr = [[String : Any]]()
         
-       // if cat_NoOfCatchersDetailsArr.count > 0 {
          if cat_NoOfCatchersDetailsArr != "" {
 
-           // for (index, val) in cat_NoOfCatchersDetailsArr.enumerated(){
-              //  let name = val["name"] ?? ""
-                catchersViewModelArr.append(["MemberName" : "",//name,
+                catchersViewModelArr.append(["MemberName" : "",
                                              "Id" : id,
                                              "Module_cat_id" : Module_cat_id,
                                              "Device_Id" : deviceId!,
                                              "Assessment_Detail_Id" : Assessment_Detail_Id,
                                              "UserId" : userId!,
                                              "Sequence_no" : 0])
-                
-        //    }
+
         }
         
         
-      //  let cat_NoOfVaccinatorsDetailsArr = (dict).value(forKey: "cat_NoOfVaccinatorsDetailsArr")  as? [[String : String]] ?? []
         let cat_NoOfVaccinatorsDetailsArr = (dict).value(forKey: "cat_NoOfVaccinatorsDetailsArr")  as? String
         var vaccinatorsViewModelArr = [[String : Any]]()
         
         if cat_NoOfVaccinatorsDetailsArr != "" {
-            // Pankush
-         //   for (index, val) in cat_NoOfVaccinatorsDetailsArr.enumerated(){
-             //   let serology = val["serology"] ?? ""
-//                var IsSerology = Bool()
-//                if serology == "selected" {
-//                    IsSerology = true
-//                }else{
-//                    IsSerology = false
-//                }
-                vaccinatorsViewModelArr.append(["MemberName" : "",//val["name"] ?? "",
+
+                vaccinatorsViewModelArr.append(["MemberName" : "",
                                                 "Id" : id,
                                                 "Module_cat_id" : Module_cat_id,
                                                 "Device_Id" : deviceId!,
                                                 "Assessment_Detail_Id" : Assessment_Detail_Id,
                                                 "UserId" : userId!,
-                                            //    "IsSerology" : IsSerology,
                                                 "Sequence_no" : 0])
-                // }
         }
         
         
@@ -1392,8 +1328,7 @@ extension PVEDashboardViewController: SyncBtnDelegate,UnsyncedDelegate {
                     Vaccine_Other = ""
                     Vaccine_Id = val["name_id"] as! Int
                 }
-                
-                let noteeeee = val["note"] ?? ""
+               
                 let serotype = val["serotype"] as? [String] ?? [""]
                 let serotype_id = val["serotype_id"] as? [String] ?? [""]
                 let antigenOther = val["otherAntigen"] ?? ""
@@ -1454,13 +1389,7 @@ extension PVEDashboardViewController: SyncBtnDelegate,UnsyncedDelegate {
         tempCrewDetailsViewModel.merge(dict: ["CompFieldRepName" : CompFieldRepName!])
         tempCrewDetailsViewModel.merge(dict: ["CompFieldRepEmailId" : CompFieldRepEmailId!])
         tempCrewDetailsViewModel.merge(dict: ["CompFieldRepPhone" : CompFieldRepPhone!])
-        let isFreeSerology = (dict).value(forKey: "isFreeSerology")  as? Bool
-//        if isFreeSerology == true{
-//            tempCrewDetailsViewModel.merge(dict: ["IsSerology" : isFreeSerology ?? 0])
-//        }else{
-//            tempCrewDetailsViewModel.merge(dict: ["IsSerology" : isFreeSerology ?? 0])
-//        }
-        
+
         let WasDyeAdded = (dict).value(forKey: "vacEval_DyeAdded")  as? Bool
         let Comments_observations = (dict).value(forKey: "vacEval_Comment")  as? String
         var evaluationNoteViewModel = [String : Any]()
@@ -1683,9 +1612,7 @@ extension PVEDashboardViewController: SyncBtnDelegate,UnsyncedDelegate {
         }
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat="MM/dd/YYYY HH:mm:ss Z"
-        let date = dateFormatter.string(from: objEvaluationDate) as String
-        
+        dateFormatter.dateFormat="MM/dd/YYYY HH:mm:ss Z"        
         let evaluationDate = (dict).value(forKey: "evaluationDate")  as? String
         
         var tempBreedOfBirdsId = ""

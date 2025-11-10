@@ -93,11 +93,10 @@ class VaccineMixerCell: UITableViewCell  {
     // MARK: Date Selection Button Action
     @IBAction func certDateSelectAction(_ sender: UIButton) {
         let regionID = UserDefaults.standard.integer(forKey: "Regionid")
-        if regionID != 3 {
-            if(certificateData?.certificateDate == "") {
-                certDateCompletion?(sender.tag)
-            }
-        }
+         if regionID != 3 && (certificateData?.certificateDate == "") {
+             certDateCompletion?(sender.tag)
+         }
+        
     }
     // MARK: Certificate Date Button Action
     @IBAction func updateDateAction(_ sender: UIButton) {

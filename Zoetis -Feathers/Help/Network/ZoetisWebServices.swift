@@ -1080,10 +1080,8 @@ extension ZoetisWebServices {
     }
     
     func getCocciVaccineTurkeyResponce(controller: UIViewController, parameters: JSONDictionary, completion: @escaping CompletionBlock){
-        let lngId = UserDefaults.standard.integer(forKey: "lngId")
         let url = EndPoint.getTurkeyCocciVaccine.latestUrl + "\(0)" // sent 0 forcefully to get data for all language , change made in 7.6.6 release
         getFlockHealthAPIResponce(type: DeviceIDRequestType.cocciVaccineTurkey, controller: controller, url: url, parameters: [:], headers: [:], completion: completion)
-       // getRequest(showHud: false, showHudText: "", controller: controller, endPoint: url, parameters: [:], headers: [:], completion: completion)
     }
     
     func getChickenTurkeyComplexByUserIdResponce(controller: UIViewController, parameters: JSONDictionary, completion: @escaping CompletionBlock){
