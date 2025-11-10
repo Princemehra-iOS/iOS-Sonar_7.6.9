@@ -174,7 +174,6 @@ class AddVaccineMixerPopupViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/yyyy"  // ✅ Custom format
         
-        let dateString = formatter.string(from: Date())
         certificationDateField.text = assessmentDate
         certificationDateField.isUserInteractionEnabled = false
         
@@ -227,7 +226,7 @@ class AddVaccineMixerPopupViewController: UIViewController {
             let formatter = DateFormatter()
             formatter.dateFormat = "MM/dd/yyyy"  // ✅ Custom format
             
-            let dateString = formatter.string(from: Date())
+          
             dismiss(animated: true)
             onMixerInfoSaved?(mixerName, assessmentDate, selectedFieldIndex ?? 0)
         } else {

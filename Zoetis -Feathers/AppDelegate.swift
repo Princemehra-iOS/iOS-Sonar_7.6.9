@@ -162,16 +162,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
     }
     
     func startHideHudTimer() {
-//        hideHudTimer?.invalidate()
-//        hideHudTimer = nil
-//        hideHudTimer = Timer.scheduledTimer(withTimeInterval: 80.0, repeats: true) { timer in
-//            self.checkIfAnyNetworkRequestIsRunning { isRunning in
-//                if !isRunning {
-//                    print("HUD hidden")
-//                 //   self.hideAllHUDs()
-//                }
-//            }
-//        }
+        debugPrint("dismiss Loader")
     }
     
     func hideAllHUDs() {

@@ -263,7 +263,7 @@ class PVEDashboardViewController: BaseViewController, URLSessionDelegate {
         Helper.showAlertMessage(self,titleStr:NSLocalizedString(Constants.alertStr, comment: "") , messageStr:NSLocalizedString(Constants.offline, comment: ""))
     }
     
-    @IBAction func logoutBtnAction(_ sender: Any) {
+    @IBAction func timmerBtnLogoutAction(_ sender: Any) {
         if WebClass.sharedInstance.connected() {
             TimeManager.shared.performAutoLogout()
         }

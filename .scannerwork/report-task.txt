@@ -1,0 +1,7 @@
+organization=princemehra-ios
+projectKey=iOS-Sonar_7.6.9
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.76328
+dashboardUrl=https://sonarcloud.io/dashboard?id=iOS-Sonar_7.6.9
+ceTaskId=AZpUkMWGV-fqF4TygdzV
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZpUkMWGV-fqF4TygdzV

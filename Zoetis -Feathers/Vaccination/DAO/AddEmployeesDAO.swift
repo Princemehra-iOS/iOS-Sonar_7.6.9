@@ -54,7 +54,7 @@ public class AddEmployeesDAO{
             vaccinationEmployeeArr = try managedContext.fetch(fetchRequest) as! [VaccinationHatcheryEmployees]
             if vaccinationEmployeeArr.count > 0{
                 for employeeObj in vaccinationEmployeeArr{
-                    vaccinationEmpoyeeVMArr.append(convertMOtoVM(moObj: employeeObj))
+                    vaccinationEmpoyeeVMArr.append(convertHatchEmplyeestoVM(moObj: employeeObj))
                 }
             }
         } catch{
@@ -101,7 +101,7 @@ public class AddEmployeesDAO{
         
     }
     
-    func convertMOtoVM(moObj:VaccinationHatcheryEmployees)->VaccinationEmployeeVM{
+    func convertHatchEmplyeestoVM(moObj:VaccinationHatcheryEmployees)->VaccinationEmployeeVM{
         var empoyeeVm = VaccinationEmployeeVM()
         empoyeeVm.siteId =  moObj.siteId
         empoyeeVm.customerId = moObj.customerId

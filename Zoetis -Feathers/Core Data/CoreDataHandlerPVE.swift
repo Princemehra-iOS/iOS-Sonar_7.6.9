@@ -3357,21 +3357,6 @@ class CoreDataHandlerPVE: NSObject {
                 let tempObj = try? managedContext.fetch(fetchRequest) as? [NSManagedObject]
                 if tempObj!.count > 0 { // Atleast one was returned
                     let dataArray = tempObj! as NSArray
-                    let catchersArr = (dataArray[0] as AnyObject).value(forKey: forAttribute) as? [[String: String]]
-                    
-                    ///This code was changed to fix the issues reported by sonarQube.
-                    ///https://sonarcloud.io/project/issues?open=AZUTWckX0tSHff4msruK&id=nitinAgnihotri-MP_ZoetisNewTest
-//                    let catchersDetailArr = catchersArr?.enumerated().map { (indx, obj) -> [String: Any] in
-//                        guard let dict = obj as? [String: Any] else { return [:] }
-//                        return [
-//                            "name": (indx == currentIndPath.row) ? text : dict["name"] ?? "",
-//                            "serology": dict["serology"] ?? ""
-//                        ]
-//                        return [
-//                            "name":  text ,
-//                            "serology": dict["serology"] ?? ""
-//                        ]
-//                    } ?? []
 
                     tempObj![0].setValue(text, forKey: forAttribute)
                 }

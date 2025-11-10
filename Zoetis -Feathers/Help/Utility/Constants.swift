@@ -135,24 +135,24 @@ struct Constants {
         
         // MARK: - 🔴 ************************* Dev Migration URL*************************** 🚀
         // Dev Migration
-        static let versionUrl = "https://devapi.mypoultryview360.com"
-        static let pveBaseUrl = "https://devPVEapi.mypoultryview360.com"
-        static let peBaseUrl = "https://devpeapi.mypoultryview360.com"
-        static let fhBaseUrl = "https://devapi.mypoultryview360.com"
-        static let tcBaseUrl = "https://devpeapi.mypoultryview360.com"
-        static let miBaseUrl = "https://devmicrobialapi.mypoultryview360.com"
-        static let fcmUrl = "https://devapi.mypoultryview360.com/api/GlobalDashboard/SaveNotificationSyncData"
+//        static let versionUrl = "https://devapi.mypoultryview360.com"
+//        static let pveBaseUrl = "https://devPVEapi.mypoultryview360.com"
+//        static let peBaseUrl = "https://devpeapi.mypoultryview360.com"
+//        static let fhBaseUrl = "https://devapi.mypoultryview360.com"
+//        static let tcBaseUrl = "https://devpeapi.mypoultryview360.com"
+//        static let miBaseUrl = "https://devmicrobialapi.mypoultryview360.com"
+//        static let fcmUrl = "https://devapi.mypoultryview360.com/api/GlobalDashboard/SaveNotificationSyncData"
         
         
         // MARK: - 🟠 ************************* Stage Migration URL *************************** 🚀
         // Stage
-//        static let versionUrl = "https://stageapi.mypoultryview360.com"
-//        static let pveBaseUrl = "https://stagePVEapi.mypoultryview360.com"
-//        static let peBaseUrl = "https://stagepeapi.mypoultryview360.com"
-//        static let fhBaseUrl = "https://stageapi.mypoultryview360.com"
-//        static let tcBaseUrl = "https://stagepeapi.mypoultryview360.com"
-//        static let miBaseUrl = "https://stagemicrobialapi.mypoultryview360.com"
-//        static let fcmUrl = "https://stageapi.mypoultryview360.com/api/GlobalDashboard/SaveNotificationSyncData"
+        static let versionUrl = "https://stageapi.mypoultryview360.com"
+        static let pveBaseUrl = "https://stagePVEapi.mypoultryview360.com"
+        static let peBaseUrl = "https://stagepeapi.mypoultryview360.com"
+        static let fhBaseUrl = "https://stageapi.mypoultryview360.com"
+        static let tcBaseUrl = "https://stagepeapi.mypoultryview360.com"
+        static let miBaseUrl = "https://stagemicrobialapi.mypoultryview360.com"
+        static let fcmUrl = "https://stageapi.mypoultryview360.com/api/GlobalDashboard/SaveNotificationSyncData"
         
         
        // MARK: - 🟢 ************************* Live Migration URL *************************** 🚀
@@ -314,6 +314,11 @@ struct Constants {
     static let dataSyncSuccess = "Data synced successfully."
     static let dontHaveSessionToPostMessage = "To help keep your account safe and master data updated, we need you to log out and sign back in. Click “Later” if you need to upload data to the Web before logging out."
     static let stillHaveActiveSessionMessage = "Please sync all your assessment data to the web, then log out and log back into the app."
+    static let dataSyncingMessage = "Data syncing..."
+    static let internetErrorMessage = "Connection issue detected. Please check your internet and try again."
+    static let selectPlaceholder = "- Select -"
+    static let selectComplex = "Please select a complex first."
+    static let microscopyLastSession = "Microscopy Summary Last Session"
 }
 
 func predicateForSessionType() -> NSPredicate {

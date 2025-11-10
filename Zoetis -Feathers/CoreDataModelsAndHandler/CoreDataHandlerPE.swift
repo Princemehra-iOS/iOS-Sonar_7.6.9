@@ -4546,8 +4546,8 @@ class CoreDataHandlerPE: NSObject {
             if results?.count != 0 {
                 if let records = results {
                     for record in records {
-                        let serverAssessmentId = record.value(forKey: "serverAssessmentId") as? String
-                        if assessmentId == serverAssessmentId {
+                        let assessmentIdIs = record.value(forKey: "serverAssessmentId") as? String
+                        if assessmentId == assessmentIdIs {
                             let isEMRequested = record.value(forKey: "isEMRequested") as?
                             Bool ?? false
                             return isEMRequested
@@ -5426,15 +5426,9 @@ extension CoreDataHandlerPE {
             
         }
     }
-    
-    
-    
-    
-    
+ 
     func checkDraftByDate(newAssessment:PENewAssessment,draftNumber:Int) -> Bool{
-        var peNewAssessmentArray : [PENewAssessment] = []
-        var dataArray = NSArray()
-        var userIDArray = NSArray()
+     
         let appDelegate  = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest  = NSFetchRequest<NSFetchRequestResult>(entityName: "PE_AssessmentInDraft")
@@ -5464,9 +5458,7 @@ extension CoreDataHandlerPE {
     
     
     func checkDraftByDates(newAssessment:PE_AssessmentIDraftInProgress,draftNumber:Int) -> Bool{
-        //        var peNewAssessmentArray : [PENewAssessment] = []
-        //        var dataArray = NSArray()
-        //        var userIDArray = NSArray()
+  
         let appDelegate  = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest  = NSFetchRequest<NSFetchRequestResult>(entityName: "PE_AssessmentInDraft")
@@ -5493,146 +5485,10 @@ extension CoreDataHandlerPE {
         }
         return false
     }
-    
-    //    func saveDraftPEInDB(newAssessmentArray:[PE_AssessmentIDraftInProgress],draftNumber:Int,isfromDraft:Bool? = false,isfromRejected:Bool? = false ) {
-    //
-    //
-    //        let date = Date()
-    //        var formate = ""
-    //        if formate == "" {
-    //            formate = date.getFormattedDate(format: "MM/dd/YYYY HH:mm:ss") // Set output formate
-    //        }
-    //
-    //        if checkDraftByDates(newAssessment:newAssessmentArray[0] , draftNumber: draftNumber){
-    //
-    //        } else {
-    //            for newAssessment in newAssessmentArray {
-    //                let appDelegate    = UIApplication.shared.delegate as? AppDelegate
-    //                let managedContext = appDelegate!.managedObjectContext
-    //                let entity = NSEntityDescription.entity(forEntityName: "PE_AssessmentInDraft", in: managedContext)
-    //                let assessmentObj = NSManagedObject(entity: entity!, insertInto: managedContext)
-    //
-    //                formate = formate.replacingOccurrences(of:" ", with: "")
-    //                formate = formate.replacingOccurrences(of:"/", with: "")
-    //                formate = formate.replacingOccurrences(of:":", with: "")
-    //                formate = formate.replacingOccurrences(of:"Z", with: "")
-    //                print(formate)
-    //                assessmentObj.setValue(1, forKey: "asyncStatus")
-    //                if isfromDraft ?? false {
-    //                    assessmentObj.setValue(newAssessment.draftID, forKey: "draftID")
-    //                } else if isfromRejected ?? false {
-    //                    assessmentObj.setValue(newAssessment.dataToSubmitID, forKey: "dataToSubmitID")
-    //                }
-    //
-    //                else {
-    //                    assessmentObj.setValue(formate, forKey: "draftID")
-    //                }
-    //                let currentServerAssessmentId = UserDefaults.standard.string(forKey: "currentServerAssessmentId") ?? ""
-    //                assessmentObj.setValue(newAssessment.serverAssessmentId, forKey: "serverAssessmentId")
-    //
-    //
-    //                assessmentObj.setValue(NSNumber(value:draftNumber), forKey: "draftNumber")
-    //                assessmentObj.setValue(newAssessment.selectedTSR, forKey: "selectedTSR")
-    //                assessmentObj.setValue(newAssessment.selectedTSRID, forKey: "selectedTSRID")
-    //
-    //                assessmentObj.setValue(newAssessment.siteId, forKey: "siteId")
-    //                assessmentObj.setValue(newAssessment.assID, forKey: "assID")
-    //                assessmentObj.setValue(newAssessment.customerId, forKey: "customerId")
-    //                assessmentObj.setValue(newAssessment.complexId, forKey: "complexId")
-    //                assessmentObj.setValue(newAssessment.siteName, forKey: "siteName")
-    //                assessmentObj.setValue(newAssessment.userID, forKey: "userID")
-    //                assessmentObj.setValue(newAssessment.customerName, forKey: "customerName")
-    //                assessmentObj.setValue(newAssessment.firstname, forKey: "firstname")
-    //                assessmentObj.setValue(newAssessment.username, forKey: "username")
-    //                assessmentObj.setValue(newAssessment.evaluationDate, forKey: "evaluationDate")
-    //                assessmentObj.setValue(newAssessment.evaluatorName, forKey: "evaluatorName")
-    //                assessmentObj.setValue(newAssessment.evaluatorID, forKey: "evaluatorID")
-    //                assessmentObj.setValue(newAssessment.visitName, forKey: "visitName")
-    //                assessmentObj.setValue(newAssessment.visitID , forKey: "visitID")
-    //                assessmentObj.setValue(newAssessment.evaluationName, forKey: "evaluationName")
-    //                assessmentObj.setValue(newAssessment.evaluationID , forKey: "evaluationID")
-    //                assessmentObj.setValue(newAssessment.approver, forKey: "approver")
-    //                assessmentObj.setValue(newAssessment.noOfEggs ?? 0, forKey: "noOfEggs")
-    //                assessmentObj.setValue(newAssessment.manufacturer, forKey: "manufacturer")
-    //                assessmentObj.setValue(newAssessment.notes, forKey: "notes")
-    //                assessmentObj.setValue(newAssessment.note, forKey: "note")
-    //                let hatcheryAntibioticsInt = newAssessment.hatcheryAntibiotics ?? 0
-    //                let camera = newAssessment.camera == 1 ? 1 : 0
-    //                let flock = newAssessment.isFlopSelected == 1 ? 1:0
-    //                assessmentObj.setValue(hatcheryAntibioticsInt, forKey: "hatcheryAntibiotics")
-    //                assessmentObj.setValue(NSNumber(value:camera ), forKey: "camera")
-    //                assessmentObj.setValue(NSNumber(value:flock ), forKey: "isFlopSelected")
-    //                assessmentObj.setValue(newAssessment.catID, forKey: "catID")
-    //                assessmentObj.setValue(newAssessment.catName, forKey: "catName")
-    //                assessmentObj.setValue(newAssessment.catMaxMark, forKey: "catMaxMark")
-    //                assessmentObj.setValue(newAssessment.catResultMark, forKey: "catResultMark")
-    //                assessmentObj.setValue(newAssessment.catEvaluationID, forKey: "catEvaluationID")
-    //                assessmentObj.setValue(newAssessment.catISSelected, forKey: "catISSelected")
-    //                assessmentObj.setValue(newAssessment.catEvaluationID , forKey: "catEvaluationID")
-    //                assessmentObj.setValue(newAssessment.assDetail1, forKey: "assDetail1")
-    //                assessmentObj.setValue(newAssessment.assDetail2, forKey: "assDetail2")
-    //                assessmentObj.setValue(newAssessment.assMinScore , forKey: "assMinScore")
-    //                assessmentObj.setValue(newAssessment.assMaxScore , forKey: "assMaxScore")
-    //                assessmentObj.setValue(newAssessment.assCatType, forKey: "assCatType")
-    //                assessmentObj.setValue(newAssessment.assModuleCatID , forKey: "assModuleCatID")
-    //                assessmentObj.setValue(newAssessment.assModuleCatName, forKey: "assModuleCatName")
-    //                assessmentObj.setValue(newAssessment.assStatus , forKey: "assStatus")
-    //                assessmentObj.setValue(newAssessment.sequenceNo , forKey: "sequenceNo")
-    //                assessmentObj.setValue(newAssessment.images , forKey: "images")
-    //                assessmentObj.setValue(newAssessment.doa , forKey: "doa")
-    //                assessmentObj.setValue(newAssessment.inovoject , forKey: "inovoject")
-    //                assessmentObj.setValue(newAssessment.vMixer , forKey: "vMixer")
-    //                assessmentObj.setValue(newAssessment.isFlopSelected , forKey: "isFlopSelected")
-    //                assessmentObj.setValue(newAssessment.breedOfBird , forKey: "breedOfBird")
-    //                assessmentObj.setValue(newAssessment.breedOfBirdOther , forKey: "breedOfBirdOther")
-    //                assessmentObj.setValue(newAssessment.incubation , forKey: "incubation")
-    //                assessmentObj.setValue(newAssessment.incubationOthers , forKey: "incubationOthers")
-    //                assessmentObj.setValue(newAssessment.catResultMark , forKey: "catResultMark")
-    //                assessmentObj.setValue(newAssessment.sig, forKey: "sig")
-    //                assessmentObj.setValue(newAssessment.sig2, forKey: "sig2")
-    //                assessmentObj.setValue(newAssessment.sig_Date, forKey: "sig_Date")
-    //                assessmentObj.setValue(newAssessment.sig_EmpID, forKey: "sig_EmpID")
-    //                assessmentObj.setValue(newAssessment.sig_EmpID2, forKey: "sig_EmpID2")
-    //                assessmentObj.setValue(newAssessment.sig_Name, forKey: "sig_Name")
-    //                assessmentObj.setValue(newAssessment.sig_Name2, forKey: "sig_Name2")
-    //                assessmentObj.setValue(newAssessment.sig_Phone, forKey: "sig_Phone")
-    //                assessmentObj.setValue(newAssessment.iCS, forKey: "iCS")
-    //                assessmentObj.setValue(newAssessment.iDT, forKey: "iDT")
-    //                assessmentObj.setValue(newAssessment.dCS, forKey: "dCS")
-    //                assessmentObj.setValue(newAssessment.dDT, forKey: "dDT")
-    //                assessmentObj.setValue(newAssessment.micro, forKey: "micro")
-    //                assessmentObj.setValue(newAssessment.hatcheryAntibioticsDoaSText, forKey: "hatcheryAntibioticsDoaSText")
-    //                assessmentObj.setValue(newAssessment.hatcheryAntibioticsDoaText, forKey: "hatcheryAntibioticsDoaText")
-    //                assessmentObj.setValue(newAssessment.hatcheryAntibioticsText, forKey: "hatcheryAntibioticsText")
-    //                assessmentObj.setValue(newAssessment.hatcheryAntibioticsDoaS, forKey: "hatcheryAntibioticsDoaS")
-    //                assessmentObj.setValue(newAssessment.hatcheryAntibioticsDoa, forKey: "hatcheryAntibioticsDoa")
-    //                assessmentObj.setValue(newAssessment.doaS, forKey: "doaS")
-    //                assessmentObj.setValue(newAssessment.qcCount, forKey: "qcCount")
-    //                assessmentObj.setValue(newAssessment.personName, forKey: "personName")
-    //                assessmentObj.setValue(newAssessment.ampmValue, forKey: "ampmValue")
-    //                assessmentObj.setValue(newAssessment.frequency, forKey: "frequency")
-    //                assessmentObj.setValue(newAssessment.dDDT, forKey: "dDDT")
-    //                assessmentObj.setValue(newAssessment.dDCS, forKey: "dDCS")
-    //                assessmentObj.setValue(newAssessment.residue, forKey: "residue")
-    //                assessmentObj.setValue(newAssessment.statusType, forKey: "statusType")
-    //                assessmentObj.setValue(newAssessment.informationText, forKey: "informationText")
-    //                assessmentObj.setValue(newAssessment.informationImage, forKey: "informationImage")
-    //                do {
-    //                    try managedContext.save()
-    //                } catch {
-    //                }
-    //                customerData.append(assessmentObj)
-    //            }
-    //        }
-    //    }
-    
-    
-    
-    
+
     func   saveDraftPEInDB(newAssessmentArray:[PENewAssessment],draftNumber:Int,isfromDraft:Bool? = false,isfromRejected:Bool? = false) {
-        
-        var regionID = Int()
-        regionID = UserDefaults.standard.integer(forKey: "Regionid")
+
+        let regionID = UserDefaults.standard.integer(forKey: "Regionid")
         let date = Date()
         var formate = ""
         if formate == "" {
@@ -5652,7 +5508,7 @@ extension CoreDataHandlerPE {
         }
         
         if checkDraftByDate(newAssessment:newAssessmentArray[0] , draftNumber: draftNumber){
-            
+            debugPrint(draftNumber)
         } else {
             for newAssessment in newAssessmentArray {
                 let appDelegate    = UIApplication.shared.delegate as? AppDelegate
@@ -5676,7 +5532,6 @@ extension CoreDataHandlerPE {
                 } else {
                     assessmentObj.setValue(formate, forKey: "draftID")
                 }
-                let currentServerAssessmentId = UserDefaults.standard.string(forKey: "currentServerAssessmentId") ?? ""
                 assessmentObj.setValue(newAssessment.serverAssessmentId, forKey: "serverAssessmentId")
                 
                 assessmentObj.setValue(NSNumber(value:draftNumber), forKey: "draftNumber")
@@ -5974,8 +5829,8 @@ extension CoreDataHandlerPE {
     
     func saveDataToSyncPEInDBArray(newAssessmentArray:[PENewAssessment],dataToSubmitNumber:Int,param:[String:String]?,fromDraft:Bool? = false) -> Bool{
         
-        var regionID = Int()
-        regionID = UserDefaults.standard.integer(forKey: "Regionid")
+    
+        var regionID = UserDefaults.standard.integer(forKey: "Regionid")
         let date = Date()
         var formate = ""
         if formate == "" {
@@ -6181,15 +6036,13 @@ extension CoreDataHandlerPE {
     
     func saveDataToSyncPEInDB(newAssessment:PE_AssessmentInProgress,dataToSubmitNumber:Int,param:[String:String]?,fromDraft:Bool? = false) {
         
-        
         let appDelegate    = UIApplication.shared.delegate as? AppDelegate
         let managedContext = appDelegate!.managedObjectContext
         let entity = NSEntityDescription.entity(forEntityName: "PE_AssessmentInOffline", in: managedContext)
         let assessmentObj = NSManagedObject(entity: entity!, insertInto: managedContext)
         assessmentObj.setValue(0, forKey: "asyncStatus")
         
-        var regionID = Int()
-        regionID = UserDefaults.standard.integer(forKey: "Regionid")
+        var regionID = UserDefaults.standard.integer(forKey: "Regionid")
         let date = Date()
         var formate = ""
         if formate == "" {
@@ -6370,8 +6223,7 @@ extension CoreDataHandlerPE {
         let assessmentObj = NSManagedObject(entity: entity!, insertInto: managedContext)
         assessmentObj.setValue(1, forKey: "asyncStatus")
         
-        var regionID = Int()
-        regionID = UserDefaults.standard.integer(forKey: "Regionid")
+        var regionID = UserDefaults.standard.integer(forKey: "Regionid")
         
         if formateFromServer == "" {
             let date = Date()
@@ -6533,8 +6385,7 @@ extension CoreDataHandlerPE {
         let entity = NSEntityDescription.entity(forEntityName: "PE_AssessmentInOffline", in: managedContext)
         let assessmentObj = NSManagedObject(entity: entity!, insertInto: managedContext)
         assessmentObj.setValue(1, forKey: "asyncStatus")
-        var regionID = Int()
-        regionID = UserDefaults.standard.integer(forKey: "Regionid")
+        var regionID =  UserDefaults.standard.integer(forKey: "Regionid")
         if formateFromServer == "" {
             let date = Date()
             var formate = ""
@@ -6698,8 +6549,7 @@ extension CoreDataHandlerPE {
         let entity = NSEntityDescription.entity(forEntityName: "PE_AssessmentInDraft", in: managedContext)
         let assessmentObj = NSManagedObject(entity: entity!, insertInto: managedContext)
         assessmentObj.setValue(1, forKey: "asyncStatus")
-        var regionID = Int()
-        regionID = UserDefaults.standard.integer(forKey: "Regionid")
+        var regionID = UserDefaults.standard.integer(forKey: "Regionid")
         if formateFromServer == "" {
             let date = Date()
             var formate = ""
@@ -6846,8 +6696,7 @@ extension CoreDataHandlerPE {
         let entity = NSEntityDescription.entity(forEntityName: "PE_AssessmentInDraft", in: managedContext)
         let assessmentObj = NSManagedObject(entity: entity!, insertInto: managedContext)
         assessmentObj.setValue(1, forKey: "asyncStatus")
-        var regionID = Int()
-        regionID = UserDefaults.standard.integer(forKey: "Regionid")
+        var regionID = UserDefaults.standard.integer(forKey: "Regionid")
         
         if formateFromServer == "" {
             let date = Date()
@@ -7008,30 +6857,7 @@ extension CoreDataHandlerPE {
         }
         customerData.append(assessmentObj)
     }
-    
-    
-    func getLastTwoOfflineDataForGraph(siteName:String , customerName:String) {
-        
-        let appDelegate  = UIApplication.shared.delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
-        let fetchRequest  = NSFetchRequest<NSFetchRequestResult>(entityName: "PE_AssessmentInProgress")
-        let userID =  UserDefaults.standard.value(forKey:"Id") as? Int ?? 0
-        fetchRequest.predicate = NSPredicate(format: "userID == %d", userID)
-        
-        
-        fetchRequest.returnsObjectsAsFaults = false
-        do {
-            let resultsGetIs : [NSManagedObject] = []
-            let results = try managedContext.fetch(fetchRequest) as? [NSManagedObject]
-            if results?.count != 0 { // Atleast one was returned
-                
-                
-            }
-        }
-        catch {
-            //   print("Fetch Failed: \(error)")
-        }
-    }
+
     
 }
 
@@ -7656,15 +7482,6 @@ extension CoreDataHandlerPE {
             let certCreatedByName = result.value(forKey: "certCeatedbyName") as? String ?? ""
             let source = result.value(forKey: "source") as? String ?? ""
 
-//            if let createdById = peCertificateData.certCeatedby {
-//                assessmentObj.setValue(createdById, forKey: "certCeatedby")
-//            }
-//            if let createdByNm = peCertificateData.certCeatedbyName {
-//                assessmentObj.setValue(createdByNm, forKey: "certCeatedbyName")
-//            }
-//            if let src = peCertificateData.source {
-//                assessmentObj.setValue(src, forKey: "source")
-//            }
             let certificModel = CoreDataHandlerPEModels.CertificateInfo.init(id: doaId, name: name, date: certificateDate, isCertExpired: isCertExpired, isReCert: isReCert, vacOperatorId: vacOperatorId, signatureImg: signatureImg, fsrSign: fsrSign,certCeatedbyName: certCreatedByName,source: source,certCeatedby: certCreatedById,isManuallyAdded: isManuallyAdded)
             
             let data = PECertificateData(info: certificModel)

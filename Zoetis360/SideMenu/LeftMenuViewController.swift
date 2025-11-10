@@ -95,7 +95,7 @@ class LeftMenuViewController: UIViewController,UITableViewDelegate,syncApi,syncA
     }
     
     func startLoaderTurkey() {
-        Helper.showGlobalProgressHUDWithTitle((UIApplication.shared.keyWindow!), title: NSLocalizedString("Data syncing...", comment: ""))
+        Helper.showGlobalProgressHUDWithTitle((UIApplication.shared.keyWindow!), title: NSLocalizedString(Constants.dataSyncingMessage, comment: ""))
     }
     
     func didFinishApiLoader() {
@@ -252,7 +252,7 @@ class LeftMenuViewController: UIViewController,UITableViewDelegate,syncApi,syncA
         objApiSyncTurkey.delegeteSyncApiTurkey = self
         if self.allSessionArrTurkey().count > 0 {
             if WebClass.sharedInstance.connected() == true{
-                Helper.showGlobalProgressHUDWithTitle(UIApplication.shared.keyWindow!, title: NSLocalizedString("Data syncing...", comment: ""))
+                Helper.showGlobalProgressHUDWithTitle(UIApplication.shared.keyWindow!, title: NSLocalizedString(Constants.dataSyncingMessage, comment: ""))
                 self.callSyncApiTurkey()
             } else {
                 Helper.showAlertMessage((UIApplication.shared.keyWindow?.rootViewController)!,titleStr:NSLocalizedString(Constants.alertStr, comment: "") , messageStr:NSLocalizedString("Please go online and sync data before logging out.", comment: ""))
@@ -266,7 +266,7 @@ class LeftMenuViewController: UIViewController,UITableViewDelegate,syncApi,syncA
         objApiSync.delegeteSyncApi = self
         if self.allSessionArr().count > 0 {
             if WebClass.sharedInstance.connected() == true{
-                Helper.showGlobalProgressHUDWithTitle(UIApplication.shared.keyWindow!, title: NSLocalizedString("Data syncing...", comment: ""))
+                Helper.showGlobalProgressHUDWithTitle(UIApplication.shared.keyWindow!, title: NSLocalizedString(Constants.dataSyncingMessage, comment: ""))
                 
                 self.callSyncApi()
             } else {

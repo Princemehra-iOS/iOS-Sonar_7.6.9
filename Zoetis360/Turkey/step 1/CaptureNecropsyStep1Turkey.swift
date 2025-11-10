@@ -10,6 +10,12 @@ import UIKit
 import CoreData
 import Reachability
 
+private enum turkeyBirdSex: String {
+    case heavyHen = "Heavy hens"
+    case lightHen = "Light hens"
+    case tom = "Toms"
+}
+
 class CaptureNecropsyStep1Turkey: UIViewController,UITextFieldDelegate {
     
     var droperTableView  =  UITableView ()
@@ -1354,11 +1360,19 @@ extension CaptureNecropsyStep1Turkey : UITableViewDataSource,UITableViewDelegate
                 let selectedSex = birdSexArray[indexPath.row] as! String
                 let sexCode: String
                 switch selectedSex {
+                case turkeyBirdSex.heavyHen.rawValue: sexCode = "HH"
+                case turkeyBirdSex.lightHen.rawValue: sexCode = "LH"
+                case turkeyBirdSex.tom.rawValue:      sexCode = "T"
+                default:                              sexCode = ""
+                }
+              /*  switch selectedSex {
                 case "Light hens": sexCode = "LH"
                 case "Heavy hens": sexCode = "HH"
                 case "Toms":       sexCode = "T"
                 default:           sexCode = "LH" // fallback
                 }
+                */
+                debugPrint(sexCode)
                 sexLbl.text = selectedSex
                 sexButton.setTitle(selectedSex, for: .normal)
 
@@ -1486,11 +1500,18 @@ extension CaptureNecropsyStep1Turkey : UITableViewDataSource,UITableViewDelegate
         if let sexValue = person.value(forKey: "sex") as? String {
             let title: String
             switch sexValue {
+            case "HH": title = turkeyBirdSex.heavyHen.rawValue
+            case "LH": title = turkeyBirdSex.lightHen.rawValue
+            case "T":  title = turkeyBirdSex.tom.rawValue
+            default:   title = "Unknown"
+            }
+          /*  switch sexValue {
             case "HH": title = "Heavy hens"
             case "LH": title = "Light hens"
             case "T":  title = "Toms"
             default:   title = "Unknown"
             }
+            */
             sexButton.setTitle(title, for: .normal)
             sexLbl.text = title
         }
@@ -1677,18 +1698,6 @@ extension CaptureNecropsyStep1Turkey : UITableViewDataSource,UITableViewDelegate
         Helper.showAlertMessage(self,titleStr:NSLocalizedString(Constants.alertStr, comment: "") , messageStr:mendatoryFieldMsg)
     }
     
-    fileprivate func OthersFarmNameValidation() {
-       
-        nameText.layer.borderColor = UIColor.red.cgColor
-        let abc = feedButton.currentTitle!
-        
-        if abc == "" {
-            feedButton.layer.borderColor = UIColor.red.cgColor
-        } else{
-            feedButton.layer.borderColor = UIColor.black.cgColor
-        }
-        Helper.showAlertMessage(self,titleStr:NSLocalizedString(Constants.alertStr, comment: "") , messageStr:mendatoryFieldMsg)
-    }
     // MARK: 🔄 - Update Button Action (Farm Details)
     @objc func updatePressed(){
         
@@ -1701,11 +1710,19 @@ extension CaptureNecropsyStep1Turkey : UITableViewDataSource,UITableViewDelegate
             var sexCode: String = sexLbl.text!
             if let title = sexLbl.text {
                 switch title {
+                case turkeyBirdSex.heavyHen.rawValue: sexCode = "HH"
+                case turkeyBirdSex.lightHen.rawValue: sexCode = "LH"
+                case turkeyBirdSex.tom.rawValue:      sexCode = "T"
+                default:                              sexCode = ""
+                }
+
+              /*  switch title {
                 case "Heavy hens": sexCode = "HH"
                 case "Light hens": sexCode = "LH"
                 case "Toms":       sexCode = "T"
                 default:           sexCode = ""
                 }
+                */
                 sexString = sexCode
             }
 
@@ -1755,7 +1772,7 @@ extension CaptureNecropsyStep1Turkey : UITableViewDataSource,UITableViewDelegate
         
         if trimmedString == "" && strFeddUpdate == "" {
             
-            OthersFarmNameValidation()
+            farmNameValidation()
         }
         else if trimmedString == ""  {
             
@@ -1806,12 +1823,19 @@ extension CaptureNecropsyStep1Turkey : UITableViewDataSource,UITableViewDelegate
             var sexCode: String = sexLbl.text!
             if let title = sexLbl.text {
                 switch title {
+                case turkeyBirdSex.heavyHen.rawValue: sexCode = "HH"
+                case turkeyBirdSex.lightHen.rawValue: sexCode = "LH"
+                case turkeyBirdSex.tom.rawValue:      sexCode = "T"
+                default:                              sexCode = ""
+                }
+
+             /*   switch title {
                 case "Heavy hens": sexCode = "HH"
                 case "Light hens": sexCode = "LH"
                 case "Toms":       sexCode = "T"
                 default:           sexCode = ""
                 }
-              
+              */
             }
             
             CoreDataHandlerTurkey().updateNecropsystep1WithNecIdAndFarmNameTurkey(postingId as NSNumber, farmName: oldFarmName as NSString, newFarmName: strNewFarm as NSString  , age: (ageButton.titleLabel?.text!)!, isSync: true, farmWeight: farmWeightText.text!, newHouseNoTurkey: houseNoTxtFldTurkey.text! as NSString , sexCode as NSString)
@@ -2019,42 +2043,20 @@ extension CaptureNecropsyStep1Turkey :UIPickerViewDelegate,UIPickerViewDataSourc
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
-        if btnTag == 0 {
-            
-            if let value = HouseNoArr.count as? Int {
-                return value
-            } else {
-                return 0
-            }
-            
-        } else if ( btnTag == 1) {
-            
-            if let value = AgeOp.count as? Int {
-                return value
-            } else {
-                return 0
-            }
-        } else if (btnTag == 2){
-            
-            if let value = NoOFbirds.count as? Int {
-                return value
-            } else {
-                return 0
-            }
-            
+        switch btnTag {
+        case 0:
+            return HouseNoArr.count
+        case 1:
+            return AgeOp.count
+        case 2:
+            return NoOFbirds.count
+        case 69:
+            return birdSexArray.count
+        default:
+            return 1
         }
-        else if (btnTag == 69){
-            
-            if let value = birdSexArray.count as? Int {
-                return value
-            } else {
-                return 0
-            }
-            
-        }
-        return 1
     }
+
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         if btnTag == 0 {
@@ -2092,8 +2094,8 @@ extension CaptureNecropsyStep1Turkey :UIPickerViewDelegate,UIPickerViewDataSourc
             }
         }
     }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+ 
+  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if btnTag == 0 {
             
@@ -2160,7 +2162,7 @@ extension CaptureNecropsyStep1Turkey :UIPickerViewDelegate,UIPickerViewDataSourc
         myPickerView.endEditing(true)
         buttonbg.removeFromSuperview()
     }
-    
+  
 }
 
 extension NSRange {

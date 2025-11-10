@@ -149,7 +149,7 @@ class UserListView: UIView,syncApi,syncApiTurkey,UITableViewDelegate,UITableView
         
         if self.allSessionArrTurkey().count > 0 {
             if WebClass.sharedInstance.connected() == true{
-                Helper.showGlobalProgressHUDWithTitleWithoutHudBack(self, title: NSLocalizedString("Data syncing...", comment: ""))
+                Helper.showGlobalProgressHUDWithTitleWithoutHudBack(self, title: NSLocalizedString(Constants.dataSyncingMessage, comment: ""))
                 self.callSyncApiTurkey()
             } else {
                 self.logoutDelegate?.leftController(self, didSelectTableView: tabelview_UserList ,indexValue:str)
@@ -170,7 +170,7 @@ class UserListView: UIView,syncApi,syncApiTurkey,UITableViewDelegate,UITableView
             
             if self.allSessionArr().count > 0 {
                 if WebClass.sharedInstance.connected() == true{
-                    Helper.showGlobalProgressHUDWithTitleWithoutHudBack(self, title: NSLocalizedString("Data syncing...", comment: ""))
+                    Helper.showGlobalProgressHUDWithTitleWithoutHudBack(self, title: NSLocalizedString(Constants.dataSyncingMessage, comment: ""))
                     self.callSyncApi()
                 } else {
                     self.logoutDelegate?.leftController(self, didSelectTableView: tabelview_UserList ,indexValue:str)
@@ -287,7 +287,7 @@ class UserListView: UIView,syncApi,syncApiTurkey,UITableViewDelegate,UITableView
     }
     
     func startLoaderTurkey() {
-        Helper.showGlobalProgressHUDWithTitle((UIApplication.shared.keyWindow!), title: NSLocalizedString("Data syncing...", comment: ""))
+        Helper.showGlobalProgressHUDWithTitle((UIApplication.shared.keyWindow!), title: NSLocalizedString(Constants.dataSyncingMessage, comment: ""))
     }
     
     func didFinishApiLoader() {

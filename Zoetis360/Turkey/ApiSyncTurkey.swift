@@ -781,7 +781,7 @@ class ApiSyncTurkey: NSObject {
                 else if statusCode == 502
                 {
                     self.delegeteSyncApiTurkey.didFinishApiLoader()
-                    self.showRetryAlert(apiName: "FeedProgram", message: "Connection issue detected. Please check your internet and try again.")
+                    self.showRetryAlert(apiName: "FeedProgram", message: Constants.internetErrorMessage)
                 }
                 else if statusCode == 500 || statusCode == 503 ||  statusCode == 403 ||  statusCode==501  || statusCode == 400 || statusCode == 504 || statusCode == 404 || statusCode == 408{
                     self.delegeteSyncApiTurkey.failWithError(statusCode: statusCode!)
@@ -1102,7 +1102,7 @@ class ApiSyncTurkey: NSObject {
                     else if  statusCode == 502
                     {
                         self.delegeteSyncApiTurkey.didFinishApiLoader()
-                        self.showRetryAlert(apiName: "addVaccination", message: "Connection issue detected. Please check your internet and try again.")
+                        self.showRetryAlert(apiName: "addVaccination", message: Constants.internetErrorMessage)
                     }
                     else if statusCode == 500 || statusCode == 503 ||  statusCode == 403 ||  statusCode==501  || statusCode == 400 || statusCode == 504 || statusCode == 404 || statusCode == 408{
                         self.delegeteSyncApiTurkey.failWithError(statusCode: statusCode!)
@@ -1154,7 +1154,7 @@ class ApiSyncTurkey: NSObject {
             self.loginMethod()
         case  502:
             self.delegeteSyncApiTurkey.didFinishApiLoader()
-            self.showRetryAlert(apiName: "savePostingDataOnServer", message: "Connection issue detected. Please check your internet and try again.")
+            self.showRetryAlert(apiName: "savePostingDataOnServer", message: Constants.internetErrorMessage)
             
         case 500, 503, 403, 501, 400, 504, 404, 408:
             self.delegeteSyncApiTurkey.failWithError(statusCode: statusCode!)
@@ -1813,7 +1813,7 @@ class ApiSyncTurkey: NSObject {
                     }
                     else if statusCode == 502 {
                         self.delegeteSyncApiTurkey.didFinishApiLoader()
-                        self.showRetryAlert(apiName: "saveNecropsyDataOnServer", message: "Connection issue detected. Please check your internet and try again.")
+                        self.showRetryAlert(apiName: "saveNecropsyDataOnServer", message: Constants.internetErrorMessage)
                     }
                     else if statusCode == 500 || statusCode == 503 ||  statusCode == 403 ||  statusCode==501 || statusCode == 400 || statusCode == 504 || statusCode == 404 || statusCode == 408{
                         self.delegeteSyncApiTurkey.failWithError(statusCode: statusCode!)
@@ -2216,7 +2216,7 @@ class ApiSyncTurkey: NSObject {
                     }
                     else if statusCode == 502 {
                         self.delegeteSyncApiTurkey.didFinishApiLoader()
-                        self.showRetryAlert(apiName: "saveObservationImageOnServer", message: "Connection issue detected. Please check your internet and try again.")
+                        self.showRetryAlert(apiName: "saveObservationImageOnServer", message: Constants.internetErrorMessage)
                     }
                     else if statusCode == 500 || statusCode == 503 ||  statusCode == 403 ||  statusCode==501  || statusCode == 400 || statusCode == 504 || statusCode == 404 || statusCode == 408{
                         self.delegeteSyncApiTurkey.failWithError(statusCode: statusCode!)

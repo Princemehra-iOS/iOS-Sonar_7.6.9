@@ -206,8 +206,6 @@ class PVEDraftSNAFinalizeAssement: BaseViewController {
         for controller in self.navigationController!.viewControllers as Array {
             if controller.isKind(of: PVEDashboardViewController.self) {
                 self.navigationController!.popToViewController(controller, animated: true)
-                let valuee = CoreDataHandlerPVE().fetchDetailsFor(entityName: "PVE_Sync")
-                
                 CoreDataHandlerPVE().updateStatusForSync(currentTimeStamp, text: false, forAttribute: "syncedStatus")
                 
             }
@@ -244,14 +242,14 @@ class PVEDraftSNAFinalizeAssement: BaseViewController {
                 let seq_NumberArr = assessmentArr.value(forKey: "seq_Number")  as? NSArray ?? NSArray()
                 
                 //----- Set Scored Array for Graph -----------
-                var scoreArr = [Any]()
-                scoreArr = CoreDataHandlerPVE().fetchScoredArrForSyncId(currentTimeStamp, seqNoArr: seq_NumberArr).scoreArr as! [Any]
+                
+                var scoreArr = CoreDataHandlerPVE().fetchScoredArrForSyncId(currentTimeStamp, seqNoArr: seq_NumberArr).scoreArr as! [Any]
                 scoreArr.removeLast()
                 scoreArr.append(sharedManager.vaccineEvaluationScoreTotal)
                 
                 //----- Set Max Marks Array for Graph -----------
-                var max_MarksArr = [Int]()
-                max_MarksArr = CoreDataHandlerPVE().fetchScoredArrForSyncId(currentTimeStamp, seqNoArr: seq_NumberArr).max_MarksArr as! [Int]
+               
+                var max_MarksArr = CoreDataHandlerPVE().fetchScoredArrForSyncId(currentTimeStamp, seqNoArr: seq_NumberArr).max_MarksArr as! [Int]
                 
                 if currentSel_seq_Number == 6 {
                     let seq_NumberArr = assessmentArr.value(forKey: "max_Mark")  as? NSArray ?? NSArray()
@@ -270,7 +268,6 @@ class PVEDraftSNAFinalizeAssement: BaseViewController {
                 CoreDataHandlerPVE().updateSyncAssQuestionsFor(currentTimeStamp, text: "sync", forAttribute: "type")
                 
                 let valuee = CoreDataHandlerPVE().fetchDetailsFor(entityName: "PVE_Sync")
-                let scoreArray = valuee.value(forKey: "scoreArray")  as? NSArray ?? NSArray()
                 
                 break
             }
@@ -288,8 +285,7 @@ class PVEDraftSNAFinalizeAssement: BaseViewController {
             if (vaccinInfoDetailArr[indx]["man"] as? String)?.isEmpty ?? true ||
                (vaccinInfoDetailArr[indx]["name"] as? String)?.isEmpty ?? true ||
                 (vaccinInfoDetailArr[indx]["serotype"] as? [String])?.isEmpty ?? true {
-            
-//            if vaccinInfoDetailArr[indx]["man"] as? String == "" || vaccinInfoDetailArr[indx]["name"] as? String == "" || vaccinInfoDetailArr[indx]["serotype"] as? String == "" {
+
                 showAlert(title: "Alert", message: "Please enter vaccine details in the Vaccine preparation, Storage & Sterility Tab.", owner: self)
                 
                 selectColeectionViewCell(currentSel_CategoryIndex: 1)
@@ -319,17 +315,6 @@ class PVEDraftSNAFinalizeAssement: BaseViewController {
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
         
-        
-        
-        
-    }
-    
-    
-    
-    private func getEvaluationDateFromDB(key:String) -> Date{
-        let valuee = CoreDataHandlerPVE().fetchDetailsFor(entityName: "PVE_Session")
-        let valueArr = valuee.value(forKey: key) as! NSArray
-        return valueArr[0] as! Date
     }
     
     func setInitialValues() {
@@ -375,14 +360,9 @@ class PVEDraftSNAFinalizeAssement: BaseViewController {
         // Work for assessment Data
         currentCategoryTotalScore = 0
         let selectedBirdTypeId = getDraftValueForKey(key: "selectedBirdTypeId") as? Int
-     //   assessmentArr = CoreDataHandlerPVE().fetchDraftAssementArr(selectedBirdTypeId: selectedBirdTypeId!, type: "draft", syncId: currentTimeStamp)
         assessmentArr = CoreDataHandlerPVE().getSyncdAssementsArr(selectedBirdTypeId: selectedBirdTypeId!, type: "draft", syncId: currentTimeStamp)
         resetBoderderCatcherVac()
-        
         tblView.reloadData()
-        
-        let allCategorySelected = checkAllCategorySeledtedOneQuestion()
-        
         setMarksLabel()
         
     }
@@ -653,6 +633,7 @@ extension PVEDraftSNAFinalizeAssement:  UIImagePickerControllerDelegate,UINaviga
                 let imgCount = Int(cell.imgCountBtn.titleLabel?.text ?? "0")
                 if imgCount == 5 {
                     if cell.imgCountBtn.isHidden == true{
+                        debugPrint("Hide the images count")
                     }else{
                         postAlert("Reached maximum!", message: "Reached maximum limit of images for this question.")
                         return
@@ -1170,8 +1151,7 @@ extension PVEDraftSNAFinalizeAssement: NoOfCatchersMinusDelegate,CatchersPlusBtn
             tblView.beginUpdates()
             
             noOfCatcherArr.remove(at: noOfCatcherArr.count-1)
-            var indPathArr = [NSIndexPath]()
-            indPathArr = [IndexPath(row: noOfCatcherArr.count, section: 1) as NSIndexPath]
+            var indPathArr = [IndexPath(row: noOfCatcherArr.count, section: 1) as NSIndexPath]
             tblView.deleteRows(at: indPathArr as [IndexPath], with: .bottom)
             
             CoreDataHandlerPVE().updateDraftSNAFor(currentTimeStamp, syncedStatus: false, text: noOfCatcherArr, forAttribute: "cat_NoOfCatchersDetailsArr")
@@ -1376,7 +1356,7 @@ extension PVEDraftSNAFinalizeAssement: VaccinatorInfoDetailPlusBtnTapped,Vaccine
             
             if  let cell = self.tblView.cellForRow(at: indexPath ) as? PVEVaccineInfoDetailsCell
             {
-                if cell.vacManTxtFld.text! == "" || cell.vacNameTxtFld.text! == "" || cell.serotypeTxtFld.text! == "" //|| cell.serialTxtFld.text! == "" || cell.expiryTxtFld.text! == "" || cell.siteOfInjTxtFld.text! == ""
+                if cell.vacManTxtFld.text! == "" || cell.vacNameTxtFld.text! == "" || cell.serotypeTxtFld.text! == ""
                 {
                     
                     if cell.vacManTxtFld.text! == "" {
@@ -1388,16 +1368,6 @@ extension PVEDraftSNAFinalizeAssement: VaccinatorInfoDetailPlusBtnTapped,Vaccine
                     if cell.serotypeTxtFld.text! == "" {
                         self.sharedManager.setBorderRedForMandatoryFiels(forBtn: cell.serotypeBtn)
                     }
-//                    if cell.serialTxtFld.text! == "" {
-//                        self.sharedManager.setBorderRedForMandatoryFiels(forBtn: cell.serialBtn)
-//                    }
-//                    if cell.expiryTxtFld.text! == "" {
-//                        self.sharedManager.setBorderRedForMandatoryFiels(forBtn: cell.expiryBtn)
-//                    }
-//                    if cell.siteOfInjTxtFld.text! == ""{
-//                        self.sharedManager.setBorderRedForMandatoryFiels(forBtn: cell.siteOfInjBtn)
-//                    }
-                    
                 }
             }
         }
@@ -1835,7 +1805,7 @@ extension PVEDraftSNAFinalizeAssement: UITableViewDelegate, UITableViewDataSourc
                             
                             if let jsonarray = ((vaccinInfoDetailArr as? NSArray)?.value(forKey: "serotype")) as? [String]{
                                 cell.serotypeTxtFld.text = vaccinInfoDetailArr[indexPath.row]["serotype_id"]  as? String
-                                
+                                debugPrint(jsonarray)
                                 
                             }
                             else
@@ -1944,16 +1914,19 @@ extension PVEDraftSNAFinalizeAssement: UITableViewDelegate, UITableViewDataSourc
                 }
                 
                 if vaccinInfoDetailArr[indexPath.row]["serial"] as? String == ""{
+                    debugPrint("Serial is empty")
                 }else{
                     self.sharedManager.setBorderBlue(btn: cell.serialBtn)
                 }
                 
                 if vaccinInfoDetailArr[indexPath.row]["expDate"] as? String == ""{
+                    debugPrint("Exp. date is empty")
                 }else{
                     self.sharedManager.setBorderBlue(btn: cell.expiryBtn)
                 }
                 
                 if (vaccinInfoDetailArr[indexPath.row]["siteOfInj"] as? String) == ""{
+                    debugPrint("siteOfInj is empty")
                 }else{
                     self.sharedManager.setBorderBlue(btn: cell.siteOfInjBtn)
                 }
@@ -2076,30 +2049,19 @@ extension PVEDraftSNAFinalizeAssement: UITableViewDelegate, UITableViewDataSourc
             }
             
         }
-        
-        
     }
     
+
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 5  || section == 3 || section == 4  || section == 6{
-            if section == 1 {
-                if noOfCatcherArr.count > 0{
-                    return 0
-                }else{
+            if section == 1 || section == 2 {
                     return 0
                 }
+            if section == 3 {
+                return 73.0
             }
-            if section == 2 {
-                if noOfVaccinatorsArr.count > 0{
-                    return 0
-                }else{
-                    return 0
-                }
-            }
-            if section == 4  {
-                return 43.0
-            }
-            if section == 5{
+            if section == 4 || section == 5 {
                 return 43.0
             }
             if section == 6 {
@@ -2109,23 +2071,19 @@ extension PVEDraftSNAFinalizeAssement: UITableViewDelegate, UITableViewDataSourc
                     return 73.0
                 }
             }
-            if section == 3 {
-                return 73.0
-            }
+           
             else{
                 return 60.0
             }
         }else if section == 1 || section == 2 {
             return CGFloat.leastNormalMagnitude
-
         }
         
         else{
             return 0.0
         }
-        
-        
     }
+    
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
             return .leastNormalMagnitude
         }

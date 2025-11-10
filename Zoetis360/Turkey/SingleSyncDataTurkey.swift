@@ -366,7 +366,6 @@ class SingleSyncDataTurkey: NSObject {
         do {
             // ✅ Check internet first
             if !WebClass.sharedInstance.connected() {
-                print("❌ No internet at all")
                 self.delegeteSyncApiData.failWithErrorSyncdata(statusCode: -1009) // no internet
                 return
             }
@@ -391,7 +390,7 @@ class SingleSyncDataTurkey: NSObject {
                     else if  statusCode == 502
                     {
                         self.delegeteSyncApiData.failWithInternetSyncdata()
-                        self.showRetryAlert(apiName: "FeedProgram", postingId: postingId, message: "Connection issue detected. Please check your internet and try again.")
+                        self.showRetryAlert(apiName: "FeedProgram", postingId: postingId, message: Constants.internetErrorMessage)
                     }
                     else if [400,403,404,408,500,501,503,504].contains(statusCode) {
                         self.delegeteSyncApiData.failWithErrorSyncdata(statusCode: statusCode)
@@ -719,7 +718,7 @@ class SingleSyncDataTurkey: NSObject {
         else if  statusCode == 502
         {
             self.delegeteSyncApiData.failWithInternetSyncdata()
-            self.showRetryAlert(apiName: "addVaccination", postingId: postingId, message: "Connection issue detected. Please check your internet and try again.")
+            self.showRetryAlert(apiName: "addVaccination", postingId: postingId, message: Constants.internetErrorMessage)
         }
         else if statusCode == 500 || statusCode == 503 ||  statusCode == 403 ||  statusCode==501  || statusCode == 400 || statusCode == 504 || statusCode == 404 || statusCode == 408{
             self.delegeteSyncApiData.failWithErrorSyncdata(statusCode: statusCode!)
@@ -763,7 +762,6 @@ class SingleSyncDataTurkey: NSObject {
             
             // ✅ Check internet first
             if !WebClass.sharedInstance.connected() {
-                print("❌ No internet at all")
                 self.delegeteSyncApiData.failWithErrorSyncdata(statusCode: -1009) // no internet
                 return
             }
@@ -917,7 +915,6 @@ class SingleSyncDataTurkey: NSObject {
             
             // ✅ Check internet first
             if !WebClass.sharedInstance.connected() {
-                print("❌ No internet at all")
                 self.delegeteSyncApiData.failWithErrorSyncdata(statusCode: -1009) // no internet
                 return
             }
@@ -939,7 +936,7 @@ class SingleSyncDataTurkey: NSObject {
                 else if  statusCode == 502
                 {
                     self.delegeteSyncApiData.failWithInternetSyncdata()
-                    self.showRetryAlert(apiName: "savePostingDataOnServer", postingId: postingId, message: "Connection issue detected. Please check your internet and try again.")
+                    self.showRetryAlert(apiName: "savePostingDataOnServer", postingId: postingId, message: Constants.internetErrorMessage)
                 }
                 else if statusCode == 500 || statusCode == 503 ||  statusCode == 403 ||  statusCode==501  || statusCode == 400 || statusCode == 504 || statusCode == 404 || statusCode == 408{
                     self.delegeteSyncApiData.failWithErrorSyncdata(statusCode: statusCode!)
@@ -1346,14 +1343,8 @@ class SingleSyncDataTurkey: NSObject {
         
         do {
             
-            let jsonData = try! JSONSerialization.data(withJSONObject: sessionWithAllforms, options: JSONSerialization.WritingOptions.prettyPrinted)
-            var jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
-            jsonString = jsonString.trimmingCharacters(in: CharacterSet.whitespaces)
-            debugPrint(jsonString)
-            
             // ✅ Check internet first
             if !WebClass.sharedInstance.connected() {
-                print("❌ No internet at all")
                 self.delegeteSyncApiData.failWithErrorSyncdata(statusCode: -1009) // no internet
                 return
             }
@@ -1366,7 +1357,15 @@ class SingleSyncDataTurkey: NSObject {
             request.httpMethod = "POST"
             request.allHTTPHeaderFields = headerDict
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.httpBody = try! JSONSerialization.data(withJSONObject: sessionWithAllforms, options: [])
+           // request.httpBody = try! JSONSerialization.data(withJSONObject: sessionWithAllforms, options: [])
+            
+            do {
+                request.httpBody = try JSONSerialization.data(withJSONObject: sessionWithAllforms, options: [])
+            } catch {
+                print("❌ Failed to serialize JSON for request body: \(error)")
+                request.httpBody = nil
+            }
+
             
             sessionManager.request(request as URLRequestConvertible).responseJSON { response in
                 let statusCode =  response.response?.statusCode
@@ -1377,7 +1376,7 @@ class SingleSyncDataTurkey: NSObject {
                 else if  statusCode == 502
                 {
                     self.delegeteSyncApiData.failWithInternetSyncdata()
-                    self.showRetryAlert(apiName: "saveNecropsyDataOnServer", postingId: postingId, message: "Connection issue detected. Please check your internet and try again.")
+                    self.showRetryAlert(apiName: "saveNecropsyDataOnServer", postingId: postingId, message: Constants.internetErrorMessage)
                 }
                 else if statusCode == 500 || statusCode == 503 ||  statusCode == 403 ||  statusCode==501 || statusCode == 400 || statusCode == 504 || statusCode == 404 || statusCode == 408{
                     self.delegeteSyncApiData.failWithErrorSyncdata(statusCode: statusCode!)
@@ -1597,7 +1596,7 @@ class SingleSyncDataTurkey: NSObject {
         else if  statusCode == 502
         {
             self.delegeteSyncApiData.failWithInternetSyncdata()
-            self.showRetryAlert(apiName: "saveObservationImageOnServer", postingId: postingId, message: "Connection issue detected. Please check your internet and try again.")
+            self.showRetryAlert(apiName: "saveObservationImageOnServer", postingId: postingId, message: Constants.internetErrorMessage)
         }
         else if statusCode == 500 || statusCode == 503 ||  statusCode == 403 ||  statusCode==501 || statusCode == 400 || statusCode == 504 || statusCode == 404 || statusCode == 408{
             self.delegeteSyncApiData.failWithErrorSyncdata(statusCode: statusCode!)
@@ -1672,7 +1671,6 @@ class SingleSyncDataTurkey: NSObject {
             
             // ✅ Check internet first
             if !WebClass.sharedInstance.connected() {
-                print("❌ No internet at all")
                 self.delegeteSyncApiData.failWithErrorSyncdata(statusCode: -1009) // no internet
                 return
             }

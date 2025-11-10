@@ -15,12 +15,12 @@ class WebClass: NSObject {
     static let sharedInstance = WebClass()
     
     // MARK: 🔴 *-*-*-*-*-*-* Dev Migration *-*-*-*-*-*-*
-           let ChkEnvironmentLive = "stage"
-           let webUrl = "https://devapi.mypoultryview360.com/api/"
+//           let ChkEnvironmentLive = "stage"
+//           let webUrl = "https://devapi.mypoultryview360.com/api/"
     
     // MARK: 🟠 *-*-*-*-*-*-* Stage Migration -*-*-*-*-*-*-*
-//    let ChkEnvironmentLive = "stage"
-//    let webUrl = "https://stageapi.mypoultryview360.com/api/"
+    let ChkEnvironmentLive = "stage"
+    let webUrl = "https://stageapi.mypoultryview360.com/api/"
     
     // MARK: 🟢 *-*-*-*-*-*-* Live Migration *-*-*-*-*-*-*
 //           let ChkEnvironmentLive = "mypoultry"
