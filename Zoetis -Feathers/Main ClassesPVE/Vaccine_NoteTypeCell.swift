@@ -10,10 +10,14 @@ import UIKit
 import Siren
 
 protocol AddedComment: AnyObject {
-    func updatedComment( commentStr: String)
     
 }
+extension AddedComment {
+    func updatedComment( commentStr: String) {
+        
+    }
 
+}
 class Vaccine_NoteTypeCell: UITableViewCell {
     
     weak var delegate: AddedComment?

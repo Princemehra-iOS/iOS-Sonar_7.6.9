@@ -323,6 +323,7 @@ struct Constants {
 struct CategoryConstants {
     static let extendedMicrobialName = "Extended Microbial"
     static let okPressed = "OK Pressed"
+    static let refrigerator = "Refrigerator\n/Freezer\n/Liquid Nitrogen"
 }
 func predicateForSessionType() -> NSPredicate {
     return NSPredicate(format: "isSessionType == %d", argumentArray: [true])

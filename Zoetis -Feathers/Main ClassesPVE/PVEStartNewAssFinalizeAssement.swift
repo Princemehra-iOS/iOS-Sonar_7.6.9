@@ -964,11 +964,7 @@ extension PVEStartNewAssFinalizeAssement: VaccinatorsPlusBtnDelegate,NoOfvaccina
 }
 
 extension PVEStartNewAssFinalizeAssement: NoOfCatchersMinusDelegate,CatchersPlusBtnDelegate , AddedComment{
-    
-    func updatedComment(commentStr: String) {
-        
-    }
-    
+   
     
     func resetBoderderCatcherVac() {
         if  let cell = self.tblView.headerView(forSection: 1) as? NoOfCatchersHeader
