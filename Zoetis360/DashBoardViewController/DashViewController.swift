@@ -195,46 +195,7 @@ class DashViewController: UIViewController,MDRotatingPieChartDataSource,userlist
         if(custArr.count == 0){
             callWebService()
         }
- /*
-        timerView.layer.cornerRadius = 12
-        timerView.layer.masksToBounds = true
 
-        
-        TimeManager.shared.startSession()
-
-           TimeManager.shared.onTick = { timeString in
-               self.sessionLabel.text = timeString
-           }
-
-           // Handle session expiration
-           TimeManager.shared.onSessionExpired = {
-               if self.allSessionArr().count != 0
-               {
-                   self.showSessionExpiredAlert(showLogoutButton: false)
-               }
-               else
-               {
-                   self.showSessionExpiredAlert(showLogoutButton: true)
-               }
-              
-           }
-
-           // Optional: handle 2-day warning alert
-           TimeManager.shared.onTwoDayWarning = {
-              // self.showTwoDayWarningAlert()
-               
-               if self.allSessionArr().count != 0
-               {
-                   self.timerView.isHidden = false
-               }
-               else
-               {
-                   self.timerView.isHidden = true
-               }
-               
-           }
-        
-*/
     }
 
     @objc func showTwoDayWarningAlert() {
@@ -1053,7 +1014,7 @@ class DashViewController: UIViewController,MDRotatingPieChartDataSource,userlist
                 let jsonResponse = JSON(json)
                 // Check for the "errorResult" key and handle errors
                 if let errorResult = jsonResponse["errorResult"].dictionary {
-                    let errorCode = errorResult["errorCode"]?.string ?? self?.unknownCodeStr
+                    debugPrint(errorResult)
                     self?.showToastWithTimer(message: "Failed to get Customers list", duration: 3.0)
                 }
                 
@@ -1130,7 +1091,7 @@ class DashViewController: UIViewController,MDRotatingPieChartDataSource,userlist
                     let jsonResponse = JSON(json)
                     // Check for the "errorResult" key and handle errors
                     if let errorResult = jsonResponse["errorResult"].dictionary {
-                        let errorCode = errorResult["errorCode"]?.string ?? self?.unknownCodeStr
+                        debugPrint(errorResult)
                         self?.showToastWithTimer(message: "Sales representatives Data not found", duration: 3.0)
                     }
                     
@@ -1888,7 +1849,7 @@ class DashViewController: UIViewController,MDRotatingPieChartDataSource,userlist
                 let jsonResponse = JSON(json)
                 // Check for the "errorResult" key and handle errors
                 if let errorResult = jsonResponse["errorResult"].dictionary {
-                    let errorCode = errorResult["errorCode"]?.string ?? self?.unknownCodeStr
+                    debugPrint(errorResult)
                     self?.showToastWithTimer(message: "Failed to get Veterinarian List list", duration: 3.0)
                     self?.dismissGlobalHUD(self?.view ?? UIView())
                 }
@@ -1960,10 +1921,8 @@ class DashViewController: UIViewController,MDRotatingPieChartDataSource,userlist
                 }
                 
                 let jsonResponse = JSON(json)
-                // Check for the "errorResult" key and handle errors
                 if let errorResult = jsonResponse["errorResult"].dictionary {
-                    let errorCode = errorResult["errorCode"]?.string ?? self?.unknownCodeStr
-                    
+                    debugPrint(errorResult)
                     self?.showToastWithTimer(message: "Failed to get Hatchery Strain list", duration: 3.0)
                     self?.dismissGlobalHUD(self?.view ?? UIView())
                     

@@ -1365,13 +1365,7 @@ extension CaptureNecropsyStep1Turkey : UITableViewDataSource,UITableViewDelegate
                 case turkeyBirdSex.tom.rawValue:      sexCode = "T"
                 default:                              sexCode = ""
                 }
-              /*  switch selectedSex {
-                case "Light hens": sexCode = "LH"
-                case "Heavy hens": sexCode = "HH"
-                case "Toms":       sexCode = "T"
-                default:           sexCode = "LH" // fallback
-                }
-                */
+ 
                 debugPrint(sexCode)
                 sexLbl.text = selectedSex
                 sexButton.setTitle(selectedSex, for: .normal)
@@ -1505,13 +1499,7 @@ extension CaptureNecropsyStep1Turkey : UITableViewDataSource,UITableViewDelegate
             case "T":  title = turkeyBirdSex.tom.rawValue
             default:   title = "Unknown"
             }
-          /*  switch sexValue {
-            case "HH": title = "Heavy hens"
-            case "LH": title = "Light hens"
-            case "T":  title = "Toms"
-            default:   title = "Unknown"
-            }
-            */
+ 
             sexButton.setTitle(title, for: .normal)
             sexLbl.text = title
         }
@@ -1716,13 +1704,6 @@ extension CaptureNecropsyStep1Turkey : UITableViewDataSource,UITableViewDelegate
                 default:                              sexCode = ""
                 }
 
-              /*  switch title {
-                case "Heavy hens": sexCode = "HH"
-                case "Light hens": sexCode = "LH"
-                case "Toms":       sexCode = "T"
-                default:           sexCode = ""
-                }
-                */
                 sexString = sexCode
             }
 
@@ -1829,13 +1810,6 @@ extension CaptureNecropsyStep1Turkey : UITableViewDataSource,UITableViewDelegate
                 default:                              sexCode = ""
                 }
 
-             /*   switch title {
-                case "Heavy hens": sexCode = "HH"
-                case "Light hens": sexCode = "LH"
-                case "Toms":       sexCode = "T"
-                default:           sexCode = ""
-                }
-              */
             }
             
             CoreDataHandlerTurkey().updateNecropsystep1WithNecIdAndFarmNameTurkey(postingId as NSNumber, farmName: oldFarmName as NSString, newFarmName: strNewFarm as NSString  , age: (ageButton.titleLabel?.text!)!, isSync: true, farmWeight: farmWeightText.text!, newHouseNoTurkey: houseNoTxtFldTurkey.text! as NSString , sexCode as NSString)

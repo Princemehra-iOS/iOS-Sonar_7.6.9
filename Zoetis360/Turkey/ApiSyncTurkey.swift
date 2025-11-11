@@ -1098,7 +1098,7 @@ class ApiSyncTurkey: NSObject {
                             self.delegeteSyncApiTurkey.failWithErrorInternal()
                             print(err)
                         } else if let data = response.data{
-                            
+                            debugPrint(data)
                             if let s = statusCode {
                                 
                                 self.delegeteSyncApiTurkey.failWithError(statusCode: s)

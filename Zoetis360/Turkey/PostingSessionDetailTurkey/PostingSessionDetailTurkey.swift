@@ -687,26 +687,7 @@ class PostingSessionDetailTurkey: UIViewController,turkeyNotes,UITextFieldDelega
         self.tableViewpop()
         droperTableView.frame = CGRect( x: 295, y: 530, width: 420, height: 150)
         droperTableView.reloadData()
-        
-        //        self.myPickerView.frame = CGRect(x:401,y: 272,width: 100,height: 120)
-        //        pickerView()
-        //        let lblAge = sexButton.titleLabel?.text
-        //        if(lblAge == ""){
-        //            myPickerView.selectRow(0, inComponent: 0, animated: true)
-        //        }
-        //        else{
-        //            let lblAge = sexButton.titleLabel?.text
-        //            var pickerIndex = Int()
-        //            for i in 0..<birdSexArray.count{
-        //                if (lblAge == birdSexArray[i] as! String ){
-        //                    pickerIndex = i
-        //                    break
-        //                }
-        //            }
-        //            myPickerView.selectRow(pickerIndex, inComponent: 0, animated: true)
-        //
-        //        }
-        //        myPickerView.reloadInputViews()
+ 
     }
     
     
@@ -1024,31 +1005,29 @@ class PostingSessionDetailTurkey: UIViewController,turkeyNotes,UITextFieldDelega
                                 if arr.count>0{
                                     for  i in 0..<arr.count {
                                         let posDict = arr.object(at: i)
-                                        
-                                        let deviceId = (posDict as AnyObject).value(forKey: "DeviceSessionId") as! String
                                         CoreDataHandlerTurkey().getPostingDatWithSpecificIdTurkey(posDict as! NSDictionary,postinngId: self.postingId)
                                     }
                                     
                                     let postingData = CoreDataHandlerTurkey().fetchAllPostingSessionTurkey(self.postingId)
-                                    
                                     if postingData.count>0{
                                         self.getPostingDataFromServerforVaccination()
                                     }
                                     else{
-                                        
+                                        debugPrint("posted Data count is not 0")
                                     }
                                 }
                                 else{
+                                    debugPrint(" Data count is zero")
                                 }
                             }
                             else{
-                                let postingData = CoreDataHandlerTurkey().fetchAllPostingExistingSessionTurkey()
-                                
+                                debugPrint("No Data in array")
                             }
                         }
                     case .failure(let encodingError):
                         
                         if let err = encodingError as? URLError, err.code == .notConnectedToInternet {
+                            debugPrint(err)
                             
                         } else if let data = response.data, let responseString = String(data: data, encoding: String.Encoding.utf8) {
                             // other failures
@@ -1066,7 +1045,7 @@ class PostingSessionDetailTurkey: UIViewController,turkeyNotes,UITextFieldDelega
     func getPostingDataFromServerforVaccination(){
         
         if WebClass.sharedInstance.connected() {
-            let id =  UserDefaults.standard.value(forKey: "Id") as! Int
+       
             let url = "PostingSession/GetVaccinationListBySessionId?DeviceSessionId=\(fullData)"
             let urlString: String = WebClass.sharedInstance.webUrl + url
             
@@ -1504,13 +1483,12 @@ class PostingSessionDetailTurkey: UIViewController,turkeyNotes,UITextFieldDelega
                                     var posttingId =  Int ()
                                     let sessionId = (arr.object(at: i) as AnyObject).value(forKey: "SessionId") as! Int
                                     let devSessionId = (arr.object(at: i) as AnyObject).value(forKey: "deviceSessionId") as! String
-                                    let lngId  = (arr.object(at: i) as AnyObject).value(forKey: "LanguageId") as! NSNumber
                                     let custId = (arr.object(at: i) as AnyObject).value(forKey: "CustomerId") as! Int
                                     let complexId = (arr.object(at: i) as AnyObject).value(forKey: "ComplexId") as! Int
                                     let complexName = (arr.object(at: i) as AnyObject).value(forKey: "ComplexName") as! String
-                                    let sessionDateOutlet = (arr.object(at: i) as AnyObject).value(forKey: "SessionDate") as! String
+                                    let sessionsDate = (arr.object(at: i) as AnyObject).value(forKey: "SessionDate") as! String
                                     
-                                    let seesDat = self.convertDateFormater(sessionDateOutlet)
+                                    let seesDat = self.convertDateFormater(sessionsDate)
                                     let farmArr = (arr.object(at:i) as AnyObject).value(forKey:  "Farms")
                                     if (farmArr as AnyObject).count>0{
                                         for  j in 0..<(farmArr! as AnyObject).count {
@@ -1526,7 +1504,7 @@ class PostingSessionDetailTurkey: UIViewController,turkeyNotes,UITextFieldDelega
                                             else{
                                                 posttingId = 0
                                             }
-                                            let age =  ((farmArr as AnyObject).object(at: j) as AnyObject).value(forKey:"age")
+                                            let birdAge =  ((farmArr as AnyObject).object(at: j) as AnyObject).value(forKey:"age")
                                             let birds =  ((farmArr as AnyObject).object(at: j) as AnyObject).value(forKey:"birds")
                                             let houseNo =  ((farmArr as AnyObject).object(at: j) as AnyObject).value(forKey:"houseNo")
                                             let flockId =  ((farmArr as AnyObject).object(at: j) as AnyObject).value(forKey:"flockId")
@@ -1542,7 +1520,7 @@ class PostingSessionDetailTurkey: UIViewController,turkeyNotes,UITextFieldDelega
                                             let genId = ((farmArr! as AnyObject).object(at: j) as AnyObject).value(forKey: "GenerationId") as! Int
                                             let imgId = ((farmArr! as AnyObject).object(at: j) as AnyObject).value(forKey: "ImgId") as! Int
                                             
-                                            let necropsyData = CoreDataHandlerTurkeyModels.singleNecropsyDataTurkey(postingId:posttingId as NSNumber, age: ((age as AnyObject).stringValue)!, farmName: farmName, feedProgram:feedProgram, flockId: ((flockId as AnyObject).stringValue) ?? "", houseNo: ((houseNo as AnyObject).stringValue) ?? "", noOfBirds: ((birds as AnyObject).stringValue)!, sick: sick as NSNumber,necId:sessionId as NSNumber,compexName:complexName,complexDate:seesDat,complexId:complexId as NSNumber,custmerId:custId as NSNumber,feedId: feedId as NSNumber,isSync:false,timeStamp:devSessionId,actualTimeStamp:devSessionId, necIdSingle: self.postingId, farmweight: farmweight, abf: abf,sex: sex,breed: breed,farmId:farmId as NSNumber,imgId:imgId as NSNumber , generationName: genName , generationId: genId as NSNumber)
+                                            let necropsyData = CoreDataHandlerTurkeyModels.singleNecropsyDataTurkey(postingId:posttingId as NSNumber, age: ((birdAge as AnyObject).stringValue)!, farmName: farmName, feedProgram:feedProgram, flockId: ((flockId as AnyObject).stringValue) ?? "", houseNo: ((houseNo as AnyObject).stringValue) ?? "", noOfBirds: ((birds as AnyObject).stringValue)!, sick: sick as NSNumber,necId:sessionId as NSNumber,compexName:complexName,complexDate:seesDat,complexId:complexId as NSNumber,custmerId:custId as NSNumber,feedId: feedId as NSNumber,isSync:false,timeStamp:devSessionId,actualTimeStamp:devSessionId, necIdSingle: self.postingId, farmweight: farmweight, abf: abf,sex: sex,breed: breed,farmId:farmId as NSNumber,imgId:imgId as NSNumber , generationName: genName , generationId: genId as NSNumber)
                                             
                                             CoreDataHandlerTurkey().SaveNecropsystep1SingleDataTurkey(data: necropsyData)
                                             UserDefaults.standard.set(farmId as NSNumber, forKey: "farmIdTurkey")
