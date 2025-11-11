@@ -324,6 +324,10 @@ struct CategoryConstants {
     static let extendedMicrobialName = "Extended Microbial"
     static let okPressed = "OK Pressed"
     static let refrigerator = "Refrigerator\n/Freezer\n/Liquid Nitrogen"
+    static let  yyyyMMdd =  "yyyy-MM-dd"
+    static let MMddyyyy = "MM/dd/yyyy"
+    static let ddMMyyyy = "dd/MM/yyyy"
+    static let pleaseenterprogramnameintheVaccinePreparationSterility = "Please enter program name in the Vaccine Preparation & Sterility."
 }
 func predicateForSessionType() -> NSPredicate {
     return NSPredicate(format: "isSessionType == %d", argumentArray: [true])

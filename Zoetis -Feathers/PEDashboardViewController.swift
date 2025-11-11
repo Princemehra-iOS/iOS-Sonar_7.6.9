@@ -434,7 +434,7 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
         
         if peNewAssessment?.customerName != nil {
             _ = ZoetisDropdownShared.sharedInstance.sharedPEOnGoingSession[0].peNewAssessment
-            _ = Date().string(format: "yyyy-MM-dd")
+            _ = Date().string(format: CategoryConstants.yyyyMMdd)
             
         } else {
             peNewAssessment = PENewAssessment()
@@ -609,10 +609,10 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
         
         if regionID == 3
         {
-            dateFormatter.dateFormat = "MM/dd/yyyy"
+            dateFormatter.dateFormat = CategoryConstants.MMddyyyy
         }
         else{
-            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateFormatter.dateFormat = CategoryConstants.ddMMyyyy
         }
         
         dateFormatter.timeZone = TimeZone.init(identifier: "UTC")
@@ -675,7 +675,6 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
     }
     
     @objc private func finishSessionClicked(notification: NSNotification){
-        addComplexPopupWithoutDataCheck(isFromSyncDel: true)
         setupHeader()
     }
     
@@ -692,9 +691,7 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
             } else {
                 peNewAssessment = PENewAssessment()
             }
-        } else {
-            addComplexPopup(isFromSyncDel: true)
-        }
+        } 
         setupHeader()
     }
     // MARK: - Check Current Assessment Data
@@ -781,13 +778,7 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
         rejectedBGView.isHidden = false
     }
     
-    private func addComplexPopup(isFromSyncDel:Bool = false) {
-        
-    }
-    
-    private func addComplexPopupWithoutDataCheck(isFromSyncDel:Bool = false) {
-        
-    }
+  
     // MARK: - Navigate to View Assessment.
     func navigateToViewAssessment(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "PEStoryboard", bundle:nil)
@@ -858,10 +849,10 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         if(regionID == 3){
-            dateFormatter.dateFormat = "MM/dd/yyyy"
+            dateFormatter.dateFormat = CategoryConstants.MMddyyyy
         }
         else{
-            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateFormatter.dateFormat = CategoryConstants.ddMMyyyy
         }
         
         let sortedArray = peAssessmentDraftArray.sorted {
@@ -2643,9 +2634,9 @@ APIActivityTracker.shared.endRequest()
         var resultString = String()
         if(regionID != 3){
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateFormatter.dateFormat = CategoryConstants.ddMMyyyy
             let date = dateFormatter.date(from: peCertificateData.certificateDate ?? "")
-            dateFormatter.dateFormat = "yyyy-MM-dd"
+            dateFormatter.dateFormat = CategoryConstants.yyyyMMdd
             if date != nil {
                 resultString = dateFormatter.string(from: date ?? Date())
                 
@@ -2998,13 +2989,13 @@ APIActivityTracker.shared.endRequest()
         let regionId = UserDefaults.standard.integer(forKey: "Regionid")
         if regionId != 3 {
             dateFormatter.dateFormat = "dd/MM/YYYY HH:mm:ss Z"
-            let date = dict.evaluationDate?.toDate(withFormat: "dd/MM/YYYY")
+            let date = dict.evaluationDate?.toDate(withFormat: CategoryConstants.ddMMyyyy)
             let datastr = date?.toString(withFormat: "dd/MM/YYYY HH:mm:ss Z")
         }
         else{
-            dateFormatter.dateFormat="MM/dd/YYYY"
+            dateFormatter.dateFormat = CategoryConstants.MMddyyyy
             
-            let date = dict.evaluationDate?.toDate(withFormat: "MM/dd/YYYY")
+            let date = dict.evaluationDate?.toDate(withFormat: CategoryConstants.MMddyyyy)
             let datastr = date?.toString(withFormat: "MM/dd/YYYY HH:mm:ss Z")
         }
         
@@ -3071,7 +3062,7 @@ APIActivityTracker.shared.endRequest()
             dict.evaluationDate = dateSig
         }else{
             let convertDateFormatter = DateFormatter()
-            convertDateFormatter.dateFormat = "yyyy-MM-dd"
+            convertDateFormatter.dateFormat = CategoryConstants.yyyyMMdd
             convertDateFormatter.timeZone = Calendar.current.timeZone
             convertDateFormatter.locale = Calendar.current.locale
         }
@@ -3079,15 +3070,15 @@ APIActivityTracker.shared.endRequest()
         
         let dateFormatterObj = CodeHelper.sharedInstance.getDateFormatterObj("")
         if regionId == 3 {
-            dateFormatterObj.dateFormat = "MM/dd/yyyy"
+            dateFormatterObj.dateFormat = CategoryConstants.MMddyyyy
         }
         else
         {
-            dateFormatterObj.dateFormat = "dd/MM/yyyy"
+            dateFormatterObj.dateFormat = CategoryConstants.ddMMyyyy
         }
         
         let evalDateObj = dateFormatterObj.date(from: evaluationDate ?? "")
-        dateFormatterObj.dateFormat = "yyyy-MM-dd"
+        dateFormatterObj.dateFormat = CategoryConstants.yyyyMMdd
         let evalDateStr = dateFormatterObj.string(from: evalDateObj ?? Date())
         dict.evaluationDate = evalDateStr
         var FSRsign = ""
@@ -3653,14 +3644,14 @@ APIActivityTracker.shared.endRequest()
         olDateFormatter.dateFormat = "MMM d, yyyy"
         let oldDate = olDateFormatter.date(from: inputDate)
         let convertDateFormatter = DateFormatter()
-        convertDateFormatter.dateFormat = "yyyy-MM-dd"
+        convertDateFormatter.dateFormat = CategoryConstants.yyyyMMdd
         
         let NewcountryId = UserDefaults.standard.integer(forKey: "nonUScountryId")
         if regionID == 3
-        {convertDateFormatter.dateFormat = "yyyy-MM-dd"
+        {convertDateFormatter.dateFormat = CategoryConstants.yyyyMMdd
         }
         else{
-            convertDateFormatter.dateFormat = "yyyy-MM-dd"
+            convertDateFormatter.dateFormat = CategoryConstants.yyyyMMdd
         }
         
         if oldDate != nil{
@@ -3732,16 +3723,16 @@ APIActivityTracker.shared.endRequest()
         olDateFormatter.dateFormat = "MMM d, yyyy"
         let oldDate = olDateFormatter.date(from: inputDate)
         let convertDateFormatter = DateFormatter()
-        convertDateFormatter.dateFormat = "yyyy-MM-dd"
+        convertDateFormatter.dateFormat = CategoryConstants.yyyyMMdd
         
         let regionId = UserDefaults.standard.integer(forKey: "Regionid")
         if regionId != 3 {
             convertDateFormatter.calendar = Calendar(identifier: .gregorian)
             convertDateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
-            convertDateFormatter.dateFormat = "yyyy-MM-dd"
+            convertDateFormatter.dateFormat = CategoryConstants.yyyyMMdd
         }
         else{
-            convertDateFormatter.dateFormat = "MM/dd/yyyy"
+            convertDateFormatter.dateFormat = CategoryConstants.MMddyyyy
         }
         
         if oldDate != nil{
@@ -5427,7 +5418,7 @@ APIActivityTracker.shared.endRequest()
                 if SignatureDate != "" {
                     sigDate = self.convertDateFormat(inputDate: SignatureDate)
                 } else {
-                    sigDate = Date().stringFormat(format: "yyyy-MM-dd")
+                    sigDate = Date().stringFormat(format: CategoryConstants.yyyyMMdd)
                 }
                 let param : [String:String] = ["sig":String(id),"sig2":String(id2),"sig_Date":sigDate ,"sig_EmpID":RoleName,"sig_Name":representaiveName ?? "","sig_EmpID2":RoleName2,"sig_Name2":representaiveName2 ?? "","sig_Phone":representaiveNotes ?? ""]
                 jsonRe = (getJSON("QuestionAns") ?? JSON())

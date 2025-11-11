@@ -807,12 +807,12 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
     func showAlertForProgramName(){
         if regionID == 3
         {
-            if strings.contains("Please enter program name in the Vaccine Preparation & Sterility.")
+            if strings.contains(CategoryConstants.pleaseenterprogramnameintheVaccinePreparationSterility)
             {
-                strings = strings.filter { $0 != "Please enter program name in the Vaccine Preparation & Sterility." }
+                strings = strings.filter { $0 != CategoryConstants.pleaseenterprogramnameintheVaccinePreparationSterility }
             }
             
-            strings.append("Please enter program name in the Vaccine Preparation & Sterility.")
+            strings.append(CategoryConstants.pleaseenterprogramnameintheVaccinePreparationSterility)
         }
         else
         {
