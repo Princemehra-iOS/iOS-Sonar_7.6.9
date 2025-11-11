@@ -416,7 +416,7 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
         if regionID == 3 && showExtendedPE {
             
             let catObjectPE = PENewAssessment()
-            catObjectPE.catName = "Extended Microbial" // "Sanitation and Embrex Evaluation"
+            catObjectPE.catName = CategoryConstants.extendedMicrobialName // "Sanitation and Embrex Evaluation"
             catObjectPE.sequenceNo = 12
             catObjectPE.sequenceNoo = 12
             catArrayForCollectionIs.append(catObjectPE)
@@ -524,10 +524,6 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
             VaccineMixerResponse(json)
             completion(true)
         }
-    }
-    private func handleVaccineMixer(_ json: JSON) {
-        
-        
     }
     
     // MARK: - Refresh Score
@@ -681,7 +677,7 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
                         let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
                         let okAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) {
                             _ in
-                            NSLog("OK Pressed")
+                            NSLog(CategoryConstants.okPressed)
                             self.saveFinalizedData()
                         }
                         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
@@ -699,7 +695,7 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
                     let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) {
                         _ in
-                        NSLog("OK Pressed")
+                        NSLog(CategoryConstants.okPressed)
                         self.saveFinalizedData()
                     }
                     let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
@@ -721,7 +717,7 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
         let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) {
             _ in
-            NSLog("OK Pressed")
+            NSLog(CategoryConstants.okPressed)
             self.saveDraftData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
@@ -739,7 +735,7 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
         let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) {
             _ in
-            NSLog("OK Pressed")
+            NSLog(CategoryConstants.okPressed)
             self.saveDraftData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
@@ -1182,7 +1178,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
         
         if checkForTraning(){
             
-            if indexPath.section == 0 && selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName == "Extended Microbial"{// "Sanitation and Embrex Evaluation"{
+            if indexPath.section == 0 && selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName == CategoryConstants.extendedMicrobialName{// "Sanitation and Embrex Evaluation"{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "PlateInfoCell", for: indexPath) as! PlateInfoCell
                 cell.currentIndex = indexPath.row
                 if sanitationQuesArr.count > indexPath.row{
@@ -4476,7 +4472,7 @@ extension PEAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDataSo
                         refrigtorProbeArray = CoreDataHandlerPE().getREfriData(id: Int(refri.serverAssessmentId ?? "0") ?? 0)
                     }
                 }
-                if(selectedCategory?.catName == "Extended Microbial") {
+                if(selectedCategory?.catName == CategoryConstants.extendedMicrobialName) {
                     selectedCategory?.sequenceNoo = 12
                     lblextenderMicro.isHidden = false
                     extendedMicroSwitch.isHidden = false

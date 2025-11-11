@@ -320,7 +320,10 @@ struct Constants {
     static let selectComplex = "Please select a complex first."
     static let microscopyLastSession = "Microscopy Summary Last Session"
 }
-
+struct CategoryConstants {
+    static let extendedMicrobialName = "Extended Microbial"
+    static let okPressed = "OK Pressed"
+}
 func predicateForSessionType() -> NSPredicate {
     return NSPredicate(format: "isSessionType == %d", argumentArray: [true])
 }
