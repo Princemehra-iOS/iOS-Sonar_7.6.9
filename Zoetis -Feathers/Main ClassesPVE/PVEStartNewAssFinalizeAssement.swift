@@ -205,9 +205,7 @@ class PVEStartNewAssFinalizeAssement: BaseViewController  , UISearchBarDelegate 
             NSLog("OK Pressed")
             self.saveDataInDraft()
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-            _ in
-        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
@@ -282,9 +280,7 @@ class PVEStartNewAssFinalizeAssement: BaseViewController  , UISearchBarDelegate 
             NSLog("OK Pressed")
             self.saveFinalizedData()
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-            _ in
-        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
@@ -545,50 +541,60 @@ class PVEStartNewAssFinalizeAssement: BaseViewController  , UISearchBarDelegate 
 extension PVEStartNewAssFinalizeAssement:  UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     @IBAction func cameraBtnAction(_ sender: UIButton) {
-        
-        let buttonPosition = sender.convert(CGPoint.zero, to: self.tblView)
-        let indexPath = self.tblView.indexPathForRow(at:buttonPosition)
-        selectedIndex = indexPath!.section as Int
-        
-        let valuee = CoreDataHandlerPVE().fetchDetailsFor(entityName: "PVE_Session")
-        let valueArr = valuee.value(forKey: "cameraEnabled") as! NSArray
-        if valueArr.count > 0 {
-            let isCameraOn = valueArr[0] as! String
-            if isCameraOn == "true"{
-                
-                let buttonPosition = sender.convert(CGPoint.zero, to: self.tblView)
-                let indexPath = self.tblView.indexPathForRow(at:buttonPosition)
-                if  let cell = self.tblView.cellForRow(at: indexPath!) as? PVEVaccinationCrewSafetyCell
-                {
-                    
-                    let imgCount = Int(cell.imgCountBtn.titleLabel?.text ?? "0")
-                    if imgCount == 5 {
-                        if cell.imgCountBtn.isHidden == true{
-                        }else{
-                            postAlert("Reached maximum!", message: "Reached maximum limit of images for this question.")
-                            return
-                        }
-                    }else{
-                        
-                    }
-                }
-                
-                if (UIImagePickerController.isSourceTypeAvailable(.camera)) {
-                    if UIImagePickerController.availableCaptureModes(for: .rear) != nil {
-                        imagePicker.allowsEditing = false
-                        imagePicker.sourceType = .camera
-                        imagePicker.cameraCaptureMode = .photo
-                        imagePicker.delegate = self
-                        
-                        imagePicker.view.tag = indexPath!.row
-                        present(imagePicker, animated: true, completion: {})
-                    } else {
-                        postAlert("Rear camera doesn't exist", message: "Application cannot access the camera.")
-                    }
-                }else{
-                }
-            }
+        guard let indexPath = indexPath(for: sender) else { return }
+        selectedIndex = indexPath.section
+
+        guard isCameraEnabled() else { return }
+
+        guard let cell = tblView.cellForRow(at: indexPath) as? PVEVaccinationCrewSafetyCell else { return }
+
+        if hasReachedMaxImageLimit(cell) {
+            postAlert("Reached maximum!", message: "Reached maximum limit of images for this question.")
+            return
         }
+
+        openCamera(for: indexPath)
+    }
+    
+    private func indexPath(for sender: UIButton) -> IndexPath? {
+        let buttonPosition = sender.convert(CGPoint.zero, to: tblView)
+        return tblView.indexPathForRow(at: buttonPosition)
+    }
+
+    private func isCameraEnabled() -> Bool {
+        let valuee = CoreDataHandlerPVE().fetchDetailsFor(entityName: "PVE_Session")
+            guard
+            let valueArr = valuee.value(forKey: "cameraEnabled") as? [String],
+            let isCameraOn = valueArr.first
+        else {
+            return false
+        }
+        return isCameraOn == "true"
+    }
+
+    private func hasReachedMaxImageLimit(_ cell: PVEVaccinationCrewSafetyCell) -> Bool {
+        guard let imgCountText = cell.imgCountBtn.titleLabel?.text,
+              let imgCount = Int(imgCountText),
+              !cell.imgCountBtn.isHidden else {
+            return false
+        }
+        return imgCount >= 5
+    }
+
+    private func openCamera(for indexPath: IndexPath) {
+        guard UIImagePickerController.isSourceTypeAvailable(.camera),
+              UIImagePickerController.availableCaptureModes(for: .rear) != nil else {
+            postAlert("Rear camera doesn't exist", message: "Application cannot access the camera.")
+            return
+        }
+
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .camera
+        imagePicker.cameraCaptureMode = .photo
+        imagePicker.delegate = self
+        imagePicker.view.tag = indexPath.row
+
+        present(imagePicker, animated: true)
     }
     
     /************* Alert View Methods ***********************************/
@@ -677,8 +683,7 @@ extension PVEStartNewAssFinalizeAssement:  UIImagePickerControllerDelegate,UINav
         /******************************************************************************************************/
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             
-            dismiss(animated: true, completion: {
-            })
+            dismiss(animated: true, completion:nil)
         }
         
     }
@@ -845,96 +850,94 @@ extension PVEStartNewAssFinalizeAssement: VaccinatorsPlusBtnDelegate,NoOfvaccina
     }
     
     func vaccinatorPlusBtnTapped(count: Int) {
-        
-        if count >= 200 {
-            
-            if  let cell = self.tblView.headerView(forSection: 2) as? NoOfVaccinatorsHeader
-            {
-                cell.bgBtn.layer.borderColor = UIColor.red.cgColor
-                cell.bgBtn.layer.borderWidth = 2.0
-            }
-            
+        guard count < 200 else {
+            highlightHeaderButton(isError: true)
             showtoast(message: "You have reached to your maximum limit of 200.")
-            
             return
         }
         
-        noOfVaccinatorsArr = sharedManager.getSessionValueForKeyFromDB(key: "cat_NoOfVaccinatorsDetailsArr") as? [[String : String]] ?? []
-        if  let cell = self.tblView.headerView(forSection: 2) as? NoOfVaccinatorsHeader
-        {
-            cell.bgBtn.layer.borderColor = UIColor.black.cgColor
-            cell.bgBtn.layer.borderWidth = 1.0
-        }
+        resetHeaderButtonStyle()
+        noOfVaccinatorsArr = fetchVaccinatorArray()
         
-        if count  ==  noOfVaccinatorsArr.count{
-            
-            tblView.beginUpdates()
-            
-            let indexPath = IndexPath(row: noOfVaccinatorsArr.count, section: 2)
-            tblView.insertRows(at: [indexPath], with: .bottom)
-            noOfVaccinatorsArr.append(["name" : "", "serology" : ""])
-            
-            CoreDataHandlerPVE().updateSessionDetails(1, text: noOfVaccinatorsArr, forAttribute: "cat_NoOfVaccinatorsDetailsArr")
-            let noOfVaccinatorsArr = sharedManager.getSessionValueForKeyFromDB(key: "cat_NoOfVaccinatorsDetailsArr") as? [[String : String]] ?? []
-            
-            if  let cell = self.tblView.headerView(forSection: 2) as? NoOfVaccinatorsHeader
-            {
-                cell.numberr = noOfVaccinatorsArr.count
-                cell.txtFeild.text = "\(cell.numberr)"
-            }
-            
-            self.noOfVaccinatorsArr = sharedManager.getSessionValueForKeyFromDB(key: "cat_NoOfVaccinatorsDetailsArr") as? [[String : String]] ?? []
-            view.endEditing(true)
-            tblView.endUpdates()
-            tblView.reloadData()
-            
+        if count == noOfVaccinatorsArr.count {
+            addSingleVaccinator()
             return
         }
         
-        if count != 0 {
-            
-            tblView.beginUpdates()
-            
-            if count < noOfVaccinatorsArr.count && noOfVaccinatorsArr.count > 0{
-                
-                let ddd = noOfVaccinatorsArr.count - count
-                var indPathArr = [NSIndexPath]()
-                for indx in 1...ddd {
-                    noOfVaccinatorsArr.remove(at: noOfVaccinatorsArr.count-1)
-                    indPathArr.append(IndexPath(row: indx, section: 2) as NSIndexPath)
-                }
-                tblView.deleteRows(at: indPathArr as [IndexPath], with: .bottom)
-                
-            }else{
-                
-                if noOfVaccinatorsArr.count > 0{
-                    var indPathArr = [NSIndexPath]()
-                    for indx in 1...noOfVaccinatorsArr.count {
-                        indPathArr.append(IndexPath(row: indx-1, section: 2) as NSIndexPath)
-                    }
-                    tblView.deleteRows(at: indPathArr as [IndexPath], with: .bottom)
-                    noOfVaccinatorsArr.removeAll()
-                }
-                
-                var indPathArr = [NSIndexPath]()
-                
-                for indx in 1...count {
-                    noOfVaccinatorsArr.append(["name" : "", "serology" : ""])
-                    indPathArr.append(IndexPath(row: indx-1, section: 2) as NSIndexPath)
-                }
-                
-                tblView.insertRows(at: indPathArr as [IndexPath], with: .bottom)
-                
-            }
-            
-            CoreDataHandlerPVE().updateSessionDetails(1, text: noOfVaccinatorsArr, forAttribute: "cat_NoOfVaccinatorsDetailsArr")
-            noOfVaccinatorsArr = sharedManager.getSessionValueForKeyFromDB(key: "cat_NoOfVaccinatorsDetailsArr") as? [[String : String]] ?? []
-            tblView.endUpdates()
-            view.endEditing(true)
-            
+        guard count != 0 else { return }
+        updateVaccinatorRows(for: count)
+    }
+
+    private func highlightHeaderButton(isError: Bool) {
+        if let cell = tblView.headerView(forSection: 2) as? NoOfVaccinatorsHeader {
+            cell.bgBtn.layer.borderColor = (isError ? UIColor.red : UIColor.black).cgColor
+            cell.bgBtn.layer.borderWidth = isError ? 2.0 : 1.0
         }
     }
-    
+
+    private func resetHeaderButtonStyle() {
+        highlightHeaderButton(isError: false)
+    }
+
+    private func fetchVaccinatorArray() -> [[String: String]] {
+        return sharedManager.getSessionValueForKeyFromDB(key: "cat_NoOfVaccinatorsDetailsArr") as? [[String: String]] ?? []
+    }
+
+    private func saveVaccinatorArray() {
+        CoreDataHandlerPVE().updateSessionDetails(1, text: noOfVaccinatorsArr, forAttribute: "cat_NoOfVaccinatorsDetailsArr")
+    }
+
+    private func addSingleVaccinator() {
+        tblView.beginUpdates()
+        let indexPath = IndexPath(row: noOfVaccinatorsArr.count, section: 2)
+        noOfVaccinatorsArr.append(["name": "", "serology": ""])
+        tblView.insertRows(at: [indexPath], with: .bottom)
+        
+        saveVaccinatorArray()
+        refreshHeaderAndReload()
+        tblView.endUpdates()
+    }
+
+    private func updateVaccinatorRows(for count: Int) {
+        tblView.beginUpdates()
+        
+        if count < noOfVaccinatorsArr.count {
+            deleteExtraVaccinatorRows(count: count)
+        } else {
+            replaceAllVaccinators(with: count)
+        }
+        
+        saveVaccinatorArray()
+        tblView.endUpdates()
+        view.endEditing(true)
+    }
+
+    private func deleteExtraVaccinatorRows(count: Int) {
+        let removeCount = noOfVaccinatorsArr.count - count
+        let indexPaths = (0..<removeCount).map { IndexPath(row: noOfVaccinatorsArr.count - 1 - $0, section: 2) }
+        noOfVaccinatorsArr.removeLast(removeCount)
+        tblView.deleteRows(at: indexPaths, with: .bottom)
+    }
+
+    private func replaceAllVaccinators(with count: Int) {
+        let indexPaths = (0..<noOfVaccinatorsArr.count).map { IndexPath(row: $0, section: 2) }
+        tblView.deleteRows(at: indexPaths, with: .bottom)
+        noOfVaccinatorsArr = Array(repeating: ["name": "", "serology": ""], count: count)
+        let newIndexPaths = (0..<count).map { IndexPath(row: $0, section: 2) }
+        tblView.insertRows(at: newIndexPaths, with: .bottom)
+    }
+
+    private func refreshHeaderAndReload() {
+        let updatedArr = fetchVaccinatorArray()
+        if let cell = tblView.headerView(forSection: 2) as? NoOfVaccinatorsHeader {
+            cell.numberr = updatedArr.count
+            cell.txtFeild.text = "\(updatedArr.count)"
+        }
+        noOfVaccinatorsArr = updatedArr
+        view.endEditing(true)
+        tblView.reloadData()
+    }
+
     func vaccinatorsbtnMinusTapped(clickedBtnIndPath: NSIndexPath) {
         if noOfVaccinatorsArr.count > 0{
             tblView.beginUpdates()
