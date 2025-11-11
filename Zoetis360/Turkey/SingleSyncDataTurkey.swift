@@ -350,7 +350,7 @@ class SingleSyncDataTurkey: NSObject {
                 let data = savedPostingArrWithAllData.object(at: 0) as! PostingSessionTurkey
                 let acttimeStamp = data.timeStamp
                 
-                var  fullData = acttimeStamp!
+                let  fullData = acttimeStamp!
                 mainDict.setValue(fullData, forKey: "deviceSessionId")
                 
                 let id = UserDefaults.standard.integer(forKey: "Id")
@@ -449,30 +449,7 @@ class SingleSyncDataTurkey: NSObject {
             topVC.present(alert, animated: true)
         }
     }
-    
-    
-    /*
-     func showRetryAlert(apiName: String, postingId: NSNumber, message: String) {
-     let alert = UIAlertController(title: "Error",
-     message: message,
-     preferredStyle: .alert)
-     
-     let retryAction = UIAlertAction(title: "Retry", style: .default) { _ in
-     // Call your retry function
-     self.retryApiCall(apiName: apiName, postingId: postingId)
-     }
-     
-     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-     
-     alert.addAction(retryAction)
-     alert.addAction(cancelAction)
-     
-     // Present the alert
-     if let topVC = UIApplication.shared.keyWindow?.rootViewController {
-     topVC.present(alert, animated: true)
-     }
-     }
-     */
+
     
     func deduplicatedNecropsies(from array: NSArray) -> [CaptureNecropsyDataTurkey] {
         var seen = Set<String>()
@@ -1152,7 +1129,7 @@ class SingleSyncDataTurkey: NSObject {
         {
             let allArray = NSMutableArray()
             let captureNecropsyData = a.object(at: i)  as! CaptureNecropsyDataTurkey
-            let nId = captureNecropsyData.necropsyId!
+            
             complexId = Int(captureNecropsyData.complexId!)
             
             let cNec =  CoreDataHandlerTurkey().FetchNecropsystep1NecIdTurkey(postingId)
@@ -1165,19 +1142,17 @@ class SingleSyncDataTurkey: NSObject {
                 let noOfBird = Int(cNData.noOfBirds!)
                 let houseNo = cNData.houseNo
                 let feedProgram = cNData.feedProgram
-                if let value = cNData.feedId {
-                    var feedId = value
-                }
+               
                 let age = cNData.age
                 let flock = cNData.flockId
                 let sick = cNData.sick
                 let imgId = cNData.imageId
                 complexId = cNData.complexId as! Int
-                let timestamp = cNData.timeStamp
+                
                 let customerId = cNData.custmerId
                 let customerName = cNData.complexName
                 let complexdate = cNData.complexDate
-                var abf = cNData.abf
+                let abf = cNData.abf
                 let farmWeight = cNData.farmWeight
                 let breedString = cNData.breed
                 let sex = cNData.sex
@@ -1226,9 +1201,8 @@ class SingleSyncDataTurkey: NSObject {
                 formWithcatNameWithBirdAndAllObs.setValue(genId, forKey: "GenerationId")
                 allArray.add(formWithcatNameWithBirdAndAllObs)
             }
-            var fullData = String()
             
-            fullData = captureNecropsyData.timeStamp!
+            var fullData = captureNecropsyData.timeStamp!
             formWithcatNameWithBirdAndAllObs1.setValue(captureNecropsyData.necropsyId!, forKey: "SessionId")
             formWithcatNameWithBirdAndAllObs1.setValue(lngId, forKey: "LanguageId")
             formWithcatNameWithBirdAndAllObs1.setValue(fullData, forKey: "deviceSessionId")
@@ -1250,7 +1224,7 @@ class SingleSyncDataTurkey: NSObject {
             
             let allArray = NSMutableArray()
             let captureNecropsyData = postingArrWithAllData.object(at: i)  as! PostingSessionTurkey
-            let nId = captureNecropsyData.postingId!
+            
             let cid = captureNecropsyData.complexId!
             let cNec =  CoreDataHandlerTurkey().FetchNecropsystep1NecIdTurkey(postingId)
             
@@ -1269,7 +1243,7 @@ class SingleSyncDataTurkey: NSObject {
                 }
                 let age = cNData.age
                 complexId = cNData.complexId as! Int
-                let timestamp = cNData.timeStamp
+                
                 let flock = cNData.flockId
                 let imgId = cNData.imageId
                 let farmId = cNData.farmId
@@ -1326,8 +1300,7 @@ class SingleSyncDataTurkey: NSObject {
                 
             }
             
-            var fullData = String()
-            fullData = captureNecropsyData.timeStamp!
+            var fullData = captureNecropsyData.timeStamp!
             formWithcatNameWithBirdAndAllObs1.setValue(captureNecropsyData.postingId!, forKey: "SessionId")
             formWithcatNameWithBirdAndAllObs1.setValue(fullData, forKey: "deviceSessionId")
             formWithcatNameWithBirdAndAllObs1.setValue(lngId, forKey: "LanguageId")

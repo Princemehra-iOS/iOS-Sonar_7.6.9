@@ -1685,8 +1685,8 @@ class PostingSessionDetailController: UIViewController,UITableViewDelegate,UITab
                                 let custId = (arr.object(at: i) as AnyObject).value(forKey: "CustomerId") as! Int
                                 let complexId = (arr.object(at: i) as AnyObject).value(forKey: "ComplexId") as! Int
                                 let complexName = (arr.object(at: i) as AnyObject).value(forKey: "ComplexName") as! String
-                                let sessionDate = (arr.object(at: i) as AnyObject).value(forKey: "SessionDate") as! String
-                                let seesDat = self.convertDateFormater(sessionDate)
+                                let DateOfSession = (arr.object(at: i) as AnyObject).value(forKey: "SessionDate") as! String
+                                let seesDat = self.convertDateFormater(DateOfSession)
                                 let farmArr = (arr.object(at:i) as AnyObject).value(forKey:  "Farms")
                                 if (farmArr as AnyObject).count>0{
                                     for  j in 0..<(farmArr! as AnyObject).count {
@@ -1702,12 +1702,11 @@ class PostingSessionDetailController: UIViewController,UITableViewDelegate,UITab
                                         else{
                                             posttingId = 0
                                         }
-                                        let age =  ((farmArr as AnyObject).object(at: j) as AnyObject).value(forKey:"age")
+                                        let birdAge =  ((farmArr as AnyObject).object(at: j) as AnyObject).value(forKey:"age")
                                         let birds = "\(((farmArr as AnyObject).object(at: j) as AnyObject).value(forKey: "birds") ?? "")"
                                         let houseNo =  ((farmArr as AnyObject).object(at: j) as AnyObject).value(forKey:"houseNo")
                                         let flockId =  ((farmArr as AnyObject).object(at: j) as AnyObject).value(forKey:"flockId")
                                         let feedProgram =  ((farmArr as AnyObject).object(at: j) as AnyObject).value(forKey:"feedProgram") as! String
-                                        let sick =  ((farmArr as AnyObject).object(at: j) as AnyObject).value(forKey:"sick") as! Bool
                                         let feedId = ((farmArr! as AnyObject).object(at: j) as AnyObject).value(forKey: "FeedId") as! Int
                                         let farmId = ((farmArr! as AnyObject).object(at: j) as AnyObject).value(forKey: "DeviceFarmId") as! Int
                                         let imgId = ((farmArr! as AnyObject).object(at: j) as AnyObject).value(forKey: "ImgId") as! Int
@@ -1715,7 +1714,7 @@ class PostingSessionDetailController: UIViewController,UITableViewDelegate,UITab
                                         
                                         let data = chickenCoreDataHandlerModels.SaveNecropsystep1SingleNecropsyData(
                                             postingId: posttingId as NSNumber,
-                                            age: ((age as AnyObject).stringValue)!,
+                                            age: ((birdAge as AnyObject).stringValue)!,
                                             farmName: farmName,
                                             feedProgram: feedProgram,
                                             flockId: flockId as! String,

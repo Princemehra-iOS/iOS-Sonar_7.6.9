@@ -151,7 +151,7 @@ class SingleSyncData: NSObject {
     // MARK: - Feed Program with PostingD
     func feedprogram(postingId:NSNumber)  {
         
-        let postingArrWithAllData =   CoreDataHandler().fetchAllPostingSessionWithisSyncisTrue(true).mutableCopy() as! NSMutableArray
+        let AllPostingData =   CoreDataHandler().fetchAllPostingSessionWithisSyncisTrue(true).mutableCopy() as! NSMutableArray
         let cNecArr =  CoreDataHandler().FetchNecropsystep1WithisSync(true)
         let necArrWithoutPosting = NSMutableArray()
         var timestamp = String()
@@ -173,9 +173,9 @@ class SingleSyncData: NSObject {
         let tempArrTime = NSMutableArray()
         let actualTmestamp = NSMutableArray()
         var sessionId = NSNumber()
-        for i in 0..<postingArrWithAllData.count
+        for i in 0..<AllPostingData.count
         {
-            let pSession =  postingArrWithAllData.object(at: i) as! PostingSession
+            let pSession =  AllPostingData.object(at: i) as! PostingSession
             sessionId = pSession.postingId!
             timestamp = pSession.timeStamp!
             var actualTimestampStr =  pSession.actualTimeStamp
@@ -381,8 +381,8 @@ class SingleSyncData: NSObject {
                 
                 mainDict.setValue(sessionId, forKey: "sessionId")
                 let acttimeStamp = tempArrTime.object(at: i)
-                var  fullData  = String()
-                fullData = acttimeStamp as! String
+                
+                var fullData = acttimeStamp as! String
                 mainDict.setValue(fullData, forKey: "deviceSessionId")
                 
                 let id = UserDefaults.standard.integer(forKey: "Id")
@@ -397,10 +397,6 @@ class SingleSyncData: NSObject {
         }
         
         do {
-            
-            let jsonData = try! JSONSerialization.data(withJSONObject: sessionDictMain, options: JSONSerialization.WritingOptions.prettyPrinted)
-            var jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
-            jsonString = jsonString.trimmingCharacters(in: CharacterSet.whitespaces)
             
             if WebClass.sharedInstance.connected() {
                 
@@ -476,7 +472,7 @@ class SingleSyncData: NSObject {
             }
         }
         self.postingIdArr.removeAllObjects()
-        var sessionId = NSNumber()
+        
         let tempArrTime = NSMutableArray()
         let actualTemp  = NSMutableArray()
         var vaccinationName = String ()
@@ -484,8 +480,8 @@ class SingleSyncData: NSObject {
         for i in 0..<vaccinationPostingArrAllData.count
         {
             let pSession = vaccinationPostingArrAllData.object(at: i) as! PostingSession
-            sessionId = pSession.postingId!
-            var timeStamp = pSession.timeStamp!
+            var  sessionId = pSession.postingId!
+            let timeStamp = pSession.timeStamp!
             var actualtimeStr = pSession.actualTimeStamp
             if actualtimeStr == nil{
                 actualtimeStr = ""
@@ -1076,7 +1072,6 @@ class SingleSyncData: NSObject {
 
         if imageArrWithIsyncIsTrue.count > 0 {
             for i in 0..<totalSession.count {
-                let captureNecropsyData = totalSession.object(at: i) as! CaptureNecropsyData
                 let cNec = CoreDataHandler().FetchNecropsystep1NecId(postingId)
                 let obsWithImageArr = NSMutableArray()
                 for x in 0..<cNec.count {
@@ -1197,6 +1192,7 @@ class SingleSyncData: NSObject {
                         self.delegeteSyncApiData.failWithErrorInternalSyncdata()
                     } else if let data = response.data {
                         print(encodingError)
+                        debugPrint(data)
                         if let urlError = encodingError.underlyingError as? URLError, urlError.code == .timedOut {
                             DispatchQueue.main.async {
                                 
@@ -1344,6 +1340,7 @@ class SingleSyncData: NSObject {
     
     fileprivate func handleErrorCodes(_ statusCode: Int?) {
         if statusCode == 401 {
+            debugPrint("User login fail")
         } else if statusCode == 500 || statusCode == 503 || statusCode == 403 || statusCode == 501 || statusCode == 502 || statusCode == 400 || statusCode == 504 || statusCode == 404 || statusCode == 408 {
             self.delegeteSyncApiData.failWithErrorSyncdata(statusCode: statusCode!)
         }

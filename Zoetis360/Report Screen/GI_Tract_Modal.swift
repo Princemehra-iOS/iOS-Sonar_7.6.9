@@ -1593,7 +1593,6 @@ class GI_Tract_Modal: NSObject {
         var mouth_Lesions : Float = Regions.getObservationsGITractTr(countryID: Regions.countryId).contains(617) ? 0 : NOT_EXIST
         var feedInCrop : Float = Regions.getObservationsGITractTr(countryID: Regions.countryId).contains(623) ? 0 : NOT_EXIST
         var proventriculitis : Float = Regions.getObservationsGITractTr(countryID: Regions.countryId).contains(618) ? 0 : NOT_EXIST
-        //var roundworms : Float = Regions.getObservationsGITractTr(countryID: Regions.countryId).contains(37) ? 0 : NOT_EXIST
         var Content : Float = Regions.getObservationsGITractTr(countryID: Regions.countryId).contains(627) ? 0 : NOT_EXIST
         var Intestinal_Content: Float = Regions.getObservationsGITractTr(countryID: Regions.countryId).contains(628) ? 0 : NOT_EXIST
         var Thin_Intestine: Float = Regions.getObservationsGITractTr(countryID: Regions.countryId).contains(625) ? 0 : NOT_EXIST
@@ -1634,22 +1633,12 @@ class GI_Tract_Modal: NSObject {
                     let value = (aArray.object(at: j) as AnyObject).value(forKey: "obsPoint") as! NSNumber
                     proventriculitis=(proventriculitis)+(value.floatValue > 0 ? 1 : 0)
                 }
-                //                if ((aArray.object(at: j) as AnyObject).value(forKey: "refId") as! NSNumber == 37) && roundworms != NOT_EXIST {
-                //                    let value = (aArray.object(at: j) as AnyObject).value(forKey: "objsVisibilty") as! NSNumber
-                //                    roundworms=(roundworms)+(value.floatValue > 0 ? 1 : 0)
-                //                }
+
                 if ((aArray.object(at: j) as AnyObject).value(forKey: "refId") as! NSNumber == 627) && Content != NOT_EXIST {
                     let value = (aArray.object(at: j) as AnyObject).value(forKey: "obsPoint") as! NSNumber
                     Content=(Content)+(value.floatValue > 0 ? 1 : 0)
                 }
-                //                if ((aArray.object(at: j) as AnyObject).value(forKey: "refId") as! NSNumber == 628) && Intestinal_Content != NOT_EXIST {
-                //                    let value = (aArray.object(at: j) as AnyObject).value(forKey: "objsVisibilty") as! NSNumber
-                //                    Intestinal_Content=(Intestinal_Content)+(value.floatValue > 0 ? 1 : 0)
-                //                }
-                //                if ((aArray.object(at: j) as AnyObject).value(forKey: "refId") as! NSNumber == 625) && Thin_Intestine != NOT_EXIST {
-                //                    let value = (aArray.object(at: j) as AnyObject).value(forKey: "objsVisibilty") as! NSNumber
-                //                    Thin_Intestine=(Thin_Intestine)+(value.floatValue > 0 ? 1 : 0)
-                //                }
+
                 if ((aArray.object(at: j) as AnyObject).value(forKey: "refId") as! NSNumber == 632) && CropMycosis != NOT_EXIST {
                     let value = (aArray.object(at: j) as AnyObject).value(forKey: "objsVisibilty") as! NSNumber
                     CropMycosis=(CropMycosis)+(value.floatValue > 0 ? 1 : 0)
@@ -1699,12 +1688,7 @@ class GI_Tract_Modal: NSObject {
             proventriculitis = (proventriculitis/birdsCount)*100
             preparedArray.add(proventriculitis)
         }
-        
-        //        if roundworms != NOT_EXIST{
-        //            roundworms = (roundworms/birdsCount)*100
-        //            preparedArray.add(roundworms)
-        //        }
-        //
+  
         if wallThickness != NOT_EXIST {
             wallThickness = (wallThickness/birdsCount)*100
             preparedArray.add(wallThickness)

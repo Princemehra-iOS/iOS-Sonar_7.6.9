@@ -540,30 +540,7 @@ class ApiSync: NSObject {
 		return postingIds
 	}
 	
-	// MARK: - Feed Processing
-	//	private func processPostingIds(_ postingIds: NSMutableArray) {
-	//		for postingId in postingIds {
-	//			guard let postingId = postingId as? NSNumber else { continue }
-	//			processSinglePostingId(postingId)
-	//		}
-	//	}
-	
-	//	private func processSinglePostingId(_ postingId: NSNumber) {
-	//		guard !isSyncPostingIdArr else { return }
-	//		isSyncPostingIdArr = true
-	//
-	//		var mainFeeds = NSMutableArray()
-	//
-	//		// Process each feed type
-	//		processCocciControlFeeds(postingId: postingId, mainFeeds: &mainFeeds)
-	//		processAntibioticFeeds(postingId: postingId, mainFeeds: &mainFeeds)
-	//		processAlternativeFeeds(postingId: postingId, mainFeeds: &mainFeeds)
-	//		processMycotoxinFeeds(postingId: postingId, mainFeeds: &mainFeeds)
-	//
-	//		// Add to session array
-	//		let sessionDict = ["sessionId": postingId, "Feeds": mainFeeds]
-	//		sessionArray.add(sessionDict)
-	//	}
+
 	
 	// MARK: - Feed Type Processing
 	private func processCocciControlFeeds(postingId: NSNumber, mainFeeds: inout NSMutableArray) {
@@ -622,25 +599,7 @@ class ApiSync: NSObject {
 			}
 		}
 	}
-	
-	private func processMycotoxinFeeds(postingId: NSNumber, mainFeeds: inout NSMutableArray) {
-		let mycotoxins = CoreDataHandler().fetchMyBindersViaIsSync(true, postingID: postingId)
-		var feedDetails = NSMutableArray()
-		var currentFeed: NSMutableDictionary?
-		
-		for (index, mycotoxin) in mycotoxins.enumerated() {
-			guard let mycotoxinFeed = mycotoxin as? MyCotoxinBindersFeed else { continue }
-			
-			let feedDict = createFeedDict(from: mycotoxinFeed, categoryId: FeedProgramConstants.feedProgramCategoryIds["mycotoxin"]!)
-			feedDetails.add(feedDict)
-			
-			if (index + 1) % FeedProgramConstants.batchSizes["mycotoxin"]! == 0 {
-				currentFeed = createFeedSummary(from: mycotoxinFeed, details: feedDetails)
-				mainFeeds.add(currentFeed!)
-				feedDetails = NSMutableArray()
-			}
-		}
-	}
+
 	
 	// MARK: - Feed Dictionary Creation
 	private func createFeedDict<T: FeedProtocol>(from feed: T, categoryId: Int) -> NSMutableDictionary {
@@ -695,7 +654,7 @@ class ApiSync: NSObject {
 	func addVaccination() {
         // Create Vaccination JSON for Post API
         
-        let postingArrWithAllData = CoreDataHandler().fetchAllPostingSessionWithisSyncisTrue(true).mutableCopy() as! NSMutableArray
+        let allPostingArrData = CoreDataHandler().fetchAllPostingSessionWithisSyncisTrue(true).mutableCopy() as! NSMutableArray
         let cNecArr = CoreDataHandler().FetchNecropsystep1WithisSync(true)
         let necArrWithoutPosting = NSMutableArray()
         
@@ -714,17 +673,17 @@ class ApiSync: NSObject {
         }
         self.postingIdArr.removeAllObjects()
         var sessionId = NSNumber()
-        var timeStamp = String()
+       
         let tempArrTime = NSMutableArray()
         let actualTemp  = NSMutableArray()
         
-        for i in 0..<postingArrWithAllData.count
+        for i in 0..<allPostingArrData.count
         {
             if isSyncPostingArrWithData == false{
                 isSyncPostingArrWithData = true
-                let pSession = postingArrWithAllData.object(at: i) as! PostingSession
+                let pSession = allPostingArrData.object(at: i) as! PostingSession
                 sessionId = pSession.postingId!
-                timeStamp = pSession.timeStamp!
+                var timeStamp = pSession.timeStamp!
                 var actualtimeStr = pSession.actualTimeStamp
                 if actualtimeStr == nil{
                     actualtimeStr = ""
@@ -962,7 +921,7 @@ class ApiSync: NSObject {
                             self.delegeteSyncApi.failWithErrorInternal()
                         }
                         else if let data = response.data, let responseString = String(data: data, encoding: String.Encoding.utf8) {
-                            
+                            debugPrint(responseString)
                             if let s = statusCode {
                                 self.delegeteSyncApi.failWithError(statusCode: s)
                             }
@@ -977,24 +936,6 @@ class ApiSync: NSObject {
         }
         
     }
-
-	
-	private func processSinglePostingVaccination(postingId: NSNumber, sessionArr: NSMutableArray, sessionDict: NSMutableDictionary) {
-		guard !isSyncPostingIdArr else { return }
-		isSyncPostingIdArr = true
-		
-		let vaccinationDetail = NSMutableDictionary()
-		
-		// Process field vaccinations
-		processFieldVaccinations(postingId: postingId, vaccinationDetail: vaccinationDetail)
-		
-		// Process hatchery vaccinations
-		processHatcheryVaccinations(postingId: postingId, vaccinationDetail: vaccinationDetail)
-		
-		// Add to session array
-		let sessionDict = ["sessionId": postingId, "VaccinationDetails": vaccinationDetail]
-		sessionArr.add(sessionDict)
-	}
 	
 	// MARK: - Field Vaccination Processing
 	private func processFieldVaccinations(postingId: NSNumber, vaccinationDetail: NSMutableDictionary) {
@@ -1340,13 +1281,12 @@ class ApiSync: NSObject {
                 let mortality = (pSession.dayMortality ?? "") as String
                 
                 self.postingIdArr.add(sessionId!)
-                var fullData = String()
-                var udid = String()
+               
                 
-                udid = UserDefaults.standard.value(forKey: "ApplicationIdentifier")! as! String
+                var udid = UserDefaults.standard.value(forKey: "ApplicationIdentifier")! as! String
                 _ =   timestamp! + "_" + String(describing: sessionId!)
                 
-                fullData = timestamp!
+                var fullData = timestamp!
                 postingDataDict.setValue(finalize, forKey: "finalized")
                 postingDataDict.setValue(sessionDate, forKey: "sessionDate")
                 postingDataDict.setValue(lngId, forKey: "LanguageId")
@@ -1428,11 +1368,11 @@ class ApiSync: NSObject {
             let finalize = false
             let TimeStamp = pSession.timeStamp
             self.postingIdArr.add(sessionId!)
-            var fullData = String()
+           
             let udid = String()
             _ = String()
             _ = String()
-            fullData = TimeStamp!
+            var fullData = TimeStamp!
             postingDataDict.setValue(finalize, forKey: "finalized")
             postingDataDict.setValue(sessionDate, forKey: "sessionDate")
             postingDataDict.setValue(sessionTypeId, forKey: "sessionTypeId")
@@ -1511,7 +1451,7 @@ class ApiSync: NSObject {
                             self.delegeteSyncApi.failWithErrorInternal()
                             
                         } else if let data = response.data{
-                            
+                            debugPrint(data)
                             if let s = statusCode {
                                 self.delegeteSyncApi.failWithError(statusCode: s)
                             }
@@ -1759,7 +1699,7 @@ class ApiSync: NSObject {
                         if let err = encodingError as? URLError, err.code == .notConnectedToInternet {
                             self.delegeteSyncApi.failWithErrorInternal()
                         } else if let data = response.data{
-                            
+                            debugPrint(data)
                             if let s = statusCode {
                                 self.delegeteSyncApi.failWithError(statusCode: s)
                             }
@@ -1903,7 +1843,7 @@ class ApiSync: NSObject {
                 let sessionDetails = NSMutableDictionary()
                 let captureNecropsyData = totalSession.object(at: i)  as! CaptureNecropsyData
                 let nId = captureNecropsyData.necropsyId!
-                let timestamp = captureNecropsyData.timeStamp
+               
                 let cNec =  CoreDataHandler().FetchNecropsystep1WithisSyncandPostingId(true , postingId:nId)
                 let obsWithImageArr = NSMutableArray()
                 for x in 0..<cNec.count

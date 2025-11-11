@@ -709,7 +709,7 @@ class ApiSyncTurkey: NSObject {
                     mainDict.setValue(id, forKey: "UserId")
                     mainDict.setValue(false, forKey: "finalized")
                     
-                    let sessionDict: NSMutableDictionary = [
+                    var sessionDict: NSMutableDictionary = [
                         "deviceSessionId" : fullData,
                         "sessionId" : postingIdArr[i] as! NSNumber,
                         "userId" : id,
@@ -1098,7 +1098,7 @@ class ApiSyncTurkey: NSObject {
                             self.delegeteSyncApiTurkey.failWithErrorInternal()
                             print(err)
                         } else if let data = response.data{
-                            
+                            debugPrint(data)
                             if let s = statusCode {
                                 
                                 self.delegeteSyncApiTurkey.failWithError(statusCode: s)
