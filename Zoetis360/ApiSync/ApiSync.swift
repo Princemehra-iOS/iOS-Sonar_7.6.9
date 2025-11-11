@@ -2354,7 +2354,7 @@ class ApiSync: NSObject {
             let captureNecropsyData = cNecArr.object(at: i)  as! CaptureNecropsyData
             let nId = captureNecropsyData.necropsyId!
             
-            CoreDataHandler().updateisSyncOnCaptureSkeletaInDatabase(nId , isSync: false, { (success) in
+            CoreDataHandler().CaptureSkeletaDataUpdatedInDatabase(nId , isSync: false, { (success) in
                 if success == true{
                     
                     CoreDataHandler().updateisSyncNecropsystep1neccId(nId , isSync: false, { (success) in
@@ -2403,7 +2403,7 @@ class ApiSync: NSObject {
                                 CoreDataHandler().updateisSyncOnAntiboticViaPostingId(pId , isSync: false, { (success) in
                                     if success == true{
                                         
-                                        CoreDataHandler().updateisSyncOnCaptureSkeletaInDatabase(pId , isSync: false, { (success) in
+                                        CoreDataHandler().CaptureSkeletaDataUpdatedInDatabase(pId , isSync: false, { (success) in
                                             if success == true{
                                                 CoreDataHandler().updateisSyncOnAllCocciControlviaPostingid(pId , isSync: false, { (success) in
                                                     if success == true{
@@ -2479,7 +2479,7 @@ class ApiSync: NSObject {
 		let handler = CoreDataHandler()
 		
 		let syncTasks: [(NSNumber, @escaping (Bool) -> Void) -> Void] = [
-			{ id, cb in handler.updateisSyncOnCaptureSkeletaInDatabase(id, isSync: false, cb) },
+			{ id, cb in handler.CaptureSkeletaDataUpdatedInDatabase(id, isSync: false, cb) },
 			{ id, cb in handler.updateisSyncNecropsystep1neccId(id, isSync: false, cb) },
 			{ id, cb in handler.updateisSyncOnCaptureInDatabase(id, isSync: false, cb) },
 			{ id, cb in handler.updateisSyncOnBirdPhotoCaptureDatabase(id, isSync: false, cb) },

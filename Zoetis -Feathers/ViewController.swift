@@ -794,7 +794,7 @@ class ViewController: BaseViewController, UITextFieldDelegate, UITableViewDelega
 
                     self.loginArray = CoreDataHandler().fetchLoginType()
                     if(self.loginArray.count == 0) {
-                        CoreDataHandler().loginDatabase(1, userId: id! as NSNumber , userName: Email  , status: 1, signal: "", loginId: 0, dbArray: self.loginArray, index: 0)
+                        CoreDataHandler().loginDatabase(1, userId: id! as NSNumber , userName: Email  , status: 1, loginId: 0, dbArray: self.loginArray, index: 0)
                     }
                 }
                 break

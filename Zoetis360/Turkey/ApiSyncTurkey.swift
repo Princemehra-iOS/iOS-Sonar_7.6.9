@@ -458,36 +458,6 @@ class ApiSyncTurkey: NSObject {
             topVC.present(alert, animated: true)
         }
     }
-
-    /*
-    func showRetryAlert(apiName: String, message: String, retryCount: Int = 2) {
-        let alert = UIAlertController(
-            title: "Error",
-            message: message,
-            preferredStyle: .alert
-        )
-        
-        let retryTitle = "Retry (\(retryCount) left)"
-        let retryAction = UIAlertAction(title: retryTitle, style: .default) { _ in
-            
-            if retryCount > 0 {
-                self.retryApiCall(apiName: apiName, retryCount: retryCount - 1)
-            } else {
-                print("⚠️ No more retries left for \(apiName)")
-            }
-            
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        
-        alert.addAction(retryAction)
-        alert.addAction(cancelAction)
-        
-        if let topVC = UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.rootViewController {
-            topVC.present(alert, animated: true)
-        }
-    }
-    */
     
     // MARK: 📡 POST API Call - Feed Program data On Server 🌾
     func feedprogram() {
@@ -733,13 +703,18 @@ class ApiSyncTurkey: NSObject {
                     let acttimeStamp = tempArrTime.object(at: i)
                     
                     
-                    var fullData = acttimeStamp as! String
+                    let fullData = acttimeStamp as! String
                     mainDict.setValue(fullData, forKey: "deviceSessionId")
                     let id = UserDefaults.standard.integer(forKey: "Id")
                     mainDict.setValue(id, forKey: "UserId")
                     mainDict.setValue(false, forKey: "finalized")
-                    var sessionDict = NSMutableDictionary()
-                    sessionDict = ["deviceSessionId" : fullData,"sessionId" : postingIdArr[i] as! NSNumber, "userId" : id,"feeds" : mainFeeds]
+                    
+                    let sessionDict: NSMutableDictionary = [
+                        "deviceSessionId" : fullData,
+                        "sessionId" : postingIdArr[i] as! NSNumber,
+                        "userId" : id,
+                        "feeds" : mainFeeds
+                    ]
                     
                     sessionArray.add(sessionDict)
                     sessionDict = NSMutableDictionary()
@@ -1789,10 +1764,7 @@ class ApiSyncTurkey: NSObject {
         sessionWithAllforms.setValue(sessionArr, forKey: "Session")
         
         do {
-            let jsonData = try! JSONSerialization.data(withJSONObject: sessionWithAllforms, options: JSONSerialization.WritingOptions.prettyPrinted)
-            
-            var jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
-            jsonString = jsonString.trimmingCharacters(in: CharacterSet.whitespaces)
+ 
             if WebClass.sharedInstance.connected() {
                 
                 accestoken = AccessTokenHelper().getFromKeychain(keyed: Constants.accessToken)!
@@ -2038,7 +2010,6 @@ class ApiSyncTurkey: NSObject {
                 let sessionDetails = NSMutableDictionary()
                 let captureNecropsyData = totalSession.object(at: i)  as! CaptureNecropsyDataTurkey
                 let nId = captureNecropsyData.necropsyId!
-                let timestamp = captureNecropsyData.timeStamp
                 let cNec =  CoreDataHandlerTurkey().FetchNecropsystep1WithisSyncandPostingIdTurkey(true , postingId:nId)
                 let obsWithImageArr = NSMutableArray()
                 for x in 0..<cNec.count
@@ -2075,16 +2046,14 @@ class ApiSyncTurkey: NSObject {
                                 {
                                     let objBirdPhotoCapture = photoArr.object(at: z) as! BirdPhotoCaptureTurkey
                                     var image : UIImage = UIImage(data: objBirdPhotoCapture.photo! as Data)!
-                                    var data: Data = image.pngData()!
                                     
                                     if let imageData = image.jpeg(.lowest) {
                                         
                                         image = UIImage(data: imageData)!
-                                        
                                     }
+                                    
                                     let w : CGFloat = image.size.width / 7
                                     yImage = self.resizeImage(image, newWidth: w)!
-                                    data = yImage.pngData()!
                                     let imageDict =  NSMutableDictionary()
                                     imageDict.setValue(self.imageToNSString(yImage), forKey: "Image")
                                     photoValArr.add(imageDict)
@@ -2097,8 +2066,8 @@ class ApiSyncTurkey: NSObject {
                     }
                 }
                 
-                var fullData = String()
-                fullData = captureNecropsyData.timeStamp!
+               
+                var fullData = captureNecropsyData.timeStamp!
                 sessionDetails.setValue(obsWithImageArr, forKey: "ImageDetails")
                 let id = UserDefaults.standard.integer(forKey: "Id")
                 sessionDetails.setValue(id, forKey: "UserId")
@@ -2153,17 +2122,14 @@ class ApiSyncTurkey: NSObject {
                                         let objBirdPhotoCapture = photoArr.object(at: z) as! BirdPhotoCaptureTurkey
                                         
                                         var image : UIImage = UIImage(data: objBirdPhotoCapture.photo! as Data)!
-                                        var data: Data = image.pngData()!
                                         
                                         if let imageData = image.jpeg(.lowest) {
                                             
                                             image = UIImage(data: imageData)!
-                                            
                                         }
                                         let w : CGFloat = image.size.width / 7
                                         
                                         yImage = self.resizeImage(image, newWidth: w)!
-                                        data = yImage.pngData()!
                                         let imageDict =  NSMutableDictionary()
                                         imageDict.setValue(self.imageToNSString(yImage), forKey: "Image")
                                         photoValArr.add(imageDict)
@@ -2176,8 +2142,7 @@ class ApiSyncTurkey: NSObject {
                         }
                     }
                     
-                    var fullData = String()
-                    fullData = captureNecropsyData.timeStamp!
+                    var fullData = captureNecropsyData.timeStamp!
                     sessionDetails.setValue(obsWithImageArr, forKey: "ImageDetails")
                     let id = UserDefaults.standard.integer(forKey: "Id")
                     sessionDetails.setValue(id, forKey: "UserId")
@@ -2190,9 +2155,6 @@ class ApiSyncTurkey: NSObject {
         sessionDict.setValue(sessionArr, forKey: "Sessions")
         
         do {
-            let jsonData = try! JSONSerialization.data(withJSONObject: sessionDict, options: JSONSerialization.WritingOptions.prettyPrinted)
-            var jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
-            jsonString = jsonString.trimmingCharacters(in: CharacterSet.whitespaces)
             
             if WebClass.sharedInstance.connected() {
                 

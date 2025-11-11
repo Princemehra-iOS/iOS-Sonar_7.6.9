@@ -106,20 +106,6 @@ class Regions: NSObject {
     
     class func getobservationsSkeletal(countryID: Int) -> Array<Int> {
         
-//        var observations: Array<Int>?
-//        
-//        switch countryID {
-//            
-//        case 40: observations = [2,3,4,5,6,7,8,9,12]
-//            break
-//        case 35: observations = [1,4,7,14]
-//            break
-//        default: break
-//            
-//        }
-//        return observations!
-        
-        
         var detailsArray: [Int] = []
         let environmentIs = Constants.Api.versionUrl
         let  lngId = UserDefaults.standard.integer(forKey: "lngId")

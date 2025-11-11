@@ -46,6 +46,7 @@ class ReportComposer: NSObject {
         }
         do {
             if let value = pathToReportHTMLTemplate {
+                debugPrint(value)
                 var HTMLContent = try? String(contentsOfFile: pathToReportHTMLTemplate!, encoding: String.Encoding.utf8)
                 
                 
@@ -133,7 +134,6 @@ class ReportComposer: NSObject {
                         itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"#Acervulina#", with: NSString(format: "%.1f",items[i]["acer"]?.floatValue ?? 0) as String)
                         itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"#acerMean#", with: NSString(format: "%.1f",(((meanArray[i] as! NSArray)[index] as AnyObject).floatValue).isNaN ? 0 : (((meanArray[i] as! NSArray)[index] as AnyObject).floatValue)) as String)
                         
-                        // AG_Total = items[0]["isCocciHistory"]?.boolValue == true ? AG_Total+items[i]["acer"]!.floatValue : AG_Total + items[i]["acer"]!.floatValue
                         AG_Total = AG_Total + items[i]["acer"]!.floatValue
                         
                         AGMean_Total = AGMean_Total + (((meanArray[i] as! NSArray)[index] as AnyObject).floatValue)
@@ -215,7 +215,6 @@ class ReportComposer: NSObject {
                                 if isCheckSum == false
                                 {
                                     needToSplit0114 = true
-                                    
                                 }
                                 else
                                 {
@@ -244,12 +243,10 @@ class ReportComposer: NSObject {
                                 else{
                                     needToSplit1424 = false
                                 }
-                                
                             }
                             
                         }
                         else if items[arrayIndex]["meanAge"]!.integerValue > 32 && items[arrayIndex]["meanAge"]!.integerValue < 43{
-                            
                             
                             if needToSplit2532 == true
                             {
@@ -268,18 +265,14 @@ class ReportComposer: NSObject {
                                 }
                                 else{
                                     needToSplit2532 = false
-                                    
                                 }
-                                
                             }
                             
                         }
                         else if items[arrayIndex]["meanAge"]!.integerValue > 42 && items[arrayIndex]["meanAge"]!.integerValue < 81{
                             
-                            
                             if needToSplit42 == true
                             {
-                                
                                 needToSplit3341 = false
                                 needToSplit42 = false
                                 needToSplit2532 = false
@@ -290,8 +283,6 @@ class ReportComposer: NSObject {
                             
                             else if needToSplit3341 == true
                             {
-                                
-                                
                                 
                                 if (items.count == i + 1)
                                 {
@@ -309,9 +300,7 @@ class ReportComposer: NSObject {
                                     needToSplit1424 = false
                                     needToSplit0114 = false
                                     isCheckSum3 = true
-                                }
-                                
-                                
+                                }                                
                             }
                             else
                             {

@@ -300,8 +300,8 @@ class CoreDataHandlerTurkey: NSObject {
     func getHatcheryDataFromServerSingleFromDeviceIdTurkey(_ dict : NSDictionary,postingId:NSNumber)  {
         
         let appDelegate    = UIApplication.shared.delegate as? AppDelegate
-        let managedContext = appDelegate!.managedObjectContext
-        
+       
+        self.managedContext = appDelegate!.managedObjectContext
         var allkeyArr = dict.allKeys as NSArray
         allkeyArr = allkeyArr.sorted(by: {($0 as! String).localizedStandardCompare($1 as! String) == .orderedAscending}) as NSArray
         for  j in 0..<allkeyArr.count {

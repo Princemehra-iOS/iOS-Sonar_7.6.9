@@ -649,6 +649,7 @@ extension Report_MainVCViewController {
         let dataSet = BarChartDataSet(entries: self.entries_Array as NSArray as? [ChartDataEntry], label: "")
         
         if let values = verticalValues.last {
+            debugPrint(values)
             dataSet.stackLabels = [verticalValues.last!.trimmingCharacters(in: .whitespaces)+" 0",verticalValues.last!.trimmingCharacters(in: .whitespaces)+" 1",verticalValues.last!.trimmingCharacters(in: .whitespaces)+" 2",verticalValues.last!.trimmingCharacters(in: .whitespaces)+" 3",verticalValues.last!.trimmingCharacters(in: .whitespaces)+" 4"]
             dataSet.colors = [UIColor.green,UIColor.yellow,UIColor.orange,UIColor.red,UIColor.blue]
         }

@@ -288,6 +288,7 @@ class AddFarmTurkey: UIView,UITextFieldDelegate{
         let result = NSMutableArray()
         for value in array {
             if encountered.contains(value as! String) {
+                debugPrint("No duplicate data found.")
             }
             else {
                 encountered.insert(value as! String)

@@ -5049,7 +5049,7 @@ class CoreDataHandler : NSObject  {
         
     }
     
-    func loginDatabase(_ userTypeId : NSNumber, userId: NSNumber ,userName: String,status: NSNumber,signal:String,loginId:NSNumber,dbArray :NSArray ,index : Int)
+    func loginDatabase(_ userTypeId : NSNumber, userId: NSNumber ,userName: String,status: NSNumber,loginId:NSNumber,dbArray :NSArray ,index : Int)
     {
         let appDelegate    = UIApplication.shared.delegate as? AppDelegate
         
@@ -5063,7 +5063,6 @@ class CoreDataHandler : NSObject  {
                 objTable.setValue(userId, forKey:"userId")
                 objTable.setValue(status, forKey:"status")
                 objTable.setValue(userName, forKey:"username")
-                objTable.setValue(signal, forKey:"signal")
                 objTable.setValue(loginId, forKey:"loginId")
             }
             do
@@ -5080,7 +5079,6 @@ class CoreDataHandler : NSObject  {
             person.setValue(userId, forKey:"userId")
             person.setValue(status, forKey:"status")
             person.setValue(userName, forKey:"username")
-            person.setValue(signal, forKey:"signal")
             person.setValue(loginId, forKey:"loginId")
             
             do {
@@ -9755,7 +9753,7 @@ class CoreDataHandler : NSObject  {
 
     // MARK: 🟠 Update captured Necropsy status for Skeletan Category
 
-    func updateisSyncOnCaptureSkeletaInDatabase(_ necId : NSNumber , isSync : Bool,_ completion: (_ status: Bool) -> Void)
+    func CaptureSkeletaDataUpdatedInDatabase(_ necId : NSNumber , isSync : Bool,_ completion: (_ status: Bool) -> Void)
     {
         let appDelegate    = UIApplication.shared.delegate as? AppDelegate
         let managedContext = appDelegate!.managedObjectContext

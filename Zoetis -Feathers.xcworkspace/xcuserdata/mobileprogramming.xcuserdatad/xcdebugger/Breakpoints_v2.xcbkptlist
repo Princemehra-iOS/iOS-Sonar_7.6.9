@@ -242,50 +242,6 @@
             endingLineNumber = "1730"
             landmarkName = "updatePressed()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FC8FA14E-3947-45DB-AB38-F47AE3CE0011 - 163b589415dc3c22"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable () -&gt; () in PoultryView_360.CaptureNecropsyStep1Turkey.updatePressed() -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mobileprogramming/Documents/Sonar%20Scanned%20Code/Zoetis360/Turkey/step%201/CaptureNecropsyStep1Turkey.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1730"
-                  endingLineNumber = "1730">
-               </Location>
-               <Location
-                  uuid = "FC8FA14E-3947-45DB-AB38-F47AE3CE0011 - 8dbae6a099e11ecd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable () -&gt; () in PoultryView_360.CaptureNecropsyStep1Turkey.updatePressed() -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mobileprogramming/Documents/Sonar%20Scanned%20Code/Zoetis360/Turkey/step%201/CaptureNecropsyStep1Turkey.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1731"
-                  endingLineNumber = "1731">
-               </Location>
-               <Location
-                  uuid = "FC8FA14E-3947-45DB-AB38-F47AE3CE0011 - a82e151713523444"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PoultryView_360.CaptureNecropsyStep1Turkey.updatePressed() -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mobileprogramming/Documents/Sonar%20Scanned%20Code/Zoetis360/Turkey/step%201/CaptureNecropsyStep1Turkey.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1731"
-                  endingLineNumber = "1731">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -382,50 +338,6 @@
             endingLineNumber = "758"
             landmarkName = "saveStep1Data()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E101E7C7-FA4A-43DA-8AC5-631187AF414D - 859ce3d9414b817f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PoultryView_360.CaptureNecropsyStep1Turkey.saveStep1Data() -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mobileprogramming/Documents/Sonar%20Scanned%20Code/Zoetis360/Turkey/step%201/CaptureNecropsyStep1Turkey.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "754"
-                  endingLineNumber = "754">
-               </Location>
-               <Location
-                  uuid = "E101E7C7-FA4A-43DA-8AC5-631187AF414D - 859ce3d9414b819c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PoultryView_360.CaptureNecropsyStep1Turkey.saveStep1Data() -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mobileprogramming/Documents/Sonar%20Scanned%20Code/Zoetis360/Turkey/step%201/CaptureNecropsyStep1Turkey.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "757"
-                  endingLineNumber = "757">
-               </Location>
-               <Location
-                  uuid = "E101E7C7-FA4A-43DA-8AC5-631187AF414D - 859ce3d9414b8039"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PoultryView_360.CaptureNecropsyStep1Turkey.saveStep1Data() -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mobileprogramming/Documents/Sonar%20Scanned%20Code/Zoetis360/Turkey/step%201/CaptureNecropsyStep1Turkey.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "760"
-                  endingLineNumber = "760">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -438,8 +350,8 @@
             filePath = "Zoetis360/Turkey/AddFarmTurkeyXib/AddFarmTurkey.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "859"
-            endingLineNumber = "859"
+            startingLineNumber = "860"
+            endingLineNumber = "860"
             landmarkName = "abfBtnAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -745,6 +657,22 @@
             startingLineNumber = "236"
             endingLineNumber = "236"
             landmarkName = "timmerBtnLogoutAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "17D4DB8C-37D2-4868-A1DD-D65F52D046BE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoetis360/Settings/NetConnection/Helper Class/HandlerCoreData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "9758"
+            endingLineNumber = "9758"
+            landmarkName = "CaptureSkeletaDataUpdatedInDatabase(_:isSync:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

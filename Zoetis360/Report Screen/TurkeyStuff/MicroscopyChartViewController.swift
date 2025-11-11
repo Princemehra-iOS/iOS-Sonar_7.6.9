@@ -15,8 +15,6 @@ import GigyaTfa
 import GigyaAuth
 
 
-
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
 // Consider refactoring the code to use the non-optional operators.
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     switch (lhs, rhs) {
@@ -29,7 +27,7 @@ fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     }
 }
 
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+
 // Consider refactoring the code to use the non-optional operators.
 fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     switch (lhs, rhs) {
@@ -196,12 +194,10 @@ class MicroscopyChartViewController: UIViewController,MicroscopyCalculationsDele
         self.Bacteria_Nonmotile_Array.add(Bacteria_Nonmotile)
         self.Pepto_Array.add(Pepto)
         
-        if !isFarmSelected! {
-            
-            if (Bacteria_Motile > 0) || (Coccidia > 0) || (Bacteria_Nonmotile > 0) || (Pepto > 0) {
-                verticalValuesForWeek.append(verticalValues[maxFarmCount-1])
-                indexValueArray.append(maxFarmCount-1)
-            }
+        if !isFarmSelected!,
+           (Bacteria_Motile > 0 || Coccidia > 0 || Bacteria_Nonmotile > 0 || Pepto > 0) {
+            verticalValuesForWeek.append(verticalValues[maxFarmCount - 1])
+            indexValueArray.append(maxFarmCount - 1)
         }
     }
     
@@ -425,11 +421,11 @@ class MicroscopyChartViewController: UIViewController,MicroscopyCalculationsDele
             barData  = (self.preparedArray[0] as? ChartDataSet)!
             barData.colors = [UIColor(red: 50/255, green: 91/255, blue: 157/255, alpha: 1)]
             
-            let chartData = BarChartData(dataSets: [barData])
+            let barChartData = BarChartData(dataSets: [barData])
             barData.notifyDataSetChanged()
-            chartData.notifyDataChanged()
+            barChartData.notifyDataChanged()
             barChartView.notifyDataSetChanged()
-            barChartView.data = chartData
+            barChartView.data = barChartData
         }
         if barData.yMax <= 0.0 {
             barChartView.clear()
