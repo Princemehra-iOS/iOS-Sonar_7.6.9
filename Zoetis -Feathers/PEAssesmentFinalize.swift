@@ -591,10 +591,8 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
         else{
             catArrayForTableIs = CoreDataHandlerPE().fetchCustomerWithCatID(selectedCategory?.sequenceNo as? NSNumber ?? 0)
         }
-        //        catArrayForTableIs = CoreDataHandlerPE().fetchCustomerWithCatID(selectedCategory?.sequenceNo as NSNumber? ?? 0)
         tableview.reloadData()
         if(selectedCategory?.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen"){
-            //            scrollToBottom(section:0)
         }
         
     }
@@ -606,7 +604,6 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
         else{
             catArrayForTableIs = CoreDataHandlerPE().fetchCustomerWithCatID(selectedCategory?.sequenceNo as? NSNumber ?? 0)
         }
-        //        catArrayForTableIs = CoreDataHandlerPE().fetchCustomerWithCatID(selectedCategory?.sequenceNo as NSNumber? ?? 0)
         
     }
     
@@ -1279,18 +1276,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         cell.infoButton.tag = indexPath.row
                         cell.vaccDropImgView.isHidden = true
                         cell.noMixerFoundView.isHidden = true
-//                        if regionID != 3 {
-//                            cell.vaccDropImgView.image = UIImage.init(named: "addIcon_new")
-//                        }
-//                        if vaccineMixerFound {
-//                            cell.infoButton.isHidden = false
-//                            cell.vaccDropImgView.isHidden = false
-//                            cell.noMixerFoundView.isHidden = true
-//                        } else {
-//                            cell.infoButton.isHidden = true
-//                            cell.vaccDropImgView.isHidden = true
-//                            cell.noMixerFoundView.isHidden = false
-//                        }
+
                         if certificateData.count > 0 {
                             
                             cell.config(data:certificateData[indexPath.row])
@@ -2576,7 +2562,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         if((assessment?.isAllowNA) ?? false ){
                             cell.btn_NA.isHidden = false
                             cell.lbl_NA.isHidden = false
-                            let assID =  assessment?.assID ?? 0
+                           
                             if((assessment?.isNA) ?? false){
                                 cell.btn_NA.isSelected = true
                                 
@@ -2641,7 +2627,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                     let boldMark2 =  ")"
                     let mrk = String(maxMarksIs)
                     _ = assessment?.assDetail1 ?? ""
-                    let assID =  assessment?.assID ?? 0
+                   
                     if assessment?.rollOut == "Y" && assessment?.sequenceNoo == 3 && assessment?.qSeqNo == 12
                     {
                         cell.txtQCCount.text =  assessment?.qcCount ?? ""
@@ -2656,26 +2642,6 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                             cell.showQcCountextField()
                             self.peNewAssessment.qcCount  = cell.txtQCCount.text
                             CoreDataHandlerPE().updateInDoGInProgressInDB(newAssessment: self.peNewAssessment)
-                        }
-                    }
-                    
-                  
-                    
-                    else if assessment?.rollOut == "Y" && assessment?.sequenceNoo == 3 && assessment?.qSeqNo == 12
-                    {
-                        cell.txtQCCount.text =  assessment?.qcCount ?? ""
-                        cell.showQcCountextField()
-                        if(assessment?.isNA ?? false){
-                            cell.txtQCCount.text =  "NA"
-                            cell.showQcCountextField()
-                            self.peNewAssessment.qcCount  = "NA"
-                            CoreDataHandlerPE().updateInDoGInProgressInDB(newAssessment: self.peNewAssessment)
-                        }else{
-                            cell.txtQCCount.text =  assessment?.qcCount ?? ""
-                            cell.showQcCountextField()
-                            self.peNewAssessment.qcCount  = cell.txtQCCount.text
-                            CoreDataHandlerPE().updateInDoGInProgressInDB(newAssessment: self.peNewAssessment)
-                            
                         }
                     }
                     else if assessment?.rollOut == "Y" && assessment?.catName == "Miscellaneous" && assessment?.qSeqNo == 1
@@ -2785,7 +2751,6 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                                 assessment?.assStatus = 1
                                 
                                 self.updateAssessmentInDb(assessment : assessment!)
-                                //  }
                                 
                             }
                             
@@ -2801,13 +2766,6 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                                 self.updateAssessmentInDb(assessment : assessment!)
                             }
                             updateScore(isAllNA: false)
-                            
-                            //                    if(selectedCategory?.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen"){
-                            //                        catArrayForTableIs = CoreDataHandlerPE().fetchCustomerWithCatID(77)
-                            //                    }
-                            //                    else{
-                            //                        catArrayForTableIs = CoreDataHandlerPE().fetchCustomerWithCatID(selectedCategory?.sequenceNo as? NSNumber ?? 0)
-                            //                    }
                             
                             self.chechForLastCategory()
                             self.tableview.isUserInteractionEnabled = true
@@ -3184,12 +3142,10 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                                     
                                     if(selectedCategory?.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen"){
                                         catArrayForTableIs = CoreDataHandlerPE().fetchCustomerWithCatID(selectedCategory?.sequenceNo as? NSNumber ?? 0)
-                                        var assessment = catArrayForTableIs[indexPath.row] as? PE_AssessmentInProgress
                                         
                                     }
                                     else{
                                         catArrayForTableIs = CoreDataHandlerPE().fetchCustomerWithCatID(selectedCategory?.sequenceNo as? NSNumber ?? 0)
-                                        var assessment = catArrayForTableIs[indexPath.row] as? PE_AssessmentInProgress
                                         
                                     }
                                     updateScore(isAllNA: false)
@@ -3240,211 +3196,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         
                         self.peNewAssessment.ppmValue  = txt ?? ""
                         CoreDataHandlerPE().updateInDoGInProgressInDB(newAssessment: self.peNewAssessment)
-                        /*
-                         textValue  = Int(txt ?? "")
-                         cell.ppmText = txt
-                         
-                         if self.peNewAssessment.isHandMix == true
-                         {
-                         if textValue ?? 0 <= 4499 || textValue ?? 0 >= 5500
-                         {
-                         if cell.ppmText == ""
-                         {
-                         
-                         var result = Int(self.resultScoreLabel.text ?? "0") ?? 0
-                         var maxresult = Int(self.totalScoreLabel.text ?? "0") ?? 0
-                         
-                         if result != maxresult
-                         {
-                         if assessment?.assStatus == 0
-                         {
-                         self.updateAssessmentInDb(assessment : assessment!)
-                         }
-                         else
-                         {
-                         let maxMarks = assessment?.assMaxScore ?? 0
-                         result = result + Int(truncating: maxMarks)
-                         self.selectedCategory?.catResultMark = result
-                         assessment?.catResultMark = result as NSNumber
-                         self.resultScoreLabel.text = String(result)
-                         Constants.isPPmValueChanged = false
-                         self.updateAssessmentInDb(assessment : assessment!)
-                         }
-                         }
-                         
-                         return
-                         }
-                         
-                         else
-                         {
-                         
-                         if Constants.isPPmValueChanged ==  true
-                         {
-                         return
-                         }
-                         
-                         if textValue ?? 0 > 4499 && textValue ?? 0 < 5501 {
-                         Constants.isPPmValueChanged = false
-                         return
-                         }
-                         
-                         Constants.isPPmValueChanged = true
-                         var result = Int(self.resultScoreLabel.text ?? "0") ?? 0
-                         let maxMarks = assessment?.assMaxScore ?? 0
-                         result = result - Int(truncating: maxMarks)
-                         self.selectedCategory?.catResultMark = result
-                         assessment?.catResultMark = result as NSNumber
-                         self.resultScoreLabel.text = String(result)
-                         self.updateAssessmentInDb(assessment : assessment!)
-                         
-                         
-                         
-                         }
-                         }
-                         else
-                         {
-                         var result = Int(self.resultScoreLabel.text ?? "0") ?? 0
-                         var maxresult = Int(self.totalScoreLabel.text ?? "0") ?? 0
-                         
-                         if assessment?.assStatus == 1 && Constants.switchCount == 0
-                         {
-                         
-                         if result != maxresult
-                         {
-                         let maxMarks = assessment?.assMaxScore ?? 0
-                         result = result + Int(truncating: maxMarks)
-                         self.selectedCategory?.catResultMark = result
-                         assessment?.catResultMark = result as NSNumber
-                         self.resultScoreLabel.text = String(result)
-                         Constants.isPPmValueChanged = false
-                         self.updateAssessmentInDb(assessment : assessment!)
-                         }
-                         
-                         return
-                         
-                         }
-                         else
-                         {
-                         if textValue ?? 0 >= 4499 && textValue ?? 0  <= 5500 && Constants.isPPmValueChanged == true
-                         {
-                         let maxMarks = assessment?.assMaxScore ?? 0
-                         result = result + Int(truncating: maxMarks)
-                         self.selectedCategory?.catResultMark = result
-                         assessment?.catResultMark = result as NSNumber
-                         self.resultScoreLabel.text = String(result)
-                         Constants.isPPmValueChanged = false
-                         self.updateAssessmentInDb(assessment : assessment!)
-                         return
-                         }
-                         else
-                         {
-                         
-                         return
-                         }
-                         
-                         
-                         
-                         
-                         }
-                         
-                         }
-                         
-                         }
-                         
-                         else
-                         {
-                         
-                         if textValue ?? 0 <= 2249 || textValue ?? 0 >= 2750
-                         {
-                         if cell.ppmText == ""
-                         {
-                         var result = Int(self.resultScoreLabel.text ?? "0") ?? 0
-                         var maxresult = Int(self.totalScoreLabel.text ?? "0") ?? 0
-                         
-                         if result != maxresult
-                         {
-                         if assessment?.assStatus == 0
-                         {
-                         self.updateAssessmentInDb(assessment : assessment!)
-                         }
-                         else
-                         {
-                         let maxMarks = assessment?.assMaxScore ?? 0
-                         result = result + Int(truncating: maxMarks)
-                         self.selectedCategory?.catResultMark = result
-                         assessment?.catResultMark = result as NSNumber
-                         self.resultScoreLabel.text = String(result)
-                         Constants.isPPmValueChanged = false
-                         self.updateAssessmentInDb(assessment : assessment!)
-                         }
-                         }
-                         return
-                         }
-                         
-                         else
-                         {
-                         if Constants.isPPmValueChanged ==  true
-                         {
-                         return
-                         }
-                         
-                         if textValue ?? 0 > 2249 && textValue ?? 0 < 2751 {
-                         Constants.isPPmValueChanged = false
-                         return
-                         }
-                         
-                         Constants.isPPmValueChanged = true
-                         var result = Int(self.resultScoreLabel.text ?? "0") ?? 0
-                         let maxMarks = assessment?.assMaxScore ?? 0
-                         result = result - Int(truncating: maxMarks)
-                         self.selectedCategory?.catResultMark = result
-                         assessment?.catResultMark = result as NSNumber
-                         self.resultScoreLabel.text = String(result)
-                         self.updateAssessmentInDb(assessment : assessment!)
-                         
-                         
-                         }
-                         }
-                         else
-                         {
-                         var result = Int(self.resultScoreLabel.text ?? "0") ?? 0
-                         var maxresult = Int(self.totalScoreLabel.text ?? "0") ?? 0
-                         
-                         if assessment?.assStatus == 1 && Constants.switchCount == 0
-                         {
-                         if result != maxresult
-                         {
-                         let maxMarks = assessment?.assMaxScore ?? 0
-                         result = result + Int(truncating: maxMarks)
-                         self.selectedCategory?.catResultMark = result
-                         assessment?.catResultMark = result as NSNumber
-                         self.resultScoreLabel.text = String(result)
-                         Constants.isPPmValueChanged = false
-                         self.updateAssessmentInDb(assessment : assessment!)
-                         }
-                         return
-                         }
-                         else
-                         {
-                         if textValue ?? 0 >= 2249 && textValue ?? 0  <= 2750 && Constants.isPPmValueChanged == true
-                         {
-                         let maxMarks = assessment?.assMaxScore ?? 0
-                         result = result + Int(truncating: maxMarks)
-                         self.selectedCategory?.catResultMark = result
-                         assessment?.catResultMark = result as NSNumber
-                         self.resultScoreLabel.text = String(result)
-                         Constants.isPPmValueChanged = false
-                         self.updateAssessmentInDb(assessment : assessment!)
-                         return
-                         }
-                         else
-                         {
-                         return
-                         }
-                         }
-                         }
-                         }
-                         */
+                       
                     }
                     
                     cell.txtAMPMCompletion = {[unowned self] ( txt) in
@@ -3458,11 +3210,9 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         CoreDataHandlerPE().updateInDoGInProgressInDB(newAssessment: self.peNewAssessment)
                     }
                     cell.btnFrequencyClickedCompletion = {[unowned self] ( error) in
-                        
-                        var vManufacutrerNameArray = NSArray()
-                        var vManufacutrerDetailsArray = NSArray()
-                        vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Frequency")
-                        vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "frequencyName")  as? NSArray ?? NSArray()
+                       
+                        var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Frequency")
+                        var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "frequencyName")  as? NSArray ?? NSArray()
                         if  vManufacutrerNameArray.count > 0 {
                             self.dropDownVIewNew(arrayData: vManufacutrerNameArray as? [String] ?? [String](), kWidth: cell.txtFrequency.frame.width, kAnchor: cell.txtFrequency, yheight: cell.txtFrequency.bounds.height) { [unowned self] selectedVal, index  in
                                 cell.txtFrequency.text = selectedVal
@@ -3550,12 +3300,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             //   refrigtorProbeArray.removeAll()
             let refri = catArrayForTableIs[0] as! PE_AssessmentInProgress
             refrigtorProbeArray = CoreDataHandlerPE().getREfriData(id: Int(refri.serverAssessmentId ?? "0") ?? 0)
-            
-            //            if refrigtorProbeArray.count > 13 {
-            //                //Prince Mehra added this
-            //                refrigtorProbeArray = Array(refrigtorProbeArray.prefix(13))
-            //              }
-            //
+
             let array =   CoreDataHandlerPE().fetchCustomerWithCatID(selectedCategory?.sequenceNo as? NSNumber ?? 0)
             if (section == 0)  {
                 let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: RefrigatorTempProbeCell.identifier)as! RefrigatorTempProbeCell
@@ -3831,11 +3576,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                     footerView.contentView.alpha = 1
                     
                 }
-                //                let re_note = UserDefaults.standard.value(forKey: "re_note") as? String ?? ""
-                //                let asIDUD =  UserDefaults.standard.value(forKey: "assIID") as? String ?? ""
-                //                if(re_note != "" && re_note != nil && self.scheduledAssessment?.serverAssessmentId == asIDUD ){
-                //                    footerView.textFieldView.text = re_note
-                //                }
+            
                 footerView.textFieldView.text  = self.peNewAssessment.refrigeratorNote ?? ""
                 footerView.noteCompletion = { textLabel in
                     self.peNewAssessment.refrigeratorNote = textLabel ?? ""
@@ -4202,12 +3943,10 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             }
             
             headerView.dTypeCompletion = {[unowned self] ( error) in
-                var vManufacutrerNameArray = NSArray()
-                var vManufacutrerIDArray = NSArray()
-                var vManufacutrerDetailsArray = NSArray()
-                vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_DManufacturer")
-                vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "diluentMfgName")  as? NSArray ?? NSArray()
-                vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "diluentMfgId")  as? NSArray ?? NSArray()
+             
+                var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_DManufacturer")
+                var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "diluentMfgName")  as? NSArray ?? NSArray()
+                var vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "diluentMfgId")  as? NSArray ?? NSArray()
                 if  vManufacutrerNameArray.count > 0 {
                     self.dropDownVIewNew(arrayData: vManufacutrerNameArray as? [String] ?? [String](), kWidth: headerView.txtDType.frame.width, kAnchor: headerView.txtDType, yheight: headerView.txtDType.bounds.height) { [unowned self] selectedVal, index  in
                         headerView.txtDType.text = selectedVal
@@ -4220,12 +3959,10 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 
             }
             headerView.cSizeCompletion = {[unowned self] ( error) in
-                var bagSizeArray = NSArray()
-                var bagSizeIDArray = NSArray()
-                var bagSizeDetailsArray = NSArray()
-                bagSizeDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_BagSizes")
-                bagSizeArray = bagSizeDetailsArray.value(forKey: "size")  as? NSArray ?? NSArray()
-                bagSizeIDArray = bagSizeDetailsArray.value(forKey: "id")  as? NSArray ?? NSArray()
+               
+                var bagSizeDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_BagSizes")
+                var bagSizeArray = bagSizeDetailsArray.value(forKey: "size")  as? NSArray ?? NSArray()
+                var bagSizeIDArray = bagSizeDetailsArray.value(forKey: "id")  as? NSArray ?? NSArray()
                 if  bagSizeArray.count > 0 {
                     self.dropDownVIewNew(arrayData: bagSizeArray as? [String] ?? [String](), kWidth: headerView.txtCSize.frame.width, kAnchor: headerView.txtCSize, yheight: headerView.txtCSize.bounds.height) { [unowned self] selectedVal, index  in
                         headerView.txtCSize.text = selectedVal
@@ -4326,10 +4063,9 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             }
             
             headerView.dTypeCompletion = {[unowned self] ( error) in
-                var bagSizeArray = NSArray()
-                var bagSizeDetailsArray = NSArray()
-                bagSizeDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_DOADiluentType")
-                bagSizeArray = bagSizeDetailsArray.value(forKey: "diluentName")  as? NSArray ?? NSArray()
+          
+                var bagSizeDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_DOADiluentType")
+                var bagSizeArray = bagSizeDetailsArray.value(forKey: "diluentName")  as? NSArray ?? NSArray()
                 if  bagSizeArray.count > 0 {
                     let arr = bagSizeArray as? [String] ?? []
                     self.dropDownVIewNew(arrayData: arr, kWidth: headerView.txtDType.frame.width, kAnchor: headerView.txtDType, yheight: headerView.txtDType.bounds.height) { [unowned self] selectedVal, index  in
@@ -4342,10 +4078,9 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 }
             }
             headerView.cSizeCompletion = {[unowned self] ( error) in
-                var bagSizeArray = NSArray()
-                var bagSizeDetailsArray = NSArray()
-                bagSizeDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_DOASizes")
-                bagSizeArray = bagSizeDetailsArray.value(forKey: "size")  as? NSArray ?? NSArray()
+        
+                var bagSizeDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_DOASizes")
+                var bagSizeArray = bagSizeDetailsArray.value(forKey: "size")  as? NSArray ?? NSArray()
                 if  bagSizeArray.count > 0 {
                     let arr = bagSizeArray as? [String] ?? []
                     self.dropDownVIewNew(arrayData: arr, kWidth: headerView.txtCSize.frame.width, kAnchor:  headerView.txtCSize, yheight:  headerView.txtCSize.bounds.height) { [unowned self] selectedVal, index  in
@@ -4438,10 +4173,9 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             }
             
             headerView.dTypeCompletion = {[unowned self] ( error) in
-                var bagSizeArray = NSArray()
-                var bagSizeDetailsArray = NSArray()
-                bagSizeDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_DOADiluentType")
-                bagSizeArray = bagSizeDetailsArray.value(forKey: "diluentName")  as? NSArray ?? NSArray()
+              
+                var bagSizeDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_DOADiluentType")
+                var bagSizeArray = bagSizeDetailsArray.value(forKey: "diluentName")  as? NSArray ?? NSArray()
                 if  bagSizeArray.count > 0 {
                     let arr = bagSizeArray as? [String] ?? []
                     
@@ -4455,10 +4189,9 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 }
             }
             headerView.cSizeCompletion = {[unowned self] ( error) in
-                var bagSizeArray = NSArray()
-                var bagSizeDetailsArray = NSArray()
-                bagSizeDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_DOASizes")
-                bagSizeArray = bagSizeDetailsArray.value(forKey: "size")  as? NSArray ?? NSArray()
+                
+                var bagSizeDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_DOASizes")
+                var bagSizeArray = bagSizeDetailsArray.value(forKey: "size")  as? NSArray ?? NSArray()
                 if  bagSizeArray.count > 0 {
                     let arr = bagSizeArray as? [String] ?? []
                     self.dropDownVIewNew(arrayData: arr, kWidth: headerView.txtCSize.frame.width, kAnchor:  headerView.txtCSize, yheight:  headerView.txtCSize.bounds.height) { [unowned self] selectedVal, index  in
@@ -5018,7 +4751,6 @@ extension PEAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDataSo
             if self.inovojectData.count > 0 {
                 //self.inovojectData[indexPath.row].name
                 let countt = self.inovojectData[0].name?.count ?? 0
-                let programName = self.inovojectData[0].invoProgramName
                 if countt < 1 {
                     if regionID == 3
                     {
@@ -5633,30 +5365,6 @@ extension PEAssesmentFinalize{
 /************** Camera Button Action ***************************************/
 extension PEAssesmentFinalize: UIImagePickerControllerDelegate , UINavigationControllerDelegate{
     @objc func takePhoto(_ sender: UIButton) {
-        //    let imageArrWithIsyncIsTrue = CoreDataHandlerTurkey().fecthPhotoWithiSynsTrueTurkey(true)
-        //    if imageArrWithIsyncIsTrue.count >= 15 {
-        //        postAlert("Alert", message: "Maximum limit of image has been exceeded. Limit will be reset after next sync.")
-        //    } else {
-        /*************** Intilzing Camera Delegate Methods **********************************/
-        
-        
-        
-        // Gallery
-        //                if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
-        //                    //                        imagePicker.allowsEditing = false
-        //                    //                        imagePicker.sourceType = .savedPhotosAlbum
-        //                    //                        imagePicker.cameraCaptureMode = .photo
-        //                    //                        imagePicker.delegate = self
-        //
-        //
-        //                    imagePicker.delegate = self
-        //                    imagePicker.sourceType = .savedPhotosAlbum
-        //                    imagePicker.allowsEditing = false
-        //                    imagePicker.delegate = self
-        //                    present(imagePicker, animated: true, completion: {})
-        //
-        //
-        //                }
         
         //Camera
         Constants.isMovedOn = true
@@ -5674,13 +5382,10 @@ extension PEAssesmentFinalize: UIImagePickerControllerDelegate , UINavigationCon
             //https://stagepeapi.mypoultryview360.com/api/AssignUserDetails/GetPostingAssessmentImagesListByUser?DeviceType=ios&api_key=GetPostingAssessmentListByUser
             imagePicker.allowsEditing = false
             imagePicker.sourceType = .photoLibrary
-//            imagePicker.cameraCaptureMode = .photo
             imagePicker.delegate = self
             present(imagePicker, animated: true, completion: {})
             postAlert("Camera inaccessable", message: "Application cannot access the camera.")
         }
-        /****************************************************************************************/
-        //  }
         
     }
     
@@ -5948,27 +5653,12 @@ extension PEAssesmentFinalize: UIPickerViewDataSource, UIPickerViewDelegate, UIT
         cell?.vaccNameField.text = self.dataArray[row]
     }
     
-    //    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-    //        if (selectedCategory?.sequenceNoo == 11   && selectedCategory?.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen") {
-    //            self.tableview.isScrollEnabled = false
-    //            return true
-    //        } else {
-    //            let cell = textField.superview?.superview?.superview?.superview as! VaccineMixerCell
-    //            self.setDropdrown(cell.vaccSelectBtn, certBtn: cell.certDateSelectBtn, clickedField: cell.vaccNameField, dropDownArr: dataArray, cell: cell)
-    //            return false
-    //        }
-    //    }
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         if( selectedCategory?.sequenceNoo == 11   && selectedCategory?.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen") {
             self.tableview.isScrollEnabled = false
         } else {
-//            let cell = textField.superview?.superview?.superview?.superview as! VaccineMixerCell
-//            if let text = textField.text,
-//                text.isEmpty {
-//                self.setDropdrown(cell.vaccSelectBtn, certBtn: cell.certDateSelectBtn, clickedField: cell.vaccNameField, dropDownArr: dataArray, cell: cell)
-//            }
+            debugPrint("edition ended")
         }
     }
     

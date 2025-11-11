@@ -164,8 +164,7 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
         self.eggsOtherTxt.keyboardType = .numberPad
         
         let dateFormatter = DateFormatter()
-        
-        let countryId = UserDefaults.standard.integer(forKey: "nonUScountryId")
+     
         if regionID != 3 {
             dateFormatter.dateFormat = "dd/MM/yyyy"
         }
@@ -192,7 +191,7 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
         peHeaderViewController.assId = "C-\(peNewAssessment.draftID!)"
         self.headerView.addSubview(peHeaderViewController.view)
         self.topviewConstraint(vwTop: peHeaderViewController.view)
-        let defautUsername =  UserDefaults.standard.value(forKey: "FirstName") as? String ?? ""
+     
         if peNewAssessment.evaluationDate == "" {
             selectedEvaluationDateText.text = strdate1
             self.peNewAssessment.evaluationDate = strdate1
@@ -205,15 +204,8 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
         FirstName = FirstName + LastName
         selectedEvaluatorText.text =  peNewAssessment.evaluatorName ?? FirstName
         selectedEvaluationType.text = peNewAssessment.evaluationName ?? ""
+
         
-        if let character = peNewAssessment.breedOfBird?.character(at: 1) {
-            if character == constantToSave.character(at: 0){
-                showBreedOthers()
-                let str =  peNewAssessment.breedOfBird?.replacingOccurrences(of: constantToSave, with: "")
-                txtBreedOfBirdsOthers.text = str
-                txtBreedOfBird.text = "Other"
-            }
-        }
         if peNewAssessment.breedOfBird == "Other"{
             showBreedOthers()
         } else {
@@ -221,13 +213,13 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
         }
         
         txtBreedOfBird.text = self.peNewAssessment.breedOfBird
-        if let character = peNewAssessment.breedOfBird?.character(at: 1) {
-            if character == constantToSave.character(at: 0){
-                showBreedOthers()
-                let str =  peNewAssessment.breedOfBird?.replacingOccurrences(of: constantToSave, with: "")
-                txtBreedOfBirdsOthers.text = str
-                txtBreedOfBird.text = "Other"
-            }
+        
+        if let character = peNewAssessment.breedOfBird?.character(at: 1),
+           character == constantToSave.character(at: 0) {
+            showBreedOthers()
+            let str = peNewAssessment.breedOfBird?.replacingOccurrences(of: constantToSave, with: "")
+            txtBreedOfBirdsOthers.text = str
+            txtBreedOfBird.text = "Other"
         }
         
         txtBreedOfBirdsOthers.text =    self.peNewAssessment.breedOfBirdOther
@@ -235,6 +227,7 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
         
         
         if selectedEvaluationType.text == "" {
+            debugPrint("No Evaluation type Selected")
         } else {
             if selectedEvaluationType.text?.contains("Non") ?? false  {
                 self.flockAgeLower.isHidden = true
@@ -242,10 +235,7 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
                 self.heightFlockAge.constant = 78
                 self.flockAgeLbl.text = "Breeder Flock Age of Eggs Injected"
             } else {
-                //  self.flockAgeLower.isHidden = false
-                // self.btnFlockImageLower.isHidden = false
-                //  self.heightFlockAge.constant = 78
-                // self.flockAgeLbl.text = "Breeder Flock Age of Eggs Injected*"
+                debugPrint("Evaluation type Selected")
             }
             showFlockView()
             
@@ -288,11 +278,11 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
             
         }
         
-        let RoleId =  UserDefaults.standard.string(forKey: "RoleId")
+      
         if  peNewAssessment.selectedTSR?.count ?? 0 < 1 {
-            var visitDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Approvers")
-            var visitNameArray = visitDetailsArray.value(forKey: "username") as! NSArray
-            var visitIDArray = visitDetailsArray.value(forKey: "id") as! NSArray
+            let visitDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Approvers")
+            let visitNameArray = visitDetailsArray.value(forKey: "username") as! NSArray
+            let visitIDArray = visitDetailsArray.value(forKey: "id") as! NSArray
             if peNewAssessment.selectedTSR?.count ?? 0 > 1 {
                 selectedTSR.text = peNewAssessment.selectedTSR
             } else {
@@ -308,6 +298,7 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
                 }
             }
         } else {
+            debugPrint("No selected TSR..")
         }
         
         hideManufacturerOthers()
@@ -393,8 +384,6 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
             }
         }
         
-        let infoObj = PEInfoDAO.sharedInstance.fetchInfoVMObj(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", assessmentId: peNewAssessment.serverAssessmentId ?? "")
-        
         if peNewAssessment.clorineName == "" || peNewAssessment.clorineName == nil{
             
             isAutomaticFailView.isHidden = true
@@ -441,16 +430,16 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
             switch rightConst {
             case 1:
                 if heightNumberOfEggsView.constant == 94{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 30))
+                    notesTop.constant = CGFloat(leftConst * 55 + 30)
                 }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 40 ))
+                    notesTop.constant = CGFloat(leftConst * 55  + 40 )
                 }
             case 2:
-                notesTop.constant = CGFloat(((leftConst * 55 ) + 20))
+                notesTop.constant = CGFloat(leftConst * 55  + 20)
             default:
-                notesTop.constant = CGFloat(((leftConst * 55 ) + 100))
+                notesTop.constant = CGFloat(leftConst * 55  + 100)
                 if heightNumberOfEggsView.constant == 94{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 40))
+                    notesTop.constant = CGFloat(leftConst * 55  + 40)
                 }
             }
         case 1:
@@ -458,21 +447,21 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
             case 1:
                 if heightNumberOfEggsView.constant == 94{
                     if heightManufacturerView.constant == 94{
-                        notesTop.constant = CGFloat(((leftConst * 55 )) - 20)
+                        notesTop.constant = CGFloat(leftConst * 55  - 20)
                     }else{
-                        notesTop.constant = CGFloat(((leftConst * 55 )) + 20)
+                        notesTop.constant = CGFloat(leftConst * 55 + 20)
                     }
                 }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 )) + 20)
+                    notesTop.constant = CGFloat(leftConst * 55 + 20)
                 }
             case 2:
-                notesTop.constant = CGFloat(((leftConst * 55 ) - 20))
+                notesTop.constant = CGFloat(leftConst * 55  - 20)
             default:
                 
                 if heightNumberOfEggsView.constant == 94{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 20))
+                    notesTop.constant = CGFloat(leftConst * 55  + 20)
                 }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 75))
+                    notesTop.constant = CGFloat(leftConst * 55  + 75)
                 }
             }
         case 2:
@@ -481,22 +470,22 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
             case 1:
                 if heightNumberOfEggsView.constant == 94{
                     if heightManufacturerView.constant == 94{
-                        notesTop.constant = CGFloat(((leftConst * 55 ) - 75))
+                        notesTop.constant = CGFloat(leftConst * 55 - 75)
                     }else{
-                        notesTop.constant = CGFloat(((leftConst * 55 ) - 35))
+                        notesTop.constant = CGFloat(leftConst * 55  - 35)
                     }
                 }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) - 30))
+                    notesTop.constant = CGFloat(leftConst * 55 - 30)
                 }
             case 2:
                 if heightNumberOfEggsView.constant == 94{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) - 85))
+                    notesTop.constant = CGFloat(leftConst * 55 - 85)
                 }
             default:
                 if heightNumberOfEggsView.constant == 94{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) ) - 30)
+                    notesTop.constant = CGFloat(leftConst * 55 - 30)
                 }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 20))
+                    notesTop.constant = CGFloat(leftConst * 55  + 20)
                 }
             }
         default:
@@ -779,13 +768,10 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
                 }
             }
         }
-        
-        var manufacutrerNameArray = NSArray()
-        var manufacutrerIDArray = NSArray()
-        var manufacutrerDetailsArray = NSArray()
-        manufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Manufacturer")
-        manufacutrerNameArray = manufacutrerDetailsArray.value(forKey: "mFG_Name") as? NSArray ?? NSArray()
-        manufacutrerIDArray = manufacutrerDetailsArray.value(forKey: "mFG_Id") as? NSArray ?? NSArray()
+
+        var manufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Manufacturer")
+        var manufacutrerNameArray = manufacutrerDetailsArray.value(forKey: "mFG_Name") as? NSArray ?? NSArray()
+        var manufacutrerIDArray = manufacutrerDetailsArray.value(forKey: "mFG_Id") as? NSArray ?? NSArray()
         if  manufacutrerNameArray.count > 0 {
             self.dropDownVIewNew(arrayData: manufacutrerNameArray as? [String] ?? [String](), kWidth: btnIncubation.frame.width, kAnchor: btnIncubation, yheight: btnIncubation.bounds.height) { [unowned self] selectedVal, index  in
                 self.txtManufacturer.text = selectedVal
@@ -818,13 +804,9 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
                 }
             }
         }
-        
-        
-        var EggsIDArray = NSArray()
-        var EggsNameArray = NSArray()
+  
         var EggsDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Eggs")
-        EggsNameArray = EggsDetailsArray.value(forKey: "eggCount") as? NSArray ?? NSArray()
-        EggsIDArray = EggsDetailsArray.value(forKey: "eggId") as? NSArray ?? NSArray()
+        var EggsNameArray = EggsDetailsArray.value(forKey: "eggCount") as? NSArray ?? NSArray()
         
         if  EggsNameArray.count > 0 {
             self.dropDownVIewNew(arrayData: EggsNameArray as? [String] ??  [String](), kWidth: txtNumberOfEggs.frame.width, kAnchor: txtNumberOfEggs, yheight: txtNumberOfEggs.bounds.height) { [unowned self] selectedVal, index  in
@@ -1075,9 +1057,8 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
         if let notesTxt = notesTextView.text , notesTxt.count > 0 {
             peNewAssessment.notes =   notesTxt
         }
-        let firstNameIs =  UserDefaults.standard.value(forKey: "FirstName") as? String ?? ""
         var FirstName =  UserDefaults.standard.value(forKey: "FirstName") as? String ?? ""
-        var LastName =  UserDefaults.standard.value(forKey: "LastName") as? String ?? ""
+        let LastName =  UserDefaults.standard.value(forKey: "LastName") as? String ?? ""
         FirstName = FirstName + LastName
         self.peNewAssessment.username = FirstName
         self.peNewAssessment.firstname = FirstName

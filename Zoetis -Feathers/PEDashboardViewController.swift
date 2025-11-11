@@ -119,7 +119,6 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
         self.navigationController?.navigationBar.isHidden = true
         
         regionID = UserDefaults.standard.integer(forKey: "Regionid")
-        let countryId = UserDefaults.standard.integer(forKey: "nonUScountryId")
         if( regionID != 3){
             btn_Training.alpha = 0.3
             btn_Training.alpha = 0.3
@@ -148,7 +147,7 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
         
         registerTblVwCells()
         setUI()
-        let NewcountryId = UserDefaults.standard.integer(forKey: "nonUScountryId")
+       
         if regionID == 3{
             extendedLbl.text = "Extended Microbial"
             extendedLblDash.text = "Extended Microbial"
@@ -168,16 +167,7 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
         operatorCertVw.setGradient(topGradientColor: UIColor.getUpcomingCertUpperGradColor(), bottomGradientColor: UIColor.getUpcomingCertLowerGradColor())
         operatorCertVw.roundVsCorners(corners: [.topLeft, .topRight], radius: 18.5)
         tableHeaderVw.setGradient(topGradientColor: UIColor.getDashboardTableHeaderLowerGradColor(), bottomGradientColor:UIColor.getDashboardTableHeaderUpperGradColor())
-        
-        
-        
-//        NotificationCenter.default.addObserver(
-//            self,
-//            selector: #selector(handleAppEnteredForeground),
-//            name: UIApplication.willEnterForegroundNotification,
-//            object: nil
-//        )
-//        
+
         
         timerView.layer.cornerRadius = 18
         timerView.layer.masksToBounds = true
@@ -238,12 +228,7 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
         TimeManager.shared.onSessionExpired = {
             self.timerView.isHidden = true
             self.crossBtn.isHidden = true
-            if self.peAssessmentSyncArray.count != 0{
-                self.showSessionExpiredAlert(showLogoutButton: true)
-            }
-            else{
-                self.showSessionExpiredAlert(showLogoutButton: true)
-            }
+            self.showSessionExpiredAlert(showLogoutButton: true)
         }
       
     }
@@ -338,8 +323,7 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
         setupHeader()
         hidePopup()
         let userDefault = UserDefaults.standard
-        let customerId = userDefault.integer(forKey: "PE_Selected_Customer_Id")
-        let siteId = userDefault.integer(forKey: "PE_Selected_Site_Id")
+
         self.checkDataForSyncViewDidAppear()
         self.upcomingCertificationsArr =  PEAssessmentsDAO.sharedInstance.getVMObj(userId:UserContext.sharedInstance.userDetailsObj?.userId ?? "")
         
@@ -411,6 +395,7 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
         PEDataService.sharedInstance.getPlateTypes(loginuserId: UserContext.sharedInstance.userDetailsObj?.userId ?? "No id found", viewController: self, completion: { [weak self] (status, error) in
             guard let _ = self, error == nil else { return }
             if status == VaccinationConstants.VaccinationStatus.COREDATA_SAVED_SUCCESSFULLY || status == VaccinationConstants.VaccinationStatus.COREDATA_FETCHED_SUCCESSFULLY{
+                debugPrint("plates data fetched sucessfully")
             }
         })
     }
@@ -454,16 +439,12 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
         } else {
             peNewAssessment = PENewAssessment()
             var pECategoriesAssesmentsResponse =  PECategoriesAssesmentsResponse(nil)
-            var jsonRe : JSON = JSON()
-            jsonRe = ((getJSON("QuestionAns") ?? nil) ?? JSON())
-            pECategoriesAssesmentsResponse =  PECategoriesAssesmentsResponse(jsonRe)
+            var quesJsonRe : JSON = JSON()
+            quesJsonRe = ((getJSON("QuestionAns") ?? nil) ?? JSON())
+            pECategoriesAssesmentsResponse =  PECategoriesAssesmentsResponse(quesJsonRe)
             ZoetisDropdownShared.sharedInstance.sharedPEOnGoingSession.append(pECategoriesAssesmentsResponse)
         }
-        
-        let userDefaults = UserDefaults.standard
-        let decoded  = userDefaults.data(forKey: "finalizeArray") ?? Data()
-//        let finalizeArrayFromDefaults = NSKeyedUnarchiver.unarchiveObject(with: decoded) as? [PECategoriesAssesmentsResponse]
-//        _ = finalizeArrayFromDefaults?.count ?? 0
+
         peHeaderViewController = PEHeaderViewController()
         peHeaderViewController.titleOfHeader = "Process Evaluation"
         peHeaderViewController.showSession = checkCurrentAssessmentData()
@@ -702,14 +683,12 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
     @objc private func dashboardRefresh(notification: NSNotification){
         date1Label.isHidden = true
         date2Label.isHidden = true
-        let userDefault = UserDefaults.standard
-        let customerId = userDefault.integer(forKey: "PE_Selected_Customer_Id")
-        let siteId = userDefault.integer(forKey: "PE_Selected_Site_Id")
         
         self.upcomingCertificationsArr =  PEAssessmentsDAO.sharedInstance.getVMObj(userId:UserContext.sharedInstance.userDetailsObj?.userId ?? "")
         if anyCategoryContainCustomerOrNot(){
             let peNewAssessmentSurrentIs = ZoetisDropdownShared.sharedInstance.sharedPEOnGoingSession[0].peNewAssessment
             if let complexNameIs = peNewAssessmentSurrentIs?.customerName {
+                debugPrint(complexNameIs)
             } else {
                 peNewAssessment = PENewAssessment()
             }
@@ -737,8 +716,6 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
         if count  > 0 {
             if count > 2 || count == 2 {
                 let date = resultCatSecondAssessment[0].evaluationDate ?? ""
-                var text2 = date + ""  + "(" + (resultCatSecondAssessment[0].customerName ?? "") + ", "
-                text2 = text2  + (resultCatSecondAssessment[0].siteName ?? "") + ")"
                 date2Label.text = date
                 date2Label.isHidden = false
                 var resultInAssessment1 : [Double] = []
@@ -757,8 +734,6 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
             }
             if count == 1 {
                 let date = resultCatfirstAssessment[0].evaluationDate ?? ""
-                var text2 = date + ""  + "(" + (resultCatfirstAssessment[0].customerName ?? "") + ", "
-                text2 = text2  + (resultCatfirstAssessment[0].siteName ?? "") + ")"
                 var resultInAssessment : [Double] = []
                 date1Label.text = date
                 date1Label.isHidden = false
@@ -914,7 +889,7 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
         
         if lastTwoAssessmentsDate.count > 0 {
             var tempArr = NSArray()
-            let peNewAssessmentSurrentIs =  CoreDataHandlerPE().getSavedOnGoingAssessmentPEObject()
+           
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
             let managedContext = appDelegate!.managedObjectContext
             let fetchRequest  = NSFetchRequest<NSFetchRequestResult>(entityName: "PE_AssessmentInOffline")
@@ -2297,12 +2272,7 @@ APIActivityTracker.shared.endRequest()
         }
         var DisplayId = dictArray.evaluationDate
         DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
-        var siteId = String(dictArray.siteId ?? 0)
-        var sID = dictArray.siteId ?? 0
-        sID = sID + 270101
-        var dID = AssessmentId ?? 0
-        dID = dID + 2903
-        DisplayId = "C-" + UniID
+
         
         let  HatcheryAntibioticsInt = inovojectData.invoHatchAntibiotic
         var HatcheryAntibiotics = false
@@ -2311,7 +2281,7 @@ APIActivityTracker.shared.endRequest()
         }
         
         var x = 0
-        var vvv = inovojectData.ampuleSize
+       
         var ampleSizeesNameArray = NSArray()
         var ampleSizeIDArray = NSArray()
         var ampleSizeDetailArray = NSArray()
@@ -2443,7 +2413,7 @@ APIActivityTracker.shared.endRequest()
         }
         
         var x = 0
-        var vvv = dayOfAgeData.ampuleSize
+       
         var ampleSizeesNameArray = NSArray()
         var ampleSizeIDArray = NSArray()
         var ampleSizeDetailArray = NSArray()
@@ -2562,7 +2532,6 @@ APIActivityTracker.shared.endRequest()
         }
         var x = 0
         
-        var vvv = dayOfAgeData.ampuleSize
         var ampleSizeesNameArray = NSArray()
         var ampleSizeIDArray = NSArray()
         var ampleSizeDetailArray = NSArray()
@@ -2665,11 +2634,6 @@ APIActivityTracker.shared.endRequest()
         }
         var DisplayId = dictArray.evaluationDate
         DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
-        var siteId = String(dictArray.siteId ?? 0)
-        var sID = dictArray.siteId ?? 0
-        sID = sID + 2701
-        var dID = AssessmentId ?? 0
-        dID = dID + 2903
         DisplayId = "C-" + UniID
         
         let timestamp = Date().currentTimeMillis()

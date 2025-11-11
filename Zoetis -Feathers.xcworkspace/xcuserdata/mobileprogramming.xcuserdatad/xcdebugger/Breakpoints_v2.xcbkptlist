@@ -271,6 +271,20 @@
                   startingLineNumber = "1731"
                   endingLineNumber = "1731">
                </Location>
+               <Location
+                  uuid = "FC8FA14E-3947-45DB-AB38-F47AE3CE0011 - a82e151713523444"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PoultryView_360.CaptureNecropsyStep1Turkey.updatePressed() -&gt; ()"
+                  moduleName = "PoultryView 360.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mobileprogramming/Documents/Sonar%20Scanned%20Code/Zoetis360/Turkey/step%201/CaptureNecropsyStep1Turkey.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1731"
+                  endingLineNumber = "1731">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -396,6 +410,20 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "757"
                   endingLineNumber = "757">
+               </Location>
+               <Location
+                  uuid = "E101E7C7-FA4A-43DA-8AC5-631187AF414D - 859ce3d9414b8039"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PoultryView_360.CaptureNecropsyStep1Turkey.saveStep1Data() -&gt; ()"
+                  moduleName = "PoultryView 360.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mobileprogramming/Documents/Sonar%20Scanned%20Code/Zoetis360/Turkey/step%201/CaptureNecropsyStep1Turkey.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "760"
+                  endingLineNumber = "760">
                </Location>
             </Locations>
          </BreakpointContent>
