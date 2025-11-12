@@ -3000,7 +3000,7 @@ APIActivityTracker.shared.endRequest()
             dateFormatter.dateFormat = CategoryConstants.MMddyyyy
             
             let date = dict.evaluationDate?.toDate(withFormat: CategoryConstants.MMddyyyy)
-            let datastr = date?.toString(withFormat: "MM/dd/YYYY HH:mm:ss Z")
+            let datastr = date?.toString(withFormat: CategoryConstants.MMddYYYYHHmmssZ)
         }
         
         let  sig_Datetext = dict.sig_Date
@@ -3752,7 +3752,7 @@ APIActivityTracker.shared.endRequest()
 
 extension String {
     
-    func toDate(withFormat format: String = "MM/dd/YYYY HH:mm:ss Z")-> Date?{
+    func toDate(withFormat format: String = CategoryConstants.MMddYYYYHHmmssZ)-> Date?{
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(identifier: "Asia/Tehran")
         dateFormatter.locale = Locale(identifier: "fa-IR")
@@ -3762,7 +3762,7 @@ extension String {
         return date
     }
     
-    func toDateWithFormat(withFormat format: String = "MM/dd/YYYY HH:mm:ss Z")-> Date?{
+    func toDateWithFormat(withFormat format: String = CategoryConstants.MMddYYYYHHmmssZ)-> Date?{
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(identifier: "Asia/Tehran")
         dateFormatter.locale = Locale(identifier: "fa-IR")
@@ -3782,7 +3782,7 @@ extension Date {
         return Int64(self.timeIntervalSince1970 * 1000)
     }
     
-    func toString(withFormat format: String = "MM/dd/YYYY HH:mm:ss Z") -> String {
+    func toString(withFormat format: String = CategoryConstants.MMddYYYYHHmmssZ) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "fa-IR")
         dateFormatter.timeZone = TimeZone(identifier: "Asia/Tehran")

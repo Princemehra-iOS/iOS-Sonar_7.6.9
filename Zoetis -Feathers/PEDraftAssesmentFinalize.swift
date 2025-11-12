@@ -415,7 +415,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
                 }
                 
                 let catObjectPE = PENewAssessment()
-                catObjectPE.catName = "Extended Microbial"
+                catObjectPE.catName = CategoryConstants.extendedMicrobial
                 catObjectPE.sequenceNo = 12
                 catObjectPE.sequenceNoo = 12
                 catArrayForCollectionIs.append(catObjectPE)
@@ -977,9 +977,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
                         self.showGlobalProgressHUDWithTitle(self.view, title: "Data sync is in progress, please do not close the app." + "\n" + "*Note - Please don't minimize App while syncing.")
                         self.callExtendedMicro(param: ExtendedMicroparam)
                     }
-                    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                        _ in
-                    }
+                    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
                     alertController.addAction(okAction)
                     alertController.addAction(cancelAction)
                     self.present(alertController, animated: true, completion: nil)
@@ -990,9 +988,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
                     let okAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) {
                         _ in
                     }
-                    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                        _ in
-                    }
+                    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
                     alertController.addAction(okAction)
                     self.present(alertController, animated: true, completion: nil)
                 }
@@ -1025,9 +1021,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
                                     _ in
                                     self.saveFinalizedData()
                                 }
-                                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                                    _ in
-                                }
+                                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
                                 alertController.addAction(okAction)
                                 alertController.addAction(cancelAction)
                                 self.present(alertController, animated: true, completion: nil)
@@ -1041,9 +1035,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
                                 _ in
                                 self.saveFinalizedData()
                             }
-                            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                                _ in
-                            }
+                            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
                             alertController.addAction(okAction)
                             alertController.addAction(cancelAction)
                             self.present(alertController, animated: true, completion: nil)
@@ -1077,9 +1069,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
                                 _ in
                                 self.saveFinalizedData()
                             }
-                            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                                _ in
-                            }
+                            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
                             alertController.addAction(okAction)
                             alertController.addAction(cancelAction)
                             self.present(alertController, animated: true, completion: nil)
@@ -1094,9 +1084,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
                             _ in
                             self.saveFinalizedData()
                         }
-                        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                            _ in
-                        }
+                        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
                         alertController.addAction(okAction)
                         alertController.addAction(cancelAction)
                         self.present(alertController, animated: true, completion: nil)
@@ -1112,9 +1100,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
                         _ in
                         self.saveFinalizedData()
                     }
-                    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                        _ in
-                    }
+                    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
                     alertController.addAction(okAction)
                     alertController.addAction(cancelAction)
                     self.present(alertController, animated: true, completion: nil)
@@ -1210,16 +1196,16 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
     func showAlertForNoQCCount(){
         if regionID == 3
         {
-            if strings.contains("Please enter QC count in Customer Quality Control Program.")
+            if strings.contains(Constants.pleaseEnterQCount)
             {
-                strings = strings.filter { $0 != "Please enter QC count in Customer Quality Control Program." }
+                strings = strings.filter { $0 != Constants.pleaseEnterQCount}
             }
             
-            strings.append("Please enter QC count in Customer Quality Control Program.")
+            strings.append(Constants.pleaseEnterQCount)
         }
         else
         {
-            let errorMSg = "Please enter QC count in Customer Quality Control Program."
+            let errorMSg = Constants.pleaseEnterQCount
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
@@ -1963,7 +1949,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if checkForTraning(){
-            if indexPath.section == 0 && selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName == "Extended Microbial"{// "Sanitation and Embrex Evaluation"{
+            if indexPath.section == 0 && selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName == CategoryConstants.extendedMicrobial{// "Sanitation and Embrex Evaluation"{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "PlateInfoCell", for: indexPath) as! PlateInfoCell
                 cell.currentIndex = indexPath.row
                 if sanitationQuesArr.count > indexPath.row{
@@ -5699,7 +5685,7 @@ extension PEDraftAssesmentFinalize : UICollectionViewDelegate, UICollectionViewD
                         refrigtorProbeArray = CoreDataHandlerPE().getDraftREfriData(id: Int(refri.serverAssessmentId ?? "0") ?? 0)
                     }
                 }
-                if(selectedCategory?.catName == "Extended Microbial") {
+                if(selectedCategory?.catName == CategoryConstants.extendedMicrobial) {
                     selectedCategory?.sequenceNoo = 12
                     lblextenderMicro.isHidden = false
                     extendedMicroSwitch.isHidden = false

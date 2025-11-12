@@ -343,6 +343,8 @@ struct CategoryConstants {
     static let areyousureyouwanttofinishtheassessmentAfterfinishingtheinformationcantbeedited = "Are you sure you want to finish the assessment? After finishing the information can't be edited."
     static let pleaseselectacomplexfirst = "Please select a complex first."
     static let datasyncedsuccessfully = "Data synced successfully."
+    static let MMddYYYYHHmmssZ = "MM/dd/YYYY HH:mm:ss Z"
+    static let extendedMicrobial = "Extended Microbial"
    
 }
 func predicateForSessionType() -> NSPredicate {
