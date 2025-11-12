@@ -336,6 +336,12 @@ struct CategoryConstants {
     static let twoPointFourlitre = "2.4 litre"
     static let twoPointEightLitre = "2.8 litre"
     static let twoHundredMl = "200 ml"
+    static let pleaseenterAntibioticintheVaccinePreparationSterility = "Please enter Antibiotic in the Vaccine Preparation & Sterility."
+    static let pleaseenterfrequencydetailinCustomerQualityControlProgram = "Please enter frequency detail in Customer Quality Control Program."
+    static let Noidfound = "No id found"
+    static let pleaseentervaccinedetailsintheVaccinePreparationSterility = "Please enter vaccine details in the Vaccine Preparation & Sterility."
+    static let areyousureyouwanttofinishtheassessmentAfterfinishingtheinformationcantbeedited = "Are you sure you want to finish the assessment? After finishing the information can't be edited."
+   
 }
 func predicateForSessionType() -> NSPredicate {
     return NSPredicate(format: "isSessionType == %d", argumentArray: [true])

@@ -392,7 +392,7 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
     }
     
     private func getPlateTypes(){
-        PEDataService.sharedInstance.getPlateTypes(loginuserId: UserContext.sharedInstance.userDetailsObj?.userId ?? "No id found", viewController: self, completion: { [weak self] (status, error) in
+        PEDataService.sharedInstance.getPlateTypes(loginuserId: UserContext.sharedInstance.userDetailsObj?.userId ?? CategoryConstants.Noidfound, viewController: self, completion: { [weak self] (status, error) in
             guard let _ = self, error == nil else { return }
             if status == VaccinationConstants.VaccinationStatus.COREDATA_SAVED_SUCCESSFULLY || status == VaccinationConstants.VaccinationStatus.COREDATA_FETCHED_SUCCESSFULLY{
                 debugPrint("plates data fetched sucessfully")
@@ -1457,45 +1457,49 @@ extension PEDashboardViewController:  SyncBtnDelegatePE,UnsyncedDelegate {
         return nil
     }
     
-    func syncExtendedMicrobial (saveType: Int , statusType: Int) {
-        var extendedMicroArr : [JSONDictionary]  = []
+    func syncExtendedMicrobial(saveType: Int, statusType: Int) {
+        guard !peAssessmentSyncArray.isEmpty else { return }
         
-        if peAssessmentSyncArray.count > 0 {
-            for obj in self.peAssessmentSyncArray{
-                self.assessID = Int(obj.serverAssessmentId ?? "")
-				if globalAssessmentId == "\(self.assessID ?? 0)" {
-					self.objAssessment = obj
-					self.checkDataDuplicacy(obj: obj)
-					var arrIDs = [NSNumber]()
-					
-					self.certificateData.removeAll()
-					if obj.vMixer.count > 0 {
-						var idArr : [Int] = []
-						for objn in  obj.vMixer {
-							let data = CoreDataHandlerPE().getCertificateData(doaId: objn)
-							if idArr.contains(data!.id ?? 0){
-								
-							}else{
-								idArr.append(data!.id ?? 0)
-								if data != nil{
-									self.certificateData.append(data!)
-								}
-							}
-						}
-					}
-					
-					let jsonExtendedMicro = self.createSyncRequestForExtendedMicro(dict: obj , certificationData : self.certificateData, saveType: saveType )
-                    extendedMicroArr.removeAll()  // Pankush
-					extendedMicroArr.append(jsonExtendedMicro)
-					
-					let ExtendedMicroparam = ["ExtendedMicrobialData":extendedMicroArr] as JSONDictionary
-					self.convertDictToJson(dict: ExtendedMicroparam,apiName: "Extended")
-					
-					self.callExtendedMicro(param: ExtendedMicroparam)
-				}
-            }
+        for obj in peAssessmentSyncArray {
+            guard let assessID = Int(obj.serverAssessmentId ?? ""),
+                  "\(assessID)" == globalAssessmentId else { continue }
+            
+            self.assessID = assessID
+            self.objAssessment = obj
+            self.checkDataDuplicacy(obj: obj)
+            self.certificateData = getCertificateData(from: obj.vMixer)
+            let jsonExtendedMicro = createSyncRequestForExtendedMicro(
+                dict: obj,
+                certificationData: self.certificateData,
+                saveType: saveType
+            )
+            
+            let extendedMicroParam: JSONDictionary = [
+                "ExtendedMicrobialData": [jsonExtendedMicro]
+            ]
+            
+            self.convertDictToJson(dict: extendedMicroParam, apiName: "Extended")
+            self.callExtendedMicro(param: extendedMicroParam)
         }
     }
+    private func getCertificateData(from mixerArray: [Int]) -> [PECertificateData] {
+        guard !mixerArray.isEmpty else { return [] }
+        
+        var uniqueIds = Set<Int>()
+        var certificateData: [PECertificateData] = []
+        
+        for id in mixerArray {
+            if let data = CoreDataHandlerPE().getCertificateData(doaId: id),
+               let dataId = data.id,
+               !uniqueIds.contains(dataId) {
+                uniqueIds.insert(dataId)
+                certificateData.append(data)
+            }
+        }
+        return certificateData
+    }
+
+    
     
     // MARK: - Sync button Tabbed
     func syncBtnTapped(showHud:Bool) {
@@ -4645,7 +4649,7 @@ APIActivityTracker.shared.endRequest()
     
     private func getScheduledAssessments() {
         if ConnectionManager.shared.hasConnectivity() {
-            PEDataService.sharedInstance.getScheduledAssessments(loginuserId: UserContext.sharedInstance.userDetailsObj?.userId ?? "No id found", viewController: self, completion: { [weak self] (status, error) in
+            PEDataService.sharedInstance.getScheduledAssessments(loginuserId: UserContext.sharedInstance.userDetailsObj?.userId ?? CategoryConstants.Noidfound, viewController: self, completion: { [weak self] (status, error) in
                 guard let _ = self, error == nil else {
                     self?.dismissGlobalHUD(self?.view ?? UIView());
                     return
@@ -4935,7 +4939,7 @@ APIActivityTracker.shared.endRequest()
         if ConnectionManager.shared.hasConnectivity() {
             
             self.showGlobalProgressHUDWithTitle(self.view, title: "Data sync is in progress, please do not close the app." + "\n" + "*Note - Please don't minimize App while syncing.")
-            let id = UserContext.sharedInstance.userDetailsObj?.userId ?? "No id found"
+            let id = UserContext.sharedInstance.userDetailsObj?.userId ?? CategoryConstants.Noidfound
             let url = ZoetisWebServices.EndPoint.getPEScheduledCertifications.latestUrl + "\(id)?customerId=null&siteId=null"
             
             

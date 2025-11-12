@@ -623,9 +623,9 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
                 {
                     if regionID == 3
                     {
-                        if strings.contains("Please enter vaccine details in the Vaccine Preparation & Sterility.")
+                        if strings.contains(CategoryConstants.pleaseentervaccinedetailsintheVaccinePreparationSterility)
                         {
-                            strings = strings.filter { $0 != "Please enter vaccine details in the Vaccine Preparation & Sterility." }
+                            strings = strings.filter { $0 != CategoryConstants.pleaseentervaccinedetailsintheVaccinePreparationSterility }
                         }
                     }
                 }
@@ -818,13 +818,8 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
         {
             let errorMSg = "Please enter program name in the Vaccine Preparation Tab."
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-                _ in
-                
-            }
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                _ in
-            }
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
             alertController.addAction(okAction)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
@@ -845,23 +840,19 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
         
         if regionID == 3{
             
-            if strings.contains("Please enter vaccine details in the Vaccine Preparation & Sterility.")
+            if strings.contains(CategoryConstants.pleaseentervaccinedetailsintheVaccinePreparationSterility)
             {
-                strings = strings.filter { $0 != "Please enter vaccine details in the Vaccine Preparation & Sterility." }
+                strings = strings.filter { $0 != CategoryConstants.pleaseentervaccinedetailsintheVaccinePreparationSterility }
             }
-            strings.append("Please enter vaccine details in the Vaccine Preparation & Sterility.")
+            strings.append(CategoryConstants.pleaseentervaccinedetailsintheVaccinePreparationSterility)
         }
         
         else
         {
             let errorMSg = "Please enter vaccine details in the Vaccine Preparation Tab."
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-                _ in
-            }
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                _ in
-            }
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
             alertController.addAction(okAction)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
@@ -880,13 +871,8 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
             strings.append("Please enter Antibiotic in the Vaccine Preparation & Sterility.")
             let errorMSg = "Please enter Antibiotic in the Vaccine Preparation & Sterility."
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-                _ in
-                
-            }
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                _ in
-            }
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
             alertController.addAction(okAction)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
@@ -895,13 +881,8 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
         {
             let errorMSg = "Please enter Antibiotic in the Vaccine Preparation Tab."
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-                _ in
-                
-            }
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                _ in
-            }
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
             alertController.addAction(okAction)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
@@ -1038,7 +1019,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
                             }
                             else
                             {
-                                let errorMSg = "Are you sure you want to finish the assessment? After finishing the information can't be edited."
+                                let errorMSg = CategoryConstants.areyousureyouwanttofinishtheassessmentAfterfinishingtheinformationcantbeedited
                                 let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
                                 let okAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) {
                                     _ in
@@ -1054,7 +1035,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
                         }
                         else
                         {
-                            let errorMSg = "Are you sure you want to finish the assessment? After finishing the information can't be edited."
+                            let errorMSg = CategoryConstants.areyousureyouwanttofinishtheassessmentAfterfinishingtheinformationcantbeedited
                             let alertController = UIAlertController(title: "Alert", message: errorMSg, preferredStyle: .alert)
                             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
                                 _ in
@@ -1090,7 +1071,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
                         }
                         else
                         {
-                            let errorMSg = "Are you sure you want to finish the assessment? After finishing the information can't be edited."
+                            let errorMSg = CategoryConstants.areyousureyouwanttofinishtheassessmentAfterfinishingtheinformationcantbeedited
                             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
                             let okAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) {
                                 _ in
@@ -1107,7 +1088,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
                     
                     else
                     {
-                        let errorMSg = "Are you sure you want to finish the assessment? After finishing the information can't be edited."
+                        let errorMSg = CategoryConstants.areyousureyouwanttofinishtheassessmentAfterfinishingtheinformationcantbeedited
                         let alertController = UIAlertController(title: "Alert", message: errorMSg, preferredStyle: .alert)
                         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
                             _ in
@@ -1125,7 +1106,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
                 
                 else
                 {
-                    let errorMSg = "Are you sure you want to finish the assessment? After finishing the information can't be edited."
+                    let errorMSg = CategoryConstants.areyousureyouwanttofinishtheassessmentAfterfinishingtheinformationcantbeedited
                     let alertController = UIAlertController(title: "Alert", message: errorMSg, preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
                         _ in
@@ -1157,13 +1138,8 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
         {
             let errorMSg = "Please enter AM/PM Value in Miscellaneous."
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-                _ in
-                
-            }
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                _ in
-            }
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
             alertController.addAction(okAction)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
@@ -1188,21 +1164,18 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
     func showAlertForNoFrequency (){
         if regionID == 3
         {
-            if strings.contains("Please enter frequency detail in Customer Quality Control Program.")
+            if strings.contains(CategoryConstants.pleaseenterfrequencydetailinCustomerQualityControlProgram)
             {
-                strings = strings.filter { $0 != "Please enter frequency detail in Customer Quality Control Program." }
+                strings = strings.filter { $0 != CategoryConstants.pleaseenterfrequencydetailinCustomerQualityControlProgram }
             }
-            strings.append("Please enter frequency detail in Customer Quality Control Program.")
+            strings.append(CategoryConstants.pleaseenterfrequencydetailinCustomerQualityControlProgram)
         }
         else
         {
             
-            let errorMSg = "Please enter frequency detail in Customer Quality Control Program."
+            let errorMSg = CategoryConstants.pleaseenterfrequencydetailinCustomerQualityControlProgram
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-                _ in
-                
-            }
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
                 _ in
             }
@@ -1224,13 +1197,8 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
         else{
             let errorMSg = "Please enter person name in Customer Quality Control Program."
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-                _ in
-                
-            }
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                _ in
-            }
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
             alertController.addAction(okAction)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
@@ -1253,10 +1221,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
         {
             let errorMSg = "Please enter QC count in Customer Quality Control Program."
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-                _ in
-                
-            }
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
                 _ in
             }
@@ -1280,13 +1245,8 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
         {
             let errorMSg = "Please enter PPM Value in Inovoject System Set Up/Shut Down and Operation."
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-                _ in
-                
-            }
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                _ in
-            }
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
             alertController.addAction(okAction)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
@@ -1308,13 +1268,8 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
         {
             let errorMSg = "Please enter Vaccine Mixer Observer in  Vaccine Preparation & Sterility."
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-                _ in
-                
-            }
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                _ in
-            }
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
             alertController.addAction(okAction)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
