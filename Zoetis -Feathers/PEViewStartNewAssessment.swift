@@ -2149,13 +2149,10 @@ extension PEViewStartNewAssessment{
         else if (dayOfAgeData.name != ""){
             otherVaccine = dayOfAgeData.name ?? ""
         }
-        
-        var vManufacutrerNameArray = NSArray()
-        var vManufacutrerIDArray = NSArray()
-        var vManufacutrerDetailsArray = NSArray()
-        vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
-        vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
-        vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+
+        var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
+        var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
+        var vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
         
         if vManufacutrerNameArray.contains(dayOfAgeData.vaccineMan){
             let indexOfe =  vManufacutrerNameArray.index(of: dayOfAgeData.vaccineMan) //
@@ -2163,12 +2160,11 @@ extension PEViewStartNewAssessment{
         }
         
         let timestamp = Date().currentTimeMillis()
-        let uni = ManufacturerId + Int(timestamp) + x
+       
         let unique = "\(deviceIDFORSERVER)_\(dayOfAgeData.id)_iOS_"
         let ampulePerBag = Int(dayOfAgeData.ampulePerBag ?? "0")
         var AntibioticInformation  =  ""
         
-        let infoObj = PEInfoDAO.sharedInstance.fetchInfoVMObj(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", assessmentId: dictArray.serverAssessmentId ?? "")
         if HatcheryAntibiotics {
             AntibioticInformation =  dictArray.hatcheryAntibioticsDoaText ?? ""
         }
@@ -2222,13 +2218,7 @@ extension PEViewStartNewAssessment{
         }
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-        var score = 0
-        
-        if  dictArray.assStatus == 1 {
-            score = dictArray.assMaxScore ?? 0
-        } else {
-            score = dictArray.assMinScore ?? 0
-        }
+ 
         var DisplayId = dictArray.evaluationDate
         DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
@@ -2241,13 +2231,9 @@ extension PEViewStartNewAssessment{
         }
         
         var x = 0
-        var vvv = dayOfAgeData.ampuleSize
-        var ampleSizeesNameArray = NSArray()
-        var ampleSizeIDArray = NSArray()
-        var ampleSizeDetailArray = NSArray()
-        ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
-        ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
-        ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
+        var ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
+        var ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
+        var ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
         if dayOfAgeData.ampuleSize != "" {
             let xx = dayOfAgeData.ampuleSize?.replacingOccurrences(of: " ", with: "")
             let indexOfe =  ampleSizeesNameArray.index(of: xx)
@@ -2256,12 +2242,10 @@ extension PEViewStartNewAssessment{
         var VaccineId = 0
         var otherVaccine = ""
         var ManufacturerId = 0
-        var vNameArray = NSArray()
-        var vNameIDArray = NSArray()
-        var vNameDetailsArray = NSArray()
-        vNameDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 2)
-        vNameArray = vNameDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
-        vNameIDArray = vNameDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+
+        var vNameDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 2)
+        var vNameArray = vNameDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
+        var vNameIDArray = vNameDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
         var vNameMfgIdArray = vNameDetailsArray.value(forKey: "mfgId") as? NSArray ?? NSArray()
         if vNameArray.contains(dayOfAgeData.name){
             let indexOfe =  vNameArray.index(of: dayOfAgeData.name) //
@@ -2270,22 +2254,18 @@ extension PEViewStartNewAssessment{
         } else if (dayOfAgeData.name != ""){
             otherVaccine = dayOfAgeData.name ?? ""
         }
-        
-        var vManufacutrerNameArray = NSArray()
-        var vManufacutrerIDArray = NSArray()
-        var vManufacutrerDetailsArray = NSArray()
-        vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
-        vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
-        vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+
+        var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
+        var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
+        var vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
         
         if vManufacutrerNameArray.contains(dayOfAgeData.vaccineMan){
             let indexOfe =  vManufacutrerNameArray.index(of: dayOfAgeData.vaccineMan) //
             ManufacturerId = vManufacutrerIDArray[indexOfe] as? Int ?? 0
         }
-        let timestamp = Date().currentTimeMillis()
+
         let unique = "\(deviceIDFORSERVER)_\(dayOfAgeData.id)_iOS_"
         var AntibioticInformation  =  ""
-        let infoObj = PEInfoDAO.sharedInstance.fetchInfoVMObj(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", assessmentId: dictArray.serverAssessmentId ?? "")
         
         if HatcheryAntibiotics {
             AntibioticInformation =  dictArray.hatcheryAntibioticsDoaSText ?? ""
@@ -2334,30 +2314,17 @@ extension PEViewStartNewAssessment{
         }
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-        var score = 0
-        
-        if  dictArray.assStatus == 1 {
-            score = dictArray.assMaxScore ?? 0
-        } else {
-            score = dictArray.assMinScore ?? 0
-        }
+    
         var DisplayId = dictArray.evaluationDate
         DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
-        var siteId = String(dictArray.siteId ?? 0)
-        var sID = dictArray.siteId ?? 0
-        sID = sID + 2701
-        var dID = AssessmentId ?? 0
-        dID = dID + 2903
         DisplayId = "C-" + UniID
         
         let timestamp = Date().currentTimeMillis()
-        let uni = dictArray.userID ?? 433 + Int(timestamp)
         let unique = "\(deviceIDFORSERVER)_\(peCertificateData.id)_iOS_"
         var resultString = String()
         if(regionID != 3){
             let dateFormatter = DateFormatter()
-//            dateFormatter.calendar = Calendar(identifier: .gregorian)
-//            dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+
             dateFormatter.dateFormat = "dd/MM/yyyy"
             let date = dateFormatter.date(from: peCertificateData.certificateDate ?? "")
             dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -2413,25 +2380,13 @@ extension PEViewStartNewAssessment{
         }
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-        
-        var score = 0
-        
-        if  dictArray.assStatus == 1 {
-            score = dictArray.assMaxScore ?? 0
-        } else {
-            score = dictArray.assMinScore ?? 0
-        }
         var DisplayId = dictArray.evaluationDate
         DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
-        var siteId = String(dictArray.siteId ?? 0)
-        var sID = dictArray.siteId ?? 0
-        sID = sID + 2701
-        var dID = AssessmentId ?? 0
-        dID = dID + 2903
+        
+  
         DisplayId = "C-" + UniID
         
         let timestamp = Date().currentTimeMillis()
-        let uni = dictArray.userID ?? 32 + Int(timestamp)
         let unique = "\(deviceIDFORSERVER)_\(dictArray.residue)_iOS_"
         
         let json = [
@@ -2474,24 +2429,12 @@ extension PEViewStartNewAssessment{
         }
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-        var score = 0
-        
-        if  dictArray.assStatus == 1 {
-            score = dictArray.assMaxScore ?? 0
-        } else {
-            score = dictArray.assMinScore ?? 0
-        }
+ 
         var DisplayId = dictArray.evaluationDate
         DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
-        var siteId = String(dictArray.siteId ?? 0)
-        var sID = dictArray.siteId ?? 0
-        sID = sID + 2701
-        var dID = AssessmentId ?? 0
-        dID = dID + 2903
         DisplayId = "C-" + UniID
         
         let timestamp = Date().currentTimeMillis()
-        let uni = dictArray.userID ?? 32 + Int(timestamp)
         let unique = "\(deviceIDFORSERVER)_\(dictArray.micro)_iOS_"
         
         let json = [
@@ -2574,7 +2517,7 @@ extension PEViewStartNewAssessment{
         var FrequencyValue = 32
         var QCCount = ""
         var PPMValue = ""
-        let assID =  dictArray.assID ?? 0
+      
         if dictArray.rollOut == "Y" && dictArray.sequenceNoo == 3 && dictArray.qSeqNo == 12
         {
             QCCount =  dictArray.qcCount ?? ""
@@ -2664,20 +2607,9 @@ extension PEViewStartNewAssessment{
         }
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-        var score = 0
-        
-        if  dictArray.assStatus == 1 {
-            score = dictArray.assMaxScore ?? 0
-        } else {
-            score = dictArray.assMinScore ?? 0
-        }
+     
         var DisplayId = dictArray.evaluationDate
         DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
-        var siteId = String(dictArray.siteId ?? 0)
-        var sID = dictArray.siteId ?? 0
-        sID = sID + 2701
-        var dID = AssessmentId ?? 0
-        dID = dID + 2903
         DisplayId = "C-" + UniID
         
         var serverAssessmentId:Int64 = 0
@@ -2781,7 +2713,7 @@ extension PEViewStartNewAssessment{
             if error != nil {
                 self?.dismissGlobalHUD(self?.view ?? UIView())
             }
-            guard let `self` = self, error == nil else { return }
+            guard let self = self, error == nil else { return }
             
             if json["StatusCode"]  == 200{
                 self.handleSyncResponse(mjson)
@@ -2799,7 +2731,7 @@ extension PEViewStartNewAssessment{
             if error != nil {
                 self?.dismissGlobalHUD(self?.view ?? UIView())
             }
-            guard let `self` = self, error == nil else { return }
+            guard let self = self, error == nil else { return }
             if json["StatusCode"]  == 200{
                 self.CalculateImageCount()
             } else {
@@ -2824,31 +2756,18 @@ extension PEViewStartNewAssessment{
         }
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-        
-        var score = 0
-        
-        if  dictArray.assStatus == 1 {
-            score = dictArray.assMaxScore ?? 0
-        } else {
-            score = dictArray.assMinScore ?? 0
-        }
+ 
         var DisplayId = dictArray.evaluationDate
         DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         var siteId = String(dictArray.siteId ?? 0)
-        var sID = dictArray.siteId ?? 0
-        sID = sID + 2701
-        var dID = AssessmentId ?? 0
-        dID = dID + 2903
+  
+ 
         DisplayId = "C-" + UniID
         let base64Str = CoreDataHandlerPE().getImageBase64ByImageID(idArray:img)
         totalImageToSync.append(img)
         let imageName = "ImgName-" + siteId + String(img ?? 0)
         let unique = "\(deviceIDFORSERVER)_\(String(img ?? 0))_iOS_"
-        
-        var serverAssessmentId:Int64 = 0
-        if let id = dictArray.serverAssessmentId{
-            serverAssessmentId = Int64(id ?? "") ?? 0
-        }
+
         let json = [
             "DisplayId":DisplayId,
             "Id": AssessmentId,
@@ -2911,11 +2830,10 @@ extension PEViewStartNewAssessment{
                 let jsonComment = createSyncRequestForComment(dictArray: objCtIs)
                 for i in objCtIs.images{
                     let status = CoreDataHandlerPE().imageAlreadySyncStatus(imageId: i) as? Bool ?? false
-                    if status {
-                        
-                    } else {
-                        let jsonIMages = createSyncRequestForImage(dictArray: objCtIs,img:i)
-                        imgArray.append(jsonIMages)
+                 
+                    if !status {
+                        let jsonImages = createSyncRequestForImage(dictArray: objCtIs, img: i)
+                        imgArray.append(jsonImages)
                     }
                 }
                 tempArr.append(json)
@@ -2977,10 +2895,8 @@ extension PEViewStartNewAssessment{
                 let jsonComment = createSyncRequestForComment(dictArray: objCtIs)
                 for i in objCtIs.images{
                     let status = CoreDataHandlerPE().imageAlreadySyncStatus(imageId: i) as? Bool ?? false
-                    if status {
-                        
-                    } else {
-                        let jsonIMages = createSyncRequestForImage(dictArray: objCtIs,img:i)
+                    if !status {
+                        let jsonIMages = createSyncRequestForImage(dictArray: objCtIs, img: i)
                         imgArray.append(jsonIMages)
                     }
                 }
@@ -2988,7 +2904,6 @@ extension PEViewStartNewAssessment{
                 comntArray.append(jsonComment)
                 
             }
-            let param = ["AssessmentScoreData":tempArr,"AssessmentCommentsData":comntArray] as JSONDictionary
             var arrayCount  = 0
             var imgDic :  [JSONDictionary] = []
             
@@ -2998,7 +2913,7 @@ extension PEViewStartNewAssessment{
                     imgDic.append(objimgr)
                     if arrayCount == 3  {
                         let ss  = imgDic as?  [JSONDictionary]  ?? []
-                        var  paramForImages  = ["AssessmentImages":ss] as JSONDictionary
+                        let  paramForImages  = ["AssessmentImages":ss] as JSONDictionary
                         arrayCount  = 0
                         imgDic.removeAll()
                         self.callRequest4(paramForImages:paramForImages)
@@ -3006,7 +2921,7 @@ extension PEViewStartNewAssessment{
                 }
                 if  arrayCount > 0 {
                     let ss  = imgDic as?  [JSONDictionary]  ?? []
-                    var  paramForImages  = ["AssessmentImages":ss] as JSONDictionary
+                    let  paramForImages  = ["AssessmentImages":ss] as JSONDictionary
                     arrayCount  = 0
                     imgDic.removeAll()
                     self.callRequest4(paramForImages:paramForImages)
@@ -3073,11 +2988,8 @@ extension PEViewStartNewAssessment{
                         
                         if peNewAssessment.IsEMRequested == true
                         {
-                            if regionID == 3
-                            {
-                                if peNewAssessment.IsEMRequested == true {
-                                    self.syncExtendedMicrobial()
-                                }
+                            if regionID == 3 && peNewAssessment.IsEMRequested == true {
+                                self.syncExtendedMicrobial()
                             }
                         }
                         else
@@ -3129,7 +3041,6 @@ extension PEViewStartNewAssessment{
         }
         
         saveTypeString.append(11)
-        var AssessmentId = dict.dataToSubmitNumber ?? 0
         
         let deviceIdForServer = "\(UniID)_1_iOS_\(udid)"
         deviceIDFORSERVER = deviceIdForServer
@@ -3141,21 +3052,13 @@ extension PEViewStartNewAssessment{
         if dict.serverAssessmentId != nil{
             serverAssessmentId = Int64( dict.serverAssessmentId ?? "") ?? 0
         }
-        
-        let IncubationStyle = dict.incubation
+ 
         let EvaluationId = dict.evaluationID
-        let countryID = UserDefaults.standard.integer(forKey: "nonUScountryId")
-        let FlockAgeId = dict.isFlopSelected
         let UserId = dict.userID
-        let Notes = dict.notes
+  
         let dateFormatter = DateFormatter()
-//        dateFormatter.calendar = Calendar(identifier: .gregorian)
-//        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         let regionId = UserDefaults.standard.integer(forKey: "Regionid")
-        
         dateFormatter.dateFormat="MM/dd/YYYY"
-        
-        let date = dict.evaluationDate?.toDate(withFormat: "MM/dd/YYYY")
         
         var dateSig = ""
         let ddd = dict.sig_Date ?? ""
@@ -3167,34 +3070,23 @@ extension PEViewStartNewAssessment{
         DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
         
-     //   dict.evaluationDate = dateSig
-        
         var json : JSONDictionary = JSONDictionary()
         if dateSig != ""{
             dict.evaluationDate = dateSig
         }else{
             let convertDateFormatter = DateFormatter()
-//            convertDateFormatter.calendar = Calendar(identifier: .gregorian)
-//            convertDateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
             convertDateFormatter.dateFormat = "yyyy-MM-dd"
             convertDateFormatter.locale = Calendar.current.locale
         }
-        let userInfo = PEInfoDAO.sharedInstance.fetchInfoVMObj(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", assessmentId: dict.serverAssessmentId ?? "")
-        let dateFormatterObj = CodeHelper.sharedInstance.getDateFormatterObj("")
         if regionId == 3 {
             
             let inputFormatter = DateFormatter()
             inputFormatter.dateFormat = "MM/dd/yyyy"
 
-            // Convert the string to a Date object
             if let date = inputFormatter.date(from: evaluationDate ?? "") {
                 
-                // Create another DateFormatter for the desired output format
                 let outputFormatter = DateFormatter()
                 outputFormatter.dateFormat = "yyyy-MM-dd"
-                
-                // Convert the Date object back to a string
-                let formattedDateString = outputFormatter.string(from: date)
                 dict.evaluationDate = evaluationDate
             } else {
                 print("Invalid date format")
@@ -3206,24 +3098,18 @@ extension PEViewStartNewAssessment{
             inputFormatter.dateFormat = "dd/MM/yyyy"
 
             if let date = inputFormatter.date(from: evaluationDate ?? "") {
-            
                 let outputFormatter = DateFormatter()
                 outputFormatter.dateFormat = "yyyy-MM-dd"
-                
-                let formattedDateString = outputFormatter.string(from: date)
                 dict.evaluationDate = evaluationDate
             } else {
                 print("Invalid date format")
             }
         }
-       
-
         
         let isEMRequested = dict.IsEMRequested ?? false
-        let extndMicro = dict.extndMicro ?? false
         let appVersion = "\(Bundle.main.versionNumber)"
-        
         var saveType = 0
+        
         if dict.IsEMRequested == true
         {
             saveType = 1
@@ -3259,17 +3145,9 @@ extension PEViewStartNewAssessment{
                 self?.dismissGlobalHUD(self?.view ?? UIView())
             }
             
-            guard let `self` = self, error == nil else { return }
-            if json["StatusCode"]  == 200{
-                
-                self.dismissGlobalHUD(self.view)
-                
-            }
-            else {
-                self.dismissGlobalHUD(self.view)
-             //   self.showAlert(title: "Error", message: "Something went wrong in Extended Micro data sync. Please try again.", owner: self)
-
-            }
+            guard let self = self, error == nil else { return }
+            self.dismissGlobalHUD(self.view)
+         
         })
     }
     

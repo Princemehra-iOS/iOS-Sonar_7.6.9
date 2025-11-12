@@ -1790,7 +1790,7 @@ extension PEViewStartNewAssesmentINT{
         var otherVaccine = ""
         var ManufacturerId = 0
 
-        varvNameDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 1)
+        var vNameDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 1)
         var vNameArray = vNameDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
         var vNameIDArray = vNameDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
         var vNameMfgIdArray = vNameDetailsArray.value(forKey: "mfgId") as? NSArray ?? NSArray()
