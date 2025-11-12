@@ -786,7 +786,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
 //            formatter.calendar = Calendar(identifier: .gregorian)
 //            formatter.timeZone = TimeZone(secondsFromGMT: 0)
         }else{
-            formatter.dateFormat = "dd/MM/yyyy"
+            formatter.dateFormat = CategoryConstants.ddMMyyyy
 //            formatter.calendar = Calendar(identifier: .gregorian)
 //            formatter.timeZone = TimeZone(secondsFromGMT: 0)
         }
@@ -863,13 +863,13 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
     func showAlertForAntibiotic(){
         if regionID == 3
         {
-            if strings.contains("Please enter Antibiotic in the Vaccine Preparation & Sterility.")
+            if strings.contains(CategoryConstants.pleaseenterAntibioticintheVaccinePreparationSterility)
             {
-                strings = strings.filter { $0 != "Please enter Antibiotic in the Vaccine Preparation & Sterility." }
+                strings = strings.filter { $0 != CategoryConstants.pleaseenterAntibioticintheVaccinePreparationSterility }
             }
             
-            strings.append("Please enter Antibiotic in the Vaccine Preparation & Sterility.")
-            let errorMSg = "Please enter Antibiotic in the Vaccine Preparation & Sterility."
+            strings.append(CategoryConstants.pleaseenterAntibioticintheVaccinePreparationSterility)
+            let errorMSg = CategoryConstants.pleaseenterAntibioticintheVaccinePreparationSterility
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
@@ -894,13 +894,8 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
     func showAlertForCommentMandatory(){
         let errorMSg = "Please enter the Comment before submitting the assessment in Extended Microbial."
         let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-            _ in
-            
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-            _ in
-        }
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
@@ -909,13 +904,8 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
     func showAlertForAddingPlateType(){
         let errorMSg = "Please select all plate types in Sanitation And Embrex Evaluation Tab"
         let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-            _ in
-            
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-            _ in
-        }
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
     }
@@ -923,13 +913,8 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
     func showAlertForNoValidTraining(){
         let errorMSg = "Please enter vaccine mixture Data in Vaccine Preparation & Sterility to submit this assessment."
         let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-            _ in
-            
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-            _ in
-        }
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
@@ -1135,13 +1120,8 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
     func showAlertForNoAMPMValueNoQCCount(){
         let errorMSg = "Please enter am/pm  or the qc counts."
         let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-            _ in
-            
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-            _ in
-        }
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
@@ -1220,16 +1200,16 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
     func  showAlertForPPMValue(){
         if regionID == 3
         {
-            if strings.contains("Please enter PPM Value in Inovoject System Set Up/Shut Down and Operation.")
+            if strings.contains(Constants.pleaseEnterPPM)
             {
-                strings = strings.filter { $0 != "Please enter PPM Value in Inovoject System Set Up/Shut Down and Operation." }
+                strings = strings.filter { $0 != Constants.pleaseEnterPPM }
             }
             
-            strings.append("Please enter PPM Value in Inovoject System Set Up/Shut Down and Operation.")
+            strings.append(Constants.pleaseEnterPPM)
         }
         else
         {
-            let errorMSg = "Please enter PPM Value in Inovoject System Set Up/Shut Down and Operation."
+            let errorMSg = Constants.pleaseEnterPPM
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
@@ -1244,15 +1224,15 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
     func showAlertForNoValidTrainingName(){
         if regionID == 3
         {
-            if strings.contains("Please enter Vaccine Mixer Observer in  Vaccine Preparation & Sterility.")
+            if strings.contains(Constants.pleaseEnterVaccineMixObserverStr)
             {
-                strings = strings.filter { $0 != "Please enter Vaccine Mixer Observer in  Vaccine Preparation & Sterility."}
+                strings = strings.filter { $0 != Constants.pleaseEnterVaccineMixObserverStr}
             }
-            strings.append("Please enter Vaccine Mixer Observer in  Vaccine Preparation & Sterility.")
+            strings.append(Constants.pleaseEnterVaccineMixObserverStr)
         }
         else
         {
-            let errorMSg = "Please enter Vaccine Mixer Observer in  Vaccine Preparation & Sterility."
+            let errorMSg = Constants.pleaseEnterVaccineMixObserverStr
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
@@ -1623,7 +1603,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
         let regionId = UserDefaults.standard.integer(forKey: "Regionid")
         if regionId != 3 {
             dateFormatter.dateFormat = "dd/MM/YYYY HH:mm:ss Z"
-            let date = dict.evaluationDate?.toDate(withFormat: "dd/MM/YYYY")
+            let date = dict.evaluationDate?.toDate(withFormat: CategoryConstants.ddMMyyyy)
             let datastr = date?.toString(withFormat: "dd/MM/YYYY HH:mm:ss Z")
         }
         else{
@@ -1675,7 +1655,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
         }
         else
         {
-            dateFormatterObj.dateFormat = "dd/MM/yyyy"
+            dateFormatterObj.dateFormat = CategoryConstants.ddMMyyyy
         }
         
         let evalDateObj = dateFormatterObj.date(from: evaluationDate ?? "")
@@ -2120,9 +2100,9 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                                     let date =   peNewAssessment.evaluationDate
                                     if(regionID != 3){
                                         let inputFormatter = DateFormatter()
-                                        inputFormatter.dateFormat = "dd/MM/yyyy"
+                                        inputFormatter.dateFormat = CategoryConstants.ddMMyyyy
                                         let showDate = inputFormatter.date(from: date ?? "")
-                                        inputFormatter.dateFormat = "dd/MM/yyyy"
+                                        inputFormatter.dateFormat = CategoryConstants.ddMMyyyy
                                         if(showDate != nil){
                                             let resultString = inputFormatter.string(from: showDate!)
                                             cell.certDateSelectBtn.setTitle(resultString, for: .normal)
@@ -2252,9 +2232,9 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                             self.tableviewIndexPath = indexPath
                             if(regionID != 3){
                                 let inputFormatter = DateFormatter()
-                                inputFormatter.dateFormat = "dd/MM/yyyy"
+                                inputFormatter.dateFormat = CategoryConstants.ddMMyyyy
                                 let showDate = inputFormatter.date(from: date ?? "")
-                                inputFormatter.dateFormat = "dd/MM/yyyy"
+                                inputFormatter.dateFormat = CategoryConstants.ddMMyyyy
                                 if(showDate != nil){
                                     let resultString = inputFormatter.string(from: showDate!)
                                     
@@ -2280,7 +2260,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                             
                             if(regionID != 3){
                                 let inputFormatter = DateFormatter()
-                                inputFormatter.dateFormat = "dd/MM/yyyy"
+                                inputFormatter.dateFormat = CategoryConstants.ddMMyyyy
                                 let showDate = inputFormatter.date(from: date ?? "")
                                 inputFormatter.dateFormat = "dd-MM-yyyy"
                                 if(showDate != nil){
@@ -3359,7 +3339,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                     
                     else if self.peNewAssessment.dDDT?.lowercased().contains("200 ml") ?? false {
                         self.ml = 200.00
-                    } else if self.peNewAssessment.dDDT?.lowercased().contains("300 ml") ?? false {
+                    } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil300) ?? false {
                         self.ml = 300.00
                     } else if self.peNewAssessment.dDDT?.lowercased().contains("400 ml") ?? false {
                         self.ml = 400.00
@@ -3430,7 +3410,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                             self.ml = 2800.00
                         }else if self.peNewAssessment.dDDT?.lowercased().contains("200 ml") ?? false {
                             self.ml = 200.00
-                        } else if self.peNewAssessment.dDDT?.lowercased().contains("300 ml") ?? false {
+                        } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil300) ?? false {
                             self.ml = 300.00
                         } else if self.peNewAssessment.dDDT?.lowercased().contains("400 ml") ?? false {
                             self.ml = 400.00
@@ -5416,7 +5396,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
         }
         else if self.peNewAssessment.dDDT?.lowercased().contains("200 ml") ?? false {
             self.ml = 200.00
-        } else if self.peNewAssessment.dDDT?.lowercased().contains("300 ml") ?? false {
+        } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil300) ?? false {
             self.ml = 300.00
         } else if self.peNewAssessment.dDDT?.lowercased().contains("400 ml") ?? false {
             self.ml = 400.00
@@ -6153,15 +6133,12 @@ extension PEDraftAssesmentFinalize: UIImagePickerControllerDelegate , UINavigati
                 }
             }
         }
-        imagePicker.dismiss(animated: true, completion: {
-        })
+        imagePicker.dismiss(animated: true, completion:nil)
     }
     /******************************************************************************************************/
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         
-        dismiss(animated: true, completion: {
-            
-        })
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Save Image In PE Module
