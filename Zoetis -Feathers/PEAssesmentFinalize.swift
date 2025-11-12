@@ -4888,9 +4888,9 @@ extension PEAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDataSo
                 }
                 else
                 {
-                    if strings.contains("Please enter person name in Customer Quality Control Program.")
+                    if strings.contains(CategoryConstants.pleaseenterpersonnameinCustomerQualityControlProgram)
                     {
-                        strings = strings.filter { $0 != "Please enter person name in Customer Quality Control Program." }
+                        strings = strings.filter { $0 != CategoryConstants.pleaseenterpersonnameinCustomerQualityControlProgram }
                     }
                 }
             }
@@ -4915,9 +4915,9 @@ extension PEAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDataSo
                 
                 if regionID == 3
                 {
-                    if strings.contains("Please enter QC count in Customer Quality Control Program.")
+                    if strings.contains(CategoryConstants.pleaseenterQCcountinCustomerQualityControlProgram)
                     {
-                        strings = strings.filter { $0 != "Please enter QC count in Customer Quality Control Program." }
+                        strings = strings.filter { $0 != CategoryConstants.pleaseenterQCcountinCustomerQualityControlProgram }
                     }
                 }
             }
@@ -5191,14 +5191,14 @@ extension PEAssesmentFinalize{
         
         if regionID == 3
         {
-            if strings.contains("Please enter person name in Customer Quality Control Program.")
+            if strings.contains(CategoryConstants.pleaseenterpersonnameinCustomerQualityControlProgram)
             {
-                strings = strings.filter { $0 != "Please enter person name in Customer Quality Control Program." }
+                strings = strings.filter { $0 != CategoryConstants.pleaseenterpersonnameinCustomerQualityControlProgram }
             }
-            strings.append("Please enter person name in Customer Quality Control Program.")
+            strings.append(CategoryConstants.pleaseenterpersonnameinCustomerQualityControlProgram)
         }
         else{
-            let errorMSg = "Please enter person name in Customer Quality Control Program."
+            let errorMSg = CategoryConstants.pleaseenterpersonnameinCustomerQualityControlProgram
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
                 _ in
@@ -5244,15 +5244,15 @@ extension PEAssesmentFinalize{
         
         if regionID == 3
         {
-            if strings.contains("Please enter QC count in Customer Quality Control Program.")
+            if strings.contains(CategoryConstants.pleaseenterQCcountinCustomerQualityControlProgram)
             {
-                strings = strings.filter { $0 != "Please enter QC count in Customer Quality Control Program." }
+                strings = strings.filter { $0 != CategoryConstants.pleaseenterQCcountinCustomerQualityControlProgram }
             }
             
-            strings.append("Please enter QC count in Customer Quality Control Program.")
+            strings.append(CategoryConstants.pleaseenterQCcountinCustomerQualityControlProgram)
         }
         else{
-            let errorMSg = "Please enter QC count in Customer Quality Control Program."
+            let errorMSg = CategoryConstants.pleaseenterQCcountinCustomerQualityControlProgram
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
                 _ in

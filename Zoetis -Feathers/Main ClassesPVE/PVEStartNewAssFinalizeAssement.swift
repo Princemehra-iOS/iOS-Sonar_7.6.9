@@ -1344,9 +1344,7 @@ extension PVEStartNewAssFinalizeAssement: UITableViewDelegate, UITableViewDataSo
     }
     
     
-    @IBAction func vaccinatorsPlusBtnAction(_ sender: Any) {
-        
-    }
+   
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if currentSel_seq_Number == 2 {  //Vaccine Prepraion Section
