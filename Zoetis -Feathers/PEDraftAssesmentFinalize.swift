@@ -924,9 +924,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
         let errorMSg = "Reached maximum limit of images for this question."
         let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
         
-        let cancelAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel) {
-            _ in
-        }
+        let cancelAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
     }
@@ -1154,14 +1152,14 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
     func showAlertForNoPersonName(){
         if regionID == 3
         {
-            if strings.contains("Please enter person name in Customer Quality Control Program.")
+            if strings.contains(CategoryConstants.pleaseenterpersonnameinCustomerQualityControlProgram)
             {
-                strings = strings.filter { $0 != "Please enter person name in Customer Quality Control Program." }
+                strings = strings.filter { $0 != CategoryConstants.pleaseenterpersonnameinCustomerQualityControlProgram }
             }
-            strings.append("Please enter person name in Customer Quality Control Program.")
+            strings.append(CategoryConstants.pleaseenterpersonnameinCustomerQualityControlProgram)
         }
         else{
-            let errorMSg = "Please enter person name in Customer Quality Control Program."
+            let errorMSg = CategoryConstants.pleaseenterpersonnameinCustomerQualityControlProgram
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)

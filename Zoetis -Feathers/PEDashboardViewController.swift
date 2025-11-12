@@ -2663,7 +2663,7 @@ APIActivityTracker.shared.endRequest()
                 "Name": peCertificateData.name,
                 "CertificationDate": resultString,
                 "AlternateName": "string",
-                "CertificationDate2": "2020-05-23T06:36:50.915Z",
+                "CertificationDate2": Constants.timeDefaultValue,
                 "ModuleAssessmentCatId":  dictArray.catID,
                 "userId": dictArray.userID,
                 "DeviceId": deviceIDFORSERVER,
@@ -2693,7 +2693,7 @@ APIActivityTracker.shared.endRequest()
                 "Name": peCertificateData.name,
                 "CertificationDate": resultString,
                 "AlternateName": "string",
-                "CertificationDate2": "2020-05-23T06:36:50.915Z",
+                "CertificationDate2": Constants.timeDefaultValue,
                 "ModuleAssessmentCatId":  dictArray.catID,
                 "userId": dictArray.userID,
                 "DeviceId": deviceIDFORSERVER,
@@ -2819,7 +2819,7 @@ APIActivityTracker.shared.endRequest()
             "Name": "",
             "CertificationDate": "",
             "AlternateName": "string",
-            "CertificationDate2": "2020-05-23T06:36:50.915Z",
+            "CertificationDate2": Constants.timeDefaultValue,
             "ModuleAssessmentCatId":  dictArray.catID,
             "userId": dictArray.userID,
             "DeviceId": deviceIDFORSERVER,
@@ -3645,7 +3645,7 @@ APIActivityTracker.shared.endRequest()
     // MARK: - Date Formatter
     func convertDateFormat(inputDate: String) -> String {
         let olDateFormatter = DateFormatter()
-        olDateFormatter.dateFormat = "MMM d, yyyy"
+        olDateFormatter.dateFormat = Constants.MMMdyyyy
         let oldDate = olDateFormatter.date(from: inputDate)
         let convertDateFormatter = DateFormatter()
         convertDateFormatter.dateFormat = CategoryConstants.yyyyMMdd
@@ -3724,7 +3724,7 @@ APIActivityTracker.shared.endRequest()
     // MARK: - Date Formatter
     func convertSign_DateFormat(inputDate: String) -> String {
         let olDateFormatter = DateFormatter()
-        olDateFormatter.dateFormat = "MMM d, yyyy"
+        olDateFormatter.dateFormat = Constants.MMMdyyyy
         let oldDate = olDateFormatter.date(from: inputDate)
         let convertDateFormatter = DateFormatter()
         convertDateFormatter.dateFormat = CategoryConstants.yyyyMMdd
@@ -6085,7 +6085,7 @@ APIActivityTracker.shared.endRequest()
                 if SignatureDate != "" {
                     sigDate = self.convertDateFormat(inputDate: SignatureDate)
                 } else {
-                    sigDate = Date().stringFormat(format: "MMM d, yyyy")
+                    sigDate = Date().stringFormat(format: Constants.MMMdyyyy)
                 }
                 let param : [String:String] = ["sig":String(id),"sig2":String(id2),"sig_Date":sigDate ,"sig_EmpID":RoleName,"sig_Name":representaiveName ?? "","sig_EmpID2":RoleName2,"sig_Name2":representaiveName2 ?? "","sig_Phone":representaiveNotes ?? ""]
                 jsonRe = (getJSON("QuestionAns") ?? JSON())
@@ -6813,7 +6813,7 @@ APIActivityTracker.shared.endRequest()
             if SignatureDate != "" {
                 sigDate = self.convertDateFormat(inputDate: SignatureDate)
             } else {
-                sigDate = Date().stringFormat(format: "MMM d, yyyy")
+                sigDate = Date().stringFormat(format: Constants.MMMdyyyy)
             }
             let param : [String:String] = ["sig":String(id),"sig2":String(id2),"sig_Date":sigDate ,"sig_EmpID":RoleName,"sig_Name":representaiveName ,"sig_EmpID2":RoleName2,"sig_Name2":representaiveName2 ,"sig_Phone":representaiveNotes ]
             jsonRe = (getJSON("QuestionAns") ?? JSON())
