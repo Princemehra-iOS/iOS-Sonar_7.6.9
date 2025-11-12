@@ -2029,14 +2029,14 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         self.ml = 7570.82
                     } else if self.peNewAssessment.dDDT?.lowercased().contains("5 gallon") ?? false {
                         self.ml = 18927.05
-                    } else if self.peNewAssessment.dDDT?.lowercased().contains("2 litre") ?? false {
+                    } else if self.peNewAssessment.dDDT?.lowercased().contains(CategoryConstants.twoLitre) ?? false {
                         self.ml = 2000.00
-                    } else if self.peNewAssessment.dDDT?.lowercased().contains("2.4 litre") ?? false {
+                    } else if self.peNewAssessment.dDDT?.lowercased().contains(CategoryConstants.twoPointFourlitre) ?? false {
                         self.ml = 2400.00
-                    } else if self.peNewAssessment.dDDT?.lowercased().contains("2.8 litre") ?? false {
+                    } else if self.peNewAssessment.dDDT?.lowercased().contains(CategoryConstants.twoPointEightLitre) ?? false {
                         self.ml = 2800.00
                     }
-                    else if self.peNewAssessment.dDDT?.lowercased().contains("200 ml") ?? false {
+                    else if self.peNewAssessment.dDDT?.lowercased().contains(CategoryConstants.twoHundredMl) ?? false {
                         self.ml = 200.00
                     } else if self.peNewAssessment.dDDT?.lowercased().contains("300 ml") ?? false {
                         self.ml = 300.00
@@ -2098,14 +2098,14 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                             self.ml = 7570.82
                         } else if self.peNewAssessment.dDDT?.lowercased().contains("5 gallon") ?? false {
                             self.ml = 18927.05
-                        } else if self.peNewAssessment.dDDT?.lowercased().contains("2 litre") ?? false {
+                        } else if self.peNewAssessment.dDDT?.lowercased().contains(CategoryConstants.twoLitre) ?? false {
                             self.ml = 2000.00
-                        } else if self.peNewAssessment.dDDT?.lowercased().contains("2.4 litre") ?? false {
+                        } else if self.peNewAssessment.dDDT?.lowercased().contains(CategoryConstants.twoPointFourlitre) ?? false {
                             self.ml = 2400.00
-                        } else if self.peNewAssessment.dDDT?.lowercased().contains("2.8 litre") ?? false {  self.ml = 2800.00
+                        } else if self.peNewAssessment.dDDT?.lowercased().contains(CategoryConstants.twoPointEightLitre) ?? false {  self.ml = 2800.00
                         }
                         
-                        else if self.peNewAssessment.dDDT?.lowercased().contains("200 ml") ?? false {
+                        else if self.peNewAssessment.dDDT?.lowercased().contains(CategoryConstants.twoHundredMl) ?? false {
                             self.ml = 200.00
                         } else if self.peNewAssessment.dDDT?.lowercased().contains("300 ml") ?? false {
                             self.ml = 300.00
@@ -4219,13 +4219,13 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             self.ml = 7570.82
         } else if self.peNewAssessment.dDDT?.lowercased().contains("5 gallon") ?? false {
             self.ml = 18927.05
-        } else if self.peNewAssessment.dDDT?.lowercased().contains("2 litre") ?? false {
+        } else if self.peNewAssessment.dDDT?.lowercased().contains(CategoryConstants.twoLitre) ?? false {
             self.ml = 2000.00
-        } else if self.peNewAssessment.dDDT?.lowercased().contains("2.4 litre") ?? false {
+        } else if self.peNewAssessment.dDDT?.lowercased().contains(CategoryConstants.twoPointFourlitre) ?? false {
             self.ml = 2400.00
-        } else if self.peNewAssessment.dDDT?.lowercased().contains("2.8 litre") ?? false {  self.ml = 2800.00
+        } else if self.peNewAssessment.dDDT?.lowercased().contains(CategoryConstants.twoPointEightLitre) ?? false {  self.ml = 2800.00
         }
-        else if self.peNewAssessment.dDDT?.lowercased().contains("200 ml") ?? false {
+        else if self.peNewAssessment.dDDT?.lowercased().contains(CategoryConstants.twoHundredMl) ?? false {
             self.ml = 200.00
         } else if self.peNewAssessment.dDDT?.lowercased().contains("300 ml") ?? false {
             self.ml = 300.00
@@ -4930,9 +4930,9 @@ extension PEAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDataSo
                 }
                 else{
                     if(self.peNewAssessment.evaluationID == 1){
-                        if strings.contains("Please enter PPM Value in Inovoject System Set Up/Shut Down and Operation.")
+                        if strings.contains(CategoryConstants.pleaseenterPPMValueinInovojectSystemSetUpShutDownandOperation)
                         {
-                            strings = strings.filter { $0 != "Please enter PPM Value in Inovoject System Set Up/Shut Down and Operation." }
+                            strings = strings.filter { $0 != CategoryConstants.pleaseenterPPMValueinInovojectSystemSetUpShutDownandOperation }
                         }
                     }
                 }
@@ -4951,9 +4951,9 @@ extension PEAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDataSo
                 
             }else
             {
-                if strings.contains("Please enter AM/PM Value in Miscellaneous.")
+                if strings.contains(CategoryConstants.pleaseenterAMPMValueinMiscellaneous)
                 {
-                    strings = strings.filter { $0 != "Please enter AM/PM Value in Miscellaneous." }
+                    strings = strings.filter { $0 != CategoryConstants.pleaseenterAMPMValueinMiscellaneous }
                 }
             }
         }
@@ -5138,14 +5138,15 @@ extension PEAssesmentFinalize{
     func showAlertForNoAMPMValue(){
         if regionID == 3
         {
-            if strings.contains("Please enter AM/PM Value in Miscellaneous.")
+            if strings.contains(CategoryConstants.pleaseenterAMPMValueinMiscellaneous)
             {
-                strings = strings.filter { $0 != "Please enter AM/PM Value in Miscellaneous." }
+                strings = strings.filter { $0 != CategoryConstants.pleaseenterAMPMValueinMiscellaneous }
             }
-            strings.append("Please enter AM/PM Value in Miscellaneous.")
+            
+            strings.append(CategoryConstants.pleaseenterAMPMValueinMiscellaneous)
         }
         else{
-            let errorMSg = "Please enter AM/PM Value in Miscellaneous."
+            let errorMSg = CategoryConstants.pleaseenterAMPMValueinMiscellaneous
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
                 _ in
@@ -5165,14 +5166,14 @@ extension PEAssesmentFinalize{
         
         if regionID == 3
         {
-            if strings.contains("Please enter PPM Value in Inovoject System Set Up/Shut Down and Operation.")
+            if strings.contains(CategoryConstants.pleaseenterPPMValueinInovojectSystemSetUpShutDownandOperation)
             {
-                strings = strings.filter { $0 != "Please enter PPM Value in Inovoject System Set Up/Shut Down and Operation." }
+                strings = strings.filter { $0 != CategoryConstants.pleaseenterPPMValueinInovojectSystemSetUpShutDownandOperation }
             }
-            strings.append("Please enter PPM Value in Inovoject System Set Up/Shut Down and Operation.")
+            strings.append(CategoryConstants.pleaseenterPPMValueinInovojectSystemSetUpShutDownandOperation)
         }
         else{
-            let errorMSg = "Please enter PPM Value in Inovoject System Set Up/Shut Down and Operation."
+            let errorMSg = CategoryConstants.pleaseenterPPMValueinInovojectSystemSetUpShutDownandOperation
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
                 _ in
