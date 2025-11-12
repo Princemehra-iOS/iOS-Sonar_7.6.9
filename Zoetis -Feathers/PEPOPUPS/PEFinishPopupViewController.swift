@@ -122,7 +122,6 @@ class PEFinishPopupViewController: BaseViewController {
             self.signature2ImgView.layer.borderWidth = 2.0
             self.signature2ImgView.layer.masksToBounds = true
             self.signature2ImgView.layer.cornerRadius = 20.0
-            
         }
         
         if scheduledAssessment?.isAutomaticFail == 1{
@@ -216,6 +215,7 @@ class PEFinishPopupViewController: BaseViewController {
     
     func showCustomerRepSignature ()
     {
+
         if Constants.customRepSigIdFirst != 0
         {
             let data = CoreDataHandlerPE().getImageByImageID(idArray: Constants.customRepSigIdFirst)
@@ -246,6 +246,7 @@ class PEFinishPopupViewController: BaseViewController {
                 self.signature2ImgView.isHidden = true
             }
         }
+
         
     }
 
@@ -336,7 +337,7 @@ class PEFinishPopupViewController: BaseViewController {
                     "sig_Date": Date().stringFormat(format: "MMM d, yyyy")
                 ]
 
-                print("params are", param)
+                print( param)
             }
         }
         
@@ -364,7 +365,7 @@ class PEFinishPopupViewController: BaseViewController {
                 if sig2 > 0 {
                     param  = ["sig":String(sig1),"sig2":String(sig2),"sig_EmpID":self.txtEmployeeID.text ?? "","sig_EmpID2":self.txtEmployeeID2.text ?? "","sig_Name":self.hatheryManagerName ?? "","sig_Name2":self.hatheryManagerName2 ?? "","sig_Phone":self.txtPhone.text ??                "","sig_Date":Date().stringFormat(format: "MMM d, yyyy") ]
                 }
-                print("params are",param)
+                print(param)
                 
                 
                 if let microAvailable =  UserDefaults.standard.value(forKey: "extendedAvailable") as? Bool
@@ -1009,7 +1010,7 @@ extension PEFinishPopupViewController: YPSignatureDelegate {
                     imageCountID2 = imageCount2+1
                     param  = ["sig":String(imageCountID),"sig2":String(imageCountID2),"sig_EmpID":self.txtEmployeeID.text ?? "","sig_EmpID2":self.txtEmployeeID2.text ?? "","sig_Name":self.hatheryManagerName ?? "","sig_Name2":self.hatheryManagerName2 ?? "","sig_Phone":self.txtPhone.text ?? "","sig_Date":Date().stringFormat(format: "MMM d, yyyy") ]
                 }
-                print("params are",param)
+                print(param)
 
                 
                 if self.regionID == 3 {

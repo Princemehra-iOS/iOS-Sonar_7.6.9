@@ -1017,99 +1017,86 @@ extension PVEStartNewAssFinalizeAssement: NoOfCatchersMinusDelegate,CatchersPlus
         }
         
     }
-    
     func catchersbtnPlusBtnTapped(count: Int) {
+        if handleMaxLimit(for: count) { return }
         
-        if count >= 200 {
-            
-            if  let cell = self.tblView.headerView(forSection: 1) as? NoOfCatchersHeader
-            {
-                cell.bgBtn.layer.borderColor = UIColor.red.cgColor
-                cell.bgBtn.layer.borderWidth = 2.0
-            }
-            
-            showtoast(message: "You have reached to your maximum limit of 200.")
-            
-            return
-        }
+        noOfCatcherArr = sharedManager.getSessionValueForKeyFromDB(key: "cat_NoOfCatchersDetailsArr") as? [[String: String]] ?? []
+        resetHeaderBorder(isError: false)
         
-        noOfCatcherArr = sharedManager.getSessionValueForKeyFromDB(key: "cat_NoOfCatchersDetailsArr") as? [[String : String]] ?? []
-        
-        if  let cell = self.tblView.headerView(forSection: 1) as? NoOfCatchersHeader
-        {
-            cell.bgBtn.layer.borderColor = UIColor.black.cgColor
-            cell.bgBtn.layer.borderWidth = 1.0
-        }
-        
-        if count  ==  noOfCatcherArr.count{
-            
-            tblView.beginUpdates()
-            
-            let indexPath = IndexPath(row: noOfCatcherArr.count, section: 1)
-            tblView.insertRows(at: [indexPath], with: .bottom)
-            noOfCatcherArr.append(["name" : "", "serology" : ""])
-            
-            CoreDataHandlerPVE().updateSessionDetails(1, text: noOfCatcherArr, forAttribute: "cat_NoOfCatchersDetailsArr")
-            let noOfCatcherArr = sharedManager.getSessionValueForKeyFromDB(key: "cat_NoOfCatchersDetailsArr") as? [[String : String]] ?? []
-            
-            if  let cell = self.tblView.headerView(forSection: 1) as? NoOfCatchersHeader
-            {
-                cell.numberr = noOfCatcherArr.count
-                cell.noOfCatchersTxtFeild.text = "\(cell.numberr)"
-            }
-            
-            tblView.endUpdates()
-            tblView.reloadData()
-            view.endEditing(true)
-            
-            return
-        }
-        
-        
-        if count != 0 {
-            
-            tblView.beginUpdates()
-            
-            if count < noOfCatcherArr.count && noOfCatcherArr.count > 0{
-                
-                let ddd = noOfCatcherArr.count - count
-                var indPathArr = [NSIndexPath]()
-                for indx in 1...ddd {
-                    noOfCatcherArr.remove(at: noOfCatcherArr.count-1)
-                    indPathArr.append(IndexPath(row: indx, section: 1) as NSIndexPath)
-                }
-                tblView.deleteRows(at: indPathArr as [IndexPath], with: .bottom)
-                
-            }else{
-                
-                if noOfCatcherArr.count > 0{
-                    var indPathArr = [NSIndexPath]()
-                    for indx in 1...noOfCatcherArr.count {
-                        indPathArr.append(IndexPath(row: indx-1, section: 1) as NSIndexPath)
-                    }
-                    tblView.deleteRows(at: indPathArr as [IndexPath], with: .bottom)
-                    noOfCatcherArr.removeAll()
-                }
-                
-                var indPathArr = [NSIndexPath]()
-                
-                for indx in 1...count {
-                    //noOfCatcherArr.append("newCell")
-                    noOfCatcherArr.append(["name" : "", "serology" : ""])
-                    indPathArr.append(IndexPath(row: indx-1, section: 1) as NSIndexPath)
-                }
-                
-                tblView.insertRows(at: indPathArr as [IndexPath], with: .bottom)
-                
-            }
-            
-            CoreDataHandlerPVE().updateSessionDetails(1, text: noOfCatcherArr, forAttribute: "cat_NoOfCatchersDetailsArr")
-            
-            tblView.endUpdates()
-            view.endEditing(true)
-            
-        }
+        if handleEqualCount(for: count) { return }
+        if count != 0 { updateCatchers(for: count) }
     }
+
+    private func handleMaxLimit(for count: Int) -> Bool {
+        guard count >= 200 else { return false }
+        resetHeaderBorder(isError: true)
+        showtoast(message: "You have reached to your maximum limit of 200.")
+        return true
+    }
+
+    private func resetHeaderBorder(isError: Bool) {
+        guard let cell = tblView.headerView(forSection: 1) as? NoOfCatchersHeader else { return }
+        cell.bgBtn.layer.borderColor = (isError ? UIColor.red : UIColor.black).cgColor
+        cell.bgBtn.layer.borderWidth = isError ? 2.0 : 1.0
+    }
+
+    private func handleEqualCount(for count: Int) -> Bool {
+        guard count == noOfCatcherArr.count else { return false }
+        
+        tblView.beginUpdates()
+        let indexPath = IndexPath(row: noOfCatcherArr.count, section: 1)
+        tblView.insertRows(at: [indexPath], with: .bottom)
+        
+        noOfCatcherArr.append(["name": "", "serology": ""])
+        CoreDataHandlerPVE().updateSessionDetails(1, text: noOfCatcherArr, forAttribute: "cat_NoOfCatchersDetailsArr")
+        
+        if let cell = tblView.headerView(forSection: 1) as? NoOfCatchersHeader {
+            cell.numberr = noOfCatcherArr.count
+            cell.noOfCatchersTxtFeild.text = "\(cell.numberr)"
+        }
+        
+        tblView.endUpdates()
+        tblView.reloadData()
+        view.endEditing(true)
+        return true
+    }
+
+    private func updateCatchers(for count: Int) {
+        tblView.beginUpdates()
+        
+        if count < noOfCatcherArr.count {
+            removeExtraCatchers(count: count)
+        } else {
+            recreateCatchers(count: count)
+        }
+        
+        CoreDataHandlerPVE().updateSessionDetails(1, text: noOfCatcherArr, forAttribute: "cat_NoOfCatchersDetailsArr")
+        tblView.endUpdates()
+        view.endEditing(true)
+    }
+
+    private func removeExtraCatchers(count: Int) {
+        let toRemove = noOfCatcherArr.count - count
+        guard toRemove > 0 else { return }
+        
+        let indexPaths = (1...toRemove).map { IndexPath(row: $0, section: 1) }
+        noOfCatcherArr.removeLast(toRemove)
+        tblView.deleteRows(at: indexPaths, with: .bottom)
+    }
+
+    private func recreateCatchers(count: Int) {
+        if !noOfCatcherArr.isEmpty {
+            let existingPaths = (0..<noOfCatcherArr.count).map { IndexPath(row: $0, section: 1) }
+            tblView.deleteRows(at: existingPaths, with: .bottom)
+            noOfCatcherArr.removeAll()
+        }
+        
+        noOfCatcherArr = Array(repeating: ["name": "", "serology": ""], count: count)
+        let newPaths = (0..<count).map { IndexPath(row: $0, section: 1) }
+        tblView.insertRows(at: newPaths, with: .bottom)
+    }
+
+    
     
     func catchersbtnMinusTapped(clickedBtnIndPath: NSIndexPath) {
         if noOfCatcherArr.count > 0{
@@ -1357,9 +1344,7 @@ extension PVEStartNewAssFinalizeAssement: UITableViewDelegate, UITableViewDataSo
     }
     
     
-    @IBAction func vaccinatorsPlusBtnAction(_ sender: Any) {
-        
-    }
+   
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if currentSel_seq_Number == 2 {  //Vaccine Prepraion Section

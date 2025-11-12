@@ -328,6 +328,14 @@ struct CategoryConstants {
     static let MMddyyyy = "MM/dd/yyyy"
     static let ddMMyyyy = "dd/MM/yyyy"
     static let pleaseenterprogramnameintheVaccinePreparationSterility = "Please enter program name in the Vaccine Preparation & Sterility."
+    static let pleaseenterpersonnameinCustomerQualityControlProgram = "Please enter person name in Customer Quality Control Program."
+    static let pleaseenterQCcountinCustomerQualityControlProgram = "Please enter QC count in Customer Quality Control Program."
+    static let pleaseenterPPMValueinInovojectSystemSetUpShutDownandOperation = "Please enter PPM Value in Inovoject System Set Up/Shut Down and Operation."
+    static let pleaseenterAMPMValueinMiscellaneous = "Please enter AM/PM Value in Miscellaneous."
+    static let twoLitre = "2 litre"
+    static let twoPointFourlitre = "2.4 litre"
+    static let twoPointEightLitre = "2.8 litre"
+    static let twoHundredMl = "200 ml"
 }
 func predicateForSessionType() -> NSPredicate {
     return NSPredicate(format: "isSessionType == %d", argumentArray: [true])
