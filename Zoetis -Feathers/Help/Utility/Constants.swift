@@ -341,6 +341,8 @@ struct CategoryConstants {
     static let Noidfound = "No id found"
     static let pleaseentervaccinedetailsintheVaccinePreparationSterility = "Please enter vaccine details in the Vaccine Preparation & Sterility."
     static let areyousureyouwanttofinishtheassessmentAfterfinishingtheinformationcantbeedited = "Are you sure you want to finish the assessment? After finishing the information can't be edited."
+    static let pleaseselectacomplexfirst = "Please select a complex first."
+    static let datasyncedsuccessfully = "Data synced successfully."
    
 }
 func predicateForSessionType() -> NSPredicate {

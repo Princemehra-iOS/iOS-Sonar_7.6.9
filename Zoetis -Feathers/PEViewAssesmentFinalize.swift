@@ -4440,7 +4440,7 @@ extension PEViewAssesmentFinalize{
                 if syncArr ?? 0 > 0{
                     self?.syncBtnTapped(showHud: false)
                 } else {
-                    self?.showtoast(message: "Data synced successfully.")
+                    self?.showtoast(message: CategoryConstants.datasyncedsuccessfully)
                     NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "UpdateComplexOnDashboardPE"),object: nil))
                 }
             }
@@ -4469,7 +4469,7 @@ extension PEViewAssesmentFinalize{
                         let syncArr = self.getAllAssessmentInOfflineFromDb()
                         if syncArr > 0{
                             
-                            self.showtoast(message: "Data synced successfully.")
+                            self.showtoast(message: CategoryConstants.datasyncedsuccessfully)
                             NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "UpdateComplexOnDashboardPE"),object: nil))
                             self.dismissGlobalHUD(self.view)
                             self.syncBtnTapped(showHud: true)
@@ -4479,7 +4479,7 @@ extension PEViewAssesmentFinalize{
                                 CoreDataHandlerPE().setImageStatusTrue(idArray: i)
                             }
                             
-                            self.showtoast(message: "Data synced successfully.")
+                            self.showtoast(message: CategoryConstants.datasyncedsuccessfully)
                             NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "UpdateComplexOnDashboardPE"),object: nil))
                             self.dismissGlobalHUD(self.view)
                         }

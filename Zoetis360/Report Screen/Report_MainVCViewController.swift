@@ -213,7 +213,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
             self.preparedArray.removeAllObjects()
         }
         if lblComplex.text == NSLocalizedString("- Select -", comment: "") {
-            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("Please select a complex first.", comment: ""))
+            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(CategoryConstants.pleaseselectacomplexfirst, comment: ""))
             return
         }
         
@@ -241,7 +241,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
         
         if lblComplex.text == NSLocalizedString("- Select -", comment: "") {
             
-            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("Please select a complex first.", comment: ""))
+            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(CategoryConstants.pleaseselectacomplexfirst, comment: ""))
             return
         }
         
@@ -257,7 +257,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
         UserDefaults.standard.set(false, forKey: "isCocci")
         if lblComplex.text == NSLocalizedString("- Select -", comment: "") {
             
-            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("Please select a complex first.", comment: ""))
+            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(CategoryConstants.pleaseselectacomplexfirst, comment: ""))
             return
         }
         
@@ -287,7 +287,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
         }
         if lblComplex.text == NSLocalizedString("- Select -", comment: "") {
             
-            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("Please select a complex first.", comment: ""))
+            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(CategoryConstants.pleaseselectacomplexfirst, comment: ""))
             return
         }
         
@@ -320,7 +320,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
         UserDefaults.standard.set(false, forKey: "isCocci")
         if lblComplex.text == NSLocalizedString("- Select -", comment: "") {
             
-            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr: NSLocalizedString("Please select a complex first.", comment: ""))
+            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr: NSLocalizedString(CategoryConstants.pleaseselectacomplexfirst, comment: ""))
             return
         }
     }
@@ -332,7 +332,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
         
         if lblComplex.text == NSLocalizedString("- Select -", comment: "") {
             
-            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("Please select a complex first.", comment: ""))
+            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(CategoryConstants.pleaseselectacomplexfirst, comment: ""))
             return
         }
         

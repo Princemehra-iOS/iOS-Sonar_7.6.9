@@ -2274,9 +2274,20 @@ extension PEViewStartNewAssesmentINT{
             let jsonEncoder = JSONEncoder()
             let jsonDataArr = try? jsonEncoder.encode(arr)
             
-            if jsonDataArr != nil{
+            if jsonDataArr != nil {
                 
-                let json = try! JSONSerialization.jsonObject(with: jsonDataArr!, options: []) as? [[String: Any]]
+               // let json = try! JSONSerialization.jsonObject(with: jsonDataArr!, options: []) as? [[String: Any]]
+                
+                guard
+                    let jsonData = jsonDataArr,
+                    let json = try? JSONSerialization.jsonObject(with: jsonData, options: []) as? [[String: Any]]
+                else {
+                    print("Invalid or corrupt JSON data")
+                    return
+                }
+
+                // Continue using `json`
+
                 param.updateValue(json, forKey: "SanitationEmbrexScoresDataModel")
             }
             
