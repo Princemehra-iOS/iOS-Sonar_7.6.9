@@ -4225,10 +4225,10 @@ extension PEViewAssesmentFinalize{
         if AssessmentId == 0 {
             AssessmentId = dictArray.draftNumber ?? 0
         }
-
+        let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
         var DisplayId = dictArray.evaluationDate
         DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
- 
+        var siteId = String(dictArray.siteId ?? 0)
         DisplayId = "C-" + UniID
         let base64Str = CoreDataHandlerPE().getImageBase64ByImageID(idArray:img)
         totalImageToSync.append(img)

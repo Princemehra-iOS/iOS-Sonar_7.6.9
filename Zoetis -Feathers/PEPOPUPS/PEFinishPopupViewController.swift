@@ -129,8 +129,8 @@ class PEFinishPopupViewController: BaseViewController {
         }else{
             self.failChlorineStripLbl.isHidden = true
         }
-        let isFromDraft = UserDefaults.standard.value(forKey: "isFromDraft") as? Bool
-        if isFromDraft ?? false{
+        let comingFrmDraft = UserDefaults.standard.value(forKey: "isFromDraft") as? Bool
+        if comingFrmDraft ?? false{
             rejectedAssessments = CoreDataHandlerPE().fetchRejectedDraftCustomerWithCatID(assessmentId: assessmentId) as? [PE_AssessmentInProgress] ?? []
             if rejectedAssessments.count > 0 {
                 
@@ -216,11 +216,7 @@ class PEFinishPopupViewController: BaseViewController {
     func showCustomerRepSignature ()
     {
 
-        if Constants.customRepSigIdFirst == 0
-        {
-            
-        }
-        else
+        if Constants.customRepSigIdFirst != 0
         {
             let data = CoreDataHandlerPE().getImageByImageID(idArray: Constants.customRepSigIdFirst)
             if !data.isEmpty {
@@ -236,13 +232,8 @@ class PEFinishPopupViewController: BaseViewController {
             }
         }
         
-        if Constants.secoundcustomRepSigIdFirst == 0
-        {
-            
-        }
-        else
-        {
-            let data = CoreDataHandlerPE().getImageByImageID(idArray:(Constants.secoundcustomRepSigIdFirst))
+        if Constants.secoundcustomRepSigIdFirst != 0 {
+            let data = CoreDataHandlerPE().getImageByImageID(idArray: (Constants.secoundcustomRepSigIdFirst))
             if !data.isEmpty {
                 DispatchQueue.main.async {
                     self.signatureView2.isHidden = true
@@ -255,14 +246,16 @@ class PEFinishPopupViewController: BaseViewController {
                 self.signature2ImgView.isHidden = true
             }
         }
+
+        
     }
- 
+
     // MARK: - METHODS
 
     func convertLargeBase64ToCompressedString(Base64 : String) -> String {
-        var signatureImg = CodeHelper.sharedInstance.convertToImage(base64:Base64)
-        var compressedImg = signatureImg!.jpegData(compressionQuality: 0.1)
-        var base64String = compressedImg!.base64EncodedString(options: .lineLength64Characters)
+        let signatureImg = CodeHelper.sharedInstance.convertToImage(base64:Base64)
+        let compressedImg = signatureImg!.jpegData(compressionQuality: 0.1)
+        let base64String = compressedImg!.base64EncodedString(options: .lineLength64Characters)
         
         return base64String
     }
@@ -270,7 +263,6 @@ class PEFinishPopupViewController: BaseViewController {
     
     func crossNewClicked()
     {
-
         if golbalEvaluationID != 2 {
             var i = 0
             for item in  certificateData {
@@ -286,8 +278,6 @@ class PEFinishPopupViewController: BaseViewController {
                 i = i + 1
             }
         }
-
-       // self.customerRepSignatureSave()
     }
     
     
@@ -350,43 +340,6 @@ class PEFinishPopupViewController: BaseViewController {
                 print( param)
             }
         }
-
-        
-        /*
-        if let signatureImage = self.signatureView.getSignature(scale: 10) {
-            DispatchQueue.main.async {
-
-                let imageData = signatureImage.jpegData(compressionQuality: 0.1)
-                var imageCountID = 0
-                let imageCount = self.getImageCountInPEModule()
-                if imageData != nil {
-                    CoreDataHandlerPE().saveImageInPEFinishModule(imageId: imageCount+1, imageData: imageData!)
-                }
-                imageCountID = imageCount+1
-                Constants.customRepSigIdFirst = imageCountID
-              
-                
-                var param : [String:String] = ["sig":String(imageCountID),"sig_EmpID":self.txtEmployeeID.text ?? "","sig_EmpID2":self.txtEmployeeID2.text ?? "","sig_Name":self.hatheryManagerName ?? "","sig_Name2":self.hatheryManagerName2 ?? "","sig_Phone":self.txtPhone.text ?? "","sig_Date":Date().stringFormat(format: "MMM d, yyyy") ]
-                let signatureImage2 = self.signatureView2.getSignature(scale: 10)
-                
-                let imageData2 = signatureImage2?.jpegData(compressionQuality: 0.1)
-                if imageData2 != nil {
-                    var imageCountID2 = 0
-                    let imageCount2 = self.getImageCountInPEModule()
-                    CoreDataHandlerPE().saveImageInPEFinishModule(imageId: imageCount2+1, imageData: imageData2!)
-                    imageCountID2 = imageCount2+1
-                    Constants.secoundcustomRepSigIdFirst = imageCountID2
-                    
-                    param  = ["sig":String(imageCountID),"sig2":String(imageCountID2),"sig_EmpID":self.txtEmployeeID.text ?? "","sig_EmpID2":self.txtEmployeeID2.text ?? "","sig_Name":self.hatheryManagerName ?? "","sig_Name2":self.hatheryManagerName2 ?? "","sig_Phone":self.txtPhone.text ?? "","sig_Date":Date().stringFormat(format: "MMM d, yyyy") ]
-                }
-                print("params are",param)
-  
-            }
-                
-        }
-        
-        */
-        
         
     }
     
@@ -487,11 +440,9 @@ class PEFinishPopupViewController: BaseViewController {
             peNewAssessmentArray = CoreDataHandlerPE().getOnGoingAssessmentArrayPEObject(isFromDraft:true, serverAssessmentId: scheduledAssessment?.serverAssessmentId ?? "")
         }
         var carColIdArray : [Int] = []
-        var carTabIdArray : [Int] = []
-        
-        var row = 0
+      
         if peNewAssessmentArray[0].evaluationID != 2{
-            var pe = PENewAssessment()
+            let pe = PENewAssessment()
             pe.catID = 10
             pe.isOpened = true
             catArrayForCollectionIs.append(pe)
@@ -563,10 +514,9 @@ class PEFinishPopupViewController: BaseViewController {
     }
     
     @IBAction func titleAction2(_ sender: Any) {
-        var vManufacutrerNameArray = NSArray()
-        var vManufacutrerDetailsArray = NSArray()
-        vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Roles")
-        vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "roleName") as? NSArray ?? NSArray()
+        
+        var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Roles")
+        var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "roleName") as? NSArray ?? NSArray()
         if  vManufacutrerNameArray.count > 0 {
             self.dropDownVIewNew(arrayData: vManufacutrerNameArray as? [String] ?? [String](), kWidth: txtEmployeeID2.frame.width, kAnchor: txtEmployeeID2, yheight: txtEmployeeID2.bounds.height) { [unowned self] selectedVal, index  in
                 self.txtEmployeeID2.text = selectedVal
@@ -577,10 +527,9 @@ class PEFinishPopupViewController: BaseViewController {
     
     
     @IBAction func titleAction(_ sender: Any) {
-        var vManufacutrerNameArray = NSArray()
-        var vManufacutrerDetailsArray = NSArray()
-        vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Roles")
-        vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "roleName") as? NSArray ?? NSArray()
+
+        var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Roles")
+        var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "roleName") as? NSArray ?? NSArray()
         if  vManufacutrerNameArray.count > 0 {
             self.dropDownVIewNew(arrayData: vManufacutrerNameArray as? [String] ?? [String](), kWidth: txtEmployeeID.frame.width, kAnchor: txtEmployeeID, yheight: txtEmployeeID.bounds.height) { [unowned self] selectedVal, index  in
                 self.txtEmployeeID.text = selectedVal
@@ -746,7 +695,6 @@ extension PEFinishPopupViewController: UITableViewDelegate, UITableViewDataSourc
                         if(catArrayForCollectionIs[indexPath.section].sequenceNoo == 11){
                             headerView.lblScore.text = "NA"
                         }
-                        
                         return headerView
                         
                     }
@@ -766,9 +714,6 @@ extension PEFinishPopupViewController: UITableViewDelegate, UITableViewDataSourc
                     }
                     headerView.lblScore.text = score
                     return headerView
-                    
-                    
-                    
                 }
             }
         }
@@ -791,7 +736,6 @@ extension PEFinishPopupViewController: UITableViewDelegate, UITableViewDataSourc
                         cell.empIndex = 0
                         cell.index = 0
                         
-                       // cell.shipToLbl.isHidden = true //3839
                         cell.shippindAddressBtn.isHidden = true
                         if regionID != 3
                         {
@@ -821,7 +765,6 @@ extension PEFinishPopupViewController: UITableViewDelegate, UITableViewDataSourc
                             {
                                 cell.showImgVw(true)
                                 cell.signImgVw.image = CodeHelper.sharedInstance.convertToImage(base64:certificateData[0].signatureImg)
-                                
                             }
                         }
                         else
@@ -829,7 +772,6 @@ extension PEFinishPopupViewController: UITableViewDelegate, UITableViewDataSourc
                             cell.signView.clearCanvas()
                             if indexPath.row == 1 {
                                 var fullName = ""
-                                //         if indexPath.row == 1 {
                                 let firstname = certificateData[0].name
                                 fullName = firstname ?? ""
                                 cell.operatorSignLbl.text = "Vaccine Mixer Signature" //"Vaccine Mixer Signature*" we did this change in 7.6.5 release 19 june as per QA suggestion
@@ -856,10 +798,7 @@ extension PEFinishPopupViewController: UITableViewDelegate, UITableViewDataSourc
                                 {
                                     cell.showImgVw(true)
                                     cell.signImgVw.image = CodeHelper.sharedInstance.convertToImage(base64:certificateData[0].signatureImg)
-                                    
                                 }
-                                
-                                //        }
                             }
                         }
                         
@@ -876,11 +815,8 @@ extension PEFinishPopupViewController: UITableViewDelegate, UITableViewDataSourc
                                 i = i + 1
                             }
                         }
-                        
-                        
                         return cell
                     }
-                    
                 }
                 else {
                     if   let cell = tableView.dequeueReusableCell(withIdentifier: PE_FinalizeCell.identifier) as? PE_FinalizeCell {
@@ -900,14 +836,10 @@ extension PEFinishPopupViewController: UITableViewDelegate, UITableViewDataSourc
                             if(peNewAssessmentArrayForCatQuest[indexPath.row].sequenceNoo == 11){
                                 score = "NA"
                             }
-                            
                             cell.lblResult.text = score
                         }
                         return cell
-                        
-                        
                     }
-                    
                 }
             }
             else {
@@ -926,13 +858,9 @@ extension PEFinishPopupViewController: UITableViewDelegate, UITableViewDataSourc
                         }
                         
                         var score = resultMark + "/" + maxMark
-                        
-                        
                         cell.lblResult.text = score
                     }
                     return cell
-                    
-                    
                 }
             }
         }
@@ -957,40 +885,30 @@ extension PEFinishPopupViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if section == catArrayForCollectionIs.count-1{
             
-            let countryId = UserDefaults.standard.integer(forKey: "nonUScountryId")
-            
             if regionID != 3 {
                 if showExtendedPE{
                     let footerView = UIView(frame: CGRect(x: 20, y: 10, width: tableView.frame.size.width, height: 40))
-                    //                footerView.backgroundColor = UIColor.yellow
                     let labelFooter = UILabel(frame: footerView.frame)
                     labelFooter.text = ""
-                    //                labelFooter.textColor = .red
                     footerView.addSubview(labelFooter)
                     return footerView
                 }
                 else{
                     return UIView()
                 }
-                
             }
             else{
-                
                 if showExtendedPE{
                     let footerView = UIView(frame: CGRect(x: 20, y: 10, width: tableView.frame.size.width, height: 40))
-                    //                footerView.backgroundColor = UIColor.yellow
                     let labelFooter = UILabel(frame: footerView.frame)
                     labelFooter.text = "The extended microbial plate samples have been collected and results will be provided within 48 hours"
-                    //                labelFooter.textColor = .red
                     footerView.addSubview(labelFooter)
                     return footerView
                 }
                 else{
                     return UIView()
                 }
-                
             }
-            
         }
         else{
             return UIView()
@@ -1110,7 +1028,6 @@ extension PEFinishPopupViewController: YPSignatureDelegate {
                                     {
                                         self.showExtendedMicroAlert(errorMsg: "Are you sure, you want to submit the assessment without Extended Microbial?", param: param)
                                     }
-                                    
                                 }
                             }
                         }
@@ -1131,8 +1048,6 @@ extension PEFinishPopupViewController: YPSignatureDelegate {
                     self.validationSuccessFull?(param)
                     self.dismiss(animated: true, completion: nil)
                 }
-                
-                  
             }
                 
         } else {
@@ -1152,7 +1067,6 @@ extension PEFinishPopupViewController: YPSignatureDelegate {
     }
 
     private func saveImageInPEModule(imageData:Data)->Int{
-        let allAssesmentArr = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_ImageEntity")
         let imageCount = getImageCountInPEModule()
         CoreDataHandlerPE().saveImageInPEFinishModule(imageId: imageCount+1, imageData: imageData)
         return imageCount+1
@@ -1172,8 +1086,8 @@ extension PEFinishPopupViewController: YPSignatureDelegate {
     
     
     func getAssessmentInOfflineFromDb() -> Int {
-        var allAssesmentDraftArr = CoreDataHandlerPE().fetchDetailsWithUserIDFor(entityName: "PE_AssessmentInOffline")
-        var carColIdArrayDraftNumbers  = allAssesmentDraftArr.value(forKey: "dataToSubmitNumber") as? NSArray ?? []
+        let allAssesmentDraftArr = CoreDataHandlerPE().fetchDetailsWithUserIDFor(entityName: "PE_AssessmentInOffline")
+        let carColIdArrayDraftNumbers  = allAssesmentDraftArr.value(forKey: "dataToSubmitNumber") as? NSArray ?? []
         var carColIdArray : [Int] = []
         for obj in carColIdArrayDraftNumbers {
             if !carColIdArray.contains(obj as? Int ?? 0){
@@ -1248,8 +1162,6 @@ extension PEFinishPopupViewController: UITextFieldDelegate ,  UITextViewDelegate
         }
     }
     
-    
-    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return true
     }
@@ -1263,11 +1175,7 @@ extension PEFinishPopupViewController: UITextFieldDelegate ,  UITextViewDelegate
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-      //  guard let text = textField.text else { return true }
-        //  let newLength = text.count + string.count - range.length
-       // return text.count <= 25
         return string.isEmpty || (textField.text?.count ?? 0) < 25
-        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -1285,9 +1193,8 @@ extension PEFinishPopupViewController: UITextFieldDelegate ,  UITextViewDelegate
         if textView == txtPhone{
             let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
             let numberOfChars = newText.count
-            return numberOfChars < 501 // 10 Limit Value
+            return numberOfChars < 501
         }
-        
         return true
         
     }
@@ -1300,8 +1207,6 @@ extension Date {
     func stringFormat(format: String) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format
-//        formatter.calendar = Calendar(identifier: .gregorian)
-//        formatter.timeZone = TimeZone(secondsFromGMT: 0)
         return formatter.string(from: self)
     }
 }

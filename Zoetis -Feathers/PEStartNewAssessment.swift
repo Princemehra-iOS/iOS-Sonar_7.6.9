@@ -238,32 +238,32 @@ class PEStartNewAssessment: BaseViewController {
             switch rightConst {
             case 1:
                 if heightNumberOfEggsView.constant == 94{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 40))
+                    notesTop.constant = CGFloat(leftConst * 55  + 40)
                 }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 40 ))
+                    notesTop.constant = CGFloat(leftConst * 55  + 40 )
                 }
             default:
                 if heightNumberOfEggsView.constant == 94{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 40))
+                    notesTop.constant = CGFloat(leftConst * 55  + 40)
                 }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 100))
+                    notesTop.constant = CGFloat(leftConst * 55  + 100)
                 }
             }
         case 1:
             switch rightConst {
             case 1:
                 if heightNumberOfEggsView.constant == 94{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) - 10))
+                    notesTop.constant = CGFloat(leftConst * 55  - 10)
                 }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 40 ))
+                    notesTop.constant = CGFloat(leftConst * 55  + 40 )
                 }
             case 2:
-                notesTop.constant = CGFloat(((leftConst * 55 ) - 50))
+                notesTop.constant = CGFloat(leftConst * 55  - 50)
             default:
                 if heightNumberOfEggsView.constant == 94{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 30))
+                    notesTop.constant = CGFloat(leftConst * 55  + 30)
                 }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 85))
+                    notesTop.constant = CGFloat(leftConst * 55  + 85)
                 }
             }
         case 2:
@@ -271,21 +271,21 @@ class PEStartNewAssessment: BaseViewController {
             case 1:
                 if heightNumberOfEggsView.constant == 94{
                     if heightManufacturerView.constant == 94{
-                        notesTop.constant = CGFloat(((leftConst * 55 ) - 55))
+                        notesTop.constant = CGFloat(leftConst * 55  - 55)
                     }else{
-                        notesTop.constant = CGFloat(((leftConst * 55 ) - 25))
+                        notesTop.constant = CGFloat(leftConst * 55  - 25)
                     }
                 }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) - 10))
+                    notesTop.constant = CGFloat(leftConst * 55 - 10)
                 }
             case 2:
-                notesTop.constant = CGFloat(((leftConst * 55 ) - 35))
+                notesTop.constant = CGFloat(leftConst * 55 - 35)
             default:
                 if heightNumberOfEggsView.constant == 94{
                     
-                    notesTop.constant = CGFloat(((leftConst * 55 ) - 10))
+                    notesTop.constant = CGFloat(leftConst * 55  - 10)
                 }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 40))
+                    notesTop.constant = CGFloat(leftConst * 55  + 40)
                 }
             }
         default:
@@ -335,7 +335,6 @@ class PEStartNewAssessment: BaseViewController {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat="MM/dd/yyyy"
-        let currentDate: NSDate = NSDate()
         let strdate1 = dateFormatter.string(from: scheduledAssessment?.scheduledDate ?? Date()) as String
         self.cameraSwitch.tintColor = UIColor.getTextViewBorderColorStartAssessment()
         self.hatcherySwitch.tintColor = UIColor.getTextViewBorderColorStartAssessment()
@@ -579,10 +578,7 @@ class PEStartNewAssessment: BaseViewController {
                 if infoObj != nil{
                     extendedPESwitch.isOn =  infoObj?.isExtendedPE ?? false
                 }else{
-                    
-                }
-                if extendedPESwitch.isOn{
-                } else{
+                    // dont change the extended switch value
                 }
                 
             }else{
@@ -682,19 +678,6 @@ class PEStartNewAssessment: BaseViewController {
                 self.peNewAssessment.manufacturer = txtManufacturer.text
             }
         }
-    }
-    
-    /* Get offline stored session */
-    // MARK: - Get offline stored session
-    private func getAllOfflineSubmitedArrayStored() -> PENewAssessment{
-        var peAssessmentAlreadySubmitted : PENewAssessment = PENewAssessment()
-        let offlineSubmitedArray  = CoreDataHandlerPE().getSessionForViewAssessmentArrayPEObject(ofCurrentAssessment:true)
-        if offlineSubmitedArray.count > 0 {
-            for obj in offlineSubmitedArray {
-                peAssessmentAlreadySubmitted = obj
-            }
-        }
-        return peAssessmentAlreadySubmitted
     }
     
     // MARK: - Hide Flock View
@@ -894,7 +877,7 @@ class PEStartNewAssessment: BaseViewController {
             "EvaluationDate": evalDate
         ] as JSONDictionary
         ZoetisWebServices.shared.getDuplicacyCheck(controller: self, parameters: parameter, completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
+            guard let self = self, error == nil else { return }
             if json["Data"].boolValue == true{
                 completion(false)
             }else{
@@ -912,7 +895,7 @@ class PEStartNewAssessment: BaseViewController {
         ] as JSONDictionary
         ZoetisWebServices.shared.getMixerList(controller: self, parameters: parameter) { [weak self] (json, error) in
 			self?.btnNext.isUserInteractionEnabled = true
-            guard let `self` = self, error == nil else { return }
+            guard let self = self, error == nil else { return }
             
             DispatchQueue.main.async {
                 VaccineMixerResponse(json)
@@ -988,7 +971,7 @@ class PEStartNewAssessment: BaseViewController {
         if peNewAssessment.breedOfBird != nil && peNewAssessment.breedOfBird != ""{
             if ((peNewAssessment.breedOfBird?.lowercased().contains("other")) ?? false) {
                 if peNewAssessment.breedOfBirdOther != nil && peNewAssessment.breedOfBirdOther != "" {
-                    
+                    // breed of bird data is added..
                 }else{
                     changeMandatorySuperviewToRed()
                     return
@@ -1002,7 +985,7 @@ class PEStartNewAssessment: BaseViewController {
         if self.txtManufacturer.text != nil && self.txtManufacturer.text != ""{
             if ((self.txtManufacturer.text?.lowercased().contains("other")) ?? false) {
                 if manfacturerOtherTxt.text != nil && manfacturerOtherTxt.text != "" {
-                    
+                    // Other manufacturer field data is added
                 }else{
                     changeMandatorySuperviewToRed()
                     return
@@ -1014,7 +997,7 @@ class PEStartNewAssessment: BaseViewController {
         }
         
         if peNewAssessment.incubation != nil && peNewAssessment.incubation != ""{
-            
+            // incubation is selected
         }else{
             changeMandatorySuperviewToRed()
             return
@@ -1023,7 +1006,7 @@ class PEStartNewAssessment: BaseViewController {
         if txtNumberOfEggs.text != nil && txtNumberOfEggs.text != ""{
             if ((txtNumberOfEggs.text?.lowercased().contains("other")) ?? false) {
                 if eggsOtherTxt.text != nil && eggsOtherTxt.text != "" {
-                    
+                    // other eggs text is not epmty
                 }else{
                     changeMandatorySuperviewToRed()
                     return
@@ -1033,44 +1016,11 @@ class PEStartNewAssessment: BaseViewController {
             changeMandatorySuperviewToRed()
             return
         }
-        
-        
-        
+                
         let datesStored =  getAllDateArrayStored()
         let customerStored = getAllCustomerArrayStored()
         let sitesStored = getAllSitesArrayStored()
         let evaluationIDs = getAllevaluationIDStored()
-        var dateContain = false
-        
-        for  obj  in datesStored {
-            if obj.lowercased() == self.peNewAssessment.evaluationDate?.lowercased(){
-                dateContain = true
-            }
-        }
-        
-        var customerContain = false
-        
-        for  obj  in customerStored {
-            if obj.lowercased() == self.peNewAssessment.customerName?.lowercased(){
-                customerContain = true
-            }
-        }
-        
-        var siteContain = false
-        
-        for  obj  in sitesStored {
-            if obj.lowercased() == self.peNewAssessment.siteName?.lowercased(){
-                siteContain = true
-            }
-        }
-        
-        var evaluationContain = false
-        
-        for  obj  in evaluationIDs {
-            if obj.lowercased() == self.peNewAssessment.evaluationName?.lowercased(){
-                evaluationContain = true
-            }
-        }
 
         
         if self.heightFlockAge.constant == 78 {
@@ -1212,15 +1162,7 @@ class PEStartNewAssessment: BaseViewController {
         let evaluator = self.peNewAssessment.evaluatorName ?? ""
         let reasonForVisit = self.peNewAssessment.visitName ?? ""
         let selectedTSR = self.selectedTSR.text ?? ""
-        //        let incubation = self.peNewAssessment.incubation ?? ""
-        //        let breedOfBirds = self.peNewAssessment.breedOfBird ?? ""
-        //        let breedOfBirdsOthers = self.peNewAssessment.breedOfBirdOther ?? ""
-        //        let manufecturer = self.peNewAssessment.manufacturer ?? ""
-        //        let manufecturerOther = self.manfacturerOtherTxt.text ?? ""
-        //        let eggsFlat = self.txtNumberOfEggs.text ?? ""
-        //        let eggsFlatOther = self.eggsOtherTxt.text ?? ""
-        
-        //
+
         if peNewAssessment.breedOfBird != nil && peNewAssessment.breedOfBird != ""{
             if peNewAssessment.breedOfBird?.lowercased().contains("other") ?? false {
                 if peNewAssessment.breedOfBirdOther != nil && peNewAssessment.breedOfBirdOther != "" {
@@ -1318,7 +1260,6 @@ class PEStartNewAssessment: BaseViewController {
                 }
             }
         }
-        //
         
         if (date.count > 0 ){} else  {
             let superviewCurrent =  evaluationDateButton.superview
@@ -1342,7 +1283,9 @@ class PEStartNewAssessment: BaseViewController {
                 }
             }
         }
-        if (selectedTSR.count > 0 ){} else  {
+        if (selectedTSR.count > 0 ){
+            // TSR is already selected — no further action required.
+        } else  {
             let superviewCurrent = tsrButton.superview
             if superviewCurrent != nil {
                 for view in superviewCurrent!.subviews {
@@ -1355,7 +1298,9 @@ class PEStartNewAssessment: BaseViewController {
         }
         
         
-        if (site.count > 0 ){} else  {
+        if (site.count > 0 ){
+            // Site is already selected — no further action required.
+        } else  {
             let superviewCurrent =  siteButton.superview
             if superviewCurrent != nil {
                 for view in superviewCurrent!.subviews {
@@ -1366,7 +1311,9 @@ class PEStartNewAssessment: BaseViewController {
                 }
             }
         }
-        if (evaluationName.count > 0){} else  {
+        if (evaluationName.count > 0){
+            // Evaluation type is already selected — no further action required.
+        } else  {
             let superviewCurrent =  evaluationTypeButton.superview
             if superviewCurrent != nil {
                 for view in superviewCurrent!.subviews {
@@ -1379,7 +1326,9 @@ class PEStartNewAssessment: BaseViewController {
             }
             
         }
-        if (evaluator.count  > 0){} else  {
+        if (evaluator.count > 0){
+            // Evaluator is already selected — no further action required.
+        } else  {
             let superviewCurrent =  evaluatorButton.superview
             if superviewCurrent != nil {
                 for view in superviewCurrent!.subviews {
@@ -1391,7 +1340,9 @@ class PEStartNewAssessment: BaseViewController {
                 }
             }
         }
-        if (reasonForVisit.count > 0){} else  {
+        if (reasonForVisit.count > 0){
+            // Reason for visit is already selected — no further action required.
+        } else  {
             let superviewCurrent =  visitButton.superview
             if superviewCurrent != nil {
                 for view in superviewCurrent!.subviews {
@@ -1450,13 +1401,10 @@ class PEStartNewAssessment: BaseViewController {
                 }
             }
         }
-        
-        var customerNamesArray = NSArray()
-        var customerIDArray = NSArray()
-        var customerDetailsArray = NSArray()
-        customerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Customer")
-        customerNamesArray = customerDetailsArray.value(forKey: "customerName") as? NSArray ?? NSArray()
-        customerIDArray = customerDetailsArray.value(forKey: "customerID") as? NSArray ?? NSArray()
+
+        var customerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Customer")
+        var customerNamesArray = customerDetailsArray.value(forKey: "customerName") as? NSArray ?? NSArray()
+        var customerIDArray = customerDetailsArray.value(forKey: "customerID") as? NSArray ?? NSArray()
         if  customerNamesArray.count > 0 {
             self.dropDownVIewNew(arrayData: customerNamesArray as? [String] ?? [String](), kWidth: customerButton.frame.width, kAnchor: customerButton, yheight: customerButton.bounds.height) { [unowned self] selectedVal, index  in
                 self.selectedCustomerText.text = selectedVal
@@ -1484,16 +1432,13 @@ class PEStartNewAssessment: BaseViewController {
                 }
             }
         }
-        
-        var manufacutrerNameArray = NSArray()
-        var manufacutrerDetailsArray = NSArray()
-        manufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Manufacturer")
-        manufacutrerNameArray = manufacutrerDetailsArray.value(forKey: "mFG_Name") as? NSArray ?? NSArray()
+
+        var manufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Manufacturer")
+        var manufacutrerNameArray = manufacutrerDetailsArray.value(forKey: "mFG_Name") as? NSArray ?? NSArray()
         if  manufacutrerNameArray.count > 0 {
             self.dropDownVIewNew(arrayData: manufacutrerNameArray as? [String] ?? [String](), kWidth: btnIncubation.frame.width, kAnchor: btnIncubation, yheight: btnIncubation.bounds.height){ [unowned self] selectedVal, index  in
                 self.txtManufacturer.text = selectedVal
                 self.peNewAssessment.manufacturer = self.txtManufacturer.text ?? ""
-                //                self.checkBackAndSave()
                 if self.peNewAssessment.manufacturer == "Other"{
                     self.showManufacturerOthers()
                 } else {
@@ -1523,9 +1468,9 @@ class PEStartNewAssessment: BaseViewController {
                 }
             }
         }
-        var EggsNameArray = NSArray()
+
         let EggsDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Eggs")
-        EggsNameArray = EggsDetailsArray.value(forKey: "eggCount") as? NSArray ?? NSArray()
+        var EggsNameArray = EggsDetailsArray.value(forKey: "eggCount") as? NSArray ?? NSArray()
         if  EggsNameArray.count > 0 {
             self.dropDownVIewNew(arrayData: EggsNameArray as? [String] ?? [String](), kWidth: txtNumberOfEggs.frame.width, kAnchor: txtNumberOfEggs, yheight: txtNumberOfEggs.bounds.height) { [unowned self] selectedVal, index  in
                 if selectedVal == "Other"{
@@ -1562,12 +1507,10 @@ class PEStartNewAssessment: BaseViewController {
         guard let customer = self.peNewAssessment.customerName, customer.count > 0 else {
             return
         }
-        var complexNamesArray = NSArray()
-        var complexDetailsArray = NSArray()
-        var complexIDArray = NSArray()
-        complexDetailsArray = CoreDataHandlerPE().fetchSitesWithCustId( self.peNewAssessment.customerId as NSNumber? ?? 0)
-        complexNamesArray = complexDetailsArray.value(forKey: "siteName") as? NSArray ?? NSArray()
-        complexIDArray = complexDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+
+        var complexDetailsArray = CoreDataHandlerPE().fetchSitesWithCustId( self.peNewAssessment.customerId as NSNumber? ?? 0)
+        var complexNamesArray = complexDetailsArray.value(forKey: "siteName") as? NSArray ?? NSArray()
+        var complexIDArray = complexDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
         
         if  complexNamesArray.count > 0 {
             self.dropDownVIewNew(arrayData: complexNamesArray as? [String] ?? [String](), kWidth: siteButton.frame.width, kAnchor: siteButton, yheight: siteButton.bounds.height) { [unowned self] selectedVal, index in
@@ -1656,13 +1599,10 @@ class PEStartNewAssessment: BaseViewController {
                 }
             }
         }
-        
-        
-        var evaluationIDArray = NSArray()
-        var evaluationNameArray = NSArray()
+    
         let evaluationDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_EvaluationType")
-        evaluationNameArray = evaluationDetailsArray.value(forKey: "evaluationName") as? NSArray ?? NSArray()
-        evaluationIDArray = evaluationDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+        var evaluationNameArray = evaluationDetailsArray.value(forKey: "evaluationName") as? NSArray ?? NSArray()
+        var evaluationIDArray = evaluationDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
         if  evaluationNameArray.count > 0 {
             self.dropDownVIewNew(arrayData: evaluationNameArray as? [String] ?? [String](), kWidth: evaluationTypeButton.frame.width, kAnchor: evaluationTypeButton, yheight: evaluationTypeButton.bounds.height) { [unowned self] selectedVal, index  in
                 self.selectedEvaluationType.text = selectedVal
@@ -1683,7 +1623,6 @@ class PEStartNewAssessment: BaseViewController {
                     self.flockAgeLower.isHidden = true
                     self.btnFlockImageLower.isHidden = true
                     self.flockAgeLbl.text = "Breeder Flock Age of Eggs Injected"
-                    
                     self.inventoryView.isHidden = true
                     
                 } else {
@@ -1692,28 +1631,11 @@ class PEStartNewAssessment: BaseViewController {
                     self.btnFlockImageLower.isHidden = false
                     self.flockAgeLbl.text = "Breeder Flock Age of Eggs Injected*"
                     self.inventoryView.isHidden = false
-                    
                 }
-                
                 
                 self.peNewAssessment.evaluationName = selectedVal
                 let indexOfItem = evaluationNameArray.index(of: selectedVal)
                 self.peNewAssessment.evaluationID = evaluationIDArray[indexOfItem] as? Int
-                
-                if self.peNewAssessment.evaluationID != nil && self.peNewAssessment.evaluationID == 1{
-                    //                    self.showExtendedPE()
-                    //                    self.enableExtendedPE()
-                }else{
-                    let infoObj = PEInfoDAO.sharedInstance.fetchInfoVMObj(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", assessmentId: self.peNewAssessment?.serverAssessmentId ?? "")
-                    
-                    let hasSelectedExtendedPE = infoObj?.isExtendedPE ?? false
-                    if hasSelectedExtendedPE{
-                        
-                    }
-                    //                    self.showExtendedPE(flag: true)
-                    
-                }
-                
                 self.checkBackAndSave()
                 
             }
@@ -1741,11 +1663,10 @@ class PEStartNewAssessment: BaseViewController {
                     view.layer.borderWidth = 2.0
                 }}
         }
-        var visitIDArray = NSArray()
-        var visitNameArray = NSArray()
+
         let visitDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Approvers")
-        visitNameArray = visitDetailsArray.value(forKey: "username") as? NSArray ?? NSArray()
-        visitIDArray = visitDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+        var visitNameArray = visitDetailsArray.value(forKey: "username") as? NSArray ?? NSArray()
+        var visitIDArray = visitDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
         if  visitNameArray.count > 0 {
             self.dropDownVIewNew(arrayData: visitNameArray as? [String] ?? [String](), kWidth: tsrButton.frame.width, kAnchor: tsrButton, yheight: tsrButton.bounds.height) { [unowned self] selectedVal, index  in
                 self.selectedTSR.text = selectedVal
@@ -1810,28 +1731,6 @@ class PEStartNewAssessment: BaseViewController {
             }
         }
         
-        //            if scheduledAssessment?.sanitationEmbrex != nil{
-        //                if scheduledAssessment?.sanitationEmbrex == 0 {
-        //                    scheduledAssessment?.sanitationEmbrex = 1
-        //                    extendedPESwitch.isOn = true
-        //                    PEInfoDAO.sharedInstance.saveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: true, assessmentId: scheduledAssessment?.serverAssessmentId ?? "", date: nil)
-        //                }else{
-        //                    scheduledAssessment?.sanitationEmbrex = 0
-        //                    extendedPESwitch.isOn = false
-        //                    PEInfoDAO.sharedInstance.saveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: false, assessmentId: scheduledAssessment?.serverAssessmentId ?? "", date: nil)
-        //                }
-        //            }
-        //        var extendedPESwitchVal = false
-        //        if extendedPESwitch != nil{
-        //            extendedPESwitchVal = extendedPESwitch.isOn
-        //            if peNewAssessment.evaluationID != nil && peNewAssessment.evaluationID == 1{
-        //                PEInfoDAO.sharedInstance.saveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: extendedPESwitch.isOn, assessmentId: peNewAssessment.serverAssessmentId ?? "", date: nil, hasChlorineStrips: chlorineStripsSwitch.isOn, isAutomaticFail: self.isAutomaticSwitch.isOn)
-        //            }
-        //        }else{
-        //
-        //        }
-        //PEInfoDAO.sharedInstance.saveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: extendedPESwitch.isOn, assessmentId: peNewAssessment.serverAssessmentId ?? "", date: nil,hasChlorineStrips: chlorineStripsSwitch.isOn, isAutomaticFail: self.isAutomaticSwitch.isOn)
-        
         let data = CoreDataHandlerPEModels.doaVaccinationSaveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: extendedPESwitch.isOn, assessmentId: peNewAssessment.serverAssessmentId ?? "", date: nil,hasChlorineStrips: chlorineStripsSwitch.isOn, isAutomaticFail: self.isAutomaticSwitch.isOn)
                                 
         PEInfoDAO.sharedInstance.saveData(vaccineData: data)
@@ -1852,10 +1751,9 @@ class PEStartNewAssessment: BaseViewController {
                 }
             }
         }
-        
-        var BirdBreedNameArray = NSArray()
+
         let BirdBreedDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_BirdBreed")
-        BirdBreedNameArray = BirdBreedDetailsArray.value(forKey: "birdBreedName") as? NSArray ?? NSArray()
+        var BirdBreedNameArray = BirdBreedDetailsArray.value(forKey: "birdBreedName") as? NSArray ?? NSArray()
         
         if  BirdBreedNameArray.count > 0 {
             self.dropDownVIewNew(arrayData: BirdBreedNameArray as? [String] ?? [String](), kWidth: btnBreed.frame.width, kAnchor: btnBreed, yheight: btnBreed.bounds.height) { [unowned self] selectedVal, index  in
@@ -1870,8 +1768,6 @@ class PEStartNewAssessment: BaseViewController {
                     self.txtBreedOfBirdsOthers.text = ""
                 }
                 self.checkBackAndSave()
-                
-                
             }
             self.dropHiddenAndShow()
         }
@@ -1890,10 +1786,9 @@ class PEStartNewAssessment: BaseViewController {
                 }
             }
         }
-        
-        var BirdBreedNameArray = NSArray()
+
         let BirdBreedDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_IncubationStyle")
-        BirdBreedNameArray = BirdBreedDetailsArray.value(forKey: "incubationStylesName") as? NSArray ?? NSArray()
+        var BirdBreedNameArray = BirdBreedDetailsArray.value(forKey: "incubationStylesName") as? NSArray ?? NSArray()
         
         if  BirdBreedNameArray.count > 0 {
             
@@ -1934,38 +1829,8 @@ extension PEStartNewAssessment : DatePickerPopupViewControllerProtocol{
         let sitesStored = getAllSitesArrayStored()
         let evaluationIDs = getAllevaluationIDStored()
         
-        var dateContain = false
-        
-        for  obj  in datesStored {
-            if obj.lowercased() == string.lowercased(){
-                dateContain = true
-            }
-        }
-        
-        var customerContain = false
-        
-        for  obj  in customerStored {
-            if obj.lowercased() == self.peNewAssessment.customerName?.lowercased(){
-                customerContain = true
-            }
-        }
-        
-        var siteContain = false
-        
-        for  obj  in sitesStored {
-            if obj.lowercased() == self.peNewAssessment.siteName?.lowercased(){
-                siteContain = true
-            }
-        }
-        
-        var evaluationContain = false
-        
-        for  obj  in evaluationIDs {
-            if obj.lowercased() == self.peNewAssessment.evaluationName?.lowercased(){
-                evaluationContain = true
-            }
-        }
- 
+
+
         selectedEvaluationDateText.text = string
         self.peNewAssessment.evaluationDate = string
         
@@ -2124,14 +1989,9 @@ extension PEStartNewAssessment{
                     //PEInfoDAO.sharedInstance.saveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: extendedPESwitch.isOn, assessmentId: self.peNewAssessment.serverAssessmentId ?? "", date: nil,hasChlorineStrips: self.chlorineStripsSwitch.isOn, isAutomaticFail: self.isAutomaticSwitch.isOn)
                     let data = CoreDataHandlerPEModels.doaVaccinationSaveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: extendedPESwitch.isOn, assessmentId: self.peNewAssessment.serverAssessmentId ?? "", date: nil,hasChlorineStrips: self.chlorineStripsSwitch.isOn, isAutomaticFail: self.isAutomaticSwitch.isOn)
                     PEInfoDAO.sharedInstance.saveData(vaccineData: data)
-                    //"" PANDEY
                 }
             }
-            if peNewAssessment.evaluationID != nil && peNewAssessment.evaluationID == 1{
-                if extendedPESwitch.isOn{
-                    
-                }
-            }
+
             isMovedForward = true
             let storyBoard : UIStoryboard = UIStoryboard(name: "PEStoryboard", bundle:nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "PEAssesmentFinalize") as? PEAssesmentFinalize

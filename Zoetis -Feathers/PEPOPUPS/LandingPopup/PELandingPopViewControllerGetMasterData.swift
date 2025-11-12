@@ -13,13 +13,10 @@ import SwiftyJSON
 // MARK: - WebServices
 extension PELandingPoupViewController {
     
-    
     private func getPlateTypes(){
         PEDataService.sharedInstance.getPlateTypes(loginuserId: UserContext.sharedInstance.userDetailsObj?.userId ?? "No id found", viewController: self, completion: { [weak self] (status, error) in
                      guard let _ = self, error == nil else { return }
-                     if status == VaccinationConstants.VaccinationStatus.COREDATA_SAVED_SUCCESSFULLY || status == VaccinationConstants.VaccinationStatus.COREDATA_FETCHED_SUCCESSFULLY{
-                        
-                     }
+                  
                  })
       }
     
@@ -28,8 +25,8 @@ extension PELandingPoupViewController {
         let countryId = UserDefaults.standard.integer(forKey: "nonUScountryId")
         
         ZoetisWebServices.shared.getCustomerListForPE(controller: self, countryID: String(countryId), parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlefetchAllCustomerResponse(json)
+            guard let allCustomerSelf = self, error == nil else { return }
+            allCustomerSelf.handlefetchAllCustomerResponse(json)
         })
     }
     
@@ -40,7 +37,8 @@ extension PELandingPoupViewController {
         ZoetisWebServices.shared.getCustomerListForPE(controller: self, countryID: String(countryId), parameters: [:], completion: { [weak self] (json, error) in
                                                     
             guard let _ = self, error == nil else {
-                self?.dismissGlobalHUD(self?.view ?? UIView()); return
+                self?.dismissGlobalHUD(self?.view ?? UIView());
+                return
             }
             self?.dismissGlobalHUD(self?.view ?? UIView());
             self?.handlefetchAllCustomerResponse(json, isEverytime: true)
@@ -52,7 +50,6 @@ extension PELandingPoupViewController {
         let jsonObject = CustomerResponse(json)
         if isEverytime{
             fetchSites(isEverytime)
-         //   dismissGlobalHUD(self.view)
         }else{
             if jsonObject.customerArray?.count ?? 0 > 0 {
                 fetchAllDoses()
@@ -64,8 +61,8 @@ extension PELandingPoupViewController {
     
     private func fetchAllDoses(){
         ZoetisWebServices.shared.getPEDosagesListForPE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlefetchAllDosesResponse(json)
+            guard let allDosesSelf = self, error == nil else { return }
+            allDosesSelf.handlefetchAllDosesResponse(json)
         })
         
     }
@@ -82,8 +79,8 @@ extension PELandingPoupViewController {
     
     private func fetchEvaluator(){
         ZoetisWebServices.shared.getEvaluatorListForPE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleFetchEvaluatorResponse(json)
+            guard let evaluatorSelf = self, error == nil else { return }
+            evaluatorSelf.handleFetchEvaluatorResponse(json)
         })
     }
     
@@ -99,8 +96,8 @@ extension PELandingPoupViewController {
     
     private func fetchApprovers(){
         ZoetisWebServices.shared.getApproversListForPE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleFetchApproversResponse(json)
+            guard let approverSelf = self, error == nil else { return }
+            approverSelf.handleFetchApproversResponse(json)
         })
     }
     
@@ -116,8 +113,8 @@ extension PELandingPoupViewController {
     
     private func fetchVisitTypes(){
         ZoetisWebServices.shared.getVisitTypesListForPE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleFetchVisitTypesResponse(json)
+            guard let visitTypeSelf = self, error == nil else { return }
+            visitTypeSelf.handleFetchVisitTypesResponse(json)
         })
     }
     
@@ -133,8 +130,8 @@ extension PELandingPoupViewController {
     
     private func fetchEvaluationTypes(){
         ZoetisWebServices.shared.getEvaluatorTypesListForPE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleFetchEvaluationTypesResponse(json)
+            guard let evaluationTypeSelf = self, error == nil else { return }
+            evaluationTypeSelf.handleFetchEvaluationTypesResponse(json)
         })
     }
     
@@ -150,8 +147,8 @@ extension PELandingPoupViewController {
     
     private func fetchSites(_ isEverytime:Bool = false){
         ZoetisWebServices.shared.getSitesListForPE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleFetchSitesResponse(json, isEverytime)
+            guard let siteSelf = self, error == nil else { return }
+            siteSelf.handleFetchSitesResponse(json, isEverytime)
         })
     }
     
@@ -184,9 +181,7 @@ extension PELandingPoupViewController {
                                    let jsonData = try? Data(responseStr.utf8)
                                                      if let data = jsonData{
                                                        let vaccinationCertificationObj = try? jsonDecoder.decode([ExtendedPECategoryDTO].self, from: data)
-                                                        //vaccinationCertificationObj.
-                                                       
-                                                     //  print(vaccinationCertificationObj!.count)// ?? 100)
+
                                                        if  vaccinationCertificationObj != nil && vaccinationCertificationObj?.count ?? 0 > 0{
                                                         let index = vaccinationCertificationObj?.firstIndex(where: {
                                                             $0.id == 36
@@ -195,14 +190,9 @@ extension PELandingPoupViewController {
                                                             let embrex =  vaccinationCertificationObj![index!]
                                                             SanitationEmbrexQuestionMasterDAO.sharedInstance.saveExtendedPEQuestions(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", plateTypeDTO: [embrex])
                                                         }
-//                                                        let index =  vaccinationCertificationObj
-//                                                          VaccinationCustomersDAO.sharedInstance.insertCustomerSites(userId: loginuserId
-//                                                           , customerDTOArr: vaccinationCertificationObj!)
-//                                                           completion(VaccinationConstants.VaccinationStatus.COREDATA_SAVED_SUCCESSFULLY, nil)
                                                        }
                                                        
                                                    
-                                                       //FPass the completion  handler to the Dashaboard VC
                                                        
                                                      }
                                }
@@ -223,12 +213,11 @@ extension PELandingPoupViewController {
        
     }
     
-    
     internal func fetchtQuestionInfo(){
         let evalTypeId = String(peNewAssessment.evalType?.id ?? 1)
         ZoetisWebServices.shared.getAssessmentQuesInfoPE(controller: self, evalType:evalTypeId, moduleID: "1"  , parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlefetchtQuestionInfo(json)
+            guard let questionInfoSelf = self, error == nil else { return }
+            questionInfoSelf.handlefetchtQuestionInfo(json)
         })
     }
     
@@ -236,16 +225,13 @@ extension PELandingPoupViewController {
         
         let jsonObject = InfoImageDataResponse(json)
         saveJSON(json: json, key: "QuestionAnsInfo")
-        
         fetchManufacturer()
     }
     
-    
-    
     private func fetchManufacturer(){
         ZoetisWebServices.shared.getManufacturerListForPE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlefetchManufacturerResponse(json)
+            guard let manufacturerSelf = self, error == nil else { return }
+            manufacturerSelf.handlefetchManufacturerResponse(json)
         })
     }
     
@@ -258,17 +244,14 @@ extension PELandingPoupViewController {
     
     private func fetchBirdBreed(){
         ZoetisWebServices.shared.getBirdBreedListForPE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlefetchBirdBreedResponse(json)
+            guard let birdBreedSelf = self, error == nil else { return }
+            birdBreedSelf.handlefetchBirdBreedResponse(json)
         })
     }
     
     
     private func handlefetchBirdBreedResponse(_ json: JSON) {
-        
-        
         self.deleteAllData("PE_BirdBreed")
-        
         let jsonObject = BreedBirdResponse(json)
         self.fetchEggs()
         
@@ -276,17 +259,14 @@ extension PELandingPoupViewController {
     
     private func fetchEggs(){
         ZoetisWebServices.shared.getEggsListForPE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlefetchEggsResponse(json)
+            guard let eggsSelf = self, error == nil else { return }
+            eggsSelf.handlefetchEggsResponse(json)
         })
     }
     
     
     private func handlefetchEggsResponse(_ json: JSON) {
-        
-        
         self.deleteAllData("PE_Eggs")
-        
         let jsonObject = EggsResponse(json)
         fetchVManufacturer()
         
@@ -295,28 +275,23 @@ extension PELandingPoupViewController {
     
     private func fetchVManufacturer(){
         ZoetisWebServices.shared.getVaccineManufacturerListForPE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlefetchVManufacturerResponse(json)
+            guard let vManufacturerSelf = self, error == nil else { return }
+            vManufacturerSelf.handlefetchVManufacturerResponse(json)
         })
     }
     
     
     private func handlefetchVManufacturerResponse(_ json: JSON) {
         
-        
         self.deleteAllData("PE_VManufacturer")
-        
         let jsonObject = VManufacturerResponse(json)
         fetchVaccineNames()
-        
     }
-    
-    
-    
+        
     private func fetchVaccineNames(){
         ZoetisWebServices.shared.getVaccineNamesListForPE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlefetchVaccineNamesResponse(json)
+            guard let vaccineNameSelf = self, error == nil else { return }
+            vaccineNameSelf.handlefetchVaccineNamesResponse(json)
         })
     }
     
@@ -325,15 +300,12 @@ extension PELandingPoupViewController {
         self.deleteAllData("PE_VNames")
         let jsonObject = VNamesResponse(json)
         fetchDiluentManufacturer()
-        // dismissGlobalHUD(self.view)
-        
-        
     }
     
     private func fetchDiluentManufacturer(){
         ZoetisWebServices.shared.getDiluentManufacturerList(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlefetchDiluentManufacturer(json)
+            guard let diluentManufacturerSelf = self, error == nil else { return }
+            diluentManufacturerSelf.handlefetchDiluentManufacturer(json)
         })
     }
     
@@ -346,8 +318,8 @@ extension PELandingPoupViewController {
     
     private func fetchBagSizes(){
         ZoetisWebServices.shared.getBagSizes(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlefetchBagSizes(json)
+            guard let bagSizesSelf = self, error == nil else { return }
+            bagSizesSelf.handlefetchBagSizes(json)
         })
     }
     
@@ -361,8 +333,8 @@ extension PELandingPoupViewController {
     
     private func fetchAmplePerBag(){
         ZoetisWebServices.shared.getAmplePerBag(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlefetchAmplePerBag(json)
+            guard let amplePerBagSelf = self, error == nil else { return }
+            amplePerBagSelf.handlefetchAmplePerBag(json)
         })
     }
     
@@ -374,8 +346,8 @@ extension PELandingPoupViewController {
     
     private func fetchAmpleSizes(){
         ZoetisWebServices.shared.getAmpleSizes(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlefetchAmpleSizes(json)
+            guard let ampleSizeSelf = self, error == nil else { return }
+            ampleSizeSelf.handlefetchAmpleSizes(json)
         })
     }
     
@@ -387,8 +359,8 @@ extension PELandingPoupViewController {
     
     private func fetchRoles(){
         ZoetisWebServices.shared.getPERoles(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlefetchRoles(json)
+            guard let rolesSelf = self, error == nil else { return }
+            rolesSelf.handlefetchRoles(json)
         })
     }
     
@@ -400,8 +372,8 @@ extension PELandingPoupViewController {
       
     private func fetchDOADiluentType(){
         ZoetisWebServices.shared.getPEDOADiluentType(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlefetchDOADiluentType(json)
+            guard let dOADiluentTypeSelf = self, error == nil else { return }
+            dOADiluentTypeSelf.handlefetchDOADiluentType(json)
         })
     }
     
@@ -414,8 +386,8 @@ extension PELandingPoupViewController {
     
     private func fetchSubVaccineNames(){
         ZoetisWebServices.shared.getVaccineSubNamesListForPE(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlefetchSubVaccineNamesResponse(json)
+            guard let subVaccineNameSelf = self, error == nil else { return }
+            subVaccineNameSelf.handlefetchSubVaccineNamesResponse(json)
         })
     }
     
@@ -430,8 +402,8 @@ extension PELandingPoupViewController {
     
     private func fetchPEFrequency(){
           ZoetisWebServices.shared.getPEFrequency(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-              guard let `self` = self, error == nil else { return }
-              self.handlefetchPEFrequency(json)
+              guard let pEFrequencySelf = self, error == nil else { return }
+              pEFrequencySelf.handlefetchPEFrequency(json)
           })
       }
       
@@ -443,8 +415,8 @@ extension PELandingPoupViewController {
     
     private func fetchIncubationStyle(){
           ZoetisWebServices.shared.getPEIncubationStyle(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-              guard let `self` = self, error == nil else { return }
-              self.handlefetchIncubationStyle(json)
+              guard let incubationStyleSelf = self, error == nil else { return }
+              incubationStyleSelf.handlefetchIncubationStyle(json)
           })
       }
       
@@ -456,8 +428,8 @@ extension PELandingPoupViewController {
     
     private func fetchDOASizes(){
           ZoetisWebServices.shared.getPEDOASizes(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-              guard let `self` = self, error == nil else { return }
-              self.handlefetchDOASizes(json)
+              guard let DOASSelf = self, error == nil else { return }
+              DOASSelf.handlefetchDOASizes(json)
           })
       }
       
@@ -495,18 +467,16 @@ extension PELandingPoupViewController {
         ZoetisWebServices.shared.getPostedAssmntListByUser(controller: self, parameters: [:], completion: { [weak self] (json, error) in
             guard let self = self, error == nil else { return }
             self.handlGetPostingAssessmentListByUser(json)
-          //  self.dismissGlobalHUD(self.view)
                  
         })
     }
     
     private func handlGetPostingAssessmentListByUser(_ json: JSON) {
         var dataDic : [String:Any] = [:]
-        var dataArray : [Any] = []
         if let string = json.rawString() {
             dataDic = string.convertToDictionary() ?? [:]
         }
-        dataArray = dataDic["Data"] as? [Any] ?? []
+        var dataArray = dataDic["Data"] as? [Any] ?? []
         if  dataArray.count  > 0 {
             self.deleteAllDataWithUserID("PE_AssessmentInOffline")
             self.deleteAllDataWithUserID("PE_AssessmentInDraft")
@@ -515,9 +485,8 @@ extension PELandingPoupViewController {
         }
         
         for obj in dataArray {
-            var objDic : [String:Any] = [:]
-            objDic =  obj as? [String:Any] ?? [:]
-            
+           
+            var objDic =  obj as? [String:Any] ?? [:]
             let SaveType = objDic["SaveType"] as? Int ?? 0
             
             if SaveType != 0 {
@@ -641,7 +610,6 @@ extension PELandingPoupViewController {
                 let infoImageDataResponse = InfoImageDataResponse(questionInfo)
                 let categoryCount = filterCategoryCount(peNewAssessmentOf: peNewAssessmentWas)
                 if categoryCount > 0 {
-                   // CoreDataHandler().deleteAllData("PE_AssessmentInProgress")
                     for  cat in  pECategoriesAssesmentsResponse.peCategoryArray {
                         for (index, ass) in cat.assessmentQuestions.enumerated(){
                             var peNewAssessmentNew = PENewAssessment()
@@ -668,7 +636,6 @@ extension PELandingPoupViewController {
                             peNewAssessmentNew.assStatus = 1
                             peNewAssessmentNew.informationImage = ass.informationImage
                             peNewAssessmentNew.informationText = infoImageDataResponse.getInfoTextByQuestionId(questionID: ass.id ?? 151)
-                            
                             peNewAssessmentNew.isAllowNA = ass.isAllowNA
                             peNewAssessmentNew.qSeqNo = ass.qSeqNo
                             peNewAssessmentNew.rollOut = ass.rollOut
@@ -709,9 +676,6 @@ extension PELandingPoupViewController {
                         if TextAmPm.count > 0 {
                             CoreDataHandlerPE().updateAMPMInAssessmentInProgress(ampmValue: TextAmPm)
                         }
-                     
-                       
-                       
                         if AssessmentScore  ==  0  {
                             filterScoreData.append(questionMark)
                         }
@@ -755,9 +719,7 @@ extension PELandingPoupViewController {
                     }
                     //comment ends
                     let EvaluationId = objDic["EvaluationId"] as? Int ?? 0
-                                      
                     let InovojectPostingData = objDic["InovojectPostingData"] as? [Any] ?? []
-                    
                     let VaccineMixerObservedPostingData = objDic["VaccineMixerObservedPostingData"] as? [Any] ?? []
                     
                     // INOVOJECT
@@ -770,12 +732,10 @@ extension PELandingPoupViewController {
                         let AmpuleSize = inoDicIS["AmpuleSize"] as? Int ?? 0
                         var AmpuleSizeStr = ""
                         let AntibioticInformation =  inoDicIS["AntibioticInformation"] as? String ?? ""
-                        var ampleSizeesNameArray = NSArray()
-                        var ampleSizeIDArray = NSArray()
-                        var ampleSizeDetailArray = NSArray()
-                        ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
-                        ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
-                        ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
+
+                        var ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
+                        var ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
+                        var ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
                         if AmpuleSize != 0 {
                             let indexOfe =  ampleSizeIDArray.index(of: AmpuleSize)
                             AmpuleSizeStr = ampleSizeesNameArray[indexOfe] as? String  ?? ""
@@ -790,26 +750,14 @@ extension PELandingPoupViewController {
                         var VName = ""
                         let ProgramName = inoDicIS["ProgramName"] as? String ?? ""
                         let DiluentsMfgOtherName = inoDicIS["DiluentsMfgOtherName"] as? String ?? ""
-                        
-                        var vManufacutrerNameArray = NSArray()
-                        var vManufacutrerIDArray = NSArray()
-                        var vManufacutrerDetailsArray = NSArray()
-                        vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
-                        vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
-                        vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
-                        //let xxx =    ManufacturerId
-                        //                        if xxx != 0 {
-                        //                            let indexOfd = vManufacutrerIDArray.index(of: xxx) // 3
-                        //                            VManufacturerName = vManufacutrerNameArray[indexOfd] as! String
-                        //                        }
-                        
-                        
-                        var vNameArray = NSArray()
-                        var vIDArray = NSArray()
-                        var vDetailsArray = NSArray()
-                        vDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VNames")
-                        vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
-                        vIDArray = vDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+
+                        var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
+                        var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
+                        var vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+                 
+                        var vDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VNames")
+                        var vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
+                        var vIDArray = vDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
                         let xxxx =    VaccineId
                         if xxxx != 0 {
                             if vIDArray.contains(xxxx){
@@ -833,18 +781,14 @@ extension PELandingPoupViewController {
                             HatcheryAntibioticsIntVal = 0
                         }
                         
-                        
                         peNewAssessmentInProgress.iCS  = inoDicIS["BagSizeType"] as? String ?? ""
                         let diluentMfg  = inoDicIS["DiluentMfg"] as? String ?? ""
                         peNewAssessmentInProgress.iDT = diluentMfg
                         
                         peNewAssessmentInProgress.micro  = ""
                         peNewAssessmentInProgress.residue = ""
-                        //   peNewAssessmentInProgress.hatcheryAntibioticsText = AntibioticInformation
                         CoreDataHandlerPE().updateInDoGInProgressInDB(newAssessment:peNewAssessmentInProgress,fromInvo: true)
-                        
-                        
-//                        let inVoDataNew = InovojectData(id: 0,vaccineMan:DiluentMfg,name:VName,ampuleSize:AmpuleSizeStr,ampulePerBag:String(AmpulePerbag),bagSizeType:BagSizeType,dosage:Dosage, dilute: DiluentMfg,invoHatchAntibiotic: HatcheryAntibioticsIntVal, invoHatchAntibioticText: AntibioticInformation,  invoProgramName: ProgramName, doaDilManOther: DiluentsMfgOtherName)
+
                         let info = CoreDataHandlerPEModels.InovojectInfo(id: 0,vaccineMan:DiluentMfg,name:VName,ampuleSize:AmpuleSizeStr,ampulePerBag:String(AmpulePerbag),bagSizeType:BagSizeType,dosage:Dosage, dilute: DiluentMfg,invoHatchAntibiotic: HatcheryAntibioticsIntVal, invoHatchAntibioticText: AntibioticInformation,  invoProgramName: ProgramName, doaDilManOther: DiluentsMfgOtherName)
                           let inovojectData = InovojectData(info: info)
                         
@@ -862,13 +806,10 @@ extension PELandingPoupViewController {
                         let VaccineId = DayOfAgeIS["DayOfAgeMfgNameId"] as? Int ?? 0
                         let AmpuleSize = DayOfAgeIS["DayOfAgeAmpuleSize"] as? Int ?? 0
                         var AmpuleSizeStr = ""
-                        
-                        var ampleSizeesNameArray = NSArray()
-                        var ampleSizeIDArray = NSArray()
-                        var ampleSizeDetailArray = NSArray()
-                        ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
-                        ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
-                        ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
+
+                        var ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
+                        var ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
+                        var ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
                         if AmpuleSize != 0 {
                             let indexOfe =  ampleSizeIDArray.index(of: AmpuleSize)
                             AmpuleSizeStr = ampleSizeesNameArray[indexOfe] as? String  ?? ""
@@ -882,28 +823,22 @@ extension PELandingPoupViewController {
                         let DiluentMfg = DayOfAgeIS["DiluentMfg"] as? String ?? ""
                         var VManufacturerName = ""
                         var VName = ""
-                        var vManufacutrerNameArray = NSArray()
-                        var vManufacutrerIDArray = NSArray()
-                        var vManufacutrerDetailsArray = NSArray()
-                        vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
-                        vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
-                        vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+
+                        var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
+                        var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
+                        var vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
                         let xxx =    ManufacturerId
                         if xxx != 0 {
                             let indexOfd = vManufacutrerIDArray.index(of: xxx) // 3
                             VManufacturerName = vManufacutrerNameArray[indexOfd] as? String ?? ""
                         }
-                        var vNameArray = NSArray()
-                        var vIDArray = NSArray()
+
                         var vDetailsArray = NSArray()
                         vDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VNames")
-                        
-                        
                         vDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 1)
-                                          //(entityName: "PE_VNames")
-                                         // vNameDetailsArray.filtered(using: "", 1)
-                                      vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
-                                      vIDArray = vDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+                        
+                        var  vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
+                        var  vIDArray = vDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
                         let xxxx =    VaccineId
                         if xxxx != 0 {
                             if vIDArray.contains(xxxx){
@@ -920,11 +855,7 @@ extension PELandingPoupViewController {
                             VName = otherText
                         }
                         
-                        
                         let  peNewAssessmentInProgress = CoreDataHandlerPE().getSavedOnGoingAssessmentPEObject()
-                        
-                        
-//                        let DayOfAgeDataNew = InovojectData(id: 0,vaccineMan:VManufacturerName,name:VName,ampuleSize:AmpuleSizeStr,ampulePerBag:String(AmpulePerbag),bagSizeType:BagSizeType,dosage:Dosage, dilute: DiluentMfg)
                         
                         let info = CoreDataHandlerPEModels.InovojectInfo(id: 0,vaccineMan:VManufacturerName,name:VName,ampuleSize:AmpuleSizeStr,ampulePerBag:String(AmpulePerbag),bagSizeType:BagSizeType,dosage:Dosage, dilute: DiluentMfg)
                         
@@ -943,8 +874,6 @@ extension PELandingPoupViewController {
                         peNewAssessmentInProgress.hatcheryAntibioticsDoaText = AntibioticInformation
                          let infoObj = PEInfoDAO.sharedInstance.fetchInfoVMObj(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", assessmentId: "\(serverAssessmentId)")
                         
-//                        PEInfoDAO.sharedInstance.saveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: sanitationEmbrexValue, assessmentId: "\(serverAssessmentId)", date: nil,subcutaneousTxt: infoObj?.subcutaneousAntibioticTxt, dayOfAgeTxt: AntibioticInformation)
-                        
                         let data = CoreDataHandlerPEModels.doaVaccinationSaveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: sanitationEmbrexValue, assessmentId: "\(serverAssessmentId)", date: nil,subcutaneousTxt: infoObj?.subcutaneousAntibioticTxt, dayOfAgeTxt: AntibioticInformation)
                         PEInfoDAO.sharedInstance.saveData(vaccineData: data)
                         
@@ -953,9 +882,7 @@ extension PELandingPoupViewController {
                         DayOfAgeDataNew.id = id
                     }
                     
-                    
                     let DayAgeSubcutaneousDetailsPostingData = objDic["DayAgeSubcutaneousDetailsPostingData"] as? [Any] ?? []
-                    
                     
                     for inoDic in DayAgeSubcutaneousDetailsPostingData {
                         
@@ -965,12 +892,11 @@ extension PELandingPoupViewController {
                         let VaccineId = DayOfAgeIS["DayAgeSubcutaneousMfgNameId"] as? Int ?? 0
                         let AmpuleSize = DayOfAgeIS["DayAgeSubcutaneousAmpuleSize"] as? Int ?? 0
                         var AmpuleSizeStr = ""
-                        var ampleSizeesNameArray = NSArray()
-                        var ampleSizeIDArray = NSArray()
-                        var ampleSizeDetailArray = NSArray()
-                        ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
-                        ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
-                        ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
+
+                        var ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
+                        var ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
+                        var ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
+                        
                         if AmpuleSize != 0 {
                             let indexOfe =  ampleSizeIDArray.index(of: AmpuleSize)
                             AmpuleSizeStr = ampleSizeesNameArray[indexOfe] as? String  ?? ""
@@ -982,12 +908,10 @@ extension PELandingPoupViewController {
                         let DiluentMfg = DayOfAgeIS["DayAgeSubcutaneousDiluentMfg"] as? String ?? ""
                         var VManufacturerName = ""
                         var VName = ""
-                        var vManufacutrerNameArray = NSArray()
-                        var vManufacutrerIDArray = NSArray()
-                        var vManufacutrerDetailsArray = NSArray()
-                        vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
-                        vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
-                        vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+
+                        var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
+                        var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
+                        var vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
                         let xxx =    ManufacturerId
                         if xxx != 0 {
                             let indexOfd = vManufacutrerIDArray.index(of: xxx)
@@ -995,12 +919,10 @@ extension PELandingPoupViewController {
                             VManufacturerName = vManufacutrerNameArray[indexOfd] as? String ?? ""
                             }
                         }
-                        var vNameArray = NSArray()
-                        var vIDArray = NSArray()
-                        var vDetailsArray = NSArray()
-                        vDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 2)
-                        vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
-                        vIDArray = vDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+
+                        var vDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 2)
+                        var vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
+                        var vIDArray = vDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
                         let xxxx =    VaccineId
                         if xxxx != 0 {
                             if vIDArray.contains(xxxx){
@@ -1018,7 +940,7 @@ extension PELandingPoupViewController {
                         
                         
                         let  peNewAssessmentInProgress = CoreDataHandlerPE().getSavedOnGoingAssessmentPEObject()
-                        //let DayOfAgeDataNew = InovojectData(id: 0,vaccineMan:VManufacturerName,name:VName,ampuleSize:AmpuleSizeStr,ampulePerBag:String(AmpulePerbag),bagSizeType:BagSizeType,dosage:Dosage, dilute: DiluentMfg)
+
                         let info = CoreDataHandlerPEModels.InovojectInfo(id: 0,vaccineMan:VManufacturerName,name:VName,ampuleSize:AmpuleSizeStr,ampulePerBag:String(AmpulePerbag),bagSizeType:BagSizeType,dosage:Dosage, dilute: DiluentMfg)
                         let DayOfAgeDataNew = InovojectData(info: info)
                         
@@ -1034,7 +956,6 @@ extension PELandingPoupViewController {
                         let AntibioticInformation = DayOfAgeIS["AntibioticInformation"] as? String ?? ""
                         peNewAssessmentInProgress.hatcheryAntibioticsDoaSText = AntibioticInformation
                         let infoObj = PEInfoDAO.sharedInstance.fetchInfoVMObj(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", assessmentId: "\(serverAssessmentId)")
-//                        PEInfoDAO.sharedInstance.saveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: sanitationEmbrexValue, assessmentId: "\(serverAssessmentId)", date: nil,subcutaneousTxt: AntibioticInformation, dayOfAgeTxt: infoObj?.dayOfAgeTxtAntibiotic)
                         
                         let data = CoreDataHandlerPEModels.doaVaccinationSaveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: sanitationEmbrexValue, assessmentId: "\(serverAssessmentId)", date: nil,subcutaneousTxt: AntibioticInformation, dayOfAgeTxt: infoObj?.dayOfAgeTxtAntibiotic)
                         
@@ -1215,7 +1136,6 @@ extension PELandingPoupViewController {
                 
                 let categoryCount = filterCategoryCount(peNewAssessmentOf: peNewAssessmentWas)
                 if categoryCount > 0 {
-                  //  CoreDataHandler().deleteAllData("PE_AssessmentInProgress")
                     for  cat in  pECategoriesAssesmentsResponse.peCategoryArray {
                         for (index, ass) in cat.assessmentQuestions.enumerated(){
                             var peNewAssessmentNew = PENewAssessment()
@@ -1349,12 +1269,10 @@ extension PELandingPoupViewController {
                         let AmpuleSize = inoDicIS["AmpuleSize"] as? Int ?? 0
                         var AmpuleSizeStr = ""
                         let AntibioticInformation =  inoDicIS["AntibioticInformation"] as? String ?? ""
-                        var ampleSizeesNameArray = NSArray()
-                        var ampleSizeIDArray = NSArray()
-                        var ampleSizeDetailArray = NSArray()
-                        ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
-                        ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
-                        ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
+
+                        var ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
+                        var ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
+                        var ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
                         if AmpuleSize != 0 {
                             let indexOfe =  ampleSizeIDArray.index(of: AmpuleSize)
                             AmpuleSizeStr = ampleSizeesNameArray[indexOfe] as? String  ?? ""
@@ -1365,25 +1283,13 @@ extension PELandingPoupViewController {
                         let ManufacturerId = inoDicIS["ManufacturerId"] as? Int ?? 0
                         let BagSizeType = inoDicIS["BagSizeType"] as? String ?? ""
                         let DiluentMfg = inoDicIS["DiluentMfg"] as? String ?? ""
-                       // var VManufacturerName = ""
                         var VName = ""
                         let ProgramName = inoDicIS["ProgramName"] as? String ?? ""
                         let DiluentsMfgOtherName = inoDicIS["DiluentsMfgOtherName"] as? String ?? ""
-                       
-                      //  var vManufacutrerNameArray = NSArray()
-                      //  var vManufacutrerIDArray = NSArray()
-                      //  var vManufacutrerDetailsArray = NSArray()
-                      //  vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
-                     //   vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
-                    //    vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
-                      //  let xxx =    ManufacturerId
 
-                        var vNameArray = NSArray()
-                        var vIDArray = NSArray()
-                        var vDetailsArray = NSArray()
-                        vDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VNames")
-                        vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
-                        vIDArray = vDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+                        var vDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VNames")
+                        var vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
+                        var vIDArray = vDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
                         let xxxx =    VaccineId
                         if xxxx != 0 {
                             if vIDArray.contains(xxxx){
@@ -1407,19 +1313,14 @@ extension PELandingPoupViewController {
                             HatcheryAntibioticsIntVal = 0
                         }
                         
-                        
                         peNewAssessmentInProgress.iCS  = inoDicIS["BagSizeType"] as? String ?? ""
                         let diluentMfg  = inoDicIS["DiluentMfg"] as? String ?? ""
                         peNewAssessmentInProgress.iDT = diluentMfg
                         
                         peNewAssessmentInProgress.micro  = ""
                         peNewAssessmentInProgress.residue = ""
-                     //   peNewAssessmentInProgress.hatcheryAntibioticsText = AntibioticInformation
                         CoreDataHandlerPE().updateInDoGInProgressInDB(newAssessment:peNewAssessmentInProgress,fromInvo: true)
-                        
-                        
-                        //let inVoDataNew = InovojectData(id: 0,vaccineMan:DiluentMfg,name:VName,ampuleSize:AmpuleSizeStr,ampulePerBag:String(AmpulePerbag),bagSizeType:BagSizeType,dosage:Dosage, dilute: DiluentMfg,invoHatchAntibiotic: HatcheryAntibioticsIntVal, invoHatchAntibioticText: AntibioticInformation,  invoProgramName: ProgramName, doaDilManOther: DiluentsMfgOtherName)
-                        
+
                         var inVoDataNew = CoreDataHandlerPEModels.InovojectInfo(id: 0,vaccineMan:DiluentMfg,name:VName,ampuleSize:AmpuleSizeStr,ampulePerBag:String(AmpulePerbag),bagSizeType:BagSizeType,dosage:Dosage, dilute: DiluentMfg,invoHatchAntibiotic: HatcheryAntibioticsIntVal, invoHatchAntibioticText: AntibioticInformation,  invoProgramName: ProgramName, doaDilManOther: DiluentsMfgOtherName)
                         let DayOfAgeDataNew = InovojectData(info: inVoDataNew)
                         let id = self.saveInovojectInPEModule(inovojectData: DayOfAgeDataNew, assessment: allAssesmentArr[0] as? PE_AssessmentInProgress ?? PE_AssessmentInProgress())
@@ -1436,13 +1337,10 @@ extension PELandingPoupViewController {
                         let VaccineId = DayOfAgeIS["DayOfAgeMfgNameId"] as? Int ?? 0
                         let AmpuleSize = DayOfAgeIS["DayOfAgeAmpuleSize"] as? Int ?? 0
                         var AmpuleSizeStr = ""
-                        
-                        var ampleSizeesNameArray = NSArray()
-                        var ampleSizeIDArray = NSArray()
-                        var ampleSizeDetailArray = NSArray()
-                        ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
-                        ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
-                        ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
+
+                        var ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
+                        var ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
+                        var ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
                         if AmpuleSize != 0 {
                             let indexOfe =  ampleSizeIDArray.index(of: AmpuleSize)
                             AmpuleSizeStr = ampleSizeesNameArray[indexOfe] as? String  ?? ""
@@ -1456,28 +1354,21 @@ extension PELandingPoupViewController {
                         let DiluentMfg = DayOfAgeIS["DiluentMfg"] as? String ?? ""
                         var VManufacturerName = ""
                         var VName = ""
-                        var vManufacutrerNameArray = NSArray()
-                        var vManufacutrerIDArray = NSArray()
-                        var vManufacutrerDetailsArray = NSArray()
-                        vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
-                        vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
-                        vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+                        var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
+                        var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
+                        var vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
                         let xxx =    ManufacturerId
                         if xxx != 0 {
                             let indexOfd = vManufacutrerIDArray.index(of: xxx) // 3
                             VManufacturerName = vManufacutrerNameArray[indexOfd] as? String ?? ""
                         }
-                        var vNameArray = NSArray()
-                        var vIDArray = NSArray()
+
                         var vDetailsArray = NSArray()
                         vDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VNames")
-                        
-                        
                         vDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 1)
-                                          //(entityName: "PE_VNames")
-                                         // vNameDetailsArray.filtered(using: "", 1)
-                                      vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
-                                      vIDArray = vDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+
+                        var  vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
+                        var  vIDArray = vDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
                         let xxxx =    VaccineId
                         if xxxx != 0 {
                             if vIDArray.contains(xxxx){
@@ -1494,11 +1385,7 @@ extension PELandingPoupViewController {
                             VName = otherText
                         }
                         
-                        
                         let  peNewAssessmentInProgress = CoreDataHandlerPE().getSavedOnGoingAssessmentPEObject()
-                        
-                        
-                        //let DayOfAgeDataNew = InovojectData(id: 0,vaccineMan:VManufacturerName,name:VName,ampuleSize:AmpuleSizeStr,ampulePerBag:String(AmpulePerbag),bagSizeType:BagSizeType,dosage:Dosage, dilute: DiluentMfg)
                         let inVoDataNew = CoreDataHandlerPEModels.InovojectInfo(id: 0,vaccineMan:VManufacturerName,name:VName,ampuleSize:AmpuleSizeStr,ampulePerBag:String(AmpulePerbag),bagSizeType:BagSizeType,dosage:Dosage, dilute: DiluentMfg)
                         let DayOfAgeDataNew = InovojectData(info: inVoDataNew)
                         
@@ -1514,8 +1401,6 @@ extension PELandingPoupViewController {
                         let AntibioticInformation = DayOfAgeIS["AntibioticInformation"] as? String ?? ""
                         peNewAssessmentInProgress.hatcheryAntibioticsDoaText = AntibioticInformation
                         let infoObj = PEInfoDAO.sharedInstance.fetchInfoVMObj(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", assessmentId: "\(serverAssessmentId)")
-//                                               
-//                                               PEInfoDAO.sharedInstance.saveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: sanitationEmbrexValue, assessmentId: "\(serverAssessmentId)", date: nil,subcutaneousTxt: infoObj?.subcutaneousAntibioticTxt, dayOfAgeTxt: AntibioticInformation)
                         
                         let data = CoreDataHandlerPEModels.doaVaccinationSaveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: sanitationEmbrexValue, assessmentId: "\(serverAssessmentId)", date: nil,subcutaneousTxt: infoObj?.subcutaneousAntibioticTxt, dayOfAgeTxt: AntibioticInformation)
                         PEInfoDAO.sharedInstance.saveData(vaccineData: data)
@@ -1536,12 +1421,10 @@ extension PELandingPoupViewController {
                         let VaccineId = DayOfAgeIS["DayAgeSubcutaneousMfgNameId"] as? Int ?? 0
                         let AmpuleSize = DayOfAgeIS["DayAgeSubcutaneousAmpuleSize"] as? Int ?? 0
                         var AmpuleSizeStr = ""
-                        var ampleSizeesNameArray = NSArray()
-                        var ampleSizeIDArray = NSArray()
-                        var ampleSizeDetailArray = NSArray()
-                        ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
-                        ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
-                        ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
+
+                        var ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
+                        var ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
+                        var ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
                         if AmpuleSize != 0 {
                             let indexOfe =  ampleSizeIDArray.index(of: AmpuleSize)
                             AmpuleSizeStr = ampleSizeesNameArray[indexOfe] as? String  ?? ""
@@ -1553,12 +1436,10 @@ extension PELandingPoupViewController {
                         let DiluentMfg = DayOfAgeIS["DayAgeSubcutaneousDiluentMfg"] as? String ?? ""
                         var VManufacturerName = ""
                         var VName = ""
-                        var vManufacutrerNameArray = NSArray()
-                        var vManufacutrerIDArray = NSArray()
-                        var vManufacutrerDetailsArray = NSArray()
-                        vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
-                        vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
-                        vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+                 
+                        var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
+                        var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
+                        var vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
                         let xxx =    ManufacturerId
                         if xxx != 0 {
                             let indexOfd = vManufacutrerIDArray.index(of: xxx)
@@ -1566,12 +1447,10 @@ extension PELandingPoupViewController {
                             VManufacturerName = vManufacutrerNameArray[indexOfd] as? String ?? ""
                             }
                         }
-                        var vNameArray = NSArray()
-                        var vIDArray = NSArray()
-                        var vDetailsArray = NSArray()
-                        vDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 2)
-                        vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
-                        vIDArray = vDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+                
+                        var vDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 2)
+                        var vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
+                        var vIDArray = vDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
                         let xxxx =    VaccineId
                         if xxxx != 0 {
                             if vIDArray.contains(xxxx){
@@ -1587,9 +1466,8 @@ extension PELandingPoupViewController {
                             VName = otherText
                         }
                         
-                        
                         let  peNewAssessmentInProgress = CoreDataHandlerPE().getSavedOnGoingAssessmentPEObject()
-                        //let DayOfAgeDataNew = InovojectData(id: 0,vaccineMan:VManufacturerName,name:VName,ampuleSize:AmpuleSizeStr,ampulePerBag:String(AmpulePerbag),bagSizeType:BagSizeType,dosage:Dosage, dilute: DiluentMfg)
+
                         let inVoDataNew = CoreDataHandlerPEModels.InovojectInfo(id: 0,vaccineMan:VManufacturerName,name:VName,ampuleSize:AmpuleSizeStr,ampulePerBag:String(AmpulePerbag),bagSizeType:BagSizeType,dosage:Dosage, dilute: DiluentMfg)
                         let DayOfAgeDataNew = InovojectData(info: inVoDataNew)
                         
@@ -1605,7 +1483,6 @@ extension PELandingPoupViewController {
                         let AntibioticInformation = DayOfAgeIS["AntibioticInformation"] as? String ?? ""
                         peNewAssessmentInProgress.hatcheryAntibioticsDoaSText = AntibioticInformation
                         let infoObj = PEInfoDAO.sharedInstance.fetchInfoVMObj(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", assessmentId: "\(serverAssessmentId)")
-//                        PEInfoDAO.sharedInstance.saveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: sanitationEmbrexValue, assessmentId: "\(serverAssessmentId)", date: nil,subcutaneousTxt: AntibioticInformation, dayOfAgeTxt: infoObj?.dayOfAgeTxtAntibiotic)
                         
                         let data = CoreDataHandlerPEModels.doaVaccinationSaveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: sanitationEmbrexValue, assessmentId: "\(serverAssessmentId)", date: nil,subcutaneousTxt: AntibioticInformation, dayOfAgeTxt: infoObj?.dayOfAgeTxtAntibiotic)
                         PEInfoDAO.sharedInstance.saveData(vaccineData: data)
@@ -1682,13 +1559,11 @@ extension PELandingPoupViewController {
     }
     
     private func getScheduledAssessments() {
-        print(UserContext.sharedInstance.userDetailsObj?.userId)
+       
         PEDataService.sharedInstance.getScheduledAssessments(loginuserId: UserContext.sharedInstance.userDetailsObj?.userId ?? "No id found", viewController: self, completion: { [weak self] (status, error) in
-            guard let _ = self, error == nil else {self?.dismissGlobalHUD(self?.view ?? UIView()); return }
-            
-            if status == VaccinationConstants.VaccinationStatus.COREDATA_SAVED_SUCCESSFULLY || status == VaccinationConstants.VaccinationStatus.COREDATA_FETCHED_SUCCESSFULLY{
-                
-                
+            guard let _ = self, error == nil else {
+                self?.dismissGlobalHUD(self?.view ?? UIView());
+                return
             }
         })
     }
@@ -1696,30 +1571,27 @@ extension PELandingPoupViewController {
     
     private func getPostingAssessmentImagesListByUser() {
         ZoetisWebServices.shared.getPostingAssessmentListByUser(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handlGetPostingAssessmentImagesListByUser(json)
+            guard let zoetisSelf = self, error == nil else { return }
+            
+            zoetisSelf.handlGetPostingAssessmentImagesListByUser(json)
         })
     }
     
     
     private func handlGetPostingAssessmentImagesListByUser(_ json: JSON) {
-        //  print(json)
-        
-        //convert the JSON to a raw String
+
         var dataDic : [String:Any] = [:]
-        var dataArray : [Any] = []
+      
         if let string = json.rawString() {
             dataDic = string.convertToDictionary() ?? [:]
         }
         
-        
-        dataArray = dataDic["Data"] as? [Any] ?? []
+        var dataArray = dataDic["Data"] as? [Any] ?? []
         
         for obj in dataArray {
             DispatchQueue.main.async {
                 
-                var objDic : [String:Any] = [:]
-                objDic =  obj as? [String:Any] ?? [:]
+                var objDic =  obj as? [String:Any] ?? [:]
                 let base64Encoded = objDic["ImageBase64"] as? String ?? ""
                 let DisplayId = objDic["DisplayId"] as? String ?? ""
                 let DeviceId = objDic["Device_Id"] as? String ?? ""
@@ -1738,7 +1610,6 @@ extension PELandingPoupViewController {
             }
         }
         dismissGlobalHUD(self.view)
-         let currentServerAssessmentId = UserDefaults.standard.set("", forKey: "currentServerAssessmentId")
     }
     
     
@@ -1830,7 +1701,6 @@ extension PELandingPoupViewController {
     }
     
     private func saveImageInPEModule(imageData:Data)->Int{
-        var allAssesmentArr = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_ImageEntity")
         let imageCount = getImageCountInPEModule()
         CoreDataHandlerPE().saveImageInPEFinishModule(imageId: imageCount+1, imageData: imageData)
         return imageCount+1
