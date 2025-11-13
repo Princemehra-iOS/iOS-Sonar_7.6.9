@@ -989,7 +989,7 @@ class ViewController: BaseViewController, UITextFieldDelegate, UITableViewDelega
     }
     
     func startLoaderTurkey() {
-        Helper.showGlobalProgressHUDWithTitle(self.view, title: NSLocalizedString("Data syncing...", comment: ""))
+        Helper.showGlobalProgressHUDWithTitle(self.view, title: NSLocalizedString(Constants.dataSyncingMessage, comment: ""))
     }
     
     func didFinishApiLoader() {
@@ -3338,7 +3338,7 @@ extension ViewController:SidePanelViewControllerDelegate {
                             objApiSyncTurkey.delegeteSyncApiTurkey = self
                             if self.allSessionArrTurkey().count > 0 {
                                 if WebClass.sharedInstance.connected() == true{
-                                    Helper.showGlobalProgressHUDWithTitle(UIApplication.shared.keyWindow!, title: NSLocalizedString("Data syncing...", comment: ""))
+                                    Helper.showGlobalProgressHUDWithTitle(UIApplication.shared.keyWindow!, title: NSLocalizedString(Constants.dataSyncingMessage, comment: ""))
                                     self.callSyncApiTurkey()
                                 } else {
                                     Helper.showAlertMessage((UIApplication.shared.keyWindow?.rootViewController)!,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("Please go online and sync data before logging out.", comment: ""))
@@ -3354,7 +3354,7 @@ extension ViewController:SidePanelViewControllerDelegate {
                             objApiSync.delegeteSyncApi = self
                             if self.allSessionArr().count > 0 {
                                 if WebClass.sharedInstance.connected() == true{
-                                    Helper.showGlobalProgressHUDWithTitle(UIApplication.shared.keyWindow!, title: NSLocalizedString("Data syncing...", comment: ""))
+                                    Helper.showGlobalProgressHUDWithTitle(UIApplication.shared.keyWindow!, title: NSLocalizedString(Constants.dataSyncingMessage, comment: ""))
                                     self.callSyncApi()
                                 } else {
                                     Helper.showAlertMessage((UIApplication.shared.keyWindow?.rootViewController)!,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("Please go online and sync data before logging out.", comment: ""))

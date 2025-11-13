@@ -1840,7 +1840,7 @@ class DashViewController: UIViewController,MDRotatingPieChartDataSource,userlist
        
             ZoetisWebServices.shared.getVeterinarianResponce(controller: self, parameters: [:], completion: { [weak self] (json, error) in
                 guard let _ = self, error == nil else {
-                    self?.showToastWithTimer(message: "Failed to get Veterinarian List list", duration: 3.0)
+                    self?.showToastWithTimer(message: Constants.failedtogetVeterinarianListlist, duration: 3.0)
                     self?.dismissGlobalHUD(self?.view ?? UIView())
                     
                     return
@@ -1850,7 +1850,7 @@ class DashViewController: UIViewController,MDRotatingPieChartDataSource,userlist
                 // Check for the "errorResult" key and handle errors
                 if let errorResult = jsonResponse["errorResult"].dictionary {
                     debugPrint(errorResult)
-                    self?.showToastWithTimer(message: "Failed to get Veterinarian List list", duration: 3.0)
+                    self?.showToastWithTimer(message: Constants.failedtogetVeterinarianListlist, duration: 3.0)
                     self?.dismissGlobalHUD(self?.view ?? UIView())
                 }
                 
@@ -1881,7 +1881,7 @@ class DashViewController: UIViewController,MDRotatingPieChartDataSource,userlist
 
         guard let arr = JSON(json).array, !arr.isEmpty else {
             print("Veterinarian List is empty.")
-            self.showToastWithTimer(message: "Failed to get Veterinarian List list", duration: 3.0)
+            self.showToastWithTimer(message: Constants.failedtogetVeterinarianListlist, duration: 3.0)
             self.callhatcheryStrain()
             return
         }

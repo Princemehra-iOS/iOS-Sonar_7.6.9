@@ -555,11 +555,11 @@ final  public class VaccinationCustomersDAO{
         
         // If countryId is missing or 0
         if countryId == nil || countryId == 0 {
-            if countryName == "United States" {
+            if countryName == Constants.unitedStates {
                 UserDefaults.standard.set(40, forKey: "CountryIdIs")
                 countryId = 40
             }
-            if countryName == "Canada" {
+            if countryName == Constants.canada {
                 UserDefaults.standard.set(31, forKey: "CountryIdIs")
                 countryId = 31
             }
@@ -630,11 +630,11 @@ final  public class VaccinationCustomersDAO{
         
         // If countryId is missing or 0
         if countryId == nil || countryId == 0 {
-            if countryName == "United States" {
+            if countryName == Constants.unitedStates {
                 UserDefaults.standard.set(40, forKey: "CountryIdIs")
                 countryId = 40
             }
-            if countryName == "Canada" {
+            if countryName == Constants.canada {
                 UserDefaults.standard.set(31, forKey: "CountryIdIs")
                 countryId = 31
             }
@@ -779,11 +779,11 @@ final  public class VaccinationCustomersDAO{
         
         // If countryId is missing or 0
         if countryId == nil || countryId == 0 {
-            if countryName == "United States" {
+            if countryName == Constants.unitedStates {
                 UserDefaults.standard.set(40, forKey: "CountryIdIs")
                 countryId = 40
             }
-            if countryName == "Canada" {
+            if countryName == Constants.canada {
                 UserDefaults.standard.set(31, forKey: "CountryIdIs")
                 countryId = 31
             }
@@ -862,11 +862,11 @@ final  public class VaccinationCustomersDAO{
         
         // If countryId is missing or 0
         if countryId == nil || countryId == 0 {
-            if countryName == "United States" {
+            if countryName == Constants.unitedStates {
                 UserDefaults.standard.set(40, forKey: "CountryIdIs")
                 countryId = 40
             }
-            if countryName == "Canada" {
+            if countryName == Constants.canada {
                 UserDefaults.standard.set(31, forKey: "CountryIdIs")
                 countryId = 31
             }

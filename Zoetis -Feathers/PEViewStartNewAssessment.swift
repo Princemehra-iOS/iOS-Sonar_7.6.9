@@ -110,7 +110,7 @@ class PEViewStartNewAssessment: BaseViewController {
         btn_MoveToDraft.isHidden = true
         let dateFormatter = DateFormatter()
         setupUI()
-        dateFormatter.dateFormat="MM/dd/yyyy"
+        dateFormatter.dateFormat = Constants.MMddyyyyStr
 //        dateFormatter.calendar = Calendar(identifier: .gregorian)
 //        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         let currentDate: NSDate = NSDate()
@@ -1401,6 +1401,10 @@ class PEViewStartNewAssessment: BaseViewController {
 
 // MARK: - Other Delegates
 extension PEViewStartNewAssessment: DatePickerPopupViewControllerProtocol{
+    func doneButtonTapped(string: String) {
+        print("done")
+    }
+    
     func doneButtonTappedWithDate(string: String, objDate: Date) {
         let datesStored =  getAllDateArrayStored()
         let customerStored = getAllCustomerArrayStored()
@@ -1421,10 +1425,6 @@ extension PEViewStartNewAssessment: DatePickerPopupViewControllerProtocol{
             self.peNewAssessment.evaluationDate = string
             saveAssessmentInProgressDataInDB()
         }
-    }
-    
-    func doneButtonTapped(string:String){
-        
     }
 }
 
@@ -1771,7 +1771,7 @@ extension PEViewStartNewAssessment{
         let Notes = dict.notes
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/YYYY HH:mm:ss Z"
-        let date = dict.evaluationDate?.toDate(withFormat: "MM/dd/YYYY")
+        let date = dict.evaluationDate?.toDate(withFormat: Constants.MMddyyyyStr)
         let datastr = date?.toString(withFormat: "MM/dd/YYYY HH:mm:ss Z")
         let  sig_Datetext = dict.sig_Date
         var dateSig = ""
@@ -1855,7 +1855,7 @@ extension PEViewStartNewAssessment{
         if RegionalId == 3 {
             
             let inputFormatter = DateFormatter()
-            inputFormatter.dateFormat = "MM/dd/yyyy"
+            inputFormatter.dateFormat = Constants.MMddyyyyStr
 
             // Convert the string to a Date object
             if let date = inputFormatter.date(from: evaluationDate ?? "") {
@@ -3058,7 +3058,7 @@ extension PEViewStartNewAssessment{
   
         let dateFormatter = DateFormatter()
         let regionId = UserDefaults.standard.integer(forKey: "Regionid")
-        dateFormatter.dateFormat="MM/dd/YYYY"
+        dateFormatter.dateFormat = Constants.MMddyyyyStr
         
         var dateSig = ""
         let ddd = dict.sig_Date ?? ""
@@ -3081,7 +3081,7 @@ extension PEViewStartNewAssessment{
         if regionId == 3 {
             
             let inputFormatter = DateFormatter()
-            inputFormatter.dateFormat = "MM/dd/yyyy"
+            inputFormatter.dateFormat = Constants.MMddyyyyStr
 
             if let date = inputFormatter.date(from: evaluationDate ?? "") {
                 

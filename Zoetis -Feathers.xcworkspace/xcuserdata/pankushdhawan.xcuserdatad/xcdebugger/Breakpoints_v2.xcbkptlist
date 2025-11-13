@@ -80,7 +80,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
             endingLineNumber = "105"
-            landmarkName = "setupSavedShippingInfo(_:)"
+            landmarkName = "setupSavedShippingInfo(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -96,7 +96,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
             endingLineNumber = "80"
-            landmarkName = "setupSavedShippingInfo(_:)"
+            landmarkName = "setupSavedShippingInfo(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -112,7 +112,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "279"
             endingLineNumber = "279"
-            landmarkName = "doneBtnAction(_:)"
+            landmarkName = "handleShippingInfo(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -128,7 +128,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "276"
             endingLineNumber = "276"
-            landmarkName = "doneBtnAction(_:)"
+            landmarkName = "handleShippingInfo(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -144,8 +144,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "380"
             endingLineNumber = "380"
-            landmarkName = "shippindAddressViewController"
-            landmarkType = "3">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -160,8 +160,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "390"
             endingLineNumber = "390"
-            landmarkName = "shippindAddressViewController"
-            landmarkType = "3">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -176,7 +176,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
             endingLineNumber = "118"
-            landmarkName = "handleShippingInfo(_:)"
+            landmarkName = "setupSavedShippingInfo(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -192,7 +192,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "271"
             endingLineNumber = "271"
-            landmarkName = "setupCertification()"
+            landmarkName = "handleShippingInfo(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -208,7 +208,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "261"
             endingLineNumber = "261"
-            landmarkName = "setupCertification()"
+            landmarkName = "handleShippingInfo(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -240,7 +240,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "373"
             endingLineNumber = "373"
-            landmarkName = "siteAdrsBtnAction(_:)"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -256,7 +256,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
             endingLineNumber = "148"
-            landmarkName = "handleShippingInfo(_:)"
+            landmarkName = "SavedShippingInfoDetails(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -272,7 +272,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "376"
             endingLineNumber = "376"
-            landmarkName = "siteAdrsBtnAction(_:)"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -665,9 +665,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3257"
-            endingLineNumber = "3257"
-            landmarkName = "callExtendedMicro(param:)"
-            landmarkType = "7">
+            endingLineNumber = "3257">
             <Locations>
                <Location
                   uuid = "013A693B-A983-49C4-BA50-2CF7FB6FC7CD - 44e0eae9414eb9f2"
@@ -760,7 +758,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3072"
             endingLineNumber = "3072"
-            landmarkName = "callRequest4(paramForImages:)"
+            landmarkName = "createSyncRequestForExtendedMicro(dict:certificationData:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1426,7 +1424,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2478"
             endingLineNumber = "2478"
-            landmarkName = "SyncButtonAction(_:)"
+            landmarkName = "callSyncApi()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2512,7 +2510,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "448"
             endingLineNumber = "448"
-            landmarkName = "printSyncLblCountTurkey()"
+            landmarkName = "allSessionArrTurkey()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2528,7 +2526,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "388"
             endingLineNumber = "388"
-            landmarkName = "viewWillAppear(_:)"
+            landmarkName = "ReportsButtonPress(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2624,7 +2622,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2505"
             endingLineNumber = "2505"
-            landmarkName = "callSyncApi()"
+            landmarkName = "failWithErrorInternal()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2640,7 +2638,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2569"
             endingLineNumber = "2569"
-            landmarkName = "promtSyncing()"
+            landmarkName = "didFinishApi()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2656,7 +2654,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2574"
             endingLineNumber = "2574"
-            landmarkName = "promtSyncing()"
+            landmarkName = "didFinishApi()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

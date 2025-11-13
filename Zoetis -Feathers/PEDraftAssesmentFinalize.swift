@@ -5389,7 +5389,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             self.ml = 18927.05
         } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.twoLitre) ?? false {
             self.ml = 2000.00
-        } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.) ?? false {
+        } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.liter24) ?? false {
             self.ml = 2400.00
         } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.liter28) ?? false {
             self.ml = 2800.00

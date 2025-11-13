@@ -19,9 +19,9 @@ class ReportComposerDaignostic: NSObject {
     
     let logoImageURL = WebClass.sharedInstance.connected() == true ? "https://mypoultryview360.com/Images/logo.png" : Bundle.main.path(forResource:"logo", ofType: "png")
     
-    let birdsMargin = Regions.countryId == 40 ? "margin-left:-40px" : "margin-left:-180px"
+    let birdsMargin = Regions.countryId == 40 ? Constants.leftMargin : "margin-left:-180px"
     
-    let birdsMarginHistory = Regions.countryId == 40 ? "margin-left:-40px" : "margin-left:-225px"
+    let birdsMarginHistory = Regions.countryId == 40 ? Constants.leftMargin : "margin-left:-225px"
     
     let birdsMarginSummary = Regions.countryId == 40 ? "margin-left:-60px" : "margin-left:-130px"
     
@@ -59,7 +59,7 @@ class ReportComposerDaignostic: NSObject {
         switch countryID {
         case 35: margin = "margin-left:-50px"
             break
-        case 40: margin = "margin-left:-40px"
+        case 40: margin = Constants.leftMargin
             break
         default:
             break
@@ -101,7 +101,7 @@ class ReportComposerDaignostic: NSObject {
             
             HTMLContent = HTMLContent!.replacingOccurrences(of:"#reportTitle#", with: items[0]["isCocciHistory"]?.boolValue == true ? NSLocalizedString("Necropsy Historical Report", comment: "") : NSLocalizedString("Necropsy Summary Report", comment: ""))
             
-            HTMLContent = HTMLContent!.replacingOccurrences(of:"#digHisMargn#", with: items[0]["isCocciHistory"]?.boolValue == true ? "margin-left:-20px":"margin-left:-40px")
+            HTMLContent = HTMLContent!.replacingOccurrences(of:"#digHisMargn#", with: items[0]["isCocciHistory"]?.boolValue == true ? "margin-left:-20px":Constants.leftMargin)
             
             HTMLContent = HTMLContent!.replacingOccurrences(of:"#typeDate#", with: typeDate)
             

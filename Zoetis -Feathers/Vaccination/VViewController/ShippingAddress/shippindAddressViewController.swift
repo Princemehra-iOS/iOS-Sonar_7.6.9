@@ -398,20 +398,20 @@ class shippindAddressViewController: BaseViewController , UITextFieldDelegate {
         if let country = selectedCountry.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() {
             switch country {
             case "united states":
-                lblState.text = "State*"
-                lblZip.text = "Zip Code*"
-                shipLblState.text = "State*"
-                shipLblZip.text = "Zip Code*"
+                lblState.text = Constants.state
+                lblZip.text = Constants.zipCode
+                shipLblState.text = Constants.state
+                shipLblZip.text = Constants.zipCode
             case "canada":
                 lblState.text = "Province*"
                 lblZip.text = "Postal Code*"
                 shipLblState.text = "Province*"
                 shipLblZip.text = "Postal Code*"
             default:
-                lblState.text = "State*"
-                lblZip.text = "Zip Code*"
-                shipLblState.text = "State*"
-                shipLblZip.text = "Zip Code*"
+                lblState.text = Constants.state
+                lblZip.text = Constants.zipCode
+                shipLblState.text = Constants.state
+                shipLblZip.text = Constants.zipCode
             }
         }
 
