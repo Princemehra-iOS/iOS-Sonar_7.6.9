@@ -203,8 +203,6 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
         }
     }
     
-    @IBAction func btnAction(_ sender: Any) {
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -887,8 +885,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
         }
-        
-        
+
     }
     // MARK: - Alert for Mandatory Comment
     func showAlertForCommentMandatory(){
@@ -1097,15 +1094,15 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
     func showAlertForNoAMPMValue(){
         if regionID == 3
         {
-            if strings.contains("Please enter AM/PM Value in Miscellaneous.")
+            if strings.contains(Constants.pleaseEnterAMPM)
             {
-                strings = strings.filter { $0 != "Please enter AM/PM Value in Miscellaneous." }
+                strings = strings.filter { $0 != Constants.pleaseEnterAMPM }
             }
-            strings.append("Please enter AM/PM Value in Miscellaneous.")
+            strings.append(Constants.pleaseEnterAMPM)
         }
         else
         {
-            let errorMSg = "Please enter AM/PM Value in Miscellaneous."
+            let errorMSg = Constants.pleaseEnterAMPM
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
@@ -1140,9 +1137,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
             let errorMSg = CategoryConstants.pleaseenterfrequencydetailinCustomerQualityControlProgram
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                _ in
-            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
             alertController.addAction(okAction)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
@@ -1186,9 +1181,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
             let errorMSg = Constants.pleaseEnterQCount
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                _ in
-            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
             alertController.addAction(okAction)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
@@ -1802,52 +1795,65 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if checkForTraning(){
-            
-            if section == 0 && selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName != "Refrigerator\n/Freezer\n/Liquid Nitrogen" {
-                return sanitationQuesArr.count
-            }
-            
-            if (selectedCategory?.sequenceNoo == 11 && selectedCategory?.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen"){
-                return 2
-            }
-            if section == 1 {
-                return certificateData.count
-            }
-            if section == 2 {
-                return inovojectData.count
-            }
-            if section == 3 {
-                return dayOfAgeData.count
-            }
-            if section == 4 {
-                return dayOfAgeSData.count
-            }
-            return catArrayForTableIs.count
+        if checkForTraning() {
+            return numberOfRowsForTraining(section: section)
         } else {
-            var assessment = catArrayForTableIs[0] as? PE_AssessmentInProgress
-            if assessment?.sequenceNoo == 3 {
-                if section == 0 {
-                    return catArrayForTableIs.count                }
-                if section == 1 {
-                    return 1
-                }
-            } else {
-                if section == 1 {
-                    return inovojectData.count
-                }
-                if section == 2 {
-                    return dayOfAgeData.count
-                }
-                if section == 3 {
-                    return dayOfAgeSData.count
-                }
-            }
+            return numberOfRowsForAssessment(section: section)
+        }
+    }
+
+    private func numberOfRowsForTraining(section: Int) -> Int {
+        guard let category = selectedCategory else {
             return catArrayForTableIs.count
         }
-        
+
+        switch section {
+        case 0:
+            if category.sequenceNoo == 12,
+               category.catName != "Refrigerator\n/Freezer\n/Liquid Nitrogen" {
+                return sanitationQuesArr.count
+            }
+        case 1:
+            return certificateData.count
+        case 2:
+            return inovojectData.count
+        case 3:
+            return dayOfAgeData.count
+        case 4:
+            return dayOfAgeSData.count
+        default:
+            break
+        }
+
+        if category.sequenceNoo == 11,
+           category.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen" {
+            return 2
+        }
+
+        return catArrayForTableIs.count
     }
+
+    private func numberOfRowsForAssessment(section: Int) -> Int {
+        guard let assessment = catArrayForTableIs.first as? PE_AssessmentInProgress else {
+            return catArrayForTableIs.count
+        }
+
+        if assessment.sequenceNoo == 3 {
+            switch section {
+            case 0: return catArrayForTableIs.count
+            case 1: return 1
+            default: return 0
+            }
+        } else {
+            switch section {
+            case 1: return inovojectData.count
+            case 2: return dayOfAgeData.count
+            case 3: return dayOfAgeSData.count
+            default: return catArrayForTableIs.count
+            }
+        }
+    }
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if checkForTraning(){

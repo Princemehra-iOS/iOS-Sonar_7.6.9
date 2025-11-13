@@ -147,9 +147,7 @@ extension PEDraftViewController: UITableViewDelegate, UITableViewDataSource{
                         self.deleteDeletedAssessments()
                         
                     }
-                    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                        _ in
-                    }
+                    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
                     alertController.addAction(okAction)
                     alertController.addAction(cancelAction)
                     self.present(alertController, animated: true, completion: nil)
@@ -237,9 +235,7 @@ extension PEDraftViewController: UITableViewDelegate, UITableViewDataSource{
                         self.deleteDeletedAssessments()
                         
                     }
-                    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                        _ in
-                    }
+                    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
                     alertController.addAction(okAction)
                     alertController.addAction(cancelAction)
                     self.present(alertController, animated: true, completion: nil)

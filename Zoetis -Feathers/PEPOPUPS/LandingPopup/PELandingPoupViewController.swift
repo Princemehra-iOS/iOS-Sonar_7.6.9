@@ -104,9 +104,7 @@ class PELandingPoupViewController: BaseViewController {
                 _ in
                 self.fetchAllCustomer()
             }
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                _ in
-            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) 
             alertController.addAction(okAction)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)

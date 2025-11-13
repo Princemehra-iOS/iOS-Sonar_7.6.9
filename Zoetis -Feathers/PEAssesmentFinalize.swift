@@ -4759,9 +4759,9 @@ extension PEAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDataSo
                 {
                     if regionID == 3
                     {
-                        if strings.contains("Please enter vaccine details in the Vaccine Preparation & Sterility.")
+                        if strings.contains(Constants.pleaseEnterVaccineDetailsStr)
                         {
-                            strings = strings.filter { $0 != "Please enter vaccine details in the Vaccine Preparation & Sterility." }
+                            strings = strings.filter { $0 != Constants.pleaseEnterVaccineDetailsStr }
                         }
                     }
                 }
@@ -5002,11 +5002,11 @@ extension PEAssesmentFinalize{
         
         if regionID == 3
         {
-            if strings.contains("Please enter vaccine details in the Vaccine Preparation & Sterility.")
+            if strings.contains(Constants.pleaseEnterVaccineDetailsStr)
             {
-                strings = strings.filter { $0 != "Please enter vaccine details in the Vaccine Preparation & Sterility." }
+                strings = strings.filter { $0 != Constants.pleaseEnterVaccineDetailsStr }
             }
-            strings.append("Please enter vaccine details in the Vaccine Preparation & Sterility.")
+            strings.append(Constants.pleaseEnterVaccineDetailsStr)
         }
         
         else
@@ -5026,11 +5026,11 @@ extension PEAssesmentFinalize{
         // Change
         if regionID == 3
         {
-            if strings.contains("Please enter program name in the Vaccine Preparation & Sterility.")
+            if strings.contains(Constants.pleaseEnterProgramNameStr)
             {
-                strings = strings.filter { $0 != "Please enter program name in the Vaccine Preparation & Sterility." }
+                strings = strings.filter { $0 != Constants.pleaseEnterProgramNameStr }
             }
-            strings.append("Please enter program name in the Vaccine Preparation & Sterility.")
+            strings.append(Constants.pleaseEnterProgramNameStr)
         }
         else{
             let errorMSg = "Please enter program name in the Vaccine Preparation Tab."
@@ -5209,14 +5209,14 @@ extension PEAssesmentFinalize{
         
         if regionID == 3
         {
-            if strings.contains("Please enter Vaccine Mixer Observer in  Vaccine Preparation & Sterility.")
+            if strings.contains(Constants.pleaseEnterVaccineMixObserverStr)
             {
-                strings = strings.filter { $0 != "Please enter Vaccine Mixer Observer in  Vaccine Preparation & Sterility."}
+                strings = strings.filter { $0 != Constants.pleaseEnterVaccineMixObserverStr}
             }
-            strings.append("Please enter Vaccine Mixer Observer in  Vaccine Preparation & Sterility.")
+            strings.append(Constants.pleaseEnterVaccineMixObserverStr)
         }
         else{
-            let errorMSg = "Please enter Vaccine Mixer Observer in  Vaccine Preparation & Sterility."
+            let errorMSg = Constants.pleaseEnterVaccineMixObserverStr
             let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
