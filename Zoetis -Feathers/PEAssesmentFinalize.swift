@@ -1223,7 +1223,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                             cell.noteBtn.setImage(image, for: .normal)
                             
                         } else {
-                            let image = UIImage(named: "PECommentSelected.png")
+                            let image = UIImage(named: Constants.peCommentSelectedStr)
                             cell.noteBtn.setImage(image, for: .normal)
                         }
                         
@@ -1328,9 +1328,9 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                                     let date =   peNewAssessment.evaluationDate
                                     if(regionID != 3){
                                         let inputFormatter = DateFormatter()
-                                        inputFormatter.dateFormat = "dd/MM/yyyy"
+                                        inputFormatter.dateFormat = Constants.ddMMyyyStr
                                         let showDate = inputFormatter.date(from: date ?? "")
-                                        inputFormatter.dateFormat = "dd/MM/yyyy"
+                                        inputFormatter.dateFormat = Constants.ddMMyyyStr
                                         if(showDate != nil){
                                             let resultString = inputFormatter.string(from: showDate!)
                                             cell.certDateSelectBtn.setTitle(resultString, for: .normal)
@@ -2023,7 +2023,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                     }
                     else if self.peNewAssessment.dDDT?.lowercased().contains("2 gallon") ?? false {
                         self.ml = 7570.82
-                    } else if self.peNewAssessment.dDDT?.lowercased().contains("5 gallon") ?? false {
+                    } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.fiveGallonStr) ?? false {
                         self.ml = 18927.05
                     } else if self.peNewAssessment.dDDT?.lowercased().contains(CategoryConstants.twoLitre) ?? false {
                         self.ml = 2000.00
@@ -2034,13 +2034,13 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                     }
                     else if self.peNewAssessment.dDDT?.lowercased().contains(CategoryConstants.twoHundredMl) ?? false {
                         self.ml = 200.00
-                    } else if self.peNewAssessment.dDDT?.lowercased().contains("300 ml") ?? false {
+                    } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil300) ?? false {
                         self.ml = 300.00
-                    } else if self.peNewAssessment.dDDT?.lowercased().contains("400 ml") ?? false {
+                    } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil400) ?? false {
                         self.ml = 400.00
-                    } else if self.peNewAssessment.dDDT?.lowercased().contains("500 ml") ?? false {
+                    } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil500) ?? false {
                         self.ml = 500.00
-                    }else if self.peNewAssessment.dDDT?.lowercased().contains("800 ml") ?? false {
+                    }else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil800) ?? false {
                         self.ml = 800.00
                     }
                     let c = self.ml
@@ -2092,7 +2092,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                             self.ml = 3785.41
                         }else if self.peNewAssessment.dDDT?.lowercased().contains("2 gallon") ?? false {
                             self.ml = 7570.82
-                        } else if self.peNewAssessment.dDDT?.lowercased().contains("5 gallon") ?? false {
+                        } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.fiveGallonStr) ?? false {
                             self.ml = 18927.05
                         } else if self.peNewAssessment.dDDT?.lowercased().contains(CategoryConstants.twoLitre) ?? false {
                             self.ml = 2000.00
@@ -2103,13 +2103,13 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         
                         else if self.peNewAssessment.dDDT?.lowercased().contains(CategoryConstants.twoHundredMl) ?? false {
                             self.ml = 200.00
-                        } else if self.peNewAssessment.dDDT?.lowercased().contains("300 ml") ?? false {
+                        } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil300) ?? false {
                             self.ml = 300.00
-                        } else if self.peNewAssessment.dDDT?.lowercased().contains("400 ml") ?? false {
+                        } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil400) ?? false {
                             self.ml = 400.00
-                        } else if self.peNewAssessment.dDDT?.lowercased().contains("500 ml") ?? false {
+                        } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil500) ?? false {
                             self.ml = 500.00
-                        }else if self.peNewAssessment.dDDT?.lowercased().contains("800 ml") ?? false {
+                        }else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil800) ?? false {
                             self.ml = 800.00
                         }
                         let c = self.ml
@@ -2326,7 +2326,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             }
             
             let image1 = UIImage(named: "PEcomment.png")
-            let image2 = UIImage(named: "PECommentSelected.png")
+            let image2 = UIImage(named: Constants.peCommentSelectedStr)
             if assessment?.note == "" || assessment?.note == nil {
                 cell.btn_Comment.setImage(image1, for: .normal)
             } else {
@@ -2523,7 +2523,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         cell.btn_Comment.setImage(image, for: .normal)
                         
                     } else {
-                        let image = UIImage(named: "PECommentSelected.png")
+                        let image = UIImage(named: Constants.peCommentSelectedStr)
                         cell.btn_Comment.setImage(image, for: .normal)
                         
                     }
@@ -2703,7 +2703,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         cell.btnImageCount.isHidden = false
                     }
                     let image1 = UIImage(named: "PEcomment.png")
-                    let image2 = UIImage(named: "PECommentSelected.png")
+                    let image2 = UIImage(named: Constants.peCommentSelectedStr)
                     if assessment?.note == "" || assessment?.note == nil {
                         
                          if assessment?.assID == 5 || assessment?.assID == 9
@@ -3168,7 +3168,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                                 cell.noteBtn.setImage(image, for: .normal)
                                 
                             } else {
-                                let image = UIImage(named: "PECommentSelected.png")
+                                let image = UIImage(named: Constants.peCommentSelectedStr)
                                 cell.noteBtn.setImage(image, for: .normal)
                                 
                             }
@@ -4213,7 +4213,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             self.ml = 3785.41
         }else if self.peNewAssessment.dDDT?.lowercased().contains("2 gallon") ?? false {
             self.ml = 7570.82
-        } else if self.peNewAssessment.dDDT?.lowercased().contains("5 gallon") ?? false {
+        } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.fiveGallonStr) ?? false {
             self.ml = 18927.05
         } else if self.peNewAssessment.dDDT?.lowercased().contains(CategoryConstants.twoLitre) ?? false {
             self.ml = 2000.00
@@ -4223,13 +4223,13 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
         }
         else if self.peNewAssessment.dDDT?.lowercased().contains(CategoryConstants.twoHundredMl) ?? false {
             self.ml = 200.00
-        } else if self.peNewAssessment.dDDT?.lowercased().contains("300 ml") ?? false {
+        } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil300) ?? false {
             self.ml = 300.00
-        } else if self.peNewAssessment.dDDT?.lowercased().contains("400 ml") ?? false {
+        } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil400) ?? false {
             self.ml = 400.00
-        } else if self.peNewAssessment.dDDT?.lowercased().contains("500 ml") ?? false {
+        } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil500) ?? false {
             self.ml = 500.00
-        }else if self.peNewAssessment.dDDT?.lowercased().contains("800 ml") ?? false {
+        }else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil800) ?? false {
             self.ml = 800.00
         }
         
@@ -4960,7 +4960,7 @@ extension PEAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDataSo
             //            formatter.calendar = Calendar(identifier: .gregorian)
             //            formatter.timeZone = TimeZone(secondsFromGMT: 0)
         }else{
-            formatter.dateFormat = "dd/MM/yyyy"
+            formatter.dateFormat = Constants.ddMMyyyStr
             //            formatter.calendar = Calendar(identifier: .gregorian)
             //            formatter.timeZone = TimeZone(secondsFromGMT: 0)
         }

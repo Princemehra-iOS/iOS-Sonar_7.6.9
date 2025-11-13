@@ -303,6 +303,7 @@ struct Constants {
     static let mil400 = "400 ml"
     static let mil500 = "500 ml"
     static let mil800 = "800 ml"
+    static let loading = "Loading..."
     static let syncToWebStr = "Sync to Web"
     static let yyyyMMddStr = "yyyy-MM-dd"
     static let MMddyyyyStr = "MM/dd/yyyy"

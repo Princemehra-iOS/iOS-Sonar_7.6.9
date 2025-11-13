@@ -3718,7 +3718,7 @@ extension PEDashboardViewController {
             UserDefaults.standard.setValue(false, forKey: "OnGlobalFromPE")
             UserDefaults.standard.synchronize()
             if ConnectionManager.shared.hasConnectivity() {
-                self.showGlobalProgressHUDWithTitle(self.view, title: "Loading...")
+                self.showGlobalProgressHUDWithTitle(self.view, title: Constants.loading)
                 self.fetchAllCustomer()
             } else {
                 self.dismissGlobalHUD(self.view ?? UIView())
@@ -3728,7 +3728,7 @@ extension PEDashboardViewController {
                 
                 UserDefaults.standard.setValue(true, forKey: "haveToCallGetPosting")
                 UserDefaults.standard.setValue(false, forKey: "OnGlobalFromPE")
-                self.showGlobalProgressHUDWithTitle(self.view, title: "Loading...")
+                self.showGlobalProgressHUDWithTitle(self.view, title: Constants.loading)
                 self.getRejectedAssessmentListByUser()
             }
         }
@@ -4351,7 +4351,7 @@ APIActivityTracker.shared.endRequest()
     }
     // MARK: - Get Posted assessment List
     private func getPostingAssessmentListByUser(){
-        self.showGlobalProgressHUDWithTitle(self.view, title: "Loading...")
+        self.showGlobalProgressHUDWithTitle(self.view, title: Constants.loading)
         if ConnectionManager.shared.hasConnectivity() {
             APIActivityTracker.shared.startRequest()
            ZoetisWebServices.shared.getPostedAssmntListByUser(controller: self, parameters: [:], completion: { [weak self] (json, error) in
