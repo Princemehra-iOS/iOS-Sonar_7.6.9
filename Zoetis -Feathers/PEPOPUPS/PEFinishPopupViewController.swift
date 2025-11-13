@@ -351,13 +351,13 @@ class PEFinishPopupViewController: BaseViewController {
                 if self.hatheryManagerName == "" {
                     self.hatcheryManagerNameView.layer.borderColor = UIColor.red.cgColor
                     self.hatcheryManagerNameView.layer.borderWidth = 2.0
-                    self.showAlert(title: "Alert", message: "Please fill the mandatory fields.", owner: self)
+                    self.showAlert(title: "Alert", message: Constants.pleasefillthemandatoryfields, owner: self)
                     return
                 }
                 if self.txtEmployeeID.text == "" {
                     self.employeeIDView.layer.borderColor = UIColor.red.cgColor
                     self.employeeIDView.layer.borderWidth = 2.0
-                    self.showAlert(title: "Alert", message: "Please fill the mandatory fields.", owner: self)
+                    self.showAlert(title: "Alert", message: Constants.pleasefillthemandatoryfields, owner: self)
                     return
                 }
                 var param : [String:String] = ["sig":String(sig1),"sig_EmpID":self.txtEmployeeID.text ?? "","sig_EmpID2":self.txtEmployeeID2.text ?? "","sig_Name":self.hatheryManagerName ?? "","sig_Name2":self.hatheryManagerName2 ?? "","sig_Phone":self.txtPhone.text ?? "","sig_Date":Date().stringFormat(format: "MMM d, yyyy") ]
@@ -409,7 +409,7 @@ class PEFinishPopupViewController: BaseViewController {
             }
             signatureView.layer.borderColor = UIColor.red.cgColor
             signatureView.layer.borderWidth = 2.0
-            showAlert(title: "Alert", message: "Please fill the mandatory fields.", owner: self)
+            showAlert(title: "Alert", message: Constants.pleasefillthemandatoryfields, owner: self)
             return
         }
         
@@ -983,13 +983,13 @@ extension PEFinishPopupViewController: YPSignatureDelegate {
                 if self.hatheryManagerName == "" {
                     self.hatcheryManagerNameView.layer.borderColor = UIColor.red.cgColor
                     self.hatcheryManagerNameView.layer.borderWidth = 2.0
-                    self.showAlert(title: "Alert", message: "Please fill the mandatory fields.", owner: self)
+                    self.showAlert(title: "Alert", message: Constants.pleasefillthemandatoryfields, owner: self)
                     return
                 }
                 if self.txtEmployeeID.text == "" {
                     self.employeeIDView.layer.borderColor = UIColor.red.cgColor
                     self.employeeIDView.layer.borderWidth = 2.0
-                    self.showAlert(title: "Alert", message: "Please fill the mandatory fields.", owner: self)
+                    self.showAlert(title: "Alert", message: Constants.pleasefillthemandatoryfields, owner: self)
                     return
                 }
                 let imageData = signatureImage.jpegData(compressionQuality: 0.1)
@@ -1061,7 +1061,7 @@ extension PEFinishPopupViewController: YPSignatureDelegate {
             }
             signatureView.layer.borderColor = UIColor.red.cgColor
             signatureView.layer.borderWidth = 2.0
-            showAlert(title: "Alert", message: "Please fill the mandatory fields.", owner: self)
+            showAlert(title: "Alert", message: Constants.pleasefillthemandatoryfields, owner: self)
             return
         }
     }

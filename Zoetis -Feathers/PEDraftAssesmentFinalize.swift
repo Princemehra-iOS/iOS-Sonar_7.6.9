@@ -941,7 +941,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
                     
                     var param = [String:String]()
                     
-                    param = ["sig":String(peNewAssessment.sig!),"sig2":String(peNewAssessment.sig2!),"sig_EmpID": String(peNewAssessment.sig_EmpID!),"sig_EmpID2":String(peNewAssessment.sig_EmpID2!),"sig_Name":String(peNewAssessment.sig_Name!),"sig_Name2":String(peNewAssessment.sig_Name2!),"sig_Phone":String(peNewAssessment.sig_Phone!),"sig_Date":Date().stringFormat(format: "MMM d, yyyy") ]
+                    param = ["sig":String(peNewAssessment.sig!),"sig2":String(peNewAssessment.sig2!),"sig_EmpID": String(peNewAssessment.sig_EmpID!),"sig_EmpID2":String(peNewAssessment.sig_EmpID2!),"sig_Name":String(peNewAssessment.sig_Name!),"sig_Name2":String(peNewAssessment.sig_Name2!),"sig_Phone":String(peNewAssessment.sig_Phone!),"sig_Date":Date().stringFormat(format: Constants.MMMdyyyy) ]
                     
                     let savedDataIs =  CoreDataHandlerPE().saveDataToSyncPEInDBArray(newAssessmentArray: allAssesmentArr as? [PENewAssessment] ?? [], dataToSubmitNumber: dataToSubmitNumber + 1,param:param,fromDraft: true)
                     
@@ -1484,7 +1484,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
     
     func convertDateFormat(inputDate: String) -> String {
         let olDateFormatter = DateFormatter()
-        olDateFormatter.dateFormat = "MMM d, yyyy"
+        olDateFormatter.dateFormat = Constants.MMMdyyyy
         let oldDate = olDateFormatter.date(from: inputDate)
         let convertDateFormatter = DateFormatter()
         convertDateFormatter.dateFormat = "yyyy-MM-dd"
@@ -1982,7 +1982,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                             cell.noteBtn.setImage(image, for: .normal)
                             
                         } else {
-                            let image = UIImage(named: "PECommentSelected.png")
+                            let image = UIImage(named: Constants.peCommentSelectedStr)
                             cell.noteBtn.setImage(image, for: .normal)
                         }
                         
@@ -2481,7 +2481,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         
                         let c = Double(self.inovojectData[indexPath.row].bagSizeType ?? "0") ?? 0
                         if c == 0 {
-                            self.showtoast(message: "Incomplete Data")
+                            self.showtoast(message: Constants.incompleteDataStr)
                             CoreDataHandlerPE().updateDOAInDB(inovojectData:  self.inovojectData[indexPath.row])
                             
                             return
@@ -2562,7 +2562,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                     let  selectedValIS = selectedVal.replacingOccurrences(of: " ", with: "")
                     let c = Double(self.inovojectData[indexPath.row].bagSizeType ?? "0") ?? 0
                     if c == 0 {
-                        self.showtoast(message: "Incomplete Data")
+                        self.showtoast(message: Constants.incompleteDataStr)
                         CoreDataHandlerPE().updateDOAInDB(inovojectData:  self.inovojectData[indexPath.row])
                         
                         return
@@ -2636,10 +2636,6 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                     }
                     self.dropHiddenAndShow()
                 }
-            }
-            
-            cell.doseCompletion  = {[unowned self] ( error) in
-                
             }
             
             cell.nameCompletion  = {[unowned self] ( text) in
@@ -3040,7 +3036,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             }
             
             let image1 = UIImage(named: "PEcomment.png")
-            let image2 = UIImage(named: "PECommentSelected.png")
+            let image2 = UIImage(named: Constants.peCommentSelectedStr)
             if assessment?.note == "" || assessment?.note == nil {
                 cell.btn_Comment.setImage(image1, for: .normal)
             } else {
@@ -3218,7 +3214,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         cell.btn_Comment.setImage(image, for: .normal)
                         
                     } else {
-                        let image = UIImage(named: "PECommentSelected.png")
+                        let image = UIImage(named: Constants.peCommentSelectedStr)
                         cell.btn_Comment.setImage(image, for: .normal)
                     }
                     
@@ -3338,18 +3334,18 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         self.ml = 2000.00
                     } else if self.peNewAssessment.dDDT?.lowercased().contains("2.4 litre") ?? false {
                         self.ml = 2400.00
-                    } else if self.peNewAssessment.dDDT?.lowercased().contains("2.8 litre") ?? false {  self.ml = 2800.00
+                    } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.liter28) ?? false {  self.ml = 2800.00
                     }
                     
-                    else if self.peNewAssessment.dDDT?.lowercased().contains("200 ml") ?? false {
+                    else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil200) ?? false {
                         self.ml = 200.00
                     } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil300) ?? false {
                         self.ml = 300.00
-                    } else if self.peNewAssessment.dDDT?.lowercased().contains("400 ml") ?? false {
+                    } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil400) ?? false {
                         self.ml = 400.00
-                    } else if self.peNewAssessment.dDDT?.lowercased().contains("500 ml") ?? false {
+                    } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil500) ?? false {
                         self.ml = 500.00
-                    }else if self.peNewAssessment.dDDT?.lowercased().contains("800 ml") ?? false {
+                    }else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil800) ?? false {
                         self.ml = 800.00
                     }
                     
@@ -3410,17 +3406,17 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                             self.ml = 2000.00
                         } else if self.peNewAssessment.dDDT?.lowercased().contains("2.4 litre") ?? false {
                             self.ml = 2400.00
-                        } else if self.peNewAssessment.dDDT?.lowercased().contains("2.8 litre") ?? false {
+                        } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.liter28) ?? false {
                             self.ml = 2800.00
-                        }else if self.peNewAssessment.dDDT?.lowercased().contains("200 ml") ?? false {
+                        }else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil200) ?? false {
                             self.ml = 200.00
                         } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil300) ?? false {
                             self.ml = 300.00
-                        } else if self.peNewAssessment.dDDT?.lowercased().contains("400 ml") ?? false {
+                        } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil400) ?? false {
                             self.ml = 400.00
-                        } else if self.peNewAssessment.dDDT?.lowercased().contains("500 ml") ?? false {
+                        } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil500) ?? false {
                             self.ml = 500.00
-                        }else if self.peNewAssessment.dDDT?.lowercased().contains("800 ml") ?? false {
+                        }else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil800) ?? false {
                             self.ml = 800.00
                         }
                         let c = self.ml
@@ -3762,7 +3758,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 cell.btnImageCount.isHidden = false
             }
             let image1 = UIImage(named: "PEcomment.png")
-            let image2 = UIImage(named: "PECommentSelected.png")
+            let image2 = UIImage(named: Constants.peCommentSelectedStr)
             if assessment?.note == "" || assessment?.note == nil {
                 
                 if assessment?.assID == 5 || assessment?.assID == 9
@@ -4304,7 +4300,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                             cell.noteBtn.setImage(image, for: .normal)
                             
                         } else {
-                            let image = UIImage(named: "PECommentSelected.png")
+                            let image = UIImage(named: Constants.peCommentSelectedStr)
                             cell.noteBtn.setImage(image, for: .normal)
                             
                         }
@@ -5395,18 +5391,18 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             self.ml = 2000.00
         } else if self.peNewAssessment.dDDT?.lowercased().contains("2.4 litre") ?? false {
             self.ml = 2400.00
-        } else if self.peNewAssessment.dDDT?.lowercased().contains("2.8 litre") ?? false {
+        } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.liter28) ?? false {
             self.ml = 2800.00
         }
-        else if self.peNewAssessment.dDDT?.lowercased().contains("200 ml") ?? false {
+        else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil200) ?? false {
             self.ml = 200.00
         } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil300) ?? false {
             self.ml = 300.00
-        } else if self.peNewAssessment.dDDT?.lowercased().contains("400 ml") ?? false {
+        } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil400) ?? false {
             self.ml = 400.00
-        } else if self.peNewAssessment.dDDT?.lowercased().contains("500 ml") ?? false {
+        } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil500) ?? false {
             self.ml = 500.00
-        }else if self.peNewAssessment.dDDT?.lowercased().contains("800 ml") ?? false {
+        }else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.mil800) ?? false {
             self.ml = 800.00
         }
         let c = self.ml
@@ -5448,7 +5444,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
     func updateDosageInvojectData(section:Int)  {
         let c = Double(self.peNewAssessment.iCS ?? "0") ?? 0
         if c == 0 {
-            self.showtoast(message: "Incomplete Data")
+            self.showtoast(message: Constants.incompleteDataStr)
             return
         }
         

@@ -489,9 +489,7 @@ class PEViewAssesmentFinalize: BaseViewController , DatePickerPopupViewControlle
             NSLog("OK Pressed")
             self.saveFinalizedData()
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-            _ in
-        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
@@ -507,14 +505,10 @@ class PEViewAssesmentFinalize: BaseViewController , DatePickerPopupViewControlle
             NSLog("OK Pressed")
             self.saveDraftData()
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-            _ in
-            
-        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
-        
     }
     
     @IBAction func draftButtonClickedInitial(_ sender: Any) {
@@ -525,10 +519,7 @@ class PEViewAssesmentFinalize: BaseViewController , DatePickerPopupViewControlle
             NSLog("OK Pressed")
             self.saveDraftData()
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-            _ in
-            
-        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
@@ -843,7 +834,7 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                             cell.noteBtn.setImage(image, for: .normal)
                             
                         } else {
-                            let image = UIImage(named: "PECommentSelected.png")
+                            let image = UIImage(named: Constants.peCommentSelectedStr)
                             cell.noteBtn.setImage(image, for: .normal)
                         }
                         
@@ -1041,7 +1032,7 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             }
             
             let image1 = UIImage(named: "PEcomment.png")
-            let image2 = UIImage(named: "PECommentSelected.png")
+            let image2 = UIImage(named: Constants.peCommentSelectedStr)
             if assessment?.note == "" || assessment?.note == nil {
                 cell.btn_Comment.setImage(image1, for: .normal)
             } else {
@@ -1439,7 +1430,7 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 cell.btnImageCount.isHidden = false
             }
             let image1 = UIImage(named: "PEcomment.png")
-            let image2 = UIImage(named: "PECommentSelected.png")
+            let image2 = UIImage(named: Constants.peCommentSelectedStr)
             if assessment?.note?.count ?? 0 < 1 {
                 cell.noteBtn.setImage(image1, for: .normal)
             } else {
@@ -2571,7 +2562,7 @@ extension PEViewAssesmentFinalize{
         let dateFormats = [
             "yyyy-MM-dd",
             "dd/MM/yyyy",
-            "MM/dd/yyyy",
+            Constants.MMddyyyyStr,
             "dd-MM-yyyy",
             "yyyy/MM/dd",
             "MMMM d, yyyy",
@@ -2737,7 +2728,7 @@ extension PEViewAssesmentFinalize{
         let Notes = dict.notes
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/YYYY HH:mm:ss Z"
-        let date = dict.evaluationDate?.toDate(withFormat: "MM/dd/YYYY")
+        let date = dict.evaluationDate?.toDate(withFormat: Constants.MMddyyyyStr)
         var dateSig = ""
         let ddd = dict.sig_Date ?? ""
         if ddd != "" {
@@ -2808,7 +2799,7 @@ extension PEViewAssesmentFinalize{
         if regionId == 3 {
             
             let inputFormatter = DateFormatter()
-            inputFormatter.dateFormat = "MM/dd/yyyy"
+            inputFormatter.dateFormat = Constants.MMddyyyyStr
             
             // Convert the string to a Date object
             if let date = inputFormatter.date(from: evaluationDate ?? "") {
@@ -3797,9 +3788,9 @@ extension PEViewAssesmentFinalize{
         let dateFormatter = DateFormatter()
         
         let regionId = UserDefaults.standard.integer(forKey: "Regionid")
-        dateFormatter.dateFormat="MM/dd/YYYY"
+        dateFormatter.dateFormat = Constants.MMddyyyyStr
         
-        let date = dict.evaluationDate?.toDate(withFormat: "MM/dd/YYYY")
+        let date = dict.evaluationDate?.toDate(withFormat: Constants.MMddyyyyStr)
         var dateSig = ""
         let ddd = dict.sig_Date ?? ""
         if ddd != "" {
@@ -3824,7 +3815,7 @@ extension PEViewAssesmentFinalize{
         if regionId == 3 {
             
             let inputFormatter = DateFormatter()
-            inputFormatter.dateFormat = "MM/dd/yyyy"
+            inputFormatter.dateFormat = Constants.MMddyyyyStr
             
             // Convert the string to a Date object
             if let date = inputFormatter.date(from: evaluationDate ?? "") {
