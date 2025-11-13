@@ -5742,12 +5742,12 @@ extension PEDraftAssesmentFinalize : UICollectionViewDelegate, UICollectionViewD
                 if assessment?.assStatus == 1 && assessment?.assID == 5  {
                     if assessment?.note?.count ?? 0 < 1 {
                         
-                        if strings.contains("Please enter comment for (Thaw bath temp) in Aseptic Technique & Vaccine Application")
+                        if strings.contains(Constants.pleaseEnterCommentForThawBathTempStr)
                         {
-                            strings = strings.filter { $0 != "Please enter comment for (Thaw bath temp) in Aseptic Technique & Vaccine Application" }
+                            strings = strings.filter { $0 != Constants.pleaseEnterCommentForThawBathTempStr }
                         }
                         if regionID == 3 {
-                            strings.append("Please enter comment for (Thaw bath temp) in Aseptic Technique & Vaccine Application")
+                            strings.append(Constants.pleaseEnterCommentForThawBathTempStr)
                         }
                         else
                         {
@@ -5758,9 +5758,9 @@ extension PEDraftAssesmentFinalize : UICollectionViewDelegate, UICollectionViewD
                     {
                         if regionID == 3 {
                             
-                            if strings.contains("Please enter comment for (Thaw bath temp) in Aseptic Technique & Vaccine Application")
+                            if strings.contains(Constants.pleaseEnterCommentForThawBathTempStr)
                             {
-                                strings = strings.filter { $0 != "Please enter comment for (Thaw bath temp) in Aseptic Technique & Vaccine Application" }
+                                strings = strings.filter { $0 != Constants.pleaseEnterCommentForThawBathTempStr }
                             }
                         }
                         
@@ -5770,13 +5770,13 @@ extension PEDraftAssesmentFinalize : UICollectionViewDelegate, UICollectionViewD
                 else if assessment?.assStatus == 1 && assessment?.assID == 9 {
                     if assessment?.note?.count ?? 0 < 1 {
                         
-                        if strings.contains("Please enter comment for (Vaccine thawing time) in Aseptic Technique & Vaccine Application")
+                        if strings.contains(Constants.pleaseentercommentforinAsepticTechniqueVaccineApplication)
                         {
-                            strings = strings.filter { $0 != "Please enter comment for (Vaccine thawing time) in Aseptic Technique & Vaccine Application" }
+                            strings = strings.filter { $0 != Constants.pleaseentercommentforinAsepticTechniqueVaccineApplication }
                         }
                         if regionID == 3 {
                             
-                            strings.append("Please enter comment for (Vaccine thawing time) in Aseptic Technique & Vaccine Application")
+                            strings.append(Constants.pleaseentercommentforinAsepticTechniqueVaccineApplication)
                             
                         }
                         else
@@ -5788,9 +5788,9 @@ extension PEDraftAssesmentFinalize : UICollectionViewDelegate, UICollectionViewD
                     else
                     {
                         if regionID == 3 {
-                            if strings.contains("Please enter comment for (Vaccine thawing time) in Aseptic Technique & Vaccine Application")
+                            if strings.contains(Constants.pleaseentercommentforinAsepticTechniqueVaccineApplication)
                             {
-                                strings = strings.filter { $0 != "Please enter comment for (Vaccine thawing time) in Aseptic Technique & Vaccine Application" }
+                                strings = strings.filter { $0 != Constants.pleaseentercommentforinAsepticTechniqueVaccineApplication }
                             }
                         }
                     }

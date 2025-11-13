@@ -1219,7 +1219,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                     vc.editable = true
                     vc.commentCompleted = {[unowned self] ( note) in
                         if note == "" {
-                            let image = UIImage(named: "PEcomment.png")
+                            let image = UIImage(named: Constants.peCommentImageStr)
                             cell.noteBtn.setImage(image, for: .normal)
                             
                         } else {
@@ -2325,7 +2325,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 cell.btn_ImageCount.isHidden = false
             }
             
-            let image1 = UIImage(named: "PEcomment.png")
+            let image1 = UIImage(named: Constants.peCommentImageStr)
             let image2 = UIImage(named: Constants.peCommentSelectedStr)
             if assessment?.note == "" || assessment?.note == nil {
                 cell.btn_Comment.setImage(image1, for: .normal)
@@ -2519,7 +2519,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 
                 vc.commentCompleted = {[unowned self] ( note) in
                     if note == "" {
-                        let image = UIImage(named: "PEcomment.png")
+                        let image = UIImage(named: Constants.peCommentImageStr)
                         cell.btn_Comment.setImage(image, for: .normal)
                         
                     } else {
@@ -2702,7 +2702,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                     } else {
                         cell.btnImageCount.isHidden = false
                     }
-                    let image1 = UIImage(named: "PEcomment.png")
+                    let image1 = UIImage(named: Constants.peCommentImageStr)
                     let image2 = UIImage(named: Constants.peCommentSelectedStr)
                     if assessment?.note == "" || assessment?.note == nil {
                         
@@ -3164,7 +3164,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         
                         vc.commentCompleted = {[unowned self] ( note) in
                             if note == "" {
-                                let image = UIImage(named: "PEcomment.png")
+                                let image = UIImage(named: Constants.peCommentImageStr)
                                 cell.noteBtn.setImage(image, for: .normal)
                                 
                             } else {
@@ -4556,12 +4556,12 @@ extension PEAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDataSo
                 if assessment?.assStatus == 1 && assessment?.assID == 5  {
                     if assessment?.note?.count ?? 0 < 1 {
                         
-                        if strings.contains("Please enter comment for (Thaw bath temp) in Aseptic Technique & Vaccination Application")
+                        if strings.contains(Constants.pleaseentercommentforinAsepticTechniqueVaccinationApplication)
                         {
-                            strings = strings.filter { $0 != "Please enter comment for (Thaw bath temp) in Aseptic Technique & Vaccination Application" }
+                            strings = strings.filter { $0 != Constants.pleaseentercommentforinAsepticTechniqueVaccinationApplication }
                         }
                         if regionID == 3 {
-                            strings.append("Please enter comment for (Thaw bath temp) in Aseptic Technique & Vaccination Application")
+                            strings.append(Constants.pleaseentercommentforinAsepticTechniqueVaccinationApplication)
                         }
                         else{
                             return true
@@ -4571,9 +4571,9 @@ extension PEAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDataSo
                     {
                         if regionID == 3 {
                             
-                            if strings.contains("Please enter comment for (Thaw bath temp) in Aseptic Technique & Vaccination Application")
+                            if strings.contains(Constants.pleaseentercommentforinAsepticTechniqueVaccinationApplication)
                             {
-                                strings = strings.filter { $0 != "Please enter comment for (Thaw bath temp) in Aseptic Technique & Vaccination Application" }
+                                strings = strings.filter { $0 != Constants.pleaseentercommentforinAsepticTechniqueVaccinationApplication }
                             }
                         }
                     }
@@ -4581,12 +4581,12 @@ extension PEAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDataSo
                 else if assessment?.assStatus == 1 && assessment?.assID == 9 {
                     if assessment?.note?.count ?? 0 < 1 {
                         
-                        if strings.contains("Please enter comment for (Vaccine thawing time) in Aseptic Technique & Vaccine Application")
+                        if strings.contains(Constants.pleaseentercommentforinAsepticTechniqueVaccineApplication)
                         {
-                            strings = strings.filter { $0 != "Please enter comment for (Vaccine thawing time) in Aseptic Technique & Vaccine Application" }
+                            strings = strings.filter { $0 != Constants.pleaseentercommentforinAsepticTechniqueVaccineApplication }
                         }
                         if regionID == 3 {
-                            strings.append("Please enter comment for (Vaccine thawing time) in Aseptic Technique & Vaccine Application")
+                            strings.append(Constants.pleaseentercommentforinAsepticTechniqueVaccineApplication)
                         }else
                         {
                             return true
@@ -4595,9 +4595,9 @@ extension PEAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDataSo
                     else
                     {
                         if regionID == 3 {
-                            if strings.contains("Please enter comment for (Vaccine thawing time) in Aseptic Technique & Vaccine Application")
+                            if strings.contains(Constants.pleaseentercommentforinAsepticTechniqueVaccineApplication)
                             {
-                                strings = strings.filter { $0 != "Please enter comment for (Vaccine thawing time) in Aseptic Technique & Vaccine Application" }
+                                strings = strings.filter { $0 != Constants.pleaseentercommentforinAsepticTechniqueVaccineApplication }
                             }
                         }
                     }

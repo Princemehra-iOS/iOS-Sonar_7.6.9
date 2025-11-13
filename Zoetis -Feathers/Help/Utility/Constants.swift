@@ -290,6 +290,8 @@ struct Constants {
     static let pleaseEnterPPM = "Please enter PPM Value in Inovoject System Set Up/Shut Down and Operation."
     static let pleaseEnterVaccineMixObserverStr = "Please enter Vaccine Mixer Observer in  Vaccine Preparation & Sterility."
     static let peCommentImageStr = "PEcomment.png"
+    static let pleaseentercommentforinAsepticTechniqueVaccinationApplication = "Please enter comment for (Thaw bath temp) in Aseptic Technique & Vaccination Application"
+    static let pleaseentercommentforinAsepticTechniqueVaccineApplication = "Please enter comment for (Vaccine thawing time) in Aseptic Technique & Vaccine Application"
     static let peCommentSelectedStr = "PECommentSelected.png"
     static let incompleteDataStr = "Incomplete Data"
     static let oneGallonStr = "1 gallon"
