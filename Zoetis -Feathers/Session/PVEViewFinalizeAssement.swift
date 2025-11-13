@@ -725,14 +725,6 @@ extension PVEViewFinalizeAssement: UITableViewDelegate, UITableViewDataSource{
                 cell.refreshFreeSerologyBtnState()
                 cell.refreshRadioButton()
                 cell.serologyViewForFreeHousing.isHidden = true
-
-//                let housingStr = getDraftValueForKey(key: "housing") as! String
-//                if housingStr == "Floor" {
-//                    cell.serologyViewForFreeHousing.isHidden = false
-//                }else{
-//                    cell.serologyViewForFreeHousing.isHidden = true
-//                }
-                
                 cell.crewLeaderTxtField.text = getDraftValueForKey(key: "cat_crewLeaderName") as? String
                 cell.crewLeaderEmailTxtField.text = getDraftValueForKey(key: "cat_crewLeaderEmail") as? String
                 let countOfCatcher = getDraftValueForKey(key: "cat_NoOfCatchersDetailsArr") as? String
@@ -833,16 +825,7 @@ extension PVEViewFinalizeAssement: UITableViewDelegate, UITableViewDataSource{
                 }else{
                     cell.serologySelUnSelectImg.image =  UIImage(named: "checkIconPE")
                 }
-                
-                
-//                let housingStr = getDraftValueForKey(key: "housing") as! String
-//                if housingStr == "Floor" {
-//                    cell.serologyView.isHidden = true
-//                }else{
-//                    cell.serologyView.isHidden = false
-//                }
-                
-                
+ 
                 return cell
             }
             

@@ -101,7 +101,7 @@ class PVEViewSNASession: BaseViewController {
         for (_, val) in syncData.enumerated() {
             let dict = val as AnyObject
             let json = createSyncRequest(dict: dict)
-            let forImgArrJson = getImageDetails(dict: val as AnyObject)
+           
             let syncId = json["syncId"] as? String
             let currentAssessmentQuestJson = getQuestionsDetails(dict: val as AnyObject)
             
@@ -109,7 +109,6 @@ class PVEViewSNASession: BaseViewController {
             let jsonDict = ["AssessmentDataDetails" : tempArr,"AssessmentScoresDataDetails":currentAssessmentQuestJson]
             let createdAt = (dict).value(forKey: "createdAt") as? String
 
-            ///Need to merge score data and image data in the json dict
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: jsonDict, options: [])
                 if let status = EmailReportManager.shared.sendEmailReport(dataToAttach: jsonData,from: self, assessmentId:syncId,date: createdAt, isPE: false), !status.0 {
@@ -303,8 +302,7 @@ class PVEViewSNASession: BaseViewController {
                     Vaccine_Other = ""
                     Vaccine_Id = val["name_id"] as! Int
                 }
-                
-                let noteeeee = val["note"] ?? ""
+       
                 let serotype = val["serotype"] as? [String] ?? [""]
                 let serotype_id = val["serotype_id"] as? [String] ?? [""]
                 let antigenOther = val["otherAntigen"] ?? ""

@@ -31,7 +31,7 @@ class AlertPopupViewController: UIViewController {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [
             UIColor.white.cgColor,
-            UIColor(red: 190/255, green: 235/255, blue: 255/255, alpha: 1.0).cgColor // very light blue
+            UIColor(red: 190/255, green: 235/255, blue: 1, alpha: 1.0).cgColor
         ]
         
         gradientLayer.locations = [0.5, 0.9]
