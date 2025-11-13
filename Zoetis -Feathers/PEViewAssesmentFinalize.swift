@@ -352,7 +352,7 @@ class PEViewAssesmentFinalize: BaseViewController , DatePickerPopupViewControlle
                 }
                 
                 let catObjectPE = PENewAssessment()
-                catObjectPE.catName = "Extended Microbial" // "Sanitation and Embrex Evaluation"
+                catObjectPE.catName = Constants.extendedMicrobialStr // "Sanitation and Embrex Evaluation"
                 catObjectPE.sequenceNo = 12
                 catObjectPE.sequenceNoo = 12
                 catArrayForCollectionIs.append(catObjectPE)
@@ -763,7 +763,7 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if checkForTraning(){
-            if indexPath.section == 0 && selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName == "Extended Microbial"{
+            if indexPath.section == 0 && selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName == Constants.extendedMicrobialStr{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "PlateInfoCell", for: indexPath) as! PlateInfoCell
                 cell.currentIndex = indexPath.row
                 cell.plateTypeBtn.isUserInteractionEnabled = false
@@ -2180,8 +2180,8 @@ extension PEViewAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDa
                         refrigtorProbeArray = CoreDataHandlerPE().getOfflineREfriData(id: Int(refri.serverAssessmentId ?? "0") ?? 0)
                     }
                 }
-                if(selectedCategory?.catName == "Extended Microbial"){
-                    categoarylabelText = "Extended Microbial"
+                if(selectedCategory?.catName == Constants.extendedMicrobialStr){
+                    categoarylabelText = Constants.extendedMicrobialStr
                     
                     selectedCategory?.sequenceNoo = 12
                     extendedMicroSwitch.isUserInteractionEnabled = true
@@ -3524,7 +3524,7 @@ extension PEViewAssesmentFinalize{
     // MARK: Sync Functionality
 	/// 19- June-2025: As per the communication with Binu and Imran - Data sync to web will be not saved on server if asessment is already approved, We are getting API success 200 to escape from error popup.
     func syncBtnTapped(showHud: Bool){
-        if self.submitExtend == true && self.categoarylabelText != "Extended Microbial" {
+        if self.submitExtend == true && self.categoarylabelText != Constants.extendedMicrobialStr {
             let alert = UIAlertController(title: "Alert!", message: "Please finish Extended Microbial first or turn off the switch in order to sync the other data",
                                           preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default, handler: nil))

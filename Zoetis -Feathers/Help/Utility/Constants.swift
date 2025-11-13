@@ -206,6 +206,7 @@ struct Constants {
     
     static let failedPosting = "Failed to get Posting Assessment list"
     static let yyyyMMddHHmmss = "yyyy-MM-dd'T'HH:mm:ss"
+    static let addEmployees = "Add Employees"
     static let noIdFoundStr = "No id found"
     static let countryNamStr = "CountryName"
     static let countryNamStrSmall = "countryName"

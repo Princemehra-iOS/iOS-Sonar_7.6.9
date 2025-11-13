@@ -136,7 +136,7 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
             let dateFormatterObj =  DateFormatter()
             
             dateFormatterObj.locale = Calendar.current.locale
-            dateFormatterObj.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            dateFormatterObj.dateFormat = Constants.yyyyMMddHHmmss
             
             self.curentCertification?.scheduledDate = dateFormatterObj.string(from: Date())
             if Constants.modeType == "new_operator"{
@@ -357,7 +357,7 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
                 if employeesAddedArr.count > 0{
                     addEmployeesLbl.text = "Add Employees (\(employeesAddedArr.count))"
                 }else{
-                    addEmployeesLbl.text = "Add Employees"
+                    addEmployeesLbl.text = Constants.addEmployees
                 }
                 
             }
@@ -424,7 +424,7 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
             let dateFormatterObj =  DateFormatter()
             dateFormatterObj.locale = Calendar.current.locale
             
-            dateFormatterObj.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            dateFormatterObj.dateFormat = Constants.yyyyMMddHHmmss
             self.curentCertification?.scheduledDate = self.dateLbl.text ?? ""
             dateLbl.text = CodeHelper.sharedInstance.convertDateFormater( dateFormatterObj.string(from: Date()))
             self.curentCertification?.scheduledDate = dateFormatterObj.string(from: Date())
@@ -900,20 +900,20 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
                 {
                     if curentCertification?.selectedFsmId == nil || curentCertification?.selectedFsmId == "" {
                         self.showMandatoryFieldsColor()
-                        displayAlertMessage(userMessage: "Please enter details in all the fields marked as mandatory.") // New addition
+                        displayAlertMessage(userMessage: Constants.pleaseEnterMandatoryFields) // New addition
                         return
                     }
                     
                     if curentCertification?.siteId == nil || curentCertification?.siteId == "" {
                         self.showMandatoryFieldsColor()
-                        displayAlertMessage(userMessage: "Please enter details in all the fields marked as mandatory.") // New addition
+                        displayAlertMessage(userMessage: Constants.pleaseEnterMandatoryFields) // New addition
                         return
                     }
                     
                     if curentCertification?.fsmName == nil ||  curentCertification?.fsmName == ""
                     {
                         self.showMandatoryFieldsColor()
-                        displayAlertMessage(userMessage: "Please enter details in all the fields marked as mandatory.") // New addition
+                        displayAlertMessage(userMessage: Constants.pleaseEnterMandatoryFields) // New addition
                         return
                     }
                 }
@@ -946,7 +946,7 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
                                 self.getVaccinationStateList(countryId: String(countryID ?? 0),stateId: stateId)
                             }
                         }
-                        self.showGlobalProgressHUDWithTitle(self.view, title: "Loading...")
+                        self.showGlobalProgressHUDWithTitle(self.view, title: Constants.loading)
                         delay(2.0) {
                             self.dismissGlobalHUD(self.view)
                             self.navigatetToQuestionnaireScreen(trainingId: self.trainingId, fssId: self.fssId)
@@ -1030,7 +1030,7 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
                             if self.curentCertification?.selectedFsmId == self.curentCertification?.fsrId {
                                 self.curentCertification?.selectedFsmId = nil
                             }
-                            self.showGlobalProgressHUDWithTitle(self.view, title: "Loading...")
+                            self.showGlobalProgressHUDWithTitle(self.view, title: Constants.loading)
                             delay(2.0) {
                                 self.dismissGlobalHUD(self.view)
                                 if self.curentCertification?.certificationStatus == VaccinationCertificationStatus.draft.rawValue {
@@ -1054,11 +1054,11 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
                     DispatchQueue.main.async{
                         self.showMandatoryFieldsColor()
                     }
-                   // displayAlertMessage(userMessage: "Please enter details in all the fields marked as mandatory.")
+                   // displayAlertMessage(userMessage: Constants.pleaseEnterMandatoryFields)
                 }
             }else{
                 self.employeesTblVw.reloadData()
-                displayAlertMessage(userMessage: "Please enter details in all the fields marked as mandatory.")
+                displayAlertMessage(userMessage: Constants.pleaseEnterMandatoryFields)
             }
         }else{
             DispatchQueue.main.async{
@@ -1073,7 +1073,7 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
                (curentCertification?.fsmName?.removeWhitespace() == "") ||
                curentCertification?.selectedFsmId == nil {
                 
-                displayAlertMessage(userMessage: "Please enter details in all the fields marked as mandatory.")
+                displayAlertMessage(userMessage: Constants.pleaseEnterMandatoryFields)
             }
           
         }
@@ -1118,7 +1118,7 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
     }
     
     private func getVaccinationStateList(countryId: String,stateId:Int? = nil) {
-        _ = Helper.showGlobalProgressHUDWithTitle(self.view, title: "Loading...")
+        _ = Helper.showGlobalProgressHUDWithTitle(self.view, title: Constants.loading)
         DataService.sharedInstance.getVaccinationStateList(countryId: countryId, viewController: self,stateId: stateId, completion: { [weak self] (status, error) in
             DispatchQueue.main.async {
                 self?.dismissGlobalHUD(self?.view ?? UIView())
@@ -1179,7 +1179,7 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
         
         dateFormatterObj.timeZone = Calendar.current.timeZone
         dateFormatterObj.locale = Calendar.current.locale
-        dateFormatterObj.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatterObj.dateFormat = Constants.yyyyMMddHHmmss
         
         if (self.curentCertification == nil){
             self.curentCertification = VaccinationCertificationVM()
@@ -1388,7 +1388,7 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
                 if employeesAddedArr.count > 0{
                     addEmployeesLbl.text = "Add Employees (\(employeesAddedArr.count))"
                 }else{
-                    addEmployeesLbl.text = "Add Employees"
+                    addEmployeesLbl.text = Constants.addEmployees
                 }
             }
             
@@ -1418,7 +1418,7 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
                 if employeesAddedArr.count > 0{
                     addEmployeesLbl.text = "Add Employees (\(employeesAddedArr.count))"
                 }else{
-                    addEmployeesLbl.text = "Add Employees"
+                    addEmployeesLbl.text = Constants.addEmployees
                 }
             }
             employeesTblVw.reloadData()
@@ -1734,7 +1734,7 @@ extension AddEmployeesVC: UITableViewDataSource, UITableViewDelegate{
             if employeesAddedArr.count > 0{
                 lbl.text = "Add Employees (\(employeesAddedArr.count))"
             }else{
-                lbl.text = "Add Employees"
+                lbl.text = Constants.addEmployees
             }
         }
         lbl.textColor = UIColor.white
@@ -1828,7 +1828,7 @@ extension AddEmployeesVC: DatePickerPopupViewControllerProtocol{
     func doneButtonTappedWithDate(string: String, objDate: Date) {
         let dateFormatter = DateFormatter()
         
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter.dateFormat = Constants.yyyyMMddHHmmss
         let date = dateFormatter.string(from: objDate)
         if employeesAddedArr.count > tableviewIndexPath.row{
             var emp = employeesAddedArr[tableviewIndexPath.row]

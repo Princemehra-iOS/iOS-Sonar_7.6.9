@@ -334,7 +334,7 @@ class PEFinishPopupViewController: BaseViewController {
                     "sig_Name": self.hatheryManagerName ?? "",
                     "sig_Name2": self.hatheryManagerName2 ?? "",
                     "sig_Phone": self.txtPhone.text ?? "",
-                    "sig_Date": Date().stringFormat(format: "MMM d, yyyy")
+                    "sig_Date": Date().stringFormat(format: Constants.MMMdyyyy)
                 ]
 
                 print( param)
@@ -360,10 +360,10 @@ class PEFinishPopupViewController: BaseViewController {
                     self.showAlert(title: "Alert", message: Constants.pleasefillthemandatoryfields, owner: self)
                     return
                 }
-                var param : [String:String] = ["sig":String(sig1),"sig_EmpID":self.txtEmployeeID.text ?? "","sig_EmpID2":self.txtEmployeeID2.text ?? "","sig_Name":self.hatheryManagerName ?? "","sig_Name2":self.hatheryManagerName2 ?? "","sig_Phone":self.txtPhone.text ?? "","sig_Date":Date().stringFormat(format: "MMM d, yyyy") ]
+                var param : [String:String] = ["sig":String(sig1),"sig_EmpID":self.txtEmployeeID.text ?? "","sig_EmpID2":self.txtEmployeeID2.text ?? "","sig_Name":self.hatheryManagerName ?? "","sig_Name2":self.hatheryManagerName2 ?? "","sig_Phone":self.txtPhone.text ?? "","sig_Date":Date().stringFormat(format: Constants.MMMdyyyy) ]
                 let  sig2 = Int(truncating: self.rejectedAssessments[0].sig2 ?? 0)
                 if sig2 > 0 {
-                    param  = ["sig":String(sig1),"sig2":String(sig2),"sig_EmpID":self.txtEmployeeID.text ?? "","sig_EmpID2":self.txtEmployeeID2.text ?? "","sig_Name":self.hatheryManagerName ?? "","sig_Name2":self.hatheryManagerName2 ?? "","sig_Phone":self.txtPhone.text ??                "","sig_Date":Date().stringFormat(format: "MMM d, yyyy") ]
+                    param  = ["sig":String(sig1),"sig2":String(sig2),"sig_EmpID":self.txtEmployeeID.text ?? "","sig_EmpID2":self.txtEmployeeID2.text ?? "","sig_Name":self.hatheryManagerName ?? "","sig_Name2":self.hatheryManagerName2 ?? "","sig_Phone":self.txtPhone.text ??                "","sig_Date":Date().stringFormat(format: Constants.MMMdyyyy) ]
                 }
                 print(param)
                 
@@ -470,40 +470,45 @@ class PEFinishPopupViewController: BaseViewController {
     // MARK: - IB ACTIONS
 
     @IBAction func doneClicked(_ sender: Any) {
-        
-        
         if golbalEvaluationID != 2 {
-          
-            
-            var i = 0
-            for item in  certificateData {
-                if certificateData[i].signatureImg != "" {
-                    let signatureImg =  convertLargeBase64ToCompressedString(Base64 : certificateData[i].signatureImg)
-                    certificateData[i].signatureImg = signatureImg
-                }
-                if self.certificateData[i].fsrSign != "" {
-                    let fsrSign = convertLargeBase64ToCompressedString(Base64 : certificateData[i].fsrSign)
-                    certificateData[i].fsrSign = fsrSign
-                }
-                CoreDataHandlerPE().updateVMixerNewInDB(peCertificateData:  certificateData[i], id:  certificateData[i].id ?? 0)
-                i = i + 1
-            }
-  
-            
+            processCertificateData()
         }
         
-        if !isFromSchedule{
-            if rejectedAssessments.count > 0{
-                if rejectedAssessments[0].statusType == 2 {
-                    submitRejectedAssessmentSignature()
-                }else{
-                    self.validate()
-                }
-            }else{
-                self.validate()
+        handleAssessmentFlow()
+    }
+
+    // MARK: - Helper Methods
+
+    private func processCertificateData() {
+        for i in 0..<certificateData.count {
+            var item = certificateData[i]
+            
+            if !item.signatureImg.isEmpty {
+                item.signatureImg = convertLargeBase64ToCompressedString(Base64: item.signatureImg)
             }
-        }else{
-            self.validate()
+            
+            if !item.fsrSign.isEmpty {
+                item.fsrSign = convertLargeBase64ToCompressedString(Base64: item.fsrSign)
+            }
+            
+            CoreDataHandlerPE().updateVMixerNewInDB(peCertificateData: item, id: item.id ?? 0)
+        }
+    }
+
+    private func handleAssessmentFlow() {
+        guard !isFromSchedule else {
+            validate()
+            return
+        }
+        
+        if let firstRejected = rejectedAssessments.first {
+            if firstRejected.statusType == 2 {
+                submitRejectedAssessmentSignature()
+            } else {
+                validate()
+            }
+        } else {
+            validate()
         }
     }
     
@@ -999,7 +1004,7 @@ extension PEFinishPopupViewController: YPSignatureDelegate {
                     CoreDataHandlerPE().saveImageInPEFinishModule(imageId: imageCount+1, imageData: imageData!)
                 }
                 imageCountID = imageCount+1
-                var param : [String:String] = ["sig":String(imageCountID),"sig_EmpID":self.txtEmployeeID.text ?? "","sig_EmpID2":self.txtEmployeeID2.text ?? "","sig_Name":self.hatheryManagerName ?? "","sig_Name2":self.hatheryManagerName2 ?? "","sig_Phone":self.txtPhone.text ?? "","sig_Date":Date().stringFormat(format: "MMM d, yyyy") ]
+                var param : [String:String] = ["sig":String(imageCountID),"sig_EmpID":self.txtEmployeeID.text ?? "","sig_EmpID2":self.txtEmployeeID2.text ?? "","sig_Name":self.hatheryManagerName ?? "","sig_Name2":self.hatheryManagerName2 ?? "","sig_Phone":self.txtPhone.text ?? "","sig_Date":Date().stringFormat(format: Constants.MMMdyyyy) ]
                 let signatureImage2 = self.signatureView2.getSignature(scale: 10)
                 
                 let imageData2 = signatureImage2?.jpegData(compressionQuality: 0.1)
@@ -1008,7 +1013,7 @@ extension PEFinishPopupViewController: YPSignatureDelegate {
                     let imageCount2 = self.getImageCountInPEModule()
                     CoreDataHandlerPE().saveImageInPEFinishModule(imageId: imageCount2+1, imageData: imageData2!)
                     imageCountID2 = imageCount2+1
-                    param  = ["sig":String(imageCountID),"sig2":String(imageCountID2),"sig_EmpID":self.txtEmployeeID.text ?? "","sig_EmpID2":self.txtEmployeeID2.text ?? "","sig_Name":self.hatheryManagerName ?? "","sig_Name2":self.hatheryManagerName2 ?? "","sig_Phone":self.txtPhone.text ?? "","sig_Date":Date().stringFormat(format: "MMM d, yyyy") ]
+                    param  = ["sig":String(imageCountID),"sig2":String(imageCountID2),"sig_EmpID":self.txtEmployeeID.text ?? "","sig_EmpID2":self.txtEmployeeID2.text ?? "","sig_Name":self.hatheryManagerName ?? "","sig_Name2":self.hatheryManagerName2 ?? "","sig_Phone":self.txtPhone.text ?? "","sig_Date":Date().stringFormat(format: Constants.MMMdyyyy) ]
                 }
                 print(param)
 
