@@ -1273,7 +1273,7 @@ extension PEViewStartNewAssesmentINT{
         olDateFormatter.dateFormat = "MMM d, yyyy"
         let oldDate = olDateFormatter.date(from: inputDate)
         let convertDateFormatter = DateFormatter()
-        convertDateFormatter.dateFormat = "yyyy-MM-dd"
+        convertDateFormatter.dateFormat = Constants.yyyyMMddStr
         if oldDate != nil{
             return convertDateFormatter.string(from: oldDate!)
         }
@@ -1503,7 +1503,7 @@ extension PEViewStartNewAssesmentINT{
         if dateSig != ""{
         }else{
             let convertDateFormatter = DateFormatter()
-            convertDateFormatter.dateFormat = "yyyy-MM-dd"
+            convertDateFormatter.dateFormat = Constants.yyyyMMddStr
             convertDateFormatter.timeZone = Calendar.current.timeZone
             convertDateFormatter.locale = Calendar.current.locale
         }
@@ -1522,7 +1522,7 @@ extension PEViewStartNewAssesmentINT{
                 
                 // Create another DateFormatter for the desired output format
                 let outputFormatter = DateFormatter()
-                outputFormatter.dateFormat = "yyyy-MM-dd"
+                outputFormatter.dateFormat = Constants.yyyyMMddStr
                 
                 // Convert the Date object back to a string
                 let formattedDateString = outputFormatter.string(from: date)
@@ -1534,12 +1534,12 @@ extension PEViewStartNewAssesmentINT{
         else
         {
             let inputFormatter = DateFormatter()
-            inputFormatter.dateFormat = "dd/MM/yyyy"
+            inputFormatter.dateFormat = Constants.ddMMyyyStr
 
             if let date = inputFormatter.date(from: evaluationDate ?? "") {
             
                 let outputFormatter = DateFormatter()
-                outputFormatter.dateFormat = "yyyy-MM-dd"
+                outputFormatter.dateFormat = Constants.yyyyMMddStr
                 
                 let formattedDateString = outputFormatter.string(from: date)
                 evalDateStr = formattedDateString
@@ -1978,9 +1978,9 @@ extension PEViewStartNewAssesmentINT{
         var resultString = String()
         if(regionID != 3){
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateFormatter.dateFormat = Constants.ddMMyyyStr
             let date = dateFormatter.date(from: peCertificateData.certificateDate ?? "")
-            dateFormatter.dateFormat = "yyyy-MM-dd"
+            dateFormatter.dateFormat = Constants.yyyyMMddStr
             if date != nil {
                 resultString = dateFormatter.string(from: date ?? Date())
                 
