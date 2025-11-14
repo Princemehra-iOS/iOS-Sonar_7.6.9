@@ -176,7 +176,7 @@ class PEViewAssesmentFinalize: BaseViewController , DatePickerPopupViewControlle
             if !carColIdArray.contains(cat.sequenceNo ?? 0){
                 carColIdArray.append(cat.sequenceNo ?? 0)
                 if(cat.catName == "Refrigerator"){
-                    cat.catName = "Refrigerator\n/Freezer\n/Liquid Nitrogen" // "Sanitation and Embrex Evaluation"
+                    cat.catName = Constants.refrigeratorNitrogenStr // "Sanitation and Embrex Evaluation"
                     
                 }
                 catArrayForCollectionIs.append(cat)
@@ -631,20 +631,20 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 
             }
           
-            if selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName != "Refrigerator\n/Freezer\n/Liquid Nitrogen"{
+            if selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName != Constants.refrigeratorNitrogenStr{
                 return 1
             }
-            if selectedCategory?.sequenceNoo == 11 && selectedCategory?.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen"{
+            if selectedCategory?.sequenceNoo == 11 && selectedCategory?.catName == Constants.refrigeratorNitrogenStr{
                 return 3
             }
             else {
                 return 1
             }
         }
-        if selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName != "Refrigerator\n/Freezer\n/Liquid Nitrogen"{
+        if selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName != Constants.refrigeratorNitrogenStr{
             return 1
         }
-        if selectedCategory?.sequenceNoo == 11 && selectedCategory?.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen"{
+        if selectedCategory?.sequenceNoo == 11 && selectedCategory?.catName == Constants.refrigeratorNitrogenStr{
             return 3
         }
         
@@ -654,11 +654,11 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if checkForTraning(){
-            if section == 0 && selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName != "Refrigerator\n/Freezer\n/Liquid Nitrogen" {
+            if section == 0 && selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName != Constants.refrigeratorNitrogenStr {
                 return sanitationQuesArr.count
             }
             
-            if (selectedCategory?.sequenceNoo == 11 && selectedCategory?.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen"){
+            if (selectedCategory?.sequenceNoo == 11 && selectedCategory?.catName == Constants.refrigeratorNitrogenStr){
                 return 2
             }
             if section == 1 {
@@ -701,7 +701,7 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if checkForTraning(){
-            if(selectedCategory?.catName != "Refrigerator\n/Freezer\n/Liquid Nitrogen"){
+            if(selectedCategory?.catName != Constants.refrigeratorNitrogenStr){
                 if indexPath.section == 1 {
                     return 130
                 }
@@ -710,7 +710,7 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 }
             }
         }
-        if selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName != "Refrigerator\n/Freezer\n/Liquid Nitrogen"{
+        if selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName != Constants.refrigeratorNitrogenStr{
           
             return 70
         }
@@ -729,11 +729,11 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             }
         }
         
-        if selectedCategory?.sequenceNoo == 11   && selectedCategory?.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen"{
+        if selectedCategory?.sequenceNoo == 11   && selectedCategory?.catName == Constants.refrigeratorNitrogenStr{
             return 80
             
         }
-        if(selectedCategory?.catName != "Refrigerator\n/Freezer\n/Liquid Nitrogen"){
+        if(selectedCategory?.catName != Constants.refrigeratorNitrogenStr){
             if indexPath.section > 0 {
                 return 130
             }
@@ -860,7 +860,7 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 return cell
             }
             
-            if(selectedCategory?.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen"){
+            if(selectedCategory?.catName == Constants.refrigeratorNitrogenStr){
                 
                 return  setUpRerigatorQuesCell(tableView, cellForRowAt: indexPath)
             }
@@ -1181,7 +1181,7 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         }
                     }
                     
-                    if(selectedCategory?.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen"){
+                    if(selectedCategory?.catName == Constants.refrigeratorNitrogenStr){
                         catArrayForTableIs = CoreDataHandlerPE().fetchViewAssessmentCustomerWithCatID(selectedCategory?.sequenceNo as NSNumber? ?? 0,dataToSubmitNumber: peNewAssessment.dataToSubmitNumber ?? 0)
                     }
                     else{
@@ -1568,7 +1568,7 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             return headerView
             
         }
-        if selectedCategory?.sequenceNoo == 11 && section == 2 && selectedCategory?.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen"{
+        if selectedCategory?.sequenceNoo == 11 && section == 2 && selectedCategory?.catName == Constants.refrigeratorNitrogenStr{
             let array =   CoreDataHandlerPE().fetchViewAssessmentCustomerWithCatID(selectedCategory?.sequenceNo as NSNumber? ?? 0,dataToSubmitNumber: peNewAssessment.dataToSubmitNumber ?? 0)
             let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SetFrezzerPointCell" ) as! SetFrezzerPointCell
             headerView.isUserInteractionEnabled = false
@@ -1731,7 +1731,7 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if(selectedCategory?.sequenceNoo == 11 && selectedCategory?.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen"){
+        if(selectedCategory?.sequenceNoo == 11 && selectedCategory?.catName == Constants.refrigeratorNitrogenStr){
             let refri = catArrayForTableIs[0] as! PE_AssessmentInProgress
             
             refrigtorProbeArray = CoreDataHandlerPE().getOfflineREfriData(id: Int(refri.serverAssessmentId ?? "0") ?? 0)
@@ -1928,7 +1928,7 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
         scrollToBottom(section:section)
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if(selectedCategory?.sequenceNoo == 11 && selectedCategory?.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen"){
+        if(selectedCategory?.sequenceNoo == 11 && selectedCategory?.catName == Constants.refrigeratorNitrogenStr){
             if(section == 2) {
                 return 100
             }
@@ -1955,7 +1955,8 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
         return 0.0
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if(selectedCategory?.sequenceNoo == 11 && selectedCategory?.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen"){
+        if(selectedCategory?.sequenceNoo == 11 && selectedCategory?.catName == Constants.refrigeratorNitrogenStr
+        ){
             if ((  section == 0) || ( section == 1)) {
                 return 350
             }
@@ -2171,7 +2172,7 @@ extension PEViewAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDa
                 let totalMark = selectedCategory?.catMaxMark ?? 0
                 totalScoreLabel.text = String(totalMark)
                 resultScoreLabel.text = String(0)
-                if(selectedCategory?.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen"){
+                if(selectedCategory?.catName == Constants.refrigeratorNitrogenStr){
                     lblextenderMicro.isHidden = true
                     extendedMicroSwitch.isHidden = true
                     extendedMicroSwitch.isUserInteractionEnabled = false
@@ -2236,7 +2237,7 @@ extension PEViewAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDa
               
                 if regionID != 3
                 {
-                    if(selectedCategory?.catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen"){
+                    if(selectedCategory?.catName == Constants.refrigeratorNitrogenStr){
                         showHideNA(sequenceNoo: selectedCategory?.sequenceNoo ?? 0,catName: selectedCategory?.catName ?? "")
                     }
                     else{
@@ -2252,7 +2253,7 @@ extension PEViewAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDa
     // MARK:  Show Hide is NA
     func showHideNA(sequenceNoo:Int,catName:String){
         
-        if( sequenceNoo == 11 && catName == "Refrigerator\n/Freezer\n/Liquid Nitrogen" ){
+        if( sequenceNoo == 11 && catName == Constants.refrigeratorNitrogenStr ){
             lblNA.isHidden = true
             btnNA.isHidden = true
             scoreParentView.isHidden = true
