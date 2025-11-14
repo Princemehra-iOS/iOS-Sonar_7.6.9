@@ -222,9 +222,7 @@ class PVEDraftSNAFinalizeAssement: BaseViewController {
             NSLog("OK Pressed")
             self.saveDataInDraft()
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-            _ in
-        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
@@ -306,9 +304,7 @@ class PVEDraftSNAFinalizeAssement: BaseViewController {
             NSLog("OK Pressed")
             self.saveFinalizedData()
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-            _ in
-        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
@@ -590,9 +586,7 @@ class PVEDraftSNAFinalizeAssement: BaseViewController {
             _ in
             self.singleDataSync()
         }
-        let cancelAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel) {
-            _ in
-        }
+        let cancelAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel)
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
@@ -745,8 +739,7 @@ extension PVEDraftSNAFinalizeAssement:  UIImagePickerControllerDelegate,UINaviga
         /******************************************************************************************************/
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             
-            dismiss(animated: true, completion: {
-            })
+            dismiss(animated: true, completion: nil)
         }
         
         

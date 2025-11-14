@@ -4520,9 +4520,7 @@ extension PEAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDataSo
         }
     }
     
-    func updateCategoriesInShared(){
-        
-    }
+    
     
     // MARK: - Update Assessment Binding notes for every questions */
     

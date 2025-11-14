@@ -65,7 +65,6 @@ class MicrobialViewController: BaseViewController {
             UserDefaults.standard.set(true, forKey: "isFreshLaunched")
             UserDefaults.standard.synchronize()
         }
-        self.tapGestureForDraftImageView()
         self.loggedInUser.text = FirstName
         self.sessionBtn.isHidden = true
         self.backViewBtn.isHidden = true
@@ -136,9 +135,7 @@ class MicrobialViewController: BaseViewController {
             
         }
         
-        let cancelAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel) {
-            _ in
-        }
+        let cancelAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel)
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
@@ -175,14 +172,7 @@ class MicrobialViewController: BaseViewController {
          }
      }
  
-    private func tapGestureForDraftImageView(){
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.draftAction(_:)))
-        draftImageView.addGestureRecognizer(tap)
-    }
-    
-    @objc func draftAction(_ sender: UITapGestureRecognizer? = nil){
-
-    }
+   
     
     @IBAction func viewRequisitionBtnClicked(_ sender: UIButton) {
         if let viewController = UIStoryboard(name: "ViewRequisition", bundle: nil).instantiateViewController(withIdentifier: "ViewRequisitionViewController") as? ViewRequisitionViewController {
@@ -295,9 +285,7 @@ class MicrobialViewController: BaseViewController {
                     _ in
                     self.suncDataBackToServer(reqType: .bacterial, sessionStatus: .submitted)
                 }
-                let cancelAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel) {
-                    _ in
-                }
+                let cancelAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel)
                 
                 alertController.addAction(okAction)
                 alertController.addAction(cancelAction)

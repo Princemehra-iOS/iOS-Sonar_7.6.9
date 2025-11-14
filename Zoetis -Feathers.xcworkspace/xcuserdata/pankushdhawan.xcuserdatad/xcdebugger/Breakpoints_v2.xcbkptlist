@@ -708,8 +708,8 @@
             filePath = "Zoetis -Feathers/PEViewAssesmentFinalize.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "4055"
-            endingLineNumber = "4055"
+            startingLineNumber = "4052"
+            endingLineNumber = "4052"
             landmarkName = "createSyncRequestForComment(dictArray:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -788,8 +788,8 @@
             filePath = "Zoetis -Feathers/Draft/PVEDraftSNAFinalizeAssement.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
             landmarkName = "saveFinalizedData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -964,8 +964,8 @@
             filePath = "Zoetis -Feathers/PEViewAssesmentFinalize.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "497"
-            endingLineNumber = "497"
+            startingLineNumber = "496"
+            endingLineNumber = "496"
             landmarkName = "finalizeButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -996,8 +996,8 @@
             filePath = "Zoetis -Feathers/PEViewAssesmentFinalize.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "3712"
-            endingLineNumber = "3712"
+            startingLineNumber = "3709"
+            endingLineNumber = "3709"
             landmarkName = "syncBtnTapped(showHud:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1012,8 +1012,8 @@
             filePath = "Zoetis -Feathers/PEViewAssesmentFinalize.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "3684"
-            endingLineNumber = "3684"
+            startingLineNumber = "3681"
+            endingLineNumber = "3681"
             landmarkName = "syncBtnTapped(showHud:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1042,8 +1042,8 @@
             filePath = "Zoetis -Feathers/PEViewAssesmentFinalize.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "3888"
-            endingLineNumber = "3888"
+            startingLineNumber = "3885"
+            endingLineNumber = "3885"
             landmarkName = "callExtendedMicro(param:)"
             landmarkType = "7">
             <Locations>
@@ -1088,8 +1088,8 @@
             filePath = "Zoetis -Feathers/PEViewAssesmentFinalize.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "3891"
-            endingLineNumber = "3891"
+            startingLineNumber = "3888"
+            endingLineNumber = "3888"
             landmarkName = "callExtendedMicro(param:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1104,8 +1104,8 @@
             filePath = "Zoetis -Feathers/PEViewAssesmentFinalize.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "3692"
-            endingLineNumber = "3692"
+            startingLineNumber = "3689"
+            endingLineNumber = "3689"
             landmarkName = "syncBtnTapped(showHud:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1120,8 +1120,8 @@
             filePath = "Zoetis -Feathers/PEViewAssesmentFinalize.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "4115"
-            endingLineNumber = "4115"
+            startingLineNumber = "4112"
+            endingLineNumber = "4112"
             landmarkName = "handleSyncResponse(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1136,8 +1136,8 @@
             filePath = "Zoetis -Feathers/PEViewAssesmentFinalize.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "4122"
-            endingLineNumber = "4122"
+            startingLineNumber = "4119"
+            endingLineNumber = "4119"
             landmarkName = "handleSyncResponse(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1152,8 +1152,8 @@
             filePath = "Zoetis -Feathers/PEViewAssesmentFinalize.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "4052"
-            endingLineNumber = "4052"
+            startingLineNumber = "4049"
+            endingLineNumber = "4049"
             landmarkName = "createSyncRequestForComment(dictArray:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1168,8 +1168,8 @@
             filePath = "Zoetis -Feathers/PEViewAssesmentFinalize.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "3695"
-            endingLineNumber = "3695"
+            startingLineNumber = "3692"
+            endingLineNumber = "3692"
             landmarkName = "syncBtnTapped(showHud:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1198,8 +1198,8 @@
             filePath = "Zoetis -Feathers/PEViewAssesmentFinalize.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "4065"
-            endingLineNumber = "4065"
+            startingLineNumber = "4062"
+            endingLineNumber = "4062"
             landmarkName = "createSyncRequestForComment(dictArray:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1214,8 +1214,8 @@
             filePath = "Zoetis -Feathers/PEViewAssesmentFinalize.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "4059"
-            endingLineNumber = "4059"
+            startingLineNumber = "4056"
+            endingLineNumber = "4056"
             landmarkName = "createSyncRequestForComment(dictArray:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1390,8 +1390,8 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "startLogoutProcess()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1406,8 +1406,8 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "startLogoutProcess()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1438,8 +1438,8 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "startLogoutProcess()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1532,8 +1532,8 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "startLogoutProcess()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1548,9 +1548,9 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
-            landmarkName = "completedRequisitionSyncBtnAction(_:)"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
+            landmarkName = "navigateToFeatherPulpController(requisitionSavedSessionType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1580,9 +1580,9 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "594"
-            endingLineNumber = "594"
-            landmarkName = "syncData(data:reqType:sessionType:)"
+            startingLineNumber = "582"
+            endingLineNumber = "582"
+            landmarkName = "fetchGetAllSyncedDataForRequisition()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1596,9 +1596,9 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "515"
-            endingLineNumber = "515"
-            landmarkName = "suncDataBackToServer(reqType:sessionStatus:)"
+            startingLineNumber = "503"
+            endingLineNumber = "503"
+            landmarkName = "syncData(data:reqType:sessionType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1660,9 +1660,9 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "517"
-            endingLineNumber = "517"
-            landmarkName = "suncDataBackToServer(reqType:sessionStatus:)"
+            startingLineNumber = "505"
+            endingLineNumber = "505"
+            landmarkName = "syncData(data:reqType:sessionType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1676,9 +1676,9 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "573"
-            endingLineNumber = "573"
-            landmarkName = "createStructureJsonForFeatherPulp(data:reqType:sessionType:)"
+            startingLineNumber = "561"
+            endingLineNumber = "561"
+            landmarkName = "fetchGetAllSyncedDataForRequisition()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1692,9 +1692,9 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "601"
-            endingLineNumber = "601"
-            landmarkName = "syncData(data:reqType:sessionType:)"
+            startingLineNumber = "589"
+            endingLineNumber = "589"
+            landmarkName = "fetchGetAllSyncedDataForRequisition()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1708,10 +1708,10 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "616"
-            endingLineNumber = "616"
-            landmarkName = "syncData(data:reqType:sessionType:)"
-            landmarkType = "7">
+            startingLineNumber = "604"
+            endingLineNumber = "604"
+            landmarkName = "MicrobialViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1724,10 +1724,10 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "475"
-            endingLineNumber = "475"
-            landmarkName = "MicrobialViewController"
-            landmarkType = "21">
+            startingLineNumber = "463"
+            endingLineNumber = "463"
+            landmarkName = "createStructureJsonForEnvAndBacterial(data:reqType:sessionType:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1740,9 +1740,9 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "489"
-            endingLineNumber = "489"
-            landmarkName = "suncDataBackToServer(reqType:sessionStatus:)"
+            startingLineNumber = "477"
+            endingLineNumber = "477"
+            landmarkName = "createStructureJsonForEnvAndBacterial(data:reqType:sessionType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1964,9 +1964,9 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "697"
-            endingLineNumber = "697"
-            landmarkName = "headersAndPlatesForBacterialAndEnv(microbialSampleDetailsList:arrMicrobialDetailsList:objReq:)"
+            startingLineNumber = "685"
+            endingLineNumber = "685"
+            landmarkName = "fetchConductTypesList()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2236,9 +2236,9 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "520"
-            endingLineNumber = "520"
-            landmarkName = "suncDataBackToServer(reqType:sessionStatus:)"
+            startingLineNumber = "508"
+            endingLineNumber = "508"
+            landmarkName = "syncData(data:reqType:sessionType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2252,9 +2252,9 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "599"
-            endingLineNumber = "599"
-            landmarkName = "syncData(data:reqType:sessionType:)"
+            startingLineNumber = "587"
+            endingLineNumber = "587"
+            landmarkName = "fetchGetAllSyncedDataForRequisition()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2300,9 +2300,9 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "548"
-            endingLineNumber = "548"
-            landmarkName = "createStructureJsonForEnvAndBacterial(data:reqType:sessionType:)"
+            startingLineNumber = "536"
+            endingLineNumber = "536"
+            landmarkName = "syncData(data:reqType:sessionType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2332,10 +2332,10 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "709"
-            endingLineNumber = "709"
-            landmarkName = "headersAndPlatesForBacterialAndEnv(microbialSampleDetailsList:arrMicrobialDetailsList:objReq:)"
-            landmarkType = "7">
+            startingLineNumber = "697"
+            endingLineNumber = "697"
+            landmarkName = "MicrobialViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2364,9 +2364,9 @@
             filePath = "Zoetis -Feathers/MicrobialViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "707"
-            endingLineNumber = "707"
-            landmarkName = "headersAndPlatesForBacterialAndEnv(microbialSampleDetailsList:arrMicrobialDetailsList:objReq:)"
+            startingLineNumber = "695"
+            endingLineNumber = "695"
+            landmarkName = "handleConductTypeResponse(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2444,8 +2444,8 @@
             filePath = "Zoetis -Feathers/Draft/PVEDraftSNAFinalizeAssement.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1902"
-            endingLineNumber = "1902"
+            startingLineNumber = "1895"
+            endingLineNumber = "1895"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3606,8 +3606,8 @@
             filePath = "Zoetis -Feathers/Draft/PVEDraftSNAFinalizeAssement.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1570"
-            endingLineNumber = "1570"
+            startingLineNumber = "1563"
+            endingLineNumber = "1563"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -4500,8 +4500,8 @@
             filePath = "Zoetis -Feathers/PEViewAssesmentFinalize.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1568"
-            endingLineNumber = "1568"
+            startingLineNumber = "1565"
+            endingLineNumber = "1565"
             landmarkName = "tableView(_:viewForHeaderInSection:)"
             landmarkType = "7">
          </BreakpointContent>

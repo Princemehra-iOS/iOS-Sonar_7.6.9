@@ -304,7 +304,7 @@ class PEViewAssesmentFinalize: BaseViewController , DatePickerPopupViewControlle
                 
             }
             else {
-                synWebBtn.setTitle("Sync to Web", for: .normal)
+                synWebBtn.setTitle(Constants.syncToWebStr, for: .normal)
                 self.synWebBtn.isEnabled = true
                 self.synWebBtn.alpha = 1.0
             }
@@ -486,7 +486,6 @@ class PEViewAssesmentFinalize: BaseViewController , DatePickerPopupViewControlle
         let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) {
             _ in
-            NSLog("OK Pressed")
             self.saveFinalizedData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
@@ -502,7 +501,6 @@ class PEViewAssesmentFinalize: BaseViewController , DatePickerPopupViewControlle
         let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) {
             _ in
-            NSLog("OK Pressed")
             self.saveDraftData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
@@ -516,7 +514,6 @@ class PEViewAssesmentFinalize: BaseViewController , DatePickerPopupViewControlle
         let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) {
             _ in
-            NSLog("OK Pressed")
             self.saveDraftData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
@@ -2121,7 +2118,7 @@ extension PEViewAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDa
         self.synWebBtn.isEnabled = true
         self.synWebBtn.alpha = 1.0
         self.bckButton.isHidden = true
-        self.synWebBtn.setTitle("Sync to Web", for: .normal)
+        self.synWebBtn.setTitle(Constants.syncToWebStr, for: .normal)
         self.tableview.isUserInteractionEnabled = true
         let cellsArray = self.collectionView.visibleCells
         if cellsArray.count > 0{
@@ -2215,7 +2212,7 @@ extension PEViewAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDa
                         extendedMicroSwitch.isHidden = true
                         UserDefaults.standard.setValue(true, forKey: "extendedAvailable")
                         UserDefaults.standard.set(true, forKey:"ExtendedMicro")
-                        self.synWebBtn.setTitle("Sync to Web", for: .normal)
+                        self.synWebBtn.setTitle(Constants.syncToWebStr, for: .normal)
                     }
                 }
                 else{
