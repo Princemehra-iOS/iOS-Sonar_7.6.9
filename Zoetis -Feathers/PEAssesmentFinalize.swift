@@ -1615,7 +1615,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         
                         let c = Double(self.inovojectData[indexPath.row].bagSizeType ?? "0") ?? 0
                         if c == 0 {
-                            self.showtoast(message: "Incomplete Data")
+                            self.showtoast(message: Constants.incompleteDataStr)
                             CoreDataHandlerPE().updateDOAInDB(inovojectData:  self.inovojectData[indexPath.row])
                             
                             return
@@ -1692,7 +1692,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                     let  selectedValIS = selectedVal.replacingOccurrences(of: " ", with: "")
                     let c = Double(self.inovojectData[indexPath.row].bagSizeType ?? "0") ?? 0
                     if c == 0 {
-                        self.showtoast(message: "Incomplete Data")
+                        self.showtoast(message: Constants.incompleteDataStr)
                         CoreDataHandlerPE().updateDOAInDB(inovojectData:  self.inovojectData[indexPath.row])
                         
                         return
@@ -2018,10 +2018,10 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                     if self.peNewAssessment.dDDT?.lowercased().contains("unknown") ?? false {
                         self.ml = 0.0
                     }
-                    else if self.peNewAssessment.dDDT?.lowercased().contains("1 gallon") ?? false {
+                    else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.oneGallonStr) ?? false {
                         self.ml = 3785.41
                     }
-                    else if self.peNewAssessment.dDDT?.lowercased().contains("2 gallon") ?? false {
+                    else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.twoGallonStr) ?? false {
                         self.ml = 7570.82
                     } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.fiveGallonStr) ?? false {
                         self.ml = 18927.05
@@ -2088,9 +2088,9 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         if self.peNewAssessment.dDDT?.lowercased().contains("unknown") ?? false {
                             self.ml = 0.0
                         }
-                        else if self.peNewAssessment.dDDT?.lowercased().contains("1 gallon") ?? false {
+                        else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.oneGallonStr) ?? false {
                             self.ml = 3785.41
-                        }else if self.peNewAssessment.dDDT?.lowercased().contains("2 gallon") ?? false {
+                        }else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.twoGallonStr) ?? false {
                             self.ml = 7570.82
                         } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.fiveGallonStr) ?? false {
                             self.ml = 18927.05
@@ -3848,7 +3848,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
     func updateDosageInvojectData(section:Int)  {
         let c = Double(self.peNewAssessment.iCS ?? "0") ?? 0
         if c == 0 {
-            self.showtoast(message: "Incomplete Data")
+            self.showtoast(message: Constants.incompleteDataStr)
             return
         }
         for obj in self.inovojectData{
@@ -4209,9 +4209,9 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
         
         if self.peNewAssessment.dDDT?.lowercased().contains("unknown") ?? false {
             self.ml = 0.0
-        }  else if self.peNewAssessment.dDDT?.lowercased().contains("1 gallon") ?? false {
+        }  else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.oneGallonStr) ?? false {
             self.ml = 3785.41
-        }else if self.peNewAssessment.dDDT?.lowercased().contains("2 gallon") ?? false {
+        }else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.twoGallonStr) ?? false {
             self.ml = 7570.82
         } else if self.peNewAssessment.dDDT?.lowercased().contains(Constants.fiveGallonStr) ?? false {
             self.ml = 18927.05
