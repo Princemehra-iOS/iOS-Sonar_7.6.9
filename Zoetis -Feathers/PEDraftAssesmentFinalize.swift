@@ -1834,8 +1834,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             height = self.estimatedHeightOfLabel(text: assessment?.assDetail1 ?? "") + 50
             return height
         }
-        
-        
+  
         return 0
         
     }

@@ -25,7 +25,7 @@ class CoreDataHandlerPE: NSObject {
     let assServerId = " assID == %@ AND userID == %d AND serverAssessmentId == %@"
     let imageId = "imageId == %d"
     let dateFormatMMDDYY = "MM/dd/YYYY HH:mm:ss"
-    let dateFormatDDMMYY = "dd/MM/YYYY HH:mm:ss"
+    let dateFormatDDMMYY = Constants.ddMMYYYYHHmmss
     let catIdStr = " catID == %@ "
     let catIdServerAssId = " catID == %@ AND serverAssessmentId == %@"
     let catIdServerAssId2 = " catID == %d AND serverAssessmentId == %@"
@@ -5500,7 +5500,7 @@ extension CoreDataHandlerPE {
             }
             else
             {
-                formate = date.getFormattedDate(format: "dd/MM/YYYY HH:mm:ss")   // Set output formate
+                formate = date.getFormattedDate(format: Constants.ddMMYYYYHHmmss)   // Set output formate
                 let random = newAssessmentArray[0].serverAssessmentId
                 formate = "\(formate)\(random ?? "")"
             }
@@ -5840,7 +5840,7 @@ extension CoreDataHandlerPE {
             }
             else
             {
-                formate = date.getFormattedDate(format: "dd/MM/YYYY HH:mm:ss")
+                formate = date.getFormattedDate(format: Constants.ddMMYYYYHHmmss)
             }
         }
         
@@ -6048,11 +6048,11 @@ extension CoreDataHandlerPE {
         if formate == "" {
             
             if regionID == 3{
-                formate = date.getFormattedDate(format: "MM/dd/YYYY HH:mm:ss")
+                formate = date.getFormattedDate(format: Constants.ddMMYYYYHHmmss)
             }
             else
             {
-                formate = date.getFormattedDate(format: "dd/MM/YYYY HH:mm:ss")
+                formate = date.getFormattedDate(format: Constants.ddMMYYYYHHmmss)
             }
         }
         
@@ -6235,7 +6235,7 @@ extension CoreDataHandlerPE {
                 }
                 else
                 {
-                    formate = date.getFormattedDate(format: "dd/MM/YYYY HH:mm:ss")
+                    formate = date.getFormattedDate(format: Constants.ddMMYYYYHHmmss)
                 }
             }
             
@@ -6396,7 +6396,7 @@ extension CoreDataHandlerPE {
                 }
                 else
                 {
-                    formate = date.getFormattedDate(format: "dd/MM/YYYY HH:mm:ss")
+                    formate = date.getFormattedDate(format: Constants.ddMMYYYYHHmmss)
                 }
             }
             
@@ -6560,7 +6560,7 @@ extension CoreDataHandlerPE {
                 }
                 else
                 {
-                    formate = date.getFormattedDate(format: "dd/MM/YYYY HH:mm:ss")
+                    formate = date.getFormattedDate(format: Constants.ddMMYYYYHHmmss)
                 }
             }
             
@@ -6704,11 +6704,11 @@ extension CoreDataHandlerPE {
             if formate == "" {
                 
                 if regionID == 3{
-                    formate = date.getFormattedDate(format: "MM/dd/YYYY HH:mm:ss")
+                    formate = date.getFormattedDate(format: Constants.ddMMYYYYHHmmss)
                 }
                 else
                 {
-                    formate = date.getFormattedDate(format: "dd/MM/YYYY HH:mm:ss")
+                    formate = date.getFormattedDate(format: Constants.ddMMYYYYHHmmss)
                 }
             }
             
