@@ -331,6 +331,9 @@ struct Constants {
     static let selectPlaceholder = "- Select -"
     static let selectComplex = "Please select a complex first."
     static let microscopyLastSession = "Microscopy Summary Last Session"
+    static let serverAssessmentId = " userID == %d AND serverAssessmentId == %@"
+    static let noteMsg = "*Note - Please don't minimize App while syncing."
+    static let asiaTehran = "Asia/Tehran"
 }
 struct CategoryConstants {
     static let okPressed = "OK Pressed"

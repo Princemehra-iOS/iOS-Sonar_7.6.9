@@ -1517,7 +1517,7 @@ extension PEDashboardViewController:  SyncBtnDelegatePE,UnsyncedDelegate {
                     _ in
                     let userID =  UserDefaults.standard.value(forKey:"Id") as? Int ?? 0
                     for id in self.deletedAssessmentIdArray{
-                        CoreDataHandlerPE().deleteExisitingData(entityName: "PE_AssessmentInOffline", predicate: NSPredicate(format: " userID == %d AND serverAssessmentId == %@", userID, id))
+                        CoreDataHandlerPE().deleteExisitingData(entityName: "PE_AssessmentInOffline", predicate: NSPredicate(format: Constants.serverAssessmentId, userID, id))
                     }
                     self.peHeaderViewController.titleofSync = "0"
                     self.peHeaderViewController.viewDidLoad()
@@ -1637,7 +1637,7 @@ APIActivityTracker.shared.endRequest()
     func callRequest4(paramForImages:JSONDictionary){
         self.convertDictToJson(dict: paramForImages, apiName: "Test")
         callRequest4Int = callRequest4Int + 1
-        Helper.showGlobalProgressHUDWithTitle(self.view, title: "Data sync is in progress, please do not close the app." + "\n" + "*Note - Please don't minimize App while syncing.")
+        Helper.showGlobalProgressHUDWithTitle(self.view, title: Constants.dataSyncInProgress + "\n" + Constants.noteMsg)
         APIActivityTracker.shared.startRequest()
            ZoetisWebServices.shared.sendMultipleImagesBase64ToServer(controller: self, parameters: paramForImages, completion: { [weak self] (json, error) in
 APIActivityTracker.shared.endRequest()
@@ -1685,10 +1685,10 @@ APIActivityTracker.shared.endRequest()
                             self.isSync = false
                             self.dismissGlobalHUD(self.view)
                             self.syncBtnTapped(showHud: false)
-                            Helper.showGlobalProgressHUDWithTitle(self.view, title: "Data sync is in progress, please do not close the app." + "\n" + "*Note - Please don't minimize App while syncing.")
+                            Helper.showGlobalProgressHUDWithTitle(self.view, title: Constants.dataSyncInProgress + "\n" + Constants.noteMsg)
                         } else {
                             self.dismissGlobalHUD(self.view)
-                            Helper.showGlobalProgressHUDWithTitle(self.view, title: "Data sync is in progress, please do not close the app." + "\n" + "*Note - Please don't minimize App while syncing.")
+                            Helper.showGlobalProgressHUDWithTitle(self.view, title: Constants.dataSyncInProgress + "\n" + Constants.noteMsg)
                             for i in self.totalImageToSync{
                                 CoreDataHandlerPE().setImageStatusTrue(idArray: i)
                             }
@@ -3550,7 +3550,7 @@ extension String {
     
     func toDate(withFormat format: String = CategoryConstants.MMddYYYYHHmmssZ)-> Date?{
         let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(identifier: "Asia/Tehran")
+        dateFormatter.timeZone = TimeZone(identifier: Constants.asiaTehran)
         dateFormatter.locale = Locale(identifier: "fa-IR")
         //  dateFormatter.calendar = Calendar(identifier: .gregorian)
         dateFormatter.dateFormat = format
@@ -3560,7 +3560,7 @@ extension String {
     
     func toDateWithFormat(withFormat format: String = CategoryConstants.MMddYYYYHHmmssZ)-> Date?{
         let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(identifier: "Asia/Tehran")
+        dateFormatter.timeZone = TimeZone(identifier: Constants.asiaTehran)
         dateFormatter.locale = Locale(identifier: "fa-IR")
         //  dateFormatter.calendar = Calendar(identifier: .gregorian)
         dateFormatter.dateFormat = format
@@ -3581,7 +3581,7 @@ extension Date {
     func toString(withFormat format: String = CategoryConstants.MMddYYYYHHmmssZ) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "fa-IR")
-        dateFormatter.timeZone = TimeZone(identifier: "Asia/Tehran")
+        dateFormatter.timeZone = TimeZone(identifier: Constants.asiaTehran)
         dateFormatter.calendar = Calendar(identifier: .persian)
         dateFormatter.dateFormat = format
         let str = dateFormatter.string(from: self)
@@ -4699,7 +4699,7 @@ APIActivityTracker.shared.endRequest()
     func getVaccinationServiceResponse(showHud:Bool){
         if ConnectionManager.shared.hasConnectivity() {
             
-            self.showGlobalProgressHUDWithTitle(self.view, title: "Data sync is in progress, please do not close the app." + "\n" + "*Note - Please don't minimize App while syncing.")
+            self.showGlobalProgressHUDWithTitle(self.view, title: Constants.dataSyncInProgress + "\n" + Constants.noteMsg)
             let id = UserContext.sharedInstance.userDetailsObj?.userId ?? CategoryConstants.Noidfound
             let url = ZoetisWebServices.EndPoint.getPEScheduledCertifications.latestUrl + "\(id)?customerId=null&siteId=null"
             APIActivityTracker.shared.startRequest()
@@ -4736,14 +4736,14 @@ APIActivityTracker.shared.endRequest()
                                 let userID =  UserDefaults.standard.value(forKey:"Id") as? Int ?? 0
                                 let index = peAssessmentArray.index(of: obj) ?? 0
                                 peAssessmentArray.remove(at: index)
-                                CoreDataHandlerPE().deleteExisitingData(entityName: "PE_AssessmentInOffline", predicate: NSPredicate(format: " userID == %d AND serverAssessmentId == %@", userID, obj.serverAssessmentId ?? ""))
+                                CoreDataHandlerPE().deleteExisitingData(entityName: "PE_AssessmentInOffline", predicate: NSPredicate(format: Constants.serverAssessmentId, userID, obj.serverAssessmentId ?? ""))
                             }
                         }else{
                             self?.deletedAssessmentIdArray.append(obj.serverAssessmentId!)
                             let userID =  UserDefaults.standard.value(forKey:"Id") as? Int ?? 0
                             let index = peAssessmentArray.index(of: obj) ?? 0
                             peAssessmentArray.remove(at: index)
-                            CoreDataHandlerPE().deleteExisitingData(entityName: "PE_AssessmentInOffline", predicate: NSPredicate(format: " userID == %d AND serverAssessmentId == %@", userID, obj.serverAssessmentId ?? ""))
+                            CoreDataHandlerPE().deleteExisitingData(entityName: "PE_AssessmentInOffline", predicate: NSPredicate(format: Constants.serverAssessmentId, userID, obj.serverAssessmentId ?? ""))
                         }
                     }
                 }
@@ -4758,7 +4758,7 @@ APIActivityTracker.shared.endRequest()
                             }else{
                                 let userID =  UserDefaults.standard.value(forKey:"Id") as? Int ?? 0
                                 for id in self?.deletedAssessmentIdArray ?? []{
-                                    CoreDataHandlerPE().deleteExisitingData(entityName: "PE_AssessmentInOffline", predicate: NSPredicate(format: " userID == %d AND serverAssessmentId == %@", userID, id))
+                                    CoreDataHandlerPE().deleteExisitingData(entityName: "PE_AssessmentInOffline", predicate: NSPredicate(format: Constants.serverAssessmentId, userID, id))
                                 }
                                 self?.peHeaderViewController.titleofSync = "0"
                                 self?.peHeaderViewController.viewDidLoad()
