@@ -2927,10 +2927,10 @@ extension PEViewStartNewAssessment{
         var extendedData : [[String: Any]]?
         let jsonEncoder = JSONEncoder()
         let jsonDataArr = try? jsonEncoder.encode(arr)
-        if jsonDataArr != nil{
-            extendedData = try! JSONSerialization.jsonObject(with: jsonDataArr!, options: []) as? [[String: Any]]
-        }
         
+        if let jsonDataArr = jsonDataArr {
+            extendedData = (try? JSONSerialization.jsonObject(with: jsonDataArr, options: [])) as? [[String: Any]]
+        }
         let evaluationDate = dict.evaluationDate
         if UniID == "" {
             UniID = dict.draftID ?? ""

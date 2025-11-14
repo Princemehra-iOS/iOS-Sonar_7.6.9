@@ -716,10 +716,7 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
             NSLog(CategoryConstants.okPressed)
             self.saveDraftData()
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-            _ in
-            
-        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
@@ -734,10 +731,7 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
             NSLog(CategoryConstants.okPressed)
             self.saveDraftData()
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-            _ in
-            
-        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
@@ -1764,9 +1758,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 }
             }
             
-            cell.doseCompletion  = {[unowned self] ( error) in
-                
-            }
+            
             
             cell.nameCompletion  = {[unowned self] ( text) in
                 self.tableviewIndexPath = indexPath
@@ -3887,9 +3879,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             headerView.txtCSize.text = peNewAssessment.iCS
             headerView.txtDType.text = peNewAssessment.iDT
             headerView.txtAntiBiotic.text = peNewAssessment.hatcheryAntibioticsText
-            headerView.switchCompletion = {[unowned self] ( status) in
-                
-            }
+           
             
             headerView.txtAntiBioticCompletion = {[unowned self] ( txtAntiBioTic) in
                 self.peNewAssessment.hatcheryAntibioticsText = txtAntiBioTic

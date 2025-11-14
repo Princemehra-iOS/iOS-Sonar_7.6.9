@@ -3282,8 +3282,9 @@ APIActivityTracker.shared.endRequest()
         var extendedData : [[String: Any]]?
         let jsonEncoder = JSONEncoder()
         let jsonDataArr = try? jsonEncoder.encode(arr)
-        if jsonDataArr != nil{
-            extendedData = try! JSONSerialization.jsonObject(with: jsonDataArr!, options: []) as? [[String: Any]]
+       
+        if let jsonDataArr = jsonDataArr {
+            extendedData = (try? JSONSerialization.jsonObject(with: jsonDataArr, options: [])) as? [[String: Any]]
         }
         var Complete = 1
         var Draft = 0

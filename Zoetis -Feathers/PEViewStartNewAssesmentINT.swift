@@ -2458,12 +2458,12 @@ extension PEViewStartNewAssesmentINT{
             let jsonEncoder = JSONEncoder()
             let jsonDataArr = try? jsonEncoder.encode(arr)
             
-            if jsonDataArr != nil{
-                
-                let json = try! JSONSerialization.jsonObject(with: jsonDataArr!, options: []) as? [[String: Any]]
-                param.updateValue(json, forKey: "SanitationEmbrexScoresDataModel")
-            }
             
+            if let jsonDataArr = jsonDataArr {
+                let json =  (try? JSONSerialization.jsonObject(with: jsonDataArr, options: [])) as? [[String: Any]]
+                param.updateValue(json, forKey: "SanitationEmbrexScoresDataModel")
+
+            }
             self.convertDictToJson(dict: param,apiName: "add assessment")
             
             var mergedDict = param
