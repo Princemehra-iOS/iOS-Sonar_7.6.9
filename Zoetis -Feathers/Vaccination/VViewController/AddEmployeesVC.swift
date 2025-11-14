@@ -1132,7 +1132,6 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
                     
                 }
             }
-            
         })
     }
     
@@ -1426,6 +1425,7 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
             addEmployeeBtnClicked = true
         }
     }
+    
     // MARK: - Add Button Action
     @IBAction func addBtnAction(_ sender: UIButton) {
         for textfield in self.view.subviews where textfield is UITextField{

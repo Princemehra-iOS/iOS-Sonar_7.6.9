@@ -416,7 +416,7 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
         if regionID == 3 && showExtendedPE {
             
             let catObjectPE = PENewAssessment()
-            catObjectPE.catName = CategoryConstants.extendedMicrobialName // "Sanitation and Embrex Evaluation"
+            catObjectPE.catName = Constants.extendedMicrobialStr // "Sanitation and Embrex Evaluation"
             catObjectPE.sequenceNo = 12
             catObjectPE.sequenceNoo = 12
             catArrayForCollectionIs.append(catObjectPE)
@@ -1027,53 +1027,53 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
         return 2
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if checkForTraning(){
-            
-            if section == 0 && selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName != CategoryConstants.refrigerator {
-                return sanitationQuesArr.count
-            }
-            
-            if (selectedCategory?.sequenceNoo == 11 && selectedCategory?.catName == CategoryConstants.refrigerator){
-                return 2
-            }
-            if section == 1 {
-                return certificateData.count
-            }
-            if section == 2 {
-                return inovojectData.count
-            }
-            if section == 3 {
-                return dayOfAgeData.count
-            }
-            if section == 4 {
-                return dayOfAgeSData.count
-            }
-            return catArrayForTableIs.count
-        } else {
-            var assessment = catArrayForTableIs[0] as? PE_AssessmentInProgress
-            if assessment?.sequenceNoo == 3 {
-                if section == 0 {
-                    return catArrayForTableIs.count                }
-                if section == 1 {
-                    return 1
-                }
-            } else {
-                if section == 1 {
-                    return inovojectData.count
-                }
-                if section == 2 {
-                    return dayOfAgeData.count
-                }
-                if section == 3 {
-                    return dayOfAgeSData.count
-                }
-            }
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return checkForTraning()
+            ? numberOfRowsForTraining(section)
+            : numberOfRowsForNormal(section)
+    }
+    private func numberOfRowsForTraining(_ section: Int) -> Int {
+        guard let category = selectedCategory else {
             return catArrayForTableIs.count
         }
         
+        if section == 0 {
+            if category.sequenceNoo == 12 && category.catName != CategoryConstants.refrigerator {
+                return sanitationQuesArr.count
+            }
+            if category.sequenceNoo == 11 && category.catName == CategoryConstants.refrigerator {
+                return 2
+            }
+        }
+        
+        switch section {
+        case 1: return certificateData.count
+        case 2: return inovojectData.count
+        case 3: return dayOfAgeData.count
+        case 4: return dayOfAgeSData.count
+        default: return catArrayForTableIs.count
+        }
     }
+    private func numberOfRowsForNormal(_ section: Int) -> Int {
+        let assessment = catArrayForTableIs.first as? PE_AssessmentInProgress
+        let isSequence3 = (assessment?.sequenceNoo == 3)
+        
+        if isSequence3 {
+            switch section {
+            case 0: return catArrayForTableIs.count
+            case 1: return 1
+            default: return catArrayForTableIs.count
+            }
+        }
+        
+        switch section {
+        case 1: return inovojectData.count
+        case 2: return dayOfAgeData.count
+        case 3: return dayOfAgeSData.count
+        default: return catArrayForTableIs.count
+        }
+    }
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if checkForTraning(){
@@ -1174,7 +1174,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
         
         if checkForTraning(){
             
-            if indexPath.section == 0 && selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName == CategoryConstants.extendedMicrobialName{// "Sanitation and Embrex Evaluation"{
+            if indexPath.section == 0 && selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName == Constants.extendedMicrobialStr{// "Sanitation and Embrex Evaluation"{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "PlateInfoCell", for: indexPath) as! PlateInfoCell
                 cell.currentIndex = indexPath.row
                 if sanitationQuesArr.count > indexPath.row{
@@ -4468,7 +4468,7 @@ extension PEAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDataSo
                         refrigtorProbeArray = CoreDataHandlerPE().getREfriData(id: Int(refri.serverAssessmentId ?? "0") ?? 0)
                     }
                 }
-                if(selectedCategory?.catName == CategoryConstants.extendedMicrobialName) {
+                if(selectedCategory?.catName == Constants.extendedMicrobialStr) {
                     selectedCategory?.sequenceNoo = 12
                     lblextenderMicro.isHidden = false
                     extendedMicroSwitch.isHidden = false

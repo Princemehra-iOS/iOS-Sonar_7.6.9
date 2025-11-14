@@ -333,7 +333,6 @@ struct Constants {
     static let microscopyLastSession = "Microscopy Summary Last Session"
 }
 struct CategoryConstants {
-    static let extendedMicrobialName = "Extended Microbial"
     static let okPressed = "OK Pressed"
     static let refrigerator = "Refrigerator\n/Freezer\n/Liquid Nitrogen"
     static let  yyyyMMdd =  "yyyy-MM-dd"
@@ -356,7 +355,6 @@ struct CategoryConstants {
     static let pleaseselectacomplexfirst = "Please select a complex first."
     static let datasyncedsuccessfully = "Data synced successfully."
     static let MMddYYYYHHmmssZ = "MM/dd/YYYY HH:mm:ss Z"
-    static let extendedMicrobial = "Extended Microbial"
    
 }
 func predicateForSessionType() -> NSPredicate {

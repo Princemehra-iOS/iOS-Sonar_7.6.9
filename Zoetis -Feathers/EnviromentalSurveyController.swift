@@ -106,32 +106,44 @@ class EnviromentalSurveyController: BaseViewController , UISearchBarDelegate {
         }
     }
     
-    private func fetchGetAllRequisionDataWithPlates(){
+    private func fetchGetAllRequisionDataWithPlates() {
         dismissGlobalHUD(self.view)
-        self.showGlobalProgressHUDWithTitle(self.view, title: "")
-        ZoetisWebServices.shared.getAllRequisitionDataWithPlates(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            self!.dismissGlobalHUD(self!.view)
-            guard let `self` = self, error == nil else { return }
+        showGlobalProgressHUDWithTitle(self.view, title: "")
+
+        ZoetisWebServices.shared.getAllRequisitionDataWithPlates(
+            controller: self,
+            parameters: [:]
+        ) { [weak self] (json, error) in
+            
+            guard let self = self else { return }
+            self.dismissGlobalHUD(self.view)
+            guard error == nil else { return }
+
             let jsonObject = RequisitionGetDataModel(json)
-            let arrRequisition = jsonObject.requisitionArray
-            self.requisitionArray = arrRequisition ?? []
-            
-            if arrRequisition?.count ?? 0 > 0{
-                for objReq in arrRequisition ?? []{
-                    if let microbialDetailsList = objReq.microbialDetailsList{
-                        let currentPlatesData = microbialDetailsList.filter({$0.requisitionNo?.replacingOccurrences(of: "C-", with: "") == self.selectedRequisionId})
-                        for platesData in currentPlatesData.first?.microbialSampleDetailsList ?? [] {
-                            self.microbialSelectedPlatesData.append(platesData)
-                        }
-                    }
-                }
-            }
-            self.tableView.reloadData()
-            self.configureTableView()
-            
-            print(json)
-        })
+            self.requisitionArray = jsonObject.requisitionArray ?? []
+
+            guard let requisitions = jsonObject.requisitionArray,
+                  !requisitions.isEmpty else { return }
+
+            self.extractSelectedPlateData(from: requisitions)
+        }
     }
+
+    private func extractSelectedPlateData(from requisitions: [RequisitionData]) {
+        for req in requisitions {
+            guard let microbialDetails = req.microbialDetailsList else { continue }
+
+            let matched = microbialDetails.filter {
+                $0.requisitionNo?.replacingOccurrences(of: "C-", with: "") == selectedRequisionId
+            }
+
+            guard let first = matched.first else { continue }
+
+            self.microbialSelectedPlatesData.append(contentsOf: first.microbialSampleDetailsList ?? [])
+        }
+    }
+    
+    
     private func removeIfUserDoesNotSaveAnythingInNewSession(){
         let sessionDataArr = CoreDataHandlerMicro().fetchAllData("Microbial_EnviromentalSessionInProgress")
         if sessionDataArr.count == 0 {
