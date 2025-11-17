@@ -495,16 +495,12 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
     // MARK: - Extended Micro Switch Action
     @IBAction func extendedMicroSwitch(_ sender: UISwitch) {
         
-        if extendedMicroSwitch.isOn
-        {
+        if extendedMicroSwitch.isOn {
             UserDefaults.standard.set(true, forKey:"ExtendedMicro")
             CoreDataHandlerPE().updateIsEMRequestedInAssessmentInProgress(isEMRequested: true)
-        }
-        else
-        {
+        } else {
             UserDefaults.standard.set(false, forKey:"ExtendedMicro")
             CoreDataHandlerPE().updateIsEMRequestedInAssessmentInProgress(isEMRequested: false)
-            
         }
     }
     
@@ -519,7 +515,6 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
             guard let `self` = self, error == nil else { return }
             //  self.handleVaccineMixer(json)
             self.deleteAllData("PE_VaccineMixerDetail")
-            
             
             VaccineMixerResponse(json)
             completion(true)
@@ -575,7 +570,6 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
                 updateScore(isAllNA: false)
                 
             }
-            
         }
     }
     
@@ -590,8 +584,8 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
         tableview.reloadData()
         if(selectedCategory?.catName == CategoryConstants.refrigerator){
         }
-        
     }
+    
     // MARK: - Refresh Array
     func refreshArray(){
         if(selectedCategory?.catName == CategoryConstants.refrigerator){
@@ -600,7 +594,6 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
         else{
             catArrayForTableIs = CoreDataHandlerPE().fetchCustomerWithCatID(selectedCategory?.sequenceNo as? NSNumber ?? 0)
         }
-        
     }
     
     

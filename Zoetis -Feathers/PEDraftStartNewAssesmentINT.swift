@@ -542,57 +542,77 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
     }
     
     
-    func setupUI(){
+    func setupUI() {
         btnNext.setNextButtonUI()
-        viewForGradient.setGradientThreeColors(topGradientColor: UIColor.getGradientUpperColorStartAssessment(),midGradientColor:UIColor.getGradientUpperColorStartAssessmentMid(), bottomGradientColor: UIColor.getGradientUpperColorStartAssessmentLast())
+        viewForGradient.setGradientThreeColors(
+            topGradientColor: UIColor.getGradientUpperColorStartAssessment(),
+            midGradientColor: UIColor.getGradientUpperColorStartAssessmentMid(),
+            bottomGradientColor: UIColor.getGradientUpperColorStartAssessmentLast()
+        )
         
-        let btns = [customerButton,siteButton,evaluatorButton,visitButton,evaluationTypeButton,tsrButton,evaluationDateButton,btnBreed,btnBreedOthers,btnIncubation,manufacturerButton,numberOfEggsButton,countryBtn ,manfacturerOtherBtn,eggsOtherBtn , clorineBtn]
+        let buttons: [UIButton?] = [
+            customerButton, siteButton, evaluatorButton, visitButton,
+            evaluationTypeButton, tsrButton, evaluationDateButton, btnBreed,
+            btnBreedOthers, btnIncubation, manufacturerButton, numberOfEggsButton,
+            countryBtn, manfacturerOtherBtn, eggsOtherBtn, clorineBtn
+        ]
         
-        self.customerButton.isUserInteractionEnabled = false
-        self.siteButton.isUserInteractionEnabled = false
-        self.evaluatorButton.isUserInteractionEnabled = false
-        self.countryBtn.isUserInteractionEnabled = false
-        self.customerButton.isEnabled = false
-        self.siteButton.isEnabled = false
-        self.evaluatorButton.isEnabled = false
-        self.visitButton.isUserInteractionEnabled = false
-        self.evaluationTypeButton.isUserInteractionEnabled = false
-        self.selectedEvaluationType.alpha = 0.6
+        disableInitialUI()
         
-        self.selectedCustomerText.alpha = 0.6
-        self.selectedSiteText.alpha = 0.6
-        self.selectedEvaluatorText.alpha = 0.6
-        self.countryTxt.alpha = 0.6
-        self.selectedVisitText.alpha = 0.6
-        if self.isFromBack {
-            self.evaluationTypeButton.isUserInteractionEnabled = false
-            self.evaluationTypeButton.isEnabled = false
-            self.selectedEvaluationType.alpha = 0.6
-            self.evaluationDateButton.isUserInteractionEnabled = false
-            self.evaluationDateButton.isEnabled = false
-            self.selectedEvaluationDateText.alpha = 0.6
+        if isFromBack {
+            disableEvaluationTypeUI()
         }
-        for btn in btns{
-            btn?.setTitle("", for: .normal)
-            let superviewCurrent =  btn?.superview
-            if superviewCurrent != nil{
-                for view in superviewCurrent!.subviews {
-                    if view.isKind(of:UIButton.self) {
-                        if view == evaluationDateButton{
-                            view.setDropdownStartAsessmentView(imageName:"calendarIconPE")
-                        } else{
-                            view.setDropdownStartAsessmentView(imageName:"dd")
-                        }
-                    }
-                }
-            }
+        
+        configureButtons(buttons)
+    }
+    private func disableInitialUI() {
+        let controlsToDisable: [UIControl?] = [
+            customerButton, siteButton, evaluatorButton, visitButton,
+            evaluationTypeButton, countryBtn
+        ]
+        
+        controlsToDisable.forEach {
+            $0?.isEnabled = false
+            $0?.isUserInteractionEnabled = false
         }
-        notesTextView.layer.cornerRadius = 12
-        notesTextView.layer.masksToBounds = true
-        notesTextView.layer.borderColor = UIColor.getTextViewBorderColorStartAssessment().cgColor
-        notesTextView.layer.borderWidth = 2.0
+        
+        selectedEvaluationType.alpha = 0.6
+        selectedCustomerText.alpha   = 0.6
+        selectedSiteText.alpha       = 0.6
+        selectedEvaluatorText.alpha  = 0.6
+        countryTxt.alpha             = 0.6
+        selectedVisitText.alpha      = 0.6
     }
     
+    private func disableEvaluationTypeUI() {
+        evaluationTypeButton.isEnabled = false
+        evaluationTypeButton.isUserInteractionEnabled = false
+        selectedEvaluationType.alpha = 0.6
+
+        evaluationDateButton.isEnabled = false
+        evaluationDateButton.isUserInteractionEnabled = false
+        selectedEvaluationDateText.alpha = 0.6
+    }
+    
+    private func configureButtons(_ buttons: [UIButton?]) {
+        for button in buttons {
+            button?.setTitle("", for: .normal)
+            configureDropdownIcon(for: button)
+        }
+    }
+
+    private func configureDropdownIcon(for button: UIButton?) {
+        guard let superview = button?.superview else { return }
+        
+        for view in superview.subviews where view is UIButton {
+            if view === evaluationDateButton {
+                view.setDropdownStartAsessmentView(imageName: "calendarIconPE")
+            } else {
+                view.setDropdownStartAsessmentView(imageName: "dd")
+            }
+        }
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         
         navigationController?.navigationBar.isHidden = true
