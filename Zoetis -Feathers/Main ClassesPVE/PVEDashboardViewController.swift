@@ -1751,7 +1751,7 @@ extension PVEDashboardViewController:  ComplexDelegate {
             
             UserDefaults.standard.set(false, forKey: "callDraftApi")
             let currentUserId = UserDefaults.standard.value(forKey:"Id") as? Int ?? 0
-            ZoetisWebServices.shared.GetPostingAssessmentListByUser(controller: self, header: ["UserId" : currentUserId], parameters: [:], completion: { [weak self] (json, error) in
+            ZoetisWebServices.shared.PostingAssessmentList(controller: self, header: ["UserId" : currentUserId], parameters: [:], completion: { [weak self] (json, error) in
                 guard let selfObject = self, error == nil else { return }
                 
                
