@@ -702,7 +702,6 @@ class ViewController: BaseViewController, UITextFieldDelegate, UITableViewDelega
                 UserDefaults.standard.set(false, forKey: "hasAppMovedToBackground")
                 let jsonDecoder = JSONDecoder()
                 let jsonData = try? JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
-                let userId = UserDefaults.standard.integer(forKey: "Id")
                 let Id = dict.value(forKey:"Id")!  as AnyObject
                 let id = Id.integerValue
 
@@ -805,41 +804,6 @@ class ViewController: BaseViewController, UITextFieldDelegate, UITableViewDelega
         }
     }
     
-    private func resetUserDefaultsOnLogin(email: String) {
-        UserDefaults.standard.set(false, forKey: "PECleanSession")
-        UserDefaults.standard.set(nil, forKey: "PE_Selected_Customer_Id")
-        UserDefaults.standard.set(nil, forKey: "PE_Selected_Customer_Name")
-        UserDefaults.standard.set(nil, forKey: "PE_Selected_Site_Id")
-        UserDefaults.standard.set(nil, forKey: "PE_Selected_Site_Name")
-        let mailTexts = email
-        let lastUsername = PasswordService.shared.getUsername()
-        if !lastUsername.isEmpty && !mailTexts.isEmpty {
-            let isSameUser = lastUsername.removeWhitespace().contains(mailTexts.removeWhitespace())
-            UserDefaults.standard.set(!isSameUser, forKey: "PENewUserLoginFlag")
-        }
-        PasswordService.shared.setUsername(password: email)
-        UserDefaults.standard.set(false, forKey: "hasAppMovedToBackground")
-    }
-
-    private func decodeUserResponse(_ value: Any) -> UserResponseDTO? {
-        let jsonDecoder = JSONDecoder()
-        if let jsonData = try? JSONSerialization.data(withJSONObject: value, options: .prettyPrinted),
-           let userResponseObj = try? jsonDecoder.decode(UserResponseDTO.self, from: jsonData) {
-            return userResponseObj
-        }
-        return nil
-    }
-
-    private func updateUserContext(_ userResponseObj: UserResponseDTO) {
-        if let lastFilledUserId = UserContextDAO.sharedInstance.getUserContextFilledObj()?.userId?.removeWhitespace(),
-           let newlyFilledUserId = UserContextDAO.sharedInstance.getUserContextFilledObj()?.userId?.removeWhitespace() {
-            UserContext.sharedInstance.setUserDetails(userResponseObj)
-            UserDefaults.standard.set(lastFilledUserId != newlyFilledUserId, forKey: "PENewUserLoginFlag")
-        }
-        UserContext.sharedInstance.setUserDetails(userResponseObj)
-        UserDefaults.standard.set(true, forKey: "hasLoggedIn")
-    }
-    
     private func handleError(with dict: NSDictionary) {
         self.ssologoutMethod()
         let errorMsg = dict["error_description"]
@@ -851,15 +815,6 @@ class ViewController: BaseViewController, UITextFieldDelegate, UITableViewDelega
         self.present(alertController, animated: true, completion: nil)
     }
 
-    // Usage for the original cases
-    private func handleInvalidGrant(_ dict: NSDictionary) {
-        handleError(with: dict)  // Simply call handleError
-    }
-
-    private func handleUnauthorized(_ dict: NSDictionary) {
-        handleError(with: dict)  // Simply call handleError
-    }
-    
     deinit {
         NotificationCenter.default.removeObserver(self)
         //, name: Notification.Name.willResig, object: nil)
@@ -1513,8 +1468,8 @@ class ViewController: BaseViewController, UITextFieldDelegate, UITableViewDelega
         self.deleteAllData("MyCotoxinBindersFeed")
         
         if WebClass.sharedInstance.connected() {
-            var id = Int()
-            id = UserDefaults.standard.value(forKey: "Id") as! Int
+         
+            let id = UserDefaults.standard.value(forKey: "Id") as! Int
             let devType = Constants.deviceType
             let newUrl = ZoetisWebServices.EndPoint.getFlockFeedList.latestUrl + "\(id)&DeviceType=\(devType)"
             ZoetisWebServices.shared.getFlockFeedSessionResponce(controller: self, url: newUrl, completion: { [weak self] (json, error) in
@@ -1576,58 +1531,6 @@ class ViewController: BaseViewController, UITextFieldDelegate, UITableViewDelega
         }
     }
     
-    private func clearFeedCoreData() {
-        self.deleteAllData("AlternativeFeed")
-        self.deleteAllData("AntiboticFeed")
-        self.deleteAllData("CoccidiosisControlFeed")
-        self.deleteAllData("MyCotoxinBindersFeed")
-    }
-
-//    private func fetchFeedDataFromServer() {
-//        guard let id = UserDefaults.standard.value(forKey: "Id") as? Int else { return }
-//        let devType = Constants.deviceType
-//        let newUrl = ZoetisWebServices.EndPoint.getFlockFeedList.latestUrl + "\(id)&DeviceType=\(devType)"
-//        ZoetisWebServices.shared.getFlockFeedSessionResponce(controller: self, url: newUrl) { [weak self] (json, error) in
-//            guard let self = self else { return }
-//            if let error = error {
-//                print("Error fetching data: \(error.localizedDescription)")
-//                return
-//            }
-//            DispatchQueue.main.async {
-//                self.processFeedSessions(json.rawValue as! [(String, JSON)])
-//                self.getCNecStep1Data()
-//            }
-//        }
-//    }
-
-//    private func processFeedSessions(_ arr: [(String, JSON)]) {
-//        for posDict in arr {
-//            let jsonData = posDict.1
-//            guard let sessionId = jsonData["sessionId"].int else { continue }
-//            guard let feedDictArr = jsonData["Feeds"].array else { continue }
-//            processFeeds(feedDictArr, sessionId: sessionId)
-//        }
-//    }
-
-//    private func processFeeds(_ feedDictArr: [JSON], sessionId: Int) {
-//        for feedDict in feedDictArr {
-//            guard let feedId = feedDict["feedId"].int else { continue }
-//            updateFeedIdIfNeeded(feedId)
-//            let feedName = feedDict["feedName"].string ?? ""
-//            let startDate = feedDict["startDate"].string ?? ""
-//            CoreDataHandler().getFeedNameFromGetApi(sessionId as NSNumber, sessionId: sessionId as NSNumber, feedProgrameName: feedName, feedId: feedId as NSNumber, startDate: startDate)
-//            if let feedDetailArr = feedDict["feedCategoryDetails"].array {
-//                processFeedCategories(feedDetailArr, feedId: feedId, sessionId: sessionId, feedName: feedName, startDate: startDate)
-//            }
-//        }
-//    }
-
-    private func updateFeedIdIfNeeded(_ feedId: Int) {
-        let nsFeedId = UserDefaults.standard.integer(forKey: "feedId")
-        if feedId > nsFeedId {
-            UserDefaults.standard.set(feedId, forKey: "feedId")
-        }
-    }
 
     private func processFeedCategories(_ feedDetailArr: [JSON], feedId: Int, sessionId: Int, feedName: String, startDate: String) {
         for feedDetail in feedDetailArr {
@@ -3046,13 +2949,7 @@ extension ViewController:SidePanelViewControllerDelegate {
                 delegate?.collapseSidePanels?()
                 return
             }
-            
-            else if selectedRow == 1 {
-                NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "UpdateComplexOnDashboard"),object: nil))
-                self.navigationController?.popToViewController(ofClass: PEDashboardViewController.self)
-                delegate?.collapseSidePanels?()
-                return
-            }
+
             else if selectedRow == 5 {
                 logoutBtnAction()
             }
