@@ -1150,9 +1150,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
         return ceil(boundingBox.height)
     }
     
-    func setupNewInovoCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath){
-        
-    }
+   
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -2126,11 +2124,6 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 }
                 self.dropHiddenAndShow()
             }
-            
-            cell.doseCompletion  = {[unowned self] ( error) in
-                
-            }
-            
             
             cell.nameCompletion  = {[unowned self] ( text) in
                 self.tableviewIndexPath = indexPath
@@ -5277,7 +5270,7 @@ extension PEAssesmentFinalize: UIImagePickerControllerDelegate , UINavigationCon
                 imagePicker.sourceType = .camera
                 imagePicker.cameraCaptureMode = .photo
                 imagePicker.delegate = self
-                present(imagePicker, animated: true, completion: {})
+                present(imagePicker, animated: true, completion: nil)
             } else {
                 postAlert("Rear camera doesn't exist", message: "Application cannot access the camera.")
             }
@@ -5342,9 +5335,6 @@ extension PEAssesmentFinalize: UIImagePickerControllerDelegate , UINavigationCon
                 }
             }
         }
-        imagePicker.dismiss(animated: true, completion: {
-            // Anything you want to happen when the user saves an image
-        })
     }
     /******************************************************************************************************/
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

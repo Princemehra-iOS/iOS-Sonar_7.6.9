@@ -1294,9 +1294,7 @@ extension PEDashboardViewController:  SyncBtnDelegatePE,UnsyncedDelegate {
         createJsonToExport(indexTapped: index)
     }
     
-    @objc private func moveToDashBoard(notification: NSNotification){
-        
-    }
+   
     // MARK: - Sync Button Notification
     @objc private func syncBtnTappedNoti(notification: NSNotification){
         
@@ -1529,9 +1527,7 @@ extension PEDashboardViewController:  SyncBtnDelegatePE,UnsyncedDelegate {
                 self.dismissGlobalHUD(self.view ?? UIView())
                 let errorMSg = "Data not available for sync"
                 let alertController = UIAlertController(title: "No data available", message: errorMSg, preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-                    _ in
-                }
+                let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) 
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
             }

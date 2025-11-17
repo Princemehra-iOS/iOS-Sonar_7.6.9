@@ -938,9 +938,7 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
                 else {
                     let errorMSg = "Please switch on the Extended Microbial."
                     let alertController = UIAlertController(title: "Alert!", message: errorMSg, preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) {
-                        _ in
-                    }
+                    let okAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default)
                     alertController.addAction(okAction)
                     self.present(alertController, animated: true, completion: nil)
                 }
@@ -2229,8 +2227,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                             self.certificateData[self.chnagedVaccineNameIndexPathRow].name = error
                             self.certificateData[self.chnagedVaccineNameIndexPathRow].certificateDate = certificationDateGettingFromAddNewPoppup ?? ""
                             CoreDataHandlerPE().updateVMixerInDB(peCertificateData:  self.certificateData[self.chnagedVaccineNameIndexPathRow], id:  self.certificateData[self.chnagedVaccineNameIndexPathRow].id ?? 0)
-                            UIView.performWithoutAnimation {
-                            }
+                           
                             cell.vaccNameField.resignFirstResponder()
                             cell.vaccNameField.endEditing(true)
                         }

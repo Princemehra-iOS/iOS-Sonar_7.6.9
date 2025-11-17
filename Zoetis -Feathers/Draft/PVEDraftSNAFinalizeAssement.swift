@@ -642,7 +642,7 @@ extension PVEDraftSNAFinalizeAssement:  UIImagePickerControllerDelegate,UINaviga
                     
                     
                     imagePicker.view.tag = indexPath!.row
-                    present(imagePicker, animated: true, completion: {})
+                    present(imagePicker, animated: true, completion: nil)
                 } else {
                     postAlert("Rear camera doesn't exist", message: "Application cannot access the camera.")
                 }
