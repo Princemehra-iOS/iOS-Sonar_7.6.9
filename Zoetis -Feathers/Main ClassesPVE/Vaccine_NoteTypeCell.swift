@@ -13,9 +13,7 @@ protocol AddedComment: AnyObject {
     
 }
 extension AddedComment {
-    func updatedComment( commentStr: String) {
-        
-    }
+    func updatedComment( commentStr: String) {}
 
 }
 class Vaccine_NoteTypeCell: UITableViewCell {

@@ -252,9 +252,7 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
         }
     }
     
-    @IBAction func btnAction(_ sender: Any) {
-        
-    }
+  
     
     override func viewDidLoad() {
         print("<<<<",self)
