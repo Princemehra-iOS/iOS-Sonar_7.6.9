@@ -316,6 +316,8 @@ struct Constants {
     static let syncToWebStr = "Sync to Web"
     static let yyyyMMddStr = "yyyy-MM-dd"
     static let MMddyyyyStr = "MM/dd/yyyy"
+    static let yyyyMMddSlashStr = "yyyy/MM/dd"
+    static let MMMMdyyyyStr = "MMMM d, yyyy"
     static let MMddYYYYHHmmss = "MM/dd/YYYY HH:mm:ss Z"
     static let timeDefaultValue = "2020-05-23T06:36:50.915Z"
     static let  MMMdyyyy =  "MMM d, yyyy"

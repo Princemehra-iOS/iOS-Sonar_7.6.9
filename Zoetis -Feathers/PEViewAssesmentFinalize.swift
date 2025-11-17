@@ -2441,10 +2441,10 @@ extension PEViewAssesmentFinalize{
     // MARK: Change date Fromate
     func convertDateFormat(inputDate: String) -> String {
         let olDateFormatter = DateFormatter()
-        olDateFormatter.dateFormat = "MMM d, yyyy"
+        olDateFormatter.dateFormat = Constants.MMMdyyyy
         let oldDate = olDateFormatter.date(from: inputDate)
         let convertDateFormatter = DateFormatter()
-        convertDateFormatter.dateFormat = "yyyy-MM-dd"
+        convertDateFormatter.dateFormat = Constants.yyyyMMddStr
         if oldDate != nil{
             return convertDateFormatter.string(from: oldDate!)
         }
@@ -2454,10 +2454,10 @@ extension PEViewAssesmentFinalize{
     // MARK: - Date Formatter
     func convertSign_DateFormat(inputDate: String) -> String {
         let olDateFormatter = DateFormatter()
-        olDateFormatter.dateFormat = "MMM d, yyyy"
+        olDateFormatter.dateFormat = Constants.MMMdyyyy
         let oldDate = olDateFormatter.date(from: inputDate)
         let convertDateFormatter = DateFormatter()
-        convertDateFormatter.dateFormat = "yyyy-MM-dd"
+        convertDateFormatter.dateFormat = Constants.yyyyMMddStr
         
         if oldDate != nil{
             return convertDateFormatter.string(from: oldDate!)
@@ -2492,13 +2492,13 @@ extension PEViewAssesmentFinalize{
     func detectDateFormat(of dateString: String) -> String? {
         // List of common date formats to check
         let dateFormats = [
-            "yyyy-MM-dd",
-            "dd/MM/yyyy",
+            Constants.yyyyMMddStr,
+            Constants.ddMMyyyStr,
             Constants.MMddyyyyStr,
-            "dd-MM-yyyy",
-            "yyyy/MM/dd",
-            "MMMM d, yyyy",
-            "MMM dd, yyyy"
+            Constants.yyyyMMddStr,
+            Constants.yyyyMMddSlashStr,
+            Constants.MMMMdyyyyStr,
+            Constants.MMMMdyyyyStr
             
         ]
         
@@ -2717,7 +2717,7 @@ extension PEViewAssesmentFinalize{
             // date sig are blank..
         }else{
             let convertDateFormatter = DateFormatter()
-            convertDateFormatter.dateFormat = "yyyy-MM-dd"
+            convertDateFormatter.dateFormat = Constants.yyyyMMddStr
             convertDateFormatter.timeZone = Calendar.current.timeZone
             convertDateFormatter.locale = Calendar.current.locale
         }
@@ -2735,7 +2735,7 @@ extension PEViewAssesmentFinalize{
                 
                 // Create another DateFormatter for the desired output format
                 let outputFormatter = DateFormatter()
-                outputFormatter.dateFormat = "yyyy-MM-dd"
+                outputFormatter.dateFormat = Constants.yyyyMMddStr
                 
                 let formattedDateString = outputFormatter.string(from: date)
                 evalDateStr = formattedDateString
@@ -2746,12 +2746,12 @@ extension PEViewAssesmentFinalize{
         else
         {
             let inputFormatter = DateFormatter()
-            inputFormatter.dateFormat = "dd/MM/yyyy"
+            inputFormatter.dateFormat = Constants.ddMMyyyStr
             
             if let date = inputFormatter.date(from: evaluationDate ?? "") {
                 
                 let outputFormatter = DateFormatter()
-                outputFormatter.dateFormat = "yyyy-MM-dd"
+                outputFormatter.dateFormat = Constants.yyyyMMddStr
                 
                 let formattedDateString = outputFormatter.string(from: date)
                 evalDateStr = formattedDateString
@@ -3216,7 +3216,7 @@ extension PEViewAssesmentFinalize{
         var resultString = String()
         if(regionID != 3){
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateFormatter.dateFormat = Constants.ddMMyyyStr
             let date = dateFormatter.date(from: peCertificateData.certificateDate ?? "")
             dateFormatter.dateFormat = "yyyy-MM-dd"
             if date != nil {
@@ -3669,7 +3669,7 @@ extension PEViewAssesmentFinalize{
             dict.evaluationDate = dateSig
         }else {
             let convertDateFormatter = DateFormatter()
-            convertDateFormatter.dateFormat = "yyyy-MM-dd"
+            convertDateFormatter.dateFormat = Constants.yyyyMMddStr
             convertDateFormatter.timeZone = Calendar.current.timeZone
             convertDateFormatter.locale = Calendar.current.locale
         }
@@ -3680,18 +3680,18 @@ extension PEViewAssesmentFinalize{
        
             if inputFormatter.date(from: evaluationDate ?? "") != nil {
                 let outputFormatter = DateFormatter()
-                outputFormatter.dateFormat = "yyyy-MM-dd"
+                outputFormatter.dateFormat = Constants.yyyyMMddStr
                 dict.evaluationDate = evaluationDate
             }
         }
         else
         {
             let inputFormatter = DateFormatter()
-            inputFormatter.dateFormat = "dd/MM/yyyy"
+            inputFormatter.dateFormat = Constants.ddMMyyyStr
             
             if inputFormatter.date(from: evaluationDate ?? "") != nil {
                 let outputFormatter = DateFormatter()
-                outputFormatter.dateFormat = "yyyy-MM-dd"
+                outputFormatter.dateFormat = Constants.yyyyMMddStr
                 dict.evaluationDate = evaluationDate
             }
 
