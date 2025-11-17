@@ -1913,6 +1913,7 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
 
 // MARK: - Other Delegates
 extension PEDraftStartNewAssesmentINT: DatePickerPopupViewControllerProtocol{
+    
     func doneButtonTappedWithDate(string: String, objDate: Date) {
         let datesStored =  getAllDateArrayStored()
         let customerStored = getAllCustomerArrayStored()
@@ -1936,20 +1937,15 @@ extension PEDraftStartNewAssesmentINT: DatePickerPopupViewControllerProtocol{
         }
     }
     
-    func doneButtonTapped(string:String){
-        
-    }
+  
 }
 
 // MARK: - Other Delegates
 extension PEDraftStartNewAssesmentINT{
     
-    func getEvaluationFromBackend(){
-        
-    }
+   
     
     func microbialValidations(){
-        getEvaluationFromBackend()
         checkBackAndSave()
         jsonRe = (getJSON("QuestionAns") ?? JSON())
         pECategoriesAssesmentsResponse =  PECategoriesAssesmentsResponse(jsonRe)
@@ -2098,10 +2094,6 @@ extension PEDraftStartNewAssesmentINT:UITextViewDelegate{
         }
     }
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        
-    }
-    
 }
 
 // MARK: - WebServices
@@ -2121,18 +2113,9 @@ extension PEDraftStartNewAssesmentINT {
         
     }
     
-    private func handleAssessmentCategoriesResponse(_ json: JSON) {
-        
-    }
-    
-    
 }
 
 extension PEDraftStartNewAssesmentINT : UITextFieldDelegate{
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-    }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return true;
     }

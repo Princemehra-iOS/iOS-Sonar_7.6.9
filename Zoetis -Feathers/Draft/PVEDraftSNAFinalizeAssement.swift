@@ -2964,9 +2964,7 @@ extension PVEDraftSNAFinalizeAssement: DatePickerPopupViewControllerProtocol{
         
         
     }
-    
-    func doneButtonTapped(string:String){
-    }
+   
 }
 
 

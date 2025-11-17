@@ -323,8 +323,6 @@ class PEViewStartNewAssesmentINT: BaseViewController {
             self.isAutomaticFailView.isHidden = true
         }
         
-        showExtendedPE()
-        enableExtendedPE(flag:false)
         if infoObj != nil{
             extendedPESwitch =  infoObj?.isExtendedPE ?? false
         }
@@ -449,11 +447,7 @@ class PEViewStartNewAssesmentINT: BaseViewController {
     }
     
     
-    func showExtendedPE(flag:Bool = false){
-    }
     
-    func enableExtendedPE(flag:Bool = true){
-    }
     
     
     
@@ -582,8 +576,6 @@ class PEViewStartNewAssesmentINT: BaseViewController {
         return sites
     }
     
-    @IBAction func btnAction(_ sender: Any) {
-    }
     // MARK: Hide other Breed View
     func hideBreedOthers(){
         btnBreedOthers.isHidden = true
@@ -695,9 +687,7 @@ class PEViewStartNewAssesmentINT: BaseViewController {
                 // As per discussion with Imran and binu we have commented this code so that client can submit their assessment irsepective of their Assessment Approved or not.
                // self.getAssessmentStatusCheck(assessmentId: self.peNewAssessment.serverAssessmentId ?? "")
             }
-            let cancelAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel) {
-                _ in
-            }
+            let cancelAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel)
             alertController.addAction(okAction)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
@@ -707,9 +697,7 @@ class PEViewStartNewAssesmentINT: BaseViewController {
     }
     
     
-    func saveAssessmentInProgressDataInDB()  {
-        
-    }
+   
     
     // MARK: - Merndatory Field Validation Check
     func changeMandatorySuperviewToRed(){

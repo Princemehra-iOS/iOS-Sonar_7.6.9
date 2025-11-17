@@ -810,7 +810,7 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                     }
                     vc.commentCompleted = {[unowned self] ( note) in
                         if note == "" {
-                            let image = UIImage(named: "PEcomment.png")
+                            let image = UIImage(named: Constants.peCommentImageStr)
                             cell.noteBtn.setImage(image, for: .normal)
                             
                         } else {
@@ -1003,7 +1003,7 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 cell.btn_ImageCount.isHidden = false
             }
             
-            let image1 = UIImage(named: "PEcomment.png")
+            let image1 = UIImage(named:  Constants.peCommentImageStr)
             let image2 = UIImage(named: Constants.peCommentSelectedStr)
             if assessment?.note == "" || assessment?.note == nil {
                 cell.btn_Comment.setImage(image1, for: .normal)
@@ -1396,7 +1396,7 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             } else {
                 cell.btnImageCount.isHidden = false
             }
-            let image1 = UIImage(named: "PEcomment.png")
+            let image1 = UIImage(named:  Constants.peCommentImageStr)
             let image2 = UIImage(named: Constants.peCommentSelectedStr)
             if assessment?.note?.count ?? 0 < 1 {
                 cell.noteBtn.setImage(image1, for: .normal)
@@ -1462,7 +1462,6 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             }
             cell.cameraCompletion = {[unowned self] ( error) in
                 self.tableviewIndexPath = indexPath
-                self.takePhoto(cell.cameraBTn)
             }
             cell.infoCompletion = {[unowned self] ( error) in
                 self.tableviewIndexPath = indexPath
@@ -2322,9 +2321,7 @@ extension PEViewAssesmentFinalize{
 
 // MARK:  ************** Camera Button Action ***************************************/
 extension PEViewAssesmentFinalize: UIImagePickerControllerDelegate , UINavigationControllerDelegate{
-    @objc func takePhoto(_ sender: UIButton) {
-        
-    }
+    
     
     // MARK: ************* Alert View Methods ***********************************/
     
@@ -2358,15 +2355,12 @@ extension PEViewAssesmentFinalize: UIImagePickerControllerDelegate , UINavigatio
                 }
             }
         }
-        imagePicker.dismiss(animated: true, completion: {
-        })
+        imagePicker.dismiss(animated: true, completion: nil)
     }
     /******************************************************************************************************/
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         
-        dismiss(animated: true, completion: {
-            
-        })
+        dismiss(animated: true, completion: nil)
     }
     // MARK:  Save Image in PE Module
     private func saveImageInPEModule(imageData:Data){

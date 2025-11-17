@@ -1480,8 +1480,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                             self.certificateData[self.tableviewIndexPath.row].name = error
 //                            self.certificateData[self.chnagedVaccineNameIndexPathRow].certCeatedby = Int(UserContext.sharedInstance.userDetailsObj?.userId ?? "0")
                             CoreDataHandlerPE().updateVMixerInDB(peCertificateData:  self.certificateData[self.tableviewIndexPath.row], id:  self.certificateData[self.tableviewIndexPath.row].id ?? 0)
-                            UIView.performWithoutAnimation {
-                            }
+                           
                             cell.vaccNameField.resignFirstResponder()
                             cell.vaccNameField.endEditing(true)
                         }
@@ -1491,8 +1490,6 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                                 self.certificateData[self.chnagedVaccineNameIndexPathRow].name = error
                                 //self.certificateData[self.chnagedVaccineNameIndexPathRow].certCeatedby = Int(UserContext.sharedInstance.userDetailsObj?.userId ?? "0")
                                 CoreDataHandlerPE().updateVMixerInDB(peCertificateData:  self.certificateData[self.chnagedVaccineNameIndexPathRow], id:  self.certificateData[self.chnagedVaccineNameIndexPathRow].id ?? 0)
-                                UIView.performWithoutAnimation {
-                                }
                                 cell.vaccNameField.resignFirstResponder()
                             }
                         }

@@ -14,6 +14,9 @@ protocol DatePickerPopupViewControllerProtocol {
     func doneButtonTappedWithDate(string:String, objDate:Date)
     
 }
+extension DatePickerPopupViewControllerProtocol {
+    func doneButtonTapped(string: String) { }
+}
 
 class DatePickerPopupViewController: BaseViewController {
     @IBOutlet weak var buttonBg: UIButton!
