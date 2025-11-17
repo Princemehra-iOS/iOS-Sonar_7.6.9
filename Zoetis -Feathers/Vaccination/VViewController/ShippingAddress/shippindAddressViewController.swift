@@ -87,8 +87,8 @@ class shippindAddressViewController: BaseViewController , UITextFieldDelegate {
             let approverData = ApproverStore.shared.getApprover(for: certId)
             fsmName.text = approverData?.approverName
         }
-        if let certId = curentCertification?.siteName {
-            siteNameLbl.text = curentCertification?.siteName
+        if let setSiteName = curentCertification?.siteName {
+            siteNameLbl.text = setSiteName
         }
         
         shippingInfo = shippingInfoDB!
@@ -156,15 +156,15 @@ class shippindAddressViewController: BaseViewController , UITextFieldDelegate {
             let approverData = ApproverStore.shared.getApprover(for: certId)
             fsmName.text = approverData?.approverName
         }
-        if let certId = curentCertification?.siteName {
-            siteNameLbl.text = curentCertification?.siteName
+        if let sitesName = curentCertification?.siteName {
+            siteNameLbl.text = sitesName
         }
         
         shippingInfo = shippingInfoDB!
         OtherAddresShippingInfo = otherAddresShippingInfoDB
         if let otherAddress = otherAddresShippingInfoDB,
            (otherAddress.address1?.isEmpty == false || otherAddress.stateName?.isEmpty == false) {
-            // Proceed with non-empty address1 or stateName
+          
             OtherAddresShippingInfo = otherAddress
             
             self.showOtherShippingAddressView()
@@ -185,7 +185,6 @@ class shippindAddressViewController: BaseViewController , UITextFieldDelegate {
             self.addressline2TxtFld.text = shippingInfo?.address2
             self.cityTextField.text = shippingInfo?.city
             self.zipCodeTxtFld.text = shippingInfo?.pincode
-            var countryAddressId = String(shippingInfo?.countryID ?? 0)
             self.countryId = shippingInfo?.countryID ?? 0
             self.stateId = shippingInfo?.stateID ?? 0
             self.selectedState.text = shippingInfo?.stateName
@@ -200,7 +199,6 @@ class shippindAddressViewController: BaseViewController , UITextFieldDelegate {
             self.addressline2TxtFld.text = shippingInfo?.address2
             self.cityTextField.text = shippingInfo?.city
             self.zipCodeTxtFld.text = shippingInfo?.pincode
-            var countryAddressId = String(shippingInfo?.countryID ?? 0)
             self.countryId = shippingInfo?.countryID ?? 0
             self.stateId = shippingInfo?.stateID ?? 0
             self.selectedState.text = shippingInfo?.stateName
@@ -245,11 +243,9 @@ class shippindAddressViewController: BaseViewController , UITextFieldDelegate {
                     self.addressline2TxtFld.text = shippingInfo?.address2
                     self.cityTextField.text = shippingInfo?.city
                     self.zipCodeTxtFld.text = shippingInfo?.pincode
-                    let handledCountryId = String(shippingInfo?.countryID ?? 0)
                     self.countryId = shippingInfo?.countryID ?? 0
                     self.stateId = shippingInfo?.stateID ?? 0
                     
-                    let handledStateId = String(shippingInfo?.stateID ?? 0)
                     self.selectedState.text = shippingInfo?.stateName
                     self.selectedCountry.text = shippingInfo?.countryName
                
@@ -260,11 +256,8 @@ class shippindAddressViewController: BaseViewController , UITextFieldDelegate {
                     self.addressline2TxtFld.text = OtherAddresShippingInfo?.address2
                     self.cityTextField.text = OtherAddresShippingInfo?.city
                     self.zipCodeTxtFld.text = OtherAddresShippingInfo?.pincode
-                    let handledCountryId = String(OtherAddresShippingInfo?.countryID ?? 0)
                     self.countryId = OtherAddresShippingInfo?.countryID ?? 0
                     self.otherStateId = OtherAddresShippingInfo?.stateID ?? 0
-                    
-                    let handledStateId = String(OtherAddresShippingInfo?.stateID ?? 0)
                     self.selectedState.text = OtherAddresShippingInfo?.stateName
                     self.selectedCountry.text = OtherAddresShippingInfo?.countryName
                 }
@@ -284,11 +277,8 @@ class shippindAddressViewController: BaseViewController , UITextFieldDelegate {
                     self.addressline2TxtFld.text = shippingInfo?.address2
                     self.cityTextField.text = shippingInfo?.city
                     self.zipCodeTxtFld.text = shippingInfo?.pincode
-                    let handledCountryId = String(shippingInfo?.countryID ?? 0)
                     self.countryId = shippingInfo?.countryID ?? 0
                     self.stateId = shippingInfo?.stateID ?? 0
-                    
-                    let handledStateId = String(shippingInfo?.stateID ?? 0)
                     self.selectedState.text = shippingInfo?.stateName
                     self.selectedCountry.text = shippingInfo?.countryName
                 }
@@ -309,11 +299,8 @@ class shippindAddressViewController: BaseViewController , UITextFieldDelegate {
                       self.addressline2TxtFld.text = shippingInfo?.address2
                       self.cityTextField.text = shippingInfo?.city
                       self.zipCodeTxtFld.text = shippingInfo?.pincode
-                      let handledCountryId = String(shippingInfo?.countryID ?? 0)
                       self.countryId = shippingInfo?.countryID ?? 0
                       self.stateId = shippingInfo?.stateID ?? 0
-                      
-                      let handledStateId = String(shippingInfo?.stateID ?? 0)
                       self.selectedState.text = shippingInfo?.stateName
                       self.selectedCountry.text = shippingInfo?.countryName
 
@@ -495,6 +482,7 @@ class shippindAddressViewController: BaseViewController , UITextFieldDelegate {
             if shippingInfoDB != nil {
                 if let data = UserDefaults.standard.data(forKey: "\(curentCertification?.selectedFsmId ?? "")"),
                    let savedUser = try? JSONDecoder().decode(ShippingAddressDTO.self, from: data) {
+                    debugPrint(savedUser)
                     if id == 0 {
                         SavedShippingInfoDetails(shippingInfoAcknowldge, otherShippingAddress)
                     }
@@ -517,16 +505,6 @@ class shippindAddressViewController: BaseViewController , UITextFieldDelegate {
     @IBAction func doneBtnAction(_ sender: Any) {
         countryBtn.setTitle("", for: .normal)
         stateBtn.setTitle("", for: .normal)
-        
-        // ✅ Stop here if validations fail
-//           guard checkVaidations() else {
-//               return
-//           }
-//           
-//           self.dismiss(animated: true) {
-//               self.onDismiss?()
-//           }
-        
         
         if checkVaidations() {
             self.dismiss(animated: true) {
@@ -1034,7 +1012,6 @@ class shippindAddressViewController: BaseViewController , UITextFieldDelegate {
                     let value = country.first
                     let dropCountryId = value?.countryId ?? ""
                     self.getVaccinationStateList(countryId: dropCountryId,stateId: nil)
-                    let ss = self.curentCertification?.StateId ?? 0
                     let element = self.countryList[index]
                    
                     self.shippingInfo?.countryID = Int(element.countryId ?? "")
