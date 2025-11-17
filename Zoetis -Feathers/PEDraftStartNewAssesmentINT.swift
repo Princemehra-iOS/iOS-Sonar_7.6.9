@@ -237,7 +237,6 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
             } else {
                 debugPrint("Evaluation type Selected")
             }
-            showFlockView()
             
         }
         
@@ -523,25 +522,12 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
         }
         return otherCount
     }
-    
-    
-    
-    func showExtendedPE(flag:Bool = false){
-        
-    }
-    
-    func enableExtendedPE(flag:Bool = true){
-    }
-    
-    
+ 
     func hideFlockView(){
         flockView.isHidden = true
         heightFlockAge.constant = 0
     }
-    func showFlockView(){
-    }
-    
-    
+  
     func setupUI() {
         btnNext.setNextButtonUI()
         viewForGradient.setGradientThreeColors(
@@ -846,10 +832,7 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
             self.dropHiddenAndShow()
         }
     }
-    
-    @IBAction func btnAction(_ sender: Any) {
-    }
-    
+        
     func hideBreedOthers(){
         
         
@@ -970,7 +953,7 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
     
     @IBAction func nextBtnAction(_ sender: Any) {
         
-        self.getVaccineMixerList(customerId: self.peNewAssessment.customerId ?? 0, siteId: self.peNewAssessment.siteId ?? 0, countryId: 40) { [self] status in
+        self.getVaccineMixerList(customerId: self.peNewAssessment.customerId ?? 0, siteId: self.peNewAssessment.siteId ?? 0, countryId: 40) { _ in
         }
         
         guard let date = self.peNewAssessment.evaluationDate, date.count > 0 else {
@@ -1609,7 +1592,6 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
                 self.isFlockAgeGreaterThen50Weeks  = false
                 self.btnFlockAgeGreater.setImage(UIImage(named: "uncheckIconPE"), for: .normal)
                 self.btnFlockImageLower.setImage(UIImage(named: "uncheckIconPE"), for: .normal)
-                self.showFlockView()
                 
                 if selectedVal.contains("Non")  {
                     self.heightFlockAge.constant = 78

@@ -223,7 +223,7 @@ final public  class UserFilledQuestionnaireDAO{
         let fetchRequest  = NSFetchRequest<NSFetchRequestResult>(entityName: "VaccinationFilledQuestionTypes")
         fetchRequest.returnsObjectsAsFaults = false
         
-        fetchRequest.predicate = NSPredicate(format:"userId = %@ AND certificationId = %@", userId, certificationId)
+        fetchRequest.predicate = NSPredicate(format:Constants.userIdExpression, userId, certificationId)
         do {
             questionTypesArr = try managedContext.fetch(fetchRequest) as! [VaccinationFilledQuestionTypes]
             
@@ -282,9 +282,9 @@ final public  class UserFilledQuestionnaireDAO{
     }
     
     func deleteVaccinationQuestions(userId:String, certificationId:String){
-        deleteExisitingData(entityName: "VaccinationFilledQuestionTypes", predicate: NSPredicate(format:"userId = %@ AND certificationId = %@", userId, certificationId))
-        deleteExisitingData(entityName: "VaccinationFilledQuetions", predicate: NSPredicate(format:"userId = %@ AND certificationId = %@", userId, certificationId))
-        deleteExisitingData(entityName: "VaccinationFilledQuestionCategories", predicate: NSPredicate(format:"userId = %@ AND certificationId = %@", userId, certificationId))
+        deleteExisitingData(entityName: "VaccinationFilledQuestionTypes", predicate: NSPredicate(format:Constants.userIdExpression, userId, certificationId))
+        deleteExisitingData(entityName: "VaccinationFilledQuetions", predicate: NSPredicate(format:Constants.userIdExpression, userId, certificationId))
+        deleteExisitingData(entityName: "VaccinationFilledQuestionCategories", predicate: NSPredicate(format:Constants.userIdExpression, userId, certificationId))
     }
     
     

@@ -283,6 +283,7 @@ struct Constants {
     static let extendedMicrobialStr = "Extended Microbial"
     static let pleaseEnterVaccineDetailsStr = "Please enter vaccine details in the Vaccine Preparation & Sterility."
     static let ddMMyyyStr = "dd/MM/yyyy"
+    static let userIdExpression = "userId = %@ AND certificationId = %@"
     static let pleaseEnterProgramNameStr = "Please enter program name in the Vaccine Preparation & Sterility."
     static let pleaseEnterAntibiotics = "Please enter Antibiotic in the Vaccine Preparation & Sterility."
     static let areYouSureAssessmentStr = "Are you sure you want to finish the assessment? After finishing the information can't be edited."

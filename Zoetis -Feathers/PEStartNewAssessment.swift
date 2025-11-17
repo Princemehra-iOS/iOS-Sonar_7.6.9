@@ -764,8 +764,7 @@ class PEStartNewAssessment: BaseViewController {
         return evaluationIDs
     }
     
-    @IBAction func btnAction(_ sender: Any) {
-    }
+   
     // MARK: - Hide Breed Other View
     func hideBreedOthers(){
         heightBreed.constant = 45
@@ -785,10 +784,7 @@ class PEStartNewAssessment: BaseViewController {
         heightIncubation.constant = 45
         
     }
-    // MARK: - Show Incubation Other View
-    func showIncubationOthers(){
-        
-    }
+  
     
     // MARK: - Hide Manufacturer Other  View
     func hideManufacturerOthers(){
@@ -931,7 +927,7 @@ class PEStartNewAssessment: BaseViewController {
             self.deleteAllData("PE_VaccineMixerDetail")
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.getVaccineMixerList(customerId: self.peNewAssessment.customerId ?? 0, siteId: self.peNewAssessment.siteId ?? 0, countryId: 40) { [self] status in
+            self.getVaccineMixerList(customerId: self.peNewAssessment.customerId ?? 0, siteId: self.peNewAssessment.siteId ?? 0, countryId: 40) { _ in
             }
         }
     }
@@ -1796,7 +1792,6 @@ class PEStartNewAssessment: BaseViewController {
                 self.txtIncubation.text = selectedVal
                 if selectedVal == "Other"{
                     self.peNewAssessment.breedOfBird = "Other"
-                    self.showIncubationOthers()
                 } else {
                     self.peNewAssessment.breedOfBird = selectedVal
                     self.hideIncubationOthers()
@@ -2167,9 +2162,7 @@ extension PEStartNewAssessment {
         }
     }
     
-    private func handleAssessmentCategoriesResponse(_ json: JSON) {
-        
-    }
+    
     
     
 }
@@ -2213,9 +2206,7 @@ extension PEStartNewAssessment : UITextFieldDelegate{
         }
         
     }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-    }
+  
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         
         return true;

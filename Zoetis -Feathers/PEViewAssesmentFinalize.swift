@@ -1449,9 +1449,7 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 vc.infoText = assessment?.informationText ?? ""
                 
                 vc.editable = false
-                vc.commentCompleted = {[unowned self] ( note) in
-                    
-                }
+                
                 if vc.editable{
                     self.navigationController?.present(vc, animated: false, completion: nil)
                 }else{
