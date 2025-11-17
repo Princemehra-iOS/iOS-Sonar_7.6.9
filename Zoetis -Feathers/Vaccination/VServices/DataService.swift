@@ -523,12 +523,7 @@ class DataService{
                 shippingInfoDB?.siteId =  shippingInfoDB?.siteId
                 shippingInfoDB?.siteName = shippingInfoDB?.siteName
             }
-            
-            if let id = shippingInfoDB?.fssID {
-                
-                print("ID is: \(id)")
-            } else {
-            }
+
             shippingInfoDB?.trainingID =  Int(certificationId) ?? 0
             if shippingInfoDB != nil {
                 shippingArr.append(shippingInfoDB!)
@@ -947,14 +942,16 @@ class DataService{
                                 //MARK:  Setting other shipping address details blank
                                 VaccinationCustomersDAO.sharedInstance.setOtherShippingInfo(siteId: shippingInfoObj?[0].siteId ?? 0, trainingId: shippingInfoObj?[0].trainingID ?? 0, sitname: shippingInfoObj?[0].siteName ?? "", fsName: shippingInfoObj?[0].fssName ?? "", fsId: shippingInfoObj?[0].fssID ?? 0, cntryId:  0, CntryName: "")
                                 Constants.updateSiteAddress = false
-                                if let shippingInfo = shippingInfoObj?.first {
-                                    if (shippingInfo.address1?.isEmpty ?? true) ||
-                                       (shippingInfo.pincode?.isEmpty ?? true) ||
-                                       (shippingInfo.city?.isEmpty ?? true) ||
-                                       (shippingInfo.stateName?.isEmpty ?? true) {
-                                        Constants.updateSiteAddress = true
-                                    }
+                      
+                                if let shippingInfo = shippingInfoObj?.first,
+                                   (shippingInfo.address1?.isEmpty ?? true) ||
+                                   (shippingInfo.pincode?.isEmpty ?? true) ||
+                                   (shippingInfo.city?.isEmpty ?? true) ||
+                                   (shippingInfo.stateName?.isEmpty ?? true) {
+
+                                    Constants.updateSiteAddress = true
                                 }
+
                                 completion(VaccinationConstants.VaccinationStatus.COREDATA_SAVED_SUCCESSFULLY, nil)
                                 
                                 saveSiteAddress(certId: certId, countryId: shippingInfoObj?[0].countryID,
