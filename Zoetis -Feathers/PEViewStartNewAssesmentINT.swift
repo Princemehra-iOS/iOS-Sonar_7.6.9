@@ -139,7 +139,7 @@ class PEViewStartNewAssesmentINT: BaseViewController {
         self.headerView.addSubview(peHeaderViewController.view)
         self.topviewConstraint(vwTop: peHeaderViewController.view)
         
-        notesTextView.delegate = self
+       
         notesTextView.layer.borderColor = UIColor.getTextViewBorderColorStartAssessment().cgColor
         notesTextView.textContainer.lineFragmentPadding = 12
         notesTextView.text = ""
@@ -853,7 +853,6 @@ class PEViewStartNewAssesmentINT: BaseViewController {
                 self.peNewAssessment.siteName = selectedVal
                 let indexOfItem = complexNamesArray.index(of: selectedVal)
                 self.peNewAssessment.siteId = complexIDArray[indexOfItem] as? Int
-                self.saveAssessmentInProgressDataInDB()
             }
             self.dropHiddenAndShow()
         } else{
@@ -883,7 +882,6 @@ class PEViewStartNewAssesmentINT: BaseViewController {
                 self.peNewAssessment.evaluatorName = selectedVal
                 let indexOfItem = evaluatorNameArray.index(of: selectedVal)
                 self.peNewAssessment.evaluatorID = evaluatorIDArray[indexOfItem] as? Int
-                self.saveAssessmentInProgressDataInDB()
             }
             self.dropHiddenAndShow()
         }
@@ -909,7 +907,6 @@ class PEViewStartNewAssesmentINT: BaseViewController {
                 self.peNewAssessment.visitName = selectedVal
                 let indexOfItem = visitNameArray.index(of: selectedVal)
                 self.peNewAssessment.visitID = visitIDArray[indexOfItem] as? Int
-                self.saveAssessmentInProgressDataInDB()
             }
             self.dropHiddenAndShow()
         }
@@ -963,7 +960,6 @@ class PEViewStartNewAssesmentINT: BaseViewController {
                 self.peNewAssessment.evaluationName = selectedVal
                 let indexOfItem = evaluationNameArray.index(of: selectedVal)
                 self.peNewAssessment.evaluationID = evaluationIDArray[indexOfItem] as? Int
-                self.saveAssessmentInProgressDataInDB()
             }
             self.dropHiddenAndShow()
         }
@@ -982,7 +978,6 @@ class PEViewStartNewAssesmentINT: BaseViewController {
             isFlockAgeGreaterThen50Weeks = false
             btnFlockImageLower.setImage(UIImage(named: "uncheckIconPE"), for: .normal)
         }
-        self.saveAssessmentInProgressDataInDB()
     }
     // MARK: - Flock Image Lower Action
     @IBAction func flockImageLowerSelected(_ sender: Any) {
@@ -998,7 +993,6 @@ class PEViewStartNewAssesmentINT: BaseViewController {
             isFlockAgeGreaterThen50Weeks = true
             btnFlockImageLower.setImage(UIImage(named: "checkIconPE"), for: .normal)
         }
-        self.saveAssessmentInProgressDataInDB()
     }
     
     // MARK: - TSR Button Action
@@ -1029,7 +1023,6 @@ class PEViewStartNewAssesmentINT: BaseViewController {
                 self.peNewAssessment.selectedTSR = selectedVal
                 let indexOfItem = visitNameArray.index(of: selectedVal)
                 self.peNewAssessment.selectedTSRID = visitIDArray[indexOfItem] as? Int
-                self.saveAssessmentInProgressDataInDB()
                 
             }
             self.dropHiddenAndShow()
@@ -1047,7 +1040,6 @@ class PEViewStartNewAssesmentINT: BaseViewController {
         } else {
             peNewAssessment.hatcheryAntibiotics = 0
         }
-        self.saveAssessmentInProgressDataInDB()
     }
     // MARK: - Breed Type Button Action
     @IBAction func btnBreedClicked(_ sender: Any) {
@@ -1062,7 +1054,6 @@ class PEViewStartNewAssesmentINT: BaseViewController {
                 self.txtBreedOfBird.text = selectedVal
                 self.txtBreedOfBirdsOthers.text = ""
             }
-            self.saveAssessmentInProgressDataInDB()
         }
         self.dropHiddenAndShow()
         
@@ -1080,7 +1071,6 @@ class PEViewStartNewAssesmentINT: BaseViewController {
                 self.peNewAssessment.breedOfBird = selectedVal
                 self.hideIncubationOthers()
             }
-            self.saveAssessmentInProgressDataInDB()
         }
         self.dropHiddenAndShow()
         
@@ -1116,7 +1106,6 @@ extension PEViewStartNewAssesmentINT: DatePickerPopupViewControllerProtocol{
         }  else {
             selectedEvaluationDateText.text = string
             self.peNewAssessment.evaluationDate = string
-            saveAssessmentInProgressDataInDB()
         }
     }
     
@@ -1131,7 +1120,6 @@ extension PEViewStartNewAssesmentINT{
     // MARK: -Ok Button Tabbed.
     func okButtonTapped() {
         
-        saveAssessmentInProgressDataInDB()
         jsonRe = (getJSON("QuestionAns") ?? JSON())
         pECategoriesAssesmentsResponse =  PECategoriesAssesmentsResponse(jsonRe)
         let categoryCount = filterCategoryCount()
@@ -1209,32 +1197,11 @@ extension PEViewStartNewAssesmentINT{
     
 }
 
-// MARK: - UI TextView Delegates.
-extension PEViewStartNewAssesmentINT:UITextViewDelegate{
-    //MARK...
-    
-    func textViewShouldBeginEditing(_ _textView: UITextView) -> Bool {
-        return true
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if (textView == notesTextView ) {
-            saveAssessmentInProgressDataInDB()
-        }
-    }
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        
-    }
-    
-}
+
 
 // MARK: - UI Textfield Delegates.
 extension PEViewStartNewAssesmentINT : UITextFieldDelegate{
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-    }
+    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return true;
     }
@@ -2491,9 +2458,7 @@ extension PEViewStartNewAssesmentINT{
                 // As per discussion with Imran and binu we have commented this code so that client can submit their assessment irsepective of their Assessment Approved or not.
               //  self.getAssessmentStatusCheck(assessmentId: self.peNewAssessment.serverAssessmentId ?? "")
             }
-            let cancelAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel) {
-                _ in
-            }
+            let cancelAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel)
             alertController.addAction(okAction)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)

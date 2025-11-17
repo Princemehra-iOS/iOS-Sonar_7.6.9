@@ -4560,8 +4560,8 @@
             filePath = "Zoetis -Feathers/PEViewStartNewAssesmentINT.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2325"
-            endingLineNumber = "2325"
+            startingLineNumber = "2292"
+            endingLineNumber = "2292"
             landmarkName = "exportLogsData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4576,8 +4576,8 @@
             filePath = "Zoetis -Feathers/PEViewStartNewAssesmentINT.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2500"
-            endingLineNumber = "2500"
+            startingLineNumber = "2465"
+            endingLineNumber = "2465"
             landmarkName = "syncBtnAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
