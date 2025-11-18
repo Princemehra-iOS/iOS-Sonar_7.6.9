@@ -274,9 +274,7 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
             selectedTSR.text = peNewAssessment.selectedTSR
         } else {
             
-            
         }
-        
       
         if  peNewAssessment.selectedTSR?.count ?? 0 < 1 {
             let visitDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Approvers")
@@ -506,10 +504,9 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
     
     func rightConstraint()-> Int{
         var otherCount = 0
-        
-        if ((self.txtManufacturer.text?.lowercased().contains("other")) ?? false) {
-            otherCount += 1
-        } else if self.txtManufacturer.text?.contains("S") ?? false {
+ 
+        if self.txtManufacturer.text?.lowercased().contains("other") == true ||
+           self.txtManufacturer.text?.contains("S") == true {
             otherCount += 1
         }
         
@@ -675,7 +672,7 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
         
         
         if self.peNewAssessment.fluid == true{
-            self.inovoPESwitch = true//hatcherySwitch.isOn
+            self.inovoPESwitch = true
             inovoBtn.setImage(UIImage(named: "checkIconPE"), for: .normal)
         } else{
             self.inovoPESwitch = false
@@ -775,9 +772,8 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
             }
         }
 
-        var manufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Manufacturer")
-        var manufacutrerNameArray = manufacutrerDetailsArray.value(forKey: "mFG_Name") as? NSArray ?? NSArray()
-        var manufacutrerIDArray = manufacutrerDetailsArray.value(forKey: "mFG_Id") as? NSArray ?? NSArray()
+        let manufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Manufacturer")
+        let manufacutrerNameArray = manufacutrerDetailsArray.value(forKey: "mFG_Name") as? NSArray ?? NSArray()
         if  manufacutrerNameArray.count > 0 {
             self.dropDownVIewNew(arrayData: manufacutrerNameArray as? [String] ?? [String](), kWidth: btnIncubation.frame.width, kAnchor: btnIncubation, yheight: btnIncubation.bounds.height) { [unowned self] selectedVal, index  in
                 self.txtManufacturer.text = selectedVal
@@ -811,8 +807,8 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
             }
         }
   
-        var EggsDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Eggs")
-        var EggsNameArray = EggsDetailsArray.value(forKey: "eggCount") as? NSArray ?? NSArray()
+        let EggsDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Eggs")
+        let EggsNameArray = EggsDetailsArray.value(forKey: "eggCount") as? NSArray ?? NSArray()
         
         if  EggsNameArray.count > 0 {
             self.dropDownVIewNew(arrayData: EggsNameArray as? [String] ??  [String](), kWidth: txtNumberOfEggs.frame.width, kAnchor: txtNumberOfEggs, yheight: txtNumberOfEggs.bounds.height) { [unowned self] selectedVal, index  in
@@ -941,8 +937,8 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
             "countryId": "\(countryId)"
         ] as JSONDictionary
         ZoetisWebServices.shared.getMixerList(controller: self, parameters: parameter) { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleVaccineMixer(json)
+            guard let strongSelf = self, error == nil else { return }
+            strongSelf.handleVaccineMixer(json)
         }
     }
     private func handleVaccineMixer(_ json: JSON) {
@@ -985,7 +981,7 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
         if peNewAssessment.breedOfBird != nil && peNewAssessment.breedOfBird != ""{
             if ((peNewAssessment.breedOfBird?.lowercased().contains("other")) ?? false) {
                 if peNewAssessment.breedOfBirdOther != nil && peNewAssessment.breedOfBirdOther != "" {
-                    
+                    // breed of bird data is not empty
                 }else{
                     changeMandatorySuperviewToRed()
                     return
@@ -999,7 +995,7 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
         if self.txtManufacturer.text != nil && self.txtManufacturer.text != ""{
             if ((self.txtManufacturer.text?.lowercased().contains("other")) ?? false) {
                 if manfacturerOtherTxt.text != nil && manfacturerOtherTxt.text != "" {
-                    
+                    // manufacturer other data is not empty
                 }else{
                     changeMandatorySuperviewToRed()
                     return
@@ -1011,7 +1007,7 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
         }
         
         if peNewAssessment.incubation != nil && peNewAssessment.incubation != ""{
-            
+            // incubation data is not empty
         }else{
             changeMandatorySuperviewToRed()
             return
@@ -1020,7 +1016,7 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
         if txtNumberOfEggs.text != nil && txtNumberOfEggs.text != ""{
             if ((txtNumberOfEggs.text?.lowercased().contains("other")) ?? false) {
                 if eggsOtherTxt.text != nil && eggsOtherTxt.text != "" {
-                    
+                    // other eggs data is not found
                 }else{
                     changeMandatorySuperviewToRed()
                     return
@@ -1098,7 +1094,6 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
         if let notesTxt = notesTextView.text , notesTxt.count > 0 {
             peNewAssessment.notes =   notesTxt
         }
-        let firstNameIs =  UserDefaults.standard.value(forKey: "FirstName") as? String ?? ""
         var FirstName =  UserDefaults.standard.value(forKey: "FirstName") as? String ?? ""
         var LastName =  UserDefaults.standard.value(forKey: "LastName") as? String ?? ""
         FirstName = FirstName + LastName
@@ -1124,8 +1119,7 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
     }
     
     private func saveDraftData(){
-        var allAssesmentArr = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AssessmentIDraftInProgress") as? [PE_AssessmentIDraftInProgress]
-        var count = 0
+
         finishSession()
     }
     
@@ -1277,7 +1271,9 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
             }
         }
         
-        if (date.count > 0 ?? 0){} else  {
+        if (date.count > 0 ){
+            // draft evaluation date is not blank
+        } else  {
             let superviewCurrent =  evaluationDateButton.superview
             if superviewCurrent != nil{
                 for view in superviewCurrent!.subviews {
@@ -1288,7 +1284,9 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
                 }
             }
         }
-        if (customer.count > 0 ?? 0 ){} else  {
+        if (customer.count > 0 ){
+            // draft customer's data not found
+        } else  {
             let superviewCurrent =  customerButton.superview
             if superviewCurrent != nil{
                 for view in superviewCurrent!.subviews {
@@ -1299,7 +1297,9 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
                     }}
             }
         }
-        if (site.count > 0 ?? 0){} else  {
+        if (site.count >  0){
+            // draft Site data not found
+        } else  {
             let superviewCurrent =  siteButton.superview
             if superviewCurrent != nil{
                 for view in superviewCurrent!.subviews {
@@ -1310,7 +1310,9 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
                 }
             }
         }
-        if (evaluationName.count ?? 0 > 0){} else  {
+        if (evaluationName.count > 0){
+            // draft evaluation data not found
+        } else  {
             let superviewCurrent =  evaluationTypeButton.superview
             if superviewCurrent != nil{
                 for view in superviewCurrent!.subviews {
@@ -1321,7 +1323,9 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
                 }
             }
         }
-        if (evaluator.count ?? 0  > 0){} else  {
+        if (evaluator.count  > 0){
+            // draft evaluator of visit data not found
+        } else  {
             let superviewCurrent =  evaluatorButton.superview
             if superviewCurrent != nil{
                 for view in superviewCurrent!.subviews {
@@ -1332,7 +1336,9 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
                 }
             }
         }
-        if (reasonForVisit.count ?? 0 > 0){} else  {
+        if (reasonForVisit.count > 0){
+            // draft reason of visit data not found
+        } else  {
             let superviewCurrent =  visitButton.superview
             if superviewCurrent != nil{
                 for view in superviewCurrent!.subviews {
@@ -1383,13 +1389,10 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
                 }
             }
         }
-        
-        var customerNamesArray = NSArray()
-        var customerIDArray = NSArray()
-        var customerDetailsArray = NSArray()
-        customerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Customer")
-        customerNamesArray = customerDetailsArray.value(forKey: "customerName") as? NSArray ?? NSArray()
-        customerIDArray = customerDetailsArray.value(forKey: "customerID") as? NSArray ?? NSArray()
+
+        var customerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Customer")
+        var customerNamesArray = customerDetailsArray.value(forKey: "customerName") as? NSArray ?? NSArray()
+        var customerIDArray = customerDetailsArray.value(forKey: "customerID") as? NSArray ?? NSArray()
         if  customerNamesArray.count > 0 {
             self.dropDownVIewNew(arrayData: customerNamesArray as? [String] ?? [String](), kWidth: customerButton.frame.width, kAnchor: customerButton, yheight: customerButton.bounds.height) { [unowned self] selectedVal, index  in
                 self.selectedCustomerText.text = selectedVal
@@ -1398,7 +1401,6 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
                 self.peNewAssessment.customerName = selectedVal
                 self.peNewAssessment.siteName = ""
                 self.peNewAssessment.customerId = customerIDArray[indexOfItem] as? Int
-                let cusId = self.peNewAssessment.customerId ?? 0
                 
             }
             self.dropHiddenAndShow()
@@ -1492,12 +1494,10 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
         guard let customer = self.peNewAssessment.customerName, customer.count > 0 else {
             return
         }
-        var complexNamesArray = NSArray()
-        var complexDetailsArray = NSArray()
-        var complexIDArray = NSArray()
-        complexDetailsArray = CoreDataHandlerPE().fetchSitesWithCustId( self.peNewAssessment.customerId as NSNumber? ?? 0)
-        complexNamesArray = complexDetailsArray.value(forKey: "siteName") as? NSArray ?? NSArray()
-        complexIDArray = complexDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+      
+        var complexDetailsArray = CoreDataHandlerPE().fetchSitesWithCustId( self.peNewAssessment.customerId as NSNumber? ?? 0)
+        var complexNamesArray = complexDetailsArray.value(forKey: "siteName") as? NSArray ?? NSArray()
+        var complexIDArray = complexDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
         
         if  complexNamesArray.count > 0 {
             self.dropDownVIewNew(arrayData: complexNamesArray as? [String] ?? [String](), kWidth: siteButton.frame.width, kAnchor: siteButton, yheight: siteButton.bounds.height) { [unowned self] selectedVal, index in
@@ -1523,12 +1523,9 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
             }
         }
         
-        var customerNamesArray = NSArray()
-        var evaluatorIDArray = NSArray()
-        var evaluatorNameArray = NSArray()
-        var evaluatorDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Evaluator")
-        evaluatorNameArray = evaluatorDetailsArray.value(forKey: "evaluatorName") as?  NSArray ?? NSArray()
-        evaluatorIDArray = evaluatorDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+        let evaluatorDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Evaluator")
+        var evaluatorNameArray = evaluatorDetailsArray.value(forKey: "evaluatorName") as?  NSArray ?? NSArray()
+        var evaluatorIDArray = evaluatorDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
         if  evaluatorNameArray.count > 0 {
             self.dropDownVIewNew(arrayData: evaluatorNameArray as? [String] ?? [String](), kWidth: evaluatorButton.frame.width, kAnchor: evaluatorButton, yheight: evaluatorButton.bounds.height) { [unowned self] selectedVal, index  in
                 self.selectedEvaluatorText.text = selectedVal
@@ -1551,11 +1548,10 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
                 }
             }
         }
-        var visitIDArray = NSArray()
-        var visitNameArray = NSArray()
-        var visitDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VisitTypes")
-        visitNameArray = visitDetailsArray.value(forKey: "visitName") as? NSArray ?? NSArray()
-        visitIDArray = visitDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+
+        let visitDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VisitTypes")
+        var visitNameArray = visitDetailsArray.value(forKey: "visitName") as? NSArray ?? NSArray()
+        var visitIDArray = visitDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
         if  visitNameArray.count > 0 {
             self.dropDownVIewNew(arrayData: visitNameArray as? [String] ?? [String](), kWidth: visitButton.frame.width, kAnchor: visitButton, yheight: visitButton.bounds.height) { [unowned self] selectedVal, index  in
                 self.selectedVisitText.text = selectedVal
@@ -1580,11 +1576,10 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
                 }
             }
         }
-        var evaluationIDArray = NSArray()
-        var evaluationNameArray = NSArray()
-        var evaluationDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_EvaluationType")
-        evaluationNameArray = evaluationDetailsArray.value(forKey: "evaluationName") as? NSArray ?? NSArray()
-        evaluationIDArray = evaluationDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+
+        let evaluationDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_EvaluationType")
+        var evaluationNameArray = evaluationDetailsArray.value(forKey: "evaluationName") as? NSArray ?? NSArray()
+        var evaluationIDArray = evaluationDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
         if  evaluationNameArray.count > 0 {
             self.dropDownVIewNew(arrayData: evaluationNameArray as? [String] ?? [String](), kWidth: evaluationTypeButton.frame.width, kAnchor: evaluationTypeButton, yheight: evaluationTypeButton.bounds.height) { [unowned self] selectedVal, index  in
                 self.selectedEvaluationType.text = selectedVal
@@ -1652,14 +1647,12 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
     
     func checkBackAndSave(){
         
-        
         if isFromBack{
             self.saveBackAssessmentInProgressDataInDB()
         }else {
             self.saveAssessmentInProgressDataInDB()
         }
-        if !isFromTextEditing{
-        }
+        
     }
     
     // MARK:   ********* Flock Image Lower Button Clicked    *********
@@ -1740,8 +1733,7 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
                 self.peNewAssessment.selectedTSRID = visitIDArray[indexOfItem] as? Int
                 self.checkBackAndSave()
                 
-                
-                PEAssessmentsDAO.sharedInstance.updateAssessmentStatus( userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", serverAssessmentId:  self.peNewAssessment.serverAssessmentId ?? "", assessmentobj: self.peNewAssessment ?? self.peNewAssessment)
+                PEAssessmentsDAO.sharedInstance.updateAssessmentStatus( userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", serverAssessmentId:  self.peNewAssessment.serverAssessmentId ?? "", assessmentobj: self.peNewAssessment)
                 
             }
             self.dropHiddenAndShow()
@@ -1787,11 +1779,9 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
                 }
             }
         }
-        var BirdBreedIDArray = NSArray()
-        var BirdBreedNameArray = NSArray()
+     
         var BirdBreedDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_BirdBreed") as? NSArray ?? NSArray()
-        BirdBreedNameArray = BirdBreedDetailsArray.value(forKey: "birdBreedName") as? NSArray ?? NSArray()
-        BirdBreedIDArray = BirdBreedDetailsArray.value(forKey: "birdId") as? NSArray ?? NSArray()
+        var BirdBreedNameArray = BirdBreedDetailsArray.value(forKey: "birdBreedName") as? NSArray ?? NSArray()
         if  BirdBreedNameArray.count > 0 {
             self.dropDownVIewNew(arrayData: BirdBreedNameArray as? [String] ?? [String](), kWidth: btnBreed.frame.width, kAnchor: btnBreed, yheight: btnBreed.bounds.height) { [unowned self] selectedVal, index  in
                 self.txtBreedOfBird.text = selectedVal
@@ -1823,9 +1813,8 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
             }
         }
         
-        var BirdBreedNameArray = NSArray()
         let BirdBreedDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_IncubationStyle")
-        BirdBreedNameArray = BirdBreedDetailsArray.value(forKey: "incubationStylesName") as? NSArray ?? NSArray()
+        var BirdBreedNameArray = BirdBreedDetailsArray.value(forKey: "incubationStylesName") as? NSArray ?? NSArray()
         
         if  BirdBreedNameArray.count > 0 {
             
@@ -1878,10 +1867,7 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
             }
             self.dropHiddenAndShow()
         }
-        
-        
     }
-    
     
     // MARK: DROP DOWN HIDDEN AND SHOW
     func dropHiddenAndShow(){
@@ -1949,8 +1935,6 @@ extension PEDraftStartNewAssesmentINT{
             peNewAssessmentWas = self.peNewAssessment
             
             CoreDataHandler().deleteAllData("PE_AssessmentInProgress",predicate: NSPredicate(format: "userID == %d AND serverAssessmentId = %@", peNewAssessmentWas.userID ?? 0, peNewAssessmentWas.serverAssessmentId ?? ""))
-            
-            
             
             for  cat in  pECategoriesAssesmentsResponse.peCategoryArray {
                 for (index, ass) in cat.assessmentQuestions.enumerated(){
@@ -2029,7 +2013,7 @@ extension PEDraftStartNewAssesmentINT{
             "EvaluationDate": evalDate
         ] as JSONDictionary
         ZoetisWebServices.shared.getDuplicacyCheck(controller: self, parameters: parameter, completion: { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
+            guard let strongSelf = self, error == nil else { return }
             if json["Data"].boolValue == true{
                 completion(false)
             }else{
@@ -2144,8 +2128,7 @@ extension PEDraftStartNewAssesmentINT : UITextFieldDelegate{
             currentString.replacingCharacters(in: range, with: string) as NSString
             
             return string == numberFiltered && newString.length <= maxLength
-            
-            return isValid
+           
         }
         
         
