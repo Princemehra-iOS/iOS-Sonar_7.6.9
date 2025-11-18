@@ -901,9 +901,6 @@ class PEViewStartNewAssessment: BaseViewController {
         return sites
     }
     
-    @IBAction func btnAction(_ sender: Any) {
-        
-    }
     // MARK: - Hide Breed Other
     func hideBreedOthers(){
         heightBreed.constant = 45
@@ -955,10 +952,7 @@ class PEViewStartNewAssessment: BaseViewController {
         }
         return carColIdArray.count
     }
-    // MARK: - Draft Button Action
-    @IBAction func action_MoveToDraft(_ sender: Any) {
-        
-    }
+   
     
     // MARK: - Next Button Action
     @IBAction func nextBtnAction(_ sender: Any) {
@@ -969,10 +963,6 @@ class PEViewStartNewAssessment: BaseViewController {
         vc.peNewAssessment = self.peNewAssessment
         self.navigationController?.pushViewController(vc, animated: true)
         return
-        
-    }
-    
-    func saveAssessmentInProgressDataInDB()  {
         
     }
     
@@ -1135,7 +1125,6 @@ class PEViewStartNewAssessment: BaseViewController {
                 self.peNewAssessment.siteName = selectedVal
                 let indexOfItem = complexNamesArray.index(of: selectedVal)
                 self.peNewAssessment.siteId = complexIDArray[indexOfItem] as? Int
-                self.saveAssessmentInProgressDataInDB()
             }
             self.dropHiddenAndShow()
         } else{
@@ -1161,7 +1150,6 @@ class PEViewStartNewAssessment: BaseViewController {
                 self.peNewAssessment.evaluatorName = selectedVal
                 let indexOfItem = evaluatorNameArray.index(of: selectedVal)
                 self.peNewAssessment.evaluatorID = evaluatorIDArray[indexOfItem] as? Int
-                self.saveAssessmentInProgressDataInDB()
             }
             self.dropHiddenAndShow()
         }
@@ -1187,7 +1175,6 @@ class PEViewStartNewAssessment: BaseViewController {
                 self.peNewAssessment.visitName = selectedVal
                 let indexOfItem = visitNameArray.index(of: selectedVal)
                 self.peNewAssessment.visitID = visitIDArray[indexOfItem] as? Int
-                self.saveAssessmentInProgressDataInDB()
             }
             self.dropHiddenAndShow()
         }
@@ -1231,7 +1218,6 @@ class PEViewStartNewAssessment: BaseViewController {
                 self.peNewAssessment.evaluationName = selectedVal
                 let indexOfItem = evaluationNameArray.index(of: selectedVal)
                 self.peNewAssessment.evaluationID = evaluationIDArray[indexOfItem] as? Int
-                self.saveAssessmentInProgressDataInDB()
             }
             self.dropHiddenAndShow()
         }
@@ -1250,7 +1236,6 @@ class PEViewStartNewAssessment: BaseViewController {
             isFlockAgeGreaterThen50Weeks = false
             btnFlockImageLower.setImage(UIImage(named: "uncheckIconPE"), for: .normal)
         }
-        self.saveAssessmentInProgressDataInDB()
     }
     // MARK: - Flock Image Lower Action
     @IBAction func flockImageLowerSelected(_ sender: Any) {
@@ -1266,7 +1251,6 @@ class PEViewStartNewAssessment: BaseViewController {
             isFlockAgeGreaterThen50Weeks = true
             btnFlockImageLower.setImage(UIImage(named: "checkIconPE"), for: .normal)
         }
-        self.saveAssessmentInProgressDataInDB()
     }
     
     // MARK: - Button TSR Action
@@ -1290,7 +1274,6 @@ class PEViewStartNewAssessment: BaseViewController {
                 self.peNewAssessment.selectedTSR = selectedVal
                 let indexOfItem = visitNameArray.index(of: selectedVal)
                 self.peNewAssessment.selectedTSRID = visitIDArray[indexOfItem] as? Int
-                self.saveAssessmentInProgressDataInDB()
                 
             }
             self.dropHiddenAndShow()
@@ -1309,7 +1292,6 @@ class PEViewStartNewAssessment: BaseViewController {
         } else {
             peNewAssessment.hatcheryAntibiotics = 0
         }
-        self.saveAssessmentInProgressDataInDB()
     }
 
     // MARK: - Button Breed Action
@@ -1325,7 +1307,6 @@ class PEViewStartNewAssessment: BaseViewController {
                 self.txtBreedOfBird.text = selectedVal
                 self.txtBreedOfBirdsOthers.text = ""
             }
-            self.saveAssessmentInProgressDataInDB()
         }
         self.dropHiddenAndShow()
         
@@ -1344,7 +1325,6 @@ class PEViewStartNewAssessment: BaseViewController {
                 self.peNewAssessment.breedOfBird = selectedVal
                 self.hideIncubationOthers()
             }
-            self.saveAssessmentInProgressDataInDB()
         }
         self.dropHiddenAndShow()
         
@@ -1384,7 +1364,6 @@ extension PEViewStartNewAssessment: DatePickerPopupViewControllerProtocol{
         }  else {
             selectedEvaluationDateText.text = string
             self.peNewAssessment.evaluationDate = string
-            saveAssessmentInProgressDataInDB()
         }
     }
 }
@@ -1397,7 +1376,6 @@ extension PEViewStartNewAssessment{
     // MARK: - Ok Button tabbed
     func okButtonTapped() {
         
-        saveAssessmentInProgressDataInDB()
         jsonRe = (getJSON("QuestionAns") ?? JSON())
         pECategoriesAssesmentsResponse =  PECategoriesAssesmentsResponse(jsonRe)
         let categoryCount = filterCategoryCount()
@@ -1485,13 +1463,7 @@ extension PEViewStartNewAssessment:UITextViewDelegate{
         return true
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if (textView == notesTextView ) {
-            saveAssessmentInProgressDataInDB()
-        }
-    }
-    
-   
+  
 }
 
 // MARK: - WebServices

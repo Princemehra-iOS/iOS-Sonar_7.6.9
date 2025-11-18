@@ -16,7 +16,7 @@ final  public class VaccinationCustomersDAO{
     private var shippingInfo = [NSManagedObject]()
     var managedContext = (UIApplication.shared.delegate as? AppDelegate)!.managedObjectContext
     let userIdStr = "userId = %@"
-    let siteIdStr = "siteId = %d"
+    let siteIdStr = Constants.siteIdConstant
     
     func getVaccineCustomerObj() -> VaccinationCustomers{
         let vaccinationCertObj = NSEntityDescription.insertNewObject(forEntityName: "VaccinationCustomers" , into: managedContext) as! VaccinationCustomers
@@ -817,9 +817,9 @@ final  public class VaccinationCustomersDAO{
         var fetchRequest  = NSFetchRequest<NSFetchRequestResult>(entityName: "VaccinationShippingAddress")
         
         if let sitId = siteId {
-            fetchRequest.predicate = NSPredicate(format: "siteId = %d",sitId)
+            fetchRequest.predicate = NSPredicate(format: Constants.siteIdConstant,sitId)
         } else {
-            fetchRequest.predicate = NSPredicate(format: "trainingId = %d",trainingId)
+            fetchRequest.predicate = NSPredicate(format: Constants.trainingIdConstant,trainingId)
         }
         
         fetchRequest.returnsObjectsAsFaults = false
@@ -893,9 +893,9 @@ final  public class VaccinationCustomersDAO{
         var fetchRequest  = NSFetchRequest<NSFetchRequestResult>(entityName: "VaccinationOtherAddress")
         
         if let sitId = siteId {
-            fetchRequest.predicate = NSPredicate(format: "siteId = %d",sitId)
+            fetchRequest.predicate = NSPredicate(format: Constants.siteIdConstant,sitId)
         } else {
-            fetchRequest.predicate = NSPredicate(format: "trainingId = %d",trainingId)
+            fetchRequest.predicate = NSPredicate(format: Constants.trainingIdConstant,trainingId)
         }
         
         fetchRequest.returnsObjectsAsFaults = false
