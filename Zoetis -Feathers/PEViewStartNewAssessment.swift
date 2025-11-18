@@ -901,9 +901,6 @@ class PEViewStartNewAssessment: BaseViewController {
         return sites
     }
     
-    @IBAction func btnAction(_ sender: Any) {
-        
-    }
     // MARK: - Hide Breed Other
     func hideBreedOthers(){
         heightBreed.constant = 45
@@ -955,10 +952,7 @@ class PEViewStartNewAssessment: BaseViewController {
         }
         return carColIdArray.count
     }
-    // MARK: - Draft Button Action
-    @IBAction func action_MoveToDraft(_ sender: Any) {
-        
-    }
+   
     
     // MARK: - Next Button Action
     @IBAction func nextBtnAction(_ sender: Any) {
@@ -969,10 +963,6 @@ class PEViewStartNewAssessment: BaseViewController {
         vc.peNewAssessment = self.peNewAssessment
         self.navigationController?.pushViewController(vc, animated: true)
         return
-        
-    }
-    
-    func saveAssessmentInProgressDataInDB()  {
         
     }
     

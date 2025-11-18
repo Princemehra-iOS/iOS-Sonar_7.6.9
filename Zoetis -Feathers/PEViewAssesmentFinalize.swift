@@ -139,9 +139,7 @@ class PEViewAssesmentFinalize: BaseViewController , DatePickerPopupViewControlle
         }
     }
     
-    @IBAction func btnAction(_ sender: Any) {
-        
-    }
+  
     
     override func viewDidLoad() {
         print("<<<<",self)
@@ -3232,7 +3230,7 @@ extension PEViewAssesmentFinalize{
                 "Name": peCertificateData.name,
                 "CertificationDate": resultString,
                 "AlternateName": "string",
-                "CertificationDate2": "2020-05-23T06:36:50.915Z",
+                "CertificationDate2": Constants.timeDefaultValue,
                 "ModuleAssessmentCatId":  dictArray.catID,
                 "userId": dictArray.userID,
                 "DeviceId": deviceIDFORSERVER,
@@ -3260,7 +3258,7 @@ extension PEViewAssesmentFinalize{
                 "Name": peCertificateData.name,
                 "CertificationDate": resultString,
                 "AlternateName": "string",
-                "CertificationDate2": "2020-05-23T06:36:50.915Z",
+                "CertificationDate2": Constants.timeDefaultValue,
                 "ModuleAssessmentCatId":  dictArray.catID,
                 "userId": dictArray.userID,
                 "DeviceId": deviceIDFORSERVER,
@@ -3354,7 +3352,7 @@ extension PEViewAssesmentFinalize{
             "Name": "",
             "CertificationDate": "",
             "AlternateName": "string",
-            "CertificationDate2": "2020-05-23T06:36:50.915Z",
+            "CertificationDate2": Constants.timeDefaultValue,
             "ModuleAssessmentCatId":  dictArray.catID,
             "userId": dictArray.userID,
             "DeviceId": deviceIDFORSERVER,
@@ -3779,9 +3777,7 @@ extension PEViewAssesmentFinalize{
                 // As per discussion with Imran and binu we have commented this code so that client can submit their assessment irsepective of their Assessment Approved or not.
               //  self.getAssessmentStatusCheck(assessmentId: self.peNewAssessment.serverAssessmentId ?? "")
             }
-            let cancelAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel) {
-                _ in
-            }
+            let cancelAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel) 
             alertController.addAction(okAction)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)

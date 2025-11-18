@@ -321,6 +321,8 @@ struct Constants {
     static let MMMMdyyyyStr = "MMMM d, yyyy"
     static let MMddYYYYHHmmss = "MM/dd/YYYY HH:mm:ss Z"
     static let timeDefaultValue = "2020-05-23T06:36:50.915Z"
+    static let siteIdConstant = "siteId = %d"
+    static let trainingIdConstant = "trainingId = %d"
     static let  MMMdyyyy =  "MMM d, yyyy"
     static let pleasefillthemandatoryfields = "Please fill the mandatory fields."
     static let pleaseEnterCommentForThawBathTempStr = "Please enter comment for (Thaw bath temp) in Aseptic Technique & Vaccine Application"
