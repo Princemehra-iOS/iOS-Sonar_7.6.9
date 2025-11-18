@@ -39,14 +39,14 @@ class DataService{
                             if  vaccinationCertificationObj != nil && vaccinationCertificationObj?.count ?? 0 > 0{
                                 completion(VaccinationConstants.VaccinationStatus.COREDATA_SAVED_SUCCESSFULLY, nil)
                             }else{
-                                completion("No Data Found", nil)
+                                completion(Constants.noDataFound, nil)
                             }
                         }
                     }
                 }
             }
             else{
-                completion("No Data Found", nil)
+                completion(Constants.noDataFound, nil)
             }
         })
     }
@@ -266,7 +266,7 @@ class DataService{
             
             dateFormatterObj.timeZone = Calendar.current.timeZone
             dateFormatterObj.locale = Calendar.current.locale
-            dateFormatterObj.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            dateFormatterObj.dateFormat = Constants.yyyyMMddHHmmss
             
             if let submittedDate = vacObj.submittedDate{
                 mainCertObj.SubmitedDate = dateFormatterObj.string(from:submittedDate )
@@ -304,7 +304,7 @@ class DataService{
             
             var formattedDateString = ""
 
-            dateFormatterObj.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            dateFormatterObj.dateFormat = Constants.yyyyMMddHHmmss
             dateFormatterObj.locale = Locale(identifier: "en_US_POSIX")
 
             let outputDateFormatter = DateFormatter()
@@ -582,7 +582,7 @@ class DataService{
                     let dateFormatterObj = DateFormatter()
                     dateFormatterObj.timeZone = Calendar.current.timeZone
                     dateFormatterObj.locale = Calendar.current.locale
-                    dateFormatterObj.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+                    dateFormatterObj.dateFormat = Constants.yyyyMMddHHmmss
                     operatorObj.FromDate = moObj.startDate
                     operatorArr.append(operatorObj)
                 }
@@ -885,7 +885,7 @@ class DataService{
                                 SubmittedCertificationsService.sharedInstance.insertData(userId: loginuserId, vaccinationCertificationObj!)
                                 completion(VaccinationConstants.VaccinationStatus.COREDATA_SAVED_SUCCESSFULLY, nil)
                             }
-                            completion("No Data Found", nil)
+                            completion(Constants.noDataFound, nil)
                             
                         }
                         
