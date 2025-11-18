@@ -24,7 +24,7 @@ class CoreDataHandlerPE: NSObject {
     let catServerId = " catID == %@ AND userID == %d AND serverAssessmentId == %@"
     let assServerId = " assID == %@ AND userID == %d AND serverAssessmentId == %@"
     let imageId = Constants.imageIdConstant
-    let dateFormatMMDDYY = "MM/dd/YYYY HH:mm:ss"
+    let dateFormatMMDDYY = Constants.mMddYYYYHHmmss
     let dateFormatDDMMYY = Constants.ddMMYYYYHHmmss
     let catIdStr = " catID == %@ "
     let catIdServerAssId = " catID == %@ AND serverAssessmentId == %@"
@@ -5494,7 +5494,7 @@ extension CoreDataHandlerPE {
         if formate == "" {
             
             if regionID == 3{
-                formate = date.getFormattedDate(format: "MM/dd/YYYY HH:mm:ss")   // Set output formate
+                formate = date.getFormattedDate(format: Constants.mMddYYYYHHmmss)   // Set output formate
                 let random = newAssessmentArray[0].serverAssessmentId
                 formate = "\(formate)\(random ?? "")"
             }
@@ -5836,7 +5836,7 @@ extension CoreDataHandlerPE {
         if formate == "" {
             
             if regionID == 3{
-                formate = date.getFormattedDate(format: "MM/dd/YYYY HH:mm:ss")
+                formate = date.getFormattedDate(format: Constants.mMddYYYYHHmmss)
             }
             else
             {
@@ -6231,7 +6231,7 @@ extension CoreDataHandlerPE {
             if formate == "" {
                 
                 if regionID == 3{
-                    formate = date.getFormattedDate(format: "MM/dd/YYYY HH:mm:ss")
+                    formate = date.getFormattedDate(format: Constants.mMddYYYYHHmmss)
                 }
                 else
                 {
@@ -6392,7 +6392,7 @@ extension CoreDataHandlerPE {
             if formate == "" {
                 
                 if regionID == 3{
-                    formate = date.getFormattedDate(format: "MM/dd/YYYY HH:mm:ss")
+                    formate = date.getFormattedDate(format: Constants.mMddYYYYHHmmss)
                 }
                 else
                 {
@@ -6556,7 +6556,7 @@ extension CoreDataHandlerPE {
             if formate == "" {
                 
                 if regionID == 3{
-                    formate = date.getFormattedDate(format: "MM/dd/YYYY HH:mm:ss")
+                    formate = date.getFormattedDate(format: Constants.mMddYYYYHHmmss)
                 }
                 else
                 {

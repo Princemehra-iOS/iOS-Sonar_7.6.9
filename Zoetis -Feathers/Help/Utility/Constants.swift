@@ -327,6 +327,7 @@ struct Constants {
     static let imageIdConstant = "imageId == %d"
     static let AddInfoStr = "Add Info."
     static let  MMMdyyyy =  "MMM d, yyyy"
+    static let mMddYYYYHHmmss = "MM/dd/YYYY HH:mm:ss"
     static let pleasefillthemandatoryfields = "Please fill the mandatory fields."
     static let pleaseEnterCommentForThawBathTempStr = "Please enter comment for (Thaw bath temp) in Aseptic Technique & Vaccine Application"
     static let pleaseEnterCommentForVaccineThawingTimesStr = "Please enter comment for (Vaccine thawing time) in Aseptic Technique & Vaccine Application"
