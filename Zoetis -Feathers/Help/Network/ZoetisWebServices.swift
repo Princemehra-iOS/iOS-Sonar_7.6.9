@@ -821,7 +821,7 @@ extension ZoetisWebServices {
         getRequest(controller: controller, endPoint: url, parameters: [:], headers: [:], completion: completion)
     }
     
-    func GetPostingAssessmentListByUser( controller: UIViewController, header: [String: Any] ,parameters: JSONDictionary, completion: @escaping CompletionBlock) {
+    func PostingAssessmentList( controller: UIViewController, header: [String: Any] ,parameters: JSONDictionary, completion: @escaping CompletionBlock) {
         let url = EndPoint.getPostingAssessmentListByUser.latestUrl + "?deviceType=ios"
         print("GET SERVICE*** : getPostingAssessmentListByUser ", url)
         getRequest(controller: controller, endPoint: url, parameters: [:], headers: header, completion: completion)
