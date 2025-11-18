@@ -342,22 +342,15 @@ class PEViewStartNewAssesmentINT: BaseViewController {
             
             switch rightConst {
             case 1:
-                if heightNumberOfEggsView.constant == 94{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 40))
-                }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 40 ))
-                }
+                notesTop.constant = CGFloat(leftConst * 55  + 40 )
             case 2:
-                if heightNumberOfEggsView.constant == 94{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 20))
-                }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 20 ))
-                }
+                notesTop.constant = CGFloat(leftConst * 55  + 20 )
+                
             default:
                 if heightNumberOfEggsView.constant == 94{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 40))
+                    notesTop.constant = CGFloat(leftConst * 55  + 40)
                 }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 60))
+                    notesTop.constant = CGFloat(leftConst * 55 + 60)
                 }
             }
             
@@ -366,22 +359,16 @@ class PEViewStartNewAssesmentINT: BaseViewController {
             switch rightConst {
                 
             case 1:
-                if heightNumberOfEggsView.constant == 94{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 20))
-                }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 20 ))
-                }
+                notesTop.constant = CGFloat(leftConst * 55  + 20 )
+                
             case 2:
-                if heightNumberOfEggsView.constant == 94{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) - 50))
-                }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) - 50))
-                }
+                notesTop.constant = CGFloat(leftConst * 55  - 50)
+                
             default:
                 if heightNumberOfEggsView.constant == 94{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 20))
+                    notesTop.constant = CGFloat(leftConst * 55  + 20)
                 }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 50))
+                    notesTop.constant = CGFloat(leftConst * 55  + 50)
                 }
             }
         case 2:
@@ -389,22 +376,14 @@ class PEViewStartNewAssesmentINT: BaseViewController {
             switch rightConst {
                 
             case 1:
-                if heightNumberOfEggsView.constant == 94{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) - 30))
-                }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) - 30))
-                }
+                notesTop.constant = CGFloat(leftConst * 55  - 30)
             case 2:
-                if heightNumberOfEggsView.constant == 94{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) - 75))
-                }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) - 75))
-                }
+                notesTop.constant = CGFloat(leftConst * 55  - 75)
             default:
                 if heightNumberOfEggsView.constant == 94{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) ))
+                    notesTop.constant = CGFloat(leftConst * 55 )
                 }else{
-                    notesTop.constant = CGFloat(((leftConst * 55 ) + 20))
+                    notesTop.constant = CGFloat(leftConst * 55  + 20)
                 }
             }
             
@@ -429,12 +408,14 @@ class PEViewStartNewAssesmentINT: BaseViewController {
     // MARK: Setup Right Constraint.
     func rightConstraint()-> Int{
         var otherCount = 0
-        
-        if ((self.txtManufacturer.text?.lowercased().contains("other")) ?? false) {
-            otherCount += 1
-        } else if self.txtManufacturer.text?.contains("S") ?? false {
+                
+        if (self.txtManufacturer.text?.lowercased().contains("other") ?? false)
+            || (self.txtManufacturer.text?.contains("S") ?? false) {
+
             otherCount += 1
         }
+
+        
         
         let xx = String(self.peNewAssessment.noOfEggs ?? 000)
         if xx != "0" {
@@ -445,11 +426,7 @@ class PEViewStartNewAssesmentINT: BaseViewController {
         }
         return otherCount
     }
-    
-    
-    
-    
-    
+ 
     
     // MARK: Get Vaccine Mixture List
     private func getVaccineMixerList(customerId: Int, siteId: Int, countryId: Int, _ completion: @escaping (_ status: Bool) -> Void){
@@ -459,8 +436,8 @@ class PEViewStartNewAssesmentINT: BaseViewController {
             "countryId": "\(countryId)"
         ] as JSONDictionary
         ZoetisWebServices.shared.getMixerList(controller: self, parameters: parameter) { [weak self] (json, error) in
-            guard let `self` = self, error == nil else { return }
-            self.handleVaccineMixer(json)
+            guard let strongSelf = self, error == nil else { return }
+            strongSelf.handleVaccineMixer(json)
         }
     }
     // MARK: Handle Vaccine Mixture Responce
@@ -707,7 +684,9 @@ class PEViewStartNewAssesmentINT: BaseViewController {
         let evaluationName = self.peNewAssessment.evaluationName ?? ""
         let evaluator = self.peNewAssessment.evaluatorName ?? ""
         let reasonForVisit = self.peNewAssessment.visitName ?? ""
-        if (date.count > 0 ?? 0){} else  {
+        if (date.count > 0 ){
+            // No action required when date is selected
+        } else  {
             let superviewCurrent =  evaluationDateButton.superview
             if superviewCurrent != nil{
                 for view in superviewCurrent!.subviews {
@@ -717,7 +696,9 @@ class PEViewStartNewAssesmentINT: BaseViewController {
                     }
                 }}
         }
-        if (customer.count > 0 ?? 0 ){} else  {
+        if (customer.count > 0){
+            // No action required when customer has data
+        } else  {
             let superviewCurrent =  customerButton.superview
             if superviewCurrent != nil{
                 for view in superviewCurrent!.subviews {
@@ -728,7 +709,9 @@ class PEViewStartNewAssesmentINT: BaseViewController {
                 }
             }
         }
-        if (site.count > 0 ?? 0){} else  {
+        if (site.count > 0){
+            // No action required when site has data
+        } else  {
             let superviewCurrent =  siteButton.superview
             if superviewCurrent != nil{
                 for view in superviewCurrent!.subviews {
@@ -738,7 +721,9 @@ class PEViewStartNewAssesmentINT: BaseViewController {
                     }
                 }}
         }
-        if (evaluationName.count ?? 0 > 0){} else  {
+        if (evaluationName.count > 0){
+            // No action required when evaluation type has data
+        } else  {
             let superviewCurrent =  evaluationTypeButton.superview
             if superviewCurrent != nil{
                 for view in superviewCurrent!.subviews {
@@ -748,7 +733,10 @@ class PEViewStartNewAssesmentINT: BaseViewController {
                     }
                 }}
         }
-        if (evaluator.count ?? 0  > 0){} else  {
+        if (evaluator.count > 0){
+            // No action required when evaluator has data
+            
+        } else  {
             let superviewCurrent =  evaluatorButton.superview
             if superviewCurrent != nil{
                 for view in superviewCurrent!.subviews {
@@ -758,7 +746,9 @@ class PEViewStartNewAssesmentINT: BaseViewController {
                     }
                 }}
         }
-        if (reasonForVisit.count ?? 0 > 0){} else  {
+        if (reasonForVisit.count > 0){
+            // No action required when Reason of visit has data
+        } else  {
             let superviewCurrent =  visitButton.superview
             if superviewCurrent != nil{
                 for view in superviewCurrent!.subviews {
@@ -803,13 +793,10 @@ class PEViewStartNewAssesmentINT: BaseViewController {
                     view.layer.borderWidth = 2.0
                 }}
         }
-        
-        var customerNamesArray = NSArray()
-        var customerIDArray = NSArray()
-        var customerDetailsArray = NSArray()
-        customerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Customer")
-        customerNamesArray = customerDetailsArray.value(forKey: "customerName") as? NSArray ?? NSArray()
-        customerIDArray = customerDetailsArray.value(forKey: "customerID") as? NSArray ?? NSArray()
+
+        var customerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Customer")
+        var  customerNamesArray = customerDetailsArray.value(forKey: "customerName") as? NSArray ?? NSArray()
+        var customerIDArray = customerDetailsArray.value(forKey: "customerID") as? NSArray ?? NSArray()
         if  customerNamesArray.count > 0 {
             self.dropDownVIewNew(arrayData: customerNamesArray as? [String] ?? [String](), kWidth: customerButton.frame.width, kAnchor: customerButton, yheight: customerButton.bounds.height) { [unowned self] selectedVal, index  in
                 self.selectedCustomerText.text = selectedVal
@@ -818,7 +805,6 @@ class PEViewStartNewAssesmentINT: BaseViewController {
                 self.peNewAssessment.customerName = selectedVal
                 self.peNewAssessment.siteName = ""
                 self.peNewAssessment.customerId = customerIDArray[indexOfItem] as? Int
-                let cusId = self.peNewAssessment.customerId ?? 0
                 
             }
             self.dropHiddenAndShow()
@@ -840,12 +826,10 @@ class PEViewStartNewAssesmentINT: BaseViewController {
         guard let customer = self.peNewAssessment.customerName, customer.count > 0 else {
             return
         }
-        var complexNamesArray = NSArray()
-        var complexDetailsArray = NSArray()
-        var complexIDArray = NSArray()
-        complexDetailsArray = CoreDataHandlerPE().fetchSitesWithCustId( self.peNewAssessment.customerId as NSNumber? ?? 0)
-        complexNamesArray = complexDetailsArray.value(forKey: "siteName") as? NSArray ?? NSArray()
-        complexIDArray = complexDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+      
+        var complexDetailsArray = CoreDataHandlerPE().fetchSitesWithCustId( self.peNewAssessment.customerId as NSNumber? ?? 0)
+        var complexNamesArray = complexDetailsArray.value(forKey: "siteName") as? NSArray ?? NSArray()
+        var complexIDArray = complexDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
         
         if  complexNamesArray.count > 0 {
             self.dropDownVIewNew(arrayData: complexNamesArray as? [String] ?? [String](), kWidth: siteButton.frame.width, kAnchor: siteButton, yheight: siteButton.bounds.height) { [unowned self] selectedVal, index in
@@ -869,13 +853,9 @@ class PEViewStartNewAssesmentINT: BaseViewController {
                 }}
         }
         
-        
-        var customerNamesArray = NSArray()
-        var evaluatorIDArray = NSArray()
-        var evaluatorNameArray = NSArray()
-        var evaluatorDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Evaluator")
-        evaluatorNameArray = evaluatorDetailsArray.value(forKey: "evaluatorName") as? NSArray ?? NSArray()
-        evaluatorIDArray = evaluatorDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+        let evaluatorDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Evaluator")
+        var  evaluatorNameArray = evaluatorDetailsArray.value(forKey: "evaluatorName") as? NSArray ?? NSArray()
+        var evaluatorIDArray = evaluatorDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
         if  evaluatorNameArray.count > 0 {
             self.dropDownVIewNew(arrayData: evaluatorNameArray as? [String] ?? [String](), kWidth: evaluatorButton.frame.width, kAnchor: evaluatorButton, yheight: evaluatorButton.bounds.height) { [unowned self] selectedVal, index  in
                 self.selectedEvaluatorText.text = selectedVal
@@ -997,13 +977,7 @@ class PEViewStartNewAssesmentINT: BaseViewController {
     
     // MARK: - TSR Button Action
     @IBAction func tsrClicked(_ sender: Any) {
-        let RoleId =  UserDefaults.standard.string(forKey: "RoleId")
-        var arr : [String] = []
-        if RoleId == "TSR"{
-            arr = ["Self","TSR"]
-        } else {
-            arr =  ["TSR"]
-        }
+       
         let superviewCurrent =  tsrButton.superview
         if superviewCurrent != nil{
             for view in superviewCurrent!.subviews {
@@ -1012,11 +986,10 @@ class PEViewStartNewAssesmentINT: BaseViewController {
                     view.layer.borderWidth = 2.0
                 }}
         }
-        var visitIDArray = NSArray()
-        var visitNameArray = NSArray()
-        var visitDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Approvers")
-        visitNameArray = visitDetailsArray.value(forKey: "username") as? NSArray ?? NSArray()
-        visitIDArray = visitDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+
+        let visitDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Approvers")
+        var visitNameArray = visitDetailsArray.value(forKey: "username") as? NSArray ?? NSArray()
+        var visitIDArray = visitDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
         if  visitNameArray.count > 0 {
             self.dropDownVIewNew(arrayData: visitNameArray as? [String] ?? [String](), kWidth: tsrButton.frame.width, kAnchor: tsrButton, yheight: tsrButton.bounds.height) { [unowned self] selectedVal, index  in
                 self.selectedTSR.text = selectedVal
@@ -1246,8 +1219,6 @@ extension PEViewStartNewAssesmentINT{
         if UniID == "" {
             UniID = dict.draftID ?? ""
         }
-        var Complete = 1
-        var Draft = 0
         var SaveType = 1
         saveTypeString.append(11)
         var AssessmentId = dict.dataToSubmitNumber ?? 0
@@ -1260,8 +1231,8 @@ extension PEViewStartNewAssesmentINT{
                 deviceIDFORSERVER = dict.assDetail2 ?? ""
             }
             AssessmentId = dict.draftNumber ?? 0
-            Draft = 1
-            Complete = 0
+          
+      
             SaveType = 0
             saveTypeString.append(00)
         }
@@ -1272,13 +1243,12 @@ extension PEViewStartNewAssesmentINT{
         if dict.serverAssessmentId != nil{
             serverAssessmentId = Int64( dict.serverAssessmentId ?? "") ?? 0
         }
-        let DocId = ""
+      
         let VisitId = dict.visitID
         let CustomerId = dict.customerId
         let SiteId = dict.siteId
         let IncubationStyle = dict.incubation
         let EvaluationId = dict.evaluationID
-        let BreedBirds = dict.breedOfBird
         var EvaluationDate = ""
         let EvaulaterId = dict.evaluatorID
         var hacheryAntibiotics:Bool = false
@@ -1286,17 +1256,16 @@ extension PEViewStartNewAssesmentINT{
             hacheryAntibiotics = true
         }
         
-        var TSRIdUser = dict.selectedTSR
         var  TSRId  = dict.selectedTSRID
         
-        let extndMicro : Bool
+       
         let inovoFluid : Bool
         let basicTransfer : Bool
-        let countryName = dict.countryName
+       
         let countryID = dict.countryID
         inovoFluid = dict.fluid!
         basicTransfer = dict.basicTransfer!
-        extndMicro = dict.extndMicro!
+   
         let visitDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Approvers")
         let visitNameArray = visitDetailsArray.value(forKey: "username") as? NSArray ?? NSArray ()
         let visitIDArray = visitDetailsArray.value(forKey: "id") as? NSArray ?? NSArray ()
@@ -1355,49 +1324,40 @@ extension PEViewStartNewAssesmentINT{
         var ManufacturerId = 0
         var EggID = 0
         var breeddId = 0
-        
-        
-        var manufacutrerNameArray = NSArray()
-        var manufacutrerIDArray = NSArray()
-        var manufacutrerDetailsArray = NSArray()
-        manufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Manufacturer")
-        manufacutrerNameArray = manufacutrerDetailsArray.value(forKey: "mFG_Name") as? NSArray ?? NSArray()
-        manufacutrerIDArray = manufacutrerDetailsArray.value(forKey: "mFG_Id") as? NSArray ?? NSArray()
+
+        var manufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Manufacturer")
+        var manufacutrerNameArray = manufacutrerDetailsArray.value(forKey: "mFG_Name") as? NSArray ?? NSArray()
+        var manufacutrerIDArray = manufacutrerDetailsArray.value(forKey: "mFG_Id") as? NSArray ?? NSArray()
         if man != "" {
             let indexOfd = manufacutrerNameArray.index(of: man)
             ManufacturerId = manufacutrerIDArray[indexOfd] as? Int ?? 0
         }
-        
-        var BirdBreedIDArray = NSArray()
-        var BirdBreedNameArray = NSArray()
-        var BirdBreedDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_BirdBreed")
-        BirdBreedNameArray = BirdBreedDetailsArray.value(forKey: "birdBreedName") as? NSArray ?? NSArray()
-        BirdBreedIDArray = BirdBreedDetailsArray.value(forKey: "birdId") as? NSArray ?? NSArray()
+
+        let BirdBreedDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_BirdBreed")
+        var BirdBreedNameArray = BirdBreedDetailsArray.value(forKey: "birdBreedName") as? NSArray ?? NSArray()
+        var BirdBreedIDArray = BirdBreedDetailsArray.value(forKey: "birdId") as? NSArray ?? NSArray()
         if breeedd != "" {
             let indexOfe = BirdBreedNameArray.index(of: breeedd)
             breeddId = BirdBreedIDArray[indexOfe] as? Int ?? 0
         }
-        var EggsIDArray = NSArray()
-        var EggsNameArray = NSArray()
+
         let EggsDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Eggs")
-        EggsNameArray = EggsDetailsArray.value(forKey: "eggCount") as? NSArray ?? NSArray()
-        EggsIDArray = EggsDetailsArray.value(forKey: "eggId") as? NSArray ?? NSArray()
+        var EggsNameArray = EggsDetailsArray.value(forKey: "eggCount") as? NSArray ?? NSArray()
+        var EggsIDArray = EggsDetailsArray.value(forKey: "eggId") as? NSArray ?? NSArray()
         if eggg != "" {
             let indexOfp = EggsNameArray.index(of: eggg)
             EggID = EggsIDArray[indexOfp] as? Int ?? 0
         }
         
         let FlockAgeId = dict.isFlopSelected
-        let Status_Type = ""
+     
         let UserId = dict
             .userID
-        let RepresentativeName = ""
+     
         let Notes = dict.notes
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/YYYY HH:mm:ss Z"
         let date = dict.evaluationDate?.toDate(withFormat: "MM/dd/YYYY")
-        let datastr = date?.toString(withFormat: "MM/dd/YYYY HH:mm:ss Z")
-        let  sig_Datetext = dict.sig_Date
         var dateSig = ""
         let ddd = dict.sig_Date ?? ""
         if ddd != "" {
@@ -1411,14 +1371,15 @@ extension PEViewStartNewAssesmentINT{
         let sig_EmployeeIDtext2 = dict.sig_EmpID2
         let sigNumber = dict.sig ?? 0
         let sigNumber2 = dict.sig2 ?? 0
-        let statusType = dict.statusType ?? 0
         var base64Str = ""
         var base64Str2 = ""
         if sigNumber == 0 {
+            // sig 1 are not there
         } else {
             base64Str = CoreDataHandlerPE().getImageBase64ByImageID(idArray:(dict.sig) ?? 0)
         }
         if sigNumber2 == 0 {
+            // sig 2 are not there
         } else {
             base64Str2 = CoreDataHandlerPE().getImageBase64ByImageID(idArray:(dict.sig2) ?? 0)
         }
@@ -1428,21 +1389,17 @@ extension PEViewStartNewAssesmentINT{
         
         DisplayId = "C-" + UniID
         var iStle = 0
-        var iStleIDArray = NSArray()
-        var iStleNameArray = NSArray()
         let iStleDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_IncubationStyle")
-        iStleNameArray = iStleDetailsArray.value(forKey: "incubationStylesName") as? NSArray ?? NSArray()
-        iStleIDArray = iStleDetailsArray.value(forKey: "incubationId") as? NSArray ?? NSArray()
+        var iStleNameArray = iStleDetailsArray.value(forKey: "incubationStylesName") as? NSArray ?? NSArray()
+        var iStleIDArray = iStleDetailsArray.value(forKey: "incubationId") as? NSArray ?? NSArray()
         if IncubationStyle?.count ?? 0 > 1 {
             let indexOfe = iStleNameArray.index(of: IncubationStyle ?? "")
             iStle = iStleIDArray[indexOfe] as? Int ?? 0
         }
         var rollID = 0
-        var rollIDArray = NSArray()
-        var rollNameArray = NSArray()
         let rollDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Roles")
-        rollNameArray = rollDetailsArray.value(forKey: "roleName") as? NSArray ?? NSArray()
-        rollIDArray = rollDetailsArray.value(forKey: "roleId") as? NSArray ?? NSArray()
+        var rollNameArray = rollDetailsArray.value(forKey: "roleName") as? NSArray ?? NSArray()
+        var rollIDArray = rollDetailsArray.value(forKey: "roleId") as? NSArray ?? NSArray()
         if sig_EmployeeIDtext?.count ?? 0 > 1 {
             let indexOfe = rollNameArray.index(of: sig_EmployeeIDtext ?? "")
             rollID = rollIDArray[indexOfe] as? Int ?? 0
@@ -1456,6 +1413,7 @@ extension PEViewStartNewAssesmentINT{
         
         var json : JSONDictionary = JSONDictionary()
         if dateSig != ""{
+            // date sig is empty
         }else{
             let convertDateFormatter = DateFormatter()
             convertDateFormatter.dateFormat = Constants.yyyyMMddStr
@@ -1465,7 +1423,6 @@ extension PEViewStartNewAssesmentINT{
         let userInfo = PEInfoDAO.sharedInstance.fetchInfoVMObj(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", assessmentId: dict.serverAssessmentId ?? "")
         
         let regionId = UserDefaults.standard.integer(forKey: "Regionid")
-        let dateFormatterObj = CodeHelper.sharedInstance.getDateFormatterObj("")
         var evalDateStr = ""  //dateFormatterObj.string(from: evalDateObj ?? Date())
         if regionId == 3 {
             
@@ -1502,9 +1459,7 @@ extension PEViewStartNewAssesmentINT{
                 print("Invalid date format")
             }
         }
-
         
-        let re_note =    UserDefaults.standard.value(forKey: "re_note")
         json = [
             "AppAssessmentId":String(AssessmentId),
             "DisplayId":DisplayId?.prefix(22),
@@ -1569,24 +1524,13 @@ extension PEViewStartNewAssesmentINT{
         }
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-        var score = 0
         var serverAssessmentId:Int64 = 0
         if let id = dictArray.serverAssessmentId{
             serverAssessmentId = Int64(id ?? "") ?? 0
         }
-        
-        if  dictArray.assStatus == 1 {
-            score = dictArray.assMaxScore ?? 0
-        } else {
-            score = dictArray.assMinScore ?? 0
-        }
+
         var DisplayId = dictArray.evaluationDate
         DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
-        var siteId = String(dictArray.siteId ?? 0)
-        var sID = dictArray.siteId ?? 0
-        sID = sID + 270101
-        var dID = AssessmentId ?? 0
-        dID = dID + 2903
         DisplayId = "C-" + UniID
         
         let  HatcheryAntibioticsInt = inovojectData.invoHatchAntibiotic
@@ -1596,14 +1540,10 @@ extension PEViewStartNewAssesmentINT{
         }
         
         var x = 0
-        var vvv = inovojectData.ampuleSize
-        var ampleSizeesNameArray = NSArray()
-        var ampleSizeIDArray = NSArray()
-        var ampleSizeDetailArray = NSArray()
         
-        ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
-        ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
-        ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
+        var ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
+        var ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
+        var ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
         if inovojectData.ampuleSize != "" {
             let xx = inovojectData.ampuleSize?.replacingOccurrences(of: " ", with: "")
             let indexOfe =  ampleSizeesNameArray.index(of: xx)
@@ -1612,28 +1552,22 @@ extension PEViewStartNewAssesmentINT{
         
         var otherVaccine = ""
         var ManufacturerId = 0
-        var vNameArray = NSArray()
-        var vNameIDArray = NSArray()
-        var vNameDetailsArray = NSArray()
+ 
         var VaccineId = 0
-        vNameDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
-        vNameArray = vNameDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
-        vNameIDArray = vNameDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+        var vNameDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
+        var vNameArray = vNameDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
+        var vNameIDArray = vNameDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
         if vNameArray.contains(inovojectData.vaccineMan){
             let indexOfe = vNameArray.index(of: inovojectData.vaccineMan)
             VaccineId = vNameIDArray[indexOfe] as? Int ?? 0
         } else {
             VaccineId = 0
         }
-        
-        var vNameDetailsArrayIS = NSArray()
-        var vNameArrayIS = NSArray()
-        var vNameIDArrayIS = NSArray()
-        var vNameMfgIdArrayIS = NSArray()
-        vNameDetailsArrayIS = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VNames")
-        vNameArrayIS = vNameDetailsArrayIS.value(forKey: "name") as? NSArray ?? NSArray()
-        vNameIDArrayIS = vNameDetailsArrayIS.value(forKey: "id") as? NSArray ?? NSArray()
-        vNameMfgIdArrayIS = vNameDetailsArrayIS.value(forKey: "mfgId") as? NSArray ?? NSArray()
+     
+        var vNameDetailsArrayIS = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VNames")
+        var vNameArrayIS = vNameDetailsArrayIS.value(forKey: "name") as? NSArray ?? NSArray()
+        var vNameIDArrayIS = vNameDetailsArrayIS.value(forKey: "id") as? NSArray ?? NSArray()
+        var vNameMfgIdArrayIS = vNameDetailsArrayIS.value(forKey: "mfgId") as? NSArray ?? NSArray()
         
         if vNameArrayIS.contains(inovojectData.name){
             let indexOfe = vNameArrayIS.index(of: inovojectData.name)
@@ -1642,20 +1576,7 @@ extension PEViewStartNewAssesmentINT{
         } else if (inovojectData.name != ""){
             otherVaccine = inovojectData.name ?? ""
         }
-        var y = 2
-        
-        let DManufacturerId = 0
-        var DNameArray = NSArray()
-        var DNameIDArray = NSArray()
-        var DNameDetailsArray = NSArray()
-        DNameDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_DManufacturer")
-        
-        let indexOfg = DNameArray.index(of: inovojectData.vaccineMan)
-        var dManufacture = 0
-        
-        let timestamp = Date().currentTimeMillis()
-        let uni = ManufacturerId + Int(timestamp) + x
-        
+                
         let unique = "\(deviceIDFORSERVER)_\(inovojectData.id)_iOS_"
         
         let ampulePerBag = Int(inovojectData.ampulePerBag ?? "0")
@@ -1713,13 +1634,7 @@ extension PEViewStartNewAssesmentINT{
         }
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-        var score = 0
-        
-        if  dictArray.assStatus == 1 {
-            score = dictArray.assMaxScore ?? 0
-        } else {
-            score = dictArray.assMinScore ?? 0
-        }
+     
         var DisplayId = dictArray.evaluationDate
         DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         
@@ -1767,7 +1682,6 @@ extension PEViewStartNewAssesmentINT{
             ManufacturerId = vManufacutrerIDArray[indexOfe] as? Int ?? 0
         }
         
-        let timestamp = Date().currentTimeMillis()
         let unique = "\(deviceIDFORSERVER)_\(dayOfAgeData.id)_iOS_"
         
         let ampulePerBag = Int(dayOfAgeData.ampulePerBag ?? "0")
@@ -1907,7 +1821,6 @@ extension PEViewStartNewAssesmentINT{
     // MARK: - Creater Sync Request for Certificate Data
     func createSyncRequestForCertificateData(dictArray: PENewAssessment,peCertificateData :PECertificateData) -> JSONDictionary{
         
-        let udid = UserDefaults.standard.value(forKey: "ApplicationIdentifier")!
         var UniID = dictArray.dataToSubmitID ?? ""
         
         if UniID == "" {
@@ -1973,7 +1886,6 @@ extension PEViewStartNewAssesmentINT{
     // MARK: - Create Sync Request for Residue Data
     func createSyncRequestForResidueData(dictArray: PENewAssessment) -> JSONDictionary{
         
-        let udid = UserDefaults.standard.value(forKey: "ApplicationIdentifier")!
         var UniID = dictArray.dataToSubmitID ?? ""
         
         if UniID == "" {
@@ -1993,7 +1905,6 @@ extension PEViewStartNewAssesmentINT{
         DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
         
-        let timestamp = Date().currentTimeMillis()
         let unique = "\(deviceIDFORSERVER)_\(dictArray.residue)_iOS_"
         
         let json = [
@@ -2041,7 +1952,6 @@ extension PEViewStartNewAssesmentINT{
         DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
         
-        let timestamp = Date().currentTimeMillis()
         let unique = "\(deviceIDFORSERVER)_\(dictArray.micro)_iOS_"
         
         let json = [
@@ -2098,6 +2008,7 @@ extension PEViewStartNewAssesmentINT{
                     let data = CoreDataHandlerPE().getPEDOAData(doaId: objn)
                     if data != nil {
                         if idArr.contains(data!.id ?? 0){
+                            // sync data is not availble
                         }else{
                             idArr.append(data!.id ?? 0)
                             if data != nil{
@@ -2127,6 +2038,7 @@ extension PEViewStartNewAssesmentINT{
                     let data = CoreDataHandlerPE().getPEDOAData(doaId: objn)
                     if data != nil {
                         if idArr.contains(data!.id ?? 0){
+                            // sync data for Day of age is not availble
                         }else{
                             idArr.append(data!.id ?? 0)
                             if data != nil{
@@ -2143,6 +2055,7 @@ extension PEViewStartNewAssesmentINT{
                     let data = CoreDataHandlerPE().getPEDOAData(doaId: objn)
                     if data != nil {
                         if idArr.contains(data!.id ?? 0){
+                            // sync data for DOA DATA is not availble
                         }else{
                             idArr.append(data!.id ?? 0)
                             if data != nil{
@@ -2158,6 +2071,7 @@ extension PEViewStartNewAssesmentINT{
                 for objn in  peNewAssessment.vMixer {
                     let data = CoreDataHandlerPE().getCertificateData(doaId: objn)
                     if idArr.contains(data!.id ?? 0){
+                        // sync data for mixture is not availble
                     }else{
                         idArr.append(data!.id ?? 0)
                         if data != nil{
@@ -2251,13 +2165,13 @@ extension PEViewStartNewAssesmentINT{
                 if error != nil {
                     self?.dismissGlobalHUD(self?.view ?? UIView())
                 }
-                guard let `self` = self, error == nil else { return }
+                guard let strongSelf = self, error == nil else { return }
                 
                 if json["StatusCode"]  == 200{
-                    self.callRequest2(paramForDoaInnovoject: paramForDoaInnovoject, json: json)
+                    strongSelf.callRequest2(paramForDoaInnovoject: paramForDoaInnovoject, json: json)
                 } else {
-                    self.dismissGlobalHUD(self.view)
-                    self.showAlert(title: "Error", message: "Something went wrong in Assessment sync. Please try again.", owner: self)
+                    strongSelf.dismissGlobalHUD(strongSelf.view)
+                    strongSelf.showAlert(title: "Error", message: "Something went wrong in Assessment sync. Please try again.", owner: strongSelf)
                 }
             })
         }
@@ -2282,6 +2196,7 @@ extension PEViewStartNewAssesmentINT{
                     let data = CoreDataHandlerPE().getPEDOAData(doaId: objn)
                     if data != nil {
                         if idArr.contains(data!.id ?? 0){
+                            // DOASub for view Asessment is not available
                         }else{
                             idArr.append(data!.id ?? 0)
                             if data != nil{
@@ -2294,7 +2209,7 @@ extension PEViewStartNewAssesmentINT{
             
             if(regionID != 3){
                 refrigratorDataArr.removeAll()
-                var assId  = UserDefaults.standard.value(forKey: "currentServerAssessmentId")
+                let assId  = UserDefaults.standard.value(forKey: "currentServerAssessmentId")
                 let refriArray = CoreDataHandlerPE().getOfflineREfriData(id: Int(assId as! String) ?? 0)
                 for objn in  refriArray {
                     if objn != nil {
@@ -2311,6 +2226,7 @@ extension PEViewStartNewAssesmentINT{
                     let data = CoreDataHandlerPE().getPEDOAData(doaId: objn)
                     if data != nil {
                         if idArr.contains(data!.id ?? 0){
+                            // DOA Data for view Asessment is not available
                         }else{
                             idArr.append(data!.id ?? 0)
                             if data != nil{
@@ -2327,6 +2243,7 @@ extension PEViewStartNewAssesmentINT{
                     let data = CoreDataHandlerPE().getPEDOAData(doaId: objn)
                     if data != nil {
                         if idArr.contains(data!.id ?? 0){
+                            // inovo data for view are not available
                         }else{
                             idArr.append(data!.id ?? 0)
                             if data != nil{
@@ -2342,6 +2259,7 @@ extension PEViewStartNewAssesmentINT{
                 for objn in  peNewAssessment.vMixer {
                     let data = CoreDataHandlerPE().getCertificateData(doaId: objn)
                     if idArr.contains(data!.id ?? 0){
+                        // vaccine mixture for view are not available
                     }else{
                         idArr.append(data!.id ?? 0)
                         if data != nil{
@@ -2433,11 +2351,20 @@ extension PEViewStartNewAssesmentINT{
             }
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: mergedDict, options: [])
-                if let status = EmailReportManager.shared.sendEmailReport(dataToAttach: jsonData, from: self,assessmentId: assessmentIdStr,date: nil,isPE: true), !status.0 {
-                    if let filePath = status.1 {
-                        print(filePath)
-                    }
+                if let status = EmailReportManager.shared.sendEmailReport(
+                        dataToAttach: jsonData,
+                        from: self,
+                        assessmentId: assessmentIdStr,
+                        date: nil,
+                        isPE: true
+                    ),
+                   !status.0,
+                   let filePath = status.1 {
+
+                    print(filePath)
                 }
+
+                
             } catch {
                 showAlert(title: "Error", message: "Failed to convert data to JSON.", owner: self)
             }
@@ -2678,14 +2605,14 @@ extension PEViewStartNewAssesmentINT{
             if error != nil {
                 self?.dismissGlobalHUD(self?.view ?? UIView())
             }
-            guard let `self` = self, error == nil else { return }
+            guard let strongSelf = self, error == nil else { return }
             
             if json["StatusCode"]  == 200{
-                self.handleSyncResponse(mjson)
+                strongSelf.handleSyncResponse(mjson)
                 
             } else {
-                self.dismissGlobalHUD(self.view)
-                self.showAlert(title: "Error", message: "Something went wrong in Vaccination sync, Please try again.", owner: self)
+                strongSelf.dismissGlobalHUD(strongSelf.view)
+                strongSelf.showAlert(title: "Error", message: "Something went wrong in Vaccination sync, Please try again.", owner: strongSelf)
             }
         })
     }
@@ -2697,12 +2624,12 @@ extension PEViewStartNewAssesmentINT{
             if error != nil {
                 self?.dismissGlobalHUD(self?.view ?? UIView())
             }
-            guard let `self` = self, error == nil else { return }
+            guard let strongSelf = self, error == nil else { return }
             if json["StatusCode"]  == 200{
-                self.CalculateImageCount()
+                strongSelf.CalculateImageCount()
             } else {
-                self.dismissGlobalHUD(self.view)
-                self.showAlert(title: "Error", message: "Something went wrong in Score sync, Please try again.", owner: self)
+                strongSelf.dismissGlobalHUD(strongSelf.view)
+                strongSelf.showAlert(title: "Error", message: "Something went wrong in Score sync, Please try again.", owner: strongSelf)
             }
         })
     }
@@ -2726,7 +2653,7 @@ extension PEViewStartNewAssesmentINT{
     
         var DisplayId = dictArray.evaluationDate
         DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
-        var siteId = String(dictArray.siteId ?? 0)
+        let siteId = String(dictArray.siteId ?? 0)
    
         DisplayId = "C-" + UniID
         let base64Str = CoreDataHandlerPE().getImageBase64ByImageID(idArray:img)
@@ -2798,7 +2725,7 @@ extension PEViewStartNewAssesmentINT{
                 for i in objCtIs.images{
                     let status = CoreDataHandlerPE().imageAlreadySyncStatus(imageId: i) as? Bool ?? false
                     if status {
-                        
+                        // checking images status
                     } else {
                         let jsonIMages = createSyncRequestForImage(dictArray: objCtIs,img:i)
                         imgArray.append(jsonIMages)
@@ -2807,7 +2734,6 @@ extension PEViewStartNewAssesmentINT{
                 tempArr.append(json)
                 comntArray.append(jsonComment)
             }
-            let param = ["AssessmentCommentsData":comntArray,"AssessmentScoreData":tempArr] as JSONDictionary
             var arrayCount  = 0
             var imgDic :  [JSONDictionary] = []
             
@@ -2826,7 +2752,7 @@ extension PEViewStartNewAssesmentINT{
                 if  arrayCount > 0 {
                     let ss  = imgDic as?  [JSONDictionary]  ?? []
                     var  paramForImages  = ["AssessmentImages":ss] as JSONDictionary
-                    arrayCount  = 0
+                 
                     imgDic.removeAll()
                     self.callRequest4(paramForImages:paramForImages)
                 }
@@ -2862,7 +2788,7 @@ extension PEViewStartNewAssesmentINT{
                 for i in objCtIs.images{
                     let status = CoreDataHandlerPE().imageAlreadySyncStatus(imageId: i) as? Bool ?? false
                     if status {
-                        
+                        // images are submitted
                     } else {
                         let jsonIMages = createSyncRequestForImage(dictArray: objCtIs,img:i)
                         imgArray.append(jsonIMages)
@@ -2872,7 +2798,6 @@ extension PEViewStartNewAssesmentINT{
                 comntArray.append(jsonComment)
                 
             }
-            let param = ["AssessmentScoreData":tempArr,"AssessmentCommentsData":comntArray] as JSONDictionary
             var arrayCount  = 0
             var imgDic :  [JSONDictionary] = []
             
@@ -2891,7 +2816,7 @@ extension PEViewStartNewAssesmentINT{
                 if  arrayCount > 0 {
                     let ss  = imgDic as?  [JSONDictionary]  ?? []
                     var  paramForImages  = ["AssessmentImages":ss] as JSONDictionary
-                    arrayCount  = 0
+                  
                     imgDic.removeAll()
                     self.callRequest4(paramForImages:paramForImages)
                 }
@@ -2942,34 +2867,35 @@ extension PEViewStartNewAssesmentINT{
                     NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "UpdateComplexOnDashboardPE"),object: nil))
                 }
             }
-            guard let `self` = self, error == nil else { return }
+            guard let strongSelf = self, error == nil else { return }
             if json["StatusCode"]  == 200{
-                if self.saveTypeString.contains(11)
+                if strongSelf.saveTypeString.contains(11)
                 {
-                    if self.saveTypeString.contains(00) {
-                        CoreDataHandlerPE().updateDraftStatus(assessment: self.peNewAssessment)
+                    if strongSelf.saveTypeString.contains(00) {
+                        CoreDataHandlerPE().updateDraftStatus(assessment: strongSelf.peNewAssessment)
                     }
-                    CoreDataHandlerPE().updateOfflineStatus(assessment: self.peNewAssessment)
+                    CoreDataHandlerPE().updateOfflineStatus(assessment: strongSelf.peNewAssessment)
                 } else {
-                    CoreDataHandlerPE().updateDraftStatus(assessment: self.peNewAssessment)
+                    CoreDataHandlerPE().updateDraftStatus(assessment: strongSelf.peNewAssessment)
                 }
-                if ConnectionManager.shared.hasConnectivity() {
-                    if self.callRequest4Int == 0 {
-                        let syncArr = self.getAssessmentInOfflineFromDb()
+                if ConnectionManager.shared.hasConnectivity() ,
+                   strongSelf.callRequest4Int == 0 {
+                    
+                        let syncArr = strongSelf.getAssessmentInOfflineFromDb()
                         if syncArr > 0{
-                            self.syncBtnTapped(showHud: false)
+                            strongSelf.syncBtnTapped(showHud: false)
                         } else {
-                            for i in self.totalImageToSync{
+                            for i in strongSelf.totalImageToSync{
                                 CoreDataHandlerPE().setImageStatusTrue(idArray: i)
                             }
-                            self.showtoast(message: "Data synced successfully.")
+                            strongSelf.showtoast(message: "Data synced successfully.")
                             NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "UpdateComplexOnDashboardPE"),object: nil))
-                            self.dismissGlobalHUD(self.view)
+                            strongSelf.dismissGlobalHUD(strongSelf.view)
                         }
-                    }
+                    
                 }
             } else {
-                self.dismissGlobalHUD(self.view)
+                strongSelf.dismissGlobalHUD(strongSelf.view)
             }
             
         })
