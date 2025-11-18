@@ -23,7 +23,7 @@ class CoreDataHandlerPE: NSObject {
     let userIdAsync = "userID == %d AND asyncStatus == 0"
     let catServerId = " catID == %@ AND userID == %d AND serverAssessmentId == %@"
     let assServerId = " assID == %@ AND userID == %d AND serverAssessmentId == %@"
-    let imageId = "imageId == %d"
+    let imageId = Constants.imageIdConstant
     let dateFormatMMDDYY = "MM/dd/YYYY HH:mm:ss"
     let dateFormatDDMMYY = Constants.ddMMYYYYHHmmss
     let catIdStr = " catID == %@ "
@@ -5356,8 +5356,8 @@ extension CoreDataHandlerPE {
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest  = NSFetchRequest<NSFetchRequestResult>(entityName: "PE_ImageEntity")
         fetchRequest.returnsObjectsAsFaults = false
-        fetchRequest.predicate = NSPredicate(format: "imageId == %d",idArray)
-        
+        fetchRequest.predicate = NSPredicate(format: Constants.imageIdConstant,idArray)
+    
         do {
             let results = try managedContext.fetch(fetchRequest) as? [NSManagedObject]
             if results?.count != 0 { // Atleast one was returned
@@ -5380,7 +5380,7 @@ extension CoreDataHandlerPE {
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest  = NSFetchRequest<NSFetchRequestResult>(entityName: "PE_ImageEntity")
         fetchRequest.returnsObjectsAsFaults = false
-        fetchRequest.predicate = NSPredicate(format: "imageId == %d",idArray)
+        fetchRequest.predicate = NSPredicate(format: Constants.imageIdConstant,idArray)
         
         do {
             let results = try managedContext.fetch(fetchRequest) as? [NSManagedObject]
@@ -5405,7 +5405,7 @@ extension CoreDataHandlerPE {
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest  = NSFetchRequest<NSFetchRequestResult>(entityName: "PE_ImageEntity")
         fetchRequest.returnsObjectsAsFaults = false
-        fetchRequest.predicate = NSPredicate(format: "imageId == %d",idArray)
+        fetchRequest.predicate = NSPredicate(format: Constants.imageIdConstant,idArray)
         
         do {
             let results = try managedContext.fetch(fetchRequest) as? [NSManagedObject]

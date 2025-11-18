@@ -324,6 +324,7 @@ struct Constants {
     static let siteIdConstant = "siteId = %d"
     static let trainingIdConstant = "trainingId = %d"
     static let noDataFound = "No Data Found"
+    static let imageIdConstant = "imageId == %d"
     static let AddInfoStr = "Add Info."
     static let  MMMdyyyy =  "MMM d, yyyy"
     static let pleasefillthemandatoryfields = "Please fill the mandatory fields."
