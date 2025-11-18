@@ -4067,9 +4067,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 if peNewAssessment.isPERejected == false && peNewAssessment.isEMRejected == true
                 {
                     vc.editable = false
-                    vc.commentCompleted = {[unowned self] ( note) in
-                        
-                    }
+                   
                     if vc.editable{
                         self.navigationController?.present(vc, animated: false, completion: nil)
                     }else{
@@ -5754,7 +5752,7 @@ extension PEDraftAssesmentFinalize: UIImagePickerControllerDelegate , UINavigati
                 imagePicker.sourceType = .camera
                 imagePicker.cameraCaptureMode = .photo
                 imagePicker.delegate = self
-                present(imagePicker, animated: true, completion: {})
+                present(imagePicker, animated: true, completion: nil)
             } else {
                 postAlert("Rear camera doesn't exist", message: "Application cannot access the camera.")
             }

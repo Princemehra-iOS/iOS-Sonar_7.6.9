@@ -5279,7 +5279,7 @@ extension PEAssesmentFinalize: UIImagePickerControllerDelegate , UINavigationCon
             imagePicker.allowsEditing = false
             imagePicker.sourceType = .photoLibrary
             imagePicker.delegate = self
-            present(imagePicker, animated: true, completion: {})
+            present(imagePicker, animated: true, completion: nil)
             postAlert("Camera inaccessable", message: "Application cannot access the camera.")
         }
         
