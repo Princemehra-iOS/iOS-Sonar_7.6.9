@@ -440,7 +440,7 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
             peNewAssessment = PENewAssessment()
             var CategoriesResponse =  PECategoriesAssesmentsResponse(nil)
          
-            var quesJsonRe = ((getJSON("QuestionAns") ?? nil) ?? JSON())
+            let quesJsonRe = ((getJSON("QuestionAns") ?? nil) ?? JSON())
             CategoriesResponse =  PECategoriesAssesmentsResponse(quesJsonRe)
             ZoetisDropdownShared.sharedInstance.sharedPEOnGoingSession.append(CategoriesResponse)
         }
@@ -758,9 +758,11 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
         var fullName1 = ""
         var fullName3 = ""
         var fullName2 = ""
-        if 0 >= 0 && 0 < fullNameArr?.count ?? 0 {
+      
+        if 0 < (fullNameArr?.count ?? 0) {
             fullName1 = fullNameArr?[0] ?? ""
         }
+
         if 1 >= 0 && 1 < fullNameArr?.count ?? 0{
             fullName2 = fullNameArr?[1] ?? ""
         }
@@ -879,7 +881,7 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
         }
         
         if lastTwoAssessmentsDate.count > 0 {
-            var tempArr = NSArray()
+            var submitIDArr = NSArray()
            
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
             let managedContext = appDelegate!.managedObjectContext
@@ -894,9 +896,7 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
             
             
             fetchRequest.predicate = NSPredicate(format: "customerId == %@ AND siteId == %d AND userID == %d AND evaluationDate == %@ AND dataToSubmitID == %@", argumentArray: [customerId, siteId,userID,evaluationDateLatestAssessment,evaluationDateLatestSubmitId])
-            
-            
-            var carColIdArrayDraftNumbers : NSArray = NSArray()
+          
             var catColIdArrayDraftNumbers : NSArray = NSArray()
             var submitIDArray : NSArray = NSArray()
             var dataToSubmitNumberIdArray : [Int] = []
@@ -904,17 +904,17 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
             do {
                 let results = try managedContext.fetch(fetchRequest) as? [NSManagedObject]
                 if results?.count != 0 {
-                    tempArr = results as NSArray? ?? []
+                    submitIDArr = results as NSArray? ?? []
                   
-                    carColIdArrayDraftNumbers  = tempArr.value(forKey: "dataToSubmitNumber") as? NSArray ?? []
+                    var carColIdArrayDraftNumbers  = submitIDArr.value(forKey: "dataToSubmitNumber") as? NSArray ?? []
                     
                     for obj in carColIdArrayDraftNumbers {
                         if (!dataToSubmitNumberIdArray.contains((obj as? Int) ?? 0) && dataToSubmitNumberIdArray.count < 2){
                             dataToSubmitNumberIdArray.append((obj as? Int) ?? 0)
                         }
                     }
-                    catColIdArrayDraftNumbers  = tempArr.value(forKey: "catID") as? NSArray ?? []
-                    submitIDArray  = tempArr.value(forKey: "dataToSubmitID") as? NSArray ?? []
+                    catColIdArrayDraftNumbers  = submitIDArr.value(forKey: "catID") as? NSArray ?? []
+                    submitIDArray  = submitIDArr.value(forKey: "dataToSubmitID") as? NSArray ?? []
                 }
             } catch {
             }
@@ -946,8 +946,8 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
                     resultCatfirstAssessment.removeAll()
                 }
                 let evaluationDateLatestSubmitId = lastTwoAssessmentsSubmitId[0] as? String ?? ""
-                for i in 0...dataCatIDToSubmitNumberIdArray.count-1 {
-                    fetchRequestNew.predicate = NSPredicate(format: "evaluationDate == %@ AND catID == %d AND dataToSubmitID == %@", argumentArray: [ evaluationDateLatestAssessment,dataCatIDToSubmitNumberIdArray[i],evaluationDateLatestSubmitId])
+                for index in 0...dataCatIDToSubmitNumberIdArray.count-1 {
+                    fetchRequestNew.predicate = NSPredicate(format: "evaluationDate == %@ AND catID == %d AND dataToSubmitID == %@", argumentArray: [ evaluationDateLatestAssessment,dataCatIDToSubmitNumberIdArray[index],evaluationDateLatestSubmitId])
                     fetchRequestNew.returnsObjectsAsFaults = false
                     
                     do {
@@ -958,6 +958,7 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
                             }
                             
                         }
+                        
                     } catch {
                     }
                 }
@@ -981,7 +982,7 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
     func getAssessmentSecondFromDb() {
         
         if lastTwoAssessmentsDate.count > 1 {
-            var tempArr = NSArray()
+            var newArr = NSArray()
           
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
             let managedContext = appDelegate!.managedObjectContext
@@ -996,27 +997,25 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
             
             fetchRequest.predicate = NSPredicate(format: "customerId == %@ AND siteId == %d AND userID == %d AND evaluationDate == %@ AND dataToSubmitID == %@", argumentArray: [customerId,siteId,userID,evaluationDateLatestAssessment,evaluationDateLatestSubmitId])
             
-            var carColIdArrayDraftNumbers : NSArray = NSArray()
             var catColIdArrayDraftNumbers : NSArray = NSArray()
             var submitIDArray : NSArray = NSArray()
-         
             
             var dataToSubmitNumberIdArray : [Int] = []
             
             do {
                 let results = try managedContext.fetch(fetchRequest) as? [NSManagedObject]
                 if results?.count != 0 {
-                    tempArr = results as NSArray? ?? []
+                    newArr = results as NSArray? ?? []
                    
-                    carColIdArrayDraftNumbers  = tempArr.value(forKey: "dataToSubmitNumber") as? NSArray ?? []
+                    var  carColIdArrayDraftNumbers  = newArr.value(forKey: "dataToSubmitNumber") as? NSArray ?? []
                     
                     for obj in carColIdArrayDraftNumbers {
                         if (!dataToSubmitNumberIdArray.contains((obj as? Int) ?? 0) && dataToSubmitNumberIdArray.count < 2){
                             dataToSubmitNumberIdArray.append((obj as? Int) ?? 0)
                         }
                     }
-                    catColIdArrayDraftNumbers  = tempArr.value(forKey: "catID") as? NSArray ?? []
-                    submitIDArray  = tempArr.value(forKey: "dataToSubmitID") as? NSArray ?? []
+                    catColIdArrayDraftNumbers  = newArr.value(forKey: "catID") as? NSArray ?? []
+                    submitIDArray  = newArr.value(forKey: "dataToSubmitID") as? NSArray ?? []
                 }
             } catch {
             }
@@ -1039,8 +1038,8 @@ class PEDashboardViewController: BaseViewController , ChartViewDelegate{
                     resultCatSecondAssessment.removeAll()
                 }
                 let evaluationDateLatestSubmitId = lastTwoAssessmentsSubmitId[1] as? String ?? ""
-                for i in 0...dataCatIDToSubmitNumberIdArray.count-1 {
-                    fetchRequestNew.predicate = NSPredicate(format: "evaluationDate == %@ AND catID == %d AND dataToSubmitID == %@", argumentArray: [ evaluationDateLatestAssessment,dataCatIDToSubmitNumberIdArray[i],evaluationDateLatestSubmitId])
+                for k in 0...dataCatIDToSubmitNumberIdArray.count-1 {
+                    fetchRequestNew.predicate = NSPredicate(format: "evaluationDate == %@ AND catID == %d AND dataToSubmitID == %@", argumentArray: [ evaluationDateLatestAssessment,dataCatIDToSubmitNumberIdArray[k],evaluationDateLatestSubmitId])
                     fetchRequestNew.returnsObjectsAsFaults = false
                     
                     do {
@@ -1616,7 +1615,7 @@ APIActivityTracker.shared.endRequest()
             if error != nil {
                 self?.dismissGlobalHUD(self?.view ?? UIView())
             }
-            guard let `self` = self, error == nil else { return }
+            guard let self = self, error == nil else { return }
             if json["StatusCode"]  == 200{
                 self.group.enter()
                 self.CalculateImageCount()
@@ -2264,8 +2263,6 @@ APIActivityTracker.shared.endRequest()
         } else if (inovojectData.name != ""){
             otherVaccine = inovojectData.name ?? ""
         }
-
-        let timestamp = Date().currentTimeMillis()
   
         let unique = "\(deviceIDFORSERVER)_\(inovojectData.id)_iOS_"
         let ampulePerBag = Int(inovojectData.ampulePerBag ?? "0")
@@ -2371,9 +2368,7 @@ APIActivityTracker.shared.endRequest()
             let indexOfe =  vManufacutrerNameArray.index(of: dayOfAgeData.vaccineMan) //
             ManufacturerId = vManufacutrerIDArray[indexOfe] as? Int ?? 0
         }
-        
-        let timestamp = Date().currentTimeMillis()
-    
+            
         let unique = "\(deviceIDFORSERVER)_\(dayOfAgeData.id)_iOS_"
         let ampulePerBag = Int(dayOfAgeData.ampulePerBag ?? "0")
         var AntibioticInformation  =  ""
@@ -2529,7 +2524,6 @@ APIActivityTracker.shared.endRequest()
         DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
         
-        let timestamp = Date().currentTimeMillis()
         let unique = "\(deviceIDFORSERVER)_\(peCertificateData.id)_iOS_"
         
         var resultString = String()
@@ -2625,14 +2619,11 @@ APIActivityTracker.shared.endRequest()
         if let id = dictArray.serverAssessmentId{
             serverAssessmentId = Int64(id ?? "") ?? 0
         }
-        
-        let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-        
+                
         var DisplayId = dictArray.evaluationDate
         DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
         
-        let timestamp = Date().currentTimeMillis()
         let unique = "\(deviceIDFORSERVER)_\(dictArray.residue)_iOS_"
         
         let json = [
@@ -2681,7 +2672,6 @@ APIActivityTracker.shared.endRequest()
         DisplayId = "C-" + UniID
         
         let timestamp = Date().currentTimeMillis()
-        let uni = dictArray.userID ?? 32 + Int(timestamp)
         let unique = "\(deviceIDFORSERVER)_\(dictArray.micro)_iOS_"
         
         let json = [
@@ -2718,8 +2708,7 @@ APIActivityTracker.shared.endRequest()
         if UniID == "" {
             UniID = dict.draftID ?? ""
         }
-        var Complete = 1
-        var Draft = 0
+
         var SaveType = 1
         saveTypeString.append(11)
         var AssessmentId = dict.dataToSubmitNumber ?? 0
@@ -2731,8 +2720,6 @@ APIActivityTracker.shared.endRequest()
                 deviceIDFORSERVER = dict.assDetail2 ?? ""
             }
             AssessmentId = dict.draftNumber ?? 0
-            Draft = 1
-            Complete = 0
             SaveType = 0
             saveTypeString.append(00)
         }
@@ -2855,11 +2842,9 @@ APIActivityTracker.shared.endRequest()
         let regionId = UserDefaults.standard.integer(forKey: "Regionid")
         if regionId != 3 {
             dateFormatter.dateFormat = "dd/MM/YYYY HH:mm:ss Z"
-            let date = dict.evaluationDate?.toDate(withFormat: CategoryConstants.ddMMyyyy)
         }
         else{
             dateFormatter.dateFormat = CategoryConstants.MMddyyyy
-            let date = dict.evaluationDate?.toDate(withFormat: CategoryConstants.MMddyyyy)
         }
   
         var dateSig = ""
@@ -2884,6 +2869,7 @@ APIActivityTracker.shared.endRequest()
             base64Str = CoreDataHandlerPE().getImageBase64ByImageID(idArray:(dict.sig) ?? 0)
         }
         if sigNumber2 == 0 {
+            // second signature's data not available
         } else {
             base64Str2 = CoreDataHandlerPE().getImageBase64ByImageID(idArray:(dict.sig2) ?? 0)
         }
@@ -3293,7 +3279,6 @@ APIActivityTracker.shared.endRequest()
             if dict.assDetail2?.lowercased().contains("_1_ios") ?? false{
                 deviceIDFORSERVER = dict.assDetail2 ?? ""
             }
-            AssessmentId = dict.draftNumber ?? 0
             saveTypeString.append(00)
         }
         var serverAssessmentId:Int64 = 0
@@ -4420,7 +4405,6 @@ APIActivityTracker.shared.endRequest()
                 let mainQueue = OperationQueue.main
                 mainQueue.addOperation{
                     if status == VaccinationConstants.VaccinationStatus.COREDATA_SAVED_SUCCESSFULLY || status == VaccinationConstants.VaccinationStatus.COREDATA_FETCHED_SUCCESSFULLY{
-                        let userDefault = UserDefaults.standard
                         self?.upcomingCertificationsArr =  PEAssessmentsDAO.sharedInstance.getVMObj(userId:UserContext.sharedInstance.userDetailsObj?.userId ?? "")
                         if self?.upcomingCertificationsArr.count ?? 0 > 0 {
                             self?.alertLbl.isHidden = true
@@ -4623,7 +4607,6 @@ APIActivityTracker.shared.endRequest()
 					print("AssessmentId: <<< obj.assID: <<< ",(obj.serverAssessmentId) ?? 0)
 					globalAssessmentId = obj.serverAssessmentId
                     var paramForDoaInnovoject = JSONDictionary()
-//                    let certCreatedById = self.certificateData.
                     ///Add cert crated by id
                     if( self.regionID  != 3 ){
                         paramForDoaInnovoject = ["InovojectData":inovojectDataArr,"DayOfAgeData":dayOfAgeDataArr,"DayAgeSubcutaneousDetailsData":dayOfAgeSDataArr,"VaccineMixerObservedData":certificateDataArr,"VaccineResidueMoldsData":vaccineResidueMoldsDataArr,"VaccineMicroSamplesData":vaccineMicroSamplesDataArr,"RefrigeratorData":refrigratorDataArr,"DeviceId": self.deviceIDFORSERVER, "AssessmentDetailsId" :AssessmentId] as JSONDictionary
@@ -4989,7 +4972,7 @@ APIActivityTracker.shared.endRequest()
     // MARK: - Handle PE Sub Vaccine List API Responce
     private func handlefetchSubVaccineNamesResponse(_ json: JSON) {
         self.deleteAllData("PE_VSubNames")
-        let jsonObject = VSubNamesResponse(json)
+        VSubNamesResponse(json)
         fetchPEFrequency()
     }
     
@@ -5073,7 +5056,6 @@ APIActivityTracker.shared.endRequest()
                     }
                 }
                 
-                let currentServerAssessmentId = UserDefaults.standard.set(String(serverAssessmentId), forKey: "currentServerAssessmentId")
                 peNewAssessmentWas.serverAssessmentId = String(serverAssessmentId)
                 let AppCreationTime = objDic["AppCreationTime"] as? String ?? ""
                 peNewAssessmentWas.siteId = objDic["SiteId"] as? Int ?? 0
@@ -5085,11 +5067,12 @@ APIActivityTracker.shared.endRequest()
                 peNewAssessmentWas.extndMicro = objDic["IsInterMicrobial"] as? Bool ?? false
                 peNewAssessmentWas.IsEMRequested = objDic["IsEMRequested"] as? Bool ?? false
                 peNewAssessmentWas.sanitationValue = objDic["SanitationEmbrex"] as? Bool ?? false
-                if let doubleSanitation =  objDic["DoubleSanitation"] as? Bool{
-                    if doubleSanitation {
-                        peNewAssessmentWas.hatcheryAntibiotics = 1
-                    }
+                if let doubleSanitation = objDic["DoubleSanitation"] as? Bool,
+                   doubleSanitation {
+
+                    peNewAssessmentWas.hatcheryAntibiotics = 1
                 }
+
                 peNewAssessmentWas.isHandMix = objDic["Handmix"] as? Bool ?? false
                 peNewAssessmentWas.isEMRejected = objDic["IsEMRejected"] as? Bool ?? false
                 peNewAssessmentWas.isPERejected = objDic["IsPERejected"] as? Bool ?? false
@@ -5375,8 +5358,6 @@ APIActivityTracker.shared.endRequest()
                         let DiluentsMfgOtherName = inoDicIS["DiluentsMfgOtherName"] as? String ?? ""
                        
                         var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
-                        var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
-                        var vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
                      
                         var vDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VNames")
                         var vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
@@ -5458,13 +5439,9 @@ APIActivityTracker.shared.endRequest()
                             }
                         }
                         
-                        var vNameArray = NSArray()
-                        var vIDArray = NSArray()
-                        var vDetailsArray = NSArray()
-                        vDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VNames")
-                        vDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 1)
-                        vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
-                        vIDArray = vDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+                        let vDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 1)
+                        let vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
+                        let vIDArray = vDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
                         let xxxx =    VaccineId
                         if xxxx != 0 {
                             if vIDArray.contains(xxxx){
@@ -5683,7 +5660,6 @@ APIActivityTracker.shared.endRequest()
                 
                 let sanitationEmbrexValue = objDic["SanitationEmbrex"] as? Bool ?? false
                 if sanitationEmbrexValue{
-                    ///PEInfoDAO.sharedInstance.saveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: sanitationEmbrexValue, assessmentId: "\(serverAssessmentId)", date: nil, override: false, hasChlorineStrips: hasChlorineStrips, isAutomaticFail: isAutomaticFail)
                     
                     let data = CoreDataHandlerPEModels.doaVaccinationSaveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: sanitationEmbrexValue, assessmentId: "\(serverAssessmentId)", date: nil, override: false, hasChlorineStrips: hasChlorineStrips, isAutomaticFail: isAutomaticFail)
                     PEInfoDAO.sharedInstance.saveData(vaccineData: data)
@@ -5719,12 +5695,13 @@ APIActivityTracker.shared.endRequest()
                 peNewAssessmentWas.isEMRejected = objDic["IsEMRejected"] as? Bool ?? false
                 peNewAssessmentWas.isPERejected = objDic["IsPERejected"] as? Bool ?? false
                 peNewAssessmentWas.emRejectedComment = objDic["EMRejectedComment"] as? String ?? ""
-                
-                if let doubleSanitation =  objDic["DoubleSanitation"] as? Bool{
-                    if doubleSanitation {
-                        peNewAssessmentWas.hatcheryAntibiotics = 1
-                    }
+
+                if let doubleSanitation = objDic["DoubleSanitation"] as? Bool,
+                   doubleSanitation {
+
+                    peNewAssessmentWas.hatcheryAntibiotics = 1
                 }
+
                 let visitDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Approvers")
                 let visitNameArray = visitDetailsArray.value(forKey: "username") as? NSArray ?? NSArray()
                 let visitIDArray = visitDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
@@ -6004,7 +5981,6 @@ APIActivityTracker.shared.endRequest()
                         
                         let AmpulePerbag = inoDicIS["AmpulePerbag"] as? Int ?? 0
                         let HatcheryAntibiotics =  inoDicIS["HatcheryAntibiotics"] as? Bool ?? false
-                        let ManufacturerId = inoDicIS["ManufacturerId"] as? Int ?? 0
                         let BagSizeType = inoDicIS["BagSizeType"] as? String ?? ""
                         let DiluentMfg = inoDicIS["DiluentMfg"] as? String ?? ""
                         var VName = ""
@@ -6086,10 +6062,8 @@ APIActivityTracker.shared.endRequest()
                                 VManufacturerName = vManufacutrerNameArray[indexOfd] as? String ?? ""
                             }
                         }
-                    
-                        var vDetailsArray = NSArray()
-                        vDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VNames")
-                        vDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 1)
+                      
+                        var vDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 1)
                         var vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
                         var vIDArray = vDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
                         let xxxx =    VaccineId
@@ -6369,21 +6343,20 @@ APIActivityTracker.shared.endRequest()
             
             if objDic["HasChlorineStrips"] as? Int == 1{
                 UserDefaults.standard.set(1, forKey: "isChlorineStrip")
-                let hasChlorineStrips = true
+                
             }else{
                 UserDefaults.standard.set(0, forKey: "isChlorineStrip")
-                let hasChlorineStrips = false
+               
             }
             if objDic["IsAutomaticFail"] as? Int == 1{
                 UserDefaults.standard.set(1, forKey: "isAutomaticFail")
-                let isAutomaticFail = true
+               
             }else{
                 UserDefaults.standard.set(0, forKey: "isAutomaticFail")
-                let isAutomaticFail = false
+              
             }
             let sanitationEmbrexValue = objDic["SanitationEmbrex"] as? Bool ?? false
             if sanitationEmbrexValue{
-                //PEInfoDAO.sharedInstance.saveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: sanitationEmbrexValue, assessmentId: "\(serverAssessmentId)", date: nil, override: false)
                 
                 let data = CoreDataHandlerPEModels.doaVaccinationSaveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: sanitationEmbrexValue, assessmentId: "\(serverAssessmentId)", date: nil, override: false)
                 PEInfoDAO.sharedInstance.saveData(vaccineData: data)
@@ -6414,11 +6387,12 @@ APIActivityTracker.shared.endRequest()
             peNewAssessmentWas.evaluationID  = EvaluationId
             peNewAssessmentWas.isHandMix = objDic["Handmix"] as? Bool ?? false
             
-            if let doubleSanitation =  objDic["DoubleSanitation"] as? Bool{
-                if doubleSanitation {
-                    peNewAssessmentWas.hatcheryAntibiotics = 1
-                }
+            if let doubleSanitation = objDic["DoubleSanitation"] as? Bool,
+               doubleSanitation {
+
+                peNewAssessmentWas.hatcheryAntibiotics = 1
             }
+
             
             peNewAssessmentWas.userID = objDic["UserId"] as? Int ?? 0
             peNewAssessmentWas.evaluationDate = convertDateFormatter(date: objDic["EvaluationDate"] as? String ?? "")
@@ -6513,10 +6487,10 @@ APIActivityTracker.shared.endRequest()
             
             var peCategoryFilteredArray: [PECategory] =  []
             for object in pECategoriesAssesmentsResponse.peCategoryArray{
-                if peNewAssessmentWas.evaluationID == object.evaluationID{
-                    if object.id != 36{
-                        peCategoryFilteredArray.append(object)
-                    }
+          
+                if peNewAssessmentWas.evaluationID == object.evaluationID,
+                   object.id != 36 {
+                    peCategoryFilteredArray.append(object)
                 }
             }
             
@@ -6580,6 +6554,7 @@ APIActivityTracker.shared.endRequest()
                             FrequencyValueStr = visitNameArray[indexOfe] as? String ?? ""
                         }
                     }
+
                     let isNAValue = questionMark["IsNA"] as? Bool ?? false
                     let TextAmPm = questionMark["TextAmPm"] as? String ?? ""
                     let PersonName = questionMark["PersonName"] as? String ?? ""
@@ -6722,8 +6697,6 @@ APIActivityTracker.shared.endRequest()
                     
                  
                     var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
-                    var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
-                    var vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
                 
                     var vDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VNames")
                     var vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
@@ -6803,13 +6776,10 @@ APIActivityTracker.shared.endRequest()
                             VManufacturerName = vManufacutrerNameArray[indexOfd] as? String ?? ""
                         }
                     }
-                    var vNameArray = NSArray()
-                    var vIDArray = NSArray()
-                    var vDetailsArray = NSArray()
-                    vDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VNames")
-                    vDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 1)
-                    vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
-                    vIDArray = vDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+                    
+                    let vDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 1)
+                    var vNameArray = vDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
+                    var vIDArray = vDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
                     let xxxx =    VaccineId
                     if xxxx != 0 {
                         if vIDArray.contains(xxxx){
@@ -7218,10 +7188,17 @@ extension PEDashboardViewController {
             }
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: mergedDict, options: [])
-                if let status = EmailReportManager.shared.sendEmailReport(dataToAttach: jsonData, from: self,assessmentId: assessmentIdStr,date: nil,isPE: true), !status.0 {
-                    if let filePath = status.1 {
-                        print(filePath)
-                    }
+                if let status = EmailReportManager.shared.sendEmailReport(
+                        dataToAttach: jsonData,
+                        from: self,
+                        assessmentId: assessmentIdStr,
+                        date: nil,
+                        isPE: true
+                    ),
+                   !status.0,
+                   let filePath = status.1 {
+                    
+                    print(filePath)
                 }
             } catch {
                 showAlert(title: "Error", message: "Failed to convert data to JSON.", owner: self)
