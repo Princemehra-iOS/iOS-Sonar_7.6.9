@@ -416,7 +416,7 @@ class SignatureTableViewCell: UITableViewCell, SignatureViewDelegate  {
             if empIndex > -1  && certificateData.count > empIndex {
                 var fullName = ""
                 let firstname = certificateData[empIndex].name
-                fullName = firstname ?? ""
+              
                 fullName = "\(firstname ?? "") "
                 nextBtn.isUserInteractionEnabled = true
                 operatorSignLbl.text = "Vaccine Mixer Signature*"
