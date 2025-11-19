@@ -193,7 +193,7 @@ class ApiSync: NSObject {
 			var request = URLRequest(url: URL(string: urlString)! )
 			request.httpMethod = "POST"
 			request.allHTTPHeaderFields = headerDict
-            request.setValue(Constants.applicationJson, forHTTPHeaderField: "Content-Type")
+            request.setValue(Constants.applicationJson, forHTTPHeaderField: Constants.contentType)
 			
 			request.httpBody = try! JSONSerialization.data(withJSONObject: sessionDictMain, options: [])
 			
@@ -480,13 +480,18 @@ class ApiSync: NSObject {
 				}
 			}
 		}
-		do {
-			let jsonData = try! JSONSerialization.data(withJSONObject: sessionDictMain, options: JSONSerialization.WritingOptions.prettyPrinted)
-			var jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
-			jsonString = jsonString.trimmingCharacters(in: CharacterSet.whitespaces)
-			
-			handleSaveMultipleFeedsSyncDataAPI(sessionDictMain)
-		}
+        do {
+            let jsonData = try JSONSerialization.data(
+                withJSONObject: sessionDictMain,
+                options: .prettyPrinted
+            )
+            var jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
+            jsonString = jsonString.trimmingCharacters(in: CharacterSet.whitespaces)
+            
+            handleSaveMultipleFeedsSyncDataAPI(sessionDictMain)
+        } catch {
+            print("Failed to serialize JSON:", error)
+        }
 	}
 	
 	// MARK: - Data Fetching
@@ -1674,7 +1679,7 @@ class ApiSync: NSObject {
                 var request = URLRequest(url: URL(string: urlString)! )
                 request.httpMethod = "POST"
                 request.allHTTPHeaderFields = headerDict
-                request.setValue(Constants.applicationJson, forHTTPHeaderField: "Content-Type")
+                request.setValue(Constants.applicationJson, forHTTPHeaderField: Constants.contentType)
                 request.httpBody = try! JSONSerialization.data(withJSONObject: sessionWithAllforms, options: [])
                 sessionManager.request(request as URLRequestConvertible).responseJSON { response in
                     let statusCode =  response.response?.statusCode
@@ -1980,7 +1985,7 @@ class ApiSync: NSObject {
                 request.httpMethod = "POST"
                 request.timeoutInterval = 300
                 request.allHTTPHeaderFields = headerDict
-                request.setValue(Constants.applicationJson, forHTTPHeaderField: "Content-Type")
+                request.setValue(Constants.applicationJson, forHTTPHeaderField: Constants.contentType)
                 request.httpBody = try! JSONSerialization.data(withJSONObject: sessionDict, options: [])
                 
                 sessionManager.request(request as URLRequestConvertible).responseJSON { response in
