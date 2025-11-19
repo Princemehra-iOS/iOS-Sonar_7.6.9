@@ -193,7 +193,7 @@ class ApiSync: NSObject {
 			var request = URLRequest(url: URL(string: urlString)! )
 			request.httpMethod = "POST"
 			request.allHTTPHeaderFields = headerDict
-			request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue(Constants.applicationJson, forHTTPHeaderField: Constants.contentType)
 			
 			request.httpBody = try! JSONSerialization.data(withJSONObject: sessionDictMain, options: [])
 			
@@ -480,13 +480,18 @@ class ApiSync: NSObject {
 				}
 			}
 		}
-		do {
-			let jsonData = try! JSONSerialization.data(withJSONObject: sessionDictMain, options: JSONSerialization.WritingOptions.prettyPrinted)
-			var jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
-			jsonString = jsonString.trimmingCharacters(in: CharacterSet.whitespaces)
-			
-			handleSaveMultipleFeedsSyncDataAPI(sessionDictMain)
-		}
+        do {
+            let jsonData = try JSONSerialization.data(
+                withJSONObject: sessionDictMain,
+                options: .prettyPrinted
+            )
+            var jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
+            jsonString = jsonString.trimmingCharacters(in: CharacterSet.whitespaces)
+            
+            handleSaveMultipleFeedsSyncDataAPI(sessionDictMain)
+        } catch {
+            print("Failed to serialize JSON:", error)
+        }
 	}
 	
 	// MARK: - Data Fetching
@@ -634,7 +639,7 @@ class ApiSync: NSObject {
 				Constants.inOvoStr: 22,
 				"Intramuscular": 24,
 				Constants.aguaDeBebida: 20,
-				"Membrana Da Asa": 19,
+                Constants.membranaDaAsa: 19,
 				"Ocular": 25,
 				Constants.Subcutânea: 23
 				 ],
@@ -727,7 +732,7 @@ class ApiSync: NSObject {
                         if routeName == "Spray" {
                             routeId = 21
                         }
-                        else if routeName == "In Ovo" {
+                        else if routeName == Constants.inOvoStr  {
                             routeId = 22
                         }
                         else if routeName == "Intramuscular" {
@@ -736,7 +741,7 @@ class ApiSync: NSObject {
                         else if routeName == "Água De Bebida" {
                             routeId = 20
                         }
-                        else if routeName == "Membrana Da Asa" {
+                        else if routeName == Constants.membranaDaAsa {
                             routeId = 19
                         }
                         else if routeName == "Ocular" {
@@ -759,7 +764,7 @@ class ApiSync: NSObject {
                         else if routeName == "Spray" {
                             routeId = 3
                         }
-                        else if routeName == "In Ovo" {
+                        else if routeName == Constants.inOvoStr {
                             routeId = 4
                         }
                         else if routeName == "Subcutaneous" {
@@ -798,7 +803,7 @@ class ApiSync: NSObject {
                         if routeName == "Spray" {
                             routeId = 21
                         }
-                        else if routeName == "In Ovo" {
+                        else if routeName == Constants.inOvoStr  {
                             routeId = 22
                         }
                         else if routeName == "Intramuscular" {
@@ -807,7 +812,7 @@ class ApiSync: NSObject {
                         else if routeName == "Água De Bebida" {
                             routeId = 20
                         }
-                        else if routeName == "Membrana Da Asa" {
+                        else if routeName == Constants.membranaDaAsa {
                             routeId = 19
                         }
                         else if routeName == "Ocular" {
@@ -831,7 +836,7 @@ class ApiSync: NSObject {
                      else if routeName == "Spray" {
                          routeId = 3
                      }
-                     else if routeName == "In Ovo" {
+                     else if routeName == Constants.inOvoStr  {
                          routeId = 4
                      }
                      else if routeName == "Subcutaneous" {
@@ -894,7 +899,7 @@ class ApiSync: NSObject {
                 var request = URLRequest(url: URL(string: urlString)! )
                 request.httpMethod = "POST"
                 request.allHTTPHeaderFields = headerDict
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.setValue(Constants.applicationJson, forHTTPHeaderField: Constants.contentType)
                 request.httpBody = try! JSONSerialization.data(withJSONObject: sessionDictWithVac, options: [])
                 sessionManager.request(request as URLRequestConvertible).responseJSON { response in
                     let statusCode =  response.response?.statusCode
@@ -1424,7 +1429,7 @@ class ApiSync: NSObject {
                 var request = URLRequest(url: URL(string: urlString)! )
                 request.httpMethod = "POST"
                 request.allHTTPHeaderFields = headerDict
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.setValue(Constants.applicationJson, forHTTPHeaderField: Constants.contentType)
                 request.httpBody = try! JSONSerialization.data(withJSONObject: postingDictOnServer, options: [])
                 
                 sessionManager.request(request as URLRequestConvertible).responseJSON { response in
@@ -1674,7 +1679,7 @@ class ApiSync: NSObject {
                 var request = URLRequest(url: URL(string: urlString)! )
                 request.httpMethod = "POST"
                 request.allHTTPHeaderFields = headerDict
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.setValue(Constants.applicationJson, forHTTPHeaderField: Constants.contentType)
                 request.httpBody = try! JSONSerialization.data(withJSONObject: sessionWithAllforms, options: [])
                 sessionManager.request(request as URLRequestConvertible).responseJSON { response in
                     let statusCode =  response.response?.statusCode
@@ -1980,7 +1985,7 @@ class ApiSync: NSObject {
                 request.httpMethod = "POST"
                 request.timeoutInterval = 300
                 request.allHTTPHeaderFields = headerDict
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.setValue(Constants.applicationJson, forHTTPHeaderField: Constants.contentType)
                 request.httpBody = try! JSONSerialization.data(withJSONObject: sessionDict, options: [])
                 
                 sessionManager.request(request as URLRequestConvertible).responseJSON { response in

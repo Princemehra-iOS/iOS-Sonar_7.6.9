@@ -429,10 +429,6 @@ class QuestionnaireVC: BaseViewController {
         }
     }
     
-    @objc  func nextBtnAction(_ sender: UIButton){
-        
-    }
-    
     @objc  func shippingBtnAction(_ sender: UIButton){
         
         let storyboard = UIStoryboard(name: "Certification", bundle: nil)
@@ -640,11 +636,7 @@ class QuestionnaireVC: BaseViewController {
             btnStackVw.addArrangedSubview(submitBtn)
         }
     }
-    
-    func addACtions(){
-        
-    }
-    
+  
     func  configureSafetyAwarenessVw(){
         configureDraftButton()
     }
@@ -722,12 +714,7 @@ class QuestionnaireVC: BaseViewController {
         }
         return didSet
     }
-    
-    
-    func setValues(){
-        
-    }
-    
+  
     
     func displayEmployeePopup(view: UIButton, employeesArr: [VaccinationEmployeeVM], index:Int){
         let storyboard: UIStoryboard = UIStoryboard(name: "Certification", bundle: nil)
@@ -1266,8 +1253,7 @@ extension QuestionnaireVC:UITableViewDataSource, UITableViewDelegate{
                     cell.isFromCertification = true
                     cell.fullSiteAddressView.isHidden = false
                     cell.operatorSignLbl.isHidden = false
-                    cell.nextBtn.addTarget(self, action:  #selector (nextBtnAction(_:)), for: .touchUpInside)
-                    cell.previousBtn.addTarget(self, action:  #selector (nextBtnAction(_:)), for: .touchUpInside)
+                   
                     cell.trainingId = self.trainingId
                     if self.curentCertification?.certificationCategoryId == "1" {
                         cell.shippindAddressBtn.isHidden = true

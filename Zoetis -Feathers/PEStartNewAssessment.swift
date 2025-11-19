@@ -1828,9 +1828,7 @@ extension PEStartNewAssessment : DatePickerPopupViewControllerProtocol{
         checkBackAndSave()
     }
     
-    func doneButtonTapped(string:String){
-        
-    }
+    
 }
 
 // MARK: - Action Methods

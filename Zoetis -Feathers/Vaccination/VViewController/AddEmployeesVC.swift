@@ -1810,9 +1810,7 @@ extension AddEmployeesVC: UIPopoverPresentationControllerDelegate{
 // MARK: - EXTENSION DATE PICKER PROTOCOL
 
 extension AddEmployeesVC: DatePickerPopupViewControllerProtocol{
-    func doneButtonTapped(string: String) {
-        
-    }
+    
     
     func doneButtonTappedWithDate(string: String, objDate: Date) {
         let dateFormatter = DateFormatter()

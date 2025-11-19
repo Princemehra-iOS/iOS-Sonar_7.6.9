@@ -273,10 +273,6 @@ class DashViewController: UIViewController,MDRotatingPieChartDataSource,userlist
         return remainingTime > 0 ? remainingTime : nil
     }
     
-    @IBAction func btnOntimerAction(_ sender: Any) {
-        
-       
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         
