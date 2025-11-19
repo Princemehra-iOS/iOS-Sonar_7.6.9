@@ -468,8 +468,8 @@ class ViewController: BaseViewController, UITextFieldDelegate, UITableViewDelega
             }
         }
         
-        if let data = jsonData {
-            let userResponseObj = try? jsonDecoder.decode(UserResponseDTO.self, from: jsonData!)
+        if let jsonData = jsonData {
+            let userResponseObj = try? jsonDecoder.decode(UserResponseDTO.self, from: jsonData)
             if userResponseObj != nil {
                 if let lastFilledUserId =  UserContextDAO.sharedInstance.getUserContextFilledObj()?.userId?.removeWhitespace() {
                     UserContext.sharedInstance.setUserDetails(userResponseObj!)
@@ -572,20 +572,22 @@ class ViewController: BaseViewController, UITextFieldDelegate, UITableViewDelega
         self.deleteAllData("SkeletaTurkey")
         self.deleteAllData("VeterationTurkey")
     }
-    
+
     fileprivate func handleLoginMethodArrModules(_ arrModuleIds: [String], _ dict: NSDictionary) -> Bool? {
-        if !(arrModuleIds.count > 1) {
-            if arrModuleIds[0] == "21" {
-                let roleID = dict.value(forKey: "RoleIds") as? String ?? ""
-                if roleID != "31" && roleID != "33"{
-                    Helper.dismissGlobalHUD(self.view)
-                    Helper.showAlertMessage(self, titleStr: "", messageStr: "Sorry you dont have access for this.")
-                    return true
-                }
+
+        if !(arrModuleIds.count > 1), arrModuleIds[0] == "21" {
+            let roleID = dict.value(forKey: "RoleIds") as? String ?? ""
+            if roleID != "31" && roleID != "33" {
+                Helper.dismissGlobalHUD(self.view)
+                Helper.showAlertMessage(self, titleStr: "", messageStr: "Sorry you dont have access for this.")
+                return true
             }
         }
+
         return nil
     }
+
+
     
     fileprivate func handleSwitchBirdAndTerms(_ switchBird: Int, _ terms: String) {
         if switchBird == 2 {
@@ -741,6 +743,7 @@ class ViewController: BaseViewController, UITextFieldDelegate, UITableViewDelega
                     let ModuleId = (dict.value(forKey: "ModuleId") as? String) ?? ""
                     let arrModuleIds = ModuleId.components(separatedBy: "~")
                     if let status = self.handleLoginMethodArrModules(arrModuleIds, dict) {
+                        debugPrint(status)
                         return
                     }
                     let ModuleName = (dict.value(forKey: "ModuleName") as? String) ?? ""
@@ -766,8 +769,8 @@ class ViewController: BaseViewController, UITextFieldDelegate, UITableViewDelega
                     UserDefaults.standard.set(terms, forKey: "Terms")
                     UserDefaults.standard.set(terms, forKey: "TermsChicken")
                     UserDefaults.standard.set(terms, forKey: "TermsTurkey")
-                    let userName = "\(FirstName)_\(LastName)".lowercased()
-                    UserDefaults.standard.set(userName, forKey: "username")
+                    let fullName = "\(FirstName)_\(LastName)".lowercased()
+                    UserDefaults.standard.set(fullName, forKey: "username")
                     
                     let birdId = UserDefaults.standard.integer(forKey: "birdTypeId")
                     self.handleBirdManagement(birdId)
@@ -804,16 +807,6 @@ class ViewController: BaseViewController, UITextFieldDelegate, UITableViewDelega
         }
     }
     
-    private func handleError(with dict: NSDictionary) {
-        self.ssologoutMethod()
-        let errorMsg = dict["error_description"]
-        let alertController = UIAlertController(title: Constants.alertStr, message: errorMsg as? String, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            Helper.dismissGlobalHUD(self.view)
-        }
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
 
     deinit {
         NotificationCenter.default.removeObserver(self)

@@ -978,7 +978,7 @@ class SingleSyncData: NSObject {
             }
             
            
-            var fullData =   captureNecropsyData.timeStamp!
+            let fullData =   captureNecropsyData.timeStamp!
             formWithcatNameWithBirdAndAllObs1.setValue(captureNecropsyData.necropsyId!, forKey: "SessionId")
             formWithcatNameWithBirdAndAllObs1.setValue(lngId, forKey: "LanguageId")
             formWithcatNameWithBirdAndAllObs1.setValue(fullData, forKey: "deviceSessionId")
@@ -1197,7 +1197,6 @@ class SingleSyncData: NSObject {
                             DispatchQueue.main.async {
                                 
                                 self.delegeteSyncApiData.failWithErrorInternalSyncdata()
-                                // self.showAlert(title: "Timeout", message: "The request timed out. Please try again.")
                             }
                         }
                         
@@ -1452,37 +1451,46 @@ class SingleSyncData: NSObject {
             })
         }
     }
-    
-    fileprivate func handleUpdateSyncOnAntibiotic(_ success: Bool,pId: NSNumber, _ completion: (_ status: Bool) -> Void) {
-        if success == true {
-            CoreDataHandler().updateisSyncOnAllCocciControlviaPostingid(pId , isSync: false, { (success) in
-                if success == true {
-                    CoreDataHandler().updateisSyncOnHetcharyVacDataWithPostingId(pId , isSync: false, { (success) in
-                        handleUpdateisSyncOnHetchary(success,pId: pId) { (status) in
-                            completion(status)
-                        }
-                    })
+
+    fileprivate func handleUpdateSyncOnAntibiotic(
+        _ success: Bool,
+        pId: NSNumber,
+        _ completion: (_ status: Bool) -> Void
+    ) {
+        guard success else { return }
+
+        CoreDataHandler().updateisSyncOnAllCocciControlviaPostingid(pId, isSync: false) { cocciControlSuccess in
+            guard cocciControlSuccess else { return }
+
+            CoreDataHandler().updateisSyncOnHetcharyVacDataWithPostingId(pId, isSync: false) { hetcharyVacDataSuccess in
+                guard hetcharyVacDataSuccess else { return }
+
+                handleUpdateisSyncOnHetchary(hetcharyVacDataSuccess, pId: pId) { status in
+                    completion(status)
                 }
-            })
+            }
         }
     }
-    
+
     func updadateDataOnCoreData(pId: NSNumber, _ completion: (_ status: Bool) -> Void) {
-        CoreDataHandler().updateisSyncOnMyBindersViaPostingId(pId, isSync: false, { (success) in
-            if success == true{
-                CoreDataHandler().updateisSyncOnAlternativeFeedPostingid(pId , isSync: false, { (success) in
-                    if success == true {
-                        CoreDataHandler().updateisSyncOnAntiboticViaPostingId(pId , isSync: false, { (success) in
-                            handleUpdateSyncOnAntibiotic(success,pId: pId) { (status) in
-                                completion(status)
-                            }
-                        })
+
+        CoreDataHandler().updateisSyncOnMyBindersViaPostingId(pId, isSync: false) { myBinderSuccess in
+            guard myBinderSuccess else { return }
+
+            CoreDataHandler().updateisSyncOnAlternativeFeedPostingid(pId, isSync: false) { alternativeFeedSuccess in
+                guard alternativeFeedSuccess else { return }
+
+                CoreDataHandler().updateisSyncOnAntiboticViaPostingId(pId, isSync: false) { AntiboticSuccess in
+                    guard AntiboticSuccess else { return }
+
+                    handleUpdateSyncOnAntibiotic(AntiboticSuccess, pId: pId) { status in
+                        completion(status)
                     }
-                })
+                }
             }
-        })
+        }
     }
-    
+
     // MARK: - Update Necropsy Data on Core DB
     fileprivate func handleUpdateSyncOnBirdPhoto(_ success: Bool,nId: NSNumber, _ completion: (_ status: Bool) -> Void) {
         if success == true {
@@ -1493,33 +1501,56 @@ class SingleSyncData: NSObject {
             })
         }
     }
-    
-    fileprivate func handleUpdateisSyncNecropsystep1neccId(_ success: Bool,nId: NSNumber, _ completion: (_ status: Bool) -> Void) {
-        if success == true {
-            
-            CoreDataHandler().updateisSyncOnCaptureInDatabase(nId , isSync: false, { (success) in
-                if success == true {
-                    CoreDataHandler().updateisSyncOnBirdPhotoCaptureDatabase(nId , isSync: false, { (success) in
-                        self.handleUpdateSyncOnBirdPhoto(success, nId: nId) { (status) in
-                            completion(status)
-                        }
-                    })
+
+    fileprivate func handleUpdateisSyncNecropsystep1neccId(
+        _ success: Bool,
+        nId: NSNumber,
+        _ completion: (_ status: Bool) -> Void
+    ) {
+
+        guard success else {
+            return
+        }
+
+        CoreDataHandler().updateisSyncOnCaptureInDatabase(nId, isSync: false) { captureSuccess in
+            guard captureSuccess else {
+                return
+            }
+
+            CoreDataHandler().updateisSyncOnBirdPhotoCaptureDatabase(nId, isSync: false) { photoSuccess in
+                guard photoSuccess else {
+                    return
                 }
-            })
+
+                self.handleUpdateSyncOnBirdPhoto(photoSuccess, nId: nId) { status in
+                    completion(status)
+                }
+            }
         }
     }
+
+    
     
     func updadateNacDataOnCoreData(nId: NSNumber, _ completion: (_ status: Bool) -> Void) {
-        
-        CoreDataHandler().CaptureSkeletaDataUpdatedInDatabase(nId , isSync: false, { (success) in
-            if success == true {
-                CoreDataHandler().updateisSyncNecropsystep1neccId(nId , isSync: false, { (success) in
-                    self.handleUpdateisSyncNecropsystep1neccId(success, nId: nId) { status in
-                        completion(status)
-                    }
-                })
+
+        CoreDataHandler().CaptureSkeletaDataUpdatedInDatabase(nId, isSync: false) { success in
+            guard success else {
+                completion(false)
+                return
             }
-        })
+
+            CoreDataHandler().updateisSyncNecropsystep1neccId(nId, isSync: false) { success in
+                guard success else {
+                    completion(false)
+                    return
+                }
+
+                self.handleUpdateisSyncNecropsystep1neccId(success, nId: nId) { status in
+                    completion(status)
+                }
+            }
+        }
     }
+
 }
 
