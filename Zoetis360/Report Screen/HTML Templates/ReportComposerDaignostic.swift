@@ -109,7 +109,7 @@ class ReportComposerDaignostic: NSObject {
             
             HTMLContent = HTMLContent!.replacingOccurrences(of:"#LOGO_IMAGE#", with: logoImageURL!)
             
-            HTMLContent = HTMLContent!.replacingOccurrences(of:"#display:none#", with: items[0]["isCocciHistory"]?.boolValue == true ? "display:none" : "")
+            HTMLContent = HTMLContent!.replacingOccurrences(of:"#display:none#", with: items[0]["isCocciHistory"]?.boolValue == true ? Constants.noneDisplay : "")
             //HTMLContent = HTMLContent!.replacingOccurrences(of: "logo.png\"", with: "logo.png\"")
             
             var allItems = ""
@@ -472,7 +472,7 @@ class ReportComposerDaignostic: NSObject {
                     
                     itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"#FarmName#", with: items[i]["isCocciHistory"]?.boolValue == true ? items[i]["sessionDate"]! as! String : items[i]["farmName"]! as! String)
                     
-                    itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"#display:none#", with: items[0]["isCocciHistory"]?.boolValue == true ? "display:none" : "")
+                    itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"#display:none#", with: items[0]["isCocciHistory"]?.boolValue == true ? Constants.noneDisplay : "")
                     
                     itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"#birds#", with: items[i]["birds"]! as! String)
                     birdsTotal = birdsTotal+items[i]["birds"]!.integerValue
@@ -721,7 +721,7 @@ class ReportComposerDaignostic: NSObject {
                         }
                    
                         
-                        itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"#display:none#", with: items[0]["isCocciHistory"]?.boolValue == true ? "display:none" : "")
+                        itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"#display:none#", with: items[0]["isCocciHistory"]?.boolValue == true ? Constants.noneDisplay : "")
                         
                         itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"#Foot_Pad_Lesions_Mean_Total#", with: NSString(format: "%.1f",(Foot_Pad_Lesions_Mean_Spliter/Foot_Pad_Lesions_Mean_Birds_Spliter).isNaN ? 0 : Foot_Pad_Lesions_Mean_Spliter/Foot_Pad_Lesions_Mean_Birds_Spliter) as String)
                         
@@ -795,7 +795,7 @@ class ReportComposerDaignostic: NSObject {
                         
                     } else{
                         
-                        itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"#display#", with: "display:none" )
+                        itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"#display#", with: Constants.noneDisplay )
                     }
                     
                     itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"#Sick#", with: items[i]["isSick"]!.intValue == 0 ? "" : "checked")
@@ -806,7 +806,7 @@ class ReportComposerDaignostic: NSObject {
                     itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"#TotalBirds#", with: NSString(format: "%d",birdsTotal) as String )
                     itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"#MeanAge#", with: NSString(format: "%.0f",round(meanAge/Float(items.count))) as String)
                     
-                    itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"#display:none#", with: items[0]["isCocciHistory"]?.boolValue == true ? "display:none" : "")
+                    itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"#display:none#", with: items[0]["isCocciHistory"]?.boolValue == true ? Constants.noneDisplay : "")
                     itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"#margin-left:-40px#", with: items[0]["isCocciHistory"]?.boolValue == true ? birdsMarginHistory : birdsMarginSummary)
                     itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"#margin-left:-20px#", with: items[0]["isCocciHistory"]?.boolValue == true ? ageMarginHistory : ageMarginSummary)
                     itemHTMLContent = itemHTMLContent!.replacingOccurrences(of:"margin-left:-140px", with: items[0]["isCocciHistory"]?.boolValue == true ? "margin-left:-180px" : "margin-left:-140px")
