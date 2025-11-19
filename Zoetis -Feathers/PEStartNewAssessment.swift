@@ -1014,12 +1014,6 @@ class PEStartNewAssessment: BaseViewController {
             changeMandatorySuperviewToRed()
             return
         }
-                
-        let datesStored =  getAllDateArrayStored()
-        let customerStored = getAllCustomerArrayStored()
-        let sitesStored = getAllSitesArrayStored()
-        let evaluationIDs = getAllevaluationIDStored()
-
         
         if self.heightFlockAge.constant == 78 {
             if isFlockAgeGreaterTheAllProd || isFlockAgeGreaterThen50Weeks {
@@ -1159,12 +1153,12 @@ class PEStartNewAssessment: BaseViewController {
         let evaluationName = self.peNewAssessment.evaluationName ?? ""
         let evaluator = self.peNewAssessment.evaluatorName ?? ""
         let reasonForVisit = self.peNewAssessment.visitName ?? ""
-        let selectedTSR = self.selectedTSR.text ?? ""
+        let tSRSelectedIs = self.selectedTSR.text ?? ""
 
         if peNewAssessment.breedOfBird != nil && peNewAssessment.breedOfBird != ""{
             if peNewAssessment.breedOfBird?.lowercased().contains("other") ?? false {
                 if peNewAssessment.breedOfBirdOther != nil && peNewAssessment.breedOfBirdOther != "" {
-                    
+                    // Breed of birds other detail is not empty
                 }else{
                     let superviewCurrent =  btnBreedOthers.superview
                     if superviewCurrent != nil {
@@ -1192,7 +1186,7 @@ class PEStartNewAssessment: BaseViewController {
         if  self.txtManufacturer.text != nil &&  self.txtManufacturer.text != ""{
             if (( self.txtManufacturer.text?.lowercased().contains("other")) ?? false) {
                 if manfacturerOtherTxt.text != nil && manfacturerOtherTxt.text != "" {
-                    
+                    // other manufacturer detail is not empty
                 }else{
                     let superviewCurrent =  manfacturerOtherBtn.superview
                     if superviewCurrent != nil {
@@ -1218,7 +1212,7 @@ class PEStartNewAssessment: BaseViewController {
         }
         
         if peNewAssessment.incubation != nil && peNewAssessment.incubation != ""{
-            
+            // incubation is not empty
         }else{
             let superviewCurrent =  btnIncubation.superview
             if superviewCurrent != nil {
@@ -1234,7 +1228,7 @@ class PEStartNewAssessment: BaseViewController {
         if txtNumberOfEggs.text != nil && txtNumberOfEggs.text != ""{
             if ((txtNumberOfEggs.text?.lowercased().contains("other")) ?? false) {
                 if eggsOtherTxt.text != nil && eggsOtherTxt.text != "" {
-                    
+                    // other eggs detail is not empty
                 }else{
                     let superviewCurrent =  eggsOtherBtn.superview
                     if superviewCurrent != nil {
@@ -1259,7 +1253,9 @@ class PEStartNewAssessment: BaseViewController {
             }
         }
         
-        if (date.count > 0 ){} else  {
+        if (date.count > 0 ){
+            // evaluation date is added
+        } else  {
             let superviewCurrent =  evaluationDateButton.superview
             if superviewCurrent != nil {
                 for view in superviewCurrent!.subviews {
@@ -1270,7 +1266,9 @@ class PEStartNewAssessment: BaseViewController {
                 }
             }
         }
-        if (customer.count > 0 ){} else  {
+        if (customer.count > 0 ){
+            // customer is added
+        } else  {
             let superviewCurrent =  customerButton.superview
             if superviewCurrent != nil {
                 for view in superviewCurrent!.subviews {
@@ -1281,7 +1279,7 @@ class PEStartNewAssessment: BaseViewController {
                 }
             }
         }
-        if (selectedTSR.count > 0 ){
+        if (tSRSelectedIs.count > 0 ){
             // TSR is already selected — no further action required.
         } else  {
             let superviewCurrent = tsrButton.superview
@@ -1786,7 +1784,7 @@ class PEStartNewAssessment: BaseViewController {
         }
 
         let BirdBreedDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_IncubationStyle")
-        var BirdBreedNameArray = BirdBreedDetailsArray.value(forKey: "incubationStylesName") as? NSArray ?? NSArray()
+        let BirdBreedNameArray = BirdBreedDetailsArray.value(forKey: "incubationStylesName") as? NSArray ?? NSArray()
         
         if  BirdBreedNameArray.count > 0 {
             
@@ -1821,12 +1819,6 @@ class PEStartNewAssessment: BaseViewController {
 extension PEStartNewAssessment : DatePickerPopupViewControllerProtocol{
     
     func doneButtonTappedWithDate(string: String, objDate: Date) {
-        let datesStored =  getAllDateArrayStored()
-        let customerStored = getAllCustomerArrayStored()
-        let sitesStored = getAllSitesArrayStored()
-        let evaluationIDs = getAllevaluationIDStored()
-        
-
 
         selectedEvaluationDateText.text = string
         self.peNewAssessment.evaluationDate = string
@@ -1858,11 +1850,9 @@ extension PEStartNewAssessment{
                 
             }else{
                 showScheduledAndMicrobialPopup(VaccinationConstants.PEConstants.WARNING_MSG_NEXTBTN_CLICK_SCHEDULED_DATE)
-                //Only Scheduled Date
             }
         }else if Constants.isExtendedPopup{
             showScheduledAndMicrobialPopup(VaccinationConstants.PEConstants.WARNING_MSG_NEXTBTN_CLICK_SCHEDULED_DATE)
-            //Only Scheduled Date
             
         }else if !Constants.isExtendedPopup{
             okAction()
@@ -1904,16 +1894,14 @@ extension PEStartNewAssessment{
             
         }
         var peCategoryFilteredArray: [PECategory] =  []
-        for object in pECategoriesAssesmentsResponse.peCategoryArray{
-            if peNewAssessment.evaluationID == object.evaluationID{
-                
-                if object.sequenceNo != 12{
-                    peCategoryFilteredArray.append(object)
-                }
+        
+        for object in pECategoriesAssesmentsResponse.peCategoryArray {
+            if peNewAssessment.evaluationID == object.evaluationID,
+               object.sequenceNo != 12 {
+                peCategoryFilteredArray.append(object)
             }
         }
         
-        // let categoryCount = filterCategoryCount()
         if peCategoryFilteredArray.count > 0 {
             var peNewAssessmentWas = PENewAssessment()
             
@@ -1983,7 +1971,6 @@ extension PEStartNewAssessment{
                     peNewAssessmentNew.ppmValue = peNewAssessmentWas.ppmValue
                     CoreDataHandlerPE().saveNewAssessmentInProgressInDB(newAssessment:self.peNewAssessment)
                     
-                    //PEInfoDAO.sharedInstance.saveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: extendedPESwitch.isOn, assessmentId: self.peNewAssessment.serverAssessmentId ?? "", date: nil,hasChlorineStrips: self.chlorineStripsSwitch.isOn, isAutomaticFail: self.isAutomaticSwitch.isOn)
                     let data = CoreDataHandlerPEModels.doaVaccinationSaveData(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", isExtendedPE: extendedPESwitch.isOn, assessmentId: self.peNewAssessment.serverAssessmentId ?? "", date: nil,hasChlorineStrips: self.chlorineStripsSwitch.isOn, isAutomaticFail: self.isAutomaticSwitch.isOn)
                     PEInfoDAO.sharedInstance.saveData(vaccineData: data)
                 }
@@ -2013,14 +2000,13 @@ extension PEStartNewAssessment{
     
     func filterCategoryCount() -> Int {
         var peCategoryFilteredArray: [PECategory] =  []
-        for object in pECategoriesAssesmentsResponse.peCategoryArray{
-            if peNewAssessment.evaluationID == object.evaluationID{
-                if object.id != 36{
-                    peCategoryFilteredArray.append(object)
-                }
-                //                peCategoryFilteredArray.append(object)
+        for object in pECategoriesAssesmentsResponse.peCategoryArray {
+            if peNewAssessment.evaluationID == object.evaluationID,
+               object.id != 36 {
+                peCategoryFilteredArray.append(object)
             }
         }
+
         pECategoriesAssesmentsResponse.peCategoryArray = peCategoryFilteredArray
         return pECategoriesAssesmentsResponse.peCategoryArray.count
     }
@@ -2261,16 +2247,13 @@ extension PEStartNewAssessment : UITextFieldDelegate{
             currentString.replacingCharacters(in: range, with: string) as NSString
             
             return string == numberFiltered && newString.length <= maxLength
-            
-            return isValid
         }
-        
-        
-        
-        
-        
+
         return true;
     }
+    
+
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder();

@@ -45,19 +45,16 @@ class PELandingPoupViewController: BaseViewController {
         let customerNamesArray = customerDetailsArray.value(forKey: "customerName") as? NSArray ?? NSArray()
 
         let newUserLogin = UserDefaults.standard.bool(forKey: "PENewUserLoginFlag") as? Bool ?? true
-        // set(true, forKey: "PENewUserLoginFlag")
-        if newUserLogin{
-            
-        }
+     
         if fromSyncDel {
-        
+        // ignor sync warning..
         } else {
         if  customerNamesArray.count > 0 {
             _ = UserDefaults.standard
             let customerId = UserDefaults.standard.integer(forKey: "PE_Selected_Customer_Id") as? Int ?? 0
             
             if customerId != 0 {
-                
+                // customer id is not empty.
             } else {
                 if newUserLogin{
                     DispatchQueue.main.async{
@@ -145,11 +142,6 @@ class PELandingPoupViewController: BaseViewController {
             return
         }
         UserDefaults.standard.set(false, forKey:"PECleanSession")
-        
-        var pECategoriesAssesmentsResponse =  PECategoriesAssesmentsResponse(nil)
-        var jsonRe : JSON = JSON()
-        jsonRe = (getJSON("QuestionAns") ?? JSON())
-        pECategoriesAssesmentsResponse =  PECategoriesAssesmentsResponse(jsonRe)
         
         let userDefault = UserDefaults.standard
         userDefault.set(self.peNewAssessment.customerId, forKey: "PE_Selected_Customer_Id")
