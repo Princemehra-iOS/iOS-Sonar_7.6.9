@@ -428,26 +428,13 @@ class SignatureTableViewCell: UITableViewCell, SignatureViewDelegate  {
                     signImgVw.image = CodeHelper.sharedInstance.convertToImage(base64:certificateData[empIndex].signatureImg)
                 }
                 
-                if regionID == 3
-                {
-                    if !(certificateData[empIndex].isCertExpired)! {
-                        hideShowImgVw(false)
-                        if certificateData[empIndex].signatureImg == "" {
-                            hideShowImgVw(true)
-                        }
-                        else {
-                            signImgVw.image = CodeHelper.sharedInstance.convertToImage(base64:certificateData[empIndex].signatureImg)
-                        }
-                    }
-                    else
-                    {
-                        hideShowImgVw(false)
-                        if certificateData[empIndex].signatureImg == "" {
-                            hideShowImgVw(true)
-                        }
-                        else {
-                            signImgVw.image = CodeHelper.sharedInstance.convertToImage(base64:certificateData[empIndex].signatureImg)
-                        }
+                if regionID == 3 {
+                    hideShowImgVw(false)
+                    
+                    if certificateData[empIndex].signatureImg == "" {
+                        hideShowImgVw(true)
+                    } else {
+                        signImgVw.image = CodeHelper.sharedInstance.convertToImage(base64: certificateData[empIndex].signatureImg)
                     }
                 }
                 else
@@ -469,20 +456,18 @@ class SignatureTableViewCell: UITableViewCell, SignatureViewDelegate  {
                 deviceOperatorNamebl.text  = "Manager Name: "
                 nextBtn.isUserInteractionEnabled = false
                 
-                if let isSignedFSR = UserDefaults.standard.value(forKey: "isSignedFSR") as? Bool {
-                    if isSignedFSR {
-                        hideShowImgVw(false)
-                        
-                        if let signatureImg = UserDefaults.standard.value(forKey: "FsrSign") as? String {
-                            if signatureImg == "" {
-                                hideShowImgVw(false)
-                            }
-                            else {
-                                signImgVw.image = CodeHelper.sharedInstance.convertToImage(base64:signatureImg)
-                            }
+                if UserDefaults.standard.bool(forKey: "isSignedFSR") {
+                    hideShowImgVw(false)
+
+                    if let signatureImg = UserDefaults.standard.string(forKey: "FsrSign") {
+                        if signatureImg.isEmpty {
+                            hideShowImgVw(false)
+                        } else {
+                            signImgVw.image = CodeHelper.sharedInstance.convertToImage(base64: signatureImg)
                         }
                     }
                 }
+
                 if certificateData[empIndex - 1].fsrSign != "" {
                     hideShowImgVw(false)
                     signImgVw.image = CodeHelper.sharedInstance.convertToImage(base64:certificateData[empIndex].fsrSign)
@@ -583,7 +568,7 @@ class SignatureTableViewCell: UITableViewCell, SignatureViewDelegate  {
     @IBAction func clearBtnAction(_ sender: UIButton) {
         if fromScreen == "PEFinishPopUpScreen" {
             
-            var base64 = ""
+            let base64 = ""
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateEmployeeSign"), object: nil, userInfo: ["index":empIndex, "rowIndex":rowIndex, "hasSignCleared": true
                                                                                                                               ])
             if empIndex > -1 &&  certificateData.count > empIndex {
@@ -592,17 +577,16 @@ class SignatureTableViewCell: UITableViewCell, SignatureViewDelegate  {
             }
             
             if empIndex > -1 && empIndex == certificateData.count{
-                
-                if let isSignedFSR = UserDefaults.standard.value(forKey: "isSignedFSR") as? Bool {
-                    if isSignedFSR {
-                        hideShowImgVw(false)
-                        
-                        if let signatureImg = UserDefaults.standard.value(forKey: "FsrSign") as? String {
-                            UserDefaults.standard.setValue(nil, forKey: "FsrSign")
-                            UserDefaults.standard.setValue(false, forKey: "isSignedFSR")
-                        }
+            
+                if UserDefaults.standard.bool(forKey: "isSignedFSR") {
+                    hideShowImgVw(false)
+
+                    if UserDefaults.standard.string(forKey: "FsrSign") != nil {
+                        UserDefaults.standard.removeObject(forKey: "FsrSign")
+                        UserDefaults.standard.set(false, forKey: "isSignedFSR")
                     }
                 }
+                
                 var k = 0
                 for item in certificateData {
                     
@@ -616,7 +600,7 @@ class SignatureTableViewCell: UITableViewCell, SignatureViewDelegate  {
         }
         else {
             self.operatorSignLbl.isHidden = false
-            var base64 = ""
+            let base64 = ""
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateEmployeeSign"), object: nil, userInfo: ["index":empIndex, "rowIndex":rowIndex, "hasSignCleared": true
                                                                                                                               ])
             if empIndex > -1 && empIndex == employeesAddedArr.count + 1 {

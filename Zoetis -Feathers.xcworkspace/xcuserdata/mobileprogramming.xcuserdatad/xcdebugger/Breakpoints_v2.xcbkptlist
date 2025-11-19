@@ -46,10 +46,10 @@
             filePath = "Zoetis -Feathers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "616"
-            endingLineNumber = "616"
-            landmarkName = "handleBirdIdANdPostingDataPostingDataTurkey(_:_:_:)"
-            landmarkType = "7">
+            startingLineNumber = "618"
+            endingLineNumber = "618"
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -62,9 +62,9 @@
             filePath = "Zoetis -Feathers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "621"
-            endingLineNumber = "621"
-            landmarkName = "handleBirdIdANdPostingDataPostingDataTurkey(_:_:_:)"
+            startingLineNumber = "623"
+            endingLineNumber = "623"
+            landmarkName = "handleBirdManagement(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -78,9 +78,9 @@
             filePath = "Zoetis -Feathers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1793"
-            endingLineNumber = "1793"
-            landmarkName = "saveNotesInDB(_:)"
+            startingLineNumber = "1786"
+            endingLineNumber = "1786"
+            landmarkName = "getPostingDataFromServerforVaccination()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -94,9 +94,9 @@
             filePath = "Zoetis -Feathers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1796"
-            endingLineNumber = "1796"
-            landmarkName = "saveNotesInDB(_:)"
+            startingLineNumber = "1789"
+            endingLineNumber = "1789"
+            landmarkName = "getPostingDataFromServerforVaccination()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -110,10 +110,10 @@
             filePath = "Zoetis -Feathers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1784"
-            endingLineNumber = "1784"
-            landmarkName = "ViewController"
-            landmarkType = "3">
+            startingLineNumber = "1777"
+            endingLineNumber = "1777"
+            landmarkName = "getPostingDataFromServerforVaccination()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -126,8 +126,8 @@
             filePath = "Zoetis -Feathers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1752"
-            endingLineNumber = "1752"
+            startingLineNumber = "1745"
+            endingLineNumber = "1745"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -142,9 +142,9 @@
             filePath = "Zoetis -Feathers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2574"
-            endingLineNumber = "2574"
-            landmarkName = "clearExistingFeedData()"
+            startingLineNumber = "2567"
+            endingLineNumber = "2567"
+            landmarkName = "processTurkeyVaccinationDict(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
