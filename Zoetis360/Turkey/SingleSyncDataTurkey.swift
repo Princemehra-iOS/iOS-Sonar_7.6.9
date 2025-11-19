@@ -1242,7 +1242,6 @@ class SingleSyncDataTurkey: NSObject {
                     feedId = value
                 }
                 let age = cNData.age
-                complexId = cNData.complexId as! Int
                 
                 let flock = cNData.flockId
                 let imgId = cNData.imageId
@@ -1252,7 +1251,7 @@ class SingleSyncDataTurkey: NSObject {
                 let customerName = cNData.complexName
                 let complexDate = cNData.complexDate
                 let formWithcatNameWithBirdAndAllObs = NSMutableDictionary()
-                var abf = cNData.abf
+                let abf = cNData.abf
                 let farmWeight = cNData.farmWeight
                 let breedString = cNData.breed
                 let sex = cNData.sex
