@@ -1082,9 +1082,6 @@ extension PEViewStartNewAssesmentINT: DatePickerPopupViewControllerProtocol{
         }
     }
     
-    func doneButtonTapped(string:String){
-        
-    }
 }
 
 // MARK: - Other Delegates

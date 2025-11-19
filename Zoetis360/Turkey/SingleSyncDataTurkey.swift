@@ -1329,7 +1329,7 @@ class SingleSyncDataTurkey: NSObject {
             var request = URLRequest(url: URL(string: urlString)! )
             request.httpMethod = "POST"
             request.allHTTPHeaderFields = headerDict
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue(Constants.applicationJson, forHTTPHeaderField: Constants.contentType)
            // request.httpBody = try! JSONSerialization.data(withJSONObject: sessionWithAllforms, options: [])
             
             do {

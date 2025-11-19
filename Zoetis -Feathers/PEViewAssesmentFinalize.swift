@@ -2237,8 +2237,6 @@ extension PEViewAssesmentFinalize : UICollectionViewDelegate, UICollectionViewDa
         return true
     }
     
-    func updateCategoriesInShared(){
-    }
     // MARK:  Check for Last Category
     func chechForLastCategory(){
         var  peNewAssessmentArray = CoreDataHandlerPE().getOnGoingAssessmentArrayPEObject(serverAssessmentId: peNewAssessment.serverAssessmentId ?? "")

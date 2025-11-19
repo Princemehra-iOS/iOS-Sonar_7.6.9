@@ -93,7 +93,7 @@ class VaccinationDashboardVC: BaseViewController{
                 self.showPopup()
             }
         } else {
-            Helper.showAlertMessage(self, titleStr: NSLocalizedString("Alert", comment: ""), messageStr: NSLocalizedString("You are currently offline. Please go online to sync data.", comment: ""))
+            Helper.showAlertMessage(self, titleStr: NSLocalizedString("Alert", comment: ""), messageStr: NSLocalizedString(Constants.offline, comment: ""))
         }
         hasViewLoaded = true
         hidePopup()
@@ -138,7 +138,7 @@ class VaccinationDashboardVC: BaseViewController{
             } else {
                 let errorMSg = "Data not available for sync"
                 let alertController = UIAlertController(title: "No data available", message: errorMSg, preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { _ in }
+                let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
             }
@@ -353,7 +353,7 @@ class VaccinationDashboardVC: BaseViewController{
                 }
             }
         } else {
-            Helper.showAlertMessage(self, titleStr: NSLocalizedString("Alert", comment: ""), messageStr: NSLocalizedString("You are currently offline. Please go online to sync data.", comment: ""))
+            Helper.showAlertMessage(self, titleStr: NSLocalizedString("Alert", comment: ""), messageStr: NSLocalizedString(Constants.offline, comment: ""))
         }
     }
 
@@ -434,10 +434,7 @@ class VaccinationDashboardVC: BaseViewController{
     func forceSyncMessage(){
         let errorMSg = Constants.forceSyncMessage
         let alertController = UIAlertController(title: "Alert!", message: errorMSg, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) {
-            _ in
-            
-        }
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default)
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
     }
@@ -458,7 +455,7 @@ class VaccinationDashboardVC: BaseViewController{
             self.present(alertController, animated: true, completion: nil)
             
         } else {
-            Helper.showAlertMessage(self, titleStr: NSLocalizedString("Alert", comment: ""), messageStr: NSLocalizedString("You are currently offline. Please go online to sync data.", comment: ""))
+            Helper.showAlertMessage(self, titleStr: NSLocalizedString("Alert", comment: ""), messageStr: NSLocalizedString(Constants.offline, comment: ""))
         }
     }
     
@@ -848,10 +845,6 @@ APIActivityTracker.shared.endRequest()
         }
     }
     
-    @IBAction func notificationBtnsAction(_ sender: UIButton) {
-        
-    }
-    
     @IBAction func closeBtnAction(_ sender: UIButton) {
         hidePopup()
     }
@@ -880,13 +873,6 @@ APIActivityTracker.shared.endRequest()
             navigateToViewCertifications(status: .submitted)
             navigate = true
         }
-    }
-    
-    @IBAction func draftBtnAction(_ sender: UIButton) {
-    }
-    
-    
-    @IBAction func notificationBtnaCTION(_ sender: UIButton) {
     }
     
 }

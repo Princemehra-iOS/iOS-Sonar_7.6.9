@@ -643,9 +643,6 @@ class SignatureTableViewCell: UITableViewCell, SignatureViewDelegate  {
         }
     }
     
-    @IBAction func shippingBtnAction(_ sender: UIButton) {
-        
-    }
     
     // MARK: - METHODS
     
@@ -692,9 +689,6 @@ class SignatureTableViewCell: UITableViewCell, SignatureViewDelegate  {
         operatornameConstraint.constant = 0
     }
     
-    func SignatureViewDidCaptureSignature(view: SignatureView, signature: Signature?) {
-        
-    }
     
     func SignatureViewDidFinishDrawing(view: SignatureView) {
         
