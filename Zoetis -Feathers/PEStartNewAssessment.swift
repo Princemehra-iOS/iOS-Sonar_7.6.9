@@ -927,8 +927,9 @@ class PEStartNewAssessment: BaseViewController {
             self.deleteAllData("PE_VaccineMixerDetail")
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.getVaccineMixerList(customerId: self.peNewAssessment.customerId ?? 0, siteId: self.peNewAssessment.siteId ?? 0, countryId: 40) { _ in
-            }
+            self.getVaccineMixerList(customerId: self.peNewAssessment.customerId ?? 0, siteId: self.peNewAssessment.siteId ?? 0, countryId: 40, { status in
+                debugPrint(status)
+            })
             
         }
     }

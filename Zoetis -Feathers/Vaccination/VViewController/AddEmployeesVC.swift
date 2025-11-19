@@ -350,7 +350,7 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
             addEmployeeBtn.isHidden = true
             removeEmployeeBtn.isHidden = true
             if isSafetyCertification || self.curentCertification?.certificationCategoryId == "1"{
-                addEmployeesLbl.text = "Add Info."
+                addEmployeesLbl.text = Constants.AddInfoStr
                 sectionHeaderVw.isHidden = false
                 addEmployeesLbl.isHidden = false
             } else{
@@ -776,9 +776,9 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
     
     
     func getMasterData(){
-        tShirtArr = AddEmployeesDAO.sharedInstance.getMasterDropdownData(loginUserId: UserContext.sharedInstance.userDetailsObj?.userId ?? "No id found", valueType:MasterDataDropdownStatus.TShirtSize)
-        langArr = AddEmployeesDAO.sharedInstance.getMasterDropdownData(loginUserId: UserContext.sharedInstance.userDetailsObj?.userId ?? "No id found", valueType:MasterDataDropdownStatus.Languages)
-        rolesArr = AddEmployeesDAO.sharedInstance.getMasterDropdownData(loginUserId: UserContext.sharedInstance.userDetailsObj?.userId ?? "No id found", valueType:MasterDataDropdownStatus.UserRoles)
+        tShirtArr = AddEmployeesDAO.sharedInstance.getMasterDropdownData(loginUserId: UserContext.sharedInstance.userDetailsObj?.userId ?? Constants.noDataFound, valueType:MasterDataDropdownStatus.TShirtSize)
+        langArr = AddEmployeesDAO.sharedInstance.getMasterDropdownData(loginUserId: UserContext.sharedInstance.userDetailsObj?.userId ?? Constants.noDataFound, valueType:MasterDataDropdownStatus.Languages)
+        rolesArr = AddEmployeesDAO.sharedInstance.getMasterDropdownData(loginUserId: UserContext.sharedInstance.userDetailsObj?.userId ?? Constants.noDataFound, valueType:MasterDataDropdownStatus.UserRoles)
     }
     
     deinit {
@@ -1080,12 +1080,13 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
             let approverData = ApproverStore.shared.getApprover(for: certId)
             curentCertification?.selectedFsmId = approverData?.approverId
         }
-        
-        DataService.sharedInstance.getShippingDetails(loginuserId: UserContext.sharedInstance.userDetailsObj?.userId ?? "No id found",  SelectedFsmId:self.curentCertification?.selectedFsmId ?? "", SelectedSiteId: self.curentCertification?.siteId ?? "", certId: curentCertification?.certificationId ?? "", viewController: self, completion: { [weak self] (status, error) in
+
+        DataService.sharedInstance.getShippingDetails(loginuserId: UserContext.sharedInstance.userDetailsObj?.userId ?? Constants.noDataFound,  SelectedFsmId:self.curentCertification?.selectedFsmId ?? "", SelectedSiteId: self.curentCertification?.siteId ?? "", certId: curentCertification?.certificationId ?? "", viewController: self, completion: { [weak self] (status, error) in
             guard let _ = self, error == nil else {
                 self?.dismissGlobalHUD(self?.view ?? UIView());
                 return
             }
+
             if status == VaccinationConstants.VaccinationStatus.COREDATA_SAVED_SUCCESSFULLY || status == VaccinationConstants.VaccinationStatus.COREDATA_FETCHED_SUCCESSFULLY{
                 let mainQueue = OperationQueue.main
                 mainQueue.addOperation{
@@ -1372,7 +1373,7 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
             employeesTblVw.reloadData()
             
             if isSafetyCertification || self.curentCertification?.certificationCategoryId == "1"{
-                addEmployeesLbl.text = "Add Info."
+                addEmployeesLbl.text = Constants.AddInfoStr
             } else{
                 if employeesAddedArr.count > 0{
                     addEmployeesLbl.text = "Add Employees (\(employeesAddedArr.count))"
@@ -1402,7 +1403,7 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
             }
             
             if isSafetyCertification || self.curentCertification?.certificationCategoryId == "1"{
-                addEmployeesLbl.text = "Add Info."
+                addEmployeesLbl.text = Constants.AddInfoStr
             } else{
                 if employeesAddedArr.count > 0{
                     addEmployeesLbl.text = "Add Employees (\(employeesAddedArr.count))"
@@ -1717,7 +1718,7 @@ extension AddEmployeesVC: UITableViewDataSource, UITableViewDelegate{
         lbl.font = UIFont(name:"HelveticaNeue-Bold", size: 16)
         lbl.font = UIFont.boldSystemFont(ofSize: 16)
         if isSafetyCertification || self.curentCertification?.certificationCategoryId == "1"{
-            lbl.text = "Add Info."
+            lbl.text = Constants.AddInfoStr
         } else{
             if employeesAddedArr.count > 0{
                 lbl.text = "Add Employees (\(employeesAddedArr.count))"

@@ -23,8 +23,8 @@ class CoreDataHandlerPE: NSObject {
     let userIdAsync = "userID == %d AND asyncStatus == 0"
     let catServerId = " catID == %@ AND userID == %d AND serverAssessmentId == %@"
     let assServerId = " assID == %@ AND userID == %d AND serverAssessmentId == %@"
-    let imageId = "imageId == %d"
-    let dateFormatMMDDYY = "MM/dd/YYYY HH:mm:ss"
+    let imageId = Constants.imageIdConstant
+    let dateFormatMMDDYY = Constants.mMddYYYYHHmmss
     let dateFormatDDMMYY = Constants.ddMMYYYYHHmmss
     let catIdStr = " catID == %@ "
     let catIdServerAssId = " catID == %@ AND serverAssessmentId == %@"
@@ -5356,8 +5356,8 @@ extension CoreDataHandlerPE {
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest  = NSFetchRequest<NSFetchRequestResult>(entityName: "PE_ImageEntity")
         fetchRequest.returnsObjectsAsFaults = false
-        fetchRequest.predicate = NSPredicate(format: "imageId == %d",idArray)
-        
+        fetchRequest.predicate = NSPredicate(format: Constants.imageIdConstant,idArray)
+    
         do {
             let results = try managedContext.fetch(fetchRequest) as? [NSManagedObject]
             if results?.count != 0 { // Atleast one was returned
@@ -5380,7 +5380,7 @@ extension CoreDataHandlerPE {
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest  = NSFetchRequest<NSFetchRequestResult>(entityName: "PE_ImageEntity")
         fetchRequest.returnsObjectsAsFaults = false
-        fetchRequest.predicate = NSPredicate(format: "imageId == %d",idArray)
+        fetchRequest.predicate = NSPredicate(format: Constants.imageIdConstant,idArray)
         
         do {
             let results = try managedContext.fetch(fetchRequest) as? [NSManagedObject]
@@ -5405,7 +5405,7 @@ extension CoreDataHandlerPE {
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest  = NSFetchRequest<NSFetchRequestResult>(entityName: "PE_ImageEntity")
         fetchRequest.returnsObjectsAsFaults = false
-        fetchRequest.predicate = NSPredicate(format: "imageId == %d",idArray)
+        fetchRequest.predicate = NSPredicate(format: Constants.imageIdConstant,idArray)
         
         do {
             let results = try managedContext.fetch(fetchRequest) as? [NSManagedObject]
@@ -5494,7 +5494,7 @@ extension CoreDataHandlerPE {
         if formate == "" {
             
             if regionID == 3{
-                formate = date.getFormattedDate(format: "MM/dd/YYYY HH:mm:ss")   // Set output formate
+                formate = date.getFormattedDate(format: Constants.mMddYYYYHHmmss)   // Set output formate
                 let random = newAssessmentArray[0].serverAssessmentId
                 formate = "\(formate)\(random ?? "")"
             }
@@ -5836,7 +5836,7 @@ extension CoreDataHandlerPE {
         if formate == "" {
             
             if regionID == 3{
-                formate = date.getFormattedDate(format: "MM/dd/YYYY HH:mm:ss")
+                formate = date.getFormattedDate(format: Constants.mMddYYYYHHmmss)
             }
             else
             {
@@ -6231,7 +6231,7 @@ extension CoreDataHandlerPE {
             if formate == "" {
                 
                 if regionID == 3{
-                    formate = date.getFormattedDate(format: "MM/dd/YYYY HH:mm:ss")
+                    formate = date.getFormattedDate(format: Constants.mMddYYYYHHmmss)
                 }
                 else
                 {
@@ -6392,7 +6392,7 @@ extension CoreDataHandlerPE {
             if formate == "" {
                 
                 if regionID == 3{
-                    formate = date.getFormattedDate(format: "MM/dd/YYYY HH:mm:ss")
+                    formate = date.getFormattedDate(format: Constants.mMddYYYYHHmmss)
                 }
                 else
                 {
@@ -6556,7 +6556,7 @@ extension CoreDataHandlerPE {
             if formate == "" {
                 
                 if regionID == 3{
-                    formate = date.getFormattedDate(format: "MM/dd/YYYY HH:mm:ss")
+                    formate = date.getFormattedDate(format: Constants.mMddYYYYHHmmss)
                 }
                 else
                 {
