@@ -369,9 +369,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
         let chartDataSet : BarChartDataSet = setChartData(dataPoints: verticalValues, values: finishedArray as! [Float])!
         self.preparedArray.add(chartDataSet)
     }
-    @nonobjc func didFinishWithParsingWithFarmData(_ finishedArray : [Float]){
-        
-    }
+    
     func setChartData(dataPoints: [String], values: [Float]) -> BarChartDataSet? {
         
         // formatter.xAxisLabel = verticalValues

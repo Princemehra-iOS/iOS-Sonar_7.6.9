@@ -138,7 +138,7 @@ class ReportsCalculation: NSObject,GI_TtactDelegate {
                 
                 if lastSessionDataArray.count == 0 {
                     
-                    Helper.showAlertMessage(viewCnt,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("No historical data.", comment: ""))
+                    Helper.showAlertMessage(viewCnt,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(Constants.noHistoricalData, comment: ""))
                     return
                 }
                 
@@ -176,7 +176,7 @@ class ReportsCalculation: NSObject,GI_TtactDelegate {
                 
                 if lastSessionDataArray.count == 0 {
                     
-                    Helper.showAlertMessage(viewCnt,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("No historical data.", comment: ""))
+                    Helper.showAlertMessage(viewCnt,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(Constants.noHistoricalData, comment: ""))
                     return
                 }
                 
@@ -211,7 +211,7 @@ class ReportsCalculation: NSObject,GI_TtactDelegate {
             
             if lastSessionDataArray.count == 0 {
                 
-                Helper.showAlertMessage(viewCnt,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("No historical data.", comment: ""))
+                Helper.showAlertMessage(viewCnt,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(Constants.noHistoricalData, comment: ""))
                 return
             }
             
