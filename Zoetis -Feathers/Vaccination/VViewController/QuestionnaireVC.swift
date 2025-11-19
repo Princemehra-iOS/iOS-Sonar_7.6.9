@@ -357,6 +357,7 @@ class QuestionnaireVC: BaseViewController {
                     markSyncReady()
                 }
                 if  let hasSignCleared = notification.userInfo?["hasSignCleared"]  as? Bool{
+                    debugPrint(hasSignCleared)
                     selectedEmpIndex = index
                     if rowIndex == 1{
                         var empIndex = index
@@ -527,15 +528,7 @@ class QuestionnaireVC: BaseViewController {
                     displayAlertMessageForAddress(userMessage: "Please enter all the address details to submit the certification")
                     return
                 }
-               
-//                if shippingInfoDB != nil {
-//                    
-//                    if shippingInfoDB?.address1 == "" || shippingInfoDB?.pincode == "" || shippingInfoDB?.city == "" || shippingInfoDB?.countryID == 0 || shippingInfoDB?.stateID == 0
-//                    {
-//                        displayAlertMessageForAddress(userMessage: "Please enter all the address details to submit the certification")
-//                        return
-//                    }
-//                }
+ 
             }
             else{
                 var shippingInfoDB: ShippingAddressDTO?
@@ -560,18 +553,7 @@ class QuestionnaireVC: BaseViewController {
                      displayAlertMessageForAddress(userMessage: "Please enter all the address details to submit the certification")
                      return
                  }
-                
-                
-//                if shippingInfoDB != nil {
-//                    
-//                    if shippingInfoDB?.address1 == ""  || shippingInfoDB?.pincode == "" || shippingInfoDB?.city == ""
-//                    {
-//                        
-//                        displayAlertMessageForAddress(userMessage: "Please enter all the address details to submit the certification")
-//                        return
-//                    }
-//                    
-//                }
+
             }
         }
         
@@ -656,27 +638,19 @@ class QuestionnaireVC: BaseViewController {
     }
   
     func  configureSafetyAwarenessVw(){
-        removeAllBtn()
-        if curentCertification?.certificationStatus == VaccinationCertificationStatus.submitted.rawValue{
-        }else{
-            
-            saveAsDraftBtn.isHidden = false
-            saveAsDraftBtn.isUserInteractionEnabled = true
-            btnStackVw.addArrangedSubview(saveAsDraftBtn)
-        }
+        configureDraftButton()
     }
-    
-    
-    
-    func  configureVaccineMixingVw(){
+
+    func configureVaccineMixingVw() {
+        configureDraftButton()
+    }
+
+    private func configureDraftButton() {
         removeAllBtn()
-        if curentCertification?.certificationStatus == VaccinationCertificationStatus.submitted.rawValue{
-        }else{
-            
-            saveAsDraftBtn.isHidden = false
-            saveAsDraftBtn.isUserInteractionEnabled = true
-            btnStackVw.addArrangedSubview(saveAsDraftBtn)
-        }
+        
+        saveAsDraftBtn.isHidden = false
+        saveAsDraftBtn.isUserInteractionEnabled = true
+        btnStackVw.addArrangedSubview(saveAsDraftBtn)
     }
     
     func configureOperatorCertVw(){
@@ -771,16 +745,14 @@ class QuestionnaireVC: BaseViewController {
         popover.permittedArrowDirections = [.up,.down]
         present(vc, animated: true, completion: nil)
     }
+
     
-    
-    func scrollToTblVwIndex(){
-        if questionnaireVMObj?.questionTypeObj != nil{
-            if (questionnaireVMObj?.questionTypeObj?.count)! > 0{
-                questionnaireTblVw.scrollToRow(at:IndexPath.init(row: 0, section: 0), at: .top, animated: false)
-            }
+    func scrollToTblVwIndex() {
+        if let count = questionnaireVMObj?.questionTypeObj?.count, count > 0 {
+            questionnaireTblVw.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
         }
-        
     }
+
     
     
     func operatorAction(_ firstLoad:Bool = false){
@@ -834,7 +806,9 @@ class QuestionnaireVC: BaseViewController {
         questionnaireTblVw.isScrollEnabled = true
         subModule = VaccinationSubModuleNames.SafetyAwareness.rawValue
         
-        if submitBtn != nil{        submitBtn.setTitle("Next", for: .normal)}
+        if submitBtn != nil{
+            submitBtn.setTitle("Next", for: .normal)
+        }
         VaccinationDashboardDAO.sharedInstance.insertLastVisitedModuleName(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", lastModuleName: .QuestionnaireVC, certificationId: curentCertification?.certificationId ?? UUID().uuidString, subModule:VaccinationSubModuleNames.OperationCertification.rawValue, certificationCategoryId:curentCertification?.certificationCategoryId  ?? "", certObj: curentCertification!)
         
         operatorCertImgVw.image = UIImage.init(named: "tabUnselect")
@@ -853,7 +827,9 @@ class QuestionnaireVC: BaseViewController {
         questionnaireTblVw.isScrollEnabled = true
         subModule = VaccinationSubModuleNames.VaccineMixing.rawValue
         
-        if submitBtn != nil{        submitBtn.setTitle("Next", for: .normal)}
+        if submitBtn != nil{
+            submitBtn.setTitle("Next", for: .normal)
+        }
         VaccinationDashboardDAO.sharedInstance.insertLastVisitedModuleName(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", lastModuleName: .QuestionnaireVC, certificationId: curentCertification?.certificationId ?? UUID().uuidString, subModule:VaccinationSubModuleNames.VaccineMixing.rawValue, certificationCategoryId:curentCertification?.certificationCategoryId  ?? "", certObj: curentCertification!)
         
         operatorCertImgVw.image = UIImage.init(named: "tabUnselect")
@@ -927,7 +903,7 @@ class QuestionnaireVC: BaseViewController {
     }
     
     func submitDataPopup(msg:String, status: VaccinationCertificationStatus, header: String){
-        let errorMSg = msg//"Data available for sync, Do you want to sync now?"
+        let errorMSg = msg
         let alertController = UIAlertController(title: header, message: errorMSg, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) {
             _ in
@@ -1020,7 +996,7 @@ class QuestionnaireVC: BaseViewController {
     private func navigateToDashboard(status: VaccinationCertificationStatus){
         if status == .draft{
             submitDataPopup(msg: "Are you sure you want to save certification in Draft?", status: status, header:"Save Draft")
-        } else if status == .submitted{//curentCertification?.hatcheryManagerSign != nil && curentCertification?.hatcheryManagerSign != "" &&
+        } else if status == .submitted{
             if   curentCertification?.fsrSignature != nil && curentCertification?.fsrSignature != ""{
                 var isFilled = true
                 for emp in employeesAddedArr{
@@ -1200,9 +1176,7 @@ extension QuestionnaireVC:UITableViewDataSource, UITableViewDelegate{
         }
         var currentDate = ""
         currentDate = AssessmentDate
-
-        
-        let nameStr = nameArr.joined(separator: " ")
+     
         var ackPart = "On \(currentDate), I received safety information for \(curentCertification?.siteName ?? "") from \(curentCertification?.fsmName ?? "") in which I support the inovoject systems. I agree that I have been provided with the above information and I understand everything that has been communicated to me. I understand that I am expected to comply with the safety policies for this hatchery and all safety policies in place for Global Poultry. I will not knowingly endanger myself or any other person."
         return ackPart
     }
@@ -1364,7 +1338,6 @@ extension QuestionnaireVC:UITableViewDataSource, UITableViewDelegate{
                                     cell.previousBtn.isUserInteractionEnabled = false
                                     cell.previousBtn.isHidden = true
                                 }
-                                var hManager = curentCertification?.fsmName ?? ""
                                 if curentCertification?.fsmName != nil{
                                     cell.deviceOperatorNamebl.text  = "Hatchery Manager Name: \( curentCertification?.fsmName ?? "")"
                                 }
@@ -1384,7 +1357,6 @@ extension QuestionnaireVC:UITableViewDataSource, UITableViewDelegate{
                                     }
                                 }
                             }
-                            if cell.empIndex > 0 && cell.empIndex < employeesAddedArr.count {}
                             
                             //---*********************
                             if employeesAddedArr.count  > 0{
@@ -1427,7 +1399,7 @@ extension QuestionnaireVC:UITableViewDataSource, UITableViewDelegate{
                         if cell.empIndex > -1 && cell.empIndex == employeesAddedArr.count + 1 {
                             var fullName = ""
                             let firstname = UserContext.sharedInstance.userDetailsObj?.firstname
-                            fullName = firstname ?? ""
+                            
                             let lastName = UserContext.sharedInstance.userDetailsObj?.lastName
                             fullName = firstname! + " " + (lastName ?? "") ?? ""
                             cell.deviceOperatorNamebl.text = "Field Service Technician: \(fullName)"
@@ -1476,7 +1448,7 @@ extension QuestionnaireVC:UITableViewDataSource, UITableViewDelegate{
                                 cell.previousBtn.isUserInteractionEnabled = false
                                 cell.previousBtn.isHidden = true
                             }
-                            var hManager = curentCertification?.fsmName ?? ""
+                            
                             if curentCertification?.fsmName != nil{
                                 cell.deviceOperatorNamebl.text  = "Hatchery Manager Name: \( curentCertification?.fsmName ?? "")"
                             }
@@ -1580,11 +1552,12 @@ extension QuestionnaireVC:UITableViewDataSource, UITableViewDelegate{
                                     cell.commentBtn.setImage(image, for: .normal)
                                     
                                 }
-                                if  questionObj?.userComments != note{
-                                    if self.curentCertification?.certificationStatus != VaccinationCertificationStatus.submitted.rawValue{
-                                        self.markSyncReady()
-                                    }
+                         
+                                if questionObj?.userComments != note &&
+                                   self.curentCertification?.certificationStatus != VaccinationCertificationStatus.submitted.rawValue {
+                                    self.markSyncReady()
                                 }
+
                                 questionObj?.userComments = note ?? ""
                                 if questionObj != nil{
                                     

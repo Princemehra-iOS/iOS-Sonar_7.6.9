@@ -897,79 +897,81 @@ class DataService{
         })
     }
     
-   
+    
     func getShippingDetails(loginuserId:String, SelectedFsmId:String,  SelectedSiteId:String, certId:String, viewController:UIViewController, completion: @escaping (String?, NSError?) -> Void){
         
         let url = ZoetisWebServices.EndPoint.getShippingAddressDetails.latestUrl + SelectedFsmId + "&SiteId=" + String(SelectedSiteId)
         print(url)
         ZoetisWebServices.shared.getVaccinationServicesResponse(controller: viewController, url: url, completion: { [weak self] (json, error) in
             guard let _ = self, error == nil else { completion(nil, error) ;return  ;}
-            if let responseJSONDict = json.dictionary{
-
-                if let response = responseJSONDict["Data"]{
-                    if response == [] {
-                        return
-                    }
-                    let jsonDecoder = JSONDecoder()
-                    let responseStr = response.description
-                    if responseStr != ""{
-                        let jsonData = try? Data(responseStr.utf8 )
-                        if let data = jsonData{
+            if
+                let responseJSONDict = json.dictionary,
+                let response = responseJSONDict["Data"]
+            {
+                
+                if response == [] {
+                    return
+                }
+                let jsonDecoder = JSONDecoder()
+                let responseStr = response.description
+                if responseStr != ""{
+                    let jsonData = try? Data(responseStr.utf8 )
+                    if let data = jsonData{
+                        
+                        do {
+                            let model = try JSONDecoder().decode([ShippingAddressDTO].self, from: data)
+                            debugPrint(model)
+                        }
+                        catch {
+                            //print(error.localizedDescription)
+                            debugPrint(String(describing: error))
+                        }
+                        
+                        let shippingInfoObj = try? jsonDecoder.decode([ShippingAddressDTO].self, from: data)
+                        if  shippingInfoObj != nil && shippingInfoObj?.count ?? 0 > 0{
                             
-                            do {
-                                let model = try JSONDecoder().decode([ShippingAddressDTO].self, from: data)
-                                debugPrint(model)
+                            if shippingInfoObj?[0].fssID == 0{
+                                VaccinationCustomersDAO.sharedInstance.deleteShippingInfoByFssId(shippingInfoObj?[0].fssID ?? 0)
                             }
-                            catch {
-                                //print(error.localizedDescription)
-                                debugPrint(String(describing: error))
+                            else
+                            {
+                                VaccinationCustomersDAO.sharedInstance.deleteShippingInfoByFssId(Int(SelectedFsmId) ?? 0)
                             }
                             
-                            let shippingInfoObj = try? jsonDecoder.decode([ShippingAddressDTO].self, from: data)
-                            if  shippingInfoObj != nil && shippingInfoObj?.count ?? 0 > 0{
+                            UserDefaults.standard.setValue(shippingInfoObj?[0].countryID, forKey: "countryId")
+                            VaccinationCustomersDAO.sharedInstance.saveShippingInfoInDB(newAssessment: shippingInfoObj)
+                            
+                            //MARK:  Setting other shipping address details blank
+                            VaccinationCustomersDAO.sharedInstance.setOtherShippingInfo(siteId: shippingInfoObj?[0].siteId ?? 0, trainingId: shippingInfoObj?[0].trainingID ?? 0, sitname: shippingInfoObj?[0].siteName ?? "", fsName: shippingInfoObj?[0].fssName ?? "", fsId: shippingInfoObj?[0].fssID ?? 0, cntryId:  0, CntryName: "")
+                            Constants.updateSiteAddress = false
+                            
+                            if let shippingInfo = shippingInfoObj?.first,
+                               (shippingInfo.address1?.isEmpty ?? true) ||
+                                (shippingInfo.pincode?.isEmpty ?? true) ||
+                                (shippingInfo.city?.isEmpty ?? true) ||
+                                (shippingInfo.stateName?.isEmpty ?? true) {
                                 
-                                if shippingInfoObj?[0].fssID == 0{
-                                    VaccinationCustomersDAO.sharedInstance.deleteShippingInfoByFssId(shippingInfoObj?[0].fssID ?? 0)
-                                }
-                                else
-                                {
-                                    VaccinationCustomersDAO.sharedInstance.deleteShippingInfoByFssId(Int(SelectedFsmId) ?? 0)
-                                }
-                             
-                                UserDefaults.standard.setValue(shippingInfoObj?[0].countryID, forKey: "countryId")
-                                VaccinationCustomersDAO.sharedInstance.saveShippingInfoInDB(newAssessment: shippingInfoObj)
-                                
-                                //MARK:  Setting other shipping address details blank
-                                VaccinationCustomersDAO.sharedInstance.setOtherShippingInfo(siteId: shippingInfoObj?[0].siteId ?? 0, trainingId: shippingInfoObj?[0].trainingID ?? 0, sitname: shippingInfoObj?[0].siteName ?? "", fsName: shippingInfoObj?[0].fssName ?? "", fsId: shippingInfoObj?[0].fssID ?? 0, cntryId:  0, CntryName: "")
-                                Constants.updateSiteAddress = false
-                      
-                                if let shippingInfo = shippingInfoObj?.first,
-                                   (shippingInfo.address1?.isEmpty ?? true) ||
-                                   (shippingInfo.pincode?.isEmpty ?? true) ||
-                                   (shippingInfo.city?.isEmpty ?? true) ||
-                                   (shippingInfo.stateName?.isEmpty ?? true) {
-
-                                    Constants.updateSiteAddress = true
-                                }
-
-                                completion(VaccinationConstants.VaccinationStatus.COREDATA_SAVED_SUCCESSFULLY, nil)
-                                
-                                saveSiteAddress(certId: certId, countryId: shippingInfoObj?[0].countryID,
-                                                stateId: shippingInfoObj?[0].stateID,
-                                                addressLine1: shippingInfoObj?[0].address1,
-                                                addressLine2: shippingInfoObj?[0].address2,
-                                                city: shippingInfoObj?[0].city,
-                                                zip: shippingInfoObj?[0].pincode,
-                                                siteId: shippingInfoObj?[0].siteId,
-                                                siteName: shippingInfoObj?[0].siteName,
-                                                countryName: shippingInfoObj?[0].countryName,
-                                                stateName: shippingInfoObj?[0].stateName,
-                                                isOtherAddress: shippingInfoObj?[0].adddressType)
+                                Constants.updateSiteAddress = true
                             }
+                            
+                            completion(VaccinationConstants.VaccinationStatus.COREDATA_SAVED_SUCCESSFULLY, nil)
+                            
+                            saveSiteAddress(certId: certId, countryId: shippingInfoObj?[0].countryID,
+                                            stateId: shippingInfoObj?[0].stateID,
+                                            addressLine1: shippingInfoObj?[0].address1,
+                                            addressLine2: shippingInfoObj?[0].address2,
+                                            city: shippingInfoObj?[0].city,
+                                            zip: shippingInfoObj?[0].pincode,
+                                            siteId: shippingInfoObj?[0].siteId,
+                                            siteName: shippingInfoObj?[0].siteName,
+                                            countryName: shippingInfoObj?[0].countryName,
+                                            stateName: shippingInfoObj?[0].stateName,
+                                            isOtherAddress: shippingInfoObj?[0].adddressType)
                         }
                     }
-                    
                 }
+                
+                
                 
             }
             

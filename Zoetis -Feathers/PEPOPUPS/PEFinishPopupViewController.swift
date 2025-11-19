@@ -74,7 +74,6 @@ class PEFinishPopupViewController: BaseViewController {
         super.viewDidLoad()
         regionID = UserDefaults.standard.integer(forKey: "Regionid")
         let assessmentId = UserDefaults.standard.value(forKey: "currentServerAssessmentId") as? String ?? ""
-        let regionId = UserDefaults.standard.integer(forKey: "Regionid")
         self.signatureView.delegate = self
         self.doneButton.setNextButtonUI()
         self.clearSignature.setNextButtonUI()
@@ -289,7 +288,6 @@ class PEFinishPopupViewController: BaseViewController {
 
         if signatureImage1 != nil || signatureImage2 != nil {
             DispatchQueue.main.async {
-                var param: [String: String] = [:]
 
                 if let image1 = signatureImage1 {
                     let imageData1 = image1.jpegData(compressionQuality: 0.1)
@@ -326,7 +324,7 @@ class PEFinishPopupViewController: BaseViewController {
                     }
                 }
 
-                param = [
+                let param: [String: String] = [
                     "sig": String(Constants.customRepSigIdFirst),
                     "sig2": String(Constants.secoundcustomRepSigIdFirst),
                     "sig_EmpID": self.txtEmployeeID.text ?? "",
@@ -435,20 +433,20 @@ class PEFinishPopupViewController: BaseViewController {
     }
     
     func filterCategory() {
-        var  peNewAssessmentArray = CoreDataHandlerPE().getOnGoingAssessmentArrayPEObject(isFromDraft:false, serverAssessmentId: scheduledAssessment?.serverAssessmentId ?? "")
+        var  assessmentArray = CoreDataHandlerPE().getOnGoingAssessmentArrayPEObject(isFromDraft:false, serverAssessmentId: scheduledAssessment?.serverAssessmentId ?? "")
         if isFromDraft{
-            peNewAssessmentArray = CoreDataHandlerPE().getOnGoingAssessmentArrayPEObject(isFromDraft:true, serverAssessmentId: scheduledAssessment?.serverAssessmentId ?? "")
+            assessmentArray = CoreDataHandlerPE().getOnGoingAssessmentArrayPEObject(isFromDraft:true, serverAssessmentId: scheduledAssessment?.serverAssessmentId ?? "")
         }
         var carColIdArray : [Int] = []
       
-        if peNewAssessmentArray[0].evaluationID != 2{
+        if assessmentArray[0].evaluationID != 2{
             let pe = PENewAssessment()
             pe.catID = 10
             pe.isOpened = true
             catArrayForCollectionIs.append(pe)
         }
         
-        for cat in peNewAssessmentArray {
+        for cat in assessmentArray {
             if !carColIdArray.contains(cat.catID ?? 0){
                 carColIdArray.append(cat.catID ?? 0)
                 if(cat.sequenceNoo != 12 ){
@@ -880,7 +878,7 @@ extension PEFinishPopupViewController: UITableViewDelegate, UITableViewDataSourc
         }
         tableView.isScrollEnabled = true
         peNewAssessmentArrayForCatQuest.removeAll()
-        var first = peNewAssessmentArrayForCatQuest1[0]
+        let first = peNewAssessmentArrayForCatQuest1[0]
         peNewAssessmentArrayForCatQuest1.removeAll()
         peNewAssessmentArrayForCatQuest1.append(first)
         catArrayForCollectionIs[indexPath.section].isOpened = toSet

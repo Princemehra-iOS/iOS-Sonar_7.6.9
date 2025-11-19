@@ -482,7 +482,6 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
         view.backgroundColor = UIColor.white
     }
     
-    
     func setValues(){
         dateLbl.text = CodeHelper.sharedInstance.convertDateFormater(curentCertification?.scheduledDate ?? "") ?? ""
         customerlbl.text = curentCertification?.customerName ?? ""
@@ -598,18 +597,8 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
             {
                 self.curentCertification?.syncStatus =  VaccinationCertificationSyncStatus.syncReady.rawValue
             }
-//            if self.showRedFieldsValidation{
-//                self.showMandatoryFieldsColor()
-//            }
             curentCertification?.fsmName = textField.text?.capitalizingFirstLetter()
             break;
-            
-        case costShippingTxtFld:
-            if curentCertification?.customerShippingId != textField.text
-            {
-                self.curentCertification?.syncStatus =  VaccinationCertificationSyncStatus.syncReady.rawValue
-            }
-            curentCertification?.customerShippingId = textField.text
             
         case gpColleagueTxtFld:
             if self.curentCertification?.colleagueName != textField.text
@@ -657,11 +646,9 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        let maxLength = 6
         let currentString: NSString = textField.text! as NSString
-        var newString: NSString =
-        currentString.replacingCharacters(in: range, with: string) as NSString
-        var result = true
+      
+      
         let  char = string.cString(using: String.Encoding.utf8)!
         let isBackSpace = strcmp(char, "\\b")
         
@@ -805,7 +792,6 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
         
         if curentCertification?.fsmName != nil && curentCertification?.fsmName != "" {
             
-            //Extra Validation
             hasCertificationFilled = true
         } else {
             hasCertificationFilled = false
@@ -818,7 +804,6 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
         } else {
             print("FSM not found.")
         }
-//        self.fieldServiceManagers
         if isSafetyCertification && (curentCertification?.selectedFsmId == nil || curentCertification?.selectedFsmId == "") {
             hasCertificationFilled = true
         } else {
@@ -926,7 +911,9 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
                         
                         if let savedCountry = ccData?.countryId,
                            let savedState = ccData?.stateId {
+                            debugPrint(savedCountry , savedState)
                         } else {
+                            
                             let shippingInfoDB = VaccinationCustomersDAO.sharedInstance.fetchShippingInfoByTrainingId(trainingId: self.trainingId)
                             if shippingInfoDB != nil {
                                 let countryID = shippingInfoDB?.countryID
@@ -961,6 +948,7 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
                                 
                                 if trainingId != 0
                                 {
+                                    debugPrint(savedState , savedCountry)
                                     if let otherShippingInfo = VaccinationCustomersDAO.sharedInstance.fetchOtherShippingAddressByTrainingId(trainingId: self.trainingId) {
                                         VaccinationCustomersDAO.sharedInstance.saveOtherAddressInDB(newAssessment: [otherShippingInfo])
                                     } else {
@@ -1054,7 +1042,6 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
                     DispatchQueue.main.async{
                         self.showMandatoryFieldsColor()
                     }
-                   // displayAlertMessage(userMessage: Constants.pleaseEnterMandatoryFields)
                 }
             }else{
                 self.employeesTblVw.reloadData()
@@ -1085,7 +1072,7 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
         
         if curentCertification?.selectedFsmId == nil || curentCertification?.selectedFsmId == ""
         {
-            var UpdateCertification = curentCertification?.fsrId
+            let UpdateCertification = curentCertification?.fsrId
             curentCertification?.selectedFsmId = UpdateCertification
         }
         
@@ -1093,9 +1080,13 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
             let approverData = ApproverStore.shared.getApprover(for: certId)
             curentCertification?.selectedFsmId = approverData?.approverId
         }
-        
+
         DataService.sharedInstance.getShippingDetails(loginuserId: UserContext.sharedInstance.userDetailsObj?.userId ?? Constants.noDataFound,  SelectedFsmId:self.curentCertification?.selectedFsmId ?? "", SelectedSiteId: self.curentCertification?.siteId ?? "", certId: curentCertification?.certificationId ?? "", viewController: self, completion: { [weak self] (status, error) in
-            guard let _ = self, error == nil else { self?.dismissGlobalHUD(self?.view ?? UIView()); return }
+            guard let _ = self, error == nil else {
+                self?.dismissGlobalHUD(self?.view ?? UIView());
+                return
+            }
+
             if status == VaccinationConstants.VaccinationStatus.COREDATA_SAVED_SUCCESSFULLY || status == VaccinationConstants.VaccinationStatus.COREDATA_FETCHED_SUCCESSFULLY{
                 let mainQueue = OperationQueue.main
                 mainQueue.addOperation{
@@ -1188,7 +1179,7 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
         
         self.curentCertification?.customerName = self.customerTxtFld.text ?? ""
         
-        self.curentCertification?.siteName = self.siteTxtFld.text ?? "" ?? ""
+        self.curentCertification?.siteName = self.siteTxtFld.text ?? ""
         self.curentCertification?.fsrName = self.serviceTechTxtFld.text ?? ""
         self.curentCertification?.fsmName = self.managerTxtFld.text ?? ""
         self.curentCertification?.selectedFsmName = self.fsmTxtFld.text ?? ""
@@ -1480,11 +1471,10 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
             print("selected FSM Name  = " , element.fsmName ?? "")
             print("selected FSM ID  = " , element.fsmId ?? 0)
             
-            let approverId = element.fsmId ?? "0"
-//            self.approverId = approverId
-//            UserDefaults.standard.setValue(approverId, forKey: "\(certificateId)")
+            let newApproverId = element.fsmId ?? "0"
+
             if let fsmName = element.fsmName {
-                ApproverStore.shared.setApprover(for: certificateId, approverId: approverId, approverName: fsmName)
+                ApproverStore.shared.setApprover(for: certificateId, approverId: newApproverId, approverName: fsmName)
             }
             if self.curentCertification?.selectedFsmId != element.fsmId {
                 self.curentCertification?.syncStatus = VaccinationCertificationSyncStatus.syncReady.rawValue
@@ -1647,7 +1637,6 @@ extension AddEmployeesVC: UITableViewDataSource, UITableViewDelegate{
                     
                     self.resignFirstResponder()
                     
-                    let arr = self.rolesArr.map{ $0.value}
                     if indexPath.row > -1 && self.employeesAddedArr.count > indexPath.row{
                         let selectedValueObjStr = self.employeesAddedArr[indexPath.row].rolesArrStr
                         
