@@ -219,7 +219,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
         
         if AllValidSessions.sharedInstance.allValidSession.count == 0 {
             
-            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("No historical data.", comment: ""))
+            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(Constants.noHistoricalData, comment: ""))
             return
         }
         verticalValues = CoreDataHandler().getObservationNameForGITract(refID: Regions.getObservationsGITract(countryID: Regions.countryId)) as! [String]
@@ -247,7 +247,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
         
         if AllValidSessions.sharedInstance.allValidSession.count == 0 {
             
-            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("No historical data.", comment: ""))
+            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(Constants.noHistoricalData, comment: ""))
             return
         }
     }
@@ -266,7 +266,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
         }
         if AllValidSessions.sharedInstance.allValidSession.count == 0 {
             
-            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("No historical data.", comment: ""))
+            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(Constants.noHistoricalData, comment: ""))
             return
         }
         verticalValues = CoreDataHandler().getObservationNameForImmune(refID: Regions.getObservationsForImmune(countryID: Regions.countryId)) as! [String]
@@ -293,7 +293,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
         
         if AllValidSessions.sharedInstance.allValidSession.count == 0 {
             
-            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("No historical data.", comment: ""))
+            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(Constants.noHistoricalData, comment: ""))
             return
         }
         
@@ -342,7 +342,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
         }
         if AllValidSessions.sharedInstance.allValidSession.count == 0 {
             
-            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("No historical data.", comment: ""))
+            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(Constants.noHistoricalData, comment: ""))
             return
         }
         verticalValues = CoreDataHandler().getObservationNameForSkelatal(refID: Regions.getobservationsSkeletal(countryID: Regions.countryId)) as! [String]
@@ -440,7 +440,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
                 
                 if lastSessionDataArray.count == 0 {
                     
-                    Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("No historical data.", comment: ""))
+                    Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(Constants.noHistoricalData, comment: ""))
                     return
                 }
                 
@@ -477,7 +477,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
                 
                 if lastSessionDataArray.count == 0 {
                     
-                    Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("No historical data.", comment: ""))
+                    Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(Constants.noHistoricalData, comment: ""))
                     return
                 }
                 
@@ -512,7 +512,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
             
             if lastSessionDataArray.count == 0 {
                 
-                Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("No historical data.", comment: ""))
+                Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(Constants.noHistoricalData, comment: ""))
                 return
             }
             
@@ -623,7 +623,7 @@ extension Report_MainVCViewController {
         
         if lastSessionDataArray.count == 0 {
             
-            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("No historical data.", comment: ""))
+            Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(Constants.noHistoricalData, comment: ""))
             return
         }
         
