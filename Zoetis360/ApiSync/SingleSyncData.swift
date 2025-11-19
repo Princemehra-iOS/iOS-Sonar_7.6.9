@@ -551,7 +551,7 @@ class SingleSyncData: NSObject {
                     else if routeName == Constants.aguaDeBebida {
                         routeId = 20
                     }
-                    else if routeName == "Membrana Da Asa" {
+                    else if routeName == Constants.membranaDaAsa {
                         routeId = 19
                     }
                     else if routeName == "Ocular" {
@@ -625,7 +625,7 @@ class SingleSyncData: NSObject {
                     else if routeName == Constants.aguaDeBebida {
                         routeId = 20
                     }
-                    else if routeName == "Membrana Da Asa" {
+                    else if routeName == Constants.membranaDaAsa {
                         routeId = 19
                     }
                     else if routeName == "Ocular" {

@@ -634,7 +634,7 @@ class ApiSync: NSObject {
 				Constants.inOvoStr: 22,
 				"Intramuscular": 24,
 				Constants.aguaDeBebida: 20,
-				"Membrana Da Asa": 19,
+                Constants.membranaDaAsa: 19,
 				"Ocular": 25,
 				Constants.Subcutânea: 23
 				 ],
@@ -727,7 +727,7 @@ class ApiSync: NSObject {
                         if routeName == "Spray" {
                             routeId = 21
                         }
-                        else if routeName == "In Ovo" {
+                        else if routeName == Constants.inOvoStr  {
                             routeId = 22
                         }
                         else if routeName == "Intramuscular" {
@@ -736,7 +736,7 @@ class ApiSync: NSObject {
                         else if routeName == "Água De Bebida" {
                             routeId = 20
                         }
-                        else if routeName == "Membrana Da Asa" {
+                        else if routeName == Constants.membranaDaAsa {
                             routeId = 19
                         }
                         else if routeName == "Ocular" {
@@ -759,7 +759,7 @@ class ApiSync: NSObject {
                         else if routeName == "Spray" {
                             routeId = 3
                         }
-                        else if routeName == "In Ovo" {
+                        else if routeName == Constants.inOvoStr {
                             routeId = 4
                         }
                         else if routeName == "Subcutaneous" {
@@ -798,7 +798,7 @@ class ApiSync: NSObject {
                         if routeName == "Spray" {
                             routeId = 21
                         }
-                        else if routeName == "In Ovo" {
+                        else if routeName == Constants.inOvoStr  {
                             routeId = 22
                         }
                         else if routeName == "Intramuscular" {
@@ -807,7 +807,7 @@ class ApiSync: NSObject {
                         else if routeName == "Água De Bebida" {
                             routeId = 20
                         }
-                        else if routeName == "Membrana Da Asa" {
+                        else if routeName == Constants.membranaDaAsa {
                             routeId = 19
                         }
                         else if routeName == "Ocular" {
@@ -831,7 +831,7 @@ class ApiSync: NSObject {
                      else if routeName == "Spray" {
                          routeId = 3
                      }
-                     else if routeName == "In Ovo" {
+                     else if routeName == Constants.inOvoStr  {
                          routeId = 4
                      }
                      else if routeName == "Subcutaneous" {
