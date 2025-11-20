@@ -2672,8 +2672,6 @@ extension PEViewAssesmentFinalize{
 
         
         var DisplayId = dict.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
-        
         DisplayId = "C-" + UniID
         var iStle = 0
      
@@ -2895,7 +2893,6 @@ extension PEViewAssesmentFinalize{
         }
 
         var DisplayId = dictArray.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
         
         let  HatcheryAntibioticsInt = inovojectData.invoHatchAntibiotic
@@ -3001,8 +2998,6 @@ extension PEViewAssesmentFinalize{
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
   
         var DisplayId = dictArray.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
-        
         DisplayId = "C-" + UniID
         
         let  HatcheryAntibioticsInt = dictArray.hatcheryAntibioticsDoa
@@ -3103,7 +3098,6 @@ extension PEViewAssesmentFinalize{
         }
 
         var DisplayId = dictArray.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
         
         let  HatcheryAntibioticsInt = dictArray.hatcheryAntibioticsDoaS
@@ -3196,7 +3190,6 @@ extension PEViewAssesmentFinalize{
         }
 
         var DisplayId = dictArray.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
         
         let unique = "\(deviceIDFORSERVER)_\(peCertificateData.id)_iOS_"
@@ -3291,7 +3284,6 @@ extension PEViewAssesmentFinalize{
         }
 
         var DisplayId = dictArray.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
         
         let unique = "\(deviceIDFORSERVER)_\(dictArray.residue)_iOS_"
@@ -3333,12 +3325,9 @@ extension PEViewAssesmentFinalize{
         if let id = dictArray.serverAssessmentId{
             serverAssessmentId = Int64(id ?? "") ?? 0
         }
-        
     
         var DisplayId = dictArray.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
-        
    
         let unique = "\(deviceIDFORSERVER)_\(dictArray.micro)_iOS_"
         
@@ -3796,7 +3785,6 @@ extension PEViewAssesmentFinalize{
         }
         var score = 0
         var DisplayId = dictArray.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
         if  dictArray.assStatus == 1 {
             score = dictArray.assMaxScore ?? 0
@@ -3902,7 +3890,6 @@ extension PEViewAssesmentFinalize{
         }
 
         var DisplayId = dictArray.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
         
         var serverAssessmentId:Int64 = 0
@@ -4052,7 +4039,6 @@ extension PEViewAssesmentFinalize{
         }
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
         var DisplayId = dictArray.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         let siteId = String(dictArray.siteId ?? 0)
         DisplayId = "C-" + UniID
         let base64Str = CoreDataHandlerPE().getImageBase64ByImageID(idArray:img)

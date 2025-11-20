@@ -1714,8 +1714,6 @@ extension PEViewStartNewAssessment{
         }
         
         var DisplayId = dict.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
-        
         DisplayId = "C-" + UniID
         var iStle = 0
         let iStleDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_IncubationStyle")
@@ -1861,7 +1859,6 @@ extension PEViewStartNewAssessment{
         }
 
         var DisplayId = dictArray.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
         
         let  HatcheryAntibioticsInt = inovojectData.invoHatchAntibiotic
@@ -1968,7 +1965,6 @@ extension PEViewStartNewAssessment{
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
 
         var DisplayId = dictArray.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
         
         let  HatcheryAntibioticsInt = dictArray.hatcheryAntibioticsDoa
@@ -2078,7 +2074,6 @@ extension PEViewStartNewAssessment{
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
  
         var DisplayId = dictArray.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
         
         let  HatcheryAntibioticsInt = dictArray.hatcheryAntibioticsDoaS
@@ -2174,7 +2169,6 @@ extension PEViewStartNewAssessment{
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
     
         var DisplayId = dictArray.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
         
         let unique = "\(deviceIDFORSERVER)_\(peCertificateData.id)_iOS_"
@@ -2238,9 +2232,6 @@ extension PEViewStartNewAssessment{
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
         var DisplayId = dictArray.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
-        
-  
         DisplayId = "C-" + UniID
         
         let unique = "\(deviceIDFORSERVER)_\(dictArray.residue)_iOS_"
@@ -2287,7 +2278,6 @@ extension PEViewStartNewAssessment{
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
  
         var DisplayId = dictArray.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
         
         let timestamp = Date().currentTimeMillis()
@@ -2359,7 +2349,6 @@ extension PEViewStartNewAssessment{
         }
         var score = 0
         var DisplayId = dictArray.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
         if  dictArray.assStatus == 1 {
             score = dictArray.assMaxScore ?? 0
@@ -2463,7 +2452,6 @@ extension PEViewStartNewAssessment{
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
      
         var DisplayId = dictArray.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         DisplayId = "C-" + UniID
         
         var serverAssessmentId:Int64 = 0
@@ -2612,7 +2600,6 @@ extension PEViewStartNewAssessment{
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
  
         var DisplayId = dictArray.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
         var siteId = String(dictArray.siteId ?? 0)
   
  
@@ -2920,7 +2907,7 @@ extension PEViewStartNewAssessment{
         }
         
         var DisplayId = dict.evaluationDate
-        DisplayId = DisplayId?.replacingOccurrences(of: "/", with: "")
+       
         DisplayId = "C-" + UniID
         
         var json : JSONDictionary = JSONDictionary()
@@ -2941,6 +2928,7 @@ extension PEViewStartNewAssessment{
                 let outputFormatter = DateFormatter()
                 outputFormatter.dateFormat = Constants.yyyyMMddStr
                 dict.evaluationDate = evaluationDate
+                debugPrint(date)
             }
         }
         else
@@ -2952,6 +2940,7 @@ extension PEViewStartNewAssessment{
                 let outputFormatter = DateFormatter()
                 outputFormatter.dateFormat = Constants.yyyyMMddStr
                 dict.evaluationDate = evaluationDate
+                debugPrint(date)
             }
         }
         

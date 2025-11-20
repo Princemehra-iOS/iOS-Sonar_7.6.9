@@ -97,16 +97,11 @@ extension PEDraftViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        var height:CGFloat = CGFloat()
-        height = 70
-        return height
-        
+        return 70
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let NewcountryId = UserDefaults.standard.integer(forKey: "nonUScountryId")
         if regionID == 3{
             if let cell = tableView.dequeueReusableCell(withIdentifier: PE_DraftCell.identifier) as? PE_DraftCell{
                 cell.selectionStyle = .none
@@ -121,13 +116,9 @@ extension PEDraftViewController: UITableViewDelegate, UITableViewDataSource{
                 cell.deleteCompletion  = {[unowned self] ( error) in
                     let assessment = self.peAssessmentDraftArray[indexPath.row]
                     var date = assessment.evaluationDate
-                    date = date?.replacingOccurrences(of: "/", with: "")
-                    
-                    var siteId = String(assessment.siteId ?? 0)
                     
                     let draftID = assessment.draftID ?? ""
                     date = "C-" + draftID.prefix(20)
-                    
                     
                     let errorMSg = "Are you sure you want to delete the assessment" + (date ?? "") + "?"
                     let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
@@ -209,10 +200,7 @@ extension PEDraftViewController: UITableViewDelegate, UITableViewDataSource{
                 cell.deleteCompletion  = {[unowned self] ( error) in
                     let assessment = self.peAssessmentDraftArray[indexPath.row]
                     var date = assessment.evaluationDate
-                    date = date?.replacingOccurrences(of: "/", with: "")
-                    
-                    var siteId = String(assessment.siteId ?? 0)
-                    
+                                        
                     let draftID = assessment.draftID ?? ""
                     date = "C-" + draftID.prefix(20)
                     
@@ -291,7 +279,7 @@ extension PEDraftViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let NewcountryId = UserDefaults.standard.integer(forKey: "nonUScountryId")
+
         if regionID == 3{
             let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "PEDraftHeader" ) as! PEDraftHeader
             return headerView
