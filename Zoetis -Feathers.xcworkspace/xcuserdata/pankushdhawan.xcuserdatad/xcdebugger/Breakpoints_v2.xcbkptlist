@@ -524,50 +524,6 @@
             endingLineNumber = "4841"
             landmarkName = "setPEInovojectHeaderFooterView(_:section:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "05E51B36-B30E-4884-AAF3-CC68A63EC64E - d627c34c6e64ad5d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #5 (Swift.Optional&lt;Swift.String&gt;) -&gt; () in PoultryView_360.PEDraftAssesmentFinalize.tableView(_: __C.UITableView, viewForHeaderInSection: Swift.Int) -&gt; Swift.Optional&lt;__C.UIView&gt;"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEDraftAssesmentFinalize.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "4853"
-                  endingLineNumber = "4853">
-               </Location>
-               <Location
-                  uuid = "05E51B36-B30E-4884-AAF3-CC68A63EC64E - d627c34c6e64ad5d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #5 (Swift.Optional&lt;Swift.String&gt;) -&gt; () in PoultryView_360.PEDraftAssesmentFinalize.tableView(_: __C.UITableView, viewForHeaderInSection: Swift.Int) -&gt; Swift.Optional&lt;__C.UIView&gt;"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEDraftAssesmentFinalize.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "4853"
-                  endingLineNumber = "4853">
-               </Location>
-               <Location
-                  uuid = "05E51B36-B30E-4884-AAF3-CC68A63EC64E - 88f815a3684507d5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #6 (Swift.Optional&lt;Swift.String&gt;) -&gt; () in PoultryView_360.PEDraftAssesmentFinalize.setPEInovojectHeaderFooterView(_: __C.UITableView, section: Swift.Int) -&gt; PoultryView_360.PEInovojectHeaderFooterView"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEDraftAssesmentFinalize.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "4841"
-                  endingLineNumber = "4841">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1090,50 +1046,6 @@
             endingLineNumber = "3871"
             landmarkName = "createSyncRequestForScore(dictArray:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "BF40BA80-0246-4099-8DEB-77ABE8CDCC11 - 82e0f3a9a639cf1e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (SwiftyJSON.JSON, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in PoultryView_360.PEViewAssesmentFinalize.callExtendedMicro(param: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEViewAssesmentFinalize.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "3888"
-                  endingLineNumber = "3888">
-               </Location>
-               <Location
-                  uuid = "BF40BA80-0246-4099-8DEB-77ABE8CDCC11 - 82e0f3a9a639cf1e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (SwiftyJSON.JSON, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in PoultryView_360.PEViewAssesmentFinalize.callExtendedMicro(param: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEViewAssesmentFinalize.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "3888"
-                  endingLineNumber = "3888">
-               </Location>
-               <Location
-                  uuid = "BF40BA80-0246-4099-8DEB-77ABE8CDCC11 - 34a419c553348f4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PoultryView_360.PEViewAssesmentFinalize.createSyncRequestForScore(dictArray: PoultryView_360.PENewAssessment) -&gt; Swift.Dictionary&lt;Swift.String, Any&gt;"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEViewAssesmentFinalize.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "3871"
-                  endingLineNumber = "3871">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1563,34 +1475,6 @@
             landmarkName = "promtSyncing()"
             landmarkType = "7">
             <Locations>
-               <Location
-                  uuid = "605DBC29-FAC3-4C80-B312-082FD1F1D399 - 429fad26a6b085ca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PoultryView_360.DashViewController.promtSyncing() -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis360/DashBoardViewController/DashViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "2555"
-                  endingLineNumber = "2555">
-               </Location>
-               <Location
-                  uuid = "605DBC29-FAC3-4C80-B312-082FD1F1D399 - f4d1d4c5acc390c9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in PoultryView_360.DashViewController.promtSyncing() -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis360/DashBoardViewController/DashViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "2557"
-                  endingLineNumber = "2557">
-               </Location>
                <Location
                   uuid = "605DBC29-FAC3-4C80-B312-082FD1F1D399 - 429fad26a6b08556"
                   shouldBeEnabled = "Yes"
@@ -2898,50 +2782,6 @@
             endingLineNumber = "1539"
             landmarkName = "PEDashboardViewController"
             landmarkType = "21">
-            <Locations>
-               <Location
-                  uuid = "7AD90B49-1266-4C1D-B3CF-D0679C2AD6C1 - 1dac4f0737446446"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PoultryView_360.PEDashboardViewController.checkDataDuplicacy(obj: PoultryView_360.PENewAssessment) -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEDashboardViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1543"
-                  endingLineNumber = "1543">
-               </Location>
-               <Location
-                  uuid = "7AD90B49-1266-4C1D-B3CF-D0679C2AD6C1 - 65b91996f95fff0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in PoultryView_360.PEDashboardViewController.checkDataDuplicacy(obj: PoultryView_360.PENewAssessment) -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEDashboardViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1544"
-                  endingLineNumber = "1544">
-               </Location>
-               <Location
-                  uuid = "7AD90B49-1266-4C1D-B3CF-D0679C2AD6C1 - 65b91996f95fe95"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in PoultryView_360.PEDashboardViewController.checkDataDuplicacy(obj: PoultryView_360.PENewAssessment) -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEDashboardViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1539"
-                  endingLineNumber = "1539">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3206,50 +3046,6 @@
             endingLineNumber = "2156"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "50B9F3EA-3C47-432A-82C4-C9AD1DD64467 - c22b76888b077534"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String, Swift.String, Swift.Int) -&gt; () in closure #5 (__C.UITableViewCell) -&gt; () in PoultryView_360.PEDraftAssesmentFinalize.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEDraftAssesmentFinalize.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "2165"
-                  endingLineNumber = "2165">
-               </Location>
-               <Location
-                  uuid = "50B9F3EA-3C47-432A-82C4-C9AD1DD64467 - 75e239a7b16878c4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (PoultryView_360.PECertificateData) -&gt; Swift.Bool in closure #1 (Swift.String, Swift.String, Swift.Int) -&gt; () in closure #5 (__C.UITableViewCell) -&gt; () in PoultryView_360.PEDraftAssesmentFinalize.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEDraftAssesmentFinalize.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "2165"
-                  endingLineNumber = "2165">
-               </Location>
-               <Location
-                  uuid = "50B9F3EA-3C47-432A-82C4-C9AD1DD64467 - 43faa2e7db73277c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #7 (Swift.Optional&lt;Swift.String&gt;) -&gt; () in PoultryView_360.PEDraftAssesmentFinalize.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEDraftAssesmentFinalize.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "2156"
-                  endingLineNumber = "2156">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

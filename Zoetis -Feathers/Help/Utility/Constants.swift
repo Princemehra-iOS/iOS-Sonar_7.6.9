@@ -270,6 +270,7 @@ struct Constants {
     static let noneDisplay = "display:none"
     static let leftMargin = "margin-left:-40px"
     static let noHistoricalData = "No historical data."
+    static let heavyHens = "Heavy hens" 
     static let membranaDaAsa = "Membrana Da Asa"
     static let pleaseEnterMandatoryFields = "Please enter details in all the fields marked as mandatory."
     static let predicates =  "%@(%@)"
