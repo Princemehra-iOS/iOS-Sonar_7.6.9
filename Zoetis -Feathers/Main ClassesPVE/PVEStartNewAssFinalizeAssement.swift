@@ -2646,8 +2646,6 @@ extension PVEStartNewAssFinalizeAssement: DatePickerPopupViewControllerProtocol{
         
     }
     
-    func doneButtonTapped(string:String){
-    }
 }
 
 

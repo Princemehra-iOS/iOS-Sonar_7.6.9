@@ -631,52 +631,57 @@ extension PEViewAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if checkForTraning(){
-            if section == 0 && selectedCategory?.sequenceNoo == 12 && selectedCategory?.catName != Constants.refrigeratorNitrogenStr {
-                return sanitationQuesArr.count
-            }
-            
-            if (selectedCategory?.sequenceNoo == 11 && selectedCategory?.catName == Constants.refrigeratorNitrogenStr){
-                return 2
-            }
-            if section == 1 {
-                return certificateData.count
-            }
-            if section == 2 {
-                return inovojectData.count
-            }
-            if section == 3 {
-                return dayOfAgeData.count
-            }
-            if section == 4 {
-                return dayOfAgeSData.count
-            }
-            return catArrayForTableIs.count
-        } else {
-            var assessment = catArrayForTableIs[0] as? PE_AssessmentInProgress
-            if assessment?.sequenceNoo == 3 {
-                if section == 0 {
-                    return catArrayForTableIs.count                }
-                if section == 1 {
-                    return 1
-                }
-            } else {
-                if section == 1 {
-                    return inovojectData.count
-                }
-                if section == 2 {
-                    return dayOfAgeData.count
-                }
-                if section == 3 {
-                    return dayOfAgeSData.count
-                }
-            }
-            return catArrayForTableIs.count
+
+        // Training Mode
+        if checkForTraning() {
+            return rowsForTrainingMode(section: section)
         }
         
+        // Non Training Mode
+        return rowsForNonTrainingMode(section: section)
     }
     
+    private func rowsForTrainingMode(section: Int) -> Int {
+        
+        let isSeq12 = selectedCategory?.sequenceNoo == 12
+        let isSeq11 = selectedCategory?.sequenceNoo == 11
+        let isNitrogen = selectedCategory?.catName == Constants.refrigeratorNitrogenStr
+
+        if section == 0, isSeq12, !isNitrogen {
+            return sanitationQuesArr.count
+        }
+        
+        if isSeq11, isNitrogen {
+            return 2
+        }
+        
+        switch section {
+        case 1: return certificateData.count
+        case 2: return inovojectData.count
+        case 3: return dayOfAgeData.count
+        case 4: return dayOfAgeSData.count
+        default: return catArrayForTableIs.count
+        }
+    }
+    private func rowsForNonTrainingMode(section: Int) -> Int {
+
+        let assessment = catArrayForTableIs.first as? PE_AssessmentInProgress
+        let isSeq3 = assessment?.sequenceNoo == 3
+
+        if isSeq3 {
+            if section == 0 { return catArrayForTableIs.count }
+            if section == 1 { return 1 }
+            return catArrayForTableIs.count
+        }
+
+        switch section {
+        case 1: return inovojectData.count
+        case 2: return dayOfAgeData.count
+        case 3: return dayOfAgeSData.count
+        default: return catArrayForTableIs.count
+        }
+    }
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if checkForTraning(),
