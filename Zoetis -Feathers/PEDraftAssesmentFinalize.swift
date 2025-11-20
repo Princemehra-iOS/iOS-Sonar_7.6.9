@@ -113,7 +113,6 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
     // MARK: - Keyboard Will Show
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let userInfo = notification.userInfo else {return}
-        guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
         
         if self.view.bounds.origin.y == 0{
             self.view.bounds.origin.y += 200
@@ -691,47 +690,39 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
 
             if regionID == 3
             {
-                if(self.peNewAssessment.frequency?.count ?? 0 < 1){
-                    if(self.peNewAssessment.evaluationID == 1){
-                        if regionID == 3
-                        {
-                            showAlertForNoFrequency()
-                        }
-                        else{
-                            showAlertForNoFrequency()
-                            return false
-                        }
-                        
-                    }
-                }
-                if(self.peNewAssessment.personName?.count ?? 0 < 1){
-                    if(self.peNewAssessment.evaluationID == 1){
-                        if regionID == 3
-                        {
-                            showAlertForNoPersonName()
-                        }else
-                        {
-                            showAlertForNoPersonName()
-                            return false
-                        }
-                    }
+                
+                let frequencyCount = self.peNewAssessment.frequency?.count ?? 0
+                if frequencyCount < 1 && self.peNewAssessment.evaluationID == 1 {
                     
-                }
-            }
-            
-            if self.peNewAssessment.qcCount?.count ?? 0 < 1 {
-                if(self.peNewAssessment.evaluationID == 1){
-                    if regionID == 3
-                    {
-                        showAlertForNoQCCount()
-                    }else
-                    {
-                        showAlertForNoQCCount()
+                    showAlertForNoFrequency()
+                    
+                    if regionID != 3 {
                         return false
                     }
                 }
+                
+                let personNameCount = self.peNewAssessment.personName?.count ?? 0
+                if personNameCount < 1 && self.peNewAssessment.evaluationID == 1 {
+                    
+                    showAlertForNoPersonName()
+                    
+                    if regionID != 3 {
+                        return false
+                    }
+                }
+                
             }
             
+            if (self.peNewAssessment.qcCount?.isEmpty ?? true) &&
+               self.peNewAssessment.evaluationID == 1 {
+
+                showAlertForNoQCCount()
+
+                if regionID != 3 {
+                    return false
+                }
+            }
+
             if regionID == 3
             {
                 if self.peNewAssessment.ppmValue?.count ?? 0 < 1,
