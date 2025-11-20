@@ -129,7 +129,7 @@ class PostingSessionDetailTurkey: UIViewController,turkeyNotes,UITextFieldDelega
         print("<<<<",self)
         super.viewDidLoad()
         
-        birdSexArray = ["Light hens" , Constants.heavyHens , "Toms"]
+        birdSexArray = [Constants.lightHens , Constants.heavyHens , "Toms"]
         tblView.estimatedRowHeight = 50
         tblView.rowHeight = UITableView.automaticDimension
         objApiSyncOneSet.delegeteSyncApiData = self
@@ -555,7 +555,7 @@ class PostingSessionDetailTurkey: UIViewController,turkeyNotes,UITextFieldDelega
             let title: String
             switch sexValue {
             case "HH": title = Constants.heavyHens
-            case "LH": title = "Light hens"
+            case "LH": title = Constants.lightHens
             case "T":  title = "Toms"
             default:   title = "Unknown"
             }
@@ -2292,7 +2292,7 @@ extension PostingSessionDetailTurkey: UITableViewDataSource,UITableViewDelegate 
                 
                 let sexCode: String
                 switch selectedSex {
-                case "Light hens": sexCode = "LH"
+                case Constants.lightHens: sexCode = "LH"
                 case Constants.heavyHens: sexCode = "HH"
                 case "Toms":       sexCode = "T"
                 default:           sexCode = "LH"
