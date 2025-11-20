@@ -20,10 +20,9 @@ class SidePanelViewController: UIViewController {
     
     enum CellIdentifiers {
         static let MenuInfoCell = "MenuInfoCell"
-        
     }
     
-    func updateArrayMenuOptionsForMicrobial(){
+    func updateArrayMenuOptionsForMicrobial() {
         arrayMenuOptions.append(["title":globaclDashboarStr, "icon":"appsIconPE"])
         arrayMenuOptions.append(["title":"Dashboard", "icon":"dashboardIconPE"])
         arrayMenuOptions.append(["title":"Help", "icon":"helpIconPE"])
@@ -107,7 +106,6 @@ class SidePanelViewController: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.reloadData()
         NotificationCenter.default.addObserver(self,selector: #selector(logoutClickedNoti), name: NSNotification.Name("LogoutClicked"),object: nil)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -134,8 +132,7 @@ class SidePanelViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
         
     }
-    
-    
+ 
 }
 
 // MARK: Table View Data Source
@@ -169,13 +166,11 @@ extension SidePanelViewController: UITableViewDataSource , UITableViewDelegate{
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let arr = arrayMenuOptions[indexPath.row]
         delegate?.didSelectLeftPenal(indexPath.row, selectedDetails: arr)
         if indexPath.row == 5 {
             print("Test Body")
         }
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

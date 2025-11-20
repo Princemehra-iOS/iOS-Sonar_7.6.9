@@ -63,7 +63,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
         
      
         
-        lblComplex.text = AllValidSessions.sharedInstance.complexName.length > 0 ? AllValidSessions.sharedInstance.complexName as String : NSLocalizedString("- Select -", comment: "")
+        lblComplex.text = AllValidSessions.sharedInstance.complexName.length > 0 ? AllValidSessions.sharedInstance.complexName as String : NSLocalizedString(Constants.selectPlaceholder, comment: "")
         btnComplex.isUserInteractionEnabled = !(AllValidSessions.sharedInstance.complexName.length > 0)
         lblComplex.isEnabled = !(AllValidSessions.sharedInstance.complexName.length > 0)
         lblComplex.backgroundColor = btnComplex.isUserInteractionEnabled ? UIColor.clear : UIColor(red: 45/255, green:45/255, blue:45/255, alpha:0.3)
@@ -212,7 +212,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
         if self.preparedArray.count > 0 {
             self.preparedArray.removeAllObjects()
         }
-        if lblComplex.text == NSLocalizedString("- Select -", comment: "") {
+        if lblComplex.text == NSLocalizedString(Constants.selectPlaceholder, comment: "") {
             Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(CategoryConstants.pleaseselectacomplexfirst, comment: ""))
             return
         }
@@ -239,7 +239,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
         
         UserDefaults.standard.set(true, forKey: "isCocci")
         
-        if lblComplex.text == NSLocalizedString("- Select -", comment: "") {
+        if lblComplex.text == NSLocalizedString(Constants.selectPlaceholder, comment: "") {
             
             Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(CategoryConstants.pleaseselectacomplexfirst, comment: ""))
             return
@@ -255,7 +255,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
     @IBAction func btn_Immune_Action(_ sender: AnyObject) {
         UserDefaults.standard.set(false, forKey: "isBackPress")
         UserDefaults.standard.set(false, forKey: "isCocci")
-        if lblComplex.text == NSLocalizedString("- Select -", comment: "") {
+        if lblComplex.text == NSLocalizedString(Constants.selectPlaceholder, comment: "") {
             
             Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(CategoryConstants.pleaseselectacomplexfirst, comment: ""))
             return
@@ -285,7 +285,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
             self.preparedArray.removeAllObjects()
             self.entries_Array.removeAllObjects()
         }
-        if lblComplex.text == NSLocalizedString("- Select -", comment: "") {
+        if lblComplex.text == NSLocalizedString(Constants.selectPlaceholder, comment: "") {
             
             Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(CategoryConstants.pleaseselectacomplexfirst, comment: ""))
             return
@@ -318,7 +318,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
         
         UserDefaults.standard.set(false, forKey: "isBackPress")
         UserDefaults.standard.set(false, forKey: "isCocci")
-        if lblComplex.text == NSLocalizedString("- Select -", comment: "") {
+        if lblComplex.text == NSLocalizedString(Constants.selectPlaceholder, comment: "") {
             
             Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr: NSLocalizedString(CategoryConstants.pleaseselectacomplexfirst, comment: ""))
             return
@@ -330,7 +330,7 @@ class Report_MainVCViewController: UIViewController,GI_TtactDelegate,UITableView
         UserDefaults.standard.set(false, forKey: "isBackPress")
         UserDefaults.standard.set(false, forKey: "isCocci")
         
-        if lblComplex.text == NSLocalizedString("- Select -", comment: "") {
+        if lblComplex.text == NSLocalizedString(Constants.selectPlaceholder, comment: "") {
             
             Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(CategoryConstants.pleaseselectacomplexfirst, comment: ""))
             return

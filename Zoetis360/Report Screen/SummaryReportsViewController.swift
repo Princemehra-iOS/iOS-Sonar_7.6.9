@@ -75,10 +75,8 @@ class SummaryReportsViewController: UIViewController,UITableViewDelegate,UITable
     }
     
     func webViewDidFinishLoad(_ webView: WKWebView) {
-
         let scrollPoint = CGPoint(x: 0, y: wkWebView.scrollView.contentSize.height - wkWebView.frame.size.height)
         wkWebView.scrollView.setContentOffset(scrollPoint, animated: true )
-
       }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -267,7 +265,7 @@ class SummaryReportsViewController: UIViewController,UITableViewDelegate,UITable
                 
                 if lastSessionDataArray.count == 0 {
                     
-                    Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("No historical data.", comment: ""))
+                    Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(Constants.noHistoricalData, comment: ""))
                     return
                 }
                 
@@ -312,7 +310,7 @@ class SummaryReportsViewController: UIViewController,UITableViewDelegate,UITable
                 
                 if lastSessionDataArray.count == 0 {
                     
-                    Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("No historical data.", comment: ""))
+                    Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(Constants.noHistoricalData, comment: ""))
                     
                     return
                 }
@@ -354,7 +352,7 @@ class SummaryReportsViewController: UIViewController,UITableViewDelegate,UITable
             
             if lastSessionDataArray.count == 0 {
                 
-                Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString("No historical data.", comment: ""))
+                Helper.showAlertMessage(self,titleStr:NSLocalizedString("Alert", comment: "") , messageStr:NSLocalizedString(Constants.noHistoricalData, comment: ""))
                 
                 return
             }
