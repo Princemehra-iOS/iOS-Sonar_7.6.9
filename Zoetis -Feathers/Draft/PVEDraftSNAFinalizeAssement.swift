@@ -1414,55 +1414,41 @@ extension PVEDraftSNAFinalizeAssement: UITableViewDelegate, UITableViewDataSourc
             return 1
         }
     }
-    
-    
-    @IBAction func vaccinatorsPlusBtnAction(_ sender: Any) {
-        
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if currentSel_seq_Number == 2 {  //Vaccine Prepraion Section
-            if section == 3 {
-                return otherQuessArr.count
-            }
-            if section == 1 {
-                return 0
-            }
-            if section == 2 {
-                return 0
-            }
-            if section == 4 {
-                if isLiveVaccineOn == true {
-                    return liveQuesArr.count
-                }
-                else{
-                    return 1
-                }
-            }
-            if section == 5 {
-                if isInActiveVaccineOn == true {
-                    return inactiveQuessArr.count
-                }
-                else{
-                    return 1
-                }
-                
-            }
-            if section == 6 {
-                return vaccinInfoDetailArr.count
-            }
-            else{
-                return 1
-            }
-        }
-        else if currentSel_seq_Number == 6 {
-            
+
+        switch currentSel_seq_Number {
+        case 2:
+            return rowsForVaccinePreparation(section)
+        case 6:
             return 1
-        }
-        else{
+            
+        default:
             return questionsArr.count
         }
     }
+    
+    private func rowsForVaccinePreparation(_ section: Int) -> Int {
+        switch section {
+        case 1, 2:
+            return 0
+
+        case 3:
+            return otherQuessArr.count
+            
+        case 4:
+            return isLiveVaccineOn ? liveQuesArr.count : 1
+            
+        case 5:
+            return isInActiveVaccineOn ? inactiveQuessArr.count : 1
+            
+        case 6:
+            return vaccinInfoDetailArr.count
+            
+        default:
+            return 1
+        }
+    }
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if currentSel_seq_Number == 2 {  //Vaccine Prepraion Section
