@@ -2013,8 +2013,7 @@ APIActivityTracker.shared.endRequest()
             AssessmentId = dictArray.draftNumber ?? 0
         }
         var score = 0
-        var DisplayId = dictArray.evaluationDate
-        DisplayId = "C-" + UniID
+        var DisplayId = "C-" + UniID
         if  dictArray.assStatus == 1 {
             score = dictArray.assMaxScore ?? 0
         } else {
@@ -2061,7 +2060,7 @@ APIActivityTracker.shared.endRequest()
         let regionId = UserDefaults.standard.integer(forKey: "Regionid")
         if regionId == 3 {
             let json = [
-                "DisplayId":DisplayId?.prefix(22) ?? "",
+                "DisplayId":String(DisplayId.prefix(22)),
                 "AppAssessmentId": String(AssessmentId),
                 "ModuleAssessmentId": dictArray.assID ??  0,
                 "AssessmentScore": score,
@@ -2083,7 +2082,7 @@ APIActivityTracker.shared.endRequest()
         else
         {
             let json = [
-                "DisplayId":DisplayId?.prefix(22) ?? "",
+                "DisplayId":String(DisplayId.prefix(22)),
                 "AppAssessmentId": String(AssessmentId),
                 "ModuleAssessmentId": dictArray.assID ??  0,
                 "AssessmentScore": score,
@@ -2118,9 +2117,7 @@ APIActivityTracker.shared.endRequest()
         }
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-       
-        var DisplayId = dictArray.evaluationDate
-        DisplayId = "C-" + UniID
+        var DisplayId = "C-" + UniID
         
         var serverAssessmentId:Int64 = 0
         if let id = dictArray.serverAssessmentId{
@@ -2128,7 +2125,7 @@ APIActivityTracker.shared.endRequest()
         }
         
         let json = [
-            "DisplayId":DisplayId?.prefix(22) ?? "",
+            "DisplayId":String(DisplayId.prefix(22)),
             "AppAssessmentId":  String(AssessmentId),
             "ModuleAssessmentId": dictArray.assID ?? 0,
             "Comment": dictArray.note ?? "",
@@ -2158,17 +2155,16 @@ APIActivityTracker.shared.endRequest()
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
     
-        var DisplayId = dictArray.evaluationDate
         var siteId = String(dictArray.siteId ?? 0)
 
-        DisplayId = "C-" + UniID
+        var DisplayId = "C-" + UniID
         let base64Str = CoreDataHandlerPE().getImageBase64ByImageID(idArray:img)
         totalImageToSync.append(img)
         let imageName = "ImgName-" + siteId + String(img ?? 0)
         let unique = "\(deviceIDFORSERVER)_\(String(img ?? 0))_iOS_"
      
         let json = [
-            "DisplayId":DisplayId?.prefix(22),
+            "DisplayId":String(DisplayId.prefix(22)),
             "Id": AssessmentId,
             "AssessmentDetailId": AssessmentId,
             "ModuleAssessmentId": dictArray.assID ?? 0,
@@ -2314,8 +2310,7 @@ APIActivityTracker.shared.endRequest()
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
 
-        var DisplayId = dictArray.evaluationDate
-        DisplayId = "C-" + UniID
+        var DisplayId = "C-" + UniID
         
         let  HatcheryAntibioticsInt = dictArray.hatcheryAntibioticsDoa
         var HatcheryAntibiotics = false
@@ -2382,7 +2377,7 @@ APIActivityTracker.shared.endRequest()
             "DayOfBagHatcheryAntibiotics": HatcheryAntibiotics,
             "Device_Id": deviceIDFORSERVER,
             "DiluentMfg": dictArray.dCS,
-            "DisplayId": DisplayId?.prefix(22),
+            "DisplayId": String(DisplayId.prefix(22)),
             "ModuleAssessmentCatId": dictArray.catID,
             "DayOfAgeDosage": dayOfAgeData.dosage,
             "StrUniqueId":unique,
@@ -2415,8 +2410,7 @@ APIActivityTracker.shared.endRequest()
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
 
-        var DisplayId = dictArray.evaluationDate
-        DisplayId = "C-" + UniID
+        var DisplayId = "C-" + UniID
         
         let  HatcheryAntibioticsInt = dictArray.hatcheryAntibioticsDoaS
         var HatcheryAntibiotics = false
@@ -2470,7 +2464,7 @@ APIActivityTracker.shared.endRequest()
             
             "DayAgeSubcutaneousBagSizeType": dictArray.dDDT,
             "Device_Id": deviceIDFORSERVER,
-            "DisplayId": DisplayId?.prefix(22) ?? "",
+            "DisplayId": String(DisplayId.prefix(22)),
             "ModuleAssessmentCatId":  dictArray.catID ?? "",
             "StrUniqueId":unique,
             "SecquenceId": 0,
@@ -2510,8 +2504,7 @@ APIActivityTracker.shared.endRequest()
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
 
-        var DisplayId = dictArray.evaluationDate
-        DisplayId = "C-" + UniID
+        var DisplayId = "C-" + UniID
         
         let unique = "\(deviceIDFORSERVER)_\(peCertificateData.id)_iOS_"
         
@@ -2551,7 +2544,7 @@ APIActivityTracker.shared.endRequest()
                 "MicroSamplesName": dictArray.micro,
                 "EvaluationTypeId": 1,
                 "AppAssessmentId": String(AssessmentId),
-                "DisplayId": DisplayId?.prefix(22),
+                "DisplayId": String(DisplayId.prefix(22)),
                 "StrUniqueId":unique,
                 "IsCertiExpired": peCertificateData.isCertExpired,
                 "VacOperatorId": peCertificateData.vacOperatorId ?? 0,
@@ -2581,7 +2574,7 @@ APIActivityTracker.shared.endRequest()
                 "MicroSamplesName": dictArray.micro,
                 "EvaluationTypeId": 1,
                 "AppAssessmentId": String(AssessmentId),
-                "DisplayId": DisplayId?.prefix(22),
+                "DisplayId": String(DisplayId.prefix(22)),
                 "StrUniqueId":unique,
                 "SignatureImg": peCertificateData.signatureImg ?? "",
                 "CertCeatedby": peCertificateData.certCeatedby ?? 0
@@ -2608,8 +2601,7 @@ APIActivityTracker.shared.endRequest()
             serverAssessmentId = Int64(id ?? "") ?? 0
         }
                 
-        var DisplayId = dictArray.evaluationDate
-        DisplayId = "C-" + UniID
+        var DisplayId = "C-" + UniID
         
         let unique = "\(deviceIDFORSERVER)_\(dictArray.residue)_iOS_"
         
@@ -2622,7 +2614,7 @@ APIActivityTracker.shared.endRequest()
             "MicroSamplesName": dictArray.micro,
             "EvaluationTypeId": 1,
             "AppAssessmentId": String(AssessmentId),
-            "DisplayId": DisplayId?.prefix(22),
+            "DisplayId": String(DisplayId.prefix(22)),
             "UserId": dictArray.userID,
             "CreatedAt": "2020-06-11T12:53:38.930Z",
             "DeviceId": deviceIDFORSERVER,
@@ -2653,9 +2645,7 @@ APIActivityTracker.shared.endRequest()
         }
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-  
-        var DisplayId = dictArray.evaluationDate
-        DisplayId = "C-" + UniID
+        var  DisplayId = "C-" + UniID
         
         let unique = "\(deviceIDFORSERVER)_\(dictArray.micro)_iOS_"
         
@@ -2675,7 +2665,7 @@ APIActivityTracker.shared.endRequest()
             "MicroSamplesName": dictArray.micro,
             "EvaluationTypeId": 1,
             "AppAssessmentId": String(AssessmentId),
-            "DisplayId": DisplayId?.prefix(22),
+            "DisplayId": String(DisplayId.prefix(22)),
             "StrUniqueId":unique
         ] as JSONDictionary
         return json
@@ -2863,8 +2853,7 @@ APIActivityTracker.shared.endRequest()
             base64Str2 = CoreDataHandlerPE().getImageBase64ByImageID(idArray:(dict.sig2) ?? 0)
         }
         
-        var DisplayId = dict.evaluationDate
-        DisplayId = "C-" + UniID
+        var DisplayId = "C-" + UniID
         var iStle = 0
 
         let iStleDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_IncubationStyle")
@@ -2940,7 +2929,7 @@ APIActivityTracker.shared.endRequest()
                         "CustomerId": CustomerId ?? 0,
                         "AppCreationTime": UniID.prefix(22),
                         "DeviceId": deviceIDFORSERVER,
-                        "DisplayId":DisplayId?.prefix(22),
+                        "DisplayId":String(DisplayId.prefix(22)),
                         "EvaluationDate": evalDateStr,
                         "EvaluationId": EvaluationId ?? 0,
                         "EvaluationTypeText": dict.evaluationName ?? "",
@@ -2991,7 +2980,7 @@ APIActivityTracker.shared.endRequest()
                         "CustomerId": CustomerId ?? 0,
                         "AppCreationTime": UniID.prefix(22),
                         "DeviceId": deviceIDFORSERVER,
-                        "DisplayId":DisplayId?.prefix(22),
+                        "DisplayId":String(DisplayId.prefix(22)),
                         "EvaluationDate": evalDateStr,
                         "EvaluationId": EvaluationId ?? 0,
                         "EvaluationTypeText": dict.evaluationName ?? "",
@@ -3032,7 +3021,7 @@ APIActivityTracker.shared.endRequest()
             } else {
                 json = [
                     "AppAssessmentId":String(AssessmentId),
-                    "DisplayId":DisplayId?.prefix(22),
+                    "DisplayId":String(DisplayId.prefix(22)),
                     "VisitId": VisitId,
                     "CustomerId": CustomerId,
                     "SiteId": SiteId,
@@ -3097,7 +3086,7 @@ APIActivityTracker.shared.endRequest()
                         "CustomerId": CustomerId ?? 0,
                         "AppCreationTime": UniID.prefix(22),
                         "DeviceId": deviceIDFORSERVER,
-                        "DisplayId":DisplayId?.prefix(22),
+                        "DisplayId":String(DisplayId.prefix(22)),
                         "EvaluationDate": evalDateStr,
                         "EvaluationId": EvaluationId ?? 0,
                         "EvaluationTypeText": dict.evaluationName ?? "",
@@ -3146,7 +3135,7 @@ APIActivityTracker.shared.endRequest()
                         "CustomerId": CustomerId ?? 0,
                         "AppCreationTime": UniID.prefix(22),
                         "DeviceId": deviceIDFORSERVER,
-                        "DisplayId":DisplayId?.prefix(22),
+                        "DisplayId":String(DisplayId.prefix(22)),
                         "EvaluationDate": evalDateStr,
                         "EvaluationId": EvaluationId ?? 0,
                         "EvaluationTypeText": dict.evaluationName ?? "",
@@ -3185,7 +3174,7 @@ APIActivityTracker.shared.endRequest()
                 json = [
                     
                     "AppAssessmentId":String(AssessmentId),
-                    "DisplayId":DisplayId?.prefix(22),
+                    "DisplayId":String(DisplayId.prefix(22)),
                     "VisitId": VisitId,
                     "CustomerId": CustomerId,
                     "SiteId": SiteId,

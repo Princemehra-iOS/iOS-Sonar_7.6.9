@@ -1712,9 +1712,8 @@ extension PEViewStartNewAssessment{
         } else {
             base64Str2 = CoreDataHandlerPE().getImageBase64ByImageID(idArray:(dict.sig2) ?? 0)
         }
-        
-        var DisplayId = dict.evaluationDate
-        DisplayId = "C-" + UniID
+ 
+        let DisplayId = "C-" + UniID
         var iStle = 0
         let iStleDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_IncubationStyle")
         let iStleNameArray = iStleDetailsArray.value(forKey: "incubationStylesName") as? NSArray ?? NSArray()
@@ -1786,7 +1785,7 @@ extension PEViewStartNewAssessment{
         
         json = [
             "AppAssessmentId":String(AssessmentId),
-            "DisplayId":DisplayId?.prefix(22),
+            "DisplayId":DisplayId.prefix(22),
             "VisitId": VisitId,
             "CustomerId": CustomerId,
             "SiteId": SiteId,
@@ -1858,8 +1857,7 @@ extension PEViewStartNewAssessment{
             serverAssessmentId = Int64(id ?? "") ?? 0
         }
 
-        var DisplayId = dictArray.evaluationDate
-        DisplayId = "C-" + UniID
+        let  DisplayId = "C-" + UniID
         
         let  HatcheryAntibioticsInt = inovojectData.invoHatchAntibiotic
         var HatcheryAntibiotics = false
@@ -1921,7 +1919,7 @@ extension PEViewStartNewAssessment{
             "BagSizeType":inovojectData.bagSizeType,
             "Device_Id": deviceIDFORSERVER,
             "DiluentMfg": inovojectData.vaccineMan,
-            "DisplayId": DisplayId?.prefix(22),
+            "DisplayId": DisplayId.prefix(22),
             "HatcheryAntibiotics": HatcheryAntibiotics,
             "ManufacturerId":  ManufacturerId == 0 ? "" : ManufacturerId,
             "ModuleAssessmentCatId": dictArray.catID,
@@ -1963,9 +1961,7 @@ extension PEViewStartNewAssessment{
         }
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-
-        var DisplayId = dictArray.evaluationDate
-        DisplayId = "C-" + UniID
+        var DisplayId = "C-" + UniID
         
         let  HatcheryAntibioticsInt = dictArray.hatcheryAntibioticsDoa
         var HatcheryAntibiotics = false
@@ -2038,7 +2034,7 @@ extension PEViewStartNewAssessment{
             "DayOfBagHatcheryAntibiotics": HatcheryAntibiotics,
             "Device_Id": deviceIDFORSERVER,
             "DiluentMfg": dictArray.dCS,
-            "DisplayId": DisplayId?.prefix(22),
+            "DisplayId": DisplayId.prefix(22),
             "ModuleAssessmentCatId": dictArray.catID,
             "DayOfAgeDosage": dayOfAgeData.dosage,
             "StrUniqueId":unique,
@@ -2072,9 +2068,7 @@ extension PEViewStartNewAssessment{
         }
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
- 
-        var DisplayId = dictArray.evaluationDate
-        DisplayId = "C-" + UniID
+        var DisplayId = "C-" + UniID
         
         let  HatcheryAntibioticsInt = dictArray.hatcheryAntibioticsDoaS
         
@@ -2128,7 +2122,7 @@ extension PEViewStartNewAssessment{
             
             "DayAgeSubcutaneousBagSizeType": dictArray.dDDT,
             "Device_Id": deviceIDFORSERVER,
-            "DisplayId": DisplayId?.prefix(22) ?? "",
+            "DisplayId": DisplayId.prefix(22) ?? "",
             "ModuleAssessmentCatId":  dictArray.catID ?? "",
             "StrUniqueId":unique,
             "SecquenceId": 0,
@@ -2167,9 +2161,7 @@ extension PEViewStartNewAssessment{
         }
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-    
-        var DisplayId = dictArray.evaluationDate
-        DisplayId = "C-" + UniID
+        var DisplayId = "C-" + UniID
         
         let unique = "\(deviceIDFORSERVER)_\(peCertificateData.id)_iOS_"
         var resultString = String()
@@ -2201,7 +2193,7 @@ extension PEViewStartNewAssessment{
             "MicroSamplesName": dictArray.micro,
             "EvaluationTypeId": 1,
             "AppAssessmentId": String(AssessmentId),
-            "DisplayId": DisplayId?.prefix(22),
+            "DisplayId": DisplayId.prefix(22),
             "StrUniqueId":unique,
             "VacOperatorId": peCertificateData.vacOperatorId ?? 0,
             "IsCertiExpired": peCertificateData.isCertExpired,
@@ -2231,8 +2223,8 @@ extension PEViewStartNewAssessment{
         }
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-        var DisplayId = dictArray.evaluationDate
-        DisplayId = "C-" + UniID
+       
+        var DisplayId = "C-" + UniID
         
         let unique = "\(deviceIDFORSERVER)_\(dictArray.residue)_iOS_"
         
@@ -2245,7 +2237,7 @@ extension PEViewStartNewAssessment{
             "MicroSamplesName": dictArray.micro,
             "EvaluationTypeId": 1,
             "AppAssessmentId": String(AssessmentId),
-            "DisplayId": DisplayId?.prefix(22),
+            "DisplayId": DisplayId.prefix(22),
             "UserId": dictArray.userID,
             "CreatedAt": "2020-06-11T12:53:38.930Z",
             "DeviceId": deviceIDFORSERVER,
@@ -2276,9 +2268,7 @@ extension PEViewStartNewAssessment{
         }
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
- 
-        var DisplayId = dictArray.evaluationDate
-        DisplayId = "C-" + UniID
+        var DisplayId = "C-" + UniID
         
         let timestamp = Date().currentTimeMillis()
         let unique = "\(deviceIDFORSERVER)_\(dictArray.micro)_iOS_"
@@ -2299,7 +2289,7 @@ extension PEViewStartNewAssessment{
             "MicroSamplesName": dictArray.micro,
             "EvaluationTypeId": 1,
             "AppAssessmentId": String(AssessmentId),
-            "DisplayId": DisplayId?.prefix(22),
+            "DisplayId": DisplayId.prefix(22),
             "StrUniqueId":unique
         ] as JSONDictionary
         return json
@@ -2348,8 +2338,7 @@ extension PEViewStartNewAssessment{
             AssessmentId = dictArray.draftNumber ?? 0
         }
         var score = 0
-        var DisplayId = dictArray.evaluationDate
-        DisplayId = "C-" + UniID
+        var DisplayId = "C-" + UniID
         if  dictArray.assStatus == 1 {
             score = dictArray.assMaxScore ?? 0
         } else {
@@ -2394,7 +2383,7 @@ extension PEViewStartNewAssessment{
         let regionId = UserDefaults.standard.integer(forKey: "Regionid")
         if regionId == 3 {
             let json = [
-                "DisplayId":DisplayId?.prefix(22) ?? "",
+                "DisplayId":DisplayId.prefix(22) ?? "",
                 "AppAssessmentId": String(AssessmentId),
                 "ModuleAssessmentId": dictArray.assID ??  0,
                 "AssessmentScore": score,
@@ -2415,7 +2404,7 @@ extension PEViewStartNewAssessment{
         else
         {
             let json = [
-                "DisplayId":DisplayId?.prefix(22) ?? "",
+                "DisplayId":DisplayId.prefix(22),
                 "AppAssessmentId": String(AssessmentId),
                 "ModuleAssessmentId": dictArray.assID ??  0,
                 "AssessmentScore": score,
@@ -2450,9 +2439,7 @@ extension PEViewStartNewAssessment{
         }
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-     
-        var DisplayId = dictArray.evaluationDate
-        DisplayId = "C-" + UniID
+        var DisplayId = "C-" + UniID
         
         var serverAssessmentId:Int64 = 0
         if let id = dictArray.serverAssessmentId{
@@ -2460,7 +2447,7 @@ extension PEViewStartNewAssessment{
         }
         
         let json = [
-            "DisplayId":DisplayId?.prefix(22) ?? "",
+            "DisplayId":DisplayId.prefix(22) ?? "",
             "AppAssessmentId":  String(AssessmentId),
             "ModuleAssessmentId": dictArray.assID ?? 0,
             "Comment": dictArray.note ?? "",
@@ -2599,11 +2586,9 @@ extension PEViewStartNewAssessment{
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
  
-        var DisplayId = dictArray.evaluationDate
+      
         var siteId = String(dictArray.siteId ?? 0)
-  
- 
-        DisplayId = "C-" + UniID
+        var DisplayId = "C-" + UniID
         let base64Str = CoreDataHandlerPE().getImageBase64ByImageID(idArray:img)
         totalImageToSync.append(img)
         let imageName = "ImgName-" + siteId + String(img ?? 0)
@@ -2905,11 +2890,7 @@ extension PEViewStartNewAssessment{
         if ddd != "" {
             dateSig = self.convertDateFormat(inputDate: ddd)
         }
-        
-        var DisplayId = dict.evaluationDate
        
-        DisplayId = "C-" + UniID
-        
         var json : JSONDictionary = JSONDictionary()
         if dateSig != ""{
             dict.evaluationDate = dateSig
@@ -2999,6 +2980,7 @@ extension PEViewStartNewAssessment{
             for objn in  peNewAssessment.vMixer {
                 let data = CoreDataHandlerPE().getCertificateData(doaId: objn)
                 if idArr.contains(data!.id ?? 0){
+                    // no data found..
                 }else{
                     idArr.append(data!.id ?? 0)
                     if data != nil{
