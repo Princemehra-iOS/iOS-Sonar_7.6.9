@@ -764,10 +764,16 @@ extension PVEDashboardViewController: SyncBtnDelegate,UnsyncedDelegate {
             let createdAt = (dict).value(forKey: "createdAt") as? String
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: jsonDict, options: [])
-                if let status = EmailReportManager.shared.sendEmailReport(dataToAttach: jsonData,from: self, assessmentId:syncId,date: createdAt, isPE: false), !status.0 {
-                    if let filePath = status.1 {
-                        print(filePath)
-                    }
+                if let (success, filePath) = EmailReportManager.shared
+                    .sendEmailReport(dataToAttach: jsonData,
+                                     from: self,
+                                     assessmentId: syncId,
+                                     date: createdAt,
+                                     isPE: false),
+                   !success,
+                   let filePath {
+
+                    print(filePath)
                 }
             } catch {
                 print("Error converting merged dictionary to JSON: \(error)")
@@ -1227,7 +1233,7 @@ extension PVEDashboardViewController: SyncBtnDelegate,UnsyncedDelegate {
         return scoreArr
     }
     
-    
+    		
     
     func createSyncRequest(dict: AnyObject) -> [String: AnyObject]{
         

@@ -329,73 +329,6 @@ class PEDraftStartNewAssessment: BaseViewController {
     }
     
     
-    fileprivate func handleCase0(_ rightConst: Int, _ leftConst: Int) {
-//        switch rightConst {
-//        case 1:
-//            if heightNumberOfEggsView.constant == 94 {
-//                //notesTop.constant = CGFloat((leftConst * 55 ) + 30)
-//            } else {
-//                //notesTop.constant = CGFloat((leftConst * 55 ) + 40 )
-//            }
-//        case 2:
-//            //notesTop.constant = CGFloat((leftConst * 55 ) + 20)
-//        default:
-//            //notesTop.constant = CGFloat((leftConst * 55 ) + 100)
-//            if heightNumberOfEggsView.constant == 94{
-//                //notesTop.constant = CGFloat((leftConst * 55 ) + 40)
-//            }
-//        }
-    }
-    
-    fileprivate func handleCase1(_ rightConst: Int, _ leftConst: Int) {
-//        switch rightConst {
-//        case 1:
-//            if heightNumberOfEggsView.constant == 94{
-//                if heightManufacturerView.constant == 94{
-//                    //notesTop.constant = CGFloat((leftConst * 55 ) - 20)
-//                }else{
-//                    //notesTop.constant = CGFloat((leftConst * 55 ) + 20)
-//                }
-//            }else{
-//                //notesTop.constant = CGFloat((leftConst * 55 ) + 20)
-//            }
-//        case 2:
-//            //notesTop.constant = CGFloat((leftConst * 55 ) - 20)
-//        default:
-//            
-//            if heightNumberOfEggsView.constant == 94 {
-//                //notesTop.constant = CGFloat((leftConst * 55 ) + 20)
-//            }else{
-//                //notesTop.constant = CGFloat((leftConst * 55 ) + 75)
-//            }
-//        }
-    }
-    
-    fileprivate func handleCase2(_ rightConst: Int, _ leftConst: Int) {
-        switch rightConst {
-            
-        case 1:
-            if heightNumberOfEggsView.constant == 94 {
-                if heightManufacturerView.constant == 94 {
-                    //notesTop.constant = CGFloat((leftConst * 55 ) - 75)
-                }else{
-                    //notesTop.constant = CGFloat((leftConst * 55 ) - 35)
-                }
-            }else{
-                //notesTop.constant = CGFloat((leftConst * 55 ) - 30)
-            }
-        case 2:
-            if heightNumberOfEggsView.constant == 94 {
-                //notesTop.constant = CGFloat((leftConst * 55 ) - 85)
-            }
-        default:
-            if heightNumberOfEggsView.constant == 94 {
-                //notesTop.constant = CGFloat((leftConst * 55 ) - 30)
-            }else{
-                //notesTop.constant = CGFloat((leftConst * 55 ) + 20)
-            }
-        }
-    }
     
     func assignConstraint(otherEgg:Int = 0){
         let leftConst = leftConstraint()
@@ -406,11 +339,11 @@ class PEDraftStartNewAssessment: BaseViewController {
         
         switch leftConst {
         case 0:
-            handleCase0(rightConst, leftConst)
+            print(leftConst)
         case 1:
-            handleCase1(rightConst, leftConst)
+            print(leftConst)
         case 2:
-            handleCase2(rightConst, leftConst)
+            print(leftConst)
         default:
             break;
         }

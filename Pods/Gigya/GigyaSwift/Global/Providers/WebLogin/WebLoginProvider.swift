@@ -57,7 +57,8 @@ final class WebLoginProvider: Provider {
 
                 let data = ["regToken": regToken, "errorCode": errorCode] as [String : Any]
 
-                let objData = try! JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+                let objData = try? JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+
 
                 let errorObject = NetworkError.gigyaError(data: GigyaResponseModel(statusCode: .unknown, errorCode: errorCode, callId: callId, errorMessage: errorDesc, sessionInfo: nil, requestData: objData))
 

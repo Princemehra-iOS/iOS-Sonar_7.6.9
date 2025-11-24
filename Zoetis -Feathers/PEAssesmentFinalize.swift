@@ -502,23 +502,6 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
         }
     }
     
-    // MARK: - Get Vaccine Mixture List
-    private func getVaccineMixerList(customerId: Int, siteId: Int, countryId: Int, _ completion: @escaping (_ status: Bool) -> Void){
-        let parameter = [
-            "siteId": "\(siteId)",
-            "customerId": "\(customerId)",
-            "countryId": "\(countryId)"
-        ] as JSONDictionary
-        ZoetisWebServices.shared.getMixerList(controller: self, parameters: parameter) { [weak self] (json, error) in
-            guard let self = self, error == nil else { return }
-            //  self.handleVaccineMixer(json)
-            self.deleteAllData("PE_VaccineMixerDetail")
-            
-            VaccineMixerResponse(json)
-            completion(true)
-        }
-    }
-    
     // MARK: - Refresh Score
     @objc func  refreshScores(_ notification: NSNotification){
         let sanitationIndex =  notification.userInfo?["index"]  as? Int
@@ -799,29 +782,7 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
         
     }
     
-    private func getAllDateArrayStored() -> [PENewAssessment]{
-        var peAssessmentArray : [PENewAssessment] = []
-        let drafts  = CoreDataHandlerPE().getSessionAssessmentArrayPEObject(ofCurrentAssessment:true)
-        
-        let draftsNew  = CoreDataHandlerPE().getSessionAssessmentArrayPEObjectDraft(ofCurrentAssessment:true)
-        
-        var carColIdArray : [Int] = []
-        for obj in drafts {
-            if !carColIdArray.contains(obj.dataToSubmitNumber ?? 0){
-                carColIdArray.append(obj.dataToSubmitNumber ?? 0)
-                peAssessmentArray.append(obj)
-            }
-        }
-        
-        var carColIdArrayraft : [Int] = []
-        for obj in draftsNew {
-            if !carColIdArrayraft.contains(obj.draftNumber ?? 0){
-                carColIdArrayraft.append(obj.draftNumber ?? 0)
-                peAssessmentArray.append(obj)
-            }
-        }
-        return peAssessmentArray
-    }
+    
     
     // MARK: - Get all offline session
     func getAssessmentInOfflineFromDb() -> Int {

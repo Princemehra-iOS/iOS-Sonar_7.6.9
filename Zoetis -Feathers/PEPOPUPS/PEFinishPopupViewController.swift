@@ -1068,12 +1068,6 @@ extension PEFinishPopupViewController: YPSignatureDelegate {
             return
         }
     }
-
-    private func saveImageInPEModule(imageData:Data)->Int{
-        let imageCount = getImageCountInPEModule()
-        CoreDataHandlerPE().saveImageInPEFinishModule(imageId: imageCount+1, imageData: imageData)
-        return imageCount+1
-    }
     
     func getImageCountInPEModule() -> Int {
         let allAssesmentDraftArr = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_ImageEntity")

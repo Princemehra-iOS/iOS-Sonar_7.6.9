@@ -2005,24 +2005,6 @@ extension PEDraftStartNewAssesmentINT{
         return pECategoriesAssesmentsResponse.peCategoryArray.count ?? 0
     }
     
-    private func dataDuplicacyCheck(assId: String, customerId: Int, siteId: Int, evalDate: String, evaulaterId: Int, _ completion: @escaping (_ status: Bool) -> Void){
-        let parameter = [
-            "AssessmentId":assId,
-            "SiteId": siteId,
-            "CustomerId": customerId,
-            "EvaulaterId": evaulaterId,
-            "EvaluationDate": evalDate
-        ] as JSONDictionary
-        ZoetisWebServices.shared.getDuplicacyCheck(controller: self, parameters: parameter, completion: { [weak self] (json, error) in
-            guard let strongSelf = self, error == nil else { return }
-            if json["Data"].boolValue == true{
-                completion(false)
-            }else{
-                completion(true)
-            }
-        })
-    }
-    
     private func cleanSession(){
         
         let peNewAssessmentSurrentIs =   PENewAssessment()
@@ -2119,7 +2101,6 @@ extension PEDraftStartNewAssesmentINT : UITextFieldDelegate{
             if string == "" {
                 return true
             }
-            let isValid = string.stringWithoutWhitespaces.isNumber
             let aSet = CharacterSet(charactersIn:"0123456789").inverted
             let compSepByCharInSet = string.components(separatedBy: aSet)
             let numberFiltered = compSepByCharInSet.joined(separator: "")
