@@ -148,7 +148,7 @@ class VaccinationDashboardVC: BaseViewController{
 				var tempCert = certification
 				var approverId: Int?
                 var cstmrId: Int?
-                var cstmName: String?
+             
                 var siteId: String?
                 var SiteName: String?
                 var selectedFSM: Int?
@@ -240,7 +240,7 @@ class VaccinationDashboardVC: BaseViewController{
                                             custShipping = details.custShipping
                                             selectedFsmId = details.selectedFsmId
                                             certDateIs = details.dateSchedule
-                                            certDateIs = details.htchMngr
+                                            manager = details.htchMngr
                                         }
                                         
                                     }

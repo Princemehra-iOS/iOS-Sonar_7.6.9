@@ -3640,7 +3640,7 @@ extension PEViewAssesmentFinalize{
             dateSig = self.convertDateFormat(inputDate: ddd)
         }
         
-        var json : JSONDictionary = JSONDictionary()
+       
         if dateSig != ""{
             dict.evaluationDate = dateSig
         }else {
@@ -3690,7 +3690,7 @@ extension PEViewAssesmentFinalize{
         }
         
         tempArr.removeAll()
-        
+        var json : JSONDictionary 
         json = [
             "AssessmentId":serverAssessmentId,
             "DeviceId": deviceIDFORSERVER,
@@ -3784,7 +3784,7 @@ extension PEViewAssesmentFinalize{
         }
         var score = 0
        
-        var DisplayId = "C-" + UniID
+        let DisplayId = "C-" + UniID
         if  dictArray.assStatus == 1 {
             score = dictArray.assMaxScore ?? 0
         } else {
@@ -3889,7 +3889,7 @@ extension PEViewAssesmentFinalize{
         }
 
        
-        var DisplayId = "C-" + UniID
+        let DisplayId = "C-" + UniID
         
         var serverAssessmentId:Int64 = 0
         if let id = dictArray.serverAssessmentId{
@@ -3968,7 +3968,7 @@ extension PEViewAssesmentFinalize{
                 }
             }
             for objCt in catArray{
-                var catArrayForTableIs = CoreDataHandlerPE().fetchCustomerForSyncWithCatIDDraft(objCt.sequenceNo as NSNumber? ?? 0,draftNumber:peNewAssessment  .draftNumber as? NSNumber ?? 0) as? [PENewAssessment] ?? []
+                let catArrayForTableIs = CoreDataHandlerPE().fetchCustomerForSyncWithCatIDDraft(objCt.sequenceNo as NSNumber? ?? 0,draftNumber:peNewAssessment  .draftNumber as? NSNumber ?? 0) as? [PENewAssessment] ?? []
                 
                 catAllRowArray.append(contentsOf: catArrayForTableIs)
             }
@@ -4038,7 +4038,7 @@ extension PEViewAssesmentFinalize{
         }
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
         let siteId = String(dictArray.siteId ?? 0)
-        var DisplayId = "C-" + UniID
+        let DisplayId = "C-" + UniID
         let base64Str = CoreDataHandlerPE().getImageBase64ByImageID(idArray:img)
         totalImageToSync.append(img)
         let imageName = "ImgName-" + siteId + String(img ?? 0)
@@ -4135,7 +4135,7 @@ extension PEViewAssesmentFinalize{
                 if  arrayCount > 0 {
                     let ss  = imgDic as?  [JSONDictionary]  ?? []
                     let  paramForImages  = ["AssessmentImages":ss] as JSONDictionary
-                    arrayCount  = 0
+                  
                     imgDic.removeAll()
                     self.callRequest4(paramForImages:paramForImages)
                 }
@@ -4198,13 +4198,13 @@ extension PEViewAssesmentFinalize{
                 }
                 if  arrayCount > 0 {
                     let ss  = imgDic as?  [JSONDictionary]  ?? []
-                    var  paramForImages  = ["AssessmentImages":ss] as JSONDictionary
-                    arrayCount  = 0
+                    let  paramForImages  = ["AssessmentImages":ss] as JSONDictionary
+                    
                     imgDic.removeAll()
                     self.callRequest4(paramForImages:paramForImages)
                 }
             } else {
-                var  paramForImages  = ["AssessmentImages":imgArray] as JSONDictionary
+                let  paramForImages  = ["AssessmentImages":imgArray] as JSONDictionary
                 self.callRequest4(paramForImages:paramForImages)
             }
             

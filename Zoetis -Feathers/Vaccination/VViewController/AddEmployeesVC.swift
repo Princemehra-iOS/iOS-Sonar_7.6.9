@@ -645,15 +645,12 @@ class AddEmployeesVC: BaseViewController, UITextFieldDelegate{
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        let currentString: NSString = textField.text! as NSString
-      
-      
+              
         let  char = string.cString(using: String.Encoding.utf8)!
         let isBackSpace = strcmp(char, "\\b")
         
         if (isBackSpace == -92){
-            
+            // no case here.
         } else if ((textField.text?.count)! > 45  ){
             return false
         }
