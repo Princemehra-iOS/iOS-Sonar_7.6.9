@@ -25,7 +25,7 @@ final  public class SubmittedCertificationsService{
                         
                         switch Int64(trainingId) {
                         case 1:
-                            var status = VaccinationCertificationStatus.inProgress
+                             status = VaccinationCertificationStatus.inProgress
                         case 2:
                             status = VaccinationCertificationStatus.draft
                         case 3 :
@@ -40,14 +40,12 @@ final  public class SubmittedCertificationsService{
                     dateFormatterObj.timeZone = Calendar.current.timeZone
                     dateFormatterObj.locale = Calendar.current.locale
                     dateFormatterObj.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-                    //                    dateFormatterObj.calendar = Calendar(identifier: .gregorian)
-                    //                    dateFormatterObj.timeZone = TimeZone(secondsFromGMT: 0)
-                    
                     
                     VaccinationDashboardDAO.sharedInstance.updateSubmittedDate(userId:userId,  certificationId: certObj?.certificationId ?? "", status: status,certCategoryId:certObj?.certificationCategoryId ?? "", certObj: certObj!,submittedDate: certObj?.submittedDate )
                     
                     
                     if let employeeArr = certificationObj.operatorInfo{
+                        debugPrint(employeeArr)
                         let employeeArr = certificationObj.operatorInfo
                         var i:Int32 = 1
                         for employee in employeeArr!{

@@ -181,7 +181,7 @@ final public  class UserFilledQuestionnaireDAO{
     }
     
     func getCategoryEmployees(certificationId:String, userId:String, categoryId:String, typeId:String) -> [VaccinationEmployeeVM]{
-        var empArr = [VaccinationEmployeeVM]()
+       
         let catEmpBridgeArr = AddEmployeesDAO.sharedInstance.fetchEmpByCatId(catId:categoryId, typeId:typeId, userId:userId, certificationId:certificationId)
         var predicateList = [NSPredicate]()
         for empBridgeObj in catEmpBridgeArr{
@@ -189,7 +189,7 @@ final public  class UserFilledQuestionnaireDAO{
             predicateList.append(predicate)
             
         }
-        empArr = AddEmployeesDAO.sharedInstance.getAllCertEmployees(predicateArr:predicateList)
+        var empArr = AddEmployeesDAO.sharedInstance.getAllCertEmployees(predicateArr:predicateList)
         return empArr
         
     }
@@ -312,13 +312,12 @@ final public  class UserFilledQuestionnaireDAO{
     }
     
     func getUserQuestionnaire(userId:String, certificationId:String,quesId:String)->VaccinationFilledQuetions {
-        var questionArr = [VaccinationFilledQuetions]()
         let fetchRequest  = NSFetchRequest<NSFetchRequestResult>(entityName: "VaccinationFilledQuetions")
         fetchRequest.returnsObjectsAsFaults = false
         fetchRequest.predicate = NSPredicate(format:"userId = %@ AND certificationId = %@ AND questionId = %@", userId, certificationId,quesId)
         
         do {
-            questionArr = try managedContext.fetch(fetchRequest) as! [VaccinationFilledQuetions]
+            var questionArr = try managedContext.fetch(fetchRequest) as! [VaccinationFilledQuetions]
             return questionArr[0]
         } catch{
             debugPrint("Error while fetching User Questionnaire Data in \(type(of: self))")
@@ -390,7 +389,7 @@ final public  class UserFilledQuestionnaireDAO{
                         if let qSeq = questionObj.sequenceNo{
                             
                             
-                            questionMOObj.sequenceNo = ((qSeq)) as NSNumber?
+                            questionMOObj.sequenceNo = (qSeq) as NSNumber?
                         }
                         
                         
@@ -471,7 +470,7 @@ final public  class UserFilledQuestionnaireDAO{
                         
                         if let qSeq = questionObj.sequenceNo{
                             
-                            questionMOObj.sequenceNo = ((qSeq)) as NSNumber?
+                            questionMOObj.sequenceNo = (qSeq) as NSNumber?
                         }
                         questionMOObj.questionType  = questionObj.types
                         questionMOObj.userComments  = questionObj.comments
@@ -620,28 +619,15 @@ final public  class UserFilledQuestionnaireDAO{
             
             if let addresses = shippingAddressDetails, !addresses.isEmpty {
                      
-                     // Save primary address (index 0) if exists
                      if addresses.indices.contains(0) {
                          VaccinationCustomersDAO.sharedInstance.saveShippingInfoInDB(newAssessment: [addresses[0]])
                      }
 
-                     // Save other address (index 1) if exists
                      if addresses.indices.contains(1) {
                          VaccinationCustomersDAO.sharedInstance.saveOtherAddressInDB(newAssessment: [addresses[1]])
                      }
                  }
 
-            
-            
-//            if shippingAddressDetails!.count > 0 {
-//                for value in shippingAddressDetails! {
-//                    //VaccinationCustomersDAO.sharedInstance.saveShippingInfoInDB(newAssessment: shippingAddressDetails)
-//                    VaccinationCustomersDAO.sharedInstance.saveShippingInfoInDB(newAssessment: [shippingAddressDetails![0]])
-//                    VaccinationCustomersDAO.sharedInstance.saveOtherAddressInDB(newAssessment: [shippingAddressDetails![1]])
-//
-//                    
-//                }
-//            }
             deleteVaccinationQuestions(userId: userId, certificationId: certificationId)
             AddEmployeesDAO.sharedInstance.deleteEmpByCertificationId(userId: userId, certificationId: certificationId)
             convertQuestDTOtoMO( userId:userId, certificationId:certificationId, operatorCert:operatorCert, safetyCert:safetyCert, vaccineMixingCert: vaccineMixCert, shippingDetails: shippingAddressDetails)
