@@ -763,24 +763,7 @@ class PEViewStartNewAssessment: BaseViewController {
     func showFlockView(){
         flockView.isHidden = false
     }
-    // MARK: - Get VAccine Mixture API
-    private func getVaccineMixerList(customerId: Int, siteId: Int, countryId: Int, _ completion: @escaping (_ status: Bool) -> Void){
-        let parameter = [
-            "siteId": "\(siteId)",
-            "customerId": "\(customerId)",
-            "countryId": "\(countryId)"
-        ] as JSONDictionary
-        ZoetisWebServices.shared.getMixerList(controller: self, parameters: parameter) { [weak self] (json, error) in
-            guard let self = self, error == nil else { return }
-            self.handleVaccineMixer(json)
-        }
-    }
-    // MARK: - Handle Vaccine Mixture API Responce
-    private func handleVaccineMixer(_ json: JSON) {
-        self.deleteAllData("PE_VaccineMixerDetail")
-        VaccineMixerResponse(json)
-        
-    }
+
     // MARK: - Setup UI Method
     func setupUI(){
         btnNext.setNextButtonUI()
@@ -1558,8 +1541,6 @@ extension PEViewStartNewAssessment{
                 deviceIDFORSERVER = dict.assDetail2 ?? ""
             }
             AssessmentId = dict.draftNumber ?? 0
-            Draft = 1
-            Complete = 0
             SaveType = 0
             saveTypeString.append(00)
         }
@@ -1594,12 +1575,14 @@ extension PEViewStartNewAssessment{
         let visitDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Approvers")
         let visitNameArray = visitDetailsArray.value(forKey: "username") as? NSArray ?? NSArray ()
         let visitIDArray = visitDetailsArray.value(forKey: "id") as? NSArray ?? NSArray ()
-        if dict.selectedTSR?.count ?? 0 > 0 {
-            if visitNameArray.contains(dict.selectedTSR ?? ""){
-                let indexOfe =  visitNameArray.index(of: dict.selectedTSR ?? "") //
-                TSRId = visitIDArray[indexOfe] as? Int ?? 0
-            }
+
+        if (dict.selectedTSR?.count ?? 0) > 0,
+           visitNameArray.contains(dict.selectedTSR ?? "") {
+
+            let indexOfe = visitNameArray.index(of: dict.selectedTSR ?? "")
+            TSRId = visitIDArray[indexOfe] as? Int ?? 0
         }
+
         
         let HatchAnti = false
         var Camera = false
@@ -1609,15 +1592,15 @@ extension PEViewStartNewAssessment{
         
         var man = dict.manufacturer  ?? ""
         var manOther =  ""
-        if  man != "" {
-            if let character = dict.manufacturer?.character(at:0) {
-                if character == "S"{
-                    let str =  man.replacingOccurrences(of: "S", with: "")
-                    manOther = str
-                    man = "Other"
-                }
-            }
+        if man != "",
+           let character = dict.manufacturer?.character(at: 0),
+           character == "S" {
+
+            let str = man.replacingOccurrences(of: "S", with: "")
+            manOther = str
+            man = "Other"
         }
+
         var eggg = ""
         var egggOther =  ""
         let xx = String(dict.noOfEggs ?? 000)
@@ -1634,15 +1617,14 @@ extension PEViewStartNewAssessment{
         
         var breeedd = dict.breedOfBird  ?? ""
         var breeeddOther =  ""
-        if breeedd != "" {
-            if let character = breeedd.character(at:0) {
-                if character == "S".character(at: 0){
-                    let str =  breeedd.replacingOccurrences(of: "S", with: "")
-                    breeeddOther = str
-                    breeedd = "Other"
-                    
-                }
-            }
+
+        if breeedd != "",
+           let character = breeedd.character(at: 0),
+           character == "S".character(at: 0) {
+
+            let str = breeedd.replacingOccurrences(of: "S", with: "")
+            breeeddOther = str
+            breeedd = "Other"
         }
         breeeddOther = dict.breedOfBirdOther ?? ""
         
@@ -1682,7 +1664,6 @@ extension PEViewStartNewAssessment{
         let Notes = dict.notes
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/YYYY HH:mm:ss Z"
-        let date = dict.evaluationDate?.toDate(withFormat: Constants.MMddyyyyStr)
         var dateSig = ""
         let ddd = dict.sig_Date ?? ""
         if ddd != "" {
@@ -1737,7 +1718,7 @@ extension PEViewStartNewAssessment{
             rollID2 = rollIDArray[indexOfe] as? Int ?? 0
         }
         
-        var json : JSONDictionary = JSONDictionary()
+      
         if dateSig != ""{
             // date sig is not empty.
         }else{
@@ -1782,7 +1763,7 @@ extension PEViewStartNewAssessment{
                 evalDateStr = formattedDateString
             }
         }
-        
+        var json : JSONDictionary
         json = [
             "AppAssessmentId":String(AssessmentId),
             "DisplayId":DisplayId.prefix(22),
@@ -1848,9 +1829,7 @@ extension PEViewStartNewAssessment{
         if AssessmentId == 0 {
             AssessmentId = dictArray.draftNumber ?? 0
         }
-        
-        let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-     
+             
         var serverAssessmentId:Int64 = 0
         
         if let id = dictArray.serverAssessmentId{
@@ -1891,10 +1870,10 @@ extension PEViewStartNewAssessment{
             VaccineId = 0
         }
 
-        var vNameDetailsArrayIS = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VNames")
-        var vNameArrayIS = vNameDetailsArrayIS.value(forKey: "name") as? NSArray ?? NSArray()
-        var vNameIDArrayIS = vNameDetailsArrayIS.value(forKey: "id") as? NSArray ?? NSArray()
-        var vNameMfgIdArrayIS = vNameDetailsArrayIS.value(forKey: "mfgId") as? NSArray ?? NSArray()
+        let vNameDetailsArrayIS = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VNames")
+        let vNameArrayIS = vNameDetailsArrayIS.value(forKey: "name") as? NSArray ?? NSArray()
+        let vNameIDArrayIS = vNameDetailsArrayIS.value(forKey: "id") as? NSArray ?? NSArray()
+        let vNameMfgIdArrayIS = vNameDetailsArrayIS.value(forKey: "mfgId") as? NSArray ?? NSArray()
         
         if vNameArrayIS.contains(inovojectData.name){
             let indexOfe = vNameArrayIS.index(of: inovojectData.name) // 3
@@ -1960,7 +1939,6 @@ extension PEViewStartNewAssessment{
             AssessmentId = dictArray.draftNumber ?? 0
         }
         
-        let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
         var DisplayId = "C-" + UniID
         
         let  HatcheryAntibioticsInt = dictArray.hatcheryAntibioticsDoa
@@ -1972,9 +1950,9 @@ extension PEViewStartNewAssessment{
         var x = 0
 
 
-        var ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
-        var ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
-        var ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
+        let ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
+        let ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
+        let ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
         
         if dayOfAgeData.ampuleSize != "" {
             let xx = dayOfAgeData.ampuleSize?.replacingOccurrences(of: " ", with: "")
@@ -1985,13 +1963,11 @@ extension PEViewStartNewAssessment{
         var VaccineId = 0
         var otherVaccine = ""
         var ManufacturerId = 0
-        var vNameArray = NSArray()
-        var vNameIDArray = NSArray()
-        var vNameDetailsArray = NSArray()
-        vNameDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 1)
-        vNameArray = vNameDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
-        vNameIDArray = vNameDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
-        var vNameMfgIdArray = vNameDetailsArray.value(forKey: "mfgId") as? NSArray ?? NSArray()
+
+        var vNameDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 1)
+        var vNameArray = vNameDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
+        var vNameIDArray = vNameDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+        let vNameMfgIdArray = vNameDetailsArray.value(forKey: "mfgId") as? NSArray ?? NSArray()
         
         if vNameArray.contains(dayOfAgeData.name){
             let indexOfe =  vNameArray.index(of: dayOfAgeData.name)
@@ -2068,7 +2044,7 @@ extension PEViewStartNewAssessment{
         }
         
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-        var DisplayId = "C-" + UniID
+        let DisplayId = "C-" + UniID
         
         let  HatcheryAntibioticsInt = dictArray.hatcheryAntibioticsDoaS
         
@@ -2078,9 +2054,9 @@ extension PEViewStartNewAssessment{
         }
         
         var x = 0
-        var ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
-        var ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
-        var ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
+        let ampleSizeDetailArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
+        let ampleSizeesNameArray = ampleSizeDetailArray.value(forKey: "size") as? NSArray ?? NSArray()
+        let ampleSizeIDArray = ampleSizeDetailArray.value(forKey: "id") as? NSArray ?? NSArray()
         if dayOfAgeData.ampuleSize != "" {
             let xx = dayOfAgeData.ampuleSize?.replacingOccurrences(of: " ", with: "")
             let indexOfe =  ampleSizeesNameArray.index(of: xx)
@@ -2090,10 +2066,10 @@ extension PEViewStartNewAssessment{
         var otherVaccine = ""
         var ManufacturerId = 0
 
-        var vNameDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 2)
-        var vNameArray = vNameDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
-        var vNameIDArray = vNameDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
-        var vNameMfgIdArray = vNameDetailsArray.value(forKey: "mfgId") as? NSArray ?? NSArray()
+        let vNameDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 2)
+        let vNameArray = vNameDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
+        let vNameIDArray = vNameDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+        let vNameMfgIdArray = vNameDetailsArray.value(forKey: "mfgId") as? NSArray ?? NSArray()
         if vNameArray.contains(dayOfAgeData.name){
             let indexOfe =  vNameArray.index(of: dayOfAgeData.name) //
             VaccineId = vNameIDArray[indexOfe] as? Int ?? 0
@@ -2102,9 +2078,9 @@ extension PEViewStartNewAssessment{
             otherVaccine = dayOfAgeData.name ?? ""
         }
 
-        var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
-        var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
-        var vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
+        let vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
+        let vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
+        let vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "id") as? NSArray ?? NSArray()
         
         if vManufacutrerNameArray.contains(dayOfAgeData.vaccineMan){
             let indexOfe =  vManufacutrerNameArray.index(of: dayOfAgeData.vaccineMan) //
@@ -2160,8 +2136,7 @@ extension PEViewStartNewAssessment{
             serverAssessmentId = Int64(id ?? "") ?? 0
         }
         
-        let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-        var DisplayId = "C-" + UniID
+        let DisplayId = "C-" + UniID
         
         let unique = "\(deviceIDFORSERVER)_\(peCertificateData.id)_iOS_"
         var resultString = String()
@@ -2222,10 +2197,7 @@ extension PEViewStartNewAssessment{
             serverAssessmentId = Int64(id ?? "") ?? 0
         }
         
-        let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-       
-        var DisplayId = "C-" + UniID
-        
+        let DisplayId = "C-" + UniID
         let unique = "\(deviceIDFORSERVER)_\(dictArray.residue)_iOS_"
         
         let json = [
@@ -2267,10 +2239,8 @@ extension PEViewStartNewAssessment{
             serverAssessmentId = Int64(id ?? "") ?? 0
         }
         
-        let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-        var DisplayId = "C-" + UniID
+        let DisplayId = "C-" + UniID
         
-        let timestamp = Date().currentTimeMillis()
         let unique = "\(deviceIDFORSERVER)_\(dictArray.micro)_iOS_"
         
         let json = [
@@ -2368,11 +2338,13 @@ extension PEViewStartNewAssessment{
             let visitDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Frequency")
             let visitNameArray = visitDetailsArray.value(forKey: "frequencyName") as? NSArray ?? NSArray()
             let visitIDArray = visitDetailsArray.value(forKey: "frequencyId") as? NSArray ?? NSArray()
-            if dictArray.frequency?.count ?? 0 > 0 {
-                if visitNameArray.contains(dictArray.frequency ?? ""){
-                    let indexOfe =  visitNameArray.index(of: dictArray.frequency ?? "")
-                    FrequencyValue = visitIDArray[indexOfe] as? Int ?? 0
-                }
+
+            if let freq = dictArray.frequency,
+               freq.count > 0,
+               visitNameArray.contains(freq) {
+
+                let indexOfe = visitNameArray.index(of: freq)
+                FrequencyValue = visitIDArray[indexOfe] as? Int ?? 0
             }
         }
         
@@ -2438,8 +2410,7 @@ extension PEViewStartNewAssessment{
             AssessmentId = dictArray.draftNumber ?? 0
         }
         
-        let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
-        var DisplayId = "C-" + UniID
+        let DisplayId = "C-" + UniID
         
         var serverAssessmentId:Int64 = 0
         if let id = dictArray.serverAssessmentId{
@@ -2517,7 +2488,7 @@ extension PEViewStartNewAssessment{
                 }
             }
             for objCt in catArray{
-                var catArrayForTableIs = CoreDataHandlerPE().fetchCustomerForSyncWithCatIDDraft(objCt.sequenceNo as NSNumber? ?? 0,draftNumber:peNewAssessment  .draftNumber as? NSNumber ?? 0) as? [PENewAssessment] ?? []
+                let catArrayForTableIs = CoreDataHandlerPE().fetchCustomerForSyncWithCatIDDraft(objCt.sequenceNo as NSNumber? ?? 0,draftNumber:peNewAssessment  .draftNumber as? NSNumber ?? 0) as? [PENewAssessment] ?? []
                 
                 catAllRowArray.append(contentsOf: catArrayForTableIs)
             }
@@ -2587,8 +2558,8 @@ extension PEViewStartNewAssessment{
         let deviceIdForServer = "\(UniID)_\(AssessmentId)_iOS_\(udid)"
  
       
-        var siteId = String(dictArray.siteId ?? 0)
-        var DisplayId = "C-" + UniID
+        let siteId = String(dictArray.siteId ?? 0)
+        let DisplayId = "C-" + UniID
         let base64Str = CoreDataHandlerPE().getImageBase64ByImageID(idArray:img)
         totalImageToSync.append(img)
         let imageName = "ImgName-" + siteId + String(img ?? 0)
@@ -2674,8 +2645,7 @@ extension PEViewStartNewAssessment{
                     imgDic.append(objimgr)
                     if arrayCount == 3  {
                         let ss  = imgDic as?  [JSONDictionary]  ?? []
-                        var  paramForImages  = ["AssessmentImages":ss] as JSONDictionary
-                        //                            ,"appVersion":Bundle.main.versionNumber
+                        let  paramForImages  = ["AssessmentImages":ss] as JSONDictionary
                         arrayCount  = 0
                         imgDic.removeAll()
                         self.callRequest4(paramForImages:paramForImages)
@@ -2683,14 +2653,13 @@ extension PEViewStartNewAssessment{
                 }
                 if  arrayCount > 0 {
                     let ss  = imgDic as?  [JSONDictionary]  ?? []
-                    var  paramForImages  = ["AssessmentImages":ss] as JSONDictionary
-                    //                        ,"appVersion":Bundle.main.versionNumber
-                    arrayCount  = 0
+                    let  paramForImages  = ["AssessmentImages":ss] as JSONDictionary
+                   
                     imgDic.removeAll()
                     self.callRequest4(paramForImages:paramForImages)
                 }
             } else {
-                var  paramForImages  = ["AssessmentImages":imgArray] as JSONDictionary
+                let  paramForImages  = ["AssessmentImages":imgArray] as JSONDictionary
                 self.callRequest4(paramForImages:paramForImages)
             }
             
@@ -2747,12 +2716,11 @@ extension PEViewStartNewAssessment{
                 if  arrayCount > 0 {
                     let ss  = imgDic as?  [JSONDictionary]  ?? []
                     let  paramForImages  = ["AssessmentImages":ss] as JSONDictionary
-                    arrayCount  = 0
                     imgDic.removeAll()
                     self.callRequest4(paramForImages:paramForImages)
                 }
             } else {
-                var  paramForImages  = ["AssessmentImages":imgArray] as JSONDictionary
+                let  paramForImages  = ["AssessmentImages":imgArray] as JSONDictionary
                 self.callRequest4(paramForImages:paramForImages)
             }
         }
@@ -2891,7 +2859,7 @@ extension PEViewStartNewAssessment{
             dateSig = self.convertDateFormat(inputDate: ddd)
         }
        
-        var json : JSONDictionary = JSONDictionary()
+       
         if dateSig != ""{
             dict.evaluationDate = dateSig
         }else{
@@ -2937,7 +2905,7 @@ extension PEViewStartNewAssessment{
         {
             saveType = 0
         }
-        
+        var json: JSONDictionary
         json = [
             "AssessmentId":serverAssessmentId,
             "DeviceId": deviceIDFORSERVER,

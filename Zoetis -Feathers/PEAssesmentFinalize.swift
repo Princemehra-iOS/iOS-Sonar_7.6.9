@@ -717,13 +717,7 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
         vc?.scheduledAssessment = peNewAssessment
         vc?.isFromSchedule = true
         if peNewAssessment.evaluationID == 1 {
-            var z = 0
-            for _ in certificateData {
-                // New addition... Jira 3931
-//                certificateData[z].fsrSign = ""
-//                certificateData[z].signatureImg = ""
-                z = z + 1
-            }
+
             UserDefaults.standard.set(nil, forKey: "FsrSign")
             UserDefaults.standard.set(false, forKey: "isSignedFSR")
         }
@@ -749,7 +743,7 @@ class PEAssesmentFinalize: BaseViewController , DatePickerPopupViewControllerPro
                 
                 let savedDataIs =  CoreDataHandlerPE().saveDataToSyncPEInDBArray(newAssessmentArray: allAssesmentArr as? [PENewAssessment] ?? [], dataToSubmitNumber: dataToSubmitNumber + 1,param:param)
                
-                var refrigtorArray =   CoreDataHandlerPE().getREfriData(id: Int(self.scheduledAssessment?.serverAssessmentId ?? "0") ?? 0)
+                let refrigtorArray =   CoreDataHandlerPE().getREfriData(id: Int(self.scheduledAssessment?.serverAssessmentId ?? "0") ?? 0)
                 if(refrigtorArray.count > 0){
                     for refrii in refrigtorArray{
                         if(CoreDataHandlerPE().checkOfflineSameAssesmentEntityExists(id: Int(refrii.id ?? 0),serverAssessmentId: Int(self.scheduledAssessment?.serverAssessmentId ?? "0") ?? 0)){
@@ -1076,7 +1070,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             }
         }
     
-        var height = self.estimatedHeightOfLabel(text: assessment?.assDetail1 ?? "") + 50
+        let height = self.estimatedHeightOfLabel(text: assessment?.assDetail1 ?? "") + 50
         return height
         
     }
@@ -1148,8 +1142,8 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                     self.tableviewIndexPath = indexPath
                     
                     self.sanitationQuesArr = SanitationEmbrexQuestionMasterDAO.sharedInstance.fetchAssessmentSanitationQuestions(userId: UserContext.sharedInstance.userDetailsObj?.userId ?? "", assessmentId: self.scheduledAssessment?.serverAssessmentId ?? "")
-                    var comments = self.sanitationQuesArr[indexPath.row].userComments ?? ""
-                    var questionObj = self.sanitationQuesArr[indexPath.row]
+                    let comments = self.sanitationQuesArr[indexPath.row].userComments ?? ""
+                    let questionObj = self.sanitationQuesArr[indexPath.row]
                     
                     let storyBoard : UIStoryboard = UIStoryboard(name: "PEStoryboard", bundle:nil)
                     let vc = storyBoard.instantiateViewController(withIdentifier: "CommentPopupViewController") as! CommentPopupViewController
@@ -1211,7 +1205,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                             
                             cell.config(data:certificateData[indexPath.row])
                             if dataArray.contains(certificateData[indexPath.row].name!){
-                                var count = dataArray.firstIndex(of: certificateData[indexPath.row].name!)
+                                let count = dataArray.firstIndex(of: certificateData[indexPath.row].name!)
                                 if isCertExpiredArray[count!] {
                                     cell.certDateSelectBtn.setTitle(certDateArray[count!], for: .normal)
                                     cell.certDateSelectBtn.layer.borderColor = UIColor.red.cgColor
@@ -1368,13 +1362,6 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                             if cell.vaccNameField.text != "" {
                                 if(cell.certDateSelectBtn.titleLabel?.text != ""){
                                     self.view.endEditing(true)
-                                    let superviewCurrent =  cell.certDateSelectBtn.superview
-                                    if superviewCurrent != nil {
-                                        for view in superviewCurrent!.subviews {
-                                            if view.isKind(of:UIButton.self) {
-                                            }
-                                        }
-                                    }
                                     
                                     let storyBoard : UIStoryboard = UIStoryboard(name: "Selection", bundle:nil)
                                     let datePickerPopupViewController = storyBoard.instantiateViewController(withIdentifier: "DatePickerPopupViewController") as? DatePickerPopupViewController
@@ -1437,7 +1424,6 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         updateNameblock = {[unowned self] ( error) in
                             if certificateData.count > 0 {
                                 self.certificateData[self.chnagedVaccineNameIndexPathRow].name = error
-                                //self.certificateData[self.chnagedVaccineNameIndexPathRow].certCeatedby = Int(UserContext.sharedInstance.userDetailsObj?.userId ?? "0")
                                 CoreDataHandlerPE().updateVMixerInDB(peCertificateData:  self.certificateData[self.chnagedVaccineNameIndexPathRow], id:  self.certificateData[self.chnagedVaccineNameIndexPathRow].id ?? 0)
                                 cell.vaccNameField.resignFirstResponder()
                             }
@@ -1519,25 +1505,23 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             
             cell.diluentManuCompletion = {[unowned self] ( error) in
                 
-                var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_DManufacturer")
-                var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "diluentMfgName") as? NSArray ?? NSArray()
+                let vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_DManufacturer")
+                let vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "diluentMfgName") as? NSArray ?? NSArray()
               
                 if  vManufacutrerNameArray.count > 0 {
                     self.dropDownVIewNew(arrayData: vManufacutrerNameArray as? [String] ?? [String](), kWidth: cell.tfDiluentManu.frame.width, kAnchor: cell.tfDiluentManu, yheight: cell.tfDiluentManu.bounds.height) { [unowned self] selectedVal, index  in
                         cell.tfDiluentManu.text = selectedVal
                         self.inovojectData[indexPath.row].vaccineMan = selectedVal
                         CoreDataHandlerPE().updateDOAInDB(inovojectData:  self.inovojectData[indexPath.row])
-                        UIView.performWithoutAnimation {
-                            self.tableview.reloadData()
-                        }
+                        reloadTableWithoutAnimation()
                     }
                     self.dropHiddenAndShow()
                 }
             }
             cell.bagSizeCompletion = {[unowned self] ( error) in
             
-                var bagSizeDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_BagSizes")
-                var bagSizeArray = bagSizeDetailsArray.value(forKey: "size") as? NSArray ?? NSArray()
+                let bagSizeDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_BagSizes")
+                let bagSizeArray = bagSizeDetailsArray.value(forKey: "size") as? NSArray ?? NSArray()
             
                 if  bagSizeArray.count > 0 {
                     self.dropDownVIewNew(arrayData: bagSizeArray as? [String] ?? [String](), kWidth:  cell.tfBagSize.frame.width, kAnchor: cell.tfBagSize, yheight: cell.tfBagSize.bounds.height) { [unowned self] selectedVal, index  in
@@ -1571,9 +1555,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                             }
                         }
                         CoreDataHandlerPE().updateDOAInDB(inovojectData:  self.inovojectData[indexPath.row])
-                        UIView.performWithoutAnimation {
-                            self.tableview.reloadData()
-                        }
+                        reloadTableWithoutAnimation()
                     }
                     self.dropHiddenAndShow()
                 }
@@ -1615,8 +1597,8 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 self.tableviewIndexPath = indexPath
                 _ = NSArray()
                
-                var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
-                var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "size") as? NSArray ?? NSArray()
+                let vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
+                let vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "size") as? NSArray ?? NSArray()
                 
                 self.dropDownVIewNew(arrayData: vManufacutrerNameArray as? [String] ?? [String](), kWidth: cell.tfAmpleSize.frame.width, kAnchor: cell.tfAmpleSize, yheight: cell.tfAmpleSize.bounds.height) { [unowned self] selectedVal, index  in
                     
@@ -1648,9 +1630,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         }
                     }
                     CoreDataHandlerPE().updateDOAInDB(inovojectData:  self.inovojectData[indexPath.row])
-                    UIView.performWithoutAnimation {
-                        self.tableview.reloadData()
-                    }
+                    reloadTableWithoutAnimation()
                 }
                 self.dropHiddenAndShow()
             }
@@ -1658,8 +1638,8 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             cell.amplePerBagCompletion  = {[unowned self] ( error) in
                 self.tableviewIndexPath = indexPath
            
-                var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmplePerBag")
-                var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "bagNo") as? NSArray ?? NSArray()
+                let vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmplePerBag")
+                let vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "bagNo") as? NSArray ?? NSArray()
                 if  vManufacutrerNameArray.count > 0 {
                     self.dropDownVIewNew(arrayData: vManufacutrerNameArray as? [String] ?? [String](), kWidth: cell.tfAmpleBag.frame.width, kAnchor: cell.tfAmpleBag, yheight: cell.tfAmpleBag.bounds.height) { [unowned self] selectedVal, index  in
                         self.inovojectData[indexPath.row].ampulePerBag = selectedVal
@@ -1684,9 +1664,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                             
                         }
                         CoreDataHandlerPE().updateDOAInDB(inovojectData:  self.inovojectData[indexPath.row])
-                        UIView.performWithoutAnimation {
-                            self.tableview.reloadData()
-                        }
+                        reloadTableWithoutAnimation()
                     }
                     self.dropHiddenAndShow()
                 }
@@ -1697,24 +1675,21 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             cell.nameCompletion  = {[unowned self] ( text) in
                 self.tableviewIndexPath = indexPath
                 
-                var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
+                let vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
                
                 var _ : [Int] = []
                 _ = NSArray()
                 _ = NSArray()
-                var vNameDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VNames")
-                var vNameArray = vNameDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
-                var vNameFilterArray = vNameArray as? [String] ?? []
+                let vNameDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VNames")
+                let vNameArray = vNameDetailsArray.value(forKey: "name") as? NSArray ?? NSArray()
+                let vNameFilterArray = vNameArray as? [String] ?? []
                 
                 if  vNameFilterArray.count > 0 {
                     self.dropDownVIewNew(arrayData: vNameFilterArray as? [String] ?? [String](), kWidth: cell.tfVaccineMan.frame.width, kAnchor: cell.tfVaccineMan, yheight: cell.tfVaccineMan.bounds.height) { [unowned self] selectedVal, index  in
                         self.inovojectData[indexPath.row].name = selectedVal
                         
                         CoreDataHandlerPE().updateDOAInDB(inovojectData:  self.inovojectData[indexPath.row])
-                        
-                        UIView.performWithoutAnimation {
-                            self.tableview.reloadData()
-                        }
+                        reloadTableWithoutAnimation()
                     }
                     self.dropHiddenAndShow()
                 }
@@ -1736,27 +1711,16 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             cell.vaccineManufacturerCompletion = {[unowned self] ( error) in
                 self.tableviewIndexPath = indexPath
                 
-                var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
-                var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
+                let vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
+                let vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
                
                 if  vManufacutrerNameArray.count > 0 {
                     self.dropDownVIewNew(arrayData: vManufacutrerNameArray as? [String] ?? [String](), kWidth: cell.tfVaccineMan.frame.width, kAnchor: cell.tfVaccineMan, yheight: cell.tfVaccineMan.bounds.height) { [unowned self] selectedVal, index  in
                         self.dayOfAgeData[indexPath.row].vaccineMan = selectedVal
-                        if selectedVal == "Other"{
-                            UIView.performWithoutAnimation {
-                                self.tableview.reloadData()
-                            }
-                        } else {
-                            UIView.performWithoutAnimation {
-                                self.tableview.reloadData()
-                            }
-                            
-                        }
+                    
                         self.dayOfAgeData[indexPath.row].name = ""
                         CoreDataHandlerPE().updateDOAInDB(inovojectData:  self.dayOfAgeData[indexPath.row])
-                        UIView.performWithoutAnimation {
-                            self.tableview.reloadData()
-                        }
+                        reloadTableWithoutAnimation()
                     }
                     self.dropHiddenAndShow()
                 }
@@ -1768,15 +1732,13 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                
                 _ = NSArray()
                
-                var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
-                var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "size") as? NSArray ?? NSArray()
+                let vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
+                let vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "size") as? NSArray ?? NSArray()
                 self.dropDownVIewNew(arrayData: vManufacutrerNameArray as? [String] ?? [String](), kWidth: cell.tfAmpleSize.frame.width, kAnchor: cell.tfAmpleSize, yheight: cell.tfAmpleSize.bounds.height) { [unowned self] selectedVal, index  in
                     
                     self.dayOfAgeData[indexPath.row].ampuleSize = selectedVal
                     CoreDataHandlerPE().updateDOAInDB(inovojectData:  self.dayOfAgeData[indexPath.row])
-                    UIView.performWithoutAnimation {
-                        self.tableview.reloadData()
-                    }
+                    reloadTableWithoutAnimation()
                 }
                 self.dropHiddenAndShow()
             }
@@ -1785,17 +1747,15 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 self.tableviewIndexPath = indexPath
                 
                 _ = NSArray()
-                var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmplePerBag")
-                var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "bagNo") as? NSArray ?? NSArray()
+                let vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmplePerBag")
+                let vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "bagNo") as? NSArray ?? NSArray()
                 if  vManufacutrerNameArray.count > 0 {
                     
                     self.dropDownVIewNew(arrayData: vManufacutrerNameArray as? [String] ?? [String](), kWidth: cell.tfAmpleBag.frame.width, kAnchor: cell.tfAmpleBag, yheight: cell.tfAmpleBag.bounds.height) { [unowned self] selectedVal, index  in
                         
                         self.dayOfAgeData[indexPath.row].ampulePerBag = selectedVal
                         CoreDataHandlerPE().updateDOAInDB(inovojectData:  self.dayOfAgeData[indexPath.row])
-                        UIView.performWithoutAnimation {
-                            self.tableview.reloadData()
-                        }
+                        reloadTableWithoutAnimation()
                     }
                 }
                 self.dropHiddenAndShow()
@@ -1803,17 +1763,15 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             
             cell.doseCompletion  = {[unowned self] ( error) in
                 _ = NSArray()
-                var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Dose")
-                var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "dose") as? NSArray ?? NSArray()
+                let vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_Dose")
+                let vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "dose") as? NSArray ?? NSArray()
                 
                 let vNameFilterArray = vManufacutrerNameArray
                 if  vNameFilterArray.count > 0 {
                     self.dropDownVIewNew(arrayData: vNameFilterArray as? [String] ?? [String](), kWidth: cell.tfDosage.frame.width, kAnchor: cell.tfDosage, yheight: cell.tfDosage.bounds.height) { [unowned self] selectedVal, index  in
                         self.dayOfAgeData[indexPath.row].dosage = selectedVal
                         CoreDataHandlerPE().updateDOAInDB(inovojectData:  self.dayOfAgeData[indexPath.row])
-                        UIView.performWithoutAnimation {
-                            self.tableview.reloadData()
-                        }
+                        reloadTableWithoutAnimation()
                     }
                     self.dropHiddenAndShow()
                 }
@@ -1841,9 +1799,9 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         
                     }
                     var indexArray : [Int] = []
-                    var vNameDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 1)
-                    var vNameArray = vNameDetailsArray.value(forKey: "name")  as? NSArray ?? NSArray()
-                    var vNameMfgIdArray = vNameDetailsArray.value(forKey: "mfgId")  as? NSArray ?? NSArray()
+                    let vNameDetailsArray = CoreDataHandlerPE().fetchDetailsForVaccineNames(typeId: 1)
+                    let vNameArray = vNameDetailsArray.value(forKey: "name")  as? NSArray ?? NSArray()
+                    let vNameMfgIdArray = vNameDetailsArray.value(forKey: "mfgId")  as? NSArray ?? NSArray()
                     
                     var x = -1
                     for obj in vNameMfgIdArray {
@@ -1859,7 +1817,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         
                         _ = vNameArray[index] as? String ?? ""
                     }
-                    var vNameFilterArray = vNameArray as? [String] ?? [String]()
+                    let vNameFilterArray = vNameArray as? [String] ?? [String]()
                     
                     
                     if  vNameFilterArray.count > 0 {
@@ -1871,10 +1829,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                             _ =  vManufacutrerIDArray.index(of: manufId as? Int64 ?? 0)
                             
                             CoreDataHandlerPE().updateDOAInDB(inovojectData:  self.dayOfAgeData[indexPath.row])
-                            
-                            UIView.performWithoutAnimation {
-                                self.tableview.reloadData()
-                            }
+                            reloadTableWithoutAnimation()
                         }
                         self.dropHiddenAndShow()
                     }
@@ -1900,26 +1855,20 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             cell.vaccineManufacturerCompletion = {[unowned self] ( error) in
                 self.tableviewIndexPath = indexPath
               
-                var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
-                var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
+                let vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_VManufacturer")
+                let vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "mfgName") as? NSArray ?? NSArray()
                 
                 if  vManufacutrerNameArray.count > 0 {
                     self.dropDownVIewNew(arrayData: vManufacutrerNameArray as? [String] ?? [String](), kWidth: cell.tfVaccineMan.frame.width, kAnchor: cell.tfVaccineMan, yheight: cell.tfVaccineMan.bounds.height) { [unowned self] selectedVal, index  in
                         self.dayOfAgeSData[indexPath.row].vaccineMan = selectedVal
                         if selectedVal == "Other"{
-                            UIView.performWithoutAnimation {
-                                self.tableview.reloadData()
-                            }
+                            reloadTableWithoutAnimation()
                         } else {
-                            UIView.performWithoutAnimation {
-                                self.tableview.reloadData()
-                            }
+                            reloadTableWithoutAnimation()
                         }
                         self.dayOfAgeSData[indexPath.row].name = ""
                         CoreDataHandlerPE().updateDOAInDB(inovojectData:  self.dayOfAgeSData[indexPath.row])
-                        UIView.performWithoutAnimation {
-                            self.tableview.reloadData()
-                        }
+                        reloadTableWithoutAnimation()
                     }
                     self.dropHiddenAndShow()
                 }
@@ -1931,8 +1880,8 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 self.tableviewIndexPath = indexPath
                 
                 _ = NSArray()
-                var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
-                var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "size") as? NSArray ?? NSArray()
+                let vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_AmpleSizes")
+                let vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "size") as? NSArray ?? NSArray()
                 self.dropDownVIewNew(arrayData: vManufacutrerNameArray as? [String] ?? [String](), kWidth: cell.tfAmpleSize.frame.width, kAnchor: cell.tfAmpleSize, yheight: cell.tfAmpleSize.bounds.height) { [unowned self] selectedVal, index  in
                     if self.peNewAssessment.dDDT?.lowercased().contains("unknown") ?? false {
                         self.ml = 0.0
@@ -1987,9 +1936,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         
                     }
                     CoreDataHandlerPE().updateDOAInDB(inovojectData:  self.dayOfAgeSData[indexPath.row])
-                    UIView.performWithoutAnimation {
-                        self.tableview.reloadData()
-                    }
+                    reloadTableWithoutAnimation()
                 }
                 self.dropHiddenAndShow()
             }
@@ -2058,9 +2005,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                         }
                         
                         CoreDataHandlerPE().updateDOAInDB(inovojectData:  self.dayOfAgeSData[indexPath.row])
-                        UIView.performWithoutAnimation {
-                            self.tableview.reloadData()
-                        }
+                        reloadTableWithoutAnimation()
                     }
                 }
                 self.dropHiddenAndShow()
@@ -2106,7 +2051,7 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                     for index in indexArray {
                         _ = vNameArray[index] as? String ?? ""
                     }
-                    var vNameFilterArray = vNameArray as? [String] ?? [String]()
+                    let vNameFilterArray = vNameArray as? [String] ?? [String]()
                     
                     if  vNameFilterArray.count > 0 {
                         self.dropDownVIewNew(arrayData: vNameFilterArray as? [String] ?? [String](), kWidth: cell.tfName.frame.width, kAnchor: cell.tfName, yheight: cell.tfName.bounds.height) { [unowned self] selectedVal, index  in
@@ -2129,6 +2074,12 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             return cell
         }
         return UITableViewCell() as! InovojectCell
+    }
+    
+    private func reloadTableWithoutAnimation() {
+        UIView.performWithoutAnimation {
+            self.tableview.reloadData()
+        }
     }
     
     // MARK: - Setup PE  Rerigator questions data
@@ -3845,9 +3796,8 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             
             headerView.dTypeCompletion = {[unowned self] ( error) in
              
-                var vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_DManufacturer")
-                var vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "diluentMfgName")  as? NSArray ?? NSArray()
-                var vManufacutrerIDArray = vManufacutrerDetailsArray.value(forKey: "diluentMfgId")  as? NSArray ?? NSArray()
+                let vManufacutrerDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_DManufacturer")
+                let vManufacutrerNameArray = vManufacutrerDetailsArray.value(forKey: "diluentMfgName")  as? NSArray ?? NSArray()
                 if  vManufacutrerNameArray.count > 0 {
                     self.dropDownVIewNew(arrayData: vManufacutrerNameArray as? [String] ?? [String](), kWidth: headerView.txtDType.frame.width, kAnchor: headerView.txtDType, yheight: headerView.txtDType.bounds.height) { [unowned self] selectedVal, index  in
                         headerView.txtDType.text = selectedVal
@@ -3861,9 +3811,8 @@ extension PEAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             }
             headerView.cSizeCompletion = {[unowned self] ( error) in
                
-                var bagSizeDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_BagSizes")
-                var bagSizeArray = bagSizeDetailsArray.value(forKey: "size")  as? NSArray ?? NSArray()
-                var bagSizeIDArray = bagSizeDetailsArray.value(forKey: "id")  as? NSArray ?? NSArray()
+                let bagSizeDetailsArray = CoreDataHandlerPE().fetchDetailsFor(entityName: "PE_BagSizes")
+                let bagSizeArray = bagSizeDetailsArray.value(forKey: "size")  as? NSArray ?? NSArray()
                 if  bagSizeArray.count > 0 {
                     self.dropDownVIewNew(arrayData: bagSizeArray as? [String] ?? [String](), kWidth: headerView.txtCSize.frame.width, kAnchor: headerView.txtCSize, yheight: headerView.txtCSize.bounds.height) { [unowned self] selectedVal, index  in
                         headerView.txtCSize.text = selectedVal
@@ -5215,7 +5164,6 @@ extension PEAssesmentFinalize: UIImagePickerControllerDelegate , UINavigationCon
                 postAlert("Rear camera doesn't exist", message: "Application cannot access the camera.")
             }
         } else {
-            //https://stagepeapi.mypoultryview360.com/api/AssignUserDetails/GetPostingAssessmentImagesListByUser?DeviceType=ios&api_key=GetPostingAssessmentListByUser
             imagePicker.allowsEditing = false
             imagePicker.sourceType = .photoLibrary
             imagePicker.delegate = self

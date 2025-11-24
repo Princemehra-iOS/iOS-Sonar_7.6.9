@@ -1242,7 +1242,6 @@ extension PVEDashboardViewController: SyncBtnDelegate,UnsyncedDelegate {
         let farm = (dict).value(forKey: "farm")  as? String
         let evaluationForId = (dict).value(forKey: "evaluationForId")  as? Int
         let breedOfBirdsId = (dict).value(forKey: "breedOfBirdsId")  as? Int
-        let objEvaluationDate = (dict).value(forKey: "objEvaluationDate") as! Date
         let ageOfBirds = (dict).value(forKey: "ageOfBirds")  as? Int
         let noOfBirds = (dict).value(forKey: "noOfBirds")  as? Int
         let housingId = (dict).value(forKey: "housingId")  as? Int
