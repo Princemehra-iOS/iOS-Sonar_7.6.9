@@ -1818,7 +1818,6 @@ extension PEViewStartNewAssessment{
     // MARK: - Create Sync request for Inovoject
     func createSyncRequestForInvoject(dictArray: PENewAssessment,inovojectData :InovojectData) -> JSONDictionary{
         
-        let udid = UserDefaults.standard.value(forKey: "ApplicationIdentifier")!
         var UniID = dictArray.dataToSubmitID ?? ""
         
         if UniID == "" {
@@ -1927,7 +1926,6 @@ extension PEViewStartNewAssessment{
     // MARK: - Create Sync request for DOA Data
     func createSyncRequestForDOA(dictArray: PENewAssessment,dayOfAgeData :InovojectData) -> JSONDictionary{
         
-        let udid = UserDefaults.standard.value(forKey: "ApplicationIdentifier")!
         var UniID = dictArray.dataToSubmitID ?? ""
         
         if UniID == "" {
@@ -1939,7 +1937,7 @@ extension PEViewStartNewAssessment{
             AssessmentId = dictArray.draftNumber ?? 0
         }
         
-        var DisplayId = "C-" + UniID
+        let DisplayId = "C-" + UniID
         
         let  HatcheryAntibioticsInt = dictArray.hatcheryAntibioticsDoa
         var HatcheryAntibiotics = false
@@ -2120,7 +2118,6 @@ extension PEViewStartNewAssessment{
     // MARK: - Create Sync request for Certificate Data.
     func createSyncRequestForCertificateData(dictArray: PENewAssessment,peCertificateData :PECertificateData) -> JSONDictionary{
         
-        let udid = UserDefaults.standard.value(forKey: "ApplicationIdentifier")!
         var UniID = dictArray.dataToSubmitID ?? ""
         
         if UniID == "" {
@@ -2181,7 +2178,6 @@ extension PEViewStartNewAssessment{
     // MARK: - Create Sync request for Residue Data
     func createSyncRequestForResidueData(dictArray: PENewAssessment) -> JSONDictionary{
         
-        let udid = UserDefaults.standard.value(forKey: "ApplicationIdentifier")!
         var UniID = dictArray.dataToSubmitID ?? ""
         
         if UniID == "" {
@@ -2222,7 +2218,6 @@ extension PEViewStartNewAssessment{
     // MARK: - Create Sync request for Micro Data
     func createSyncRequestForMicroData(dictArray: PENewAssessment) -> JSONDictionary{
         
-        let udid = UserDefaults.standard.value(forKey: "ApplicationIdentifier")!
         var UniID = dictArray.dataToSubmitID ?? ""
         
         if UniID == "" {
@@ -2398,7 +2393,6 @@ extension PEViewStartNewAssessment{
     // MARK: - Create Sync request for Comment
     func createSyncRequestForComment(dictArray: PENewAssessment) -> JSONDictionary{
         
-        let udid = UserDefaults.standard.value(forKey: "ApplicationIdentifier")!
         var UniID = dictArray.dataToSubmitID ?? ""
         
         if UniID == "" {
