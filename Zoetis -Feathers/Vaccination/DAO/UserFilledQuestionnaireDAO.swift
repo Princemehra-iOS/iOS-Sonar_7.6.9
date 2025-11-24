@@ -618,15 +618,15 @@ final public  class UserFilledQuestionnaireDAO{
         do{
             
             if let addresses = shippingAddressDetails, !addresses.isEmpty {
-                     
-                     if addresses.indices.contains(0) {
-                         VaccinationCustomersDAO.sharedInstance.saveShippingInfoInDB(newAssessment: [addresses[0]])
-                     }
-
-                     if addresses.indices.contains(1) {
-                         VaccinationCustomersDAO.sharedInstance.saveOtherAddressInDB(newAssessment: [addresses[1]])
-                     }
-                 }
+                
+                if addresses.indices.contains(0) {
+                    VaccinationCustomersDAO.sharedInstance.saveShippingInfoInDB(newAssessment: [addresses[0]])
+                }
+                
+                if addresses.indices.contains(1) {
+                    VaccinationCustomersDAO.sharedInstance.saveOtherAddressInDB(newAssessment: [addresses[1]])
+                }
+            }
 
             deleteVaccinationQuestions(userId: userId, certificationId: certificationId)
             AddEmployeesDAO.sharedInstance.deleteEmpByCertificationId(userId: userId, certificationId: certificationId)
