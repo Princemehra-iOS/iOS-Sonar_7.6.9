@@ -2235,7 +2235,6 @@ extension PEStartNewAssessment : UITextFieldDelegate{
             if string == "" {
                 return true
             }
-            let isValid = string.stringWithoutWhitespaces.isNumber
             let aSet = CharacterSet(charactersIn:"0123456789").inverted
             let compSepByCharInSet = string.components(separatedBy: aSet)
             let numberFiltered = compSepByCharInSet.joined(separator: "")

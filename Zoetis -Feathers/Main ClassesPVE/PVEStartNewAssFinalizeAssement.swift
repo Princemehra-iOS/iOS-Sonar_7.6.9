@@ -358,8 +358,8 @@ class PVEStartNewAssFinalizeAssement: BaseViewController  , UISearchBarDelegate 
         var image_NameArr = questionsArr.value(forKey: "image_Name") as? [String]
         var image_Name = image_NameArr![indexPath!.row]
         
-        var assessmentArr = questionsArr.value(forKey: "assessment") as? [String]
-        var assessment = assessmentArr![indexPath!.row]
+        var infoAssessmentArr = questionsArr.value(forKey: "assessment") as? [String]
+        var assessment = infoAssessmentArr![indexPath!.row]
         
         var idArr = questionsArr.value(forKey: "id") as? [Int]
         var qId = idArr![indexPath!.row]
@@ -387,8 +387,8 @@ class PVEStartNewAssFinalizeAssement: BaseViewController  , UISearchBarDelegate 
                 image_NameArr = liveQuesArr.value(forKey: "image_Name") as? [String]
                 image_Name = image_NameArr![indexPath!.row]
                 
-                assessmentArr = liveQuesArr.value(forKey: "assessment") as? [String]
-                assessment = assessmentArr![indexPath!.row]
+                infoAssessmentArr = liveQuesArr.value(forKey: "assessment") as? [String]
+                assessment = infoAssessmentArr![indexPath!.row]
                 
             }
             else if selectedIndex == 5{
@@ -405,8 +405,8 @@ class PVEStartNewAssFinalizeAssement: BaseViewController  , UISearchBarDelegate 
                 image_NameArr = inactiveQuessArr.value(forKey: "image_Name") as? [String]
                 image_Name = image_NameArr![indexPath!.row]
                 
-                assessmentArr = inactiveQuessArr.value(forKey: "assessment") as? [String]
-                assessment = assessmentArr![indexPath!.row]
+                infoAssessmentArr = inactiveQuessArr.value(forKey: "assessment") as? [String]
+                assessment = infoAssessmentArr![indexPath!.row]
             }
             else{
                 max_ScoreArr = otherQuessArr.value(forKey: "max_Score") as? [Int]
@@ -421,8 +421,8 @@ class PVEStartNewAssFinalizeAssement: BaseViewController  , UISearchBarDelegate 
                 image_NameArr = otherQuessArr.value(forKey: "image_Name") as? [String]
                 image_Name = image_NameArr![indexPath!.row]
                 
-                assessmentArr = otherQuessArr.value(forKey: "assessment") as? [String]
-                assessment = assessmentArr![indexPath!.row]
+                infoAssessmentArr = otherQuessArr.value(forKey: "assessment") as? [String]
+                assessment = infoAssessmentArr![indexPath!.row]
             }
         }
         else{
@@ -438,8 +438,8 @@ class PVEStartNewAssFinalizeAssement: BaseViewController  , UISearchBarDelegate 
             image_NameArr = questionsArr.value(forKey: "image_Name") as? [String]
             image_Name = image_NameArr![indexPath!.row]
             
-            assessmentArr = questionsArr.value(forKey: "assessment") as? [String]
-            assessment = assessmentArr![indexPath!.row]
+            infoAssessmentArr = questionsArr.value(forKey: "assessment") as? [String]
+            assessment = infoAssessmentArr![indexPath!.row]
             
             idArr = questionsArr.value(forKey: "id") as? [Int]
             qId = idArr![indexPath!.row]
@@ -460,13 +460,8 @@ class PVEStartNewAssFinalizeAssement: BaseViewController  , UISearchBarDelegate 
         selectedIndex = indexPath!.section as Int
         
         var max_ScoreArr = questionsArr.value(forKey: "seq_Number") as? [Int]
-        var seq_Number = max_ScoreArr![0]
-        
         var idArr = questionsArr.value(forKey: "id") as? [Int]
-        var id = idArr![indexPath!.row]
-        
         var commentArr = questionsArr.value(forKey: "comment") as? [String]
-        var comment = commentArr![indexPath!.row]
         
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Storyboard.pveStoryboard, bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "PVECommentPopupViewController") as! PVECommentPopupViewController
@@ -481,57 +476,57 @@ class PVEStartNewAssFinalizeAssement: BaseViewController  , UISearchBarDelegate 
             if selectedIndex == 4
             {
                 max_ScoreArr = liveQuesArr.value(forKey: "seq_Number") as? [Int]
-                seq_Number = max_ScoreArr![0]
+                let seq_Number = max_ScoreArr![0]
                 vc.seq_Number = seq_Number
                 
                 idArr = liveQuesArr.value(forKey: "id") as? [Int]
-                id = idArr![indexPath!.row]
+                let id = idArr![indexPath!.row]
                 vc.rowId = id
                 
                 commentArr = liveQuesArr.value(forKey: "comment") as? [String]
-                comment = commentArr![indexPath!.row]
+                let comment = commentArr![indexPath!.row]
                 vc.commentStr = comment
             }
             else if selectedIndex == 5
             {
                 max_ScoreArr = inactiveQuessArr.value(forKey: "seq_Number") as? [Int]
-                seq_Number = max_ScoreArr![0]
+                let seq_Number = max_ScoreArr![0]
                 vc.seq_Number = seq_Number
                 
                 idArr = inactiveQuessArr.value(forKey: "id") as? [Int]
-                id = idArr![indexPath!.row]
+                let id = idArr![indexPath!.row]
                 vc.rowId = id
                 
                 commentArr = inactiveQuessArr.value(forKey: "comment") as? [String]
-                comment = commentArr![indexPath!.row]
+                let comment = commentArr![indexPath!.row]
                 vc.commentStr = comment
             }
             else{
                 max_ScoreArr = otherQuessArr.value(forKey: "seq_Number") as? [Int]
-                seq_Number = max_ScoreArr![0]
+                let seq_Number = max_ScoreArr![0]
                 vc.seq_Number = seq_Number
                 
                 idArr = otherQuessArr.value(forKey: "id") as? [Int]
-                id = idArr![indexPath!.row]
+                let id = idArr![indexPath!.row]
                 vc.rowId = id
                 
                 commentArr = otherQuessArr.value(forKey: "comment") as? [String]
-                comment = commentArr![indexPath!.row]
+                let comment = commentArr![indexPath!.row]
                 vc.commentStr = comment
             }
         }
         
         else{
             max_ScoreArr = questionsArr.value(forKey: "seq_Number") as? [Int]
-            seq_Number = max_ScoreArr![0]
+            let seq_Number = max_ScoreArr![0]
             vc.seq_Number = seq_Number
             
             idArr = questionsArr.value(forKey: "id") as? [Int]
-            id = idArr![indexPath!.row]
+            let id = idArr![indexPath!.row]
             vc.rowId = id
             
             commentArr = questionsArr.value(forKey: "comment") as? [String]
-            comment = commentArr![indexPath!.row]
+            let comment = commentArr![indexPath!.row]
             vc.commentStr = comment
         }
         self.navigationController?.present(vc, animated: false, completion: nil)
@@ -681,7 +676,7 @@ extension PVEStartNewAssFinalizeAssement:  UIImagePickerControllerDelegate,UINav
             })
         }
         /******************************************************************************************************/
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        func imagePickerControllerDidCancel(_ : UIImagePickerController) {
             
             dismiss(animated: true, completion:nil)
         }
@@ -710,8 +705,6 @@ extension PVEStartNewAssFinalizeAssement:  UIImagePickerControllerDelegate,UINav
         
         var idArr = questionsArr.value(forKey: "id") as? [Int]
         var id = idArr![currentSelectedBtnIndex]
-        
-        var tempArr = NSArray()
         
         if currentSel_seq_Number == 2 {
             
@@ -752,7 +745,7 @@ extension PVEStartNewAssFinalizeAssement:  UIImagePickerControllerDelegate,UINav
             id = idArr![currentSelectedBtnIndex]
         }
         
-        tempArr = CoreDataHandlerPVE().getImageDataForCurrentAssementDetails("", seqNumber: NSNumber(value: seq_Number), rowId: id, entity: "PVE_ImageEntity")
+        let tempArr = CoreDataHandlerPVE().getImageDataForCurrentAssementDetails("", seqNumber: NSNumber(value: seq_Number), rowId: id, entity: "PVE_ImageEntity")
         
         let imgDaraArr = tempArr.value(forKey: "imageData") as? [Data]
         return imgDaraArr!
@@ -826,8 +819,8 @@ extension PVEStartNewAssFinalizeAssement: VaccinatorsPlusBtnDelegate,NoOfvaccina
             tblView.beginUpdates()
             
             noOfVaccinatorsArr.remove(at: noOfVaccinatorsArr.count-1)
-            var indPathArr = [NSIndexPath]()
-            indPathArr = [IndexPath(row: noOfVaccinatorsArr.count, section: 2) as NSIndexPath]
+          
+            let indPathArr = [IndexPath(row: noOfVaccinatorsArr.count, section: 2) as NSIndexPath]
             tblView.deleteRows(at: indPathArr as [IndexPath], with: .bottom)
             
             CoreDataHandlerPVE().updateSessionDetails(1, text: noOfVaccinatorsArr, forAttribute: "cat_NoOfVaccinatorsDetailsArr")
@@ -995,8 +988,8 @@ extension PVEStartNewAssFinalizeAssement: NoOfCatchersMinusDelegate,CatchersPlus
             tblView.beginUpdates()
             
             noOfCatcherArr.remove(at: noOfCatcherArr.count-1)
-            var indPathArr = [NSIndexPath]()
-            indPathArr = [IndexPath(row: noOfCatcherArr.count, section: 1) as NSIndexPath]
+          
+            let indPathArr = [IndexPath(row: noOfCatcherArr.count, section: 1) as NSIndexPath]
             tblView.deleteRows(at: indPathArr as [IndexPath], with: .bottom)
             
             CoreDataHandlerPVE().updateSessionDetails(1, text: noOfCatcherArr, forAttribute: "cat_NoOfCatchersDetailsArr")
@@ -1018,13 +1011,19 @@ extension PVEStartNewAssFinalizeAssement: NoOfCatchersMinusDelegate,CatchersPlus
         
     }
     func catchersbtnPlusBtnTapped(count: Int) {
-        if handleMaxLimit(for: count) { return }
+        if handleMaxLimit(for: count) {
+            return
+        }
         
         noOfCatcherArr = sharedManager.getSessionValueForKeyFromDB(key: "cat_NoOfCatchersDetailsArr") as? [[String: String]] ?? []
         resetHeaderBorder(isError: false)
         
-        if handleEqualCount(for: count) { return }
-        if count != 0 { updateCatchers(for: count) }
+        if handleEqualCount(for: count) {
+            return
+        }
+        if count != 0 {
+            updateCatchers(for: count)
+        }
     }
 
     private func handleMaxLimit(for count: Int) -> Bool {
@@ -1778,18 +1777,19 @@ extension PVEStartNewAssFinalizeAssement: UITableViewDelegate, UITableViewDataSo
                 }
                 
                 if vaccinInfoDetailArr[indexPath.row]["serial"] as? String == ""{
-                    debugPrint(vaccinInfoDetailArr[indexPath.row]["serial"] as? String)
+                    debugPrint(vaccinInfoDetailArr[indexPath.row]["serial"] as? String ?? "")
                 }else{
                     self.sharedManager.setBorderBlue(btn: cell.serialBtn)
                 }
                 
                 if vaccinInfoDetailArr[indexPath.row]["expDate"] as? String == ""{
-                    debugPrint(vaccinInfoDetailArr[indexPath.row]["expDate"] as? String)
+                    debugPrint(vaccinInfoDetailArr[indexPath.row]["expDate"] as? String ?? "")
                 }else{
                     self.sharedManager.setBorderBlue(btn: cell.expiryBtn)
                 }
                 
                 if (vaccinInfoDetailArr[indexPath.row]["siteOfInj"] as? String) == ""{
+                    // site of inj. is empty
                 }else{
                     self.sharedManager.setBorderBlue(btn: cell.siteOfInjBtn)
                 }
@@ -1911,25 +1911,11 @@ extension PVEStartNewAssFinalizeAssement: UITableViewDelegate, UITableViewDataSo
         }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 5  || section == 3 || section == 4 || section == 6{
-            if section == 1 {
-                if noOfCatcherArr.count > 0{
-                    return 0
-                }else{
-                    return 0
-                }
-            }
-            if section == 2 {
-                if noOfVaccinatorsArr.count > 0{
-                    return 0
-                }else{
-                    return 0
-                }
-            }
-            if section == 4  {
-                return 43.0
-            }
-            if section == 5
+            if section == 1 || section == 2
             {
+                return 0
+            }
+            if section == 4 || section == 5 {
                 return 43.0
             }
             if section == 6 {
@@ -1949,7 +1935,7 @@ extension PVEStartNewAssFinalizeAssement: UITableViewDelegate, UITableViewDataSo
             }
         }else if section == 1 || section == 2 {
             return CGFloat.leastNormalMagnitude
-
+            
         }
         
         else{
@@ -2093,9 +2079,10 @@ extension PVEStartNewAssFinalizeAssement: UICollectionViewDelegate, UICollection
         for (ind, _) in seq_NumberArrr.enumerated() {
             let seqNo = seq_NumberArrr[ind] as! NSNumber
             if seqNo == 6 {
+                // ignor this condition
             }
             else {
-                var sumvalue =  CoreDataHandlerPVE().fetchSumOfSelectedMarksModify(seqNo).0
+                let sumvalue =  CoreDataHandlerPVE().fetchSumOfSelectedMarksModify(seqNo).0
                 print("printing sumvalue= ",sumvalue)
                 
                 if sumvalue == 0 {
@@ -2306,7 +2293,7 @@ extension PVEStartNewAssFinalizeAssement: UICollectionViewDelegate, UICollection
             }
             
             selectionMenu.cellSelectionStyle = .tickmark
-            selectionMenu.show(style: .popover(sourceView: sender, size: CGSize(width: sender.frame.width, height: (sender.bounds.height) * CGFloat(((vaccineNamesArr as! [String]).count)) + 10)), from: self)
+            selectionMenu.show(style: .popover(sourceView: sender, size: CGSize(width: sender.frame.width, height: (sender.bounds.height) * CGFloat((vaccineNamesArr as! [String]).count) + 10)), from: self)
             
             selectionMenu.setSelectedItems(items: simpleSelectedArray) { [self] (name, index, selected, selectedItems) in
                 
@@ -2497,8 +2484,7 @@ extension PVEStartNewAssFinalizeAssement: UICollectionViewDelegate, UICollection
         
         if  let cell = self.tblView.cellForRow(at: indexPath!) as? PVEVaccineInfoTypeCell
         {
-            var isFreeSerology = Bool()
-            isFreeSerology = sharedManager.getSessionValueForKeyFromDB(key: "isFreeSerology") as! Bool
+            var isFreeSerology = sharedManager.getSessionValueForKeyFromDB(key: "isFreeSerology") as! Bool
             if isFreeSerology == true{
                 cell.serologySelUnSelectImg.image =  UIImage(named: "uncheckIconPE")
                 CoreDataHandlerPVE().updateSessionDetails(1, text: false, forAttribute: "isFreeSerology")

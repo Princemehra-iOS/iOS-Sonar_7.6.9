@@ -162,7 +162,6 @@ class DataService{
         var cstmName: String?
         var siteId: Int?
         var SiteName: String?
-        var selectedFSM: Int?
         var shipping: String?
         var certDate: String?
         var mangerName : String?
@@ -174,7 +173,7 @@ class DataService{
             
             siteId = Int(otherDetails.siteId)
             SiteName = otherDetails.siteName
-            selectedFSM = Int(otherDetails.selectedFsmId)
+          
             shipping = otherDetails.custShipping
             certDate = otherDetails.dateSchedule
             mangerName = otherDetails.htchMngr
@@ -347,7 +346,7 @@ class DataService{
         let jsonEncoder = JSONEncoder()
         let data = try? jsonEncoder.encode(mainCertObj)
         if data != nil{
-            let string = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+          
             do{
                 let jsonDict = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [String:Any]
                 debugPrint(jsonDict)
@@ -368,7 +367,6 @@ class DataService{
         dateFormatter.dateFormat = "MMddYYYYHHmmss"
         let dateStr = dateFormatter.string(from:dateObj)
         
-        // var dateTimeOfAssessment = dateTimeOfAssessment  (format: )
         let deviceIdForServer = "\(dateStr)_\(id)_iOS_\(udid)"
         return deviceIdForServer
     }
@@ -901,9 +899,11 @@ class DataService{
     func getShippingDetails(loginuserId:String, SelectedFsmId:String,  SelectedSiteId:String, certId:String, viewController:UIViewController, completion: @escaping (String?, NSError?) -> Void){
         
         let url = ZoetisWebServices.EndPoint.getShippingAddressDetails.latestUrl + SelectedFsmId + "&SiteId=" + String(SelectedSiteId)
-        print(url)
+       
         ZoetisWebServices.shared.getVaccinationServicesResponse(controller: viewController, url: url, completion: { [weak self] (json, error) in
-            guard let _ = self, error == nil else { completion(nil, error) ;return  ;}
+            guard let _ = self, error == nil else {
+                completion(nil, error) ;
+                return ;}
             if
                 let responseJSONDict = json.dictionary,
                 let response = responseJSONDict["Data"]

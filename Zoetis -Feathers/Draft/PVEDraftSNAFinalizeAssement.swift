@@ -497,13 +497,12 @@ class PVEDraftSNAFinalizeAssement: BaseViewController {
         
         questionsArr = CoreDataHandlerPVE().fetchDraftAssQuestion(currentSel_seq_Number, type: "draft", syncId: currentTimeStamp) as NSArray
         var max_ScoreArr = questionsArr.value(forKey: "seq_Number") as? [Int]
-        var seq_Number = max_ScoreArr![0]
         
         var idArr = questionsArr.value(forKey: "id") as? [Int]
-        var id = idArr![indexPath!.row]
+        
         
         var commentArr = questionsArr.value(forKey: "comment") as? [String]
-        var comment = commentArr![indexPath!.row]
+     
         
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Storyboard.pveStoryboard, bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "PVECommentPopupViewController") as! PVECommentPopupViewController
@@ -520,57 +519,57 @@ class PVEDraftSNAFinalizeAssement: BaseViewController {
             if selectedIndex == 4
             {
                 max_ScoreArr = liveQuesArr.value(forKey: "seq_Number") as? [Int]
-                seq_Number = max_ScoreArr![0]
+                let seq_Number = max_ScoreArr![0]
                 vc.seq_Number = seq_Number
                 
                 idArr = liveQuesArr.value(forKey: "id") as? [Int]
-                id = idArr![indexPath!.row]
+                let id = idArr![indexPath!.row]
                 vc.rowId = id
                 
                 commentArr = liveQuesArr.value(forKey: "comment") as? [String]
-                comment = commentArr![indexPath!.row]
+                let comment = commentArr![indexPath!.row]
                 vc.commentStr = comment
             }
             else  if selectedIndex == 5
             {
                 max_ScoreArr = inactiveQuessArr.value(forKey: "seq_Number") as? [Int]
-                seq_Number = max_ScoreArr![0]
+                let seq_Number = max_ScoreArr![0]
                 vc.seq_Number = seq_Number
                 
                 idArr = inactiveQuessArr.value(forKey: "id") as? [Int]
-                id = idArr![indexPath!.row]
+                let id = idArr![indexPath!.row]
                 vc.rowId = id
                 
                 commentArr = inactiveQuessArr.value(forKey: "comment") as? [String]
-                comment = commentArr![indexPath!.row]
+                let comment = commentArr![indexPath!.row]
                 vc.commentStr = comment
             }
             else{
                 max_ScoreArr = otherQuessArr.value(forKey: "seq_Number") as? [Int]
-                seq_Number = max_ScoreArr![0]
+                let seq_Number = max_ScoreArr![0]
                 vc.seq_Number = seq_Number
                 
                 idArr = otherQuessArr.value(forKey: "id") as? [Int]
-                id = idArr![indexPath!.row]
+                let id = idArr![indexPath!.row]
                 vc.rowId = id
                 
                 commentArr = otherQuessArr.value(forKey: "comment") as? [String]
-                comment = commentArr![indexPath!.row]
+                let comment = commentArr![indexPath!.row]
                 vc.commentStr = comment
             }
         }
         
         else{
             max_ScoreArr = questionsArr.value(forKey: "seq_Number") as? [Int]
-            seq_Number = max_ScoreArr![0]
+            let seq_Number = max_ScoreArr![0]
             vc.seq_Number = seq_Number
             
             idArr = questionsArr.value(forKey: "id") as? [Int]
-            id = idArr![indexPath!.row]
+            let id = idArr![indexPath!.row]
             vc.rowId = id
             
             commentArr = questionsArr.value(forKey: "comment") as? [String]
-            comment = commentArr![indexPath!.row]
+            let comment = commentArr![indexPath!.row]
             vc.commentStr = comment
         }
         
@@ -737,7 +736,7 @@ extension PVEDraftSNAFinalizeAssement:  UIImagePickerControllerDelegate,UINaviga
             })
         }
         /******************************************************************************************************/
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        func imagePickerControllerDidCancel(_ : UIImagePickerController) {
             
             dismiss(animated: true, completion: nil)
         }
@@ -893,8 +892,7 @@ extension PVEDraftSNAFinalizeAssement: VaccinatorsPlusBtnDelegate,NoOfvaccinator
             tblView.beginUpdates()
             
             noOfVaccinatorsArr.remove(at: noOfVaccinatorsArr.count-1)
-            var indPathArr = [NSIndexPath]()
-            indPathArr = [IndexPath(row: noOfVaccinatorsArr.count, section: 2) as NSIndexPath]
+            let indPathArr = [IndexPath(row: noOfVaccinatorsArr.count, section: 2) as NSIndexPath]
             tblView.deleteRows(at: indPathArr as [IndexPath], with: .bottom)
             
             CoreDataHandlerPVE().updateDraftSNAFor(currentTimeStamp, syncedStatus: false, text: noOfVaccinatorsArr, forAttribute: "cat_NoOfVaccinatorsDetailsArr")
@@ -1456,10 +1454,10 @@ extension PVEDraftSNAFinalizeAssement: UITableViewDelegate, UITableViewDataSourc
                 return 200.0
             }
             else if indexPath.section == 1 || indexPath.section == 2{
-                return 60.0 //\\\ ---Vaccine Info Detail Cell-----
+                return 60.0
             }
             else if indexPath.section == 4 || indexPath.section == 5{
-                return 80.0 //\\\ ---Crew Safty Cell-----
+                return 80.0
             }
             else if indexPath.section == 6{
                 
@@ -1503,14 +1501,6 @@ extension PVEDraftSNAFinalizeAssement: UITableViewDelegate, UITableViewDataSourc
                 cell.refreshFreeSerologyBtnState()
                 cell.refreshRadioButton()
                 cell.serologyViewForFreeHousing.isHidden = true
-
-//                let housingStr = getDraftValueForKey(key: "housing") as! String
-//                if housingStr == "Floor" {
-//                    cell.serologyViewForFreeHousing.isHidden = false
-//                }else{
-//                    cell.serologyViewForFreeHousing.isHidden = true
-//                }
-                
                 cell.crewLeaderTxtField.text = getDraftValueForKey(key: "cat_crewLeaderName") as? String
                 cell.crewLeaderEmailTxtField.text = getDraftValueForKey(key: "cat_crewLeaderEmail") as? String
                 let catcherCount = getDraftValueForKey(key: "cat_NoOfCatchersDetailsArr") as? String
@@ -2224,6 +2214,7 @@ extension PVEDraftSNAFinalizeAssement: UICollectionViewDelegate, UICollectionVie
         for (ind, _) in seq_NumberArrr.enumerated() {
             let seqNo = seq_NumberArrr[ind] as! NSNumber
             if seqNo == 6 {
+                // ignor this condition..
             }else{
                 let marksTxt = CoreDataHandlerPVE().fetchDraftSumOfSelectedMarks(seqNo, type: "draft", syncId: currentTimeStamp)
                 let marks = marksTxt.components(separatedBy: "/")
@@ -2545,7 +2536,7 @@ extension PVEDraftSNAFinalizeAssement: UICollectionViewDelegate, UICollectionVie
                 }
                 
                 selectionMenu.cellSelectionStyle = .tickmark
-                selectionMenu.show(style: .popover(sourceView: sender, size: CGSize(width: sender.frame.width, height: (sender.bounds.height) * CGFloat(((vaccineNamesArr as! [String]).count)) + 10)), from: self)
+                selectionMenu.show(style: .popover(sourceView: sender, size: CGSize(width: sender.frame.width, height: (sender.bounds.height) * CGFloat((vaccineNamesArr as! [String]).count) + 10)), from: self)
                 
                 selectionMenu.setSelectedItems(items: simpleSelectedArray ) { [self] (name, index, selected, selectedItems) in
                     print(simpleSelectedArray)
@@ -2613,7 +2604,7 @@ extension PVEDraftSNAFinalizeAssement: UICollectionViewDelegate, UICollectionVie
             }
             
             selectionMenu.cellSelectionStyle = .tickmark
-            selectionMenu.show(style: .popover(sourceView: sender, size: CGSize(width: sender.frame.width, height: (sender.bounds.height) * CGFloat(((vaccineNamesArr as! [String]).count)) + 10)), from: self)
+            selectionMenu.show(style: .popover(sourceView: sender, size: CGSize(width: sender.frame.width, height: (sender.bounds.height) * CGFloat((vaccineNamesArr as! [String]).count) + 10)), from: self)
             
             selectionMenu.setSelectedItems(items: simpleSelectedArray ) { [self] (name, index, selected, selectedItems) in
                 if let indexOfFirstSuchElement = self.selectedDataArray.firstIndex(where: { $0.name == name }) {
