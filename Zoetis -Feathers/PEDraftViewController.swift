@@ -115,12 +115,11 @@ extension PEDraftViewController: UITableViewDelegate, UITableViewDataSource{
                 popFlagArray.append(false)
                 cell.deleteCompletion  = {[unowned self] ( error) in
                     let assessment = self.peAssessmentDraftArray[indexPath.row]
-                    var date = assessment.evaluationDate
                     
                     let draftID = assessment.draftID ?? ""
-                    date = "C-" + draftID.prefix(20)
+                    var date = "C-" + draftID.prefix(20)
                     
-                    let errorMSg = "Are you sure you want to delete the assessment" + (date ?? "") + "?"
+                    let errorMSg = "Are you sure you want to delete the assessment" + (date) + "?"
                     let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) {
                         _ in
@@ -199,13 +198,12 @@ extension PEDraftViewController: UITableViewDelegate, UITableViewDataSource{
                 popFlagArray.append(false)
                 cell.deleteCompletion  = {[unowned self] ( error) in
                     let assessment = self.peAssessmentDraftArray[indexPath.row]
-                    var date = assessment.evaluationDate
                                         
                     let draftID = assessment.draftID ?? ""
-                    date = "C-" + draftID.prefix(20)
+                    var date = "C-" + draftID.prefix(20)
                     
                     
-                    let errorMSg = "Are you sure you want to delete the assessment" + (date ?? "") + "?"
+                    let errorMSg = "Are you sure you want to delete the assessment" + (date) + "?"
                     let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) {
                         _ in

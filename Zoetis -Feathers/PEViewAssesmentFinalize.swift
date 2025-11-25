@@ -4309,6 +4309,8 @@ extension PEViewAssesmentFinalize{
             for objn in  peNewAssessment.vMixer {
                 let data = CoreDataHandlerPE().getCertificateData(doaId: objn)
                 if idArr.contains(data!.id ?? 0){
+                    //no vaccine mixture data available.
+                    
                 }else{
                     idArr.append(data!.id ?? 0)
                     if data != nil{

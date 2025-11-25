@@ -112,7 +112,6 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
     
     // MARK: - Keyboard Will Show
     @objc func keyboardWillShow(notification: NSNotification) {
-        guard let userInfo = notification.userInfo else {return}
         
         if self.view.bounds.origin.y == 0{
             self.view.bounds.origin.y += 200
@@ -3056,11 +3055,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                 if  vManufacutrerNameArray.count > 0 {
                     self.dropDownVIewNew(arrayData: vManufacutrerNameArray as? [String] ?? [String](), kWidth: cell.tfVaccineMan.frame.width, kAnchor: cell.tfVaccineMan, yheight: cell.tfVaccineMan.bounds.height) { [unowned self] selectedVal, index  in
                         self.dayOfAgeSData[indexPath.row].vaccineMan = selectedVal
-                        if selectedVal == "Other"{
-                            self.reloadTableWithoutAnimation()
-                        } else {
-                            self.reloadTableWithoutAnimation()
-                        }
+                     
                         self.dayOfAgeSData[indexPath.row].name = ""
                         CoreDataHandlerPE().updateDOAInDB(inovojectData:  self.dayOfAgeSData[indexPath.row])
                         self.reloadTableWithoutAnimation()
@@ -3783,10 +3778,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                                 cell.txtQCCount.isUserInteractionEnabled = true
                                 self.update_isNA(assessment: assessment!)
                                 self.updateAssessmentInDb(assessment : assessment!)
-                                DispatchQueue.main.async {
-                                    self.resultScoreLabel.text = String(result)
-                                    self.totalScoreLabel.text = String(totalresult)
-                                }
+                                self.updateUIAfterAssessment(result: result, total: totalresult)
                                 
                             }
                             
@@ -3956,10 +3948,7 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
                                 cell.txtQCCount.isUserInteractionEnabled = false
                                 self.update_isNA(assessment: assessment!)
                                 self.updateAssessmentInDb(assessment : assessment!)
-                                DispatchQueue.main.async {
-                                    self.totalScoreLabel.text = String(totalresult)
-                                    self.resultScoreLabel.text = String(result)
-                                }
+                                self.updateUIAfterAssessment(result: result, total: totalresult)
                                 
                             }
                             if assessment?.sequenceNoo == 3 && assessment?.rollOut == "Y"{
@@ -4056,6 +4045,13 @@ extension PEDraftAssesmentFinalize: UITableViewDelegate, UITableViewDataSource{
             return cell
         }
         return UITableViewCell() as! PEQuestionTableViewCell
+    }
+    
+    func updateUIAfterAssessment(result: Int, total: Int) {
+        DispatchQueue.main.async {
+            self.resultScoreLabel.text = String(result)
+            self.totalScoreLabel.text = String(total)
+        }
     }
     
     // MARK: -  DROP DOWN HIDDEN AND SHOW

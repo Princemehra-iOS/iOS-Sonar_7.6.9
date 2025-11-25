@@ -284,14 +284,16 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
                 selectedTSR.text = peNewAssessment.selectedTSR
             } else {
                 for (index,obj) in visitIDArray.enumerated() {
-                    if let id = obj as? Int {
-                        if id == userID {
-                            
-                            selectedTSR.text = visitNameArray[index] as? String ?? ""
-                            peNewAssessment.selectedTSR = visitNameArray[index] as? String ?? ""
-                            peNewAssessment.selectedTSRID = id
-                        }
+                    
+                    if let id = obj as? Int,
+                       id == userID {
+
+                        let name = visitNameArray[index] as? String ?? ""
+                        selectedTSR.text = name
+                        peNewAssessment.selectedTSR = name
+                        peNewAssessment.selectedTSRID = id
                     }
+
                 }
             }
         } else {
@@ -302,21 +304,22 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
         hideEggsOthers()
         
         txtManufacturer.text = self.peNewAssessment.manufacturer ?? ""
-        if  txtManufacturer.text != "" {
-            if let character = peNewAssessment.manufacturer?.character(at:0) {
-                if txtManufacturer.text == "Other"{
-                    showManufacturerOthers()
-                }
-                
-                if character == constantToSave.character(at: 0){
-                    showManufacturerOthers()
-                    let str =  peNewAssessment.manufacturer?.replacingOccurrences(of: constantToSave, with: "")
-                    manfacturerOtherTxt.text = str
-                    txtManufacturer.text = "Other"
-                    showManufacturerOthers()
-                }
+        if txtManufacturer.text != "",
+           let character = peNewAssessment.manufacturer?.character(at: 0) {
+
+            if txtManufacturer.text == "Other" {
+                showManufacturerOthers()
+            }
+
+            if character == constantToSave.character(at: 0) {
+                showManufacturerOthers()
+                let str = peNewAssessment.manufacturer?.replacingOccurrences(of: constantToSave, with: "")
+                manfacturerOtherTxt.text = str
+                txtManufacturer.text = "Other"
+                showManufacturerOthers()
             }
         }
+
         
         let xx = String(self.peNewAssessment.noOfEggs ?? 000)
         if xx != "0" {
@@ -629,14 +632,16 @@ class PEDraftStartNewAssesmentINT: BaseViewController {
         }
         
         txtBreedOfBird.text = self.peNewAssessment.breedOfBird
-        if let character = peNewAssessment.breedOfBird?.character(at: 1) {
-            if character == constantToSave.character(at: 0){
-                showBreedOthers()
-                let str =  peNewAssessment.breedOfBird?.replacingOccurrences(of: constantToSave, with: "")
-                txtBreedOfBirdsOthers.text = str
-                txtBreedOfBird.text = "Other"
-            }
+
+        if let character = peNewAssessment.breedOfBird?.character(at: 1),
+           character == constantToSave.character(at: 0) {
+
+            showBreedOthers()
+            let str = peNewAssessment.breedOfBird?.replacingOccurrences(of: constantToSave, with: "")
+            txtBreedOfBirdsOthers.text = str
+            txtBreedOfBird.text = "Other"
         }
+
         txtBreedOfBirdsOthers.text =    self.peNewAssessment.breedOfBirdOther
         
         hideManufacturerOthers()
