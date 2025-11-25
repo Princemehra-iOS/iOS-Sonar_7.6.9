@@ -402,8 +402,6 @@ class VaccinationDashboardVC: BaseViewController{
                     alertController.addAction(okAction)
                     alertController.addAction(cancelAction)
                     self.present(alertController, animated: true, completion: nil)
-                    
-                    
                 }
             }
         }
@@ -424,7 +422,6 @@ class VaccinationDashboardVC: BaseViewController{
         let cancelAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel) {
             _ in
             self.forceSyncMessage()
-            
         }
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
@@ -445,9 +442,7 @@ class VaccinationDashboardVC: BaseViewController{
             let alertController = UIAlertController(title: "Data available", message: errorMSg, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) {
                 _ in
-                
                 self.submitCertifications()
-                
             }
             let cancelAction = UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: nil)
             alertController.addAction(cancelAction)
@@ -624,9 +619,7 @@ class VaccinationDashboardVC: BaseViewController{
             operationQueue.addOperation(getFSMListOperation)
             operationQueue.addOperation(getCountryListOperation)
         }
-        
-        
-        
+     
     }
     
     func registerTblVwCells(){
@@ -651,13 +644,6 @@ class VaccinationDashboardVC: BaseViewController{
         
     }
     
-    private func loadPopupVw(){
-        popupBackgroundVw.isHidden = false
-        popupSectionHeaderVw.isHidden = false
-        popupHeightConstraint.constant = 360
-        titleVw.isHidden = false
-        sectonHeaderVw.isHidden = false
-    }
     
 	private func getScheduledCertifications(){
 		APIActivityTracker.shared.startRequest()
@@ -669,11 +655,9 @@ class VaccinationDashboardVC: BaseViewController{
 				self?.hasDataLoaded = true
 				//                self?.showPopup()
 				let hasLoadedVaccinations = UserDefaults.standard.bool(forKey: "hasVaccinationDataLoaded")
-				if !hasLoadedVaccinations{
-					
-				}else{
-					self?.dismissGlobalHUD(self?.view ?? UIView());
-				}
+                if hasLoadedVaccinations{
+                    self?.dismissGlobalHUD(self?.view ?? UIView());
+                }
 				return;
 			}
 			

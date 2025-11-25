@@ -1755,35 +1755,6 @@ class ApiSync: NSObject {
 		return dict
 	}
 	
-	// MARK: - Server Communication
-	private func sendNecropsyDataToServer(_ data: NSMutableDictionary) {
-		guard WebClass.sharedInstance.connected(),
-			  let accessToken = AccessTokenHelper().getFromKeychain(keyed: Constants.accessToken) else { return }
-		
-		let headerDict = [Constants.authorization: accessToken]
-		let urlString = WebClass.sharedInstance.webUrl + "PostingSession/SaveMultipleNecropsySyncData"
-		
-		var request = URLRequest(url: URL(string: urlString)!)
-		request.httpMethod = "POST"
-		request.allHTTPHeaderFields = headerDict
-		request.setValue(Constants.applicationJson, forHTTPHeaderField: Constants.contentType)
-		
-		do {
-			request.httpBody = try JSONSerialization.data(withJSONObject: data, options: [])
-		} catch {
-			print("Error serializing data: \(error)")
-			return
-		}
-		
-		sessionManager.request(request as URLRequestConvertible).responseJSON { [weak self] response in
-			guard let self = self else { return }
-			
-			if let statusCode = response.response?.statusCode {
-				self.handleServerResponse(statusCode: statusCode)
-			}
-		}
-	}
-	
 	private func handleServerResponse(statusCode: Int) {
 		switch statusCode {
 			case 401:
