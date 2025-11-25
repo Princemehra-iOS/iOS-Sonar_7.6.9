@@ -1210,6 +1210,14 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
     
     // MARK: - Draft Button Action
     @IBAction func draftBtnClicked(_ sender: Any) {
+        presentSaveDraftDataAlert()
+    }
+    
+    @IBAction func draftButtonClickedInitial(_ sender: Any) {
+        presentSaveDraftDataAlert()
+    }
+    
+    private func presentSaveDraftDataAlert() {
         let errorMSg = "Are you sure you want to save assessment in Draft?"
         let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) {
@@ -1220,21 +1228,6 @@ class PEDraftAssesmentFinalize: BaseViewController , DatePickerPopupViewControll
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
-        
-    }
-    
-    @IBAction func draftButtonClickedInitial(_ sender: Any) {
-        let errorMSg = "Are you sure you want to save assessment in Draft?"
-        let alertController = UIAlertController(title: "Alert", message: errorMSg as? String, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) {
-            _ in
-            self.saveDraftData()
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) 
-        alertController.addAction(okAction)
-        alertController.addAction(cancelAction)
-        self.present(alertController, animated: true, completion: nil)
-        
     }
     // MARK: - Save Finalized Data
     private func saveFinalizedData(){

@@ -731,25 +731,7 @@ class PEStartNewAssessment: BaseViewController {
         }
         return coustomers
     }
-    // MARK: - Get saved Site's list
-    private func getAllSitesArrayStored() -> [String]{
-        let drafts  = CoreDataHandlerPE().getDraftAssessmentArrayPEObject()
-        var dates : [String] = []
-        var coustomers : [String] = []
-        var sites : [String] = []
-        for obj in drafts {
-            dates.append(obj.evaluationDate ?? "")
-            coustomers.append(obj.customerName ?? "")
-            sites.append(obj.siteName ?? "")
-        }
-        let syncData =  CoreDataHandlerPE().getOfflineAssessmentArrayPEObject()
-        for obj in syncData {
-            dates.append(obj.evaluationDate ?? "")
-            coustomers.append(obj.customerName ?? "")
-            sites.append(obj.siteName ?? "")
-        }
-        return sites
-    }
+    
     // MARK: - Get Evaluation Type list
     private func getAllevaluationIDStored() -> [String]{
         let drafts  = CoreDataHandlerPE().getDraftAssessmentArrayPEObject(ofCurrentDate:true)
@@ -863,24 +845,7 @@ class PEStartNewAssessment: BaseViewController {
         self.present(alertController, animated: true, completion: nil)
         
     }
-    // MARK: -API to check Duplicate Data
-    private func dataDuplicacyCheck(assId: String, customerId: Int, siteId: Int, evalDate: String, evaulaterId: Int, _ completion: @escaping (_ status: Bool) -> Void){
-        let parameter = [
-            "AssessmentId":assId,
-            "SiteId": siteId,
-            "CustomerId": customerId,
-            "EvaulaterId": evaulaterId,
-            "EvaluationDate": evalDate
-        ] as JSONDictionary
-        ZoetisWebServices.shared.getDuplicacyCheck(controller: self, parameters: parameter, completion: { [weak self] (json, error) in
-            guard let self = self, error == nil else { return }
-            if json["Data"].boolValue == true{
-                completion(false)
-            }else{
-                completion(true)
-            }
-        })
-    }
+
     // MARK: - Get Vaccine Mixer List
     private func getVaccineMixerList(customerId: Int, siteId: Int, countryId: Int, _ completion: @escaping (_ status: Bool) -> Void) {
         self.showGlobalProgressHUDWithTitle(self.view, title: "Loading Mixer's List...")
