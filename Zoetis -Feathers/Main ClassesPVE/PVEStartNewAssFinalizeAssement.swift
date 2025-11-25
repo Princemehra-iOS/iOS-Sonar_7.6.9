@@ -458,11 +458,7 @@ class PVEStartNewAssFinalizeAssement: BaseViewController  , UISearchBarDelegate 
         let indexPath = self.tblView.indexPathForRow(at:buttonPosition)
         questionsArr = CoreDataHandlerPVE().fetchAssessmentQuestion(currentSel_seq_Number) as NSArray
         selectedIndex = indexPath!.section as Int
-        
-        var max_ScoreArr = questionsArr.value(forKey: "seq_Number") as? [Int]
-        var idArr = questionsArr.value(forKey: "id") as? [Int]
-        var commentArr = questionsArr.value(forKey: "comment") as? [String]
-        
+                
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Storyboard.pveStoryboard, bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "PVECommentPopupViewController") as! PVECommentPopupViewController
         vc.delegate = self
@@ -475,57 +471,57 @@ class PVEStartNewAssFinalizeAssement: BaseViewController  , UISearchBarDelegate 
             
             if selectedIndex == 4
             {
-                max_ScoreArr = liveQuesArr.value(forKey: "seq_Number") as? [Int]
+                var  max_ScoreArr = liveQuesArr.value(forKey: "seq_Number") as? [Int]
                 let seq_Number = max_ScoreArr![0]
                 vc.seq_Number = seq_Number
                 
-                idArr = liveQuesArr.value(forKey: "id") as? [Int]
+                var idArr = liveQuesArr.value(forKey: "id") as? [Int]
                 let id = idArr![indexPath!.row]
                 vc.rowId = id
                 
-                commentArr = liveQuesArr.value(forKey: "comment") as? [String]
+                var commentArr = liveQuesArr.value(forKey: "comment") as? [String]
                 let comment = commentArr![indexPath!.row]
                 vc.commentStr = comment
             }
             else if selectedIndex == 5
             {
-                max_ScoreArr = inactiveQuessArr.value(forKey: "seq_Number") as? [Int]
+                var max_ScoreArr = inactiveQuessArr.value(forKey: "seq_Number") as? [Int]
                 let seq_Number = max_ScoreArr![0]
                 vc.seq_Number = seq_Number
                 
-                idArr = inactiveQuessArr.value(forKey: "id") as? [Int]
+                var idArr = inactiveQuessArr.value(forKey: "id") as? [Int]
                 let id = idArr![indexPath!.row]
                 vc.rowId = id
                 
-                commentArr = inactiveQuessArr.value(forKey: "comment") as? [String]
+                var commentArr = inactiveQuessArr.value(forKey: "comment") as? [String]
                 let comment = commentArr![indexPath!.row]
                 vc.commentStr = comment
             }
             else{
-                max_ScoreArr = otherQuessArr.value(forKey: "seq_Number") as? [Int]
+                var max_ScoreArr = otherQuessArr.value(forKey: "seq_Number") as? [Int]
                 let seq_Number = max_ScoreArr![0]
                 vc.seq_Number = seq_Number
                 
-                idArr = otherQuessArr.value(forKey: "id") as? [Int]
+                var idArr = otherQuessArr.value(forKey: "id") as? [Int]
                 let id = idArr![indexPath!.row]
                 vc.rowId = id
                 
-                commentArr = otherQuessArr.value(forKey: "comment") as? [String]
+                var commentArr = otherQuessArr.value(forKey: "comment") as? [String]
                 let comment = commentArr![indexPath!.row]
                 vc.commentStr = comment
             }
         }
         
         else{
-            max_ScoreArr = questionsArr.value(forKey: "seq_Number") as? [Int]
+            var max_ScoreArr = questionsArr.value(forKey: "seq_Number") as? [Int]
             let seq_Number = max_ScoreArr![0]
             vc.seq_Number = seq_Number
             
-            idArr = questionsArr.value(forKey: "id") as? [Int]
+            var idArr = questionsArr.value(forKey: "id") as? [Int]
             let id = idArr![indexPath!.row]
             vc.rowId = id
             
-            commentArr = questionsArr.value(forKey: "comment") as? [String]
+            var commentArr = questionsArr.value(forKey: "comment") as? [String]
             let comment = commentArr![indexPath!.row]
             vc.commentStr = comment
         }

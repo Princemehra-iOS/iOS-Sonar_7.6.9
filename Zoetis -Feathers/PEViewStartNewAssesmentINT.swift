@@ -164,28 +164,32 @@ class PEViewStartNewAssesmentINT: BaseViewController {
         if self.peNewAssessment.noOfEggs ?? 0 > 0 {
             txtNumberOfEggs.text = String(self.peNewAssessment.noOfEggs ?? 0)
         }
-        if let character = peNewAssessment.breedOfBird?.character(at: 1) {
-            if character == constantToSave.character(at: 0){
-                showBreedOthers()
-                let str =  peNewAssessment.breedOfBird?.replacingOccurrences(of: constantToSave, with: "")
-                txtBreedOfBirdsOthers.text = str
-                txtBreedOfBird.text = "Other"
-            }
+        if let character = peNewAssessment.breedOfBird?.character(at: 1),
+           character == constantToSave.character(at: 0) {
+
+            showBreedOthers()
+            let str = peNewAssessment.breedOfBird?.replacingOccurrences(of: constantToSave, with: "")
+            txtBreedOfBirdsOthers.text = str
+            txtBreedOfBird.text = "Other"
         }
+
         if peNewAssessment.breedOfBird == "Other"{
             showBreedOthers()
         } else {
             hideBreedOthers()
         }
         txtBreedOfBird.text = self.peNewAssessment.breedOfBird
-        if let character = peNewAssessment.breedOfBird?.character(at: 1) {
-            if character == constantToSave.character(at: 0){
-                showBreedOthers()
-                let str =  peNewAssessment.breedOfBird?.replacingOccurrences(of: constantToSave, with: "")
-                txtBreedOfBirdsOthers.text = str
-                txtBreedOfBird.text = "Other"
-            }
+        
+        if let character = peNewAssessment.breedOfBird?.character(at: 1),
+           character == constantToSave.character(at: 0) {
+
+            showBreedOthers()
+            let str = peNewAssessment.breedOfBird?.replacingOccurrences(of: constantToSave, with: "")
+            txtBreedOfBirdsOthers.text = str
+            txtBreedOfBird.text = "Other"
         }
+
+        
         txtBreedOfBirdsOthers.text =    self.peNewAssessment.breedOfBirdOther
         txtIncubation.text =  self.peNewAssessment.incubation
         txtIncubationOthers.text =   self.peNewAssessment.incubationOthers
@@ -242,19 +246,23 @@ class PEViewStartNewAssesmentINT: BaseViewController {
         hideManufacturerOthers()
         hideEggsOthers()
         txtManufacturer.text = self.peNewAssessment.manufacturer ?? ""
-        if  txtManufacturer.text != "" {
-            if let character = peNewAssessment.manufacturer?.character(at:0) {
-                if txtManufacturer.text == "Other"{
-                    showManufacturerOthers()
-                }
-                if character == constantToSave.character(at: 0){
-                    showManufacturerOthers()
-                    let str =  peNewAssessment.manufacturer?.replacingOccurrences(of: constantToSave, with: "")
-                    manfacturerOtherTxt.text = str
-                    txtManufacturer.text = "Other"
-                }
+
+        if txtManufacturer.text != "",
+           let character = peNewAssessment.manufacturer?.character(at: 0) {
+
+            if txtManufacturer.text == "Other" {
+                showManufacturerOthers()
+            }
+
+            if character == constantToSave.character(at: 0) {
+                showManufacturerOthers()
+                let str = peNewAssessment.manufacturer?.replacingOccurrences(of: constantToSave, with: "")
+                manfacturerOtherTxt.text = str
+                txtManufacturer.text = "Other"
             }
         }
+
+        
         let xx = String(self.peNewAssessment.noOfEggs ?? 000)
         if xx != "0" {
             let last3 = String(xx.suffix(3))
@@ -1599,7 +1607,6 @@ extension PEViewStartNewAssesmentINT{
     // MARK: - Create Sync Request for DOA Data
     func createSyncRequestForDOA(dictArray: PENewAssessment,dayOfAgeData :InovojectData) -> JSONDictionary{
         
-        let udid = UserDefaults.standard.value(forKey: "ApplicationIdentifier")!
         var UniID = dictArray.dataToSubmitID ?? ""
         
         if UniID == "" {
@@ -1694,7 +1701,6 @@ extension PEViewStartNewAssesmentINT{
     // MARK: - Create Sync Request for DOAS Data
     func createSyncRequestForDOAS(dictArray: PENewAssessment,dayOfAgeData :InovojectData) -> JSONDictionary{
         
-        let udid = UserDefaults.standard.value(forKey: "ApplicationIdentifier")!
         var UniID = dictArray.dataToSubmitID ?? ""
         
         if UniID == "" {
@@ -1891,7 +1897,6 @@ extension PEViewStartNewAssesmentINT{
     // MARK: - Create Sync Request for Microbial Data
     func createSyncRequestForMicroData(dictArray: PENewAssessment) -> JSONDictionary{
         
-        let udid = UserDefaults.standard.value(forKey: "ApplicationIdentifier")!
         var UniID = dictArray.dataToSubmitID ?? ""
         
         if UniID == "" {
@@ -2439,7 +2444,6 @@ extension PEViewStartNewAssesmentINT{
     // MARK: - Create SYNC Request for Comment
     func createSyncRequestForComment(dictArray: PENewAssessment) -> JSONDictionary{
         
-        let udid = UserDefaults.standard.value(forKey: "ApplicationIdentifier")!
         var UniID = dictArray.dataToSubmitID ?? ""
         
         if UniID == "" {

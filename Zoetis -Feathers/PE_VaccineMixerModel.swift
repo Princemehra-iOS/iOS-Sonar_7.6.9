@@ -55,8 +55,8 @@ public struct VaccineMixerDetail {
         
         let certCreatedById = certCeatedbyId ?? 0
         let certCreatedByName = certCeatedbyName ?? ""
-        let source = source ?? ""
-        let isManuallyAdded = isManuallyAdded ?? false
+        let sourceIs = source ?? ""
+        let manuallyAdded = isManuallyAdded ?? false
 
         CoreDataHandlerPE().saveVaccineMixerInDB(NSNumber(value: idN),
                                                  Name: NameIs,
@@ -65,8 +65,8 @@ public struct VaccineMixerDetail {
                                                  signatureImg: signatureImgIs,
                                                  certCreatedById: certCreatedById,
                                                  certCreatedByName: certCreatedByName,
-                                                 source: source,
-                                                 isManuallyAdded: isManuallyAdded)
+                                                 source: sourceIs,
+                                                 isManuallyAdded: manuallyAdded)
         
     }
     
