@@ -39,6 +39,7 @@ protocol SyncApiData{
     func failWithErrorInternalSyncdata()
     func didFinishApiSyncdata()
     func failWithInternetConnectionSyncdata()
+    func didFailDuringChickenPostApi(message: String)   // 🔥 new function
 }
 
 // MARK: - Single Sync Data
@@ -431,20 +432,8 @@ class SingleSyncData: NSObject {
                         
                     case .failure(let encodingError):
                         
-                        if let err = encodingError as? URLError, err.code == .notConnectedToInternet {
-                            self.delegeteSyncApiData.failWithErrorInternalSyncdata()
-                            //  print(err)
-                        } else if let data = response.data, let responseString = String(data: data, encoding: String.Encoding.utf8) {
-                            print (encodingError)
-                            print (responseString)
-                            if let s = statusCode {
-                                self.delegeteSyncApiData.failWithErrorSyncdata(statusCode: s)
-                            }
-                            else
-                            {
-                                self.delegeteSyncApiData.failWithErrorInternalSyncdata()
-                            }
-                        }
+                        let failedMessage = NetworkErrorHandler.getUserFriendlyMessage(from: encodingError)
+                        self.delegeteSyncApiData.didFailDuringChickenPostApi(message: failedMessage)
                     }
                 }
             }
@@ -705,20 +694,8 @@ class SingleSyncData: NSObject {
                         self.savePostingDataOnServer(postingId: postingId)
                         
                     case .failure(let encodingError):
-                        
-                        if let err = encodingError as? URLError, err.code == .notConnectedToInternet {
-                            self.delegeteSyncApiData.failWithErrorInternalSyncdata()
-                        }
-                        else if response.data != nil {
-                            if let s = statusCode {
-                                self.delegeteSyncApiData.failWithErrorSyncdata(statusCode: s)
-                            }
-                            else
-                            {
-                                self.delegeteSyncApiData.failWithErrorInternalSyncdata()
-                            }
-                        }
-                    }
+                        let failedMessage = NetworkErrorHandler.getUserFriendlyMessage(from: encodingError)
+                        self.delegeteSyncApiData.didFailDuringChickenPostApi(message: failedMessage)                    }
                 }
             }
         }
@@ -739,19 +716,8 @@ class SingleSyncData: NSObject {
             
         case .failure(let encodingError):
             
-            if let err = encodingError as? URLError, err.code == .notConnectedToInternet {
-                self.delegeteSyncApiData.failWithErrorInternalSyncdata()
-            }
-            else if response.data != nil {
-                
-                if let s = statusCode {
-                    self.delegeteSyncApiData.failWithErrorSyncdata(statusCode: s)
-                }
-                else
-                {
-                    self.delegeteSyncApiData.failWithErrorInternalSyncdata()
-                }
-            }
+            let failedMessage = NetworkErrorHandler.getUserFriendlyMessage(from: encodingError)
+            self.delegeteSyncApiData.didFailDuringChickenPostApi(message: failedMessage)
         }
     }
     
@@ -1029,18 +995,8 @@ class SingleSyncData: NSObject {
                         
                     case .failure(let encodingError):
                         
-                        if let err = encodingError as? URLError, err.code == .notConnectedToInternet {
-                            self.delegeteSyncApiData.failWithErrorInternalSyncdata()
-                        } else if response.data != nil {
-                            
-                            if let s = statusCode {
-                                self.delegeteSyncApiData.failWithErrorSyncdata(statusCode: s)
-                            }
-                            else
-                            {
-                                self.delegeteSyncApiData.failWithErrorInternalSyncdata()
-                            }
-                        }
+                        let failedMessage = NetworkErrorHandler.getUserFriendlyMessage(from: encodingError)
+                        self.delegeteSyncApiData.didFailDuringChickenPostApi(message: failedMessage)
                     }
                 }
             }
@@ -1050,12 +1006,14 @@ class SingleSyncData: NSObject {
     /**************************************************************************/
     
     func saveObservationImageOnServer(postingId: NSNumber) {
+        // chnage's are made to minimize the size of POST JSON of Images . original code is in branch 7.6.8
         let imageArrWithIsyncIsTrue = CoreDataHandler().fecthPhotoWithiSynsTrue(true)
         let sessionDict = NSMutableDictionary()
         let sessionArr = NSMutableArray()
         let cNecArr = CoreDataHandler().FetchNecropsystep1NecId(postingId)
         let totalSession = NSMutableArray()
 
+        // MARK: - Build unique totalSession list
         for j in 0..<cNecArr.count {
             let captureNecropsyData = cNecArr.object(at: j) as! CaptureNecropsyData
             totalSession.add(captureNecropsyData)
@@ -1070,96 +1028,111 @@ class SingleSyncData: NSObject {
         postingArrWithAllData.removeAllObjects()
         postingArrWithAllData = CoreDataHandler().fetchAllPostingSession(postingId).mutableCopy() as! NSMutableArray
 
+        // MARK: - Only continue if images exist
         if imageArrWithIsyncIsTrue.count > 0 {
-            for i in 0..<totalSession.count {
-                let cNec = CoreDataHandler().FetchNecropsystep1NecId(postingId)
-                let obsWithImageArr = NSMutableArray()
-                for x in 0..<cNec.count {
-                    let cNData = cNec.object(at: x) as! CaptureNecropsyData
-                    let farmName = cNData.farmName
-                    let noOfBird = Int(cNData.noOfBirds!)
-                    let necId = Int(cNData.necropsyId!)
-                    for j in 0..<noOfBird! {
-                        let catArr = ["skeltaMuscular", "Coccidiosis", "GITract", "Resp", "Immune"]
-                        for cat in catArr {
-                            let obsArr = CoreDataHandler().fecthobsDataWithCatnameAndFarmNameAndBirdNumber((j + 1) as NSNumber, farmname: farmName!, catName: cat, necId: necId as NSNumber)
-                            for y in 0..<obsArr.count {
-                                let obsWithAllImageDataDict = NSMutableDictionary()
-                                let cData = obsArr.object(at: y) as! CaptureNecropsyViewData
-                                let photoArr = CoreDataHandler().fecthPhotoWithCatnameWithBirdAndObservationIDandIsync((j + 1) as NSNumber, farmname: farmName!, catName: cat, Obsid: cData.obsID!, isSync: true, necId: necId as NSNumber)
-                                obsWithAllImageDataDict.setValue(farmName!, forKey: "farmName")
-                                obsWithAllImageDataDict.setValue(j + 1, forKey: "birdNumber")
-                                obsWithAllImageDataDict.setValue(cat, forKey: "categoryName")
-                                obsWithAllImageDataDict.setValue(cData.obsID!, forKey: "observationId")
-                                let photoValArr = NSMutableArray()
-                                for z in 0..<photoArr.count {
-                                    let objBirdPhotoCapture = photoArr.object(at: z) as! BirdPhotoCapture
-                                    var image = UIImage(data: objBirdPhotoCapture.photo! as Data)!
-                                    if let imageData = image.jpeg(.lowest) {
-                                        image = UIImage(data: imageData)!
-                                    }
-                                    let resizedImage = self.resizeImage(image, newWidth: image.size.width / 7)!
-                                    let imageDict = NSMutableDictionary()
-                                    imageDict.setValue(self.imageToNSString(resizedImage), forKey: "Image")
-                                    photoValArr.add(imageDict)
-                                }
-                                obsWithAllImageDataDict.setValue(photoValArr, forKey: "images")
-                                obsWithImageArr.add(obsWithAllImageDataDict)
-                            }
-                        }
-                    }
-                }
-            }
 
             for i in 0..<postingArrWithAllData.count {
+
                 let sessionDetails = NSMutableDictionary()
                 let captureNecropsyData = postingArrWithAllData.object(at: i) as! PostingSession
+
                 let cNec = CoreDataHandler().FetchNecropsystep1NecId(postingId)
                 let obsWithImageArr = NSMutableArray()
+
                 for x in 0..<cNec.count {
+
                     let cNData = cNec.object(at: x) as! CaptureNecropsyData
                     let farmName = cNData.farmName
                     let noOfBird = Int(cNData.noOfBirds!)
                     let necId = Int(cNData.necropsyId!)
+
                     for j in 0..<noOfBird! {
+
                         let catArr = ["skeltaMuscular", "Coccidiosis", "GITract", "Resp", "Immune"]
+
                         for cat in catArr {
-                            let obsArr = CoreDataHandler().fecthobsDataWithCatnameAndFarmNameAndBirdNumber((j + 1) as NSNumber, farmname: farmName!, catName: cat, necId: necId as NSNumber)
+
+                            let obsArr = CoreDataHandler().fecthobsDataWithCatnameAndFarmNameAndBirdNumber(
+                                (j + 1) as NSNumber,
+                                farmname: farmName!,
+                                catName: cat,
+                                necId: necId as NSNumber
+                            )
+
                             for y in 0..<obsArr.count {
+
                                 let obsWithAllImageDataDict = NSMutableDictionary()
                                 let cData = obsArr.object(at: y) as! CaptureNecropsyViewData
-                                let photoArr = CoreDataHandler().fecthPhotoWithCatnameWithBirdAndObservationIDandIsync((j + 1) as NSNumber, farmname: farmName!, catName: cat, Obsid: cData.obsID!, isSync: true, necId: necId as NSNumber)
-                                obsWithAllImageDataDict.setValue(farmName!, forKey: "farmName")
-                                obsWithAllImageDataDict.setValue(j + 1, forKey: "birdNumber")
-                                obsWithAllImageDataDict.setValue(cat, forKey: "categoryName")
-                                obsWithAllImageDataDict.setValue(cData.obsID!, forKey: "observationId")
-                                let photoValArr = NSMutableArray()
-                                for z in 0..<photoArr.count {
-                                    let objBirdPhotoCapture = photoArr.object(at: z) as! BirdPhotoCapture
-                                    var image = UIImage(data: objBirdPhotoCapture.photo! as Data)!
-                                    if let imageData = image.jpeg(.lowest) {
-                                        image = UIImage(data: imageData)!
+
+                                let photoArr = CoreDataHandler().fecthPhotoWithCatnameWithBirdAndObservationIDandIsync(
+                                    (j + 1) as NSNumber,
+                                    farmname: farmName!,
+                                    catName: cat,
+                                    Obsid: cData.obsID!,
+                                    isSync: true,
+                                    necId: necId as NSNumber
+                                )
+
+                                // Only add if photos exist
+                                if photoArr.count > 0 {
+
+                                    let photoValArr = NSMutableArray()
+
+                                    for z in 0..<photoArr.count {
+
+                                        let objBirdPhotoCapture = photoArr.object(at: z) as! BirdPhotoCapture
+                                        var image = UIImage(data: objBirdPhotoCapture.photo! as Data)!
+
+                                        if let imageData = image.jpeg(.lowest) {
+                                            image = UIImage(data: imageData)!
+                                        }
+
+                                        let resizedImage = self.resizeImage(image, newWidth: image.size.width / 7)!
+                                        let imageDict = NSMutableDictionary()
+                                        imageDict.setValue(self.imageToNSString(resizedImage), forKey: "Image")
+                                        photoValArr.add(imageDict)
                                     }
-                                    let resizedImage = self.resizeImage(image, newWidth: image.size.width / 7)!
-                                    let imageDict = NSMutableDictionary()
-                                    imageDict.setValue(self.imageToNSString(resizedImage), forKey: "Image")
-                                    photoValArr.add(imageDict)
+
+                                    obsWithAllImageDataDict.setValue(farmName!, forKey: "farmName")
+                                    obsWithAllImageDataDict.setValue(j + 1, forKey: "birdNumber")
+                                    obsWithAllImageDataDict.setValue(cat, forKey: "categoryName")
+                                    obsWithAllImageDataDict.setValue(cData.obsID!, forKey: "observationId")
+                                    obsWithAllImageDataDict.setValue(photoValArr, forKey: "images")
+
+                                    obsWithImageArr.add(obsWithAllImageDataDict)
                                 }
-                                obsWithAllImageDataDict.setValue(photoValArr, forKey: "images")
-                                obsWithImageArr.add(obsWithAllImageDataDict)
                             }
                         }
                     }
                 }
+
+                // ⛔ Skip session if no images
+                if obsWithImageArr.count == 0 {
+                    continue
+                }
+
                 let fullData = captureNecropsyData.timeStamp!
                 sessionDetails.setValue(obsWithImageArr, forKey: "ImageDetails")
+
                 let id = UserDefaults.standard.integer(forKey: "Id")
                 sessionDetails.setValue(id, forKey: "UserId")
                 sessionDetails.setValue(fullData, forKey: "deviceSessionId")
+
                 sessionArr.add(sessionDetails)
             }
         }
+
         sessionDict.setValue(sessionArr, forKey: "Sessions")
+
+//        let jsonData = try! JSONSerialization.data(
+//            withJSONObject: sessionDict,
+//            options: JSONSerialization.WritingOptions.prettyPrinted
+//        )
+//
+//        var jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
+//        jsonString = jsonString.trimmingCharacters(in: CharacterSet.whitespaces)
+//
+//        print("Images Data -> ", jsonString)
 
         if WebClass.sharedInstance.connected() {
             accestoken = AccessTokenHelper().getFromKeychain(keyed: "aceesTokentype")!
@@ -1168,7 +1141,7 @@ class SingleSyncData: NSObject {
             var request = URLRequest(url: URL(string: urlString)!)
             request.httpMethod = "POST"
             request.allHTTPHeaderFields = headerDict
-            request.setValue(Constants.applicationJson, forHTTPHeaderField: Constants.contentType)
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = try! JSONSerialization.data(withJSONObject: sessionDict, options: [])
             request.timeoutInterval = 300
             sessionManager.request(request as URLRequestConvertible).responseJSON { response in
@@ -1188,19 +1161,8 @@ class SingleSyncData: NSObject {
                         self.delegeteSyncApiData.didFinishApiSyncdata()
                     }
                 case .failure(let encodingError):
-                    if let err = encodingError as? URLError, err.code == .notConnectedToInternet {
-                        self.delegeteSyncApiData.failWithErrorInternalSyncdata()
-                    } else if let data = response.data {
-                        print(encodingError)
-                        debugPrint(data)
-                        if let urlError = encodingError.underlyingError as? URLError, urlError.code == .timedOut {
-                            DispatchQueue.main.async {
-                                
-                                self.delegeteSyncApiData.failWithErrorInternalSyncdata()
-                            }
-                        }
-                        
-                    }
+                    let failedMessage = NetworkErrorHandler.getUserFriendlyMessage(from: encodingError)
+                    self.delegeteSyncApiData.didFailDuringChickenPostApi(message: failedMessage)
                 }
             }
         }

@@ -47,7 +47,6 @@ class TimeManager {
                 self.onSessionExpired?()
             } else {
                 let remaining = self.getRemainingTime() ?? 0
-
                 
                 if remaining < 2 * 60, !self.didShowTwoDayWarning {
                     self.didShowTwoDayWarning = true

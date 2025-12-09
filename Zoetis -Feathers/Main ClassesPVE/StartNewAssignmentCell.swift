@@ -287,14 +287,18 @@ extension StartNewAssignmentCell: UITextFieldDelegate{
     }
     
     private func handleNumericTextField(_ textField: UITextField, newString: String, input: String) -> Bool {
+        
         guard CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: input)) else {
             return false
         }
         
-        guard newString.count <= 5 else {
+        let maxLength = (textField == noOfBirdsTxtfield) ? 6 : 5
+        
+        guard newString.count <= maxLength else {
             return false
         }
         
+        // Reject all-zero inputs (000000 etc)
         let sum = newString.compactMap { $0.wholeNumberValue }.reduce(0, +)
         if sum == 0 && !newString.isEmpty {
             return false

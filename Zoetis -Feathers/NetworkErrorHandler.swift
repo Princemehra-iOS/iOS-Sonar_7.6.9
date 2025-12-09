@@ -65,7 +65,7 @@ class NetworkErrorHandler {
             return "No internet connection. Please check your network and try again."
             
         case .timedOut:                         // -1001
-            return "The request timed out. Please check your internet connection and try again."
+            return "Slow or no internet connection detected. Please reconnect and try again."
             
         case .networkConnectionLost:            // -1005
             return "Network connection was lost during upload. Please reconnect and retry."
@@ -119,7 +119,75 @@ class NetworkErrorHandler {
             return "Unexpected network error (\(urlError.code.rawValue)): \(urlError.localizedDescription)"
         }
     }
+    
+    private static func iconName(for urlError: URLError) -> String {
+        switch urlError.code {
+
+        // MARK: - Connectivity
+        case .notConnectedToInternet,
+             .timedOut,
+             .networkConnectionLost,
+             .cannotConnectToHost,
+             .cannotFindHost,
+             .dnsLookupFailed:
+            return "wifi.exclamationmark"
+
+        // MARK: - Authentication
+        case .userAuthenticationRequired,
+             .userCancelledAuthentication:
+            return "person.crop.circle.badge.exclamationmark"
+
+        // MARK: - Security Issues
+        case .secureConnectionFailed,
+             .serverCertificateUntrusted,
+             .serverCertificateHasBadDate,
+             .serverCertificateHasUnknownRoot,
+             .serverCertificateNotYetValid:
+            return "lock.slash"
+
+        // MARK: - Server / Parsing
+        case .badServerResponse,
+             .cannotDecodeContentData,
+             .cannotDecodeRawData,
+             .cannotParseResponse:
+            return "exclamationmark.bubble"
+
+        // MARK: - Data Restricted
+        case .dataNotAllowed:
+            return "cellularbars.badge.exclamationmark"
+
+        // MARK: - User Cancelled
+        case .cancelled:
+            return "xmark.circle"
+
+        // MARK: - Fallback
+        default:
+            return "exclamationmark.triangle"
+        }
+    }
+
+    static func iconNameFromMessage(_ message: String) -> String {
+        if message.contains("internet")        { return "wifi.exclamationmark" }
+        if message.contains("Authentication")  { return "person.crop.circle.badge.exclamationmark" }
+        if message.contains("Secure")          { return "lock.slash" }
+        if message.contains("response")        { return "exclamationmark.bubble" }
+        if message.contains("Mobile data")     { return "cellularbars.badge.exclamationmark" }
+        if message.contains("cancelled")       { return "xmark.circle" }
+
+        return "exclamationmark.triangle"
+    }
+
 
 }
+
+extension UIViewController {
+
+    func showNetworkCoolAlert(message: String, iconName: String) {
+          let vc = CustomAlertViewController(message: message, iconName: iconName)
+          self.present(vc, animated: true)
+      }
+}
+
+
 
 

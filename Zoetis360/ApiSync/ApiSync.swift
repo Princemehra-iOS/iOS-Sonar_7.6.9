@@ -39,6 +39,7 @@ protocol syncApi{
 	func failWithErrorInternal()
 	func didFinishApi()
 	func failWithInternetConnection()
+    func failDataPostForMultipleSession(message: String)
 }
 
 private struct FeedProgramConstants {
@@ -216,19 +217,8 @@ class ApiSync: NSObject {
 						
 					case .failure(let encodingError):
 						
-						if let err = encodingError as? URLError, err.code == .notConnectedToInternet {
-							
-							self.delegeteSyncApi.failWithErrorInternal()
-							debugPrint(err)
-						} else if let data = response.data, let responseString = String(data: data, encoding: String.Encoding.utf8) {
-							debugPrint (encodingError)
-							debugPrint (responseString)
-							if let s = statusCode {
-								self.delegeteSyncApi.failWithError(statusCode: s)
-							} else {
-								self.delegeteSyncApi.failWithErrorInternal()
-							}
-						}
+                    let failedMessage = NetworkErrorHandler.getUserFriendlyMessage(from: encodingError)
+                    self.delegeteSyncApi.failDataPostForMultipleSession(message: failedMessage)
 				}
 			}
 		}
@@ -487,6 +477,7 @@ class ApiSync: NSObject {
             )
             var jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
             jsonString = jsonString.trimmingCharacters(in: CharacterSet.whitespaces)
+            debugPrint(jsonString)
             
             handleSaveMultipleFeedsSyncDataAPI(sessionDictMain)
         } catch {
@@ -921,20 +912,8 @@ class ApiSync: NSObject {
                         
                     case .failure(let encodingError):
                         
-                        if let err = encodingError as? URLError, err.code == .notConnectedToInternet {
-                            
-                            self.delegeteSyncApi.failWithErrorInternal()
-                        }
-                        else if let data = response.data, let responseString = String(data: data, encoding: String.Encoding.utf8) {
-                            debugPrint(responseString)
-                            if let s = statusCode {
-                                self.delegeteSyncApi.failWithError(statusCode: s)
-                            }
-                            else
-                            {
-                                self.delegeteSyncApi.failWithErrorInternal()
-                            }
-                        }
+                        let failedMessage = NetworkErrorHandler.getUserFriendlyMessage(from: encodingError)
+                        self.delegeteSyncApi.failDataPostForMultipleSession(message: failedMessage)
                     }
                 }
             }
@@ -1452,19 +1431,9 @@ class ApiSync: NSObject {
                         
                     case .failure(let encodingError):
                         
-                        if let err = encodingError as? URLError, err.code == .notConnectedToInternet {
-                            self.delegeteSyncApi.failWithErrorInternal()
-                            
-                        } else if let data = response.data{
-                            debugPrint(data)
-                            if let s = statusCode {
-                                self.delegeteSyncApi.failWithError(statusCode: s)
-                            }
-                            else
-                            {
-                                self.delegeteSyncApi.failWithErrorInternal()
-                            }
-                        }
+                        
+                        let failedMessage = NetworkErrorHandler.getUserFriendlyMessage(from: encodingError)
+                        self.delegeteSyncApi.failDataPostForMultipleSession(message: failedMessage)
                     }
                 }
             }
@@ -1701,18 +1670,8 @@ class ApiSync: NSObject {
                         
                     case .failure(let encodingError):
                         
-                        if let err = encodingError as? URLError, err.code == .notConnectedToInternet {
-                            self.delegeteSyncApi.failWithErrorInternal()
-                        } else if let data = response.data{
-                            debugPrint(data)
-                            if let s = statusCode {
-                                self.delegeteSyncApi.failWithError(statusCode: s)
-                            }
-                            else
-                            {
-                                self.delegeteSyncApi.failWithErrorInternal()
-                            }
-                        }
+                        let failedMessage = NetworkErrorHandler.getUserFriendlyMessage(from: encodingError)
+                        self.delegeteSyncApi.failDataPostForMultipleSession(message: failedMessage)
                     }
                 }
             }
@@ -2003,20 +1962,8 @@ class ApiSync: NSObject {
                         }
                     case .failure(let encodingError):
                         
-                        if let err = encodingError as? URLError, err.code == .notConnectedToInternet {
-                            self.delegeteSyncApi.failWithErrorInternal()
-                            
-                        } else if let data = response.data, let responseString = String(data: data, encoding: String.Encoding.utf8) {
-                            print (encodingError)
-                            print (responseString)
-                            if let s = statusCode {
-                                self.delegeteSyncApi.failWithError(statusCode: s)
-                            }
-                            else
-                            {
-                                self.delegeteSyncApi.failWithErrorInternal()
-                            }
-                        }
+                        let failedMessage = NetworkErrorHandler.getUserFriendlyMessage(from: encodingError)
+                        self.delegeteSyncApi.failDataPostForMultipleSession(message: failedMessage)
                     }
                 }
             }
