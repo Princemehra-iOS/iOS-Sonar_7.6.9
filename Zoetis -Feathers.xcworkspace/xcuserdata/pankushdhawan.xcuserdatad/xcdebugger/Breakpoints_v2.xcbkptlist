@@ -590,6 +590,36 @@
             endingLineNumber = "4855"
             landmarkName = "setPEHeaderDayOfAge(_:section:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6C1CE806-CC9B-4E54-96AF-766D7FDB4E99 - ba9245aface15d07"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PoultryView_360.PEDraftAssesmentFinalize.setPEHeaderDayOfAge(_: __C.UITableView, section: Swift.Int) -&gt; PoultryView_360.PEHeaderDayOfAge"
+                  moduleName = "PoultryView 360.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEDraftAssesmentFinalize.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "4855"
+                  endingLineNumber = "4855">
+               </Location>
+               <Location
+                  uuid = "6C1CE806-CC9B-4E54-96AF-766D7FDB4E99 - bdfe3712f894b677"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;Swift.String&gt;) -&gt; () in PoultryView_360.PEDraftAssesmentFinalize.setPEHeaderDayOfAge(_: __C.UITableView, section: Swift.Int) -&gt; PoultryView_360.PEHeaderDayOfAge"
+                  moduleName = "PoultryView 360.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEDraftAssesmentFinalize.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "4855"
+                  endingLineNumber = "4855">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -636,36 +666,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3257"
             endingLineNumber = "3257">
-            <Locations>
-               <Location
-                  uuid = "013A693B-A983-49C4-BA50-2CF7FB6FC7CD - 44e0eae9414eb9f2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PoultryView_360.PEViewStartNewAssessment.callExtendedMicro(param: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/Zoetis360_MicrobialTask/zoetispv360_ios/Zoetis%20-Feathers/PEViewStartNewAssessment.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "3257"
-                  endingLineNumber = "3257">
-               </Location>
-               <Location
-                  uuid = "013A693B-A983-49C4-BA50-2CF7FB6FC7CD - 809691efb27c9630"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (SwiftyJSON.JSON, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in PoultryView_360.PEViewStartNewAssessment.callExtendedMicro(param: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/Zoetis360_MicrobialTask/zoetispv360_ios/Zoetis%20-Feathers/PEViewStartNewAssessment.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "3257"
-                  endingLineNumber = "3257">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -870,9 +870,9 @@
             filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1731"
-            endingLineNumber = "1731"
-            landmarkName = "notesButtonPressed(_:_:)"
+            startingLineNumber = "1745"
+            endingLineNumber = "1745"
+            landmarkName = "collapsableButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -886,9 +886,9 @@
             filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1744"
-            endingLineNumber = "1744"
-            landmarkName = "mediaTypeButtonPressed(_:)"
+            startingLineNumber = "1758"
+            endingLineNumber = "1758"
+            landmarkName = "notesButtonPressed(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -918,9 +918,9 @@
             filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1743"
-            endingLineNumber = "1743"
-            landmarkName = "mediaTypeButtonPressed(_:)"
+            startingLineNumber = "1757"
+            endingLineNumber = "1757"
+            landmarkName = "notesButtonPressed(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1312,9 +1312,9 @@
             filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1725"
-            endingLineNumber = "1725"
-            landmarkName = "notesButtonPressed(_:_:)"
+            startingLineNumber = "1739"
+            endingLineNumber = "1739"
+            landmarkName = "collapsableButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1344,9 +1344,9 @@
             filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1416"
-            endingLineNumber = "1416"
-            landmarkName = "setTemplateFor(templateType:)"
+            startingLineNumber = "1430"
+            endingLineNumber = "1430"
+            landmarkName = "updateCurrentRequisitionValidation(_:_:_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1639,22 +1639,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2C77FA28-FF87-4255-AAC5-B0F88F8159CB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Zoetis -Feathers/MicrobialViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "561"
-            endingLineNumber = "561"
-            landmarkName = "fetchGetAllSyncedDataForRequisition()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "CF9D182E-4341-4F10-A2D6-98144E765AE3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1726,8 +1710,8 @@
             filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "279"
-            endingLineNumber = "279"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
             landmarkName = "finalSubmit()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1742,9 +1726,9 @@
             filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1458"
-            endingLineNumber = "1458"
-            landmarkName = "std40ButtonPressed(_:)"
+            startingLineNumber = "1472"
+            endingLineNumber = "1472"
+            landmarkName = "stdButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1790,9 +1774,9 @@
             filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1439"
-            endingLineNumber = "1439"
-            landmarkName = "std20ButtonPressed(_:)"
+            startingLineNumber = "1453"
+            endingLineNumber = "1453"
+            landmarkName = "setTemplateFor(templateType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1806,9 +1790,9 @@
             filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1549"
-            endingLineNumber = "1549"
-            landmarkName = "handleRequisitionSavedSessionTypeShowDraftForEditting(_:)"
+            startingLineNumber = "1563"
+            endingLineNumber = "1563"
+            landmarkName = "addLocation()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1902,10 +1886,10 @@
             filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
-            landmarkName = "finalSubmit()"
-            landmarkType = "7">
+            startingLineNumber = "289"
+            endingLineNumber = "289"
+            landmarkName = "EnviromentalSurveyController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1921,22 +1905,6 @@
             startingLineNumber = "282"
             endingLineNumber = "282"
             landmarkName = "saveSampleInfoHeaderDataInToDB_Enviromental(info:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "86F6F5AD-A1DD-4FCD-895D-88DE0A0240CE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Zoetis -Feathers/MicrobialViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "685"
-            endingLineNumber = "685"
-            landmarkName = "fetchConductTypesList()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2030,8 +1998,8 @@
             filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "submitButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2110,8 +2078,8 @@
             filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1491"
-            endingLineNumber = "1491"
+            startingLineNumber = "1505"
+            endingLineNumber = "1505"
             landmarkName = "EnviromentalSurveyController"
             landmarkType = "21">
          </BreakpointContent>
@@ -2126,9 +2094,9 @@
             filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
-            landmarkName = "generatePlateIdFirst()"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "submitButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2142,9 +2110,9 @@
             filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1292"
-            endingLineNumber = "1292"
-            landmarkName = "handleCompanySelection(_:cell:)"
+            startingLineNumber = "1306"
+            endingLineNumber = "1306"
+            landmarkName = "setValueInTextFields(selectedValue:selectedIndex:clickedField:cell:view:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2325,22 +2293,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5450CB2E-21B9-460E-94A6-5D72353B662A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Zoetis -Feathers/MicrobialViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "697"
-            endingLineNumber = "697"
-            landmarkName = "MicrobialViewController"
-            landmarkType = "21">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "7F987F7F-DDAD-47B1-A99A-1AF477D1A955"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -2351,22 +2303,6 @@
             startingLineNumber = "2326"
             endingLineNumber = "2326"
             landmarkName = "saveSampleInfoPlateDataInToDB_Enviromental(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "63DE9653-C543-4B3C-BACE-CE0D1999A9BE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Zoetis -Feathers/MicrobialViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "695"
-            endingLineNumber = "695"
-            landmarkName = "handleConductTypeResponse(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2432,6 +2368,36 @@
             endingLineNumber = "2162"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CCE5B5CB-77E5-497F-988F-D4E078F7AC8D - da69679715e89425"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PoultryView_360.PEDraftAssesmentFinalize.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "PoultryView 360.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEDraftAssesmentFinalize.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2163"
+                  endingLineNumber = "2163">
+               </Location>
+               <Location
+                  uuid = "CCE5B5CB-77E5-497F-988F-D4E078F7AC8D - 7301f04ec7d0129d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #8 (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;Swift.Bool&gt;, Swift.Int) -&gt; () in PoultryView_360.PEDraftAssesmentFinalize.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "PoultryView 360.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEDraftAssesmentFinalize.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2163"
+                  endingLineNumber = "2163">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2770,7 +2736,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "3890134F-A17D-4CFF-9971-B32612C3AD94 - da69679715e88a15"
+                  uuid = "3890134F-A17D-4CFF-9971-B32612C3AD94 - da69679715e88d6d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -2780,11 +2746,11 @@
                   urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEDraftAssesmentFinalize.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "2115"
-                  endingLineNumber = "2115">
+                  startingLineNumber = "2107"
+                  endingLineNumber = "2107">
                </Location>
                <Location
-                  uuid = "3890134F-A17D-4CFF-9971-B32612C3AD94 - f62c9c6213ca1a89"
+                  uuid = "3890134F-A17D-4CFF-9971-B32612C3AD94 - f62c9c6213ca1df1"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -2794,8 +2760,8 @@
                   urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEDraftAssesmentFinalize.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "2115"
-                  endingLineNumber = "2115">
+                  startingLineNumber = "2107"
+                  endingLineNumber = "2107">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -3190,36 +3156,6 @@
             endingLineNumber = "1833"
             landmarkName = "chunked(into:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B042D084-4543-481D-A5B3-3BF5C3696857 - 6ba3b3df3ec96601"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PoultryView_360.PVEDashboardViewController.fetchGetAPIResponse() -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/Zoetis360_MicrobialTask/zoetispv360_ios/Zoetis%20-Feathers/Main%20ClassesPVE/PVEDashboardViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1827"
-                  endingLineNumber = "1827">
-               </Location>
-               <Location
-                  uuid = "B042D084-4543-481D-A5B3-3BF5C3696857 - 24aa422cc04448c4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (SwiftyJSON.JSON, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in PoultryView_360.PVEDashboardViewController.fetchGetAPIResponse() -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/Zoetis360_MicrobialTask/zoetispv360_ios/Zoetis%20-Feathers/Main%20ClassesPVE/PVEDashboardViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1827"
-                  endingLineNumber = "1827">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3250,36 +3186,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1861"
             endingLineNumber = "1861">
-            <Locations>
-               <Location
-                  uuid = "16EC040F-7561-48AE-A97F-91599E4C08AF - ec15b496739b7e95"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PoultryView_360.PVEDashboardViewController.getSyncedImageResponse() -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/Zoetis360_MicrobialTask/zoetispv360_ios/Zoetis%20-Feathers/Main%20ClassesPVE/PVEDashboardViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1855"
-                  endingLineNumber = "1855">
-               </Location>
-               <Location
-                  uuid = "16EC040F-7561-48AE-A97F-91599E4C08AF - ad84d4ec2f6a4a53"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (SwiftyJSON.JSON, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in PoultryView_360.PVEDashboardViewController.getSyncedImageResponse() -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/Zoetis360_MicrobialTask/zoetispv360_ios/Zoetis%20-Feathers/Main%20ClassesPVE/PVEDashboardViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1855"
-                  endingLineNumber = "1855">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3294,36 +3200,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1873"
             endingLineNumber = "1873">
-            <Locations>
-               <Location
-                  uuid = "AE2F947D-D68D-4CC6-9855-78610FD85059 - f6824088238ed37a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PoultryView_360.PVEDashboardViewController.getSyncedCompleteImageResponse() -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/Zoetis360_MicrobialTask/zoetispv360_ios/Zoetis%20-Feathers/Main%20ClassesPVE/PVEDashboardViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1873"
-                  endingLineNumber = "1873">
-               </Location>
-               <Location
-                  uuid = "AE2F947D-D68D-4CC6-9855-78610FD85059 - f3cb0ce384628043"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (SwiftyJSON.JSON, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in PoultryView_360.PVEDashboardViewController.getSyncedCompleteImageResponse() -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/Zoetis360_MicrobialTask/zoetispv360_ios/Zoetis%20-Feathers/Main%20ClassesPVE/PVEDashboardViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1873"
-                  endingLineNumber = "1873">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3743,22 +3619,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E9B1A92B-492D-49E2-90DE-2B394187402B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "actionMenu(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "F9F128A9-DBA9-440F-BB4F-BCE3AEE6A31E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -3782,9 +3642,9 @@
             filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "308"
-            endingLineNumber = "308"
-            landmarkName = "saveReviewersDataToDatabase(isSessionType:)"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
+            landmarkName = "saveCurrentSessionDataInToDB()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3942,25 +3802,9 @@
             filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1761"
-            endingLineNumber = "1761"
-            landmarkName = "locationValueButtonPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CDC5B385-FF78-4A91-8F90-5E140695FE5C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "394"
-            endingLineNumber = "394"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            startingLineNumber = "1775"
+            endingLineNumber = "1775"
+            landmarkName = "notesButtonPressed(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4009,22 +3853,6 @@
             startingLineNumber = "58"
             endingLineNumber = "58"
             landmarkName = "downLoadBtnAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8CA4EF17-6FCB-4D59-BFBA-614785A6D012"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "759"
-            endingLineNumber = "759"
-            landmarkName = "setUpHeaderView(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4582,36 +4410,6 @@
             endingLineNumber = "4757"
             landmarkName = "PEDashboardViewController"
             landmarkType = "21">
-            <Locations>
-               <Location
-                  uuid = "AB2ADE09-B851-4B0A-80EF-69FA4D0E03B0 - 93f234f63fc2acc4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "default argument 1 of PoultryView_360.PEDashboardViewController.handlefetchAllCustomerResponse(_: SwiftyJSON.JSON, isEverytime: Swift.Bool) -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEDashboardViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "4758"
-                  endingLineNumber = "4758">
-               </Location>
-               <Location
-                  uuid = "AB2ADE09-B851-4B0A-80EF-69FA4D0E03B0 - 60e8b4e4f4ca7b18"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PoultryView_360.PEDashboardViewController.handlefetchAllCustomerResponse(_: SwiftyJSON.JSON, isEverytime: Swift.Bool) -&gt; ()"
-                  moduleName = "PoultryView 360.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pankushdhawan/Documents/SonarQube_pv360/iOS-Sonar_7.6.9/Zoetis%20-Feathers/PEDashboardViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "4759"
-                  endingLineNumber = "4759">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -4641,6 +4439,54 @@
             startingLineNumber = "398"
             endingLineNumber = "398"
             landmarkName = "moveAssessmentTodraft(index:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DDC70699-67A4-4429-8E04-C7BBD365B130"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "fetchGetAllRequisionDataWithPlates()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E75AAAA9-CCD6-4F19-B15B-87B03968BDFC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoetis -Feathers/ViewRequisitionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9363FE22-55FB-4D4E-95C8-3FC47136C9D3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zoetis -Feathers/EnviromentalSurveyController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

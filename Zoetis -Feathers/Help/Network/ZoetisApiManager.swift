@@ -201,10 +201,10 @@ enum ZoetisApiManager {
                     let jsonObject = try JSONSerialization.jsonObject(with: responseData, options: [])
                     let prettyData = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
                     if let prettyString = String(data: prettyData, encoding: .utf8) {
-                        debugPrint("✅ JSON Response:\n\(prettyString)")
+                        print("✅ JSON Response:\n\(prettyString)")
                     }
                 } catch {
-                    debugPrint("❌ Failed to convert response to JSON: \(error)")
+                    print("❌ Failed to convert response to JSON: \(error)")
                 }
             }
             parseResponse(response, success: success, failure: failure)

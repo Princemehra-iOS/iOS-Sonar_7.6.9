@@ -60,7 +60,11 @@ class EnviromentalSurveyController: BaseViewController , UISearchBarDelegate {
     override func viewDidLoad() {
         print("<<<<",self)
         super.viewDidLoad()
+        
+
+        self.tableView.backgroundColor = .orange
         if requisitionSavedSessionType == .SHOW_SUBMITTED_REQUISITION_FOR_READ_ONLY {
+            
             fetchGetAllRequisionDataWithPlates()
         }else {
             self.tableView.reloadData()
@@ -137,10 +141,19 @@ class EnviromentalSurveyController: BaseViewController , UISearchBarDelegate {
                 $0.requisitionNo?.replacingOccurrences(of: "C-", with: "") == selectedRequisionId
             }
 
-            guard let first = matched.first else { continue }
+            if let first = matched.first {
+                self.microbialSelectedPlatesData.append(contentsOf: first.microbialSampleDetailsList ?? [])
+                self.configureTableView()
 
-            self.microbialSelectedPlatesData.append(contentsOf: first.microbialSampleDetailsList ?? [])
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+
+
         }
+       
+
     }
     
     
@@ -389,7 +402,8 @@ extension EnviromentalSurveyController: UITableViewDataSource, UITableViewDelega
         }
         return 1 + self.currentRequisition.actualCreatedHeaders.count
     }
-    
+  
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
