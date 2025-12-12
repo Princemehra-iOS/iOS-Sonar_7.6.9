@@ -26,6 +26,7 @@ private struct FeedConstants {
 
 class ViewController: BaseViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, syncApiTurkey, syncApi {
    
+   
     
     var delegate: SidePenalDelegate?
     let myBlueColor = (UIColor(red: 204.0, green: 227.0, blue: 255.0, alpha: 1.0))
@@ -801,7 +802,10 @@ class ViewController: BaseViewController, UITextFieldDelegate, UITableViewDelega
                 }
                 break
             case let .failure(error):
-                debugPrint(error.localizedDescription)
+                self.deleteAllData("Login")
+                Helper.dismissGlobalHUD(self.view)
+                let failedMessage = NetworkErrorHandler.getUserFriendlyMessage(from: error)
+                self.showNetworkCoolAlert(message: failedMessage, iconName: NetworkErrorHandler.iconNameFromMessage(failedMessage))
                 break
             }
         }
@@ -953,6 +957,12 @@ class ViewController: BaseViewController, UITextFieldDelegate, UITableViewDelega
         Helper.dismissGlobalHUD((UIApplication.shared.keyWindow)!)
         let mapViewControllerObj = self.storyboard?.instantiateViewController(withIdentifier: "BirdsSelectionVC") as? BirdsSelectionVC
         self.navigationController?.pushViewController(mapViewControllerObj!, animated: false)
+        
+    }
+    func failDataPostForMultipleSession(message: String) {
+        
+        self.dismisLoader()
+        self.showNetworkCoolAlert(message: message, iconName: NetworkErrorHandler.iconNameFromMessage(message))
         
     }
     
@@ -1708,14 +1718,10 @@ class ViewController: BaseViewController, UITextFieldDelegate, UITableViewDelega
     }
 
     private func handleNecropsyFailure(_ encodingError: Error, response: AFDataResponse<Any>) {
-        if let err = encodingError as? URLError, err.code == .notConnectedToInternet {
-            self.alerViewInternet()
-            debugPrint(err)
-        } else if let data = response.data, let responseString = String(data: data, encoding: .utf8) {
-            debugPrint(encodingError)
-            debugPrint(responseString)
-            self.alerViewInternet()
-        }
+        self.deleteAllData("Login")
+        Helper.dismissGlobalHUD(self.view)
+        let failedMessage = NetworkErrorHandler.getUserFriendlyMessage(from: encodingError)
+        self.showNetworkCoolAlert(message: failedMessage, iconName: NetworkErrorHandler.iconNameFromMessage(failedMessage))
     }
     
     // MARK: ************* ZoetisWebServices Calling to GetVaccination Data for Posted Session Data From Server  ***************************************/
@@ -2479,14 +2485,10 @@ class ViewController: BaseViewController, UITextFieldDelegate, UITableViewDelega
     }
 
     private func handleTurkeyNecropsyFailure(_ encodingError: Error, response: AFDataResponse<Any>) {
-        if let err = encodingError as? URLError, err.code == .notConnectedToInternet {
-            self.alerViewInternet()
-            debugPrint(err)
-        } else if let data = response.data, let responseString = String(data: data, encoding: .utf8) {
-            debugPrint(encodingError)
-            debugPrint(responseString)
-            self.alerViewInternet()
-        }
+        self.deleteAllData("Login")
+        Helper.dismissGlobalHUD(self.view)
+        let failedMessage = NetworkErrorHandler.getUserFriendlyMessage(from: encodingError)
+        self.showNetworkCoolAlert(message: failedMessage, iconName: NetworkErrorHandler.iconNameFromMessage(failedMessage))
     }
     
     // MARK: ************* Get Posting Data from Server for Vaccination ***************************************/
@@ -2730,19 +2732,10 @@ class ViewController: BaseViewController, UITextFieldDelegate, UITableViewDelega
 	}
 	
 	private func handleFailureResponse(_ error: Error, response: AFDataResponse<Any>) {
-		if let urlError = error as? URLError, urlError.code == .notConnectedToInternet {
-			DispatchQueue.main.async { [weak self] in
-				self?.alerViewInternet()
-			}
-			debugPrint(urlError)
-		} else if let data = response.data,
-				  let responseString = String(data: data, encoding: .utf8) {
-			debugPrint(error)
-			debugPrint(responseString)
-			DispatchQueue.main.async { [weak self] in
-				self?.alerViewInternet()
-			}
-		}
+        self.deleteAllData("Login")
+        Helper.dismissGlobalHUD(self.view)
+        let failedMessage = NetworkErrorHandler.getUserFriendlyMessage(from: error)
+        self.showNetworkCoolAlert(message: failedMessage, iconName: NetworkErrorHandler.iconNameFromMessage(failedMessage))
 	}
     
     

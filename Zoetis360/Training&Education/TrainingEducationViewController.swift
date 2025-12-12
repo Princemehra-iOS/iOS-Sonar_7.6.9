@@ -364,7 +364,6 @@ class TrainingEducationViewController: UIViewController,userLogOut,syncApi {
     func didFinishApi()
     {
         self.printSyncLblCount()
-        
         Helper.dismissGlobalHUD(self.view)
         Helper.showAlertMessage(self,titleStr:NSLocalizedString(Constants.alertStr, comment: "") , messageStr:NSLocalizedString(Constants.dataSyncCompleted, comment: ""))
     }
@@ -373,12 +372,17 @@ class TrainingEducationViewController: UIViewController,userLogOut,syncApi {
     {
         
         self.printSyncLblCount()
-        
         Helper.dismissGlobalHUD(self.view)
-        
         Helper.showAlertMessage(self,titleStr:NSLocalizedString(Constants.alertStr, comment: "") , messageStr:NSLocalizedString(Constants.offline, comment: ""))
     }
     
+    func failDataPostForMultipleSession(message: String) {
+        
+        self.printSyncLblCount()
+        Helper.dismissGlobalHUD(self.view)
+        self.showNetworkCoolAlert(message: message, iconName: NetworkErrorHandler.iconNameFromMessage(message))
+        
+    }
     
     
     func printSyncLblCount()

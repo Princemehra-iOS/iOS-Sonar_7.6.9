@@ -711,6 +711,14 @@ class UnlinkNecrpoSecondViewController: UIViewController,UITableViewDelegate,UIT
         Helper.showAlertMessage(self,titleStr:NSLocalizedString(Constants.alertStr, comment: "") , messageStr:NSLocalizedString(Constants.offline, comment: ""))
     }
     
+    func failDataPostForMultipleSession(message: String) {
+        
+        self.printSyncLblCount()
+        Helper.dismissGlobalHUD(self.view)
+        self.showNetworkCoolAlert(message: message, iconName: NetworkErrorHandler.iconNameFromMessage(message))
+        
+    }
+    
     // MARK: 🟠 Print Sync Count.
     func printSyncLblCount()
     {

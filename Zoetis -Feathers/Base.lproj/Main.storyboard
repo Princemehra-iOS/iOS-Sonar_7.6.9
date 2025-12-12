@@ -4787,6 +4787,22 @@
                                     <action selector="datOneSetSync:" destination="eyd-sd-c2M" eventType="touchUpInside" id="diO-W3-m1k"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hL2-Gh-4jQ">
+                                <rect key="frame" x="572" y="719" width="160" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.61568627450000002" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Export" image="toWeb"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="exportBtnAction:" destination="eyd-sd-c2M" eventType="touchUpInside" id="usH-yn-bdl"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Skk-LT-RY5">
                                 <rect key="frame" x="750" y="719" width="260" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -4882,6 +4898,7 @@
                         <outlet property="complexNamelbl" destination="sul-zV-Ri3" id="Bbl-oW-yxY"/>
                         <outlet property="customerLbl" destination="wv4-H9-IBM" id="rSo-aQ-z7b"/>
                         <outlet property="customerRepLbl" destination="3KL-wn-UGe" id="lUr-Vf-RBF"/>
+                        <outlet property="exportBttnOutlet" destination="hL2-Gh-4jQ" id="D24-IV-Guz"/>
                         <outlet property="eyeImageView" destination="j0i-CB-GVC" id="n2A-SW-jBX"/>
                         <outlet property="feedProgramBtnOutlet" destination="dfF-65-pJD" id="ige-SO-76Q"/>
                         <outlet property="feedProtableView" destination="eax-EU-vh2" id="keF-TZ-5hR"/>

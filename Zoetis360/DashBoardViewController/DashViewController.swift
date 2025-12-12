@@ -18,6 +18,9 @@ import GigyaAuth
 
 class DashViewController: UIViewController,MDRotatingPieChartDataSource,userlistProtocol,userLogOut ,syncApi,SyncApiData {
     
+
+    
+    
     // MARK: - VARIABLES
     var  postingIdArr = NSMutableArray()
     var lngId = NSInteger()
@@ -2685,4 +2688,19 @@ extension DashViewController{
         self.printSyncLblCount()
         Helper.showAlertMessage(self,titleStr:NSLocalizedString(Constants.alertStr, comment: "") , messageStr:NSLocalizedString(offLineMsg, comment: ""))
     }
+    
+    func didFailDuringChickenPostApi(message: String) {
+        Helper.dismissGlobalHUD(self.view)
+        Helper.showAlertMessage(self,
+                                titleStr: NSLocalizedString(Constants.alertStr, comment: ""),
+                                messageStr: message)
+    }
+    
+    func failDataPostForMultipleSession(message:String)
+    {
+        Helper.dismissGlobalHUD(self.view)
+        self.showNetworkCoolAlert(message: message, iconName: NetworkErrorHandler.iconNameFromMessage(message))
+        
+    }
+    
 }

@@ -1022,6 +1022,14 @@ class SettingsViewController: UIViewController,UINavigationControllerDelegate,cl
         Helper.showAlertMessage(self,titleStr:NSLocalizedString(Constants.alertStr, comment: "") , messageStr:NSLocalizedString(offlineMsgAlert, comment: ""))
     }
     
+    func failDataPostForMultipleSession(message: String) {
+        
+        self.printSyncLblCount()
+        Helper.dismissGlobalHUD(self.view)
+        self.showNetworkCoolAlert(message: message, iconName: NetworkErrorHandler.iconNameFromMessage(message))
+        
+    }
+    
     func printSyncLblCount(){
         print(appDelegateObj.testFuntion())
     }

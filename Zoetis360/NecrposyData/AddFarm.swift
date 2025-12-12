@@ -7,6 +7,7 @@ import UIKit
 import MBProgressHUD
 protocol AddFarmPop: class {
     func anv ()
+    func reloadAllData()
 }
 protocol refreshPageafterAddFeed{
     func refreshPageafterAddFeed(_ formName: String)
@@ -191,7 +192,9 @@ class AddFarm:UIView,UIPickerViewDelegate,UIPickerViewDataSource,UITableViewData
     }
     // MARK: 🟠 - Cross Button ACTION
     @IBAction func crossBtnAction(_ sender: AnyObject) {
-        AddFarmDelegate.anv()
+       // AddFarmDelegate.anv()
+        
+        AddFarmDelegate.reloadAllData()
         self.removeFromSuperview()
         
     }

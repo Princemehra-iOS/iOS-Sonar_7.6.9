@@ -4808,7 +4808,9 @@ class CaptureNecropsyDataViewController: BaseViewController,UICollectionViewDele
                 if  Constants.isForUnlinkedChicken == true {
                     return (items[farmArray.count - 1] as AnyObject).count
                 } else {
-                    return (items[selectedBirdIndex] as AnyObject).count
+                   // return (items[selectedBirdIndex] as AnyObject).count // to handle crash..
+                    
+                    return (items[farmArray.count - 1] as AnyObject).count
                 }
             }
         }
@@ -5126,7 +5128,7 @@ class CaptureNecropsyDataViewController: BaseViewController,UICollectionViewDele
             var farmName2 = String()
             let range = firstName.range(of: ".")
             if range != nil{
-                var abc = String(firstName[range!.upperBound...]) as NSString
+                let abc = String(firstName[range!.upperBound...]) as NSString
                 farmName2 = String(indexPath.row+1) + "." + " " + String(describing:abc)
             }
             cell.houseLabel.text = "HNo." + house
@@ -5138,7 +5140,7 @@ class CaptureNecropsyDataViewController: BaseViewController,UICollectionViewDele
             var farmName2 = String()
             let range = farmLengthAge.range(of: ".")
             if range != nil{
-                var abc = String(farmLengthAge[range!.upperBound...]) as NSString
+                let abc = String(farmLengthAge[range!.upperBound...]) as NSString
                 farmName2 = String(indexPath.row+1) + "." + " " + String(describing:abc)
             }
             cell.houseLabel.text = "HNo. " + house
@@ -6442,6 +6444,17 @@ class CaptureNecropsyDataViewController: BaseViewController,UICollectionViewDele
         self.formCollectionView.reloadData()
         self.neccollectionView.reloadData()
     }
+    
+    func reloadAllData (){
+        
+        selectedBirdIndex = farmArray.count
+        customPopV.removeFromSuperview()
+        buttonback.removeFromSuperview()
+        UserDefaults.standard.set(1, forKey: "bird")
+        self.tableView.reloadData()
+        self.birdsCollectionView.reloadData()
+        self.neccollectionView.reloadData()
+    }
     // MARK: 🟠 Back Button Action
     @IBAction func backBtn(_ sender: AnyObject) {
         activityView.removeFromSuperview()
@@ -6756,6 +6769,12 @@ class CaptureNecropsyDataViewController: BaseViewController,UICollectionViewDele
         Helper.showAlertMessage(self,titleStr:NSLocalizedString(Constants.alertStr, comment: "") , messageStr:NSLocalizedString(Constants.offline, comment: ""))
     }
     
+    func failDataPostForMultipleSession(message: String) {
+       
+        Helper.dismissGlobalHUD(self.view)
+        self.showNetworkCoolAlert(message: message, iconName: NetworkErrorHandler.iconNameFromMessage(message))
+        
+    }
 }
 
 fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {

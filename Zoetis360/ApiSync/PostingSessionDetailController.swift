@@ -18,10 +18,11 @@ import Gigya
 import GigyaTfa
 import GigyaAuth
 import SwiftyJSON
-
+import MessageUI
 
 class PostingSessionDetailController: UIViewController,UITableViewDelegate,UITableViewDataSource,userLogOut,syncApi,SyncApiData,
-                                      openNotes,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate , otherFuncDetails {
+                                      openNotes,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate , otherFuncDetails ,MFMailComposeViewControllerDelegate {
+   
     
     
     
@@ -118,6 +119,8 @@ class PostingSessionDetailController: UIViewController,UITableViewDelegate,UITab
     @IBOutlet weak var productionTypeLbl: UILabel!
     @IBOutlet weak var notesBtnnOutlet: UIButton!
     @IBOutlet weak var feedProgramBtnOutlet: UIButton!
+    
+    @IBOutlet weak var exportBttnOutlet: UIButton!
     
     var buttonback = UIButton()
     var customPopV :OtherDetails!
@@ -481,10 +484,86 @@ class PostingSessionDetailController: UIViewController,UITableViewDelegate,UITab
         
     }
     
+    
+    // MARK: 🟠 - Expoert JSON Button Action
+    @IBAction func exportBtnAction(_ sender: Any) {
+      
+        debugPrint(postingId)
+        
+        guard MFMailComposeViewController.canSendMail() else {
+            print("Mail service is not avialbel")
+            return
+        }
+    
+        let combinedJSON = SyncJSONManager.shared.getFullSyncJSON(forPostingId: postingId)
+        
+        // 2️⃣ Convert JSON to Data
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: combinedJSON, options: .prettyPrinted) else {
+            print("Failed to convert JSON to Data")
+            return
+        }
+        
+       
+        if let status = EmailReportManager.shared.sendEmailReport(dataToAttach: jsonData,from: self, assessmentId:"",date: "", isPE: false), !status.0 {
+            if let filePath = status.1 {
+                print(filePath)
+            }
+        }
+        
+//        // 3️⃣ Save JSON to a .txt file in temporary directory
+//        let tempDirectory = FileManager.default.temporaryDirectory
+//        let fileURL = tempDirectory.appendingPathComponent("SyncData_\(postingId).txt")
+//
+//        do {
+//            try jsonData.write(to: fileURL)
+//            print("JSON saved at \(fileURL.path)")
+//        } catch {
+//            print("Error writing JSON to file: \(error)")
+//            return
+//        }
+//
+//        // 4️⃣ Prepare mail with attachment
+//        if let mailCompose = MFMailComposeViewController() as MFMailComposeViewController? {
+//            mailCompose.mailComposeDelegate = self
+//
+//            // ✅ Set the recipient email (your suggested account)
+//            mailCompose.setToRecipients(["arshad.khan@programming.com"])
+//
+//            // Optional: add subject and body
+//            mailCompose.setSubject("Poultry Sync JSON Data")
+//            mailCompose.setMessageBody("Please find attached the sync JSON data for posting \(postingId).", isHTML: false)
+//
+//            // Attach the .txt file
+//            if let fileData = try? Data(contentsOf: fileURL) {
+//                mailCompose.addAttachmentData(fileData, mimeType: "text/plain", fileName: "SyncData_\(postingId).txt")
+//            }
+//
+//            // Present mail composer
+//            mailCompose.popoverPresentationController?.sourceView = sender as? UIView
+//            self.present(mailCompose, animated: true)
+//        } else {
+//            print("Cannot send email from this device")
+//        }
+    }
+    
     // MARK: 🟠 - Logout Button Action
     @IBAction func logOutBtnAction(_ sender: AnyObject) {
         clickHelpPopUp()
     }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                                 didFinishWith result: MFMailComposeResult,
+                                 error: Error?) {
+          controller.dismiss(animated: true)
+          switch result {
+          case .sent:
+              print("Mail sent successfully")
+          case .failed:
+              print("Mail failed: \(error?.localizedDescription ?? "")")
+          default:
+              break
+          }
+      }
     
     // MARK: 🟠 - Notes Button Action
     @IBAction func notesBttnAction(_ sender: AnyObject) {
@@ -765,6 +844,12 @@ class PostingSessionDetailController: UIViewController,UITableViewDelegate,UITab
     func printSyncLblCount()
     {
         synCount.text = String(self.allSessionArr().count)
+    }
+    
+    func didFailDuringChickenPostApi(message: String) {
+        Helper.dismissGlobalHUD(self.view)
+        self.showNetworkCoolAlert(message: message, iconName: NetworkErrorHandler.iconNameFromMessage(message))
+
     }
     
     @IBAction func updateDateButtonClicked(_ sender: UIButton) {
@@ -1294,6 +1379,11 @@ class PostingSessionDetailController: UIViewController,UITableViewDelegate,UITab
         Helper.dismissGlobalHUD(self.view)
         Helper.showAlertMessage(self,titleStr:NSLocalizedString(Constants.alertStr, comment: "") , messageStr:NSLocalizedString(Constants.offline, comment: ""))
         
+    }
+    
+    func failDataPostForMultipleSession(message: String) {
+        Helper.dismissGlobalHUD(self.view)
+        self.showNetworkCoolAlert(message: message, iconName: NetworkErrorHandler.iconNameFromMessage(message))
     }
     // MARK: 🟠 Date Formatter
     func convertDateFormater(_ date: String) -> String {

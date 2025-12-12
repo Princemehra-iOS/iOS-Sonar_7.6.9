@@ -220,4 +220,11 @@ class HelpViewController: UIViewController, userLogOut, UIScrollViewDelegate, sy
         Helper.showAlertMessage(self, titleStr: NSLocalizedString(Constants.alertStr, comment: ""), messageStr: NSLocalizedString(Constants.offline, comment: ""))
     }
     
+    func failDataPostForMultipleSession(message: String) {
+        
+        Helper.dismissGlobalHUD(self.view)
+        self.showNetworkCoolAlert(message: message, iconName: NetworkErrorHandler.iconNameFromMessage(message))
+        
+    }
+    
 }

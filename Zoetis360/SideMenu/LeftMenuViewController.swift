@@ -97,6 +97,12 @@ class LeftMenuViewController: UIViewController,UITableViewDelegate,syncApi,syncA
     func startLoaderTurkey() {
         Helper.showGlobalProgressHUDWithTitle((UIApplication.shared.keyWindow!), title: NSLocalizedString(Constants.dataSyncingMessage, comment: ""))
     }
+    func failDataPostForMultipleSession(message: String) {
+        
+        Helper.dismissGlobalHUD((UIApplication.shared.keyWindow)!)
+        self.showNetworkCoolAlert(message: message, iconName: NetworkErrorHandler.iconNameFromMessage(message))
+        
+    }
     
     func didFinishApiLoader() {
         Helper.dismissGlobalHUD((UIApplication.shared.keyWindow)!)

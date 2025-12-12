@@ -57,6 +57,8 @@
 		00529FA727CE97640017E0B0 /* ToolTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00529FA627CE97640017E0B0 /* ToolTipView.swift */; };
 		005779662EE80C5A00B2F405 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005779652EE80C5A00B2F405 /* CustomAlertViewController.swift */; };
 		005779672EE80C5A00B2F405 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005779652EE80C5A00B2F405 /* CustomAlertViewController.swift */; };
+		0060CD9C2EEC232100C6F752 /* SyncJSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060CD9B2EEC232100C6F752 /* SyncJSONManager.swift */; };
+		0060CD9D2EEC232100C6F752 /* SyncJSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060CD9B2EEC232100C6F752 /* SyncJSONManager.swift */; };
 		0064C22D2DD2059B00ABE988 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064C22C2DD2059B00ABE988 /* TimeManager.swift */; };
 		0064C22E2DD2059B00ABE988 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0064C22C2DD2059B00ABE988 /* TimeManager.swift */; };
 		006C677A2BF2524300118C7F /* peWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006C67792BF2524300118C7F /* peWebViewController.swift */; };
@@ -961,6 +963,7 @@
 		00527F5027CF6920003BFB55 /* CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		00529FA627CE97640017E0B0 /* ToolTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolTipView.swift; sourceTree = "<group>"; };
 		005779652EE80C5A00B2F405 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		0060CD9B2EEC232100C6F752 /* SyncJSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncJSONManager.swift; sourceTree = "<group>"; };
 		0064C22C2DD2059B00ABE988 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		006B2D862B1F3625002829D8 /* Zoetis__Feathers_V7. 13.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Zoetis__Feathers_V7. 13.xcdatamodel"; sourceTree = "<group>"; };
 		006C67792BF2524300118C7F /* peWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = peWebViewController.swift; sourceTree = "<group>"; };
@@ -2499,6 +2502,7 @@
 				1434FC8520A06798006E3491 /* ViewController.swift */,
 				0064C22C2DD2059B00ABE988 /* TimeManager.swift */,
 				005779652EE80C5A00B2F405 /* CustomAlertViewController.swift */,
+				0060CD9B2EEC232100C6F752 /* SyncJSONManager.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -4505,6 +4509,7 @@
 				B72960D224A7C5BC003237C7 /* imageTableViewCell.swift in Sources */,
 				B729604C24A7C5BC003237C7 /* HelpScreenVcTurkey.swift in Sources */,
 				1013162923C3B3D80069A937 /* CoreDataHandlerPE.swift in Sources */,
+				0060CD9D2EEC232100C6F752 /* SyncJSONManager.swift in Sources */,
 				B729607C24A7C5BC003237C7 /* BirdPhotoCaptureTurkey+CoreDataProperties.swift in Sources */,
 				214E0ADA242E03E7005F8653 /* PVEGetAgeOfBirdsResponse.swift in Sources */,
 				21EA29E32434DD6D002720C9 /* PVE_SyncAssessmentCategoriesDetails+CoreDataClass.swift in Sources */,
@@ -5079,6 +5084,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00815A7B2EB9F33000A1A919 /* NetworkErrorHandler.swift in Sources */,
+				0060CD9C2EEC232100C6F752 /* SyncJSONManager.swift in Sources */,
 				459E5FA021622C4D0002D761 /* ViewController.swift in Sources */,
 				005779662EE80C5A00B2F405 /* CustomAlertViewController.swift in Sources */,
 				459E5FCC21622C4D0002D761 /* AppDelegate.swift in Sources */,
@@ -5596,11 +5602,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Zoetis -Feathers/UAT-PV360Debug.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Distribution: Binu Varghese (776FM8RFF2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Binu Varghese (776FM8RFF2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Binu Varghese (46Q5K3Y58H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Binu Varghese (46Q5K3Y58H)";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 776FM8RFF2;
 				ENABLE_BITCODE = NO;
@@ -5628,7 +5634,7 @@
 				PRODUCT_NAME = "PoultryView 360";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "PoultryView 360";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "PV360-TestFlight";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = PV360;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Zoetis-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -5643,10 +5649,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Zoetis -Feathers/UAT-PV360.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Distribution: Binu Varghese (776FM8RFF2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Binu Varghese (46Q5K3Y58H)";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = CH9774HKU9;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 776FM8RFF2;
 				ENABLE_BITCODE = NO;
@@ -5674,7 +5680,7 @@
 				PRODUCT_NAME = "PoultryView 360";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "PoultryView 360";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "PV360-TestFlight";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = PV360;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Zoetis-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;

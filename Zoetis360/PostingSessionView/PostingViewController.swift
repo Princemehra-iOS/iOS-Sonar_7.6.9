@@ -2405,4 +2405,12 @@ class PostingViewController: UIViewController,DropperDelegate,UITextViewDelegate
     {
         syncNotiCountLbl.text = String(self.allSessionArr().count)
     }
+    
+    func failDataPostForMultipleSession(message: String) {
+        
+        self.printSyncLblCount()
+        Helper.dismissGlobalHUD(self.view)
+        self.showNetworkCoolAlert(message: message, iconName: NetworkErrorHandler.iconNameFromMessage(message))
+        
+    }
 }

@@ -303,7 +303,12 @@ class UserListView: UIView,syncApi,syncApiTurkey,UITableViewDelegate,UITableView
     
     func failWithInternetConnection() {
         showAlertIfNeeded(message: NSLocalizedString("Please go online and sync data before logging out.", comment: ""))
-        // Helper.showAlertMessage((UIApplication.shared.keyWindow?.rootViewController)!,titleStr:NSLocalizedString(Constants.alertStr, comment: "") , messageStr:NSLocalizedString("Please go online and sync data before logging out.", comment: ""))
+    }
+    
+    func failDataPostForMultipleSession(message: String) {
+        
+        Helper.dismissGlobalHUD(self)
+        
     }
     func printSyncLblCount() {
         appDelegateObj.testFuntion()

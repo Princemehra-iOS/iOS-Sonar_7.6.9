@@ -2375,6 +2375,14 @@ class FeedProgramViewController: UIViewController,popUPnavigation,userLogOut,UIT
         Helper.showAlertMessage(self,titleStr:NSLocalizedString(Constants.alertStr, comment: "") , messageStr:NSLocalizedString(offlineDataMsg, comment: ""))
     }
     
+    func failDataPostForMultipleSession(message: String) {
+        
+        self.printSyncLblCount()
+        Helper.dismissGlobalHUD(self.view)
+        self.showNetworkCoolAlert(message: message, iconName: NetworkErrorHandler.iconNameFromMessage(message))
+        
+    }
+    
     func printSyncLblCount()
     {
         syncFinalizedCount.text = String(self.allSessionArr().count)
