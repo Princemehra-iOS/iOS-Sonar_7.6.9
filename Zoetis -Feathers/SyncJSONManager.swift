@@ -13,7 +13,247 @@ class SyncJSONManager {
     static let shared = SyncJSONManager() // Singleton for easy access
     var postingIdArr = NSMutableArray()
     private init() {}
-
+    
+    func getFullSyncJSONForTurkey(forPostingId postingId: NSNumber) -> [String: Any] {
+        let savedPostingArrWithAllData = CoreDataHandlerTurkey().fetchAllPostingSessionTurkey(postingId).mutableCopy() as! NSMutableArray
+        let cNecArr =  CoreDataHandlerTurkey().FetchNecropsystep1NecIdTurkey(postingId)
+        let necArrWithoutPosting = NSMutableArray()
+        for j in 0..<cNecArr.count
+        {
+            let captureNecropsyData =  cNecArr.object(at: j)  as! CaptureNecropsyDataTurkey
+            necArrWithoutPosting.add(captureNecropsyData)
+            for w in 0..<necArrWithoutPosting.count - 1
+            {
+                let c =  necArrWithoutPosting.object(at: w)  as! CaptureNecropsyDataTurkey
+                if c.necropsyId == captureNecropsyData.necropsyId
+                {
+                    necArrWithoutPosting.remove(c)
+                }
+            }
+        }
+        self.postingIdArr.removeAllObjects()
+        let tempArrTime = NSMutableArray()
+        let actualTmestamp = NSMutableArray()
+        var sessionId = NSNumber()
+        for i in 0..<savedPostingArrWithAllData.count
+        {
+            let pSession =  savedPostingArrWithAllData.object(at: i) as! PostingSessionTurkey
+            sessionId = pSession.postingId!
+            var timestamp = pSession.timeStamp!
+            var actualTimestampStr =  pSession.actualTimeStamp
+            if actualTimestampStr == nil {
+                actualTimestampStr = ""
+            }
+            self.postingIdArr.add(sessionId)
+            tempArrTime.add(timestamp)
+            actualTmestamp.add(actualTimestampStr!)
+        }
+        
+        let sessionArray = NSMutableArray()
+        var sessionDictMain = NSMutableDictionary()
+        
+        for i in 0..<self.postingIdArr.count {
+            
+            let mainDict = NSMutableDictionary()
+            var FinalArray1 = NSMutableArray()
+            let allCocciControl =  CoreDataHandlerTurkey().fetchAllCocciControlviaPostingidTurkey(self.postingIdArr[i] as! NSNumber)
+            var dataSet = Int()
+            var  index = Int()
+            let mainFeeds = NSMutableArray()
+            var feeds = NSMutableDictionary()
+            for i in 0..<allCocciControl.count {
+                dataSet+=1
+                
+                let mainDict = NSMutableDictionary()
+                let cocciControl =  allCocciControl.object(at: i) as! CoccidiosisControlFeedTurkey
+                let coccidiosisVaccine = cocciControl.coccidiosisVaccine
+                let dosage = cocciControl.dosage
+                let fromDays = cocciControl.fromDays
+                let molecule = cocciControl.molecule
+                let toDays = cocciControl.toDays
+                let moleculeId = cocciControl.dosemoleculeId
+                let cocoId = cocciControl.coccidiosisVaccineId
+                let feedType = cocciControl.feedType
+                let startDate =  cocciControl.feedDate
+                mainDict.setValue(startDate, forKey: "startDate")
+                mainDict.setValue(coccidiosisVaccine, forKey: "coccidiosisVaccine")
+                mainDict.setValue(dosage, forKey: "dose")
+                mainDict.setValue(fromDays, forKey: "durationFrom")
+                mainDict.setValue(molecule, forKey: "molecule")
+                mainDict.setValue(toDays, forKey: "durationTo")
+                mainDict.setValue(5, forKey: "feedProgramCategoryId")
+                mainDict.setValue(moleculeId, forKey: "moleculeId")
+                mainDict.setValue(cocoId, forKey: "cocciVaccineId")
+                mainDict.setValue(feedType, forKey: "feedType")
+                FinalArray1.add(mainDict)
+                
+                if dataSet == 7 {
+                    dataSet = 0
+                    
+                    let feedId = cocciControl.feedId as! Int
+                    let feedProgram = cocciControl.feedProgram
+                    
+                    feeds = ["feedName" : feedProgram!, "feedId" : feedId, "startDate" : startDate ?? "","feedProgramDetails" : FinalArray1]
+                    FinalArray1 = NSMutableArray()
+                    mainFeeds.add(feeds)
+                    feeds = NSMutableDictionary()
+                }
+            }
+            
+            let fetchAntibotic = CoreDataHandlerTurkey().fetchAntiboticViaPostingIdTurkey(self.postingIdArr[i] as! NSNumber)
+            
+            
+            for i in 0..<fetchAntibotic.count {
+                
+                dataSet+=1
+                let mainDict = NSMutableDictionary()
+                let antiboticFeed = fetchAntibotic.object(at: i) as! AntiboticFeedTurkey
+                let dosage = antiboticFeed.dosage
+                let feedId = antiboticFeed.feedId as! Int
+                let feedProgram = antiboticFeed.feedProgram
+                let fromDays = antiboticFeed.fromDays
+                let molecule = antiboticFeed.molecule
+                let toDays = antiboticFeed.toDays
+                let feedType = antiboticFeed.feedType
+                let startDate =  antiboticFeed.feedDate
+                mainDict.setValue(dosage, forKey: "dose")
+                mainDict.setValue(feedId, forKey: "feedId")
+                mainDict.setValue(feedProgram, forKey: "feedName")
+                mainDict.setValue(fromDays, forKey: "durationFrom")
+                mainDict.setValue(molecule, forKey: "molecule")
+                mainDict.setValue(toDays, forKey: "durationTo")
+                mainDict.setValue(12, forKey: "feedProgramCategoryId")
+                mainDict.setValue(0, forKey: "moleculeId")
+                mainDict.setValue(feedType, forKey: "feedType")
+                FinalArray1.add(mainDict)
+                
+                if dataSet == 6 {
+                    dataSet = 0
+                    
+                    let tempArray = (mainFeeds.object(at: index) as AnyObject).value(forKey: "feedProgramDetails") as! NSMutableArray
+                    if (tempArray.count > 0) {
+                        tempArray.addObjects(from: FinalArray1 as [AnyObject])
+                        feeds = ["feedName" : feedProgram!, "feedId" : feedId, "startDate" : startDate ?? "","feedProgramDetails" : tempArray]
+                    }
+                    mainFeeds.replaceObject(at: index, with: feeds)
+                    index+=1
+                    FinalArray1 = NSMutableArray()
+                    feeds = NSMutableDictionary()
+                }
+            }
+            
+            let fetchAlternative = CoreDataHandlerTurkey().fetchAlternativeFeedPostingidTurkey(self.postingIdArr[i] as! NSNumber)
+            
+            index = 0
+            for i in 0..<fetchAlternative.count {
+                
+                dataSet+=1
+                let mainDict = NSMutableDictionary()
+                let antiboticFeed = fetchAlternative.object(at: i) as! AlternativeFeedTurkey
+                let dosage = antiboticFeed.dosage
+                let feedId = antiboticFeed.feedId as! Int
+                let feedProgram = antiboticFeed.feedProgram
+                let fromDays = antiboticFeed.fromDays
+                let molecule = antiboticFeed.molecule
+                let startDate = antiboticFeed.feedDate
+                let toDays = antiboticFeed.toDays
+                let feedType = antiboticFeed.feedType
+                mainDict.setValue(dosage, forKey: "dose")
+                mainDict.setValue(feedId, forKey: "feedId")
+                mainDict.setValue(feedProgram, forKey: "feedName")
+                mainDict.setValue(fromDays, forKey: "durationFrom")
+                mainDict.setValue(molecule, forKey: "molecule")
+                mainDict.setValue(toDays, forKey: "durationTo")
+                mainDict.setValue(6, forKey: "feedProgramCategoryId")
+                mainDict.setValue(0, forKey: "moleculeId")
+                mainDict.setValue(feedType, forKey: "feedType")
+                
+                FinalArray1.add(mainDict)
+                
+                if dataSet == 6 {
+                    dataSet = 0
+                    
+                    if mainFeeds.count>0 {
+                        
+                        let tempArray = (mainFeeds.object(at: index) as AnyObject).value(forKey: "feedProgramDetails") as! NSMutableArray
+                        if tempArray.count > 0 {
+                            tempArray.addObjects(from: FinalArray1 as [AnyObject])
+                            feeds = ["feedName" : feedProgram!, "feedId" : feedId, "startDate" : startDate ?? "","feedProgramDetails" : tempArray]
+                        }
+                        mainFeeds.replaceObject(at: index, with: feeds)
+                        index+=1
+                        FinalArray1 = NSMutableArray()
+                        feeds = NSMutableDictionary()
+                    }
+                }
+            }
+            
+            let fetchMyBinde = CoreDataHandlerTurkey().fetchMyBindersViaPostingIdTurkey(self.postingIdArr[i] as! NSNumber)
+            
+            index = 0
+            for i in 0..<fetchMyBinde.count {
+                
+                dataSet+=1
+                let mainDict = NSMutableDictionary()
+                let antiboticFeed = fetchMyBinde.object(at: i) as! MyCotoxinBindersFeedTurkey
+                let dosage = antiboticFeed.dosage
+                let feedId = antiboticFeed.feedId as! Int
+                let feedProgram = antiboticFeed.feedProgram
+                let fromDays = antiboticFeed.fromDays
+                let molecule = antiboticFeed.molecule
+                let toDays = antiboticFeed.toDays
+                let feedType = antiboticFeed.feedType
+                let startDate = antiboticFeed.feedDate
+                mainDict.setValue(dosage, forKey: "dose")
+                mainDict.setValue(feedId, forKey: "feedId")
+                mainDict.setValue(feedProgram, forKey: "feedName")
+                mainDict.setValue(fromDays, forKey: "durationFrom")
+                mainDict.setValue(molecule, forKey: "molecule")
+                mainDict.setValue(toDays, forKey: "durationTo")
+                mainDict.setValue(18, forKey: "feedProgramCategoryId")
+                mainDict.setValue(0, forKey: "moleculeId")
+                mainDict.setValue(feedType, forKey: "feedType")
+                
+                FinalArray1.add(mainDict)
+                
+                if dataSet == 6 {
+                    dataSet = 0
+                    if mainFeeds.count>0 {
+                        let tempArray = (mainFeeds.object(at: index) as AnyObject).value(forKey: "feedProgramDetails") as! NSMutableArray
+                        if tempArray.count > 0 {
+                            tempArray.addObjects(from: FinalArray1 as [AnyObject])
+                            feeds = ["feedName" : feedProgram!, "feedId" : feedId, "startDate" : startDate ?? "","feedProgramDetails" : tempArray]
+                        }
+                        mainFeeds.replaceObject(at: index, with: feeds)
+                        index+=1
+                        FinalArray1 = NSMutableArray()
+                        feeds = NSMutableDictionary()
+                    }
+                }
+            }
+            var sessionDict = NSMutableDictionary()
+            
+            if ( allCocciControl.count > 0 || fetchAntibotic.count > 0 || fetchAlternative.count > 0 || fetchMyBinde.count > 0){
+                
+                mainDict.setValue(sessionId, forKey: "sessionId")
+                let data = savedPostingArrWithAllData.object(at: 0) as! PostingSessionTurkey
+                let acttimeStamp = data.timeStamp
+                
+                let  fullData = acttimeStamp!
+                mainDict.setValue(fullData, forKey: "deviceSessionId")
+                
+                let id = UserDefaults.standard.integer(forKey: "Id")
+                mainDict.setValue(id, forKey: "UserId")
+                mainDict.setValue(false, forKey: "finalized")
+                sessionDict = ["deviceSessionId" : fullData,"sessionId" : postingIdArr[i] as! NSNumber, "userId" : id,"feeds" : mainFeeds]
+                sessionArray.add(sessionDict)
+                sessionDict = NSMutableDictionary()
+                sessionDictMain = ["Sessions" : sessionArray]
+            }
+        }
+        return ["Sessions" : sessionArray]
+    }
+    
     // Combine all JSONs for a postingId
     func getFullSyncJSON(forPostingId postingId: NSNumber) -> [String: Any] {
         var fullJSON = [String: Any]()

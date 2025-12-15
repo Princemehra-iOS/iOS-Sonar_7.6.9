@@ -12,8 +12,9 @@ import AVFoundation
 import Alamofire
 import Reachability
 import SystemConfiguration
+import MessageUI
 
-class PostingSessionDetailTurkey: UIViewController,turkeyNotes,UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate ,SyncApiDataTurkey, otherFuncDetailsTurkey {
+class PostingSessionDetailTurkey: UIViewController,turkeyNotes,UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate ,SyncApiDataTurkey, otherFuncDetailsTurkey, MFMailComposeViewControllerDelegate {
     
     
     private let sessionManager: Session = {
@@ -93,6 +94,7 @@ class PostingSessionDetailTurkey: UIViewController,turkeyNotes,UITextFieldDelega
     var str = String()
     
     // MARK: - Label Outlet
+    @IBOutlet weak var exportButton: UIButton!
     @IBOutlet weak var sessionDateOutlet: UILabel!
     @IBOutlet weak var sessionTypeOutlet: UILabel!
     @IBOutlet weak var cocciProgramLbl: UILabel!
@@ -252,6 +254,43 @@ class PostingSessionDetailTurkey: UIViewController,turkeyNotes,UITextFieldDelega
         self.tblView.reloadData()
     }
     
+    @IBAction func exportButtonTapped(_ sender: Any) {
+        debugPrint(postingId)
+        
+        guard MFMailComposeViewController.canSendMail() else {
+            print("Mail service is not avialbel")
+            return
+        }
+    
+        let combinedJSON = SyncJSONManager.shared.getFullSyncJSONForTurkey(forPostingId: postingId)
+        
+        // 2️⃣ Convert JSON to Data
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: combinedJSON, options: .prettyPrinted) else {
+            print("Failed to convert JSON to Data")
+            return
+        }
+        
+       
+        if let status = EmailReportManager.shared.sendEmailReport(dataToAttach: jsonData,from: self, assessmentId:"",date: "", isPE: false), !status.0 {
+            if let filePath = status.1 {
+                print(filePath)
+            }
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                                 didFinishWith result: MFMailComposeResult,
+                                 error: Error?) {
+          controller.dismiss(animated: true)
+          switch result {
+          case .sent:
+              print("Mail sent successfully")
+          case .failed:
+              print("Mail failed: \(error?.localizedDescription ?? "")")
+          default:
+              break
+          }
+      }
     // MARK: - ⬅️ Back Button Action
     @IBAction func bckBtnAction(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
