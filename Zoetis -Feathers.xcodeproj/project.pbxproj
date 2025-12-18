@@ -143,6 +143,8 @@
 		0C8D8B3B286A1D080085E0C8 /* BlankPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D8B35286A1D080085E0C8 /* BlankPDFViewController.swift */; };
 		0C8D8B3C286A1D080085E0C8 /* liveVaccineHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C8D8B36286A1D080085E0C8 /* liveVaccineHeader.xib */; };
 		0C8D8B3D286A1D080085E0C8 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D8B37286A1D080085E0C8 /* PDFViewController.swift */; };
+		0DA9F9712EF29F9A0093ADCF /* ChickenModule.json in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9F9702EF29F9A0093ADCF /* ChickenModule.json */; };
+		0DF6DA622EF4098800D8D534 /* TurkeyModule.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DF6DA612EF4098800D8D534 /* TurkeyModule.json */; };
 		1005451523BEBAAB00D1C5AB /* CommentPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005451323BEBAAB00D1C5AB /* CommentPopupViewController.swift */; };
 		1005EFF523A2F77500505E71 /* PEStartNewAssessment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005EFF423A2F77400505E71 /* PEStartNewAssessment.swift */; };
 		1005EFF723A305CC00505E71 /* PEAssesmentFinalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005EFF623A305CC00505E71 /* PEAssesmentFinalize.swift */; };
@@ -1064,6 +1066,8 @@
 		0C8D8B35286A1D080085E0C8 /* BlankPDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankPDFViewController.swift; sourceTree = "<group>"; };
 		0C8D8B36286A1D080085E0C8 /* liveVaccineHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = liveVaccineHeader.xib; sourceTree = "<group>"; };
 		0C8D8B37286A1D080085E0C8 /* PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		0DA9F9702EF29F9A0093ADCF /* ChickenModule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ChickenModule.json; sourceTree = "<group>"; };
+		0DF6DA612EF4098800D8D534 /* TurkeyModule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TurkeyModule.json; sourceTree = "<group>"; };
 		1005451323BEBAAB00D1C5AB /* CommentPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPopupViewController.swift; sourceTree = "<group>"; };
 		1005EFF423A2F77400505E71 /* PEStartNewAssessment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEStartNewAssessment.swift; sourceTree = "<group>"; };
 		1005EFF623A305CC00505E71 /* PEAssesmentFinalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEAssesmentFinalize.swift; sourceTree = "<group>"; };
@@ -2424,6 +2428,8 @@
 		27276A6C1D5C867800C134BA = {
 			isa = PBXGroup;
 			children = (
+				0DA9F9702EF29F9A0093ADCF /* ChickenModule.json */,
+				0DF6DA612EF4098800D8D534 /* TurkeyModule.json */,
 				B743C04224A91D2A00E7C0A8 /* Zoetis__Feathers.xcdatamodeld */,
 				27276A771D5C867800C134BA /* Zoetis -Feathers */,
 				27276A8F1D5C867900C134BA /* Zoetis -FeathersTests */,
@@ -4143,6 +4149,7 @@
 				B72961A724A7CC22003237C7 /* last_item_daignosticTr.html in Resources */,
 				B72960FD24A7C5BC003237C7 /* summaryReport.xib in Resources */,
 				B715465324956C8300C2A6D8 /* PLACARD3_5.1.pdf in Resources */,
+				0DF6DA622EF4098800D8D534 /* TurkeyModule.json in Resources */,
 				B72961B324A7CC22003237C7 /* single_item_Dignostic-35.html in Resources */,
 				B729619C24A7CC22003237C7 /* last_item_daignostic-40.html in Resources */,
 				007F9352294CD782006E2AEE /* single_item_Dignostic-404.html in Resources */,
@@ -4895,6 +4902,7 @@
 				00F924762B6B98CE00ED54C7 /* customAlertView.swift in Sources */,
 				B729612524A7C5BC003237C7 /* LanguageUtility.swift in Sources */,
 				7889E233242E261E00CA5139 /* ViewRequisistionTableViewCell.swift in Sources */,
+				0DA9F9712EF29F9A0093ADCF /* ChickenModule.json in Sources */,
 				B7B8A71624B77CFB0069DBA9 /* RolesDTO.swift in Sources */,
 				7889E21F242E255500CA5139 /* customView.swift in Sources */,
 				1005EFF723A305CC00505E71 /* PEAssesmentFinalize.swift in Sources */,

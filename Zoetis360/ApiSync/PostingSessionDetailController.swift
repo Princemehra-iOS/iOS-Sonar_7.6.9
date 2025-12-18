@@ -135,6 +135,7 @@ class PostingSessionDetailController: UIViewController,UITableViewDelegate,UITab
         print("<<<<",self)
         super.viewDidLoad()
         
+        
         self.navigationItem.setHidesBackButton(true, animated: true)
         
         objApiSync.delegeteSyncApi = self

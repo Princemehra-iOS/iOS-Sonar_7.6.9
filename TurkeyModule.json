@@ -1,0 +1,363 @@
+//
+//  Json.swift
+//  Zoetis -Feathers
+//
+//  Created by Pankush Dhawan on 17/12/25.
+//
+
+********* TURKEY MODULE *****************
+============================================================================================
+
+===== Posting Payload when saving draft to server ======
+"draftSession": [
+    
+{
+  "CaptureNecropsyData": [
+    {
+      "ComplexId": 2336,
+      "LanguageId": 1,
+      "SessionId": 2,
+      "UserId": 2494,
+      "deviceSessionId": "12012025170704_2_iOS_409AF905-FECF-4394-A739-0A9B52384CF4",
+      "sessionDate": "12/01/2025",
+      "farmDetails": [
+        {
+          "ABF": "Antibiotic free",
+          "Breed": "N",
+          "ComplexDate": "12/01/2025",
+          "DeviceFeedId": 0,
+          "Farm_Weight": "363.0",
+          "GenerationId": 1,
+          "GenerationName": "Commercial",
+          "ImgId": 3,
+          "Sex": "LH",
+          "SortId": 3,
+          "age": 1,
+          "birds": 5,
+          "customerId": 0,
+          "customerName": "4 Paws",
+          "farmName": "1. hellojayanthtest",
+          "feedProgram": "test",
+          "flockId": 36363,
+          "houseNo": 1,
+          "sick": 0,
+          "BirdDetails": [
+            {
+              "BirdId": 1,
+              "BodyWeight": "72.6",
+              "AirSac": 0,
+              "Aspergillosis": 0,
+              "BacteriaMotile": 0,
+              "BacteriaNonmotile": 0,
+              "BoneStrength": 2,
+              "CornealUlcers": 1,
+              "FeedinCrop": 1,
+              "FootPadLesions": 2,
+              "InfectiousProcess": 1,
+              "Rickets": 1,
+              "ScratchedBirds": 1,
+              "Synovitis": 1,
+              "TibialDyschondroplasia": 2,
+              "birdNotes": ""
+            },
+            {
+              "BirdId": 2,
+              "BodyWeight": "72.6",
+              "BacteriaNonmotile": 2,
+              "Coccidia": 1,
+              "FeedinCrop": 1,
+              "LFO": 2,
+              "Peptostreptococcus": 1,
+              "ProtozoaCochlosoma": 2,
+              "ProtozoaHexamita": 2,
+              "ProtozoaUndefined": 2,
+              "Roundworms": 1,
+              "birdNotes": ""
+            },
+            {
+              "BirdId": 3,
+              "BodyWeight": "72.6",
+              "AirSac": 1,
+              "Aspergillosis": 1,
+              "Ceca": 2,
+              "CecalTonsilsHemorrhages": 1,
+              "Cellulitis": 1,
+              "Coccidia": 2,
+              "Conjunctivitis": 1,
+              "CropMycosis": 1,
+              "FeedinCrop": 1,
+              "LitterEater": 1,
+              "LungCongestion": 1,
+              "MouthLesions": 1,
+              "MucousContent": 2,
+              "Omphalitis": 1,
+              "ProtozoaHexamita": 2,
+              "ProtozoaTrichomonas": 3,
+              "Roundworms": 1,
+              "Sinusitis": 1,
+              "Tracheitis": 2,
+              "WallThickness": 1,
+              "birdNotes": ""
+            },
+            {
+              "BirdId": 4,
+              "BodyWeight": "72.6",
+              "FeedinCrop": 1,
+              "birdNotes": ""
+            },
+            {
+              "BirdId": 5,
+              "BodyWeight": "72.6",
+              "FeedinCrop": 1,
+              "birdNotes": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "FeedProgram": [
+    {
+      "deviceSessionId": "12012025170704_2_iOS_409AF905-FECF-4394-A739-0A9B52384CF4",
+      "sessionId": 2,
+      "userId": 2494,
+      "startDate": "12/18/2025",
+      "feeds": [
+        {
+          "feedId": 14,
+          "feedName": "test",
+          "feedProgramDetails": [
+            {
+              "cocciVaccineId": 14,
+              "coccidiosisVaccine": "Coccivac B",
+              "dose": 227,
+              "durationFrom": 12,
+              "durationTo": 12,
+              "feedProgramCategoryId": 5,
+              "feedType": "Feed type 1",
+              "molecule": "Clopidol",
+              "moleculeId": 200,
+              "startDate": "12/18/2025"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Vaccinations": [
+    {
+      "UserId": 2494,
+      "sessionId": 2,
+      "deviceSessionId": "12012025170704_2_iOS_409AF905-FECF-4394-A739-0A9B52384CF4",
+      "vaccinationId": 2,
+      "vaccinationName": "test",
+      "vaccinationDetail": [
+        {
+          "fieldStrain1": "- Select -",
+          "fieldRoute1Id": 0,
+          "hatcheryRoute1Id": 7,
+          "hatcheryStrain1": "Advent"
+        }
+      ]
+    }
+  ],
+  "PostingSessions": [
+    {
+      "sessionId": 2,
+      "sessionDate": "12/01/2025",
+      "LanguageId": 1,
+      "UserId": 2494,
+      "complexId": 2336,
+      "deviceSessionId": "12012025170704_2_iOS_409AF905-FECF-4394-A739-0A9B52384CF4",
+      "sessionTypeId": 2,
+      "finalized": 0,
+      "catptureNec": 1,
+      "cocciProgramId": 8,
+      "cociiProgramName": "Bioshuttle",
+      "AvgOutTime": "34",
+      "AvgWeight": "25",
+      "FCR": "Eye",
+      "notes": ""
+    }
+  ]
+}
+]
+
+
+
+============================================================================================
+Expected Response from saved draft api ==========
+
+"draftSession": [
+    
+{
+  "CaptureNecropsyData": [
+    {
+      "ComplexId": 2336,
+      "LanguageId": 1,
+      "SessionId": 2,
+      "UserId": 2494,
+      "deviceSessionId": "12012025170704_2_iOS_409AF905-FECF-4394-A739-0A9B52384CF4",
+      "sessionDate": "12/01/2025",
+      "farmDetails": [
+        {
+          "ABF": "Antibiotic free",
+          "Breed": "N",
+          "ComplexDate": "12/01/2025",
+          "DeviceFeedId": 0,
+          "Farm_Weight": "363.0",
+          "GenerationId": 1,
+          "GenerationName": "Commercial",
+          "ImgId": 3,
+          "Sex": "LH",
+          "SortId": 3,
+          "age": 1,
+          "birds": 5,
+          "customerId": 0,
+          "customerName": "4 Paws",
+          "farmName": "1. hellojayanthtest",
+          "feedProgram": "test",
+          "flockId": 36363,
+          "houseNo": 1,
+          "sick": 0,
+          "BirdDetails": [
+            {
+              "BirdId": 1,
+              "BodyWeight": "72.6",
+              "AirSac": 0,
+              "Aspergillosis": 0,
+              "BacteriaMotile": 0,
+              "BacteriaNonmotile": 0,
+              "BoneStrength": 2,
+              "CornealUlcers": 1,
+              "FeedinCrop": 1,
+              "FootPadLesions": 2,
+              "InfectiousProcess": 1,
+              "Rickets": 1,
+              "ScratchedBirds": 1,
+              "Synovitis": 1,
+              "TibialDyschondroplasia": 2,
+              "birdNotes": ""
+            },
+            {
+              "BirdId": 2,
+              "BodyWeight": "72.6",
+              "BacteriaNonmotile": 2,
+              "Coccidia": 1,
+              "FeedinCrop": 1,
+              "LFO": 2,
+              "Peptostreptococcus": 1,
+              "ProtozoaCochlosoma": 2,
+              "ProtozoaHexamita": 2,
+              "ProtozoaUndefined": 2,
+              "Roundworms": 1,
+              "birdNotes": ""
+            },
+            {
+              "BirdId": 3,
+              "BodyWeight": "72.6",
+              "AirSac": 1,
+              "Aspergillosis": 1,
+              "Ceca": 2,
+              "CecalTonsilsHemorrhages": 1,
+              "Cellulitis": 1,
+              "Coccidia": 2,
+              "Conjunctivitis": 1,
+              "CropMycosis": 1,
+              "FeedinCrop": 1,
+              "LitterEater": 1,
+              "LungCongestion": 1,
+              "MouthLesions": 1,
+              "MucousContent": 2,
+              "Omphalitis": 1,
+              "ProtozoaHexamita": 2,
+              "ProtozoaTrichomonas": 3,
+              "Roundworms": 1,
+              "Sinusitis": 1,
+              "Tracheitis": 2,
+              "WallThickness": 1,
+              "birdNotes": ""
+            },
+            {
+              "BirdId": 4,
+              "BodyWeight": "72.6",
+              "FeedinCrop": 1,
+              "birdNotes": ""
+            },
+            {
+              "BirdId": 5,
+              "BodyWeight": "72.6",
+              "FeedinCrop": 1,
+              "birdNotes": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "FeedProgram": [
+    {
+      "deviceSessionId": "12012025170704_2_iOS_409AF905-FECF-4394-A739-0A9B52384CF4",
+      "sessionId": 2,
+      "userId": 2494,
+      "startDate": "12/18/2025",
+      "feeds": [
+        {
+          "feedId": 14,
+          "feedName": "test",
+          "feedProgramDetails": [
+            {
+              "cocciVaccineId": 14,
+              "coccidiosisVaccine": "Coccivac B",
+              "dose": 227,
+              "durationFrom": 12,
+              "durationTo": 12,
+              "feedProgramCategoryId": 5,
+              "feedType": "Feed type 1",
+              "molecule": "Clopidol",
+              "moleculeId": 200,
+              "startDate": "12/18/2025"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Vaccinations": [
+    {
+      "UserId": 2494,
+      "sessionId": 2,
+      "deviceSessionId": "12012025170704_2_iOS_409AF905-FECF-4394-A739-0A9B52384CF4",
+      "vaccinationId": 2,
+      "vaccinationName": "test",
+      "vaccinationDetail": [
+        {
+          "fieldStrain1": "- Select -",
+          "fieldRoute1Id": 0,
+          "hatcheryRoute1Id": 7,
+          "hatcheryStrain1": "Advent"
+        }
+      ]
+    }
+  ],
+  "PostingSessions": [
+    {
+      "sessionId": 2,
+      "sessionDate": "12/01/2025",
+      "LanguageId": 1,
+      "UserId": 2494,
+      "complexId": 2336,
+      "deviceSessionId": "12012025170704_2_iOS_409AF905-FECF-4394-A739-0A9B52384CF4",
+      "sessionTypeId": 2,
+      "finalized": 0,
+      "catptureNec": 1,
+      "cocciProgramId": 8,
+      "cociiProgramName": "Bioshuttle",
+      "AvgOutTime": "34",
+      "AvgWeight": "25",
+      "FCR": "Eye",
+      "notes": ""
+    }
+  ]
+}
+]

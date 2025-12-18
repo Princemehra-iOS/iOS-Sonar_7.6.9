@@ -1,0 +1,433 @@
+//
+//  Json.swift
+//  Zoetis -Feathers
+//
+//  Created by Pankush Dhawan on 17/12/25.
+//
+
+********* CHICKEN MODULE *****************
+============================================================================================
+
+===== Posting Payload when saving draft to server ======
+
+"draftSessions": [
+{
+    "deviceSessionId": "11142025163802_1_iOS_415D403B-53EA-47B3-9681-C62E1AADB5BA",
+    "sessionId": 1,
+    "userId": 2494,
+    "customer": 45,
+    "complex": 47,
+    "sessionDate": "12/12/2025"
+    
+  "FeedProgram": [
+    {
+      "deviceSessionId": "11142025163802_1_iOS_415D403B-53EA-47B3-9681-C62E1AADB5BA",
+      "sessionId": 1,
+      "userId": 2494,
+      "feeds": [
+        {
+          "feedId": 11,
+          "feedName": "test",
+          "startDate": "- Select Date -",
+          "feedProgramDetails": [
+            {
+              "cocciVaccineId": 14,
+              "coccidiosisVaccine": "Coccivac B",
+              "dose": "113.5",
+              "durationFrom": 10,
+              "durationTo": 9,
+              "feedProgramCategoryId": 5,
+              "feedType": "Feed type 1",
+              "molecule": "Clopidol",
+              "moleculeId": 200,
+              "startDate": "- Select Date -"
+            },
+            {
+              "cocciVaccineId": 14,
+              "coccidiosisVaccine": "Coccivac B",
+              "dose": 227,
+              "durationFrom": 45,
+              "durationTo": 78,
+              "feedProgramCategoryId": 5,
+              "feedType": "Feed type 2",
+              "molecule": "Clopidol",
+              "moleculeId": 200,
+              "startDate": "- Select Date -"
+            },
+            {
+              "cocciVaccineId": 14,
+              "coccidiosisVaccine": "Coccivac B",
+              "dose": "- Select -",
+              "durationFrom": "",
+              "durationTo": "",
+              "feedProgramCategoryId": 5,
+              "feedType": "Feed type 3",
+              "molecule": "",
+              "moleculeId": 0,
+              "startDate": "- Select Date -"
+            },
+            {
+              "cocciVaccineId": 14,
+              "coccidiosisVaccine": "Coccivac B",
+              "dose": "- Select -",
+              "durationFrom": "",
+              "durationTo": "",
+              "feedProgramCategoryId": 5,
+              "feedType": "Feed type 4",
+              "molecule": "",
+              "moleculeId": 0,
+              "startDate": "- Select Date -"
+            },
+            {
+              "cocciVaccineId": 14,
+              "coccidiosisVaccine": "Coccivac B",
+              "dose": "- Select -",
+              "durationFrom": "",
+              "durationTo": "",
+              "feedProgramCategoryId": 5,
+              "feedType": "Feed type 5",
+              "molecule": "",
+              "moleculeId": 0,
+              "startDate": "- Select Date -"
+            },
+            {
+              "cocciVaccineId": 14,
+              "coccidiosisVaccine": "Coccivac B",
+              "dose": "- Select -",
+              "durationFrom": "",
+              "durationTo": "",
+              "feedProgramCategoryId": 5,
+              "feedType": "Feed type 6",
+              "molecule": "",
+              "moleculeId": 0,
+              "startDate": "- Select Date -"
+            },
+            {
+              "cocciVaccineId": 14,
+              "coccidiosisVaccine": "Coccivac B",
+              "dose": "",
+              "durationFrom": "",
+              "durationTo": "",
+              "feedProgramCategoryId": 5,
+              "feedType": "",
+              "molecule": "",
+              "moleculeId": 0,
+              "startDate": "- Select Date -"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "PostingSessions": [
+    {
+      "Avg7DayMortality": " ",
+      "AvgAge": " ",
+      "AvgOutTime": " ",
+      "AvgWeight": " ",
+      "FCR": " ",
+      "LanguageId": 1,
+      "Livability": " ",
+      "UserId": 2494,
+      "birdSize": "4.5-5.2 lbs",
+      "birdTypeId": 1,
+      "breedName": "",
+      "catptureNec": 1,
+      "cocciProgramId": 8,
+      "cociiProgramName": "Bioshuttle",
+      "complexId": 3342,
+      "customerId": 319,
+      "customerRep": 25252,
+      "deviceSessionId": "11142025163802_1_iOS_415D403B-53EA-47B3-9681-C62E1AADB5BA",
+      "femaleBreedName": "Female",
+      "finalized": 0,
+      "maleBreedName": "Male",
+      "notes": "",
+      "productionTypeId": 1,
+      "productionTypeName": "Conventional",
+      "salesUserId": 2340,
+      "sessionDate": "11/14/2025",
+      "sessionId": 1,
+      "sessionTypeId": 2,
+      "udid": "415D403B-53EA-47B3-9681-C62E1AADB5BA",
+      "vetUserId": 2340
+    }
+  ],
+  "Vaccinations": [
+    {
+      "UserId": 2494,
+      "deviceSessionId": "11142025163802_1_iOS_415D403B-53EA-47B3-9681-C62E1AADB5BA",
+      "sessionId": 1,
+      "vaccinationId": 1,
+      "vaccinationName": "test",
+      "vaccinationDetail": [
+        {
+          "fieldAge1": "",
+          "fieldAge2": "",
+          "fieldAge3": "",
+          "fieldAge4": "",
+          "fieldAge5": "",
+          "fieldAge6": "",
+          "fieldAge7": "",
+          "fieldAge8": "",
+          "fieldAge9": "",
+          "fieldAge10": "",
+          "fieldAge11": "",
+          "fieldRoute1Id": 0,
+          "fieldRoute2Id": 0,
+          "fieldRoute3Id": 0,
+          "fieldRoute4Id": 0,
+          "fieldRoute5Id": 0,
+          "fieldRoute6Id": 0,
+          "fieldRoute7Id": 0,
+          "fieldRoute8Id": 0,
+          "fieldRoute9Id": 0,
+          "fieldRoute10Id": 0,
+          "fieldRoute11Id": 0,
+          "fieldStrain1": "- Select -",
+          "fieldStrain2": "- Select -",
+          "fieldStrain3": "- Select -",
+          "fieldStrain4": "- Select -",
+          "fieldStrain5": "- Select -",
+          "fieldStrain6": "- Select -",
+          "fieldStrain7": "- Select -",
+          "fieldStrain8": "- Select -",
+          "fieldStrain9": "- Select -",
+          "fieldStrain10": "- Select -",
+          "fieldStrain11": "- Select -",
+          "hatcheryRoute1Id": 6,
+          "hatcheryRoute2Id": 4,
+          "hatcheryRoute3Id": 7,
+          "hatcheryRoute4Id": 0,
+          "hatcheryRoute5Id": 0,
+          "hatcheryRoute6Id": 0,
+          "hatcheryRoute7Id": 0,
+          "hatcheryRoute8Id": 0,
+          "hatcheryRoute9Id": 0,
+          "hatcheryRoute10Id": 0,
+          "hatcheryStrain1": "Innovax Nc",
+          "hatcheryStrain2": "Lasota",
+          "hatcheryStrain3": "Avinew Bi",
+          "hatcheryStrain4": "- Select -",
+          "hatcheryStrain5": "- Select -",
+          "hatcheryStrain6": "- Select -",
+          "hatcheryStrain7": "- Select -",
+          "hatcheryStrain8": "- Select -",
+          "hatcheryStrain9": "- Select -",
+          "hatcheryStrain10": "- Select -"
+        }
+      ]
+    }
+  ]
+}
+]
+
+
+
+============================================================================================
+Expected Response from saved draft api ==========
+
+"draftSessions": [
+{
+  "FeedProgram": [
+    {
+      "deviceSessionId": "11142025163802_1_iOS_415D403B-53EA-47B3-9681-C62E1AADB5BA",
+      "sessionId": 1,
+      "userId": 2494,
+      "feeds": [
+        {
+          "feedId": 11,
+          "feedName": "test",
+          "startDate": "- Select Date -",
+          "feedProgramDetails": [
+            {
+              "cocciVaccineId": 14,
+              "coccidiosisVaccine": "Coccivac B",
+              "dose": "113.5",
+              "durationFrom": 10,
+              "durationTo": 9,
+              "feedProgramCategoryId": 5,
+              "feedType": "Feed type 1",
+              "molecule": "Clopidol",
+              "moleculeId": 200,
+              "startDate": "- Select Date -"
+            },
+            {
+              "cocciVaccineId": 14,
+              "coccidiosisVaccine": "Coccivac B",
+              "dose": 227,
+              "durationFrom": 45,
+              "durationTo": 78,
+              "feedProgramCategoryId": 5,
+              "feedType": "Feed type 2",
+              "molecule": "Clopidol",
+              "moleculeId": 200,
+              "startDate": "- Select Date -"
+            },
+            {
+              "cocciVaccineId": 14,
+              "coccidiosisVaccine": "Coccivac B",
+              "dose": "- Select -",
+              "durationFrom": "",
+              "durationTo": "",
+              "feedProgramCategoryId": 5,
+              "feedType": "Feed type 3",
+              "molecule": "",
+              "moleculeId": 0,
+              "startDate": "- Select Date -"
+            },
+            {
+              "cocciVaccineId": 14,
+              "coccidiosisVaccine": "Coccivac B",
+              "dose": "- Select -",
+              "durationFrom": "",
+              "durationTo": "",
+              "feedProgramCategoryId": 5,
+              "feedType": "Feed type 4",
+              "molecule": "",
+              "moleculeId": 0,
+              "startDate": "- Select Date -"
+            },
+            {
+              "cocciVaccineId": 14,
+              "coccidiosisVaccine": "Coccivac B",
+              "dose": "- Select -",
+              "durationFrom": "",
+              "durationTo": "",
+              "feedProgramCategoryId": 5,
+              "feedType": "Feed type 5",
+              "molecule": "",
+              "moleculeId": 0,
+              "startDate": "- Select Date -"
+            },
+            {
+              "cocciVaccineId": 14,
+              "coccidiosisVaccine": "Coccivac B",
+              "dose": "- Select -",
+              "durationFrom": "",
+              "durationTo": "",
+              "feedProgramCategoryId": 5,
+              "feedType": "Feed type 6",
+              "molecule": "",
+              "moleculeId": 0,
+              "startDate": "- Select Date -"
+            },
+            {
+              "cocciVaccineId": 14,
+              "coccidiosisVaccine": "Coccivac B",
+              "dose": "",
+              "durationFrom": "",
+              "durationTo": "",
+              "feedProgramCategoryId": 5,
+              "feedType": "",
+              "molecule": "",
+              "moleculeId": 0,
+              "startDate": "- Select Date -"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "PostingSessions": [
+    {
+      "Avg7DayMortality": " ",
+      "AvgAge": " ",
+      "AvgOutTime": " ",
+      "AvgWeight": " ",
+      "FCR": " ",
+      "LanguageId": 1,
+      "Livability": " ",
+      "UserId": 2494,
+      "birdSize": "4.5-5.2 lbs",
+      "birdTypeId": 1,
+      "breedName": "",
+      "catptureNec": 1,
+      "cocciProgramId": 8,
+      "cociiProgramName": "Bioshuttle",
+      "complexId": 3342,
+      "customerId": 319,
+      "customerRep": 25252,
+      "deviceSessionId": "11142025163802_1_iOS_415D403B-53EA-47B3-9681-C62E1AADB5BA",
+      "femaleBreedName": "Female",
+      "finalized": 0,
+      "maleBreedName": "Male",
+      "notes": "",
+      "productionTypeId": 1,
+      "productionTypeName": "Conventional",
+      "salesUserId": 2340,
+      "sessionDate": "11/14/2025",
+      "sessionId": 1,
+      "sessionTypeId": 2,
+      "udid": "415D403B-53EA-47B3-9681-C62E1AADB5BA",
+      "vetUserId": 2340
+    }
+  ],
+  "Vaccinations": [
+    {
+      "UserId": 2494,
+      "deviceSessionId": "11142025163802_1_iOS_415D403B-53EA-47B3-9681-C62E1AADB5BA",
+      "sessionId": 1,
+      "vaccinationId": 1,
+      "vaccinationName": "test",
+      "vaccinationDetail": [
+        {
+          "fieldAge1": "",
+          "fieldAge2": "",
+          "fieldAge3": "",
+          "fieldAge4": "",
+          "fieldAge5": "",
+          "fieldAge6": "",
+          "fieldAge7": "",
+          "fieldAge8": "",
+          "fieldAge9": "",
+          "fieldAge10": "",
+          "fieldAge11": "",
+          "fieldRoute1Id": 0,
+          "fieldRoute2Id": 0,
+          "fieldRoute3Id": 0,
+          "fieldRoute4Id": 0,
+          "fieldRoute5Id": 0,
+          "fieldRoute6Id": 0,
+          "fieldRoute7Id": 0,
+          "fieldRoute8Id": 0,
+          "fieldRoute9Id": 0,
+          "fieldRoute10Id": 0,
+          "fieldRoute11Id": 0,
+          "fieldStrain1": "- Select -",
+          "fieldStrain2": "- Select -",
+          "fieldStrain3": "- Select -",
+          "fieldStrain4": "- Select -",
+          "fieldStrain5": "- Select -",
+          "fieldStrain6": "- Select -",
+          "fieldStrain7": "- Select -",
+          "fieldStrain8": "- Select -",
+          "fieldStrain9": "- Select -",
+          "fieldStrain10": "- Select -",
+          "fieldStrain11": "- Select -",
+          "hatcheryRoute1Id": 6,
+          "hatcheryRoute2Id": 4,
+          "hatcheryRoute3Id": 7,
+          "hatcheryRoute4Id": 0,
+          "hatcheryRoute5Id": 0,
+          "hatcheryRoute6Id": 0,
+          "hatcheryRoute7Id": 0,
+          "hatcheryRoute8Id": 0,
+          "hatcheryRoute9Id": 0,
+          "hatcheryRoute10Id": 0,
+          "hatcheryStrain1": "Innovax Nc",
+          "hatcheryStrain2": "Lasota",
+          "hatcheryStrain3": "Avinew Bi",
+          "hatcheryStrain4": "- Select -",
+          "hatcheryStrain5": "- Select -",
+          "hatcheryStrain6": "- Select -",
+          "hatcheryStrain7": "- Select -",
+          "hatcheryStrain8": "- Select -",
+          "hatcheryStrain9": "- Select -",
+          "hatcheryStrain10": "- Select -"
+        }
+      ]
+    }
+  ]
+}
+]
