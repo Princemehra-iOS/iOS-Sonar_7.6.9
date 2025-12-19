@@ -12,6 +12,12 @@
 "draftSession": [
     
 {
+    "deviceSessionId": "11142025163802_1_iOS_415D403B-53EA-47B3-9681-C62E1AADB5BA",
+    "sessionId": 1,
+    "userId": 2494,
+    "customer": 45,
+    "complex": 47,
+    "sessionDate": "12/12/2025"
   "CaptureNecropsyData": [
     {
       "ComplexId": 2336,
@@ -191,6 +197,12 @@ Expected Response from saved draft api ==========
 "draftSession": [
     
 {
+    "deviceSessionId": "11142025163802_1_iOS_415D403B-53EA-47B3-9681-C62E1AADB5BA",
+    "sessionId": 1,
+    "userId": 2494,
+    "customer": 45,
+    "complex": 47,
+    "sessionDate": "12/12/2025"
   "CaptureNecropsyData": [
     {
       "ComplexId": 2336,

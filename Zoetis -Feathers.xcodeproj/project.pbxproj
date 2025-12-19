@@ -143,6 +143,7 @@
 		0C8D8B3B286A1D080085E0C8 /* BlankPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D8B35286A1D080085E0C8 /* BlankPDFViewController.swift */; };
 		0C8D8B3C286A1D080085E0C8 /* liveVaccineHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C8D8B36286A1D080085E0C8 /* liveVaccineHeader.xib */; };
 		0C8D8B3D286A1D080085E0C8 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D8B37286A1D080085E0C8 /* PDFViewController.swift */; };
+		0D2A9EA42EF54B01007F0B91 /* RequestParametersBuilderForTurkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2A9EA32EF54B01007F0B91 /* RequestParametersBuilderForTurkey.swift */; };
 		0DA9F9712EF29F9A0093ADCF /* ChickenModule.json in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9F9702EF29F9A0093ADCF /* ChickenModule.json */; };
 		0DF6DA622EF4098800D8D534 /* TurkeyModule.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DF6DA612EF4098800D8D534 /* TurkeyModule.json */; };
 		1005451523BEBAAB00D1C5AB /* CommentPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005451323BEBAAB00D1C5AB /* CommentPopupViewController.swift */; };
@@ -1066,6 +1067,7 @@
 		0C8D8B35286A1D080085E0C8 /* BlankPDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankPDFViewController.swift; sourceTree = "<group>"; };
 		0C8D8B36286A1D080085E0C8 /* liveVaccineHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = liveVaccineHeader.xib; sourceTree = "<group>"; };
 		0C8D8B37286A1D080085E0C8 /* PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		0D2A9EA32EF54B01007F0B91 /* RequestParametersBuilderForTurkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParametersBuilderForTurkey.swift; sourceTree = "<group>"; };
 		0DA9F9702EF29F9A0093ADCF /* ChickenModule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ChickenModule.json; sourceTree = "<group>"; };
 		0DF6DA612EF4098800D8D534 /* TurkeyModule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TurkeyModule.json; sourceTree = "<group>"; };
 		1005451323BEBAAB00D1C5AB /* CommentPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPopupViewController.swift; sourceTree = "<group>"; };
@@ -2471,6 +2473,7 @@
 				782F8F6224AAB08B00D99D5E /* Assets.xcassets */,
 				9CA771632990E3FF000534ED /* uncheckboxna.imageset */,
 				9CA771612990E386000534ED /* checkboxna.imageset */,
+				0D2A9EA32EF54B01007F0B91 /* RequestParametersBuilderForTurkey.swift */,
 			);
 			path = "Zoetis -Feathers";
 			sourceTree = "<group>";
@@ -4861,6 +4864,7 @@
 				B7B8A6F524B77CFB0069DBA9 /* AddEmployeeTableViewCell.swift in Sources */,
 				00741301252DA0D400B393BB /* ScheduledPEAssessmentsDTO.swift in Sources */,
 				B7B8A71D24B77CFB0069DBA9 /* RolesTransferDTO.swift in Sources */,
+				0D2A9EA42EF54B01007F0B91 /* RequestParametersBuilderForTurkey.swift in Sources */,
 				B7B8A70C24B77CFB0069DBA9 /* VaccinationDashboardVC.swift in Sources */,
 				B72961BF24A7CC23003237C7 /* ReportComposerDaignostic.swift in Sources */,
 				B729609D24A7C5BC003237C7 /* CaptureNecroStep2Turkey.swift in Sources */,

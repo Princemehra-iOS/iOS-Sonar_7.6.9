@@ -262,7 +262,7 @@ class PostingSessionDetailTurkey: UIViewController,turkeyNotes,UITextFieldDelega
             return
         }
     
-        let combinedJSON = SyncJSONManager.shared.getCompleteSyncJSONForTurkey(forPostingId: postingId)
+        let combinedJSON = TurkeyRequestPayloadBuilder.getCompleteSyncJSONForTurkey(forPostingId: postingId)
         
         // 2️⃣ Convert JSON to Data
         guard let jsonData = try? JSONSerialization.data(withJSONObject: combinedJSON, options: .prettyPrinted) else {
