@@ -12,7 +12,7 @@ import SystemConfiguration
 import Gigya
 import GigyaTfa
 import GigyaAuth
-
+import CoreData
 class ExistingPostingSessionViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,userLogOut,UITextFieldDelegate,startNecropsyP,syncApi {
     
     // MARK: - Variables
@@ -433,16 +433,30 @@ class ExistingPostingSessionViewController: UIViewController,UITableViewDelegate
         }else {
             
             let cell:ExistingPostingTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "cell") as! ExistingPostingTableViewCell
+          
             
+           
             if indexPath.row % 2 == 0 {
                 cell.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            }else {
+            }
+            else {
                 cell.backgroundColor = UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1.0)
             }
-            let posting : PostingSession = existingArray.object(at: indexPath.row) as! PostingSession
             
+            let posting : PostingSession = existingArray.object(at: indexPath.row) as! PostingSession
+            if posting.isSync == 0 {
+                cell.deleteButton.isHidden = false
+            }
+            else
+            {
+                cell.deleteButton.isHidden = true
+            }
             let isfarmSync = posting.isfarmSync
             cell.infoButton.alpha = isfarmSync == 1 ? 1 : 0
+            cell.deleteButton.tag = indexPath.row
+            cell.deleteButton.addTarget(self,
+                                     action: #selector(deleteBtnTapped(_:)),
+                                     for: .touchUpInside)
             let lngIdFr = UserDefaults.standard.integer(forKey: "lngId")
             if lngIdFr == 3
             {
@@ -484,6 +498,125 @@ class ExistingPostingSessionViewController: UIViewController,UITableViewDelegate
             return cell
         }
     }
+    
+    @objc func deleteBtnTapped(_ sender: UIButton) {
+        
+        let index = sender.tag
+        let posting = existingArray.object(at: index) as! PostingSession
+        
+        let postingId  = posting.postingId
+        
+        let alertMessage = """
+        The session you have selected is already synced with the server. 
+        Deleting it here will only remove it from this device. 
+        You can still access this session on the web. 
+        
+        Do you want to continue?
+        """
+        
+        let alert = UIAlertController(
+            title: NSLocalizedString(Constants.alertStr, comment: ""),
+            message: alertMessage,
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive) { _ in
+            
+            self.deleteAllDataForPostingId(postingId: posting.postingId ?? 0)
+            
+            // Remove from UI array
+            self.existingArray.removeObject(at: index)
+            self.tableView.reloadData()
+        })
+        
+        self.present(alert, animated: true)
+    }
+
+    
+    func hasDataForPostingId(postingId: NSNumber, isSync: Bool) -> Bool {
+
+        let context = (UIApplication.shared.delegate as! AppDelegate)
+            .persistentContainer.viewContext
+
+        let entities = [
+            "PostingSession",
+            "CaptureNecropsyData",
+            "FieldVaccination",
+            "HatcheryVac",
+            "BirdPhotoCapture"
+        ]
+
+        for entity in entities {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+            fetchRequest.predicate = NSPredicate(format: "isSync == %@ AND postingId == %@", NSNumber(value: isSync), postingId)
+
+            do {
+                let count = try context.count(for: fetchRequest)
+                if count > 0 {
+                    // Data exists for this entity
+                    continue
+                }
+            } catch {
+                print("Error fetching \(entity):", error)
+            }
+        }
+
+        // If loop completes, we have data in all entities
+        return true
+    }
+
+    func deleteAllDataForPostingId(postingId: NSNumber) {
+
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.managedObjectContext
+
+        let entities = [
+            "PostingSession",
+            "CaptureNecropsyData",
+            "FieldVaccination",
+            "HatcheryVac",
+            "BirdPhotoCapture"
+        ]
+
+        for entity in entities {
+
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+            fetchRequest.returnsObjectsAsFaults = false
+            fetchRequest.predicate = NSPredicate(format: "postingId == %@", postingId)
+
+            do {
+                let results = try context.fetch(fetchRequest) as! [NSManagedObject]
+
+                if results.isEmpty {
+                    print("❌ No data found for entity: \(entity), postingId: \(postingId)")
+                    continue
+                }
+
+                for obj in results {
+                    context.delete(obj)
+                }
+
+                print("🗑 Deleted \(results.count) records from \(entity) for postingId:", postingId)
+
+            } catch {
+                print("❌ Error deleting from \(entity):", error)
+            }
+        }
+
+        do {
+            try context.save()
+            print("✅ Successfully deleted all related data for postingId:", postingId)
+        } catch {
+            print("❌ Context save failed:", error)
+        }
+    }
+
+
+
+
+
     
     // MARK: 🟠 - TEXTFIELD DELEGATES
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{

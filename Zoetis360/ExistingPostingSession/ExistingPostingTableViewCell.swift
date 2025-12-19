@@ -19,7 +19,7 @@ class ExistingPostingTableViewCell: UITableViewCell {
     @IBOutlet weak var lblLng: UILabel!
     @IBOutlet weak var eyeIamgeView: UIImageView!
     @IBOutlet weak var infoButton: UIButton!
-    
+    @IBOutlet weak var deleteButton: UIButton!
     // MARK: - View Cycle
     override func awakeFromNib() {
         super.awakeFromNib()

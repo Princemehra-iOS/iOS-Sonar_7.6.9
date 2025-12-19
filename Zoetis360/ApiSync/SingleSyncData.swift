@@ -389,6 +389,7 @@ class SingleSyncData: NSObject {
                 let id = UserDefaults.standard.integer(forKey: "Id")
                 mainDict.setValue(id, forKey: "UserId")
                 mainDict.setValue(false, forKey: "finalized")
+                
                 sessionDict = ["deviceSessionId" : fullData,"sessionId" : postingIdArr[i] as! NSNumber, "userId" : id,"feeds" : mainFeeds]
                 sessionArray.add(sessionDict)
                 sessionDict = NSMutableDictionary()
@@ -403,7 +404,6 @@ class SingleSyncData: NSObject {
                 
                 let Url = "PostingSession/SaveMultipleFeedsSyncData"
                 accestoken = AccessTokenHelper().getFromKeychain(keyed: "aceesTokentype")!
-                //accestoken = (UserDefaults.standard.value(forKey: "aceesTokentype") as? String)!
                 let headerDict = ["Authorization":accestoken]
                 
                 let urlString: String = WebClass.sharedInstance.webUrl + Url

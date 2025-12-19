@@ -9,7 +9,7 @@
 import UIKit
 import Reachability
 import SystemConfiguration
-
+import CoreData
 class ExistingPostingSessionTurkey: UIViewController,UITextFieldDelegate,necropsyPop {
     
     // MARK: - VARIABLES
@@ -416,6 +416,19 @@ extension ExistingPostingSessionTurkey : UITableViewDataSource,UITableViewDelega
                 cell.infoButton.alpha = 0
             }
             
+            if posting.isSync == 0 {
+                cell.deleteButton.isHidden = false
+            }
+            else
+            {
+                cell.deleteButton.isHidden = true
+            }
+            
+            cell.deleteButton.tag = indexPath.row
+            cell.deleteButton.addTarget(self,
+                                        action: #selector(deleteTurkeyBtnTapped(_:)),
+                                        for: .touchUpInside)
+            
             cell.dateLbl.text  = posting.sessiondate
             cell.sessionTypeLbl.text  = posting.sessionTypeName
             cell.complexLbl.text  = posting.complexName
@@ -458,6 +471,86 @@ extension ExistingPostingSessionTurkey : UITableViewDataSource,UITableViewDelega
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = UIView()
         return view
+    }
+    
+    // MARK: - Delete Button Action 🗑
+    @objc func deleteTurkeyBtnTapped(_ sender: UIButton) {
+        
+        let index = sender.tag
+        let posting : PostingSessionTurkey = existingArray.object(at: index) as! PostingSessionTurkey
+        let postingId  = posting.postingId
+        
+        let alertMessage = """
+        The session you have selected is already synced with the server. 
+        Deleting it here will only remove it from this device. 
+        You can still access this session on the web. 
+        
+        Do you want to continue?
+        """
+        
+        let alert = UIAlertController(
+            title: NSLocalizedString(Constants.alertStr, comment: ""),
+            message: alertMessage,
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive) { _ in
+            
+            //  self.deleteAllDataForTurkeySession(postingId: posting.postingId ?? 0)
+            
+//            self.existingArray.removeObject(at: index)
+//            self.tableView.reloadData()
+        })
+        
+        self.present(alert, animated: true)
+    }
+    
+    
+    func deleteAllDataForTurkeySession(postingId: NSNumber) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.managedObjectContext
+        
+        let entities = [
+            "PostingSessionTurkey",
+            "CaptureNecropsyDataTurkey",
+            "FieldVaccinationTurkey",
+            "HatcheryVacTurkey",
+            "BirdPhotoCaptureTurkey"
+        ]
+        
+        for entity in entities {
+            
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+            fetchRequest.returnsObjectsAsFaults = false
+            fetchRequest.predicate = NSPredicate(format: "postingId == %@", postingId)
+            
+            do {
+                let results = try context.fetch(fetchRequest) as! [NSManagedObject]
+                
+                if results.isEmpty {
+                    print("❌ No data found for entity: \(entity), postingId: \(postingId)")
+                    continue
+                }
+                
+                for obj in results {
+                    context.delete(obj)
+                }
+                
+                print("🗑 Deleted \(results.count) records from \(entity) for postingId:", postingId)
+                
+            } catch {
+                print("❌ Error deleting from \(entity):", error)
+            }
+        }
+        
+        do {
+            try context.save()
+            print("✅ Successfully deleted all related data for postingId:", postingId)
+        } catch {
+            print("❌ Context save failed:", error)
+        }
     }
     
 }

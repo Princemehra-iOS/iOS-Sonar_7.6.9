@@ -121,6 +121,7 @@ class PostingSessionDetailController: UIViewController,UITableViewDelegate,UITab
     @IBOutlet weak var feedProgramBtnOutlet: UIButton!
     
     @IBOutlet weak var exportBttnOutlet: UIButton!
+    @IBOutlet weak var draftBtnOutlet: UIButton!
     
     var buttonback = UIButton()
     var customPopV :OtherDetails!
@@ -154,6 +155,15 @@ class PostingSessionDetailController: UIViewController,UITableViewDelegate,UITab
         notesBtnnOutlet.layer.borderColor = UIColor.black.cgColor
         postingArrWithId = CoreDataHandler().fetchAllPostingSession(postingId).mutableCopy() as! NSMutableArray
         let posting : PostingSession = postingArrWithId.object(at: 0) as! PostingSession
+        
+        if posting.isSync == 0
+        {
+            draftBtnOutlet.isHidden = true
+        }
+        else
+        {
+            draftBtnOutlet.isHidden = false
+        }
         
         let lngIdFr = UserDefaults.standard.integer(forKey: "lngId")
         if lngIdFr == 3{
@@ -485,6 +495,9 @@ class PostingSessionDetailController: UIViewController,UITableViewDelegate,UITab
         
     }
     
+    // MARK: 🟠 - Draft Button Action
+    @IBAction func draftBtnAction(_ sender: Any) {
+    }
     
     // MARK: 🟠 - Expoert JSON Button Action
     @IBAction func exportBtnAction(_ sender: Any) {
@@ -503,48 +516,13 @@ class PostingSessionDetailController: UIViewController,UITableViewDelegate,UITab
             print("Failed to convert JSON to Data")
             return
         }
-        
        
         if let status = EmailReportManager.shared.sendEmailReport(dataToAttach: jsonData,from: self, assessmentId:"",date: "", isPE: false), !status.0 {
             if let filePath = status.1 {
                 print(filePath)
             }
         }
-        
-//        // 3️⃣ Save JSON to a .txt file in temporary directory
-//        let tempDirectory = FileManager.default.temporaryDirectory
-//        let fileURL = tempDirectory.appendingPathComponent("SyncData_\(postingId).txt")
-//
-//        do {
-//            try jsonData.write(to: fileURL)
-//            print("JSON saved at \(fileURL.path)")
-//        } catch {
-//            print("Error writing JSON to file: \(error)")
-//            return
-//        }
-//
-//        // 4️⃣ Prepare mail with attachment
-//        if let mailCompose = MFMailComposeViewController() as MFMailComposeViewController? {
-//            mailCompose.mailComposeDelegate = self
-//
-//            // ✅ Set the recipient email (your suggested account)
-//            mailCompose.setToRecipients(["arshad.khan@programming.com"])
-//
-//            // Optional: add subject and body
-//            mailCompose.setSubject("Poultry Sync JSON Data")
-//            mailCompose.setMessageBody("Please find attached the sync JSON data for posting \(postingId).", isHTML: false)
-//
-//            // Attach the .txt file
-//            if let fileData = try? Data(contentsOf: fileURL) {
-//                mailCompose.addAttachmentData(fileData, mimeType: "text/plain", fileName: "SyncData_\(postingId).txt")
-//            }
-//
-//            // Present mail composer
-//            mailCompose.popoverPresentationController?.sourceView = sender as? UIView
-//            self.present(mailCompose, animated: true)
-//        } else {
-//            print("Cannot send email from this device")
-//        }
+
     }
     
     // MARK: 🟠 - Logout Button Action

@@ -4812,7 +4812,6 @@ class CoreDataHandler : NSObject  {
     func productionTypeDatabase(_ productionId : NSNumber ,productionName: String,dbArray :NSArray ,index : Int ,lngID: NSNumber)
     {
         let appDelegate    = UIApplication.shared.delegate as? AppDelegate
-        
         let managedContext = appDelegate!.managedObjectContext
         productionArray = dbArray
         
@@ -4852,7 +4851,6 @@ class CoreDataHandler : NSObject  {
     func generationTypeDatabase(_ generationId : NSNumber ,generationName: String,dbArray :NSArray ,index : Int)
     {
         let appDelegate    = UIApplication.shared.delegate as? AppDelegate
-        
         let managedContext = appDelegate!.managedObjectContext
         generationArray = dbArray
         
@@ -6517,7 +6515,6 @@ class CoreDataHandler : NSObject  {
     }
     
     func fetchAllPostingSessionWithisSyncisTrue(_ isSync : Bool) -> NSArray
-   
     {
         return fetchPostingSession(Sync: isSync)
     }

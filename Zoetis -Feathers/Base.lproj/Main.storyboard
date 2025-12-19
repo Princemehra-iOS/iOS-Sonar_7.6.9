@@ -995,6 +995,14 @@
                                                         <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oq0-XR-iS2">
+                                                    <rect key="frame" x="912" y="5" width="27" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" image="bin_icon">
+                                                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="En" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="q0F-D6-9RZ">
                                                     <rect key="frame" x="157" y="0.0" width="80" height="42"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1016,6 +1024,7 @@
                                         <connections>
                                             <outlet property="complexLabel" destination="oOh-YS-mA5" id="W3c-xg-ryu"/>
                                             <outlet property="datelabel" destination="2bc-hT-reX" id="ifn-4Z-GOL"/>
+                                            <outlet property="deleteButton" destination="Oq0-XR-iS2" id="z6s-ZO-clI"/>
                                             <outlet property="eyeIamgeView" destination="TLh-1C-cVr" id="qih-I3-XKl"/>
                                             <outlet property="infoButton" destination="Zay-19-Bv9" id="Mjj-WC-1Ie"/>
                                             <outlet property="lblLng" destination="q0F-D6-9RZ" id="fjB-6T-FFf"/>
@@ -4787,24 +4796,24 @@
                                     <action selector="datOneSetSync:" destination="eyd-sd-c2M" eventType="touchUpInside" id="diO-W3-m1k"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hL2-Gh-4jQ">
-                                <rect key="frame" x="572" y="719" width="160" height="42"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hL2-Gh-4jQ">
+                                <rect key="frame" x="572" y="719" width="180" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.61568627450000002" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Export" image="toWeb"/>
+                                <state key="normal" title="Save Draft"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="exportBtnAction:" destination="eyd-sd-c2M" eventType="touchUpInside" id="usH-yn-bdl"/>
+                                    <action selector="draftBtnAction:" destination="eyd-sd-c2M" eventType="touchUpInside" id="MEk-p9-emc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Skk-LT-RY5">
-                                <rect key="frame" x="750" y="719" width="260" height="42"/>
+                                <rect key="frame" x="770" y="719" width="220" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.25843334200000001" green="0.61404812340000003" blue="0.75534766909999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -4840,6 +4849,14 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="logOutBtnAction:" destination="eyd-sd-c2M" eventType="touchUpInside" id="ygR-1W-cMM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qpx-UF-QIe">
+                                        <rect key="frame" x="768" y="19" width="19" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="logoutPE"/>
+                                        <connections>
+                                            <action selector="exportBtnAction:" destination="eyd-sd-c2M" eventType="touchUpInside" id="0oT-WJ-NH7"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1234567890123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QH2-l8-wwe">
@@ -4898,7 +4915,8 @@
                         <outlet property="complexNamelbl" destination="sul-zV-Ri3" id="Bbl-oW-yxY"/>
                         <outlet property="customerLbl" destination="wv4-H9-IBM" id="rSo-aQ-z7b"/>
                         <outlet property="customerRepLbl" destination="3KL-wn-UGe" id="lUr-Vf-RBF"/>
-                        <outlet property="exportBttnOutlet" destination="hL2-Gh-4jQ" id="D24-IV-Guz"/>
+                        <outlet property="draftBtnOutlet" destination="hL2-Gh-4jQ" id="MWJ-mf-BwJ"/>
+                        <outlet property="exportBttnOutlet" destination="Qpx-UF-QIe" id="Soj-iz-ZnU"/>
                         <outlet property="eyeImageView" destination="j0i-CB-GVC" id="n2A-SW-jBX"/>
                         <outlet property="feedProgramBtnOutlet" destination="dfF-65-pJD" id="ige-SO-76Q"/>
                         <outlet property="feedProtableView" destination="eax-EU-vh2" id="keF-TZ-5hR"/>
@@ -4918,7 +4936,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPe-sO-A2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40960003986" y="-62"/>
+            <point key="canvasLocation" x="40960003716" y="-195"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Zw8-yL-WdC">
@@ -8500,6 +8518,14 @@
                                                         <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPq-Iu-VSa">
+                                                    <rect key="frame" x="904" y="-4" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" image="bin_icon">
+                                                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiG-5k-9eT">
                                                     <rect key="frame" x="463" y="-2" width="213" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -8512,6 +8538,7 @@
                                         <connections>
                                             <outlet property="complexLbl" destination="RiG-5k-9eT" id="sqR-tQ-avK"/>
                                             <outlet property="dateLbl" destination="fIs-HT-VGG" id="Tpe-6A-oIT"/>
+                                            <outlet property="deleteButton" destination="HPq-Iu-VSa" id="xsZ-bX-Mfn"/>
                                             <outlet property="eyeBlueImage" destination="rIN-hj-1K0" id="62U-gR-NBf"/>
                                             <outlet property="infoButton" destination="y5N-Av-HC5" id="aub-Ls-f8h"/>
                                             <outlet property="lblLng" destination="F5v-gG-Ak4" id="eXT-uH-k6K"/>
@@ -24006,6 +24033,7 @@ Ak7XA
         <image name="incedenceText" width="26" height="150"/>
         <image name="info" width="24" height="24"/>
         <image name="languageInsideIconn" width="63" height="63"/>
+        <image name="logoutPE" width="18.5" height="16"/>
         <image name="logout_pop_separator" width="217" height="1"/>
         <image name="menu_icon" width="30" height="20"/>
         <image name="microscopy" width="108" height="108"/>

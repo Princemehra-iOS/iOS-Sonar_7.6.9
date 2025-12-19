@@ -293,6 +293,51 @@ class DashViewController: UIViewController,MDRotatingPieChartDataSource,userlist
         if sync == false || self.allSessionArr().count == 0 {
             Timer.scheduledTimer(timeInterval: 1.1, target: self, selector: #selector(iSfarmSync), userInfo: nil, repeats: false)
         }
+        
+    
+        setupForceLogoutCallbacks()
+        ForceLogoutManager.shared.handleForceLogoutIfNeeded()
+    }
+    
+    
+    
+    private func setupForceLogoutCallbacks() {
+
+        ForceLogoutManager.shared.onWarning = { [weak self] (index: Int, message: String) in
+            guard let self = self, self.view.window != nil else { return }
+            self.showWarningAlert(message)
+        }
+
+        ForceLogoutManager.shared.onFinalWarning = { [weak self] (message: String) in
+            guard let self = self, self.view.window != nil else { return }
+            self.showFinalWarningAndSync(message)
+        }
+    }
+    
+    private func showWarningAlert(_ message: String) {
+        let alert = UIAlertController(
+            title: "Session Warning",
+            message: message,
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+    
+    private func showFinalWarningAndSync(_ message: String) {
+
+        let alert = UIAlertController(
+            title: "Session Ended",
+            message: message,
+            preferredStyle: .alert
+        )
+
+        alert.addAction(UIAlertAction(title: "Sync Now", style: .default) { _ in
+            print("in progress")
+           // self.syncUnsyncedDataThenLogout()
+        })
+
+        present(alert, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -352,6 +397,18 @@ class DashViewController: UIViewController,MDRotatingPieChartDataSource,userlist
     
     // MARK: 🟠 - New POsting Session  Button Action
     @IBAction func PostingSessionButtonPress(_ sender: AnyObject) {
+        
+        // ✅ Check session count first
+        if self.allSessionArr().count >= 3 {
+             Helper.showAlertMessage(
+                 self,
+                 titleStr: NSLocalizedString(Constants.alertStr, comment: ""),
+                 messageStr: "You have some active sessions. Please sync them first before creating a new session."
+             )
+             return
+         }
+        
+        
         UserDefaults.standard.set(false, forKey: "Unlinked")
         UserDefaults.standard.set(true, forKey: "nec")
         UserDefaults.standard.set(false, forKey: "backFromStep1")

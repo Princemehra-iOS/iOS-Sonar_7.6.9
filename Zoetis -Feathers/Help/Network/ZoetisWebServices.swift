@@ -1024,7 +1024,7 @@ extension ZoetisWebServices {
     
     func getPostedSessionResponceForChicken(controller: UIViewController, url: String, completion: @escaping CompletionBlock){
         getFlockHealthAPIResponce(type: DeviceIDRequestType.chickenPostedSessions, controller: controller, url: url, parameters: [:], headers: [:], completion: completion)
-//        print(url)
+        print(url)
 //        getRequest(showHud: false, showHudText: "", controller: controller, endPoint: url, parameters: [:], headers: [:], completion: completion)
     }
     
@@ -1050,7 +1050,7 @@ extension ZoetisWebServices {
     func getPostedNecropsyFarmListResponce(controller: UIViewController, url: String, completion: @escaping CompletionBlock){
         getFlockHealthAPIResponce(type: DeviceIDRequestType.PostedNecropsyFarmList, controller: controller, url: url, parameters: [:], headers: [:], completion: completion)
         
-//        print(url)
+        print(url)
 //        getRequest(showHud: false, showHudText: "", controller: controller, endPoint: url, parameters: [:], headers: [:], completion: completion)
     }
     

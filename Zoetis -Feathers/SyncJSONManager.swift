@@ -7,6 +7,14 @@
 
 import Foundation
 
+struct SessionMeta {
+    let userId: Int
+    let sessionDate: Any?
+    let deviceId: String
+    let customerId: NSNumber?
+    let complexId: NSNumber?
+    let sessionId: NSNumber?
+}
 
 class SyncJSONManager {
 
@@ -16,8 +24,18 @@ class SyncJSONManager {
     
    
     // Combine all JSONs for a postingId
-    func getFullSyncJSON(forPostingId postingId: NSNumber) -> [String: Any] {
+    func getFullSyncJSON(forPostingId postingId: NSNumber) -> [[String: Any]] {
         var fullJSON = [String: Any]()
+        
+        if let meta = getOtherDetails(forPostingId: postingId) {
+            fullJSON["userId"] = meta.userId
+            fullJSON["sessionDate"] = meta.sessionDate
+            fullJSON["deviceId"] = meta.deviceId
+            fullJSON["customerId"] = meta.customerId
+            fullJSON["complexId"] = meta.complexId
+            fullJSON["sessionId"] = meta.sessionId
+            fullJSON["birdTypeId"] = 1
+        }
 
         // Feed Program JSON
         if let feedProgramJSON = getFeedProgramJSON(forPostingId: postingId) {
@@ -39,7 +57,8 @@ class SyncJSONManager {
             fullJSON["CaptureNecropsyData"] = necropsyJSON["Session"] ?? []
         }
 
-        return fullJSON
+        let finalPayload: [[String: Any]] = [fullJSON]
+        return finalPayload
     }
     
     func getFeedProgramJSON(forPostingId postingId: NSNumber) -> [String: Any]? {
@@ -273,16 +292,13 @@ class SyncJSONManager {
                 let data = vaccinationPostingArrAllData.object(at: 0) as! PostingSession
                 let acttimeStamp = data.timeStamp
                 
-                var fullData = acttimeStamp!
+                let fullData = acttimeStamp!
                 mainDict.setValue(fullData, forKey: "deviceSessionId")
                 sessionArr.add(mainDict)
             }
         }
 
         sessionDictWithVac.setValue(sessionArr, forKey: "Vaccinations")
-
-        // 🔥 YOUR ORIGINAL CODE ENDS HERE 🔥
-
         return sessionDictWithVac as? [String: Any]
     }
 
@@ -480,6 +496,34 @@ class SyncJSONManager {
             return sessionWithAllForms as? [String: Any]
         }
         return nil
+    }
+    
+    // MARK: - Individual JSON functions
+    func getOtherDetails(forPostingId postingId: NSNumber) -> SessionMeta? {
+        
+        let savePostingArrWithAllData =
+            CoreDataHandler()
+                .fetchAllPostingSession(postingId)
+                .mutableCopy() as! NSMutableArray
+
+        guard savePostingArrWithAllData.count > 0,
+              let firstSession = savePostingArrWithAllData.object(at: 0) as? PostingSession
+        else {
+            return nil
+        }
+
+        let userId = UserDefaults.standard.integer(forKey: "Id")
+        let deviceId = UserDefaults.standard
+            .value(forKey: "ApplicationIdentifier") as? String ?? ""
+
+        return SessionMeta(
+            userId: userId,
+            sessionDate: firstSession.sessiondate,
+            deviceId: firstSession.timeStamp ?? "",
+            customerId: firstSession.customerId,
+            complexId: firstSession.complexId,
+            sessionId:firstSession.postingId
+        )
     }
 
 }

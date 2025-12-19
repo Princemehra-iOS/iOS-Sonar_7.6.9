@@ -120,6 +120,8 @@
 		00CEC387298D3A3B00E643CC /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 00CEC383298D3A3B00E643CC /* Contents.json */; };
 		00CEC388298D3A3B00E643CC /* square.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CEC384298D3A3B00E643CC /* square.png */; };
 		00CEC38C298D3AC200E643CC /* checkboxna.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CEC38A298D3AC200E643CC /* checkboxna.png */; };
+		00DDFA982EF2D37C00268E59 /* ForceLogoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDFA972EF2D37C00268E59 /* ForceLogoutManager.swift */; };
+		00DDFA992EF2D37C00268E59 /* ForceLogoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDFA972EF2D37C00268E59 /* ForceLogoutManager.swift */; };
 		00E4864228FF157A00DCA0A7 /* PE_VaccineMixerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E4864128FF157A00DCA0A7 /* PE_VaccineMixerModel.swift */; };
 		00E5AD0329007BD10002DE76 /* ExampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5AD0129007BD10002DE76 /* ExampleTableViewCell.swift */; };
 		00E5AD0429007BD10002DE76 /* ExampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5AD0129007BD10002DE76 /* ExampleTableViewCell.swift */; };
@@ -1035,6 +1037,7 @@
 		00D2AE7E295213EF008D3B34 /* Zoetis__Feathers_V7. 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Zoetis__Feathers_V7. 5.xcdatamodel"; sourceTree = "<group>"; };
 		00D2AF4629CC5D240078ED9E /* Zoetis__Feathers_V7. 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Zoetis__Feathers_V7. 7.xcdatamodel"; sourceTree = "<group>"; };
 		00DCBB0A2B74BE100020DFE3 /* Zoetis__Feathers_V7. 14.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Zoetis__Feathers_V7. 14.xcdatamodel"; sourceTree = "<group>"; };
+		00DDFA972EF2D37C00268E59 /* ForceLogoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceLogoutManager.swift; sourceTree = "<group>"; };
 		00E1C3082976B0D2004B1CE7 /* Zoetis__Feathers_V7. 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Zoetis__Feathers_V7. 6.xcdatamodel"; sourceTree = "<group>"; };
 		00E4864128FF157A00DCA0A7 /* PE_VaccineMixerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PE_VaccineMixerModel.swift; sourceTree = "<group>"; };
 		00E5AD0129007BD10002DE76 /* ExampleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewCell.swift; sourceTree = "<group>"; };
@@ -2512,6 +2515,7 @@
 				0064C22C2DD2059B00ABE988 /* TimeManager.swift */,
 				005779652EE80C5A00B2F405 /* CustomAlertViewController.swift */,
 				0060CD9B2EEC232100C6F752 /* SyncJSONManager.swift */,
+				00DDFA972EF2D37C00268E59 /* ForceLogoutManager.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -4574,6 +4578,7 @@
 				214E0AEE242E0476005F8653 /* PVESessionHeader.swift in Sources */,
 				214E0A63242E02CD005F8653 /* NoOfCatchersHeader.swift in Sources */,
 				214E0AD9242E03E7005F8653 /* PVEGetAssignUserDetailsResponse.swift in Sources */,
+				00DDFA992EF2D37C00268E59 /* ForceLogoutManager.swift in Sources */,
 				105EE07523EE1E19003411FF /* InovojectCell.swift in Sources */,
 				214E0A97242E038F005F8653 /* Customer_PVE+CoreDataProperties.swift in Sources */,
 				00CEAB0824C5F456002E9E2C /* GetSubmittedTrainingSchedulesInfoDTO.swift in Sources */,
@@ -5102,6 +5107,7 @@
 				459E5FCC21622C4D0002D761 /* AppDelegate.swift in Sources */,
 				0064C22E2DD2059B00ABE988 /* TimeManager.swift in Sources */,
 				00E5AD0629007BD10002DE76 /* ExampleTableViewCell.swift in Sources */,
+				00DDFA982EF2D37C00268E59 /* ForceLogoutManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

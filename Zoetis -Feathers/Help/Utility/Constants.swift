@@ -135,24 +135,24 @@ struct Constants {
         
         // MARK: - 🔴 ************************* Dev Migration URL*************************** 🚀
         // Dev Migration
-//        static let versionUrl = "https://devapi.mypoultryview360.com"
-//        static let pveBaseUrl = "https://devPVEapi.mypoultryview360.com"
-//        static let peBaseUrl = "https://devpeapi.mypoultryview360.com"
-//        static let fhBaseUrl = "https://devapi.mypoultryview360.com"
-//        static let tcBaseUrl = "https://devpeapi.mypoultryview360.com"
-//        static let miBaseUrl = "https://devmicrobialapi.mypoultryview360.com"
-//        static let fcmUrl = "https://devapi.mypoultryview360.com/api/GlobalDashboard/SaveNotificationSyncData"
+        static let versionUrl = "https://devapi.mypoultryview360.com"
+        static let pveBaseUrl = "https://devPVEapi.mypoultryview360.com"
+        static let peBaseUrl = "https://devpeapi.mypoultryview360.com"
+        static let fhBaseUrl = "https://devapi.mypoultryview360.com"
+        static let tcBaseUrl = "https://devpeapi.mypoultryview360.com"
+        static let miBaseUrl = "https://devmicrobialapi.mypoultryview360.com"
+        static let fcmUrl = "https://devapi.mypoultryview360.com/api/GlobalDashboard/SaveNotificationSyncData"
         
         
         // MARK: - 🟠 ************************* Stage Migration URL *************************** 🚀
         // Stage
-        static let versionUrl = "https://stageapi.mypoultryview360.com"
-        static let pveBaseUrl = "https://stagePVEapi.mypoultryview360.com"
-        static let peBaseUrl = "https://stagepeapi.mypoultryview360.com"
-        static let fhBaseUrl = "https://stageapi.mypoultryview360.com"
-        static let tcBaseUrl = "https://stagepeapi.mypoultryview360.com"
-        static let miBaseUrl = "https://stagemicrobialapi.mypoultryview360.com"
-        static let fcmUrl = "https://stageapi.mypoultryview360.com/api/GlobalDashboard/SaveNotificationSyncData"
+//        static let versionUrl = "https://stageapi.mypoultryview360.com"
+//        static let pveBaseUrl = "https://stagePVEapi.mypoultryview360.com"
+//        static let peBaseUrl = "https://stagepeapi.mypoultryview360.com"
+//        static let fhBaseUrl = "https://stageapi.mypoultryview360.com"
+//        static let tcBaseUrl = "https://stagepeapi.mypoultryview360.com"
+//        static let miBaseUrl = "https://stagemicrobialapi.mypoultryview360.com"
+//        static let fcmUrl = "https://stageapi.mypoultryview360.com/api/GlobalDashboard/SaveNotificationSyncData"
         
         
        // MARK: - 🟢 ************************* Live Migration URL *************************** 🚀

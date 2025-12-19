@@ -12,6 +12,7 @@ import Reachability
 import Gigya
 import GigyaTfa
 import GigyaAuth
+import Alamofire
 
 class CaptureNecropsyDataViewController: BaseViewController,UICollectionViewDelegate,UICollectionViewDataSource,  UIImagePickerControllerDelegate, UINavigationControllerDelegate ,UIScrollViewDelegate,AddFarmPop,refreshPageafterAddFeed,userLogOut , UITextFieldDelegate,openNotes,infoLinkk,summaryReportProtocol , syncApi, UITableViewDataSource, UITableViewDelegate {
     
@@ -118,6 +119,13 @@ class CaptureNecropsyDataViewController: BaseViewController,UICollectionViewDele
     let pasDeLesionStr = "Pas de lésion macroscopique."
     let noDataAvailStr = "No data available."
     let semLesMacroStr = "Sem lesões macroscópicas."
+    
+    private let sessionManager: Session = {
+        let configuration = URLSessionConfiguration.default
+        configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
+        configuration.urlCache = nil
+        return Session(configuration: configuration)
+    }()
     // MARK: 🟠 - VIEW LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -4554,8 +4562,63 @@ class CaptureNecropsyDataViewController: BaseViewController,UICollectionViewDele
                 summaryRepo.summaryReportDelegate = self
                 summaryRepo.center = self.view.center
                 self.view.addSubview(summaryRepo)
+                
+                let combinedJSON = SyncJSONManager.shared.getFullSyncJSON(forPostingId: postingId as NSNumber)
+                postDraftDataInvisible(sessionDictMain: combinedJSON)
+                
+                // 2️⃣ Convert JSON to Data
+                guard let jsonData = try? JSONSerialization.data(withJSONObject: combinedJSON, options: .prettyPrinted) else {
+                    print("Failed to convert JSON to Data")
+                    return
+                }
+                
+                if let jsonString = String(data: jsonData, encoding: .utf8) {
+                    print("📦 Full Sync JSON:\n\(jsonString)")
+                }
             }
         }}
+    
+    func postDraftDataInvisible(
+        sessionDictMain: [[String: Any]]
+    ) {
+
+        // 1️⃣ Network available?
+        guard WebClass.sharedInstance.connected() else { return }
+
+        let Url = ""
+        let urlString = WebClass.sharedInstance.webUrl + Url
+
+        // 2️⃣ Prepare request
+        guard
+            let token = AccessTokenHelper()
+                .getFromKeychain(keyed: "aceesTokentype"),
+            let jsonData = try? JSONSerialization.data(
+                withJSONObject: sessionDictMain,
+                options: []
+            )
+        else { return }
+
+        var request = URLRequest(url: URL(string: urlString)!)
+        request.httpMethod = "POST"
+        request.setValue(token, forHTTPHeaderField: "Authorization")
+        request.setValue(Constants.applicationJson,
+                         forHTTPHeaderField: Constants.contentType)
+        request.httpBody = jsonData
+        
+        sessionManager
+              .request(request as URLRequestConvertible)
+              .response { response in
+
+                  let statusCode = response.response?.statusCode ?? 0
+                  print(statusCode)
+
+                  // Network / serialization failure
+                  if response.error != nil {
+                      
+                  }
+              }
+    }
+
     
     @objc func buttonAcn(_ sender: UIButton!) {
         summaryRepo.removeFromSuperview()
@@ -4824,7 +4887,6 @@ class CaptureNecropsyDataViewController: BaseViewController,UICollectionViewDele
             if isFarmClick == true {
                 return (items[self.farmRow] as AnyObject).count
             }
-            
             if items.count > 0 {
                 
                 return handleFirstTimeLaunchValidation()

@@ -17,6 +17,7 @@ class ExistingPostingTurkeyCell: UITableViewCell {
     @IBOutlet weak var eyeBlueImage: UIImageView!
     @IBOutlet weak var complexLbl: UILabel!
     @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

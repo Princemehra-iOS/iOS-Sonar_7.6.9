@@ -181,6 +181,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         checkIfLoginExpired()
+        ForceLogoutManager.shared.handleForceLogoutIfNeeded()
     }
     
     private func checkIfLoginExpired() {

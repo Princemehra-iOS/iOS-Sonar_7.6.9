@@ -1757,8 +1757,7 @@ extension PVEDashboardViewController:  ComplexDelegate {
             UserDefaults.standard.set(false, forKey: "callDraftApi")
             let currentUserId = UserDefaults.standard.value(forKey:"Id") as? Int ?? 0
             ZoetisWebServices.shared.PostingAssessmentList(controller: self, header: ["UserId" : currentUserId], parameters: [:], completion: { [weak self] (json, error) in
-                guard let selfObject = self, error == nil else { return }
-                
+                guard let self = self, error == nil else { return }
                
                 if json["data"].count > 0 {
                     let responseDataArr = json["data"].array
@@ -1769,11 +1768,11 @@ extension PVEDashboardViewController:  ComplexDelegate {
                         CoreDataHandlerPVE().saveSyncDetailsInDBFromResponse(json: currntSyncObj)
                     }
                     
-                    selfObject.refreshCountHideUnhide()
-                    selfObject.getSyncedImageResponse()
+                    self.refreshCountHideUnhide()
+                    self.getSyncedImageResponse()
                     
                 } else {
-                    selfObject.stopHud()
+                    self.stopHud()
                     NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "stopComplexPopupLosder"),object: nil))
                 }
             })
@@ -1785,7 +1784,7 @@ extension PVEDashboardViewController:  ComplexDelegate {
         self.showGlobalProgressHUDWithTitle(self.view, title: "Loading...Please wait, This may take a while.")
         
         ZoetisWebServices.shared.GetPostingAssessmentImagesListByUser(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let selfObject = self, error == nil else { return }
+            guard let self = self, error == nil else { return }
             if json["data"].count > 0 {
                 CoreDataHandler().deleteAllData("PVE_ImageEntitySync")
                 
@@ -1793,9 +1792,9 @@ extension PVEDashboardViewController:  ComplexDelegate {
                 for (_, currntSyncObj) in responseDataArr!.enumerated() {
                     CoreDataHandlerPVE().saveSyncedImageDetailsInDBFromResponse(json: currntSyncObj)
                 }
-                selfObject.getSyncedCompleteImageResponse()
+                self.getSyncedCompleteImageResponse()
             } else {
-                selfObject.stopHud()
+                self.stopHud()
                 NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "stopComplexPopupLosder"),object: nil))
             }
         })
@@ -1803,17 +1802,17 @@ extension PVEDashboardViewController:  ComplexDelegate {
     
     func getSyncedCompleteImageResponse() {
         ZoetisWebServices.shared.GetPostingAssessmentCompleteImagesListByUser(controller: self, parameters: [:], completion: { [weak self] (json, error) in
-            guard let selfObj = self, error == nil else { return }
+            guard let self = self, error == nil else { return }
             if json["data"].count > 0 {
                 
                 let responseDataArr = json["data"].array
                 for (_, currntSyncObj) in responseDataArr!.enumerated() {
                     CoreDataHandlerPVE().saveSyncedImageDetailsInDBFromResponse(json: currntSyncObj)
-                    selfObj.stopHud()
+                    self.stopHud()
                     NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "stopComplexPopupLosder"),object: nil))
                 }
             } else {
-                selfObj.stopHud()
+                self.stopHud()
                 NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "stopComplexPopupLosder"),object: nil))
             }
         })
