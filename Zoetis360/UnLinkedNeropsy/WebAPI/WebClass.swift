@@ -27,9 +27,9 @@ class WebClass: NSObject {
 //           let webUrl = "https://api.mypoultryview360.com/api/"
     
     // MARK: 🟡 *-*-*-*-*-*-* Dev Support *-*-*-*-*-*-*
-    //       let ChkEnvironmentLive = "stage"
-    //       let webUrl = "https://supportapi.mypoultryview360.com/api/"
-    //
+//           let ChkEnvironmentLive = "stage"
+//           let webUrl = "https://supportapi.mypoultryview360.com/api/"
+//    //
     func connected() -> Bool{
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))

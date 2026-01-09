@@ -6236,7 +6236,8 @@ class CoreDataHandler : NSObject  {
         fetchRequest.returnsObjectsAsFaults = false
         fetchRequest.predicate = NSPredicate(format:Constants.postincIdPredicate, postingId)
         do
-        { let fetchedResult = try managedContext.fetch(fetchRequest) as? [NSManagedObject]
+        {
+            let fetchedResult = try managedContext.fetch(fetchRequest) as? [NSManagedObject]
             if fetchedResult!.count > 0
             {
                 let objTable: PostingSession = (fetchedResult![0] as? PostingSession)!
@@ -6249,14 +6250,10 @@ class CoreDataHandler : NSObject  {
                 }
                 catch{
                 }
-                
             }
-        }
-        catch
-        {
+        } catch {
             
         }
-        
     }
     
     func updateFinalizeDataWithNec(_ postingId : NSNumber,finalizeNec : NSNumber)
@@ -6537,7 +6534,6 @@ class CoreDataHandler : NSObject  {
         }
     }
 
-    
     
     func fetchPostingSessionWithisSyncisTrue(_ isSync : Bool) -> NSArray
     {
@@ -11271,6 +11267,39 @@ class CoreDataHandler : NSObject  {
         }
         
         return result
+    }
+    
+    func deletePostingSession(postingID: NSNumber) -> Bool {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.managedObjectContext
+
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PostingSession")
+        
+        // Assuming your predicate earlier was something like "postingId == %@"
+        fetchRequest.predicate = NSPredicate(format: "postingId == %@", postingID)
+
+        do {
+            if let objects = try context.fetch(fetchRequest) as? [NSManagedObject] {
+                
+                // nothing to delete
+                if objects.isEmpty {
+                    return false
+                }
+                
+                // delete all matched objects
+                for obj in objects {
+                    context.delete(obj)
+                }
+                
+                try context.save()
+                return true
+            }
+        } catch {
+            print("Failed to delete PostingSession:", error)
+            return false
+        }
+
+        return false
     }
     // MARK: 🟠  sync available
     func checkPostingSessionHasiSyncTrue(_ postingID : NSNumber,isSync:NSNumber)-> Bool

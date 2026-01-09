@@ -363,7 +363,9 @@ class DataService{
         let dateFormatter = DateFormatter()
         
         dateFormatter.timeZone = Calendar.current.timeZone
-        dateFormatter.locale = Calendar.current.locale
+       // dateFormatter.locale = Calendar.current.locale
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+
         dateFormatter.dateFormat = "MMddYYYYHHmmss"
         let dateStr = dateFormatter.string(from:dateObj)
         

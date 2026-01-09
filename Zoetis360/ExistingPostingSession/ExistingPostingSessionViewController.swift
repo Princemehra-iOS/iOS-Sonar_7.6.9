@@ -444,13 +444,15 @@ class ExistingPostingSessionViewController: UIViewController,UITableViewDelegate
             }
             
             let posting : PostingSession = existingArray.object(at: indexPath.row) as! PostingSession
-            if posting.isSync == 0 {
-                cell.deleteButton.isHidden = false
-            }
-            else
-            {
-                cell.deleteButton.isHidden = true
-            }
+//            if posting.isSync == 0 {
+//                cell.deleteButton.isHidden = false
+//            }
+//            else
+//            {
+//                cell.deleteButton.isHidden = true
+//            }
+            cell.deleteButton.isHidden = true
+
             let isfarmSync = posting.isfarmSync
             cell.infoButton.alpha = isfarmSync == 1 ? 1 : 0
             cell.deleteButton.tag = indexPath.row

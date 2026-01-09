@@ -397,18 +397,48 @@ class DashViewController: UIViewController,MDRotatingPieChartDataSource,userlist
     
     // MARK: 🟠 - New POsting Session  Button Action
     @IBAction func PostingSessionButtonPress(_ sender: AnyObject) {
-        
+        let existingSessions = CoreDataHandler().fetchAllPostingExistingSessionwithFullSessionWithCapId(1).mutableCopy() as! NSMutableArray
         // ✅ Check session count first
-        if self.allSessionArr().count >= 3 {
-             Helper.showAlertMessage(
-                 self,
-                 titleStr: NSLocalizedString(Constants.alertStr, comment: ""),
-                 messageStr: "You have some active sessions. Please sync them first before creating a new session."
-             )
+        if existingSessions.count >= 4 {
+                let alert = UIAlertController(title: Constants.alertStr,
+                                              message: "The session limit has been reached on the iPad.Starting a new session will remove the oldest synced session from the iPad only.That session will still be safely available on the web application",
+                                              preferredStyle: .alert)
+
+                // OK action
+                let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                    print("OK tapped")
+                    // handle OK event here
+                    let recentAddedSession = self.getOldestPostingSession()
+                    if recentAddedSession?.isSync == false {
+                        if let id = recentAddedSession?.postingId {
+                            let deleted = CoreDataHandler().deletePostingSession(postingID: id)
+                            if deleted {
+                                self.navigateToStartSessionScreen()
+                            }
+                        }
+                    }else {
+                        self.syncOldestSessionToServer(postingIdIs: recentAddedSession!)
+                    }
+                }
+
+                // Cancel action
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                    print("Cancel tapped")
+                    // handle Cancel event here
+                }
+
+                alert.addAction(okAction)
+                alert.addAction(cancelAction)
+
+                present(alert, animated: true, completion: nil)
              return
          }
         
+        navigateToStartSessionScreen()
         
+    }
+    
+    func navigateToStartSessionScreen() {
         UserDefaults.standard.set(false, forKey: "Unlinked")
         UserDefaults.standard.set(true, forKey: "nec")
         UserDefaults.standard.set(false, forKey: "backFromStep1")
@@ -2448,6 +2478,77 @@ class DashViewController: UIViewController,MDRotatingPieChartDataSource,userlist
             CoreDataHandler().FarmsDataDatabase("", stateId: 0, farmName: FarmName, farmId: FarmId, countryName: "", countryId: CountryId, city: "")
         }
     }
+    
+    func getOldestPostingSession() -> PostingSession? {
+
+        let allPostingArray = CoreDataHandler().fetchAllPostingExistingSession()
+
+        // safely convert
+        let allPosting = allPostingArray.compactMap { $0 as? PostingSession }
+
+        guard !allPosting.isEmpty else { return nil }
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+
+        let sorted = allPosting.sorted { a, b in
+            guard
+                let t0 = a.actualTimeStamp?.components(separatedBy: "_").first,
+                let t1 = b.actualTimeStamp?.components(separatedBy: "_").first,
+                let d0 = formatter.date(from: t0),
+                let d1 = formatter.date(from: t1)
+            else {
+                return false
+            }
+            return d0 < d1
+        }
+
+        return sorted.first
+    }
+       
+
+       
+    
+    func allPostingSessionArr() ->NSMutableArray{
+          
+          let allPostingArrWithData = CoreDataHandler().fetchAllPostingExistingSession().mutableCopy() as! NSMutableArray
+          
+          let cNecArr = CoreDataHandler().fetchAllNecropsyStep1Data()
+          let necArrWithoutPosting = NSMutableArray()
+          
+          if let pSession = allPostingArrWithData.firstObject as? PostingSession {
+              Constants.isFromPsoting = (pSession.isfarmSync != nil) // for warnig Refactor this loop to do more than one iteration.
+          }
+
+          
+          for j in 0..<cNecArr.count
+          {
+              let captureNecropsyData = cNecArr.object(at: j)  as! CaptureNecropsyData
+              necArrWithoutPosting.add(captureNecropsyData)
+              for w in 0..<necArrWithoutPosting.count - 1
+              {
+                  let c = necArrWithoutPosting.object(at: w)  as! CaptureNecropsyData
+                  if c.necropsyId == captureNecropsyData.necropsyId{
+                      necArrWithoutPosting.remove(c)
+                  }
+              }
+          }
+          
+          let allPostingSessionArr = NSMutableArray()
+          for i in 0..<allPostingArrWithData.count
+          {
+              let pSession = allPostingArrWithData.object(at: i) as! PostingSession
+              let sessionId = pSession.postingId!
+              allPostingSessionArr.add(sessionId)
+          }
+          for i in 0..<necArrWithoutPosting.count
+          {
+              let nIdSession = necArrWithoutPosting.object(at: i) as! CaptureNecropsyData
+              let sessionId = nIdSession.necropsyId!
+              allPostingSessionArr.add(sessionId)
+          }
+          return allPostingSessionArr
+      }
     // MARK: 🟠 Get All Session's List
     func allSessionArr() ->NSMutableArray{
         
@@ -2515,6 +2616,27 @@ class DashViewController: UIViewController,MDRotatingPieChartDataSource,userlist
         }
     }
     // MARK: 🟢 Sync API method call for Feed Program
+    func syncOldestSessionToServer(postingIdIs: Any)
+    {
+        self.isSync = false
+            if isSync == false {
+                isSync = true
+                if (UserDefaults.standard.value(forKey: "postingSession") != nil){
+                    Constants.isFromPsoting = UserDefaults.standard.value(forKey: "postingSession") as? Bool ?? false
+                    if Constants.isFromPsoting
+                    {
+                        UserDefaults.standard.removeObject(forKey: "postingSession")
+                        objApiSyncOneSet.feedprogram(postingId: NSNumber(value: postingIdIs as! Int))
+                    }
+                    else{
+                        objApiSync.feedprogram()
+                    }
+                }else{
+                    objApiSync.feedprogram()
+                }
+            }
+            AllValidSessions.sharedInstance.complexName = "" // New Change
+    }
     func callSyncApi()
     {
         self.isSync = false
