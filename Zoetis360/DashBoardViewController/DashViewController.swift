@@ -417,7 +417,10 @@ class DashViewController: UIViewController,MDRotatingPieChartDataSource,userlist
                             }
                         }
                     }else {
-                        self.syncOldestSessionToServer(postingIdIs: recentAddedSession!)
+                        if let  postingId = recentAddedSession?.postingId {
+                            self.syncOldestSessionToServer(Pid: postingId)
+
+                        }
                     }
                 }
 
@@ -2616,27 +2619,16 @@ class DashViewController: UIViewController,MDRotatingPieChartDataSource,userlist
         }
     }
     // MARK: 🟢 Sync API method call for Feed Program
-    func syncOldestSessionToServer(postingIdIs: Any)
-    {
-        self.isSync = false
-            if isSync == false {
-                isSync = true
-                if (UserDefaults.standard.value(forKey: "postingSession") != nil){
-                    Constants.isFromPsoting = UserDefaults.standard.value(forKey: "postingSession") as? Bool ?? false
-                    if Constants.isFromPsoting
-                    {
-                        UserDefaults.standard.removeObject(forKey: "postingSession")
-                        objApiSyncOneSet.feedprogram(postingId: NSNumber(value: postingIdIs as! Int))
-                    }
-                    else{
-                        objApiSync.feedprogram()
-                    }
-                }else{
-                    objApiSync.feedprogram()
-                }
+    func syncOldestSessionToServer(Pid:NSNumber) {
+        DispatchQueue.global(qos: .background).async {
+            self.objApiSyncOneSet.feedprogram(postingId: Pid)
+            DispatchQueue.main.async {
+                self.navigateToStartSessionScreen()
             }
-            AllValidSessions.sharedInstance.complexName = "" // New Change
+        }
     }
+    
+   
     func callSyncApi()
     {
         self.isSync = false
